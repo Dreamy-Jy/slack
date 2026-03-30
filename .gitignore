@@ -1,1 +1,8 @@
-obsidian
+.obsidian
+.DS_Store
+.seb
+SEB
+drivers/
+docs/datasheets/
+
+# put everything in a docs/ai folder

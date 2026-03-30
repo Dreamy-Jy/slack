@@ -50,7 +50,8 @@ Experimental modules.
 - power electronics circuits
 - Haptic Feedback Modules
 
-
+https://patchouli.readthedocs.io/en/latest/
+https://github.com/ploopyco/trackpad
 
 [ ] modernize existing drivers the [drv2605l-rs](https://github.com/jacobrosenthal/drv2605l-rs/tree/master) driver to use [embedded_hal](https://github.com/rust-embedded/embedded-hal/tree/master) v1 and the latest [bitfield](https://github.com/dzamlo/rust-bitfield) version.
 
