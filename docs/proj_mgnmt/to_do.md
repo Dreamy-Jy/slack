@@ -15,3 +15,21 @@
 4. [ ] design version 1 keyboard hardware design
 5. [ ] design all experimental modules
 
+- Update LED Matrix Driver (IS31FL3741)
+  - [ ] add fine grain configuration logic. (global current is one)
+  - [ ] add fault detection functionality
+  - [ ] add fine grain fault detection logic
+  - [ ] update the dependencies of `embedded-graphics-core`
+
+what sequence do i need to change global current?
+
+Unlock Command Register (write 11000101b to FEh)
+Select The Configuration (write x04 to FDh)
+Select Global Current Register (write 01h to FDh)
+Write Global Current Register Value (write to FDh)
+
+You'll need to tune the LED colors on your actual keyboard pcb.
+
+-> we need to select a layout for the keyboard
+
+Plank or split?

@@ -1,8 +1,10 @@
 .obsidian
 .DS_Store
 .seb
-SEB
+SEB.MD
 drivers/
 docs/datasheets/
-
-# put everything in a docs/ai folder
+*-backups
+.history
+~slack.kicad_pro.lck
+~slack.kicad_sch.lck
