@@ -6,7 +6,7 @@
 - MCU nice!nano (nRF52840)
 
 - Momentary(Main) Switches (Mfr. #: MX6C-K3NB)
-- Latching(Secondary) Switches (Not chosen yet: DB2C-A1LB, SPPH110900,    )
+- Latching(Secondary) Switches (Not chosen yet: DB2C-A1LB, SPPH110900)
 - Encoder(Secondary) Switches (Mfr. #: PEC11S-929K-S0015)
 - Encoder(trestary) shaftless switchless (Mfr. #: )
 - Sliding Switch (Not chosen yet)
