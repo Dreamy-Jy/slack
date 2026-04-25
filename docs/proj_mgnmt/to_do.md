@@ -33,3 +33,51 @@ You'll need to tune the LED colors on your actual keyboard pcb.
 -> we need to select a layout for the keyboard
 
 Plank or split?
+
+---
+
+## Hardware
+
+### [ ] Switch Matrix
+
+1. [ ] select values for Rotary Encoder Filters: resistors and capacitors.
+
+### [ ] Led Matrix
+
+### [ ] Microcontroller
+
+### [ ] Power Circuits
+
+
+I need to define power circuitry
+Select a configuration for the mcu.
+
+
+I need to create the power block of my schematic.
+The power block needs to expose a 3.3v (for mcu) line and 5.5v line (for led driver).
+The power should allow for running and battery charging from a USB-C cable when plugged in and running from a battery when.
+I should have indicator lights for charging, full charge, operating(on), and low power.
+
+what is the cost of using the internal crystal vs external crystal.
+
+VDD - power supply
+VDDH - High voltage power supply
+VSS - ground
+VSS_PA - ground (for radio supply)
+ANT - antenna single ended
+NFC1, NFC2 - NFC antenna connection
+TRACECLK  trace clock (what is this)
+TRACEDATA 0..3 - trace data what is this?
+DECUSB - usb 3.3v regulator supply decoupling
+nRESET - reset pin
+VBUS - 5V input for usb 3.3v regulator
+SWDIO - serial wire debug i/o for debug and programming
+
+XC2, XC1, XL1, Xl2
+What are the `regulator supply decoupling` (1.1v, 1.3v) Pins: DEC
+DCC - DC/DC converter output
+
+DCCH - DC/DC converter output
+
+Pre Kids
+- set up a warobe and lifestyle

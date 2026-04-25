@@ -22,9 +22,16 @@
 
 #### Physical
 
+##### Switch Matrix
+
 5 x 12 ULP Switches (Column Linear Alice with Thumb Clusters, 4 x 12 main part, 1x12 thumb cluster), Holes for Track points
 10 Encoders (8 push button encoder, 2 through shaft encoder)
-+12 Latching Button
+12 Latching Button
+
+##### RGBW LED Matrix
+
+72 RGBW LEDs for the switch matrix (max 87 RGBW)
+15 Other LEDs
 
 ##### Issues
 
