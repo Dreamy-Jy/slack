@@ -1799,6 +1799,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "don't forget to add a the finial row with the latching buttons"
+		(exclude_from_sim no)
+		(at 49.022 241.808 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8ae32c6f-8fa5-4393-ae65-f973365d3dbc")
+	)
 	(junction
 		(at 252.73 87.63)
 		(diameter 0)
@@ -2644,15 +2654,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fb43fb87-32e6-4985-ac4d-af213f3c4a5c")
-	)
-	(bus_entry
-		(at 259.08 104.14)
-		(size 2.54 2.54)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77ae7add-d65a-4489-81c9-6b52bb775956")
 	)
 	(wire
 		(pts
