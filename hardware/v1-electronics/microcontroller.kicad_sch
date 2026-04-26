@@ -3235,6 +3235,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "Add programming circuits to the board"
+		(exclude_from_sim no)
+		(at 225.044 141.224 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "03b20c1d-4343-4435-83cf-f1c0a674336f")
+	)
 	(text "figure where to place these signal if at all.\nI should probably set ce to ground or disconnected."
 		(exclude_from_sim no)
 		(at 207.264 95.25 0)
@@ -3985,7 +3995,7 @@
 			)
 		)
 	)
-	(global_label "V_MCU"
+	(global_label "V_SYS"
 		(shape input)
 		(at 209.55 36.83 0)
 		(fields_autoplaced yes)
@@ -3997,7 +4007,7 @@
 		)
 		(uuid "573052fd-8133-43dc-94b0-bc992d1c2867")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 218.6433 36.83 0)
+			(at 218.099 36.83 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4033,7 +4043,7 @@
 			)
 		)
 	)
-	(global_label "V_MCU"
+	(global_label "V_SYS"
 		(shape input)
 		(at 256.54 140.97 270)
 		(fields_autoplaced yes)
@@ -4045,7 +4055,7 @@
 		)
 		(uuid "5ffa7ab5-fb47-4995-a1e7-e97771260709")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 256.54 150.0633 90)
+			(at 256.54 149.519 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

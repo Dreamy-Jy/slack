@@ -63,7 +63,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "Untitled.kicad_prl",
+    "filename": "slack.kicad_prl",
     "version": 5
   },
   "net_inspector_panel": {
@@ -101,7 +101,7 @@
       77,
       74,
       40,
-      0
+      42
     ],
     "custom_group_rules": [],
     "expanded_rows": [],

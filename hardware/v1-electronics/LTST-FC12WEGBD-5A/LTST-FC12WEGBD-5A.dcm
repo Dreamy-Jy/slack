@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTST-FC12WEGBD-5A
+D LED RGBW DIFFUSED SMD
+K
+F https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf
+$ENDCMP
+#
+#End Doc Library
