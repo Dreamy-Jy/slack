@@ -1,5 +1,12 @@
 #
 
+It's proving more difficult than I imagined to be. There may not be a chip that does 5v in with 3v and 5v out. I can just use 5v in and step down in the micro controller.
+
+what does decoupling mean in electronics?
+
+I'm building the power circuit for the bluetooth/wired keyboard I'm designing.
+
+
 ## Plan
 
 We'll to add battery circuitry
@@ -11,7 +18,7 @@ We'll need to add programming circuitry
   - RC circuits
   - Electronic Filters: Why, When, How
 - Source: Switch Matrix Diodes: Why
-
+  - IC circuits
 - Source: MCU Module Configuration
   - Why are there 2 oscillators 32 mHz (XC) and 32.768 kHz (XL)? Why is one optional?
     - This is some what covered in Chapter 5.4

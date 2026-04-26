@@ -22,6 +22,58 @@
 
 #### Physical
 
+##### Power
+
+USB-C at USB 2.0
+
+Power Path Charger to allow for charging and operation at the same time.
+
+I don't know how to make power circuitry or design a charger.
+
+I'll need to setup time on thursday to test the board at plugged in, and at battery power.
+
+Down the line upgrade to mcu controlled power circuits.
+
+Power gauges are a seperate circuit all together. I want a hardware fuel gauge, and down the line battery health.
+
+ideal diode chip.
+
+
+Power path:
+Power mux
+USB -> charger -> fuel gauge -> battery
+
+step up regulator TPS613222
+
+Compare a power chip to power train:
+
+Power Train:
+Power Path Charger
+Step-up Regulator
+Batter Full Gauge
+
+Power Chip - MP2632,
+
+LM66200 -> power mux (ideal diode)
+
+Ideal power chip:
+
+- hardware and software status
+- software control (i2c, etc.)
+- battery monitoring:
+  - charge level
+  - incompatible battery detection
+  - battery health poor
+- output:
+  - 2 output (3v and 5v)
+
+USB power delivery (for usb 2.0 or 3.0??)
+
+A shitty first pass at a power circuitry
+USB-C -> Battery Charger -> Boost Converter
+
+##### Microcontroller Configuration
+
 ##### Switch Matrix
 
 5 x 12 ULP Switches (Column Linear Alice with Thumb Clusters, 4 x 12 main part, 1x12 thumb cluster), Holes for Track points
@@ -64,16 +116,16 @@ I'll need to adapt this to use Latches and Encoders
 Experimental modules:
 
 - pointing device modules
-  - trackpad modules (Framework FRANFT0001)
+  - trackpad modules
+    - Framework FRANFT0001 (PixArt PCT3854QR)
+    - [ploopy touchpad](https://github.com/ploopyco/trackpad) (Microchip ATMXT1066TD)
+    - [Patchouli](https://gitlab.com/yukidama/patchouli) (?)
   - trackpoint modules (sprintek SK8707-06)
   - trackball modules?
 - display modules
   - What will be the controls for this display?
 - power electronics circuits
 - Haptic Feedback Modules
-
-https://patchouli.readthedocs.io/en/latest/
-https://github.com/ploopyco/trackpad
 
 [ ] modernize existing drivers the [drv2605l-rs](https://github.com/jacobrosenthal/drv2605l-rs/tree/master) driver to use [embedded_hal](https://github.com/rust-embedded/embedded-hal/tree/master) v1 and the latest [bitfield](https://github.com/dzamlo/rust-bitfield) version.
 

@@ -38,16 +38,21 @@ Plank or split?
 
 ## Hardware
 
+1. select values and foot prints for passive components: Resistors, Capacitors, Diodes
+
 ### [ ] Switch Matrix
 
-1. [ ] select values for Rotary Encoder Filters: resistors and capacitors.
+1. [ ] Select values: switch diodes, rotary encoder filter
 
 ### [ ] Led Matrix
 
 ### [ ] Microcontroller
 
+1. [ ] implement programming circuitry
+
 ### [ ] Power Circuits
 
+1. [ ] select a actual usb 2.0 usb-c female component
 
 I need to define power circuitry
 Select a configuration for the mcu.
