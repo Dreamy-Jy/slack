@@ -656,7 +656,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "LED1-36",
+    "used_designators": "J1-2",
     "variants": []
   },
   "sheets": [
@@ -670,7 +670,7 @@
     ],
     [
       "a24a3d75-e466-4feb-b98a-50e4b7a182a1",
-      "microcontroller"
+      "Microcontroller, Power, and LED Driver"
     ],
     [
       "db75d338-3a03-4feb-a76e-be79011cbec0",

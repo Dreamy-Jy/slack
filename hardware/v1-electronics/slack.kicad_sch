@@ -67,7 +67,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "a24a3d75-e466-4feb-b98a-50e4b7a182a1")
-		(property "Sheetname" "microcontroller"
+		(property "Sheetname" "Microcontroller, Power, and LED Driver"
 			(at 59.055 154.2284 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -78,7 +78,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "microcontroller.kicad_sch"
+		(property "Sheetfile" "mcu_power_led.kicad_sch"
 			(at 59.055 236.1696 0)
 			(show_name no)
 			(do_not_autoplace no)
