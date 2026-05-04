@@ -5,287 +5,6 @@
 	(uuid "2e191954-73a8-49c1-9d04-b35e0e908f4a")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:Conn_01x01_Pin"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x01_Pin"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x01, script generated"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_01x01_Pin_1_1"
-				(rectangle
-					(start 0.8636 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 0.8636 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Connector:Conn_01x01_Socket"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x01_Socket"
-				(at 0 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x01, script generated"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_01x01_Socket_1_1"
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -0.508)
-					(mid -0.5058 0)
-					(end 0 0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector:USB_C_Receptacle_USB2.0_14P"
 			(pin_names
 				(offset 1.016)
@@ -1418,7 +1137,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Lumissil Microsystems IS31FL3741A-QFLS4-TR:IS31FL3741A-QFLS4-TR"
+		(symbol "Lumissil Microsystems:IS31FL3741A-QFLS4-TR"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4855,12 +4574,6 @@
 		(uuid "52e15e6b-cf68-4aa3-9841-dbf2fe091713")
 	)
 	(junction
-		(at 96.52 152.4)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5f70ab7d-267c-4fe0-bad1-a9c1ec008d8d")
-	)
-	(junction
 		(at 201.93 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4877,6 +4590,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7804c5c9-e6c8-48cf-acd4-39b5676fefc3")
+	)
+	(junction
+		(at 96.52 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7af29345-7af9-4417-9f5b-0a560af52b7d")
 	)
 	(junction
 		(at 256.54 135.89)
@@ -8450,348 +8169,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Lumissil Microsystems IS31FL3741A-QFLS4-TR:IS31FL3741A-QFLS4-TR")
-		(at 119.38 127 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6278c0e1-c0fc-4062-a871-b7f7c9c175a9")
-		(property "Reference" "IC1"
-			(at 127 104.14 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "IS31FL3741A-QFLS4-TR"
-			(at 127 106.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "QFN40P700X700X80-61N-D"
-			(at 168.91 211.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "https://www.mouser.com/datasheet/2/198/IS31FL3741A_DS-1839558.pdf"
-			(at 168.91 311.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "IC 399 MATRIX LED DRIVER, 60QFN"
-			(at 119.38 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "0.8"
-			(at 168.91 511.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "Lumissil Microsystems"
-			(at 168.91 611.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "IS31FL3741A-QFLS4-TR"
-			(at 168.91 711.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" "870-IS31FL3741AQFLS4"
-			(at 168.91 811.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Lumissil/IS31FL3741A-QFLS4-TR?qs=vHuUswq2%252BswTP7dMFLQAvQ%3D%3D"
-			(at 168.91 911.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" "IS31FL3741A-QFLS4-TR"
-			(at 168.91 1011.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/is31fl3741a-qfls4-tr/integrated-silicon-solution-inc?utm_currency=USD&region=nac"
-			(at 168.91 1111.76 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "59"
-			(uuid "896206db-5cd6-4735-9369-53095d557cc8")
-		)
-		(pin "61"
-			(uuid "4de858f7-6d73-488f-83ee-8edacd677a68")
-		)
-		(pin "60"
-			(uuid "79670ebf-de13-4ecb-bdbf-39acf369b5f2")
-		)
-		(pin "57"
-			(uuid "ba063272-c4e7-47ad-a28f-17c791a9fed9")
-		)
-		(pin "56"
-			(uuid "28435709-72fb-4862-8ad5-44bbc93c98bc")
-		)
-		(pin "40"
-			(uuid "a4930e2c-1d7e-46ce-8654-82a0bba961eb")
-		)
-		(pin "41"
-			(uuid "53230e23-95f0-4a68-bf58-f1f47c1ef8a0")
-		)
-		(pin "42"
-			(uuid "ad0a00b3-7266-409c-9e5d-bff03708fc3a")
-		)
-		(pin "43"
-			(uuid "8e70ad50-0386-415b-9c8f-74f9e74ee9b6")
-		)
-		(pin "44"
-			(uuid "e1e89711-9db9-4c6f-97da-81e4e9ec82c7")
-		)
-		(pin "45"
-			(uuid "0e5da12d-c631-4113-a273-2919462ed38a")
-		)
-		(pin "46"
-			(uuid "ec47ff37-8dc1-43e6-becd-d2900e715110")
-		)
-		(pin "47"
-			(uuid "8a932d3b-c08d-4de9-ad5d-1cdfcbdf9371")
-		)
-		(pin "48"
-			(uuid "7723cef0-9282-464a-a82f-94ec544f1b9f")
-		)
-		(pin "49"
-			(uuid "a041a73a-2678-4cc9-a808-a535c1cfbfc7")
-		)
-		(pin "50"
-			(uuid "60cb6201-9d56-43d5-a760-18cc5260d386")
-		)
-		(pin "51"
-			(uuid "ae0ed581-76cd-4197-9f80-810cc245b753")
-		)
-		(pin "52"
-			(uuid "56b5e99c-93f3-4a3b-b8d0-8f17020375df")
-		)
-		(pin "53"
-			(uuid "66703020-ea19-4dcb-9714-1a6974975a91")
-		)
-		(pin "55"
-			(uuid "9c37bda8-6aa6-4e16-a675-c7e0bd219d6b")
-		)
-		(pin "54"
-			(uuid "f955cd0f-16ef-47eb-afce-7e06f544d3ad")
-		)
-		(pin "37"
-			(uuid "b93b47fb-696d-4d49-baa7-fc7c839518d4")
-		)
-		(pin "58"
-			(uuid "bf4e519a-7aa9-413c-b5f2-c1326b9b2e5a")
-		)
-		(pin "38"
-			(uuid "26702455-9790-451c-b421-6ee9a01f396c")
-		)
-		(pin "39"
-			(uuid "829fded2-547e-4553-baa4-d60db5629d22")
-		)
-		(pin "16"
-			(uuid "dc81c462-c09f-45d7-815c-098d4f103bc7")
-		)
-		(pin "13"
-			(uuid "92d2d463-b26b-4870-8239-7abdc017fce6")
-		)
-		(pin "15"
-			(uuid "41596cff-7780-4b01-b62a-399dba0449f2")
-		)
-		(pin "14"
-			(uuid "c982ac63-b51e-45cf-b583-73dc989639bc")
-		)
-		(pin "11"
-			(uuid "ce7e7534-b4a7-43dd-af1f-28d7ab1f8f07")
-		)
-		(pin "12"
-			(uuid "153d8feb-59cd-4db6-80fa-f5fd81aa923b")
-		)
-		(pin "31"
-			(uuid "c23973af-4d6c-455f-b912-dcdf4033519c")
-		)
-		(pin "36"
-			(uuid "432e842d-cc3c-41ea-a01e-71ecebcf2e38")
-		)
-		(pin "1"
-			(uuid "56be0f41-ab14-48c2-8a3f-78e136e8eba9")
-		)
-		(pin "4"
-			(uuid "44590534-5f65-4f7f-bd0b-3c878d5d4578")
-		)
-		(pin "3"
-			(uuid "59400f2f-6687-44d6-a823-668600e4a1e5")
-		)
-		(pin "6"
-			(uuid "c218bdd1-0627-4a94-8fc8-a2417e50cc91")
-		)
-		(pin "5"
-			(uuid "06de123b-5697-4b1c-9d77-4a336ccdb6b2")
-		)
-		(pin "7"
-			(uuid "17e4e69d-4957-4c45-b648-0450ff59e581")
-		)
-		(pin "2"
-			(uuid "44efabd0-81c9-4b42-af96-ce35e076d1e9")
-		)
-		(pin "33"
-			(uuid "a4dc0fb2-4b0e-4758-bff3-04674e030feb")
-		)
-		(pin "32"
-			(uuid "e41651da-b093-40bc-b7b9-6d13b80361d5")
-		)
-		(pin "9"
-			(uuid "cc1a6a33-a334-4186-b70d-b04260e03b22")
-		)
-		(pin "10"
-			(uuid "9d025388-facb-46ed-b211-cb44de04a772")
-		)
-		(pin "17"
-			(uuid "a7e2b38f-ccda-495c-ae8e-e22ecc7f5426")
-		)
-		(pin "25"
-			(uuid "488ad78c-8d88-42cf-8539-127acf554e34")
-		)
-		(pin "20"
-			(uuid "4a12716a-0a59-4696-aa8a-5cbebaa8d6c6")
-		)
-		(pin "22"
-			(uuid "632608e7-c987-4e73-938a-b69f1ccb4c56")
-		)
-		(pin "23"
-			(uuid "a445bc6d-89db-4678-86ff-ee608efa982f")
-		)
-		(pin "21"
-			(uuid "cd92f9c6-c8e8-4d76-9f9d-e2104a628649")
-		)
-		(pin "19"
-			(uuid "318f11b2-2ee1-403b-bbd9-04f7c191a346")
-		)
-		(pin "18"
-			(uuid "731af585-7c65-44e9-a4cc-50d21db98c1b")
-		)
-		(pin "26"
-			(uuid "d353a5a1-0ee4-496e-8662-3fb830e6c926")
-		)
-		(pin "24"
-			(uuid "b4f1bf60-7e0f-434f-b8b1-d6665c95bf50")
-		)
-		(pin "30"
-			(uuid "f7a35f86-adeb-4e8f-8881-d09dcf3f33e2")
-		)
-		(pin "29"
-			(uuid "9f0cabf6-30f4-43ad-b97e-2c0049d60922")
-		)
-		(pin "8"
-			(uuid "4193c110-8f57-4290-bfb2-a545fff685a5")
-		)
-		(pin "27"
-			(uuid "18ff8bf4-b9b3-428b-9d82-0a7f84028ed7")
-		)
-		(pin "34"
-			(uuid "02fb43b3-7547-450b-99d9-4a71a7f9e388")
-		)
-		(pin "35"
-			(uuid "2a66048c-af3e-4697-b828-c7d18097bc60")
-		)
-		(pin "28"
-			(uuid "87fc538e-9164-4575-8181-01c2066ce439")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "IC1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Regulator_Switching:TPS613222ADBZ")
 		(at 186.69 39.37 0)
 		(unit 1)
@@ -9911,82 +9288,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x01_Pin")
-		(at 66.04 93.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "95bcdb69-a7fd-402a-8ffc-d40661b16ad9")
-		(property "Reference" "J1"
-			(at 76.2 88.9 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x01_Pin"
-			(at 76.2 91.44 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 66.04 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9c019632-537e-4e3b-a9f3-aad80daf4712")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 45.72 85.09 0)
 		(unit 1)
@@ -10547,6 +9848,349 @@
 		)
 	)
 	(symbol
+		(lib_id "Lumissil Microsystems:IS31FL3741A-QFLS4-TR")
+		(at 119.38 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b8632015-ae2e-4e33-8719-97b6f10b07d9")
+		(property "Reference" "IC2"
+			(at 180.34 120.5798 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "IS31FL3741A-QFLS4-TR"
+			(at 180.34 123.1198 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "QFN40P700X700X80-61N-D"
+			(at 168.91 211.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/198/IS31FL3741A_DS-1839558.pdf"
+			(at 168.91 311.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "IC 399 MATRIX LED DRIVER, 60QFN"
+			(at 119.38 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.8"
+			(at 168.91 511.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lumissil Microsystems"
+			(at 168.91 611.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "IS31FL3741A-QFLS4-TR"
+			(at 168.91 711.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "870-IS31FL3741AQFLS4"
+			(at 168.91 811.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Lumissil/IS31FL3741A-QFLS4-TR?qs=vHuUswq2%252BswTP7dMFLQAvQ%3D%3D"
+			(at 168.91 911.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "IS31FL3741A-QFLS4-TR"
+			(at 168.91 1011.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/is31fl3741a-qfls4-tr/integrated-silicon-solution-inc?utm_currency=USD&region=nac"
+			(at 168.91 1111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "45"
+			(uuid "662577e7-ffd9-4cb4-9148-7cd587a7eafa")
+		)
+		(pin "58"
+			(uuid "2f563413-234c-4c7c-b918-5e7e49945908")
+		)
+		(pin "57"
+			(uuid "5a1e1a06-7d63-45b2-bf35-952b3e20250f")
+		)
+		(pin "59"
+			(uuid "09c530cb-e3e2-4d37-bcd9-18c080ae16ba")
+		)
+		(pin "60"
+			(uuid "c7be5535-43f9-43c2-8ef7-bb1dfc2d78ce")
+		)
+		(pin "61"
+			(uuid "9660b7b6-52b3-4b5d-89ad-983d2ec76100")
+		)
+		(pin "47"
+			(uuid "8d1a2606-9372-444f-b7da-609d714db5fc")
+		)
+		(pin "51"
+			(uuid "49cea10a-ae1f-4da2-bb53-c93213ad28b7")
+		)
+		(pin "52"
+			(uuid "2d87ca90-a270-4387-be11-2b396622eb7e")
+		)
+		(pin "53"
+			(uuid "b642db81-2452-420c-a9d4-19d927edbf1c")
+		)
+		(pin "54"
+			(uuid "0f9c3aa2-8de8-40a4-afb4-f2c470ca3112")
+		)
+		(pin "55"
+			(uuid "5628354d-90dc-48bb-8f27-9d24c723d704")
+		)
+		(pin "56"
+			(uuid "0540e0e5-3f9f-4d77-a94b-425a35448d96")
+		)
+		(pin "46"
+			(uuid "2696cb92-0a03-4bf2-ab71-f7022cf80f93")
+		)
+		(pin "49"
+			(uuid "97d9bde7-89a7-47ee-bbff-1e0d1acd911d")
+		)
+		(pin "50"
+			(uuid "04d70635-6b96-4fb9-bb85-6232b9af0f13")
+		)
+		(pin "48"
+			(uuid "b7d80e62-8829-4b0e-872e-112eaa3caab1")
+		)
+		(pin "44"
+			(uuid "b8198852-41bc-44b4-bfc4-fa884bfee583")
+		)
+		(pin "43"
+			(uuid "43479d17-116d-4b7b-8d91-b641e10307aa")
+		)
+		(pin "42"
+			(uuid "a3c7636c-e882-4038-b8f6-e6a8b8642318")
+		)
+		(pin "41"
+			(uuid "a8238020-ddad-49ed-82a7-99f8b915e6e4")
+		)
+		(pin "25"
+			(uuid "ace2b9b0-9cb7-4835-bbbc-e9dccf6bdd69")
+		)
+		(pin "24"
+			(uuid "2da03fb0-405d-43a5-92d2-71f52446f546")
+		)
+		(pin "40"
+			(uuid "a7d9bf09-7e0c-4474-9b36-ffc4311b1edf")
+		)
+		(pin "39"
+			(uuid "a375b1e6-1e00-4d84-a513-a4599bf3821d")
+		)
+		(pin "38"
+			(uuid "5c491989-bf78-4510-8bce-d1003b873364")
+		)
+		(pin "37"
+			(uuid "4fbda92f-bed5-483f-83a1-63f574ca0869")
+		)
+		(pin "36"
+			(uuid "6f30f6d1-e80f-4658-98c6-177cdfdbdffa")
+		)
+		(pin "35"
+			(uuid "dea1162d-c34e-4153-86be-3cc6e7c04169")
+		)
+		(pin "34"
+			(uuid "9a8dc340-6ffd-4d53-8264-80bc8661c17c")
+		)
+		(pin "28"
+			(uuid "40054594-7110-45dc-878e-8911a08431e5")
+		)
+		(pin "31"
+			(uuid "d7862727-36a3-46ac-8b6e-9f72569a4582")
+		)
+		(pin "32"
+			(uuid "4d85079d-6f46-444b-a7b6-4caaf63f52df")
+		)
+		(pin "29"
+			(uuid "6fec31f7-658d-4cd8-948a-83cecde28774")
+		)
+		(pin "30"
+			(uuid "6cdb93f1-cd30-43db-9d48-fd6a5aabe79c")
+		)
+		(pin "33"
+			(uuid "afc3e71c-495f-44e2-a505-d33d0b44a0de")
+		)
+		(pin "26"
+			(uuid "80d702f1-66da-4525-9d26-d22638023a1f")
+		)
+		(pin "27"
+			(uuid "6fe78269-7b58-4a9e-bfd9-9f59f9b957fc")
+		)
+		(pin "20"
+			(uuid "53946073-61dd-4ffe-bfc9-954dffae6ba0")
+		)
+		(pin "19"
+			(uuid "8bff28da-9613-49f2-99a3-b96dd0c63d04")
+		)
+		(pin "17"
+			(uuid "9aef1378-5e11-415c-8381-96c378307741")
+		)
+		(pin "18"
+			(uuid "637d2f9e-6098-47ee-a12b-b91bfecbff1d")
+		)
+		(pin "16"
+			(uuid "c19d24f8-676c-473f-97a8-7313152a3fff")
+		)
+		(pin "21"
+			(uuid "74e7b05a-cb3e-4493-b3b2-e224facf9b41")
+		)
+		(pin "12"
+			(uuid "d1b1f757-596a-4d35-b71c-30966e366d26")
+		)
+		(pin "5"
+			(uuid "72772788-a909-4989-a661-f6d913c74f2a")
+		)
+		(pin "1"
+			(uuid "cbe20b6f-997e-48dd-8211-a636a052090e")
+		)
+		(pin "22"
+			(uuid "2a5f4f60-b05f-4bad-a79f-c3e53f0f9743")
+		)
+		(pin "23"
+			(uuid "d7fccd6b-dff2-4397-b03e-c8af39150626")
+		)
+		(pin "8"
+			(uuid "bcea1b67-31c0-4064-8aa7-6f36fe76666f")
+		)
+		(pin "9"
+			(uuid "fe9fc2d0-598d-4ee0-9fe4-5ea56749b3e1")
+		)
+		(pin "10"
+			(uuid "8c6a11b5-d7ee-4876-bd01-caa1391a2351")
+		)
+		(pin "11"
+			(uuid "65fd1416-ea3d-401f-9a0f-3d595154a1a0")
+		)
+		(pin "4"
+			(uuid "8565d44c-5f20-4068-948d-690ab205184a")
+		)
+		(pin "3"
+			(uuid "3c575ff0-1b7a-44ce-87f5-5293204e9fad")
+		)
+		(pin "2"
+			(uuid "b6fd4cfe-4e39-480b-810f-319da73f7594")
+		)
+		(pin "6"
+			(uuid "1a0dc7b0-51c8-4cc6-b794-5a3b04a03f35")
+		)
+		(pin "7"
+			(uuid "777bd5ef-dec6-4585-857a-27cca1bb158d")
+		)
+		(pin "15"
+			(uuid "d8d5b266-6320-407b-8d3f-04b067a0374e")
+		)
+		(pin "14"
+			(uuid "543d3755-25ac-4b50-821b-09f9c7af8f95")
+		)
+		(pin "13"
+			(uuid "e74edf5c-ab85-42b7-9068-75cc6381dda4")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
+					(reference "IC2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 135.89 40.64 180)
 		(unit 1)
@@ -10698,84 +10342,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
 					(reference "#PWR054")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x01_Socket")
-		(at 66.04 93.98 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "ca954d56-a8a2-49f2-9e22-541a888d52b4")
-		(property "Reference" "J2"
-			(at 58.42 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Conn_01x01_Socket"
-			(at 58.42 99.06 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 66.04 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 66.04 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x01, script generated"
-			(at 66.04 93.98 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e3b16280-af44-4fef-b8ee-b7340af96278")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "J2")
 					(unit 1)
 				)
 			)

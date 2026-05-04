@@ -6,15 +6,14 @@
 	(paper "A2")
 	(lib_symbols)
 	(sheet
-		(at 314.325 46.355)
-		(size 145.415 97.155)
+		(at 159.385 15.875)
+		(size 145.415 80.645)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
-			(width 0.1524)
+			(width 0.5)
 			(type solid)
 		)
 		(fill
@@ -22,23 +21,25 @@
 		)
 		(uuid "06611ce3-ad03-4ae2-812b-c9d75e348e6b")
 		(property "Sheetname" "Switch Matrix"
-			(at 314.325 45.6434 0)
+			(at 160.02 22.86 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 5 5)
+					(thickness 1)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
 		)
 		(property "Sheetfile" "switch_matrix.kicad_sch"
-			(at 314.325 144.0946 0)
+			(at 162.56 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 2 2)
 				)
 				(justify left top)
 			)
@@ -52,41 +53,41 @@
 		)
 	)
 	(sheet
-		(at 59.055 154.94)
-		(size 149.225 80.645)
+		(at 13.335 15.24)
+		(size 144.145 80.645)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
-			(width 0.1524)
+			(width 0.5)
 			(type solid)
 		)
 		(fill
 			(color 0 0 0 0)
 		)
 		(uuid "a24a3d75-e466-4feb-b98a-50e4b7a182a1")
-		(property "Sheetname" "Microcontroller, Power, and LED Driver"
-			(at 59.055 154.2284 0)
+		(property "Sheetname" "Power Train"
+			(at 35.56 20.32 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 5 5)
+					(thickness 0.254)
+					(bold yes)
 				)
-				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "mcu_power_led.kicad_sch"
-			(at 59.055 236.1696 0)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 30.48 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 2 2)
+					(italic yes)
 				)
-				(justify left top)
 			)
 		)
 		(instances
@@ -98,15 +99,62 @@
 		)
 	)
 	(sheet
-		(at 274.955 207.01)
-		(size 170.18 112.395)
+		(at 160.02 99.06)
+		(size 144.78 73.66)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(stroke
-			(width 0.1524)
+			(width 0.5)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "af928721-79e0-4dbd-9302-cd57a57ce5a4")
+		(property "Sheetname" "Controller ICs"
+			(at 160.02 106.68 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 5 5)
+					(thickness 0.254)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "controller.kicad_sch"
+			(at 162.56 167.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2 2)
+					(italic yes)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 13.335 97.79)
+		(size 144.145 74.93)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.5)
 			(type solid)
 		)
 		(fill
@@ -114,23 +162,25 @@
 		)
 		(uuid "db75d338-3a03-4feb-a76e-be79011cbec0")
 		(property "Sheetname" "LED Matrix"
-			(at 274.955 206.2984 0)
+			(at 12.7 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 5 5)
+					(thickness 1)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
 		)
 		(property "Sheetfile" "led_matrix.kicad_sch"
-			(at 274.955 319.9896 0)
+			(at 15.24 167.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 2 2)
 				)
 				(justify left top)
 			)
