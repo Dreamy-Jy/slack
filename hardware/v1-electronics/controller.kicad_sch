@@ -5292,6 +5292,30 @@
 			)
 		)
 	)
+	(global_label "INTB1"
+		(shape input)
+		(at 317.5 66.04 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a60beb61-4d36-413c-80dc-f7f6373f1e7b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 309.1324 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "I2C1_SDA"
 		(shape input)
 		(at 124.46 25.4 90)
