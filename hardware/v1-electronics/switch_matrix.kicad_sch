@@ -6215,7 +6215,7 @@
 			)
 		)
 	)
-	(global_label "RE10_A-Channel"
+	(global_label "RE10_B-Channel"
 		(shape input)
 		(at 227.33 214.63 180)
 		(fields_autoplaced yes)
@@ -6227,7 +6227,7 @@
 		)
 		(uuid "4a44df80-78cc-48cd-8927-f805f20acf5e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 208.2584 214.63 0)
+			(at 208.077 214.63 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
