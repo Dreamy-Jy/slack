@@ -36,8 +36,9 @@ from pathlib import Path
 
 from skip import Schematic
 
-
-SCHEMATIC_PATH = Path("/path/to/your/board.kicad_sch")
+SCHEMATIC_PATH = Path(
+    "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/led_matrix.kicad_sch"
+)
 
 
 def build_rename_map() -> dict[str, str]:

@@ -82,7 +82,7 @@ USB-C -> Battery Charger -> Boost Converter
 
 ##### RGBW LED Matrix
 
-72 RGBW LEDs for the switch matrix (max 87 RGBW)
+84 RGBW LEDs for the switch matrix (max 87 RGBW)
 15 Other LEDs
 
 ##### Issues
