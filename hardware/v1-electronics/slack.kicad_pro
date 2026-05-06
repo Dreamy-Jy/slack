@@ -782,7 +782,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "R41-44,R67-69,R119-177,LED1-86,LED91",
+    "used_designators": "C22-23,R41-44,R67-69,R119-177,J1-2,#PWR51-52,#PWR58-59,LED1-86,LED91",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",
