@@ -763,7 +763,7 @@
 		(end 513.08 660.4)
 		(stroke
 			(width 0.5)
-			(type dash_dot)
+			(type dash_dot_dot)
 		)
 		(fill
 			(type none)
@@ -775,7 +775,7 @@
 		(end 513.08 335.28)
 		(stroke
 			(width 0.5)
-			(type dash_dot)
+			(type dash_dot_dot)
 		)
 		(fill
 			(type none)

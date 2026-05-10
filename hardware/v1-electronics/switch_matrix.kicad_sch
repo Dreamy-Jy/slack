@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "ecfba3a3-2647-4d87-9ee3-68b7aaed6442")
-	(paper "A3")
+	(paper "User" 450 320)
 	(lib_symbols
 		(symbol "Device:C_Small"
 			(pin_numbers
@@ -1192,6 +1192,180 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Switch:SW_DIP_x01"
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 0 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SW_DIP_x01"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "dip switch"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SW?DIP?x1*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SW_DIP_x01_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.524 0.127) (xy 2.3622 1.1684)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SW_DIP_x01_0_1"
+				(rectangle
+					(start -3.81 2.54)
+					(end 3.81 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "SW_DIP_x01_1_1"
+				(pin passive line
+					(at -7.62 0 0)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 0 180)
+					(length 5.08)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switch:SW_Push"
 			(pin_numbers
 				(hide yes)
@@ -1799,21 +1973,39 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "don't forget to add a the finial row with the latching buttons"
+	(text "Latch Row"
 		(exclude_from_sim no)
-		(at 49.022 241.808 0)
+		(at 406.4 246.38 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 5 5)
+				(thickness 0.625)
 			)
 		)
-		(uuid "8ae32c6f-8fa5-4393-ae65-f973365d3dbc")
+		(uuid "8fc5ffe4-8c6c-4413-8e8b-c27e24fb22e6")
+	)
+	(text "Main Matrix"
+		(exclude_from_sim no)
+		(at 408.94 17.78 0)
+		(effects
+			(font
+				(size 5 5)
+				(thickness 0.625)
+			)
+		)
+		(uuid "a45c2bdd-224d-42ab-a58f-8dd17f48fc2a")
 	)
 	(junction
 		(at 252.73 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "011af70c-a4c1-45eb-aa91-87d920426af8")
+	)
+	(junction
+		(at 322.58 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "014c29bd-dda2-4239-b8ca-5cea5db9d809")
 	)
 	(junction
 		(at 346.71 138.43)
@@ -1826,6 +2018,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "03171986-2352-4302-b28e-15aa45a074fd")
+	)
+	(junction
+		(at 271.78 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "045bfe77-bbe0-4f03-8bbc-3c06dcc277a1")
 	)
 	(junction
 		(at 53.34 50.8)
@@ -1906,6 +2104,12 @@
 		(uuid "134294f8-c1c9-40ac-a250-0fc2319b78b1")
 	)
 	(junction
+		(at 144.78 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "13c16058-61b5-4a50-a575-3b107c6450f9")
+	)
+	(junction
 		(at 59.69 168.91)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1940,6 +2144,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1f482922-756e-464a-85c6-8ad7380e5564")
+	)
+	(junction
+		(at 43.18 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "234109bd-9447-4806-b565-b0e21e281efb")
 	)
 	(junction
 		(at 353.06 38.1)
@@ -2056,6 +2266,12 @@
 		(uuid "3f411b34-0d33-4f92-83d7-6710314f9b62")
 	)
 	(junction
+		(at 93.98 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "40bd4a95-590b-47c5-b6c6-691c4ac4b96d")
+	)
+	(junction
 		(at 154.94 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2096,6 +2312,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4ab9a4b5-5147-4a9a-8362-ac9c0da962a9")
+	)
+	(junction
+		(at 347.98 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d964c77-39d1-4707-b730-4238b8304792")
 	)
 	(junction
 		(at 128.27 181.61)
@@ -2176,6 +2398,18 @@
 		(uuid "62c1771e-5608-4037-b7cc-3e35d05366c7")
 	)
 	(junction
+		(at 246.38 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62d2f284-5447-4118-8cc7-6be944a3be61")
+	)
+	(junction
+		(at 297.18 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "64267b4b-5828-4eb0-ba94-41ea6b9d3e18")
+	)
+	(junction
 		(at 92.71 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2218,6 +2452,12 @@
 		(uuid "6d038094-ef9a-41f1-acff-a49e0e86a1d9")
 	)
 	(junction
+		(at 195.58 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6dc0ea57-5607-4abc-b79b-cbb6a594a2b5")
+	)
+	(junction
 		(at 36.83 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2258,6 +2498,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "75674e64-1ff9-42a0-b91f-52da880b210e")
+	)
+	(junction
+		(at 119.38 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "759652ae-e62d-40f6-a32d-a31b571677b6")
+	)
+	(junction
+		(at 170.18 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "75d7c115-7aa2-49ed-8729-aa118c7a87ac")
 	)
 	(junction
 		(at 330.2 50.8)
@@ -2464,6 +2716,12 @@
 		(uuid "bac19ad3-3d87-4978-af9e-e6925e68c80e")
 	)
 	(junction
+		(at 68.58 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bb4d0401-ae86-4dba-bd1b-f79462db8c13")
+	)
+	(junction
 		(at 274.32 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2486,6 +2744,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c856ea53-742a-44ac-a7f0-a1d7fb5b2702")
+	)
+	(junction
+		(at 220.98 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c8fc007d-8ab3-4b81-9360-7654b0a4c08c")
 	)
 	(junction
 		(at 119.38 50.8)
@@ -2657,6 +2921,16 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 254) (xy 104.14 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00299a57-655f-4130-95f0-692af8f9c84f")
+	)
+	(wire
+		(pts
 			(xy 252.73 38.1) (xy 242.57 38.1)
 		)
 		(stroke
@@ -2687,6 +2961,16 @@
 	)
 	(wire
 		(pts
+			(xy 129.54 254) (xy 129.54 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01747c08-fbaa-4960-bdc2-b8be375cd003")
+	)
+	(wire
+		(pts
 			(xy 181.61 179.07) (xy 181.61 173.99)
 		)
 		(stroke
@@ -2704,6 +2988,16 @@
 			(type default)
 		)
 		(uuid "03ad91be-6426-43c9-9d0f-45adab1fea31")
+	)
+	(wire
+		(pts
+			(xy 281.94 254) (xy 281.94 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05688ced-b149-4908-bf77-b553f593025b")
 	)
 	(wire
 		(pts
@@ -2857,6 +3151,26 @@
 	)
 	(wire
 		(pts
+			(xy 330.2 254) (xy 332.74 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e7a88e6-af50-4d40-a599-dfd9b0024819")
+	)
+	(wire
+		(pts
+			(xy 101.6 254) (xy 104.14 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f047b04-fd21-4cb7-9edc-e14833266e02")
+	)
+	(wire
+		(pts
 			(xy 187.96 204.47) (xy 187.96 209.55)
 		)
 		(stroke
@@ -2914,6 +3228,16 @@
 			(type default)
 		)
 		(uuid "119893d9-fb56-4279-8224-5278e7956fa2")
+	)
+	(wire
+		(pts
+			(xy 231.14 254) (xy 231.14 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11c69d14-cb19-4719-9d6a-4effbdf72aa4")
 	)
 	(wire
 		(pts
@@ -3037,6 +3361,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 254) (xy 205.74 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19374815-4908-4fc9-9cf4-eecf5a1e23a5")
+	)
+	(wire
+		(pts
 			(xy 161.29 220.98) (xy 161.29 214.63)
 		)
 		(stroke
@@ -3124,6 +3458,16 @@
 			(type default)
 		)
 		(uuid "20fb00d5-2424-4ab6-b4ad-7e426a8b859f")
+	)
+	(wire
+		(pts
+			(xy 93.98 266.7) (xy 119.38 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "215f3769-6c24-4a09-8493-0506ad1a7990")
 	)
 	(wire
 		(pts
@@ -3224,6 +3568,16 @@
 			(type default)
 		)
 		(uuid "25148e54-905f-4266-8673-cb57a01f867e")
+	)
+	(wire
+		(pts
+			(xy 254 254) (xy 256.54 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2589ef28-a2a3-4d8b-9325-de97d1a9edd9")
 	)
 	(wire
 		(pts
@@ -3507,6 +3861,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 264.16) (xy 195.58 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "41618b29-1396-49d8-9819-3006caf2676d")
+	)
+	(wire
+		(pts
 			(xy 76.2 125.73) (xy 76.2 168.91)
 		)
 		(stroke
@@ -3594,6 +3958,16 @@
 			(type default)
 		)
 		(uuid "45301730-e8aa-462c-ae05-db71aa2de639")
+	)
+	(polyline
+		(pts
+			(xy 12.7 236.22) (xy 436.88 233.68)
+		)
+		(stroke
+			(width 0.5)
+			(type dash_dot_dot)
+		)
+		(uuid "45b3dace-ebc6-47cb-b16e-c13be938d702")
 	)
 	(wire
 		(pts
@@ -3697,6 +4071,26 @@
 	)
 	(wire
 		(pts
+			(xy 246.38 266.7) (xy 271.78 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4dcbecf1-25fc-4060-bfb2-10ae143ed115")
+	)
+	(wire
+		(pts
+			(xy 76.2 254) (xy 78.74 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e9db1d6-c4f7-4b0d-9369-a293227552db")
+	)
+	(wire
+		(pts
 			(xy 76.2 26.67) (xy 76.2 38.1)
 		)
 		(stroke
@@ -3707,6 +4101,16 @@
 	)
 	(wire
 		(pts
+			(xy 307.34 254) (xy 307.34 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "508885ca-7707-49dc-b652-0ed477024bb0")
+	)
+	(wire
+		(pts
 			(xy 165.1 173.99) (xy 154.94 173.99)
 		)
 		(stroke
@@ -3714,6 +4118,16 @@
 			(type default)
 		)
 		(uuid "50de63b4-2932-4a74-9645-b97448936258")
+	)
+	(wire
+		(pts
+			(xy 144.78 266.7) (xy 170.18 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52627ff6-5ab4-41ba-ac4d-4b019191ea2a")
 	)
 	(wire
 		(pts
@@ -3834,6 +4248,16 @@
 			(type default)
 		)
 		(uuid "5b03abb3-b2ce-4ee1-ac16-6e3d337d9202")
+	)
+	(wire
+		(pts
+			(xy 43.18 264.16) (xy 43.18 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b47ae01-d3a0-4bdf-8ea5-c8cba1a845eb")
 	)
 	(wire
 		(pts
@@ -3977,6 +4401,16 @@
 	)
 	(wire
 		(pts
+			(xy 332.74 254) (xy 332.74 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65d9a17b-57c9-478a-ad4c-f0481390d858")
+	)
+	(wire
+		(pts
 			(xy 43.18 26.67) (xy 43.18 38.1)
 		)
 		(stroke
@@ -4017,6 +4451,16 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 264.16) (xy 68.58 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "680b8973-cd9c-4c27-baa1-4c79af1589a7")
+	)
+	(wire
+		(pts
 			(xy 125.73 168.91) (xy 125.73 212.09)
 		)
 		(stroke
@@ -4034,6 +4478,16 @@
 			(type default)
 		)
 		(uuid "68c4d198-84c7-4c90-a8d6-0f97dc8d25a7")
+	)
+	(wire
+		(pts
+			(xy 220.98 264.16) (xy 220.98 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6968b4a0-e1ea-4898-bcfd-96acbcae6217")
 	)
 	(wire
 		(pts
@@ -4064,6 +4518,16 @@
 			(type default)
 		)
 		(uuid "6b85c89a-6ca7-4a47-94a8-f5b800f182ad")
+	)
+	(wire
+		(pts
+			(xy 93.98 264.16) (xy 93.98 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c2d2da8-3738-451c-a7d8-28001186d4cb")
 	)
 	(wire
 		(pts
@@ -4174,6 +4638,16 @@
 			(type default)
 		)
 		(uuid "7110780a-f8ba-4917-90be-de91ee3bdb2a")
+	)
+	(wire
+		(pts
+			(xy 22.86 266.7) (xy 43.18 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "714a90d9-01df-41e3-a5f0-4a84c86c493f")
 	)
 	(wire
 		(pts
@@ -4317,6 +4791,16 @@
 	)
 	(wire
 		(pts
+			(xy 322.58 266.7) (xy 347.98 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "787eb985-05e6-4d48-9a3d-dd5540f00dce")
+	)
+	(wire
+		(pts
 			(xy 287.02 168.91) (xy 292.1 168.91)
 		)
 		(stroke
@@ -4334,6 +4818,16 @@
 			(type default)
 		)
 		(uuid "7971bb08-9160-496b-b2f2-4490a7716d5c")
+	)
+	(wire
+		(pts
+			(xy 297.18 266.7) (xy 322.58 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "79e98c81-7476-4a29-8449-50606033cb87")
 	)
 	(wire
 		(pts
@@ -4647,6 +5141,16 @@
 	)
 	(wire
 		(pts
+			(xy 50.8 254) (xy 53.34 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a1caaa1-e1ac-4fa6-9693-a12b075410ef")
+	)
+	(wire
+		(pts
 			(xy 157.48 214.63) (xy 161.29 214.63)
 		)
 		(stroke
@@ -4654,6 +5158,16 @@
 			(type default)
 		)
 		(uuid "9a5c1b22-255d-4748-a379-6ef3e2253268")
+	)
+	(wire
+		(pts
+			(xy 220.98 266.7) (xy 246.38 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9aa422cd-63f3-4514-bad5-aa3264286b8c")
 	)
 	(wire
 		(pts
@@ -4687,6 +5201,16 @@
 	)
 	(wire
 		(pts
+			(xy 358.14 254) (xy 358.14 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cac2b74-df45-42b0-bcff-30a81fcc089a")
+	)
+	(wire
+		(pts
 			(xy 26.67 82.55) (xy 26.67 125.73)
 		)
 		(stroke
@@ -4704,6 +5228,16 @@
 			(type default)
 		)
 		(uuid "9cf5731b-2bb9-43dd-9a45-b4d0145e31ae")
+	)
+	(wire
+		(pts
+			(xy 27.94 254) (xy 27.94 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e031431-0438-4d64-b4f9-6f0ee3d8c61c")
 	)
 	(wire
 		(pts
@@ -4777,6 +5311,16 @@
 	)
 	(wire
 		(pts
+			(xy 297.18 266.7) (xy 297.18 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a21d760b-24f8-4c7a-a090-9b02eca8a3ec")
+	)
+	(wire
+		(pts
 			(xy 151.13 173.99) (xy 154.94 173.99)
 		)
 		(stroke
@@ -4794,6 +5338,16 @@
 			(type default)
 		)
 		(uuid "a2a7afed-c9ff-4791-a5b6-349991cbbe7b")
+	)
+	(wire
+		(pts
+			(xy 195.58 266.7) (xy 220.98 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2f46875-9a11-42d3-bd07-f1c1ab966f5f")
 	)
 	(wire
 		(pts
@@ -4837,6 +5391,26 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 254) (xy 154.94 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5feff7f-0ae1-4182-9dc6-2317238f0701")
+	)
+	(wire
+		(pts
+			(xy 256.54 254) (xy 256.54 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a645ac77-5053-4ccf-b8a8-cb7def879e1f")
+	)
+	(wire
+		(pts
 			(xy 336.55 82.55) (xy 341.63 82.55)
 		)
 		(stroke
@@ -4844,6 +5418,26 @@
 			(type default)
 		)
 		(uuid "a68ae65d-d847-429c-bbbe-682786b3c7f3")
+	)
+	(wire
+		(pts
+			(xy 144.78 264.16) (xy 144.78 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8a8795d-8822-486f-ad0b-29c3209a078f")
+	)
+	(wire
+		(pts
+			(xy 279.4 254) (xy 281.94 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9d7e9f9-7383-43d4-b3f8-f183c01d2411")
 	)
 	(wire
 		(pts
@@ -4907,6 +5501,16 @@
 	)
 	(wire
 		(pts
+			(xy 228.6 254) (xy 231.14 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac9d9445-5147-4185-b4a2-be2092166f94")
+	)
+	(wire
+		(pts
 			(xy 226.06 135.89) (xy 226.06 130.81)
 		)
 		(stroke
@@ -4914,6 +5518,16 @@
 			(type default)
 		)
 		(uuid "acd35731-3b2f-42ef-8974-abe338925bb9")
+	)
+	(wire
+		(pts
+			(xy 43.18 266.7) (xy 68.58 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad4c3d8f-2e38-4f8c-ae5a-84bf5a4b791f")
 	)
 	(wire
 		(pts
@@ -4944,6 +5558,16 @@
 			(type default)
 		)
 		(uuid "aec34227-def1-402d-b7b8-6948643706d9")
+	)
+	(wire
+		(pts
+			(xy 271.78 264.16) (xy 271.78 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af5b192c-5aa8-4afd-8379-619f5e42c719")
 	)
 	(wire
 		(pts
@@ -4987,6 +5611,16 @@
 	)
 	(wire
 		(pts
+			(xy 205.74 254) (xy 205.74 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b160c61f-b033-4f4b-b8e6-37863309b186")
+	)
+	(wire
+		(pts
 			(xy 21.59 138.43) (xy 36.83 138.43)
 		)
 		(stroke
@@ -5007,6 +5641,16 @@
 	)
 	(wire
 		(pts
+			(xy 25.4 254) (xy 27.94 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b41a0ea4-6edb-4329-b062-f1d9ef8f133b")
+	)
+	(wire
+		(pts
 			(xy 76.2 168.91) (xy 76.2 209.55)
 		)
 		(stroke
@@ -5014,6 +5658,16 @@
 			(type default)
 		)
 		(uuid "b4b862ad-4090-4f64-af2f-a24444720696")
+	)
+	(wire
+		(pts
+			(xy 152.4 254) (xy 154.94 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5477613-e00b-41b9-8543-bca0feb1ee51")
 	)
 	(wire
 		(pts
@@ -5067,6 +5721,16 @@
 	)
 	(wire
 		(pts
+			(xy 347.98 266.7) (xy 373.38 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b870e8d4-e747-43c1-88f6-c4879080f930")
+	)
+	(wire
+		(pts
 			(xy 21.59 181.61) (xy 36.83 181.61)
 		)
 		(stroke
@@ -5107,6 +5771,16 @@
 	)
 	(wire
 		(pts
+			(xy 347.98 264.16) (xy 347.98 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bbfd37bc-cd2c-441e-892b-0f9dfdd62a93")
+	)
+	(wire
+		(pts
 			(xy 59.69 168.91) (xy 59.69 209.55)
 		)
 		(stroke
@@ -5134,6 +5808,16 @@
 			(type default)
 		)
 		(uuid "bda1c843-652c-48f9-94f3-330a10ae7ed8")
+	)
+	(wire
+		(pts
+			(xy 246.38 264.16) (xy 246.38 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf4aa4e8-9559-48ea-b9cb-89d3316d8801")
 	)
 	(wire
 		(pts
@@ -5167,6 +5851,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 266.7) (xy 195.58 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1408144-07cd-46c8-a7a7-daf86e12626d")
+	)
+	(wire
+		(pts
 			(xy 154.94 49.53) (xy 154.94 43.18)
 		)
 		(stroke
@@ -5194,6 +5888,16 @@
 			(type default)
 		)
 		(uuid "c2fc5766-c310-41f7-bd49-cc6c8b784241")
+	)
+	(wire
+		(pts
+			(xy 119.38 264.16) (xy 119.38 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c399e38c-e2dd-4adf-b069-7c773e5bcb6e")
 	)
 	(wire
 		(pts
@@ -5317,6 +6021,16 @@
 	)
 	(wire
 		(pts
+			(xy 355.6 254) (xy 358.14 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ced37eb1-4313-49fa-a9e0-cb0bf173f9ec")
+	)
+	(wire
+		(pts
 			(xy 336.55 125.73) (xy 336.55 168.91)
 		)
 		(stroke
@@ -5364,6 +6078,16 @@
 			(type default)
 		)
 		(uuid "d0c7c2ca-a2a6-4ed5-a40e-a77d743da19a")
+	)
+	(wire
+		(pts
+			(xy 127 254) (xy 129.54 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0d15c7a-1b51-4a59-a3ca-0b542d577d23")
 	)
 	(wire
 		(pts
@@ -5447,6 +6171,16 @@
 	)
 	(wire
 		(pts
+			(xy 373.38 266.7) (xy 373.38 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8248afe-743b-4a50-88f5-04cfca19a860")
+	)
+	(wire
+		(pts
 			(xy 125.73 168.91) (xy 135.89 168.91)
 		)
 		(stroke
@@ -5504,6 +6238,16 @@
 			(type default)
 		)
 		(uuid "dc267912-b702-4fee-849a-c615c7482c32")
+	)
+	(wire
+		(pts
+			(xy 68.58 266.7) (xy 93.98 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfa39cf4-6968-4773-96ee-ebccd726e580")
 	)
 	(wire
 		(pts
@@ -5577,6 +6321,16 @@
 	)
 	(wire
 		(pts
+			(xy 119.38 266.7) (xy 144.78 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2b708a7-aa4d-4841-beba-feeea79a58eb")
+	)
+	(wire
+		(pts
 			(xy 271.78 43.18) (xy 280.67 43.18)
 		)
 		(stroke
@@ -5637,6 +6391,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 264.16) (xy 170.18 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9ac5a05-1989-4e4d-bb68-b8d1dd70615e")
+	)
+	(wire
+		(pts
 			(xy 369.57 168.91) (xy 374.65 168.91)
 		)
 		(stroke
@@ -5674,6 +6438,16 @@
 			(type default)
 		)
 		(uuid "edf75a87-4a02-41db-a2bd-a10086a4af24")
+	)
+	(wire
+		(pts
+			(xy 322.58 264.16) (xy 322.58 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edfb8f1d-6177-4942-81e4-cc1205b8d0df")
 	)
 	(wire
 		(pts
@@ -5737,6 +6511,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 254) (xy 180.34 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f056384b-515b-409b-bdff-40b64cc510a0")
+	)
+	(wire
+		(pts
 			(xy 297.18 181.61) (xy 313.69 181.61)
 		)
 		(stroke
@@ -5744,6 +6528,16 @@
 			(type default)
 		)
 		(uuid "f082c7f9-2285-480f-b476-27b123af83a1")
+	)
+	(wire
+		(pts
+			(xy 78.74 254) (xy 78.74 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1061a1e-a56b-4c6b-b59e-28bbbd707b67")
 	)
 	(wire
 		(pts
@@ -5817,6 +6611,26 @@
 	)
 	(wire
 		(pts
+			(xy 180.34 254) (xy 180.34 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6a58bee-fcbd-4383-bf98-150c8aad111d")
+	)
+	(wire
+		(pts
+			(xy 304.8 254) (xy 307.34 254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6d94ed0-2e98-4fb4-8909-0aa9a3fff42f")
+	)
+	(wire
+		(pts
 			(xy 313.69 181.61) (xy 330.2 181.61)
 		)
 		(stroke
@@ -5854,6 +6668,26 @@
 			(type default)
 		)
 		(uuid "fea09601-99ba-4bf6-9202-49a22c249479")
+	)
+	(wire
+		(pts
+			(xy 271.78 266.7) (xy 297.18 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "feb64a14-893d-4f81-b63d-5f91cb92e673")
+	)
+	(wire
+		(pts
+			(xy 53.34 254) (xy 53.34 256.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff883e48-6f6f-48ee-bce9-9f6e9274ceef")
 	)
 	(global_label "RE4_A-Channel"
 		(shape input)
@@ -5916,6 +6750,30 @@
 		(uuid "0faa68f9-99b8-491d-9483-4f47197b6e2c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 287.02 14.4322 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Column 1"
+		(shape input)
+		(at 25.4 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "10a13643-99cd-4aab-8659-fd4948467c27")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.4 241.7622 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6215,6 +7073,30 @@
 			)
 		)
 	)
+	(global_label "Column 2"
+		(shape input)
+		(at 50.8 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "47017142-7422-428b-b8c1-813c89520128")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 50.8 241.7622 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RE10_B-Channel"
 		(shape input)
 		(at 227.33 214.63 180)
@@ -6236,6 +7118,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "Column 7"
+		(shape input)
+		(at 177.8 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4c23f2e3-4621-4b4e-981d-08a6fcdff136")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 177.8 241.7622 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6407,6 +7313,78 @@
 			)
 		)
 	)
+	(global_label "Column 14"
+		(shape input)
+		(at 355.6 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6d00698f-9cc5-47d6-8448-7efe5d6e6ac1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 355.6 240.5527 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Column 6"
+		(shape input)
+		(at 152.4 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "700895d6-0910-484f-b451-0cd785135cfd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 152.4 241.7622 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Column 10"
+		(shape input)
+		(at 254 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "708cccfd-2311-467d-8c44-2cc6eb205eae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 254 240.5527 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "Row 3"
 		(shape input)
 		(at 21.59 138.43 180)
@@ -6428,6 +7406,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "Column 8"
+		(shape input)
+		(at 203.2 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7e86e239-29c5-4298-84f2-ff2eb98236b8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 203.2 241.7622 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6503,6 +7505,30 @@
 			)
 		)
 	)
+	(global_label "Column 13"
+		(shape input)
+		(at 330.2 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8e6e41f3-9439-4e3c-abda-054f896c3d00")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 330.2 240.5527 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "Row 5"
 		(shape input)
 		(at 21.59 222.25 180)
@@ -6551,6 +7577,30 @@
 			)
 		)
 	)
+	(global_label "Row 6"
+		(shape input)
+		(at 22.86 266.7 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ac9484ea-7274-4491-a827-de98e5904407")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 13.9482 266.7 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "RE8_A-Channel"
 		(shape input)
 		(at 226.06 168.91 180)
@@ -6572,6 +7622,30 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+			)
+		)
+	)
+	(global_label "Column 11"
+		(shape input)
+		(at 279.4 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "be079efb-2414-4d2b-ab61-f69bd3c3d1c5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 279.4 240.5527 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 	)
@@ -6612,6 +7686,30 @@
 		(uuid "c2cd575a-9965-466f-9e89-43e6f8129f57")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 26.67 14.4322 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Column 4"
+		(shape input)
+		(at 101.6 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c9c7de6d-9ae6-43a8-be14-d14f82831c13")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 101.6 241.7622 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6671,6 +7769,30 @@
 			)
 		)
 	)
+	(global_label "Column 12"
+		(shape input)
+		(at 304.8 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ce7ac8a8-0254-4c57-923d-68db840348fc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 304.8 240.5527 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RE10_A-Channel"
 		(shape input)
 		(at 226.695 209.55 180)
@@ -6719,6 +7841,30 @@
 			)
 		)
 	)
+	(global_label "Column 5"
+		(shape input)
+		(at 127 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dd00c4cf-a48f-491b-b1b9-c9e7b9a9e29b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 127 241.7622 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RE5_B-Channel"
 		(shape input)
 		(at 181.61 125.73 0)
@@ -6743,6 +7889,30 @@
 			)
 		)
 	)
+	(global_label "Column 3"
+		(shape input)
+		(at 76.2 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e096dd22-9b41-4482-80ea-e3d7ac52f34b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 76.2 241.7622 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RE7_A-Channel"
 		(shape input)
 		(at 181.61 173.99 0)
@@ -6756,6 +7926,30 @@
 		(uuid "e959cc06-c1a8-4cf3-bbfe-d319d1a86a30")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 199.4721 173.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
+	(global_label "Column 9"
+		(shape input)
+		(at 228.6 254 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ee1a7563-b02f-46ab-8c50-b86c7dd12a3b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 228.6 241.7622 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6866,6 +8060,110 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW47")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 220.98 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "00c9d3e8-550e-4a78-bfd3-5757efcb200c")
+		(property "Reference" "D78"
+			(at 223.52 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 223.52 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 220.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 220.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 220.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 220.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4ac21f94-0f89-46a3-afa1-34f251587fb7")
+		)
+		(pin "1"
+			(uuid "7b5c4245-af24-4388-98a2-d414e0bd8d15")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D78")
 					(unit 1)
 				)
 			)
@@ -7319,6 +8617,110 @@
 	)
 	(symbol
 		(lib_id "Device:D")
+		(at 68.58 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "092cc84d-a660-4432-8922-2b82775690aa")
+		(property "Reference" "D72"
+			(at 71.12 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 71.12 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 68.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 68.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 68.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 68.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 68.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ed7d1c41-8e3a-46af-af72-a879ac42ec34")
+		)
+		(pin "1"
+			(uuid "10752e18-364f-4972-ada4-02b2076b1e2c")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D72")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
 		(at 363.22 177.8 90)
 		(unit 1)
 		(body_style 1)
@@ -7416,6 +8818,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 111.76 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0a435bf5-3475-474e-be9a-cc52c19ad8ab")
+		(property "Reference" "SW22"
+			(at 111.76 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 111.76 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 111.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 111.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 111.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fc9b1e71-4586-4d29-9bce-c1bd59ed2055")
+		)
+		(pin "2"
+			(uuid "3c89d38f-9892-4ffb-a01b-ad05fc72c7ce")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW22")
 					(unit 1)
 				)
 			)
@@ -8055,6 +9537,110 @@
 	)
 	(symbol
 		(lib_id "Device:D")
+		(at 195.58 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f469671-ec09-4304-a5b3-bb16ba5f0d2a")
+		(property "Reference" "D77"
+			(at 198.12 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 198.12 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 195.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 195.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 195.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 195.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 195.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "4f4a7a98-88fb-4c2d-a3ab-95c57d4a9899")
+		)
+		(pin "1"
+			(uuid "24d80b2b-057c-41f9-af2a-863c2189f4a3")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D77")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
 		(at 330.2 91.44 90)
 		(unit 1)
 		(body_style 1)
@@ -8256,6 +9842,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D69")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 289.56 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0ff97592-26a6-4e37-915d-add1b2f758ec")
+		(property "Reference" "SW73"
+			(at 289.56 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 289.56 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 289.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 289.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 289.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9a537707-5dfa-4ad9-ab74-43cdc2403184")
+		)
+		(pin "2"
+			(uuid "19fdad17-bd6f-4947-b368-c7b3123d9607")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW73")
 					(unit 1)
 				)
 			)
@@ -8842,6 +10508,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW37")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 86.36 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1a7a3698-dcea-44bc-865c-70717a30b60f")
+		(property "Reference" "SW21"
+			(at 86.36 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 86.36 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 86.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 86.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 86.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fd75057b-2ebb-49d9-bbb8-19b4decc5de9")
+		)
+		(pin "2"
+			(uuid "0688b586-8ce5-441b-aed5-8c5233aac5ad")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW21")
 					(unit 1)
 				)
 			)
@@ -9856,6 +11602,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D")
+		(at 119.38 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21c11d14-c807-4e13-935e-db4a52142096")
+		(property "Reference" "D74"
+			(at 121.92 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 121.92 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 119.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 119.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 119.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "b609c82d-e4d2-48e6-9a32-065ef91de6de")
+		)
+		(pin "1"
+			(uuid "d93a2e92-29e3-40e4-aa82-e87c4756985a")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D74")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push_45deg")
 		(at 344.17 212.09 0)
 		(unit 1)
@@ -10846,6 +12696,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 264.16 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ccf1a0e-532d-490e-8e3c-1e176994962b")
+		(property "Reference" "SW65"
+			(at 264.16 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 264.16 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 264.16 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 264.16 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 264.16 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b1898334-51a8-4e8c-8eb8-a465b3f79eaa")
+		)
+		(pin "2"
+			(uuid "2f2b0bbb-3c42-46cf-a2a8-030082e6dacb")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW65")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 252.73 128.27 270)
 		(unit 1)
@@ -10999,6 +12929,110 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 246.38 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "325f6ec4-2424-439e-b047-2fe5e3930727")
+		(property "Reference" "D79"
+			(at 248.92 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 248.92 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 246.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 246.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 246.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 246.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "413886f8-e299-45ee-a653-7277403f30f4")
+		)
+		(pin "1"
+			(uuid "935f0c8d-6619-43b0-b759-6c0ce50b0b37")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D79")
 					(unit 1)
 				)
 			)
@@ -12231,6 +14265,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 35.56 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3c66774f-6b88-4dc4-873b-06ff8ff6ea34")
+		(property "Reference" "SW7"
+			(at 35.56 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 35.56 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 35.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 35.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7db37472-0afd-4100-a9f9-329a01a73017")
+		)
+		(pin "2"
+			(uuid "083089ce-21ca-44c9-9fcc-de3dee835b38")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D")
 		(at 69.85 134.62 90)
 		(unit 1)
@@ -12489,6 +14603,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW45")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 365.76 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3cd13fd1-ad73-4b8f-8e73-9997214a614c")
+		(property "Reference" "SW76"
+			(at 365.76 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 365.76 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 365.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 365.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 365.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f334cc28-76a3-487c-9b81-b6f22c6898e9")
+		)
+		(pin "2"
+			(uuid "fce2773e-afa1-4287-b1eb-cea0ddc477ca")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW76")
 					(unit 1)
 				)
 			)
@@ -12758,6 +14952,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D")
+		(at 373.38 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3e2c058a-eb87-4424-b491-a0935dd2ee35")
+		(property "Reference" "D84"
+			(at 375.92 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 375.92 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 373.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 373.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 373.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 373.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 373.38 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "c8567833-bb59-4094-b4f1-05367c685b7f")
+		)
+		(pin "1"
+			(uuid "cb867ff1-edc3-47f3-8a4c-2ce1c2bd664d")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D84")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 173.99 209.55 270)
 		(unit 1)
@@ -12832,6 +15130,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "R34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 187.96 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "411465dc-06fc-4982-a509-d8ad09e1a35b")
+		(property "Reference" "SW49"
+			(at 187.96 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 187.96 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 187.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1cca61a5-2f2f-4a60-a883-06c073cd0e7b")
+		)
+		(pin "2"
+			(uuid "aaa2a852-e622-4fc8-adeb-360fe3c61b70")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW49")
 					(unit 1)
 				)
 			)
@@ -13073,6 +15451,110 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "#PWR048")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 144.78 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "46732654-143e-47ae-be5a-9f5f3cc4e376")
+		(property "Reference" "D75"
+			(at 147.32 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 147.32 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 144.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 144.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 144.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 144.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "c500378d-f918-4909-a2ae-77d794d7f5db")
+		)
+		(pin "1"
+			(uuid "517d7b83-c014-48d6-9a00-6edadaed5d25")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D75")
 					(unit 1)
 				)
 			)
@@ -16336,6 +18818,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 162.56 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "65af3367-e9ed-472d-98c3-3a872ab15621")
+		(property "Reference" "SW36"
+			(at 162.56 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 162.56 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 162.56 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d59296a3-6ba8-43fe-a1f1-5d1e75c67aa7")
+		)
+		(pin "2"
+			(uuid "f7459d72-538b-4243-aabe-95048997d60d")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 181.61 138.43 0)
 		(mirror y)
@@ -17103,6 +19665,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 314.96 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6dd47490-6ee7-4b4e-a8de-6033cec2e533")
+		(property "Reference" "SW74"
+			(at 314.96 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 314.96 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 314.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 314.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 314.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "36e3f467-37cf-495e-9c1e-46774ccd00e8")
+		)
+		(pin "2"
+			(uuid "487fdfd7-aff0-47e9-9877-efecb2495364")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW74")
 					(unit 1)
 				)
 			)
@@ -18084,6 +20726,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 60.96 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "78df161f-7327-4617-955a-075d12fde32a")
+		(property "Reference" "SW8"
+			(at 60.96 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 60.96 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 60.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 60.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 60.96 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e7c568fe-60d0-4af3-a5b0-ce6e51a931fc")
+		)
+		(pin "2"
+			(uuid "4bd6b6a5-ff71-4b00-b087-87b5037861f4")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW8")
 					(unit 1)
 				)
 			)
@@ -19355,6 +22077,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D")
+		(at 93.98 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "875d37fa-8323-49e5-a6ac-08fdcdabcef9")
+		(property "Reference" "D73"
+			(at 96.52 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 96.52 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 93.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 93.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 93.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "553b9db3-0869-4d6f-baac-b22bf0badb48")
+		)
+		(pin "1"
+			(uuid "762b1016-ea58-443a-a978-93d8fec81603")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D73")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push_45deg")
 		(at 50.8 212.09 0)
 		(unit 1)
@@ -19937,6 +22763,110 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D")
+		(at 170.18 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8fe7af53-afbf-4c88-82e1-4a7b82785828")
+		(property "Reference" "D76"
+			(at 172.72 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 172.72 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 170.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 170.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 170.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "cd2143f7-92b8-4674-b366-4218fdff66eb")
+		)
+		(pin "1"
+			(uuid "6e0fc3f3-e74e-46cb-87f2-59c713c8beda")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D76")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 226.06 184.15 0)
 		(unit 1)
@@ -20247,6 +23177,110 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW59")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 297.18 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9337a308-bd95-44dd-a273-ce397091daf3")
+		(property "Reference" "D81"
+			(at 299.72 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 299.72 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 297.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 297.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 297.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 297.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 297.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a287f40e-8fbc-4dbc-aa06-52a54cc2413d")
+		)
+		(pin "1"
+			(uuid "46330b49-7bdf-44ae-a43c-e669db6b85a7")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D81")
 					(unit 1)
 				)
 			)
@@ -20898,6 +23932,110 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 322.58 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9abef2ff-1fc4-402d-8860-d2f1248f8f3b")
+		(property "Reference" "D82"
+			(at 325.12 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 325.12 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 322.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 322.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 322.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 322.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 322.58 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a141224c-efc3-4ae0-96b9-3873acb3747d")
+		)
+		(pin "1"
+			(uuid "fceb062e-2e61-4623-b899-3d2b2a357f07")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D82")
 					(unit 1)
 				)
 			)
@@ -21693,6 +24831,110 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 271.78 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a5c62c47-264a-4c71-8913-1852a20a1977")
+		(property "Reference" "D80"
+			(at 274.32 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 274.32 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 271.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 271.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 271.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 271.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 271.78 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "f9bbd190-746e-414a-9d25-37625930053a")
+		)
+		(pin "1"
+			(uuid "a36ab965-fdbf-47fb-8211-5939541139a3")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D80")
 					(unit 1)
 				)
 			)
@@ -23374,6 +26616,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 238.76 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b448e090-2e38-45f4-a71a-d18bb017cdb5")
+		(property "Reference" "SW64"
+			(at 238.76 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 238.76 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 238.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 238.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 238.76 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9f175098-6460-4dd3-9034-3824a79a6d89")
+		)
+		(pin "2"
+			(uuid "16c890ae-24f0-4b03-93ba-20348024071a")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW64")
 					(unit 1)
 				)
 			)
@@ -25347,6 +28669,86 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 340.36 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d447dd94-a083-429d-96b4-9d4f025cd5db")
+		(property "Reference" "SW75"
+			(at 340.36 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 340.36 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 340.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 340.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 340.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d24d97a6-8c41-49b5-8423-4ada7c4f9b6a")
+		)
+		(pin "2"
+			(uuid "5b9d3fb8-26cb-4ff5-ba62-9338aeba7a8d")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW75")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push_45deg")
 		(at 311.15 85.09 0)
 		(unit 1)
@@ -26249,6 +29651,110 @@
 	)
 	(symbol
 		(lib_id "Device:D")
+		(at 347.98 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2aa84ec-eaae-430b-bda9-fc91e51ea549")
+		(property "Reference" "D83"
+			(at 350.52 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 350.52 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 347.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 347.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 347.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 347.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 347.98 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "ca0e3455-aa2a-45fd-b0a4-1336add367b7")
+		)
+		(pin "1"
+			(uuid "6dcd5e27-6b5f-4cf3-9b1c-d5c9dd3f4e69")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D83")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
 		(at 297.18 91.44 90)
 		(unit 1)
 		(body_style 1)
@@ -26939,6 +30445,190 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:D")
+		(at 43.18 260.35 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e98da33d-dd0b-40c5-8e01-d2abb613a74b")
+		(property "Reference" "D71"
+			(at 45.72 259.0799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "D"
+			(at 45.72 261.6199 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 43.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 43.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 43.18 260.35 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "df2f22c7-1847-4f07-82ee-079ec4742fb4")
+		)
+		(pin "1"
+			(uuid "3b7646f2-a4b8-48c3-be2f-5d5f62b24745")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "D71")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 213.36 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ea8d28cb-39d0-4962-8761-d742988602fc")
+		(property "Reference" "SW50"
+			(at 213.36 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 213.36 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 213.36 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ee20a703-b3a1-45d5-82d2-e84da97191c8")
+		)
+		(pin "2"
+			(uuid "0c93f407-740c-4414-81c2-ea001cf4e89e")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW50")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VDD")
 		(at 254 226.06 180)
 		(unit 1)
@@ -27432,6 +31122,86 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 137.16 256.54 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f099b5ab-92dd-425b-bc00-d7f4154e17ab")
+		(property "Reference" "SW35"
+			(at 137.16 248.92 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SW_DIP_x01"
+			(at 137.16 251.46 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 137.16 256.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9c9381e0-7307-4949-ac9d-921fc2067f85")
+		)
+		(pin "2"
+			(uuid "98278fff-2eb6-401a-8b31-61826c11315a")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW35")
 					(unit 1)
 				)
 			)

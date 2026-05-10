@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BQ25188YBGR
+D Battery Management I2C 1A single cell linear battery charg
+K
+F https://www.ti.com/lit/ds/symlink/bq25188.pdf
+$ENDCMP
+#
+#End Doc Library
