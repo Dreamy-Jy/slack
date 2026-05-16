@@ -790,7 +790,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "",
+    "used_designators": "R106-107,R117-118,#PWR86,#PWR97,#PWR100,#PWR126",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",
@@ -804,20 +804,28 @@
       "slack"
     ],
     [
-      "06611ce3-ad03-4ae2-812b-c9d75e348e6b",
-      "Switch Matrix"
-    ],
-    [
       "a24a3d75-e466-4feb-b98a-50e4b7a182a1",
       "Power Train"
+    ],
+    [
+      "af928721-79e0-4dbd-9302-cd57a57ce5a4",
+      "MCU"
+    ],
+    [
+      "06611ce3-ad03-4ae2-812b-c9d75e348e6b",
+      "Switch Matrix"
     ],
     [
       "db75d338-3a03-4feb-a76e-be79011cbec0",
       "LED Matricies"
     ],
     [
-      "af928721-79e0-4dbd-9302-cd57a57ce5a4",
-      "Controller ICs"
+      "f164f568-e333-433f-a569-8bf803dc360e",
+      "LED Matrix Controller 1"
+    ],
+    [
+      "51bf0ce9-b137-4da2-aa93-92744fd406ec",
+      "LED Matrix Controller 2"
     ]
   ],
   "text_variables": {},

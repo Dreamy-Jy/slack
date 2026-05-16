@@ -9,7 +9,7 @@
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
 		(property "Reference" "IC"
-			(at 41.91 17.78 0)
+			(at 33.02 5.08 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -20,7 +20,7 @@
 			)
 		)
 		(property "Value" "IS31FL3733-QFLS4-TR"
-			(at 41.91 15.24 0)
+			(at 33.02 2.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -151,8 +151,8 @@
 		)
 		(symbol "IS31FL3733-QFLS4-TR_1_1"
 			(rectangle
-				(start 5.08 12.7)
-				(end 40.64 -40.64)
+				(start 0 2.54)
+				(end 25.4 -68.58)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -162,7 +162,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 0 0)
+				(at 5.08 -73.66 90)
 				(length 5.08)
 				(name "NC_1"
 					(effects
@@ -180,7 +180,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -2.54 0)
+				(at -5.08 -7.62 0)
 				(length 5.08)
 				(name "SW1"
 					(effects
@@ -198,7 +198,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -5.08 0)
+				(at -5.08 -10.16 0)
 				(length 5.08)
 				(name "SW2"
 					(effects
@@ -216,7 +216,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -7.62 0)
+				(at -5.08 -12.7 0)
 				(length 5.08)
 				(name "SW3"
 					(effects
@@ -234,7 +234,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -10.16 0)
+				(at 7.62 -73.66 90)
 				(length 5.08)
 				(name "PGND_1"
 					(effects
@@ -252,7 +252,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -12.7 0)
+				(at -5.08 -15.24 0)
 				(length 5.08)
 				(name "SW4"
 					(effects
@@ -270,7 +270,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -15.24 0)
+				(at -5.08 -17.78 0)
 				(length 5.08)
 				(name "SW5"
 					(effects
@@ -288,7 +288,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -17.78 0)
+				(at -5.08 -20.32 0)
 				(length 5.08)
 				(name "SW6"
 					(effects
@@ -306,7 +306,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -20.32 0)
+				(at -5.08 -22.86 0)
 				(length 5.08)
 				(name "SW7"
 					(effects
@@ -324,7 +324,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -22.86 0)
+				(at -5.08 -25.4 0)
 				(length 5.08)
 				(name "SW8"
 					(effects
@@ -342,7 +342,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -25.4 0)
+				(at -5.08 -27.94 0)
 				(length 5.08)
 				(name "SW9"
 					(effects
@@ -360,7 +360,7 @@
 				)
 			)
 			(pin passive line
-				(at 0 -27.94 0)
+				(at 10.16 -73.66 90)
 				(length 5.08)
 				(name "PGND_2"
 					(effects
@@ -378,7 +378,7 @@
 				)
 			)
 			(pin passive line
-				(at 7.62 -45.72 90)
+				(at -5.08 -30.48 0)
 				(length 5.08)
 				(name "SW10"
 					(effects
@@ -396,7 +396,7 @@
 				)
 			)
 			(pin passive line
-				(at 10.16 -45.72 90)
+				(at -5.08 -33.02 0)
 				(length 5.08)
 				(name "SW11"
 					(effects
@@ -414,7 +414,7 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 -45.72 90)
+				(at -5.08 -35.56 0)
 				(length 5.08)
 				(name "SW12"
 					(effects
@@ -432,7 +432,7 @@
 				)
 			)
 			(pin passive line
-				(at 15.24 -45.72 90)
+				(at 30.48 -7.62 180)
 				(length 5.08)
 				(name "CS1"
 					(effects
@@ -450,7 +450,7 @@
 				)
 			)
 			(pin passive line
-				(at 17.78 -45.72 90)
+				(at 30.48 -10.16 180)
 				(length 5.08)
 				(name "CS2"
 					(effects
@@ -468,7 +468,7 @@
 				)
 			)
 			(pin passive line
-				(at 20.32 -45.72 90)
+				(at 30.48 -12.7 180)
 				(length 5.08)
 				(name "CS3"
 					(effects
@@ -486,7 +486,7 @@
 				)
 			)
 			(pin passive line
-				(at 22.86 -45.72 90)
+				(at 30.48 -15.24 180)
 				(length 5.08)
 				(name "CS4"
 					(effects
@@ -504,7 +504,7 @@
 				)
 			)
 			(pin passive line
-				(at 25.4 -45.72 90)
+				(at 15.24 7.62 270)
 				(length 5.08)
 				(name "PVCC_1"
 					(effects
@@ -522,7 +522,7 @@
 				)
 			)
 			(pin passive line
-				(at 27.94 -45.72 90)
+				(at 30.48 -17.78 180)
 				(length 5.08)
 				(name "CS5"
 					(effects
@@ -540,7 +540,7 @@
 				)
 			)
 			(pin passive line
-				(at 30.48 -45.72 90)
+				(at 30.48 -20.32 180)
 				(length 5.08)
 				(name "CS6"
 					(effects
@@ -558,7 +558,7 @@
 				)
 			)
 			(pin passive line
-				(at 33.02 -45.72 90)
+				(at 30.48 -22.86 180)
 				(length 5.08)
 				(name "CS7"
 					(effects
@@ -576,7 +576,7 @@
 				)
 			)
 			(pin passive line
-				(at 35.56 -45.72 90)
+				(at 30.48 -25.4 180)
 				(length 5.08)
 				(name "CS8"
 					(effects
@@ -594,7 +594,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -27.94 180)
+				(at 30.48 -27.94 180)
 				(length 5.08)
 				(name "CS9"
 					(effects
@@ -612,7 +612,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -25.4 180)
+				(at 30.48 -30.48 180)
 				(length 5.08)
 				(name "CS10"
 					(effects
@@ -630,7 +630,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -22.86 180)
+				(at 30.48 -33.02 180)
 				(length 5.08)
 				(name "CS11"
 					(effects
@@ -648,7 +648,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -20.32 180)
+				(at 30.48 -35.56 180)
 				(length 5.08)
 				(name "CS12"
 					(effects
@@ -666,7 +666,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -17.78 180)
+				(at 12.7 7.62 270)
 				(length 5.08)
 				(name "PVCC_2"
 					(effects
@@ -684,7 +684,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -15.24 180)
+				(at 30.48 -38.1 180)
 				(length 5.08)
 				(name "CS13"
 					(effects
@@ -702,7 +702,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -12.7 180)
+				(at 30.48 -40.64 180)
 				(length 5.08)
 				(name "CS14"
 					(effects
@@ -720,7 +720,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -10.16 180)
+				(at 30.48 -43.18 180)
 				(length 5.08)
 				(name "CS15"
 					(effects
@@ -738,7 +738,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -7.62 180)
+				(at 30.48 -45.72 180)
 				(length 5.08)
 				(name "CS16"
 					(effects
@@ -756,7 +756,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -5.08 180)
+				(at 12.7 -73.66 90)
 				(length 5.08)
 				(name "AGND"
 					(effects
@@ -774,7 +774,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 -2.54 180)
+				(at 30.48 -50.8 180)
 				(length 5.08)
 				(name "R_EXT"
 					(effects
@@ -792,7 +792,7 @@
 				)
 			)
 			(pin passive line
-				(at 45.72 0 180)
+				(at 15.24 -73.66 90)
 				(length 5.08)
 				(name "NC_2"
 					(effects
@@ -810,7 +810,7 @@
 				)
 			)
 			(pin passive line
-				(at 38.1 17.78 270)
+				(at 10.16 7.62 270)
 				(length 5.08)
 				(name "AVCC"
 					(effects
@@ -828,7 +828,7 @@
 				)
 			)
 			(pin passive line
-				(at 35.56 17.78 270)
+				(at 7.62 7.62 270)
 				(length 5.08)
 				(name "DVCC"
 					(effects
@@ -846,7 +846,7 @@
 				)
 			)
 			(pin passive line
-				(at 33.02 17.78 270)
+				(at -5.08 -40.64 0)
 				(length 5.08)
 				(name "VIO"
 					(effects
@@ -864,7 +864,7 @@
 				)
 			)
 			(pin passive line
-				(at 30.48 17.78 270)
+				(at -5.08 -43.18 0)
 				(length 5.08)
 				(name "SYNC"
 					(effects
@@ -882,7 +882,7 @@
 				)
 			)
 			(pin passive line
-				(at 27.94 17.78 270)
+				(at -5.08 -45.72 0)
 				(length 5.08)
 				(name "SDA"
 					(effects
@@ -900,7 +900,7 @@
 				)
 			)
 			(pin passive clock
-				(at 25.4 17.78 270)
+				(at -5.08 -48.26 0)
 				(length 5.08)
 				(name "SCL"
 					(effects
@@ -918,7 +918,7 @@
 				)
 			)
 			(pin passive line
-				(at 22.86 17.78 270)
+				(at -5.08 -50.8 0)
 				(length 5.08)
 				(name "ADDR1"
 					(effects
@@ -936,7 +936,7 @@
 				)
 			)
 			(pin passive line
-				(at 20.32 17.78 270)
+				(at -5.08 -53.34 0)
 				(length 5.08)
 				(name "ADDR2"
 					(effects
@@ -954,7 +954,7 @@
 				)
 			)
 			(pin passive line
-				(at 17.78 17.78 270)
+				(at 30.48 -53.34 180)
 				(length 5.08)
 				(name "INTB"
 					(effects
@@ -972,7 +972,7 @@
 				)
 			)
 			(pin passive line
-				(at 15.24 17.78 270)
+				(at 30.48 -55.88 180)
 				(length 5.08)
 				(name "SDB"
 					(effects
@@ -990,7 +990,7 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 17.78 270)
+				(at 30.48 -58.42 180)
 				(length 5.08)
 				(name "IICRST"
 					(effects
@@ -1008,7 +1008,7 @@
 				)
 			)
 			(pin passive line
-				(at 10.16 17.78 270)
+				(at 17.78 -73.66 90)
 				(length 5.08)
 				(name "GND"
 					(effects
@@ -1026,7 +1026,7 @@
 				)
 			)
 			(pin passive line
-				(at 7.62 17.78 270)
+				(at 20.32 -73.66 90)
 				(length 5.08)
 				(name "EP"
 					(effects

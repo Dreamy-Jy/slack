@@ -3,7 +3,7 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "504df67f-9f45-483f-90c8-f14c049b6b02")
-	(paper "User" 400 250)
+	(paper "A")
 	(title_block
 		(title "Slack")
 		(date "2026-06-17")
@@ -11,8 +11,8 @@
 	)
 	(lib_symbols)
 	(rectangle
-		(start 25.4 152.4)
-		(end 127 228.6)
+		(start -104.14 40.64)
+		(end -2.54 215.9)
 		(stroke
 			(width 0.5)
 			(type default)
@@ -24,7 +24,7 @@
 	)
 	(text "Loose Notes"
 		(exclude_from_sim no)
-		(at 27.94 154.94 0)
+		(at -101.6 43.18 0)
 		(effects
 			(font
 				(size 5 5)
@@ -36,7 +36,7 @@
 	)
 	(text "KiCad Feature Requests:\nHierarchical Bus\nHierarchical Sheet Symbols"
 		(exclude_from_sim no)
-		(at 27.94 218.44 0)
+		(at -101.6 106.68 0)
 		(effects
 			(font
 				(size 1.6 1.6)
@@ -45,9 +45,9 @@
 		)
 		(uuid "318bbcdc-ecd6-4797-9e06-8551b0b24f23")
 	)
-	(text "- Compare charger ICs\n- Check circuits\n- Choose passive conponent values\n- Connect the LED and Switch matrices. Assign LEDs to each inputs.\n- Select PCB foot prints\n\nI feel that my power and ground levels are confusing\n\nSchematic\n- Refactor Schematic to r/PrintedCircuitBoard Guide\n- Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- Refactor chip configurations to explain my choices\n- Rename all the component references so they are grouped and easier to layout\n- Select actual components, footprints, 3D models for all components\n- Pass those design reviews softwares\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
+	(text "- Compare charger ICs\n- Check circuits\n- Choose passive conponent values\n- Connect the LED and Switch matrices. Assign LEDs to each inputs.\n- Select PCB foot prints\n\nI feel that my power and ground levels are confusing\n\nSchematic\n- Refactor Schematic to r/PrintedCircuitBoard Guide\n- [x] Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- Refactor chip configurations to explain my choices\n- Rename all the component references so they are grouped and easier to layout\n- Select actual components, footprints, 3D models for all components\n- Pass those design reviews softwares\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
 		(exclude_from_sim no)
-		(at 27.94 165.1 0)
+		(at -101.6 53.34 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -58,7 +58,7 @@
 	)
 	(text ""
 		(exclude_from_sim no)
-		(at 43.18 218.44 0)
+		(at -86.36 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -67,59 +67,39 @@
 		)
 		(uuid "b4edfb53-b7a9-4342-8da3-1f453f8a4e70")
 	)
-	(bus
-		(pts
-			(xy 259.08 121.92) (xy 259.08 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0b21d30c-686b-44b6-97c8-5756f9e812ab")
+	(junction
+		(at 190.5 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8ddb6fc6-6d73-4359-b45e-95283515ade2")
+	)
+	(no_connect
+		(at 203.2 124.46)
+		(uuid "0101cb29-283d-4e8d-9529-c44bc0ef61cc")
+	)
+	(no_connect
+		(at 203.2 149.86)
+		(uuid "1e332e09-aff5-4adb-8f06-0798b49269e9")
+	)
+	(no_connect
+		(at 203.2 134.62)
+		(uuid "5aeeffe8-db3e-49fa-83ef-a0e2e934711c")
+	)
+	(no_connect
+		(at 203.2 129.54)
+		(uuid "8849ccff-246e-495d-abea-592f25b4b71b")
+	)
+	(no_connect
+		(at 203.2 144.78)
+		(uuid "a0de5b68-af5a-43f5-9d97-eb033fbeb019")
+	)
+	(no_connect
+		(at 203.2 139.7)
+		(uuid "ca03842b-a08f-4b66-b9ed-088a8afae077")
 	)
 	(bus
 		(pts
-			(xy 246.38 96.52) (xy 246.38 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e5dbd8d-ae7c-4e2a-b386-ad9888ebed80")
-	)
-	(bus
-		(pts
-			(xy 248.92 91.44) (xy 248.92 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "274c507e-4c20-4781-bbab-79ef3cc7683c")
-	)
-	(bus
-		(pts
-			(xy 261.62 116.84) (xy 279.4 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c54b213-726f-49b5-8b5b-e4928ffdde72")
-	)
-	(bus
-		(pts
-			(xy 261.62 76.2) (xy 261.62 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "436765f3-c39d-417c-b128-23efa1751c43")
-	)
-	(bus
-		(pts
-			(xy 228.6 40.64) (xy 279.4 40.64)
+			(xy 175.26 40.64) (xy 203.2 40.64)
 		)
 		(stroke
 			(width 0)
@@ -129,7 +109,7 @@
 	)
 	(bus
 		(pts
-			(xy 101.6 40.64) (xy 127 40.64)
+			(xy 66.04 40.64) (xy 86.36 40.64)
 		)
 		(stroke
 			(width 0)
@@ -139,17 +119,7 @@
 	)
 	(bus
 		(pts
-			(xy 228.6 81.28) (xy 259.08 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56c6de5e-e481-4c97-86b6-9089d9de359e")
-	)
-	(bus
-		(pts
-			(xy 228.6 60.96) (xy 279.4 60.96)
+			(xy 175.26 60.96) (xy 203.2 60.96)
 		)
 		(stroke
 			(width 0)
@@ -159,7 +129,7 @@
 	)
 	(bus
 		(pts
-			(xy 101.6 48.26) (xy 127 48.26)
+			(xy 66.04 48.26) (xy 73.66 48.26)
 		)
 		(stroke
 			(width 0)
@@ -169,17 +139,7 @@
 	)
 	(bus
 		(pts
-			(xy 246.38 137.16) (xy 279.4 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "86dd8d46-0d93-44e3-b47a-a2e420bd3ff1")
-	)
-	(bus
-		(pts
-			(xy 228.6 55.88) (xy 279.4 55.88)
+			(xy 175.26 55.88) (xy 203.2 55.88)
 		)
 		(stroke
 			(width 0)
@@ -189,7 +149,37 @@
 	)
 	(bus
 		(pts
-			(xy 228.6 45.72) (xy 279.4 45.72)
+			(xy 190.5 114.3) (xy 203.2 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ebea711-4789-47c2-aa08-5440d66ab5d6")
+	)
+	(bus
+		(pts
+			(xy 190.5 76.2) (xy 175.26 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91b36167-7ff0-4aa3-b0fd-253df7449356")
+	)
+	(bus
+		(pts
+			(xy 73.66 48.26) (xy 73.66 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e4b191f-dd04-4d55-ad3f-c547a9cc85f3")
+	)
+	(bus
+		(pts
+			(xy 175.26 45.72) (xy 203.2 45.72)
 		)
 		(stroke
 			(width 0)
@@ -199,37 +189,17 @@
 	)
 	(bus
 		(pts
-			(xy 228.6 96.52) (xy 246.38 96.52)
+			(xy 73.66 114.3) (xy 190.5 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ba60664d-f75b-41c4-9d2f-6384f7a84e02")
-	)
-	(bus
-		(pts
-			(xy 228.6 91.44) (xy 248.92 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bca5bd1f-c8b9-4200-a570-74fd75f63d97")
-	)
-	(bus
-		(pts
-			(xy 228.6 76.2) (xy 261.62 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c7504b59-1718-41df-a4c7-a9536f53ea1c")
+		(uuid "bd03a689-c066-4d35-b32a-1b99ab121a8e")
 	)
 	(wire
 		(pts
-			(xy 101.6 58.42) (xy 127 58.42)
+			(xy 66.04 58.42) (xy 86.36 58.42)
 		)
 		(stroke
 			(width 0)
@@ -239,27 +209,17 @@
 	)
 	(bus
 		(pts
-			(xy 248.92 132.08) (xy 279.4 132.08)
+			(xy 190.5 76.2) (xy 190.5 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d3e475f9-4eae-43ef-a8b5-c028f71dc544")
-	)
-	(bus
-		(pts
-			(xy 279.4 121.92) (xy 259.08 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc41c8cb-8370-4eba-baf5-05f28c1c6dd2")
+		(uuid "ed31d263-2c84-4a41-999c-9123927c4ea1")
 	)
 	(wire
 		(pts
-			(xy 101.6 63.5) (xy 127 63.5)
+			(xy 66.04 63.5) (xy 86.36 63.5)
 		)
 		(stroke
 			(width 0)
@@ -268,8 +228,8 @@
 		(uuid "fe713d6a-73e5-4c3c-86e4-c9c2245415c3")
 	)
 	(sheet
-		(at 279.4 25.4)
-		(size 76.2 50.8)
+		(at 203.2 25.4)
+		(size 50.8 50.8)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -283,24 +243,24 @@
 		)
 		(uuid "06611ce3-ad03-4ae2-812b-c9d75e348e6b")
 		(property "Sheetname" "Switch Matrix"
-			(at 280.035 32.385 0)
+			(at 203.835 32.385 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 5 5)
-					(thickness 0.625)
+					(size 3 3)
+					(thickness 0.375)
 				)
 				(justify left bottom)
 			)
 		)
 		(property "Sheetfile" "switch_matrix.kicad_sch"
-			(at 281.94 71.12 0)
+			(at 205.74 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 2 2)
+					(size 1 1)
 					(thickness 0.4)
 					(bold yes)
 					(italic yes)
@@ -309,49 +269,45 @@
 			)
 		)
 		(pin "Column[1..14]" input
-			(at 279.4 40.64 180)
+			(at 203.2 40.64 180)
 			(uuid "6e67b28d-9482-4c2d-92f3-7a0896c5164e")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
 		(pin "Row[1..6]" output
-			(at 279.4 45.72 180)
+			(at 203.2 45.72 180)
 			(uuid "922114cd-d62a-4f0d-9842-1397685cd049")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
 		(pin "RotaryEncoder_AChannel[1..10]" output
-			(at 279.4 55.88 180)
+			(at 203.2 55.88 180)
 			(uuid "43d6769e-fe30-4e9e-8ab0-d98424c1e8d5")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
 		(pin "RotaryEncoder_BChannel[1..10]" output
-			(at 279.4 60.96 180)
+			(at 203.2 60.96 180)
 			(uuid "ad0ff9a0-ef69-453c-ac4f-ca7536fc8061")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
@@ -359,14 +315,14 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02"
-					(page "2")
+					(page "4")
 				)
 			)
 		)
 	)
 	(sheet
-		(at 25.4 25.4)
-		(size 76.2 50.8)
+		(at 15.24 25.4)
+		(size 50.8 50.8)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -380,23 +336,23 @@
 		)
 		(uuid "a24a3d75-e466-4feb-b98a-50e4b7a182a1")
 		(property "Sheetname" "Power Train"
-			(at 47.625 30.48 0)
+			(at 30.48 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 5 5)
-					(thickness 0.625)
+					(size 3 3)
+					(thickness 0.375)
 				)
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 27.94 71.12 0)
+			(at 17.78 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 2 2)
+					(size 1 1)
 					(thickness 0.4)
 					(bold yes)
 					(italic yes)
@@ -405,49 +361,182 @@
 			)
 		)
 		(pin "TPS61288_EN" input
-			(at 101.6 63.5 0)
+			(at 66.04 63.5 0)
 			(uuid "17e801bb-3bac-4859-ae38-babf0a38835d")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify right)
 			)
 		)
 		(pin "~{MP2721_INT}" output
-			(at 101.6 58.42 0)
+			(at 66.04 58.42 0)
 			(uuid "0f1587d7-2549-4830-99a1-a5d42c038c68")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify right)
 			)
 		)
 		(pin "USB{D+, D-}" bidirectional
-			(at 101.6 40.64 0)
+			(at 66.04 40.64 0)
 			(uuid "18a3842f-13a3-42ac-a25b-11dc8d721e44")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify right)
 			)
 		)
 		(pin "I2C1{SDA, SCL}" bidirectional
-			(at 101.6 48.26 0)
+			(at 66.04 48.26 0)
 			(uuid "822158fb-e625-49c6-a78d-293d273d11bd")
 			(effects
 				(font
-					(size 2.5 2.5)
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 86.36 25.4)
+		(size 88.9 63.5)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.5)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "af928721-79e0-4dbd-9302-cd57a57ce5a4")
+		(property "Sheetname" "MCU"
+			(at 86.36 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 3 3)
+					(thickness 0.375)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "controller.kicad_sch"
+			(at 88.9 83.82 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.4)
 					(bold yes)
+					(italic yes)
+				)
+				(justify left top)
+			)
+		)
+		(pin "TPS61288_EN" output
+			(at 86.36 63.5 180)
+			(uuid "ff8972a3-0d81-47e5-a826-5ad43d62b137")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{MP2721_INT}" input
+			(at 86.36 58.42 180)
+			(uuid "b95d99ad-f18d-4732-a47b-d5b9157c85de")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify left)
+			)
+		)
+		(pin "I2C1{SDA, SCL}" bidirectional
+			(at 175.26 76.2 0)
+			(uuid "11cd7ed5-78ba-470c-bf79-f0a9572213f6")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "USB{D+, D-}" bidirectional
+			(at 86.36 40.64 180)
+			(uuid "ae6a4053-7d8a-4759-8372-aca3182e0f7b")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify left)
+			)
+		)
+		(pin "Column[1..14]" output
+			(at 175.26 40.64 0)
+			(uuid "7a0d3ef2-2921-4b8c-9965-58db589a7053")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "RotaryEncoder_AChannel[1..10]" input
+			(at 175.26 55.88 0)
+			(uuid "6705a8d7-4fd2-4e67-8309-d58120b91d4f")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "RotaryEncoder_BChannel[1..10]" input
+			(at 175.26 60.96 0)
+			(uuid "ce5ac648-c284-4bab-99cf-39e0978a1723")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "Row[1..6]" input
+			(at 175.26 45.72 0)
+			(uuid "a25376dd-e582-45ba-9aa0-7373488750cb")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify right)
 			)
@@ -461,201 +550,8 @@
 		)
 	)
 	(sheet
-		(at 127 25.4)
-		(size 101.6 101.6)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(stroke
-			(width 0.5)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0)
-		)
-		(uuid "af928721-79e0-4dbd-9302-cd57a57ce5a4")
-		(property "Sheetname" "Controller ICs"
-			(at 127 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 5 5)
-					(thickness 0.625)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "controller.kicad_sch"
-			(at 129.54 121.92 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 2 2)
-					(thickness 0.4)
-					(bold yes)
-					(italic yes)
-				)
-				(justify left top)
-			)
-		)
-		(pin "TPS61288_EN" output
-			(at 127 63.5 180)
-			(uuid "ff8972a3-0d81-47e5-a826-5ad43d62b137")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify left)
-			)
-		)
-		(pin "~{MP2721_INT}" input
-			(at 127 58.42 180)
-			(uuid "b95d99ad-f18d-4732-a47b-d5b9157c85de")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify left)
-			)
-		)
-		(pin "I2C1{SDA, SCL}" bidirectional
-			(at 127 48.26 180)
-			(uuid "11cd7ed5-78ba-470c-bf79-f0a9572213f6")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify left)
-			)
-		)
-		(pin "USB{D+, D-}" bidirectional
-			(at 127 40.64 180)
-			(uuid "ae6a4053-7d8a-4759-8372-aca3182e0f7b")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify left)
-			)
-		)
-		(pin "Chip1CurrentSource[1..16]" output
-			(at 228.6 76.2 0)
-			(uuid "49bc9757-6d90-4f9b-89a0-b1a70f792fc3")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(pin "Chip1SinkSwitch[1..12]" input
-			(at 228.6 81.28 0)
-			(uuid "54f0ae46-6c08-43ff-ad68-4c23288aaa2f")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(pin "Chip2CurrentSource[1..16]" output
-			(at 228.6 91.44 0)
-			(uuid "e029ae15-173e-40ab-8683-e0b69c57ea68")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(pin "Chip2SinkSwitch[1..12]" input
-			(at 228.6 96.52 0)
-			(uuid "2ead75e7-c286-4953-a175-84913222409d")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(pin "Column[1..14]" output
-			(at 228.6 40.64 0)
-			(uuid "7a0d3ef2-2921-4b8c-9965-58db589a7053")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(pin "RotaryEncoder_AChannel[1..10]" input
-			(at 228.6 55.88 0)
-			(uuid "6705a8d7-4fd2-4e67-8309-d58120b91d4f")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(pin "RotaryEncoder_BChannel[1..10]" input
-			(at 228.6 60.96 0)
-			(uuid "ce5ac648-c284-4bab-99cf-39e0978a1723")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(pin "Row[1..6]" input
-			(at 228.6 45.72 0)
-			(uuid "a25376dd-e582-45ba-9aa0-7373488750cb")
-			(effects
-				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
-				)
-				(justify right)
-			)
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02"
-					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 279.4 101.6)
-		(size 76.2 50.8)
+		(at 203.2 101.6)
+		(size 50.8 58.42)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -669,24 +565,24 @@
 		)
 		(uuid "db75d338-3a03-4feb-a76e-be79011cbec0")
 		(property "Sheetname" "LED Matricies"
-			(at 279.4 109.22 0)
+			(at 203.2 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 5 5)
-					(thickness 0.625)
+					(size 3 3)
+					(thickness 0.375)
 				)
 				(justify left bottom)
 			)
 		)
 		(property "Sheetfile" "led_matrix.kicad_sch"
-			(at 281.94 147.32 0)
+			(at 205.74 154.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 2 2)
+					(size 1 1)
 					(thickness 0.4)
 					(bold yes)
 					(italic yes)
@@ -694,50 +590,79 @@
 				(justify left top)
 			)
 		)
-		(pin "Chip1CurrentSource[1..16]" input
-			(at 279.4 116.84 180)
-			(uuid "1a4a377a-555d-43b3-9a14-74410acfc872")
+		(pin "Chip1I2C_Reset" input
+			(at 203.2 134.62 180)
+			(uuid "69075835-d3c2-4289-8df5-f2c55b96108e")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
-		(pin "Chip1SinkSwitch[1..12]" output
-			(at 279.4 121.92 180)
-			(uuid "66ec672b-b122-4890-a45c-42de31df638f")
+		(pin "Chip1Interrupt" input
+			(at 203.2 129.54 180)
+			(uuid "73f18f59-cfd2-4448-8566-f1defb2dd585")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
-		(pin "Chip2CurrentSource[1..16]" input
-			(at 279.4 132.08 180)
-			(uuid "10a64e65-6d8c-4f35-b421-9ae6cf6c7ab9")
+		(pin "Chip1Shutdown" input
+			(at 203.2 124.46 180)
+			(uuid "7b385d46-f9a8-40f5-b416-fff6f7279e46")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
-		(pin "Chip2SinkSwitch[1..12]" output
-			(at 279.4 137.16 180)
-			(uuid "e63c1fd4-146f-4152-bcf9-5c543d806cc2")
+		(pin "I2C1{SDA, SCL}" bidirectional
+			(at 203.2 114.3 180)
+			(uuid "cedf3e9e-d182-4842-9771-8ad55fe98202")
 			(effects
 				(font
-					(size 2.5 2.5)
-					(thickness 0.4)
-					(bold yes)
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify left)
+			)
+		)
+		(pin "Chip2I2C_Reset" input
+			(at 203.2 149.86 180)
+			(uuid "50ac7894-d5b9-44c8-9526-e0bbdd229309")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify left)
+			)
+		)
+		(pin "Chip2Interrupt" input
+			(at 203.2 144.78 180)
+			(uuid "e74dced0-275a-4ec4-8ce7-1e062859ffe9")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify left)
+			)
+		)
+		(pin "Chip2Shutdown" input
+			(at 203.2 139.7 180)
+			(uuid "02911a35-6019-4732-afea-01373422e4bd")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
 				)
 				(justify left)
 			)
@@ -745,7 +670,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02"
-					(page "4")
+					(page "5")
 				)
 			)
 		)

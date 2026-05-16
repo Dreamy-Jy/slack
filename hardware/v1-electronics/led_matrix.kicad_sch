@@ -10,6 +10,172 @@
 		(rev "A.0.0")
 	)
 	(lib_symbols
+		(symbol "Jumper:Jumper_2_Open"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "JP"
+				(at 0 2.794 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Jumper_2_Open"
+				(at 0 -2.286 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Jumper, 2-pole, open"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Jumper SPST"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Jumper* TestPoint*2Pads* TestPoint*Bridge*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Jumper_2_Open_0_0"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_2_Open_0_1"
+				(arc
+					(start -1.524 1.27)
+					(mid 0 1.778)
+					(end 1.524 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Jumper_2_Open_1_1"
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A"
 			(pin_names
 				(offset 0)
@@ -623,8 +789,8 @@
 		)
 	)
 	(rectangle
-		(start 50.8 233.68)
-		(end 73.66 243.84)
+		(start 45.72 261.62)
+		(end 68.58 271.78)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -636,8 +802,8 @@
 		(uuid "1b26f354-56c6-4010-b467-bcf9435fbd4f")
 	)
 	(rectangle
-		(start 50.8 215.9)
-		(end 73.66 226.06)
+		(start 45.72 243.84)
+		(end 68.58 254)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -649,8 +815,8 @@
 		(uuid "29b7083c-e3ad-4a5d-9e97-ab1faa4b4c65")
 	)
 	(rectangle
-		(start 50.8 60.96)
-		(end 73.66 71.12)
+		(start 45.72 88.9)
+		(end 68.58 99.06)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -662,8 +828,8 @@
 		(uuid "311dfc5f-c062-4abe-8e95-5b5088e0e39d")
 	)
 	(rectangle
-		(start 25.4 233.68)
-		(end 48.26 243.84)
+		(start 20.32 261.62)
+		(end 43.18 271.78)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -675,8 +841,8 @@
 		(uuid "6d849f40-2570-4f3a-87eb-28e829d8879d")
 	)
 	(rectangle
-		(start 25.4 78.74)
-		(end 48.26 88.9)
+		(start 20.32 106.68)
+		(end 43.18 116.84)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -688,8 +854,8 @@
 		(uuid "987d65d1-bdc1-41e5-866b-681ce5c5bfd9")
 	)
 	(rectangle
-		(start 25.4 60.96)
-		(end 48.26 71.12)
+		(start 20.32 88.9)
+		(end 43.18 99.06)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -701,8 +867,8 @@
 		(uuid "c4c2eb36-773f-4364-8dbb-992aa3b71267")
 	)
 	(rectangle
-		(start 50.8 78.74)
-		(end 73.66 88.9)
+		(start 45.72 106.68)
+		(end 68.58 116.84)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -714,8 +880,8 @@
 		(uuid "cb420ebc-0246-4325-abbf-c5471d95a02b")
 	)
 	(rectangle
-		(start 25.4 215.9)
-		(end 48.26 226.06)
+		(start 20.32 243.84)
+		(end 43.18 254)
 		(stroke
 			(width 0.25)
 			(type default)
@@ -728,7 +894,7 @@
 	)
 	(text "Blue"
 		(exclude_from_sim no)
-		(at 25.4 58.42 0)
+		(at 20.32 86.36 0)
 		(effects
 			(font
 				(size 2 2)
@@ -741,7 +907,7 @@
 	)
 	(text "Green"
 		(exclude_from_sim no)
-		(at 50.8 58.42 0)
+		(at 45.72 86.36 0)
 		(effects
 			(font
 				(size 2 2)
@@ -754,7 +920,7 @@
 	)
 	(text "Red"
 		(exclude_from_sim no)
-		(at 25.4 231.14 0)
+		(at 20.32 259.08 0)
 		(effects
 			(font
 				(size 2 2)
@@ -767,7 +933,7 @@
 	)
 	(text "White"
 		(exclude_from_sim no)
-		(at 50.8 76.2 0)
+		(at 45.72 104.14 0)
 		(effects
 			(font
 				(size 2 2)
@@ -780,7 +946,7 @@
 	)
 	(text "Blue"
 		(exclude_from_sim no)
-		(at 25.4 213.36 0)
+		(at 20.32 241.3 0)
 		(effects
 			(font
 				(size 2 2)
@@ -793,7 +959,7 @@
 	)
 	(text "White"
 		(exclude_from_sim no)
-		(at 50.8 231.14 0)
+		(at 45.72 259.08 0)
 		(effects
 			(font
 				(size 2 2)
@@ -806,7 +972,7 @@
 	)
 	(text "Green"
 		(exclude_from_sim no)
-		(at 50.8 213.36 0)
+		(at 45.72 241.3 0)
 		(effects
 			(font
 				(size 2 2)
@@ -841,7 +1007,7 @@
 	)
 	(text "Red"
 		(exclude_from_sim no)
-		(at 25.4 76.2 0)
+		(at 20.32 104.14 0)
 		(effects
 			(font
 				(size 2 2)
@@ -851,48 +1017,6 @@
 			(justify left top)
 		)
 		(uuid "ef347e09-55e6-442c-bc63-be965cb34932")
-	)
-	(text_box "Discription Here"
-		(exclude_from_sim no)
-		(at 942.34 157.4801 0)
-		(size 83.82 10.1599)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type color)
-			(color 255 229 191 1)
-		)
-		(effects
-			(font
-				(size 1.3 1.3)
-			)
-			(justify left top)
-		)
-		(uuid "94ad6583-22d2-47ff-a12a-529cd986864a")
-	)
-	(text_box "Discription Here"
-		(exclude_from_sim no)
-		(at 942.34 289.56 0)
-		(size 83.82 10.1599)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type color)
-			(color 255 229 191 1)
-		)
-		(effects
-			(font
-				(size 1.3 1.3)
-			)
-			(justify left top)
-		)
-		(uuid "9c08720c-e285-49dd-a5a6-23ad7b21e512")
 	)
 	(junction
 		(at 929.64 78.74)
@@ -3079,99 +3203,99 @@
 		(uuid "ffac07bd-ac99-4dc0-bbb0-a656fbc87b84")
 	)
 	(no_connect
-		(at 27.94 63.5)
+		(at 22.86 91.44)
 		(uuid "04728864-6866-4479-b0f4-9b733231afc5")
 	)
 	(no_connect
-		(at 27.94 241.3)
+		(at 22.86 269.24)
 		(uuid "0638c27c-e873-46d5-8ac0-f66d5d907057")
 	)
 	(no_connect
-		(at 53.34 86.36)
+		(at 48.26 114.3)
 		(uuid "09f932ec-f819-40a3-85c2-b3844c50d01d")
 	)
 	(no_connect
-		(at 27.94 236.22)
+		(at 22.86 264.16)
 		(uuid "167ae06a-5259-4892-946c-055a9e012cae")
 	)
 	(no_connect
-		(at 53.34 68.58)
+		(at 48.26 96.52)
 		(uuid "2ee47e08-70c9-49d3-a7d7-707e4e10c407")
 	)
 	(no_connect
-		(at 27.94 83.82)
+		(at 22.86 111.76)
 		(uuid "3ba46404-5508-4372-8780-310409552f8b")
 	)
 	(no_connect
-		(at 53.34 236.22)
+		(at 48.26 264.16)
 		(uuid "3db62eaa-f29a-4bbb-aa7d-68a1e705a1c0")
 	)
 	(no_connect
-		(at 53.34 63.5)
+		(at 48.26 91.44)
 		(uuid "4fa4bb99-3b57-4fca-93bb-9e5b77e8e2e2")
 	)
 	(no_connect
-		(at 53.34 238.76)
+		(at 48.26 266.7)
 		(uuid "5568aa77-f0fa-4005-b88f-33581ee92761")
 	)
 	(no_connect
-		(at 27.94 81.28)
+		(at 22.86 109.22)
 		(uuid "5b3086b1-cf2d-4dc5-96d5-1b617aaf448a")
 	)
 	(no_connect
-		(at 53.34 83.82)
+		(at 48.26 111.76)
 		(uuid "5d5eab76-d7c3-4267-a76b-d53dfc677f2d")
 	)
 	(no_connect
-		(at 27.94 86.36)
+		(at 22.86 114.3)
 		(uuid "630af8b3-908a-4b8a-935a-2f05c108e563")
 	)
 	(no_connect
-		(at 27.94 238.76)
+		(at 22.86 266.7)
 		(uuid "638dd8df-ca35-4d48-8c14-d0955cc12b93")
 	)
 	(no_connect
-		(at 53.34 223.52)
+		(at 48.26 251.46)
 		(uuid "63902c2c-436b-4edf-91ae-ceacbf70eee4")
 	)
 	(no_connect
-		(at 27.94 223.52)
+		(at 22.86 251.46)
 		(uuid "7294c8c5-a629-44bd-b7a2-8d195c5fefc6")
 	)
 	(no_connect
-		(at 53.34 218.44)
+		(at 48.26 246.38)
 		(uuid "8087a8db-b879-4a8b-95b0-df14abb019f4")
 	)
 	(no_connect
-		(at 27.94 218.44)
+		(at 22.86 246.38)
 		(uuid "afe6c82d-8dbb-4e21-b8c9-ef796dfbf39e")
 	)
 	(no_connect
-		(at 53.34 241.3)
+		(at 48.26 269.24)
 		(uuid "b5e548ff-dfcf-4f96-8763-1896806e7f00")
 	)
 	(no_connect
-		(at 53.34 81.28)
+		(at 48.26 109.22)
 		(uuid "b6b4d1e3-a5dc-4fed-b51a-5be534487d06")
 	)
 	(no_connect
-		(at 53.34 220.98)
+		(at 48.26 248.92)
 		(uuid "be8ebde9-c094-45dc-b4c5-1f3097740e2b")
 	)
 	(no_connect
-		(at 53.34 66.04)
+		(at 48.26 93.98)
 		(uuid "ce5dcf3b-2b3f-4154-b233-21b9a6d2a43a")
 	)
 	(no_connect
-		(at 27.94 66.04)
+		(at 22.86 93.98)
 		(uuid "d3b96085-4f5b-4448-9c05-66f6cf2bbf70")
 	)
 	(no_connect
-		(at 27.94 220.98)
+		(at 22.86 248.92)
 		(uuid "e0004bd9-8ace-48ae-937a-b5f372656e99")
 	)
 	(no_connect
-		(at 27.94 68.58)
+		(at 22.86 96.52)
 		(uuid "f124c458-ea2b-4f25-b757-2bb9839dd98c")
 	)
 	(wire
@@ -3473,6 +3597,16 @@
 			(type default)
 		)
 		(uuid "0f222945-3d20-4ca7-b8db-c8092db4b8b6")
+	)
+	(wire
+		(pts
+			(xy 101.6 160.02) (xy 101.6 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f2da130-a3d7-4856-93cb-b9c0379c2989")
 	)
 	(wire
 		(pts
@@ -5566,6 +5700,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 223.52) (xy 109.22 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b22aad0-8c24-4f73-809e-9c7519d2c333")
+	)
+	(wire
+		(pts
 			(xy 127 269.24) (xy 157.48 269.24)
 		)
 		(stroke
@@ -5603,6 +5747,16 @@
 			(type default)
 		)
 		(uuid "6e380990-117e-4533-a63f-5a126fca4099")
+	)
+	(wire
+		(pts
+			(xy 81.28 68.58) (xy 101.6 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e755327-246c-428a-bd5b-cd1c33cd8d3d")
 	)
 	(wire
 		(pts
@@ -6856,6 +7010,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 160.02) (xy 101.6 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6840fe1-d3a3-4733-8d85-6ae8bc4241e2")
+	)
+	(wire
+		(pts
 			(xy 690.88 213.36) (xy 690.88 246.38)
 		)
 		(stroke
@@ -7696,6 +7860,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 68.58) (xy 101.6 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc74b6c0-2490-4711-9f70-3776f8ba967d")
+	)
+	(wire
+		(pts
 			(xy 492.76 226.06) (xy 492.76 236.22)
 		)
 		(stroke
@@ -7943,6 +8117,16 @@
 			(type default)
 		)
 		(uuid "d4aac854-22b3-49fa-bc5f-91cb152ed4c8")
+	)
+	(wire
+		(pts
+			(xy 109.22 160.02) (xy 109.22 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4acf79b-429e-4514-9084-c61d25177f6b")
 	)
 	(wire
 		(pts
@@ -9035,7 +9219,7 @@
 		(uuid "00d168b2-8194-418b-81e1-38663e759cce")
 	)
 	(label "Chip2SinkSwitch10"
-		(at 53.34 223.52 0)
+		(at 48.26 251.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9043,6 +9227,16 @@
 			(justify left)
 		)
 		(uuid "0642ae22-3319-4ad3-ad4b-d0c5a039b749")
+	)
+	(label "Chip1SinkSwitch[1..12]"
+		(at 81.28 60.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0e95eb00-0696-4bb8-a085-d1ab0e669250")
 	)
 	(label "Chip1CurrentSource9"
 		(at 579.12 50.8 90)
@@ -9066,7 +9260,7 @@
 		(uuid "103ba8b8-1a7b-4173-8d4e-9f1511059130")
 	)
 	(label "Chip1SinkSwitch5"
-		(at 27.94 66.04 0)
+		(at 22.86 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9076,7 +9270,7 @@
 		(uuid "11b1132d-718b-4be4-a79d-09b55afc8a1d")
 	)
 	(label "Chip1SinkSwitch10"
-		(at 53.34 68.58 0)
+		(at 48.26 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9096,7 +9290,7 @@
 		(uuid "14baae18-83b1-4aa5-ac7c-3f89b02a7250")
 	)
 	(label "Chip2SinkSwitch8"
-		(at 53.34 238.76 0)
+		(at 48.26 266.7 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9106,7 +9300,7 @@
 		(uuid "1906078f-b68e-4854-8b47-b1c1c2c6f2d4")
 	)
 	(label "Chip1SinkSwitch11"
-		(at 27.94 86.36 0)
+		(at 22.86 114.3 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9126,7 +9320,7 @@
 		(uuid "1d5182a5-6ae7-46c7-bd3b-06888ede8ce5")
 	)
 	(label "Chip1SinkSwitch12"
-		(at 53.34 86.36 0)
+		(at 48.26 114.3 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9176,7 +9370,7 @@
 		(uuid "3601dcb4-9019-4fb0-9c6d-6aa12408b2be")
 	)
 	(label "Chip1SinkSwitch9"
-		(at 27.94 68.58 0)
+		(at 22.86 96.52 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9196,7 +9390,7 @@
 		(uuid "3bdf64a3-0c6a-4404-b7ab-94c0fb8cf038")
 	)
 	(label "Chip1SinkSwitch3"
-		(at 27.94 81.28 0)
+		(at 22.86 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9216,7 +9410,7 @@
 		(uuid "3d6d96de-fd72-4cf9-8b82-34b6d02ff1cd")
 	)
 	(label "Chip2SinkSwitch9"
-		(at 27.94 223.52 0)
+		(at 22.86 251.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9236,7 +9430,7 @@
 		(uuid "3f703302-ed45-4f23-9bbe-cadaae881a56")
 	)
 	(label "Chip1SinkSwitch7"
-		(at 27.94 83.82 0)
+		(at 22.86 111.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9266,7 +9460,7 @@
 		(uuid "4d67b7d5-a898-40ad-9fc7-5c2139c51897")
 	)
 	(label "Chip2SinkSwitch2"
-		(at 53.34 218.44 0)
+		(at 48.26 246.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9306,7 +9500,7 @@
 		(uuid "55d1ed88-af5c-46bf-a363-c92ff539233c")
 	)
 	(label "Chip2SinkSwitch3"
-		(at 27.94 236.22 0)
+		(at 22.86 264.16 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9356,7 +9550,7 @@
 		(uuid "60ad7121-eb79-406b-bf9d-58acff1e7d54")
 	)
 	(label "Chip2SinkSwitch5"
-		(at 27.94 220.98 0)
+		(at 22.86 248.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9396,7 +9590,7 @@
 		(uuid "6f03a850-4cf8-4c38-8ea3-fb4452641a10")
 	)
 	(label "Chip2SinkSwitch7"
-		(at 27.94 238.76 0)
+		(at 22.86 266.7 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9447,7 +9641,7 @@
 		(uuid "80cab1bb-768e-4ce9-addb-dd9798c2d377")
 	)
 	(label "Chip1SinkSwitch6"
-		(at 53.34 66.04 0)
+		(at 48.26 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9457,7 +9651,7 @@
 		(uuid "83af79c8-1fcd-4a6e-83e4-34b076d8de62")
 	)
 	(label "Chip1SinkSwitch4"
-		(at 53.34 81.28 0)
+		(at 48.26 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9477,7 +9671,7 @@
 		(uuid "8567fc7d-5b82-43d3-abe6-ad1a6186621c")
 	)
 	(label "Chip2SinkSwitch4"
-		(at 53.34 236.22 0)
+		(at 48.26 264.16 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9517,7 +9711,7 @@
 		(uuid "8fec5598-9176-4093-888c-a1e91dc12ef3")
 	)
 	(label "Chip2SinkSwitch1"
-		(at 27.94 218.44 0)
+		(at 22.86 246.38 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9547,7 +9741,7 @@
 		(uuid "9693ab49-351b-4c97-86b5-facaf7ca38c7")
 	)
 	(label "Chip2SinkSwitch12"
-		(at 53.34 241.3 0)
+		(at 48.26 269.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9607,7 +9801,7 @@
 		(uuid "c0db5225-5620-44e2-b6ab-eb09e5ce8923")
 	)
 	(label "Chip1SinkSwitch1"
-		(at 27.94 63.5 0)
+		(at 22.86 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9637,7 +9831,7 @@
 		(uuid "ca30f689-1a15-439e-97ee-9c06a8ba0a10")
 	)
 	(label "Chip2SinkSwitch11"
-		(at 27.94 241.3 0)
+		(at 22.86 269.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9647,7 +9841,7 @@
 		(uuid "cb4d1ccd-afe3-4bbf-9f72-3f5530c6e0e0")
 	)
 	(label "Chip2SinkSwitch6"
-		(at 53.34 220.98 0)
+		(at 48.26 248.92 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9665,6 +9859,16 @@
 			(justify left)
 		)
 		(uuid "d11b9f31-8a38-40b2-8a62-aebebed88a87")
+	)
+	(label "Chip2CurrentSource[1..16]"
+		(at 81.28 213.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d1fdf0de-db8a-4b8a-b22a-406038843a10")
 	)
 	(label "Chip2SinkSwitch6"
 		(at 127 264.16 180)
@@ -9696,6 +9900,16 @@
 		)
 		(uuid "dcd6a282-80e3-4e38-902f-738a76f254cd")
 	)
+	(label "Chip1CurrentSource[1..16]"
+		(at 81.28 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "dcdd09d2-a2ce-47f9-8434-efe71ecf00a0")
+	)
 	(label "Chip1SinkSwitch10"
 		(at 127 144.78 180)
 		(effects
@@ -9717,7 +9931,7 @@
 		(uuid "df115ead-fe73-4a5b-a34f-8a7bc1bf3599")
 	)
 	(label "Chip1SinkSwitch2"
-		(at 53.34 63.5 0)
+		(at 48.26 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9757,7 +9971,7 @@
 		(uuid "ec0ed2d0-6abd-48ac-a45f-545db5aadbc3")
 	)
 	(label "Chip1SinkSwitch8"
-		(at 53.34 83.82 0)
+		(at 48.26 111.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9785,6 +9999,16 @@
 			(justify right)
 		)
 		(uuid "f351b632-f16b-4b9e-9fa0-b26fd7a6088e")
+	)
+	(label "Chip2SinkSwitch[1..12]"
+		(at 81.28 215.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f4e711ed-dce5-4703-9203-cb608aa5147e")
 	)
 	(label "Chip2SinkSwitch10"
 		(at 127 294.64 180)
@@ -9826,49 +10050,93 @@
 		)
 		(uuid "ff9eebb1-d13f-4908-91c7-73f36be9b764")
 	)
-	(hierarchical_label "Chip2SinkSwitch[1..12]"
-		(shape output)
-		(at 25.4 205.74 0)
+	(hierarchical_label "I2C1{SDA, SCL}"
+		(shape bidirectional)
+		(at 81.28 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "3764b0dc-a240-4a4b-8e4e-a4a7cea3ebfd")
+		(uuid "352060e2-f3ef-4986-9c22-b4d58cce97f8")
 	)
-	(hierarchical_label "Chip2CurrentSource[1..16]"
+	(hierarchical_label "I2C1{SDA, SCL}"
+		(shape bidirectional)
+		(at 81.28 220.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "39abb5b8-7f79-445e-9589-37c2e11cebf6")
+	)
+	(hierarchical_label "Chip1Interrupt"
 		(shape input)
-		(at 25.4 203.2 0)
+		(at 81.28 76.2 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "5f415b3a-79a0-4806-aefa-4e0be1972c7b")
+		(uuid "8bc62908-3e3d-4a84-89c1-9748b84103ce")
 	)
-	(hierarchical_label "Chip1CurrentSource[1..16]"
+	(hierarchical_label "Chip2Shutdown"
 		(shape input)
-		(at 25.4 50.8 0)
+		(at 81.28 233.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "7b1cbcb7-3f7e-4bbf-9ac2-ca12331815e9")
+		(uuid "8d6c9df7-a254-4160-b0f6-f882b7226475")
 	)
-	(hierarchical_label "Chip1SinkSwitch[1..12]"
-		(shape output)
-		(at 25.4 53.34 0)
+	(hierarchical_label "Chip2Interrupt"
+		(shape input)
+		(at 81.28 231.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "a3411810-ac7f-42c4-8dfc-6efe2713bfe5")
+		(uuid "b7b5468c-b9e0-4f07-9017-281b8bcd21ad")
+	)
+	(hierarchical_label "Chip2I2C_Reset"
+		(shape input)
+		(at 81.28 226.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c05f7bc3-c34d-46c0-b947-0e4500386041")
+	)
+	(hierarchical_label "Chip1Shutdown"
+		(shape input)
+		(at 81.28 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e1e90651-d21c-49c5-83f1-0e78094d6b88")
+	)
+	(hierarchical_label "Chip1I2C_Reset"
+		(shape input)
+		(at 81.28 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e5f14beb-e3eb-474e-9510-574270390f57")
 	)
 	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
@@ -20783,6 +21051,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Jumper:Jumper_2_Open")
+		(at 101.6 111.76 90)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "bbcccd67-ba1b-4006-af48-11a9135dc255")
+		(property "Reference" "JP1"
+			(at 99.06 110.4899 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Jumper_2_Open"
+			(at 99.06 113.0299 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Jumper, 2-pole, open"
+			(at 101.6 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c3bca3ac-07ee-4ea9-832f-1fd5c2621aa9")
+		)
+		(pin "2"
+			(uuid "97fb507c-5761-47ba-8c12-6c125c27634d")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "JP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
 		(at 759.46 246.38 90)
 		(unit 1)
@@ -24650,6 +25000,236 @@
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
 					(reference "LED20_1")
 					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 203.2)
+		(size 60.96 35.56)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "51bf0ce9-b137-4da2-aa93-92744fd406ec")
+		(property "Sheetname" "LED Matrix Controller 2"
+			(at 22.86 208.28 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2 2)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "matrix_controller_2.kicad_sch"
+			(at 20.32 236.22 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CurrentSource[1..16]" input
+			(at 81.28 213.36 0)
+			(uuid "32c56091-2997-4ccb-ba9b-c1d04f93f637")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C1{SDA, SCL}" bidirectional
+			(at 81.28 220.98 0)
+			(uuid "4854d852-1e0d-472d-b4cc-9ffb901c7cf9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_Reset" input
+			(at 81.28 226.06 0)
+			(uuid "02bb2f41-18db-455d-a393-c90785ff3013")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Interrupt" input
+			(at 81.28 231.14 0)
+			(uuid "fbde7bb1-f656-40c4-86a3-0f1ee27ef40a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Shutdown" input
+			(at 81.28 233.68 0)
+			(uuid "b94213c3-edc9-4a65-b449-f5cbe6327519")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SinkSwitch[1..12]" output
+			(at 81.28 215.9 0)
+			(uuid "6a068408-e95c-4cab-81f3-54510271c21b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SYNC" bidirectional
+			(at 81.28 223.52 0)
+			(uuid "0d216893-4236-4afb-b9ff-5b9348d35b5b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 20.32 50.8)
+		(size 60.96 33.02)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "f164f568-e333-433f-a569-8bf803dc360e")
+		(property "Sheetname" "LED Matrix Controller 1"
+			(at 22.86 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 2 2)
+				)
+				(justify left top)
+			)
+		)
+		(property "Sheetfile" "matric_controller_1.kicad_sch"
+			(at 20.32 81.8646 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "CurrentSource[1..16]" input
+			(at 81.28 58.42 0)
+			(uuid "84b3adc1-5ba0-4231-ab66-9b8200d6f1cc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C1{SDA, SCL}" bidirectional
+			(at 81.28 66.04 0)
+			(uuid "272883e8-da10-4cc6-b840-121aa1b5065e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C_Reset" input
+			(at 81.28 71.12 0)
+			(uuid "1ca44719-9124-43bc-861a-24ed1700b746")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Interrupt" input
+			(at 81.28 76.2 0)
+			(uuid "6de7750e-ad4a-41ef-af85-256dae344fe7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "Shutdown" input
+			(at 81.28 78.74 0)
+			(uuid "e213678f-6662-4778-aa0d-966d4cdefc49")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SinkSwitch[1..12]" output
+			(at 81.28 60.96 0)
+			(uuid "5656f9d9-59f4-4107-90c6-0ecfef0214dc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SYNC" bidirectional
+			(at 81.28 68.58 0)
+			(uuid "f346f900-e1cd-41a0-9921-91b0cbacd84f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(page "6")
 				)
 			)
 		)
