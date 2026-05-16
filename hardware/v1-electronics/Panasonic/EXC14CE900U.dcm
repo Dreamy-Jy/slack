@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP EXC14CE900U
+D Series/Type: Common mode Filters (0302 small size, for Mbps, Gbps), Size [LW] (mm): 0.850.65, Height (mm): 0.45, Impedance [Common Mode] (): 90, Rated Voltage [DC] (V): 5, Rated Current [DC] (mA): 130, DC Resistance [max.] (): 2.5, Number of circuit: 1
+K
+F https://industrial.panasonic.com/cdbs/www-data/pdf/AWE0000/AWE0000C147.pdf
+$ENDCMP
+#
+#End Doc Library
