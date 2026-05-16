@@ -2808,7 +2808,7 @@
 	)
 	(text "Figure out the battery situation and circuitry\nConpare BQ25186DLHR and BQ25185DLHR"
 		(exclude_from_sim no)
-		(at 76.2 132.08 0)
+		(at 15.24 116.84 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3156,7 +3156,7 @@
 			(xy 220.98 12.7) (xy 220.98 104.14)
 		)
 		(stroke
-			(width 0.5)
+			(width 1)
 			(type dash_dot_dot)
 		)
 		(uuid "517520e5-c661-4340-8f87-91357cf46784")
@@ -3196,7 +3196,7 @@
 			(xy 101.6 12.7) (xy 101.6 104.14)
 		)
 		(stroke
-			(width 0.5)
+			(width 1)
 			(type dash_dot_dot)
 		)
 		(uuid "856c5513-3cc2-4751-8f18-0705a0d8868a")

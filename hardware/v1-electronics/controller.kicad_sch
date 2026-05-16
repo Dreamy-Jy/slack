@@ -4135,7 +4135,7 @@
 			(xy 203.2 12.7) (xy 203.2 284.48)
 		)
 		(stroke
-			(width 0.5)
+			(width 1)
 			(type dash_dot_dot)
 		)
 		(uuid "0e4c4a16-f9fe-4ae9-9b6d-07144f3ca957")
@@ -4595,7 +4595,7 @@
 			(xy 12.7 152.4) (xy 203.2 152.4)
 		)
 		(stroke
-			(width 0.5)
+			(width 1)
 			(type dash_dot_dot)
 		)
 		(uuid "872f705d-0ad5-4d3c-8663-ba9cb6b5b33f")
@@ -5552,7 +5552,7 @@
 			)
 		)
 	)
-	(global_label "CS7_R_1"
+	(global_label "CS7_1"
 		(shape input)
 		(at 154.94 132.08 270)
 		(fields_autoplaced yes)
@@ -5624,7 +5624,7 @@
 			)
 		)
 	)
-	(global_label "CS12_W_2"
+	(global_label "CS12_2"
 		(shape input)
 		(at 167.64 226.06 0)
 		(fields_autoplaced yes)
@@ -5672,7 +5672,7 @@
 			)
 		)
 	)
-	(global_label "SW7_1"
+	(global_label "SW7_R_1"
 		(shape input)
 		(at 121.92 106.68 180)
 		(fields_autoplaced yes)
@@ -5720,7 +5720,7 @@
 			)
 		)
 	)
-	(global_label "CS4_W_2"
+	(global_label "CS4_2"
 		(shape input)
 		(at 144.78 251.46 270)
 		(fields_autoplaced yes)
@@ -5744,7 +5744,7 @@
 			)
 		)
 	)
-	(global_label "CS11_R_1"
+	(global_label "CS11_1"
 		(shape input)
 		(at 167.64 109.22 0)
 		(fields_autoplaced yes)
@@ -5816,7 +5816,7 @@
 			)
 		)
 	)
-	(global_label "SW10_2"
+	(global_label "SW10_G_2"
 		(shape input)
 		(at 129.54 251.46 270)
 		(fields_autoplaced yes)
@@ -5912,7 +5912,7 @@
 			)
 		)
 	)
-	(global_label "CS14_G_2"
+	(global_label "CS14_2"
 		(shape input)
 		(at 167.64 218.44 0)
 		(fields_autoplaced yes)
@@ -6032,7 +6032,7 @@
 			)
 		)
 	)
-	(global_label "CS8_W_2"
+	(global_label "CS8_2"
 		(shape input)
 		(at 157.48 251.46 270)
 		(fields_autoplaced yes)
@@ -6080,7 +6080,7 @@
 			)
 		)
 	)
-	(global_label "CS10_G_2"
+	(global_label "CS10_2"
 		(shape input)
 		(at 167.64 231.14 0)
 		(fields_autoplaced yes)
@@ -6104,7 +6104,7 @@
 			)
 		)
 	)
-	(global_label "CS14_G_1"
+	(global_label "CS14_1"
 		(shape input)
 		(at 167.64 99.06 0)
 		(fields_autoplaced yes)
@@ -6152,7 +6152,7 @@
 			)
 		)
 	)
-	(global_label "CS16_W_2"
+	(global_label "CS16_2"
 		(shape input)
 		(at 167.64 213.36 0)
 		(fields_autoplaced yes)
@@ -6200,7 +6200,7 @@
 			)
 		)
 	)
-	(global_label "CS4_W_1"
+	(global_label "CS4_1"
 		(shape input)
 		(at 144.78 132.08 270)
 		(fields_autoplaced yes)
@@ -6296,7 +6296,7 @@
 			)
 		)
 	)
-	(global_label "CS1_B_1"
+	(global_label "CS1_1"
 		(shape input)
 		(at 137.16 132.08 270)
 		(fields_autoplaced yes)
@@ -6535,7 +6535,7 @@
 			)
 		)
 	)
-	(global_label "CS7_R_2"
+	(global_label "CS7_2"
 		(shape input)
 		(at 154.94 251.46 270)
 		(fields_autoplaced yes)
@@ -6607,7 +6607,7 @@
 			)
 		)
 	)
-	(global_label "SW7_2"
+	(global_label "SW7_R_2"
 		(shape input)
 		(at 121.92 226.06 180)
 		(fields_autoplaced yes)
@@ -6703,7 +6703,7 @@
 			)
 		)
 	)
-	(global_label "SW4_1"
+	(global_label "SW4_W_1"
 		(shape input)
 		(at 121.92 99.06 180)
 		(fields_autoplaced yes)
@@ -6751,7 +6751,7 @@
 			)
 		)
 	)
-	(global_label "CS13_B_2"
+	(global_label "CS13_2"
 		(shape input)
 		(at 167.64 220.98 0)
 		(fields_autoplaced yes)
@@ -6847,7 +6847,7 @@
 			)
 		)
 	)
-	(global_label "SW12_1"
+	(global_label "SW12_W_1"
 		(shape input)
 		(at 134.62 132.08 270)
 		(fields_autoplaced yes)
@@ -6895,7 +6895,7 @@
 			)
 		)
 	)
-	(global_label "SW8_1"
+	(global_label "SW8_W_1"
 		(shape input)
 		(at 121.92 109.22 180)
 		(fields_autoplaced yes)
@@ -7015,7 +7015,7 @@
 			)
 		)
 	)
-	(global_label "CS3_R_2"
+	(global_label "CS3_2"
 		(shape input)
 		(at 142.24 251.46 270)
 		(fields_autoplaced yes)
@@ -7039,7 +7039,7 @@
 			)
 		)
 	)
-	(global_label "SW5_2"
+	(global_label "SW5_B_2"
 		(shape input)
 		(at 121.92 220.98 180)
 		(fields_autoplaced yes)
@@ -7087,7 +7087,7 @@
 			)
 		)
 	)
-	(global_label "SW9_2"
+	(global_label "SW9_B_2"
 		(shape input)
 		(at 121.92 231.14 180)
 		(fields_autoplaced yes)
@@ -7135,7 +7135,7 @@
 			)
 		)
 	)
-	(global_label "SW11_1"
+	(global_label "SW11_R_1"
 		(shape input)
 		(at 132.08 132.08 270)
 		(fields_autoplaced yes)
@@ -7231,7 +7231,7 @@
 			)
 		)
 	)
-	(global_label "SW3_1"
+	(global_label "SW3_R_1"
 		(shape input)
 		(at 121.92 93.98 180)
 		(fields_autoplaced yes)
@@ -7279,7 +7279,7 @@
 			)
 		)
 	)
-	(global_label "CS2_G_1"
+	(global_label "CS2_1"
 		(shape input)
 		(at 139.7 132.08 270)
 		(fields_autoplaced yes)
@@ -7328,7 +7328,7 @@
 			)
 		)
 	)
-	(global_label "CS11_R_2"
+	(global_label "CS11_2"
 		(shape input)
 		(at 167.64 228.6 0)
 		(fields_autoplaced yes)
@@ -7400,7 +7400,7 @@
 			)
 		)
 	)
-	(global_label "CS5_B_1"
+	(global_label "CS5_1"
 		(shape input)
 		(at 149.86 132.08 270)
 		(fields_autoplaced yes)
@@ -7544,7 +7544,7 @@
 			)
 		)
 	)
-	(global_label "SW6_2"
+	(global_label "SW6_G_2"
 		(shape input)
 		(at 121.92 223.52 180)
 		(fields_autoplaced yes)
@@ -7592,7 +7592,7 @@
 			)
 		)
 	)
-	(global_label "CS1_B_2"
+	(global_label "CS1_2"
 		(shape input)
 		(at 137.16 251.46 270)
 		(fields_autoplaced yes)
@@ -7616,7 +7616,7 @@
 			)
 		)
 	)
-	(global_label "SW1_1"
+	(global_label "SW1_B_1"
 		(shape input)
 		(at 121.92 88.9 180)
 		(fields_autoplaced yes)
@@ -7640,7 +7640,7 @@
 			)
 		)
 	)
-	(global_label "CS3_R_1"
+	(global_label "CS3_1"
 		(shape input)
 		(at 142.24 132.08 270)
 		(fields_autoplaced yes)
@@ -7664,7 +7664,7 @@
 			)
 		)
 	)
-	(global_label "CS10_G_1"
+	(global_label "CS10_1"
 		(shape input)
 		(at 167.64 111.76 0)
 		(fields_autoplaced yes)
@@ -7712,7 +7712,7 @@
 			)
 		)
 	)
-	(global_label "SW1_2"
+	(global_label "SW1_B_2"
 		(shape input)
 		(at 121.92 208.28 180)
 		(fields_autoplaced yes)
@@ -7736,7 +7736,7 @@
 			)
 		)
 	)
-	(global_label "SW2_2"
+	(global_label "SW2_G_2"
 		(shape input)
 		(at 121.92 210.82 180)
 		(fields_autoplaced yes)
@@ -7880,7 +7880,7 @@
 			)
 		)
 	)
-	(global_label "CS6_G_2"
+	(global_label "CS6_2"
 		(shape input)
 		(at 152.4 251.46 270)
 		(fields_autoplaced yes)
@@ -8072,7 +8072,7 @@
 			)
 		)
 	)
-	(global_label "CS2_G_2"
+	(global_label "CS2_2"
 		(shape input)
 		(at 139.7 251.46 270)
 		(fields_autoplaced yes)
@@ -8169,7 +8169,7 @@
 			)
 		)
 	)
-	(global_label "CS15_R_1"
+	(global_label "CS15_1"
 		(shape input)
 		(at 167.64 96.52 0)
 		(fields_autoplaced yes)
@@ -8193,7 +8193,7 @@
 			)
 		)
 	)
-	(global_label "CS12_W_1"
+	(global_label "CS12_1"
 		(shape input)
 		(at 167.64 106.68 0)
 		(fields_autoplaced yes)
@@ -8217,7 +8217,7 @@
 			)
 		)
 	)
-	(global_label "CS5_B_2"
+	(global_label "CS5_2"
 		(shape input)
 		(at 149.86 251.46 270)
 		(fields_autoplaced yes)
@@ -8265,7 +8265,7 @@
 			)
 		)
 	)
-	(global_label "SW10_1"
+	(global_label "SW10_G_1"
 		(shape input)
 		(at 129.54 132.08 270)
 		(fields_autoplaced yes)
@@ -8313,7 +8313,7 @@
 			)
 		)
 	)
-	(global_label "SW8_2"
+	(global_label "SW8_W_2"
 		(shape input)
 		(at 121.92 228.6 180)
 		(fields_autoplaced yes)
@@ -8337,7 +8337,7 @@
 			)
 		)
 	)
-	(global_label "CS9_B_2"
+	(global_label "CS9_2"
 		(shape input)
 		(at 167.64 233.68 0)
 		(fields_autoplaced yes)
@@ -8361,7 +8361,7 @@
 			)
 		)
 	)
-	(global_label "SW6_1"
+	(global_label "SW6_G_1"
 		(shape input)
 		(at 121.92 104.14 180)
 		(fields_autoplaced yes)
@@ -8409,7 +8409,7 @@
 			)
 		)
 	)
-	(global_label "SW9_1"
+	(global_label "SW9_B_1"
 		(shape input)
 		(at 121.92 111.76 180)
 		(fields_autoplaced yes)
@@ -8457,7 +8457,7 @@
 			)
 		)
 	)
-	(global_label "CS6_G_1"
+	(global_label "CS6_1"
 		(shape input)
 		(at 152.4 132.08 270)
 		(fields_autoplaced yes)
@@ -8529,7 +8529,7 @@
 			)
 		)
 	)
-	(global_label "SW12_2"
+	(global_label "SW12_W_2"
 		(shape input)
 		(at 134.62 251.46 270)
 		(fields_autoplaced yes)
@@ -8601,7 +8601,7 @@
 			)
 		)
 	)
-	(global_label "CS13_B_1"
+	(global_label "CS13_1"
 		(shape input)
 		(at 167.64 101.6 0)
 		(fields_autoplaced yes)
@@ -8625,7 +8625,7 @@
 			)
 		)
 	)
-	(global_label "CS8_W_1"
+	(global_label "CS8_1"
 		(shape input)
 		(at 157.48 132.08 270)
 		(fields_autoplaced yes)
@@ -8673,7 +8673,7 @@
 			)
 		)
 	)
-	(global_label "SW11_2"
+	(global_label "SW11_R_2"
 		(shape input)
 		(at 132.08 251.46 270)
 		(fields_autoplaced yes)
@@ -8865,7 +8865,7 @@
 			)
 		)
 	)
-	(global_label "SW3_2"
+	(global_label "SW3_R_2"
 		(shape input)
 		(at 121.92 213.36 180)
 		(fields_autoplaced yes)
@@ -9081,7 +9081,7 @@
 			)
 		)
 	)
-	(global_label "SW2_1"
+	(global_label "SW2_G_1"
 		(shape input)
 		(at 121.92 91.44 180)
 		(fields_autoplaced yes)
@@ -9273,7 +9273,7 @@
 			)
 		)
 	)
-	(global_label "CS15_R_2"
+	(global_label "CS15_2"
 		(shape input)
 		(at 167.64 215.9 0)
 		(fields_autoplaced yes)
@@ -9321,7 +9321,7 @@
 			)
 		)
 	)
-	(global_label "SW5_1"
+	(global_label "SW5_B_1"
 		(shape input)
 		(at 121.92 101.6 180)
 		(fields_autoplaced yes)
@@ -9345,7 +9345,7 @@
 			)
 		)
 	)
-	(global_label "CS9_B_1"
+	(global_label "CS9_1"
 		(shape input)
 		(at 167.64 114.3 0)
 		(fields_autoplaced yes)
@@ -9393,7 +9393,7 @@
 			)
 		)
 	)
-	(global_label "SW4_2"
+	(global_label "SW4_W_2"
 		(shape input)
 		(at 121.92 218.44 180)
 		(fields_autoplaced yes)
@@ -9609,7 +9609,7 @@
 			)
 		)
 	)
-	(global_label "CS16_W_1"
+	(global_label "CS16_1"
 		(shape input)
 		(at 167.64 93.98 0)
 		(fields_autoplaced yes)

@@ -3964,7 +3964,7 @@
 			(xy 12.7 236.22) (xy 436.88 233.68)
 		)
 		(stroke
-			(width 0.5)
+			(width 1)
 			(type dash_dot_dot)
 		)
 		(uuid "45b3dace-ebc6-47cb-b16e-c13be938d702")
