@@ -790,7 +790,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "",
+    "used_designators": "C27,#PWR105,#PWR137",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",
@@ -813,7 +813,7 @@
     ],
     [
       "db75d338-3a03-4feb-a76e-be79011cbec0",
-      "LED Matrix"
+      "LED Matricies"
     ],
     [
       "af928721-79e0-4dbd-9302-cd57a57ce5a4",

@@ -5062,18 +5062,6 @@
 		(uuid "6f626da2-d11c-4f13-8efe-6f72495954a0")
 	)
 	(rectangle
-		(start 256.54 157.48)
-		(end 284.48 182.88)
-		(stroke
-			(width 0.2)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "7134aa07-d2a1-4acc-8b8d-303d688270ef")
-	)
-	(rectangle
 		(start 12.7 256.54)
 		(end 259.08 287.02)
 		(stroke
@@ -5159,7 +5147,7 @@
 	)
 	(text "Manual Reset"
 		(exclude_from_sim no)
-		(at 266.7 185.42 0)
+		(at 269.24 185.42 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -5239,6 +5227,16 @@
 		)
 		(uuid "374fa7f1-fe29-4473-9c9e-509245fbd5ff")
 	)
+	(text "SHould this be on PGND?"
+		(exclude_from_sim no)
+		(at 55.88 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3c0e8945-f514-44ba-ac11-83405342d468")
+	)
 	(text "Figure out the battery situation and circuitry\nConpare BQ25186DLHR and BQ25185DLHR"
 		(exclude_from_sim no)
 		(at 15.24 266.7 0)
@@ -5263,7 +5261,7 @@
 	)
 	(text "Not sure if I should\nput a capacitor here.\n\nTI recommends putting \na capacitor across the \nsecond resistor(R2) to \nprotect against noise.\n\nThe criteria is whiether \nR2 > or < 15kΩ. Though\nthe datasheet has \nconfliciting suggestions\nbetween Section 9.2.2.1\nand Section 9.2"
 		(exclude_from_sim no)
-		(at 454.66 160.02 0)
+		(at 454.66 165.1 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5274,7 +5272,7 @@
 	)
 	(text "Set V_out to 5v\nDatasheet Section 9.2.2.1"
 		(exclude_from_sim no)
-		(at 454.66 152.4 0)
+		(at 454.66 157.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5307,7 +5305,7 @@
 	)
 	(text "Regulator Config"
 		(exclude_from_sim no)
-		(at 307.34 208.28 0)
+		(at 327.66 208.28 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -5397,7 +5395,7 @@
 	)
 	(text "Status Indicators"
 		(exclude_from_sim no)
-		(at 317.5 152.4 0)
+		(at 314.96 152.4 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -5442,7 +5440,7 @@
 	)
 	(text "PMID Decoupler"
 		(exclude_from_sim no)
-		(at 271.78 208.28 0)
+		(at 276.86 208.28 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -5473,17 +5471,6 @@
 			(justify left)
 		)
 		(uuid "f50b785c-7580-4583-abb9-a08c39e1e97e")
-	)
-	(text "Input Decoupler"
-		(exclude_from_sim no)
-		(at 266.7 160.02 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-				(thickness 0.1875)
-			)
-		)
-		(uuid "fb4a904d-d754-4199-91f9-927bfc363aa3")
 	)
 	(text_box "Protection for USB-C\n- Electrostatic Discharge\n- Overvoltage and Power Protection\n	- polyfuse on vbus line\n- EMI filtering inline on D+/D-\n- USBLC6-2P6, IP4220CZ6,125\n\nProtection for Charger IC\n-\n\nProtection for Boost Converter\n-\n\n\n-----\nI placed EMI and ESD protection on my usb-c 2.0 D- and D+ lines in the form of USBLC6-2P6 and EXC14CE900U.\n\nDo I still need to add resistors or pull up these lines?\n\n"
 		(exclude_from_sim no)
@@ -5557,12 +5544,6 @@
 		(uuid "52a1c9b4-88f2-4613-a07a-c3abbf536761")
 	)
 	(junction
-		(at 487.68 86.36)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "56966fce-e752-47cc-ab7b-a486aaacd28d")
-	)
-	(junction
 		(at 452.12 88.9)
 		(diameter 1.5)
 		(color 0 0 0 0)
@@ -5599,12 +5580,6 @@
 		(uuid "7dd02d76-484d-47f6-939c-0caf88799021")
 	)
 	(junction
-		(at 172.72 96.52)
-		(diameter 1.5)
-		(color 0 0 0 0)
-		(uuid "7fed54d2-4d7c-4a62-bbca-0ae16e26496e")
-	)
-	(junction
 		(at 299.72 193.04)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5621,6 +5596,12 @@
 		(diameter 1.5)
 		(color 0 0 255 1)
 		(uuid "a7099a88-bd73-4a47-b609-86449c2b3168")
+	)
+	(junction
+		(at 236.22 96.52)
+		(diameter 1.5)
+		(color 0 0 0 0)
+		(uuid "b2501182-b41b-47d4-abe3-cfa6b8218a59")
 	)
 	(junction
 		(at 241.3 203.2)
@@ -5663,6 +5644,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dbaf273c-00e5-4c0b-bab1-6f64329c8346")
+	)
+	(junction
+		(at 182.88 96.52)
+		(diameter 1.5)
+		(color 0 0 0 0)
+		(uuid "dea76f96-5209-48f5-883a-5ecfa4b6fee5")
 	)
 	(junction
 		(at 160.02 104.14)
@@ -5751,6 +5738,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 96.52) (xy 236.22 106.68)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "10f2bf6d-a601-4bfb-b071-dc13bd008499")
+	)
+	(wire
+		(pts
 			(xy 368.3 165.1) (xy 368.3 167.64)
 		)
 		(stroke
@@ -5779,6 +5776,16 @@
 			(type default)
 		)
 		(uuid "18a11588-340f-4df2-9593-97be3805593a")
+	)
+	(wire
+		(pts
+			(xy 236.22 96.52) (xy 251.46 96.52)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "18fac37c-e8a4-493f-8964-0d631333f264")
 	)
 	(wire
 		(pts
@@ -5904,16 +5911,6 @@
 			(type default)
 		)
 		(uuid "43ba02bd-d617-4586-bd26-a0899974d792")
-	)
-	(wire
-		(pts
-			(xy 172.72 93.98) (xy 172.72 96.52)
-		)
-		(stroke
-			(width 0.5)
-			(type default)
-		)
-		(uuid "48952d41-645b-452c-8624-b9d8c9fced1b")
 	)
 	(wire
 		(pts
@@ -6267,16 +6264,6 @@
 	)
 	(wire
 		(pts
-			(xy 490.22 86.36) (xy 487.68 86.36)
-		)
-		(stroke
-			(width 0.5)
-			(type default)
-		)
-		(uuid "a68a1505-2bb1-4fa4-826e-bca07608032c")
-	)
-	(wire
-		(pts
 			(xy 304.8 167.64) (xy 314.96 167.64)
 		)
 		(stroke
@@ -6357,7 +6344,7 @@
 	)
 	(wire
 		(pts
-			(xy 487.68 86.36) (xy 487.68 88.9)
+			(xy 487.68 83.82) (xy 487.68 88.9)
 		)
 		(stroke
 			(width 0.5)
@@ -6387,16 +6374,6 @@
 	)
 	(wire
 		(pts
-			(xy 487.68 83.82) (xy 487.68 86.36)
-		)
-		(stroke
-			(width 0.5)
-			(type default)
-		)
-		(uuid "c3caeea9-aed1-4919-9c17-b2375077cd48")
-	)
-	(wire
-		(pts
 			(xy 299.72 218.44) (xy 299.72 215.9)
 		)
 		(stroke
@@ -6404,6 +6381,16 @@
 			(type default)
 		)
 		(uuid "c5855a7d-1e61-40ba-bb37-2e436b314847")
+	)
+	(wire
+		(pts
+			(xy 182.88 96.52) (xy 236.22 96.52)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "c5e0e91e-bdd7-4bdd-9eee-6f907d43b65c")
 	)
 	(wire
 		(pts
@@ -6509,7 +6496,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 96.52) (xy 172.72 96.52)
+			(xy 50.8 96.52) (xy 182.88 96.52)
 		)
 		(stroke
 			(width 0.5)
@@ -6561,6 +6548,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 93.98) (xy 182.88 96.52)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "f4d10ae8-d21c-4680-8b51-02bb0c67bd33")
+	)
+	(wire
+		(pts
 			(xy 403.86 154.94) (xy 403.86 157.48)
 		)
 		(stroke
@@ -6568,16 +6565,6 @@
 			(type default)
 		)
 		(uuid "f4fa55aa-50ee-4564-b671-a745264e7e78")
-	)
-	(wire
-		(pts
-			(xy 172.72 96.52) (xy 251.46 96.52)
-		)
-		(stroke
-			(width 0.5)
-			(type default)
-		)
-		(uuid "f52869d7-9bda-4474-9fd7-40c16e722793")
 	)
 	(wire
 		(pts
@@ -6891,7 +6878,7 @@
 		(uuid "b5c32a21-769b-4bc6-a4e6-a546cec5f8f5")
 	)
 	(label "PMID"
-		(at 269.24 215.9 90)
+		(at 271.78 215.9 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6930,10 +6917,9 @@
 		)
 		(uuid "fe109506-c761-4900-9ca4-72f873f84749")
 	)
-	(global_label "I2C1_SCL"
-		(shape input)
+	(hierarchical_label "I2C1_SCL"
+		(shape bidirectional)
 		(at 271.78 83.82 90)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6941,23 +6927,10 @@
 			(justify left)
 		)
 		(uuid "38b0c79f-a3f3-4377-9072-8e6dea2702ee")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 271.78 72.0658 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
 	)
-	(global_label "~{MP2721_INT}"
-		(shape input)
+	(hierarchical_label "~{MP2721_INT}"
+		(shape output)
 		(at 274.32 83.82 90)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6965,111 +6938,6 @@
 			(justify left)
 		)
 		(uuid "44a64a12-d0ea-49e6-822c-0fefae9d1384")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 274.32 69.4049 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "~{MP2721_INT}"
-		(shape input)
-		(at 241.3 167.64 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a2a5058e-6821-4859-9486-a45e9799a8de")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 241.3 182.0551 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "I2C1_SDA"
-		(shape input)
-		(at 269.24 83.82 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b799e8be-e898-4e84-926c-c52510136583")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 269.24 69.4653 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "TPS61288_EN"
-		(shape input)
-		(at 419.1 81.28 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "be492660-759f-4e84-8169-4198eb4af32e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 419.1 65.3531 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(hierarchical_label "V_BUS"
-		(shape output)
-		(at 172.72 93.98 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4a11e89f-97fa-4db0-9c47-4ccc41c6e0db")
-	)
-	(hierarchical_label "V_SYS"
-		(shape output)
-		(at 490.22 86.36 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "560c189d-c330-47e5-8a3d-89f43c531755")
 	)
 	(hierarchical_label "D+"
 		(shape bidirectional)
@@ -7081,6 +6949,39 @@
 			(justify right)
 		)
 		(uuid "624c2b4b-a504-4023-a486-676483b0c669")
+	)
+	(hierarchical_label "~{MP2721_INT}"
+		(shape output)
+		(at 241.3 167.64 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a2a5058e-6821-4859-9486-a45e9799a8de")
+	)
+	(hierarchical_label "I2C1_SDA"
+		(shape bidirectional)
+		(at 269.24 83.82 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b799e8be-e898-4e84-926c-c52510136583")
+	)
+	(hierarchical_label "TPS61288_EN"
+		(shape input)
+		(at 419.1 81.28 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "be492660-759f-4e84-8169-4198eb4af32e")
 	)
 	(hierarchical_label "D-"
 		(shape bidirectional)
@@ -7749,7 +7650,7 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
-		(at 269.24 220.98 0)
+		(at 271.78 220.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7760,7 +7661,7 @@
 		(fields_autoplaced yes)
 		(uuid "1345118a-3d5f-4e3f-a0c6-01c7e0b2ed06")
 		(property "Reference" "#PWR0103"
-			(at 269.24 227.33 0)
+			(at 271.78 227.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7771,7 +7672,7 @@
 			)
 		)
 		(property "Value" "PGND"
-			(at 269.24 226.06 0)
+			(at 271.78 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7781,7 +7682,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 269.24 220.98 0)
+			(at 271.78 220.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7792,7 +7693,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 269.24 220.98 0)
+			(at 271.78 220.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7803,7 +7704,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 269.24 220.98 0)
+			(at 271.78 220.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9967,6 +9868,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 236.22 109.22 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "6c634153-608f-40fe-863c-2b21c82d2190")
+		(property "Reference" "C27"
+			(at 232.41 107.9562 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1μF"
+			(at 232.41 110.4962 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "e2a70f52-8974-4fa3-a8a1-dea15f3804b5")
+		)
+		(pin "1"
+			(uuid "458b573b-3854-4214-b353-570cd86e3bd7")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 38.1 152.4 270)
 		(unit 1)
@@ -10285,6 +10268,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:Earth")
+		(at 236.22 111.76 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d396088-261a-4b5a-8529-f83dddb921ab")
+		(property "Reference" "#PWR0105"
+			(at 236.22 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PGND"
+			(at 236.22 116.84 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 236.22 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6aadd6c3-c01e-4f08-bb56-19ade8c45608")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
+					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 441.96 170.18 0)
 		(mirror y)
@@ -10357,88 +10418,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
 					(reference "#PWR0112")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 266.7 172.72 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "81e9e3c0-e188-4d40-b40c-5a52b1dfc29f")
-		(property "Reference" "C27"
-			(at 270.51 171.4562 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "1μF"
-			(at 270.51 173.9962 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 266.7 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 266.7 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 266.7 172.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "91a5a7a0-1298-42f7-bcd2-0cf9f150c41f")
-		)
-		(pin "1"
-			(uuid "42e3b38b-4fb2-4456-bba8-54b5f123be5c")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -10890,7 +10869,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 269.24 218.44 0)
+		(at 271.78 218.44 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -10901,7 +10880,7 @@
 		(dnp no)
 		(uuid "a113067c-9c45-44bf-bbfb-ce8f44c2599e")
 		(property "Reference" "C47"
-			(at 266.7 217.1762 0)
+			(at 269.24 217.1762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10912,7 +10891,7 @@
 			)
 		)
 		(property "Value" "10μF"
-			(at 266.7 219.7162 0)
+			(at 269.24 219.7162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10923,7 +10902,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 269.24 218.44 0)
+			(at 271.78 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10934,7 +10913,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 269.24 218.44 0)
+			(at 271.78 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10945,7 +10924,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 269.24 218.44 0)
+			(at 271.78 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11773,84 +11752,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
 					(reference "D87")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 266.7 170.18 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b5514c90-6d9a-4fdb-a077-3368bf7fe866")
-		(property "Reference" "#PWR0114"
-			(at 266.7 173.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "V_BUS"
-			(at 266.7 165.1 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 266.7 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 266.7 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 266.7 170.18 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e531f528-ecb1-4b8a-9d1f-ee01afbbb009")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "#PWR0114")
 					(unit 1)
 				)
 			)
@@ -13039,8 +12940,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:Earth")
-		(at 266.7 175.26 0)
+		(lib_id "power:+3.3V")
+		(at 182.88 93.98 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13049,9 +12950,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f945675f-768c-4246-95c4-0b6dc9151a33")
-		(property "Reference" "#PWR0105"
-			(at 266.7 181.61 0)
+		(uuid "f018c797-f033-4f81-b0dc-de4530dc5967")
+		(property "Reference" "#PWR0137"
+			(at 182.88 97.79 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13061,8 +12962,8 @@
 				)
 			)
 		)
-		(property "Value" "PGND"
-			(at 266.7 180.34 0)
+		(property "Value" "V_BUS"
+			(at 182.88 88.9 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13072,7 +12973,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 266.7 175.26 0)
+			(at 182.88 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13083,7 +12984,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 266.7 175.26 0)
+			(at 182.88 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13093,8 +12994,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 266.7 175.26 0)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 182.88 93.98 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13105,12 +13006,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "419aef00-a40d-44b4-a9a4-4fc81e13bc5f")
+			(uuid "0e1f6615-5975-452f-a778-0fcb2aca6a2a")
 		)
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "#PWR0105")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
