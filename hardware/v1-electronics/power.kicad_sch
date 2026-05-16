@@ -3772,7 +3772,7 @@
 		(uuid "0d724f6e-9ad3-4b88-a85c-d76c643e76bc")
 	)
 	(rectangle
-		(start 302.26 106.68)
+		(start 302.26 109.22)
 		(end 335.28 142.24)
 		(stroke
 			(width 0.2)
@@ -3809,7 +3809,7 @@
 	)
 	(rectangle
 		(start 187.96 114.3)
-		(end 243.84 147.32)
+		(end 241.3 147.32)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -3928,9 +3928,9 @@
 		)
 		(uuid "08b402b9-85ef-41eb-8045-9d98377c8371")
 	)
-	(text "?????????????"
+	(text "Error Compensation"
 		(exclude_from_sim no)
-		(at 284.48 114.3 0)
+		(at 276.86 114.3 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -3942,7 +3942,7 @@
 	)
 	(text "Output Setting"
 		(exclude_from_sim no)
-		(at 317.5 109.22 0)
+		(at 317.5 111.76 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -3964,7 +3964,7 @@
 		)
 		(uuid "260c0507-6eff-4189-895a-442524ca4a7c")
 	)
-	(text "?????????????"
+	(text "USB Config Pins"
 		(exclude_from_sim no)
 		(at 43.18 60.96 0)
 		(effects
@@ -4008,7 +4008,7 @@
 		)
 		(uuid "7adfb60c-0476-43ab-81c7-af95120c1e74")
 	)
-	(text "forgot what I was putting here\nSetup global reset\nVDD and other should be power labels"
+	(text "forgot what I was putting here\nSetup global reset\nHow to handle power and analog grounds???"
 		(exclude_from_sim no)
 		(at 15.24 223.52 0)
 		(effects
@@ -4228,7 +4228,7 @@
 			(xy 213.36 60.96) (xy 251.46 60.96)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "0746b2a0-63e8-4fea-a586-f18f05128465")
@@ -4288,7 +4288,7 @@
 			(xy 264.16 71.12) (xy 284.48 71.12)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "20bfa6a2-d892-40d3-a46a-098949cfb0ea")
@@ -4368,7 +4368,7 @@
 			(xy 208.28 60.96) (xy 213.36 60.96)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "4cd4b30f-3917-499c-976f-4988d9b3e75e")
@@ -4488,7 +4488,7 @@
 			(xy 264.16 60.96) (xy 264.16 71.12)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "707a8337-2fac-4378-bdfc-44af0c5c3a56")
@@ -4518,7 +4518,7 @@
 			(xy 320.04 58.42) (xy 347.98 58.42)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "7198dedd-cf68-43a2-a1cc-b19b5f2d7187")
@@ -4568,7 +4568,7 @@
 			(xy 86.36 60.96) (xy 154.94 60.96)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "7dc79e27-7997-40d6-8d80-89754452cf0a")
@@ -4608,7 +4608,7 @@
 			(xy 251.46 60.96) (xy 264.16 60.96)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "9074a463-1b6a-4dec-bfff-3009a4e39942")
@@ -4678,7 +4678,7 @@
 			(xy 187.96 66.04) (xy 208.28 66.04)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "b83eeaf6-23f6-45cd-8ca2-5748f16dc697")
@@ -4708,7 +4708,7 @@
 			(xy 347.98 58.42) (xy 355.6 58.42)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "c60648b6-1352-405f-ad63-fedbb326ce87")
@@ -4728,7 +4728,7 @@
 			(xy 208.28 66.04) (xy 208.28 60.96)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
 		(uuid "cfac40d5-3a1e-4d87-bcf1-958f72560a79")

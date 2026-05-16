@@ -899,7 +899,7 @@
 					)
 				)
 			)
-			(pin passive line
+			(pin passive clock
 				(at 25.4 17.78 270)
 				(length 5.08)
 				(name "SCL"

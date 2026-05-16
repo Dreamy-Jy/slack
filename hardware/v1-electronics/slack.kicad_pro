@@ -782,7 +782,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "TH1-2,#PWR53-54,#PWR62,#PWR67-69,#PWR102-107,#PWR109,#PWR111-118,C31,C47-48,C53-55,D86-89,R48-56,J4",
+    "used_designators": "R104-105,R115-116,C24,C26,C28,C40-45,#PWR55,#PWR60-61,#PWR64-65,#PWR76,#PWR87-97,#PWR117-127",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",
