@@ -120,6 +120,7 @@ Experimental modules:
     - Framework FRANFT0001 (PixArt PCT3854QR)
     - [ploopy touchpad](https://github.com/ploopyco/trackpad) (Microchip ATMXT1066TD)
     - [Patchouli](https://gitlab.com/yukidama/patchouli) (?)
+    - TPS65-201A-S (IQS550/572/525-B000)
   - trackpoint modules (sprintek SK8707-06)
   - trackball modules?
 - display modules
@@ -143,3 +144,15 @@ For the end product I want to do a skeletonized design.
 - use metal knob encoders
 I want to have seperate encoders for the display modules and the encoder inputs.
 I could create my own colors clicking encoders.
+
+ 
+Daycare Service
+
+Divine Dreamers LLC.
+
+What is a website vs what is a social media presence
+
+Tasks:
+digital presense
+
+Wiatlist and blog
