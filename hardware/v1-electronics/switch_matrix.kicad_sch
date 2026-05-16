@@ -7074,6 +7074,16 @@
 		)
 		(uuid "00a48b3f-23a1-4abd-80f9-e9e78596a1e7")
 	)
+	(label "RotaryEncoder_AChannel4"
+		(at 299.72 88.9 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "00d3062a-c0d3-4037-81e9-dbc360aa0554")
+	)
 	(label "Column2"
 		(at 55.88 304.8 90)
 		(effects
@@ -7103,6 +7113,16 @@
 			(justify left)
 		)
 		(uuid "0e75534e-a102-4d0f-9ade-08b577dafa04")
+	)
+	(label "RotaryEncoder_BChannel4"
+		(at 299.72 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "134692d5-d0e1-4519-b0e5-4f45285d80f6")
 	)
 	(label "Column7"
 		(at 203.2 304.8 90)
@@ -7154,6 +7174,16 @@
 		)
 		(uuid "3f7a3a65-361d-497b-b5dd-ce9efdd61b2b")
 	)
+	(label "RotaryEncoder_AChannel2"
+		(at 299.72 38.1 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "450385a7-161b-46bf-a711-ea66f6cb9d1b")
+	)
 	(label "Column2"
 		(at 50.8 27.94 90)
 		(effects
@@ -7163,6 +7193,16 @@
 			(justify left bottom)
 		)
 		(uuid "455a906e-3a8a-4c09-b708-dc0667fb6757")
+	)
+	(label "RotaryEncoder_BChannel6"
+		(at 299.72 144.78 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "46f7899f-8293-41a0-810b-8448b58569b5")
 	)
 	(label "Row4"
 		(at 27.94 203.2 180)
@@ -7174,6 +7214,46 @@
 		)
 		(uuid "480554e6-f718-48ea-897f-1821d9f8acc7")
 	)
+	(label "RotaryEncoder_BChannel10"
+		(at 299.72 248.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4a44df80-78cc-48cd-8927-f805f20acf5e")
+	)
+	(label "RotaryEncoder_AChannel3"
+		(at 233.68 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4f7eae9f-d009-4e0d-a4bf-2f0e83af79d9")
+	)
+	(label "RotaryEncoder_AChannel7"
+		(at 233.68 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "58a5f964-e4f2-4b86-8e49-da8f59360424")
+	)
+	(label "RotaryEncoder_BChannel8"
+		(at 299.72 195.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e8df0d0-8fef-46c7-897d-b34a5b83a1a9")
+	)
 	(label "Column10"
 		(at 294.64 304.8 90)
 		(effects
@@ -7183,6 +7263,46 @@
 			(justify left)
 		)
 		(uuid "635ec31f-90e4-44ce-bcc4-3eec5f0923d5")
+	)
+	(label "RotaryEncoder_AChannel9"
+		(at 238.76 248.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "69f45259-7478-4157-9fb8-d8a950dc27b3")
+	)
+	(label "RotaryEncoder_AChannel6"
+		(at 299.72 139.7 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6b387099-561f-408c-9386-a871389cf2f1")
+	)
+	(label "RotaryEncoder_BChannel2"
+		(at 299.72 43.18 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6ce5dcac-8bf2-4c9b-ad35-047124a4b289")
+	)
+	(label "RotaryEncoder_BChannel5"
+		(at 233.68 139.7 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7510bb46-7be3-42c5-b0c1-fe874779ca5e")
 	)
 	(label "Row1"
 		(at 27.94 50.8 180)
@@ -7214,6 +7334,16 @@
 		)
 		(uuid "797365e4-0ed2-4219-b3fc-b6dc9765bec3")
 	)
+	(label "RotaryEncoder_BChannel3"
+		(at 233.68 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7abd33a0-9772-49c2-982a-00945f593e35")
+	)
 	(label "Column1"
 		(at 25.4 304.8 90)
 		(effects
@@ -7223,6 +7353,26 @@
 			(justify left)
 		)
 		(uuid "7c4907d2-afcb-4404-9978-43f9b12d0aef")
+	)
+	(label "RotaryEncoder_BChannel1"
+		(at 233.68 38.1 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7e009dd7-9f2d-4c28-9af7-0ba51a8bafc3")
+	)
+	(label "RotaryEncoder_BChannel9"
+		(at 238.76 243.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "816d6af6-c94e-4154-8c78-f1253f1ec8d0")
 	)
 	(label "Row6"
 		(at 25.4 314.96 180)
@@ -7294,6 +7444,26 @@
 		)
 		(uuid "aaa9824c-f9c4-4ee4-940c-a81e2132dd98")
 	)
+	(label "RotaryEncoder_AChannel8"
+		(at 299.72 190.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b096bd3d-b0d9-41ee-8a99-7692e6db86c0")
+	)
+	(label "RotaryEncoder_BChannel7"
+		(at 233.68 190.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c4512618-eb16-4ecc-8827-641a3f492ecb")
+	)
 	(label "Column9"
 		(at 264.16 304.8 90)
 		(effects
@@ -7314,6 +7484,16 @@
 		)
 		(uuid "cb0cd6d4-cb82-4379-b2dc-ea691a92f30f")
 	)
+	(label "RotaryEncoder_AChannel10"
+		(at 299.72 243.84 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d0a43260-f0c6-4999-85a7-ccb470a80a32")
+	)
 	(label "Column7"
 		(at 139.7 27.94 90)
 		(effects
@@ -7333,6 +7513,26 @@
 			(justify left)
 		)
 		(uuid "d8f605a8-9519-4bdf-b624-6c8df76f5c9e")
+	)
+	(label "RotaryEncoder_AChannel1"
+		(at 233.68 43.18 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "de511cf6-ece2-409c-b894-393bb04b767c")
+	)
+	(label "RotaryEncoder_AChannel5"
+		(at 233.68 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e694417f-7eff-4019-8bb1-cc485a00ad27")
 	)
 	(label "Row5"
 		(at 27.94 256.54 180)
@@ -7394,28 +7594,6 @@
 		)
 		(uuid "fdf2b206-9dac-48ee-b6d2-1f19f9cf6744")
 	)
-	(hierarchical_label "RE4_A-Channel"
-		(shape output)
-		(at 299.72 88.9 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "00d3062a-c0d3-4037-81e9-dbc360aa0554")
-	)
-	(hierarchical_label "RE4_B-Channel"
-		(shape output)
-		(at 299.72 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "134692d5-d0e1-4519-b0e5-4f45285d80f6")
-	)
 	(hierarchical_label "RotaryEncoder_BChannel[1..10]"
 		(shape output)
 		(at 513.08 35.56 0)
@@ -7426,171 +7604,6 @@
 			(justify left)
 		)
 		(uuid "3de41a77-3f65-4d84-9421-c736b7eca309")
-	)
-	(hierarchical_label "RE2_A-Channel"
-		(shape output)
-		(at 299.72 38.1 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "450385a7-161b-46bf-a711-ea66f6cb9d1b")
-	)
-	(hierarchical_label "RE6_B-Channel"
-		(shape output)
-		(at 299.72 144.78 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "46f7899f-8293-41a0-810b-8448b58569b5")
-	)
-	(hierarchical_label "RE10_B-Channel"
-		(shape output)
-		(at 299.72 248.92 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4a44df80-78cc-48cd-8927-f805f20acf5e")
-	)
-	(hierarchical_label "RE3_A-Channel"
-		(shape output)
-		(at 233.68 93.98 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4f7eae9f-d009-4e0d-a4bf-2f0e83af79d9")
-	)
-	(hierarchical_label "RE7_A-Channel"
-		(shape output)
-		(at 233.68 195.58 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "58a5f964-e4f2-4b86-8e49-da8f59360424")
-	)
-	(hierarchical_label "RE8_B-Channel"
-		(shape output)
-		(at 299.72 195.58 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "5e8df0d0-8fef-46c7-897d-b34a5b83a1a9")
-	)
-	(hierarchical_label "RE9_A-Channel"
-		(shape output)
-		(at 238.76 248.92 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "69f45259-7478-4157-9fb8-d8a950dc27b3")
-	)
-	(hierarchical_label "RE6_A-Channel"
-		(shape output)
-		(at 299.72 139.7 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6b387099-561f-408c-9386-a871389cf2f1")
-	)
-	(hierarchical_label "RE2_B-Channel"
-		(shape output)
-		(at 299.72 43.18 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6ce5dcac-8bf2-4c9b-ad35-047124a4b289")
-	)
-	(hierarchical_label "RE5_B-Channel"
-		(shape output)
-		(at 233.68 139.7 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7510bb46-7be3-42c5-b0c1-fe874779ca5e")
-	)
-	(hierarchical_label "RE3_B-Channel"
-		(shape output)
-		(at 233.68 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7abd33a0-9772-49c2-982a-00945f593e35")
-	)
-	(hierarchical_label "RE1_B-Channel"
-		(shape output)
-		(at 233.68 38.1 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7e009dd7-9f2d-4c28-9af7-0ba51a8bafc3")
-	)
-	(hierarchical_label "RE9_B-Channel"
-		(shape output)
-		(at 238.76 243.84 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "816d6af6-c94e-4154-8c78-f1253f1ec8d0")
-	)
-	(hierarchical_label "RE8_A-Channel"
-		(shape output)
-		(at 299.72 190.5 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b096bd3d-b0d9-41ee-8a99-7692e6db86c0")
-	)
-	(hierarchical_label "RE7_B-Channel"
-		(shape output)
-		(at 233.68 190.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c4512618-eb16-4ecc-8827-641a3f492ecb")
 	)
 	(hierarchical_label "RotaryEncoder_AChannel[1..10]"
 		(shape output)
@@ -7613,39 +7626,6 @@
 			(justify left)
 		)
 		(uuid "c8701805-0b60-40c4-8ded-5aee4ad15a40")
-	)
-	(hierarchical_label "RE10_A-Channel"
-		(shape output)
-		(at 299.72 243.84 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d0a43260-f0c6-4999-85a7-ccb470a80a32")
-	)
-	(hierarchical_label "RE1_A-Channel"
-		(shape output)
-		(at 233.68 43.18 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "de511cf6-ece2-409c-b894-393bb04b767c")
-	)
-	(hierarchical_label "RE5_A-Channel"
-		(shape output)
-		(at 233.68 144.78 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e694417f-7eff-4019-8bb1-cc485a00ad27")
 	)
 	(hierarchical_label "Column[1..14]"
 		(shape input)
