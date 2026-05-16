@@ -8820,6 +8820,17 @@
 		)
 		(uuid "3601dcb4-9019-4fb0-9c6d-6aa12408b2be")
 	)
+	(hierarchical_label "Chip2SinkSwitch[1..12]"
+		(shape output)
+		(at 25.4 205.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3764b0dc-a240-4a4b-8e4e-a4a7cea3ebfd")
+	)
 	(hierarchical_label "SW9_B_1"
 		(shape output)
 		(at 127 142.24 180)
@@ -8930,6 +8941,17 @@
 		)
 		(uuid "5f3ee3b7-9871-485a-8dc1-cf0895b11b66")
 	)
+	(hierarchical_label "Chip2CurrentSource[1..16]"
+		(shape input)
+		(at 25.4 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5f415b3a-79a0-4806-aefa-4e0be1972c7b")
+	)
 	(hierarchical_label "CS4_2"
 		(shape input)
 		(at 299.72 203.2 90)
@@ -9017,6 +9039,17 @@
 			(justify right)
 		)
 		(uuid "78fa6822-5015-435a-87cc-9af04a619304")
+	)
+	(hierarchical_label "Chip1CurrentSource[1..16]"
+		(shape input)
+		(at 25.4 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7b1cbcb7-3f7e-4bbf-9ac2-ca12331815e9")
 	)
 	(hierarchical_label "CS2_1"
 		(shape input)
@@ -9117,6 +9150,17 @@
 			(justify right)
 		)
 		(uuid "a2f75b97-2a64-4226-9163-98bccaa6fac3")
+	)
+	(hierarchical_label "Chip1SinkSwitch[1..12]"
+		(shape output)
+		(at 25.4 53.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a3411810-ac7f-42c4-8dfc-6efe2713bfe5")
 	)
 	(hierarchical_label "SW2_G_2"
 		(shape output)
