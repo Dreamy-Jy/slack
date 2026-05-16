@@ -3031,7 +3031,8 @@
 			(type default)
 		)
 		(fill
-			(type none)
+			(type color)
+			(color 255 229 191 1)
 		)
 		(uuid "013944df-13d1-4949-ad08-cef6d9b8ab05")
 	)
@@ -3061,7 +3062,7 @@
 	)
 	(rectangle
 		(start 317.5 149.86)
-		(end 381 177.8)
+		(end 368.3 177.8)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -3514,7 +3515,7 @@
 	)
 	(text "Unassigned Pins"
 		(exclude_from_sim no)
-		(at 370.84 152.4 0)
+		(at 358.14 152.4 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -5720,6 +5721,30 @@
 			)
 		)
 	)
+	(global_label "TPS61288_EN"
+		(shape input)
+		(at 345.44 170.18 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0df1030c-bbda-431c-bcb6-ffd6c15c60d5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 361.3669 170.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "CS4_2"
 		(shape input)
 		(at 144.78 251.46 270)
@@ -5938,7 +5963,7 @@
 	)
 	(global_label "BQ25186_INT"
 		(shape input)
-		(at 350.52 160.02 0)
+		(at 345.44 160.02 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5948,7 +5973,7 @@
 		)
 		(uuid "17c21b22-0afe-4ddf-883a-3139feb4eaae")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 366.0237 160.02 0)
+			(at 360.9437 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6417,7 +6442,7 @@
 	)
 	(global_label "IS31FL3733_INTB2"
 		(shape input)
-		(at 345.44 165.1 180)
+		(at 340.36 167.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6427,7 +6452,7 @@
 		)
 		(uuid "373922e2-9550-4fcf-bf47-abc0fb084444")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 337.0724 165.1 0)
+			(at 331.9924 167.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6825,7 +6850,7 @@
 	)
 	(global_label "BQ25186_PG{slash}GPO"
 		(shape input)
-		(at 350.52 162.56 0)
+		(at 345.44 162.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6835,7 +6860,7 @@
 		)
 		(uuid "5399d0bb-dc1f-4cdc-9d7f-a983861fb727")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 370.8618 162.56 0)
+			(at 365.7818 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7688,6 +7713,30 @@
 			)
 		)
 	)
+	(global_label "~{MP2721_INT}"
+		(shape input)
+		(at 345.44 172.72 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "80e01a16-843f-4c77-83cd-289949a23e89")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 359.8551 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+	)
 	(global_label "RE10_B-Channel"
 		(shape input)
 		(at 228.6 121.92 180)
@@ -8002,7 +8051,7 @@
 	)
 	(global_label "BQ25186_CE"
 		(shape input)
-		(at 350.52 165.1 0)
+		(at 345.44 165.1 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8012,7 +8061,7 @@
 		)
 		(uuid "9c6370ec-200a-48c6-ac95-d903b3191335")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 365.5398 165.1 0)
+			(at 360.4598 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8099,7 +8148,7 @@
 	)
 	(global_label "IS31FL3733_INTB1"
 		(shape input)
-		(at 345.44 162.56 180)
+		(at 340.36 165.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8109,7 +8158,7 @@
 		)
 		(uuid "a60beb61-4d36-413c-80dc-f7f6373f1e7b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 337.0724 162.56 0)
+			(at 331.9924 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8747,7 +8796,7 @@
 	)
 	(global_label "IS31FL3733_SDB2"
 		(shape input)
-		(at 345.44 160.02 180)
+		(at 340.36 162.56 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8757,7 +8806,7 @@
 		)
 		(uuid "c659a6c0-38f6-4e79-9da1-8e9cbea345b5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 337.4958 160.02 0)
+			(at 332.4158 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9635,7 +9684,7 @@
 	)
 	(global_label "IS31FL3733_SDB1"
 		(shape input)
-		(at 345.44 157.48 180)
+		(at 340.36 160.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9645,7 +9694,7 @@
 		)
 		(uuid "fff3e218-a688-409c-8809-6917d573f1d7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 337.4958 157.48 0)
+			(at 332.4158 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

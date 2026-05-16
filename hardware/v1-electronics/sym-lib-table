@@ -3,4 +3,5 @@
 	(lib (name "Texas Instruments") (type "KiCad") (uri "${KIPRJMOD}/Texas Instruments") (options "") (descr ""))
 	(lib (name "Lite-On LTST-FC12WEGBD-5A") (type "KiCad") (uri "${KIPRJMOD}/LTST-FC12WEGBD-5A") (options "") (descr ""))
 	(lib (name "Lumissil Microsystems") (type "KiCad") (uri "${KIPRJMOD}/Lumissil Microsystems") (options "") (descr ""))
+	(lib (name "Monolithic Power Systems") (type "KiCad") (uri "${KIPRJMOD}/Monolithic Power Systems") (options "") (descr ""))
 )
