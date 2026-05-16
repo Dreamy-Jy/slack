@@ -224,7 +224,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "A.0.0"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -770,6 +770,14 @@
     "meta": {
       "version": 1
     },
+    "ngspice": {
+      "fix_include_paths": true,
+      "meta": {
+        "version": 0
+      },
+      "model_mode": 4,
+      "workbook_filename": ""
+    },
     "page_layout_descr_file": "",
     "plot_directory": "",
     "reuse_designators": true,
@@ -782,7 +790,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "JP1,#PWR136,SW78",
+    "used_designators": "",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",

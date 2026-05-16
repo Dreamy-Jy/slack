@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "2e191954-73a8-49c1-9d04-b35e0e908f4a")
 	(paper "User" 510 300)
+	(title_block
+		(title "Slack")
+		(date "2026-06-17")
+		(rev "A.0.0")
+	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Receptacle_USB2.0_14P"
 			(pin_names
@@ -5552,6 +5557,12 @@
 		(uuid "52a1c9b4-88f2-4613-a07a-c3abbf536761")
 	)
 	(junction
+		(at 487.68 86.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "56966fce-e752-47cc-ab7b-a486aaacd28d")
+	)
+	(junction
 		(at 452.12 88.9)
 		(diameter 1.5)
 		(color 0 0 0 0)
@@ -5586,6 +5597,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7dd02d76-484d-47f6-939c-0caf88799021")
+	)
+	(junction
+		(at 172.72 96.52)
+		(diameter 1.5)
+		(color 0 0 0 0)
+		(uuid "7fed54d2-4d7c-4a62-bbca-0ae16e26496e")
 	)
 	(junction
 		(at 299.72 193.04)
@@ -5887,6 +5904,16 @@
 			(type default)
 		)
 		(uuid "43ba02bd-d617-4586-bd26-a0899974d792")
+	)
+	(wire
+		(pts
+			(xy 172.72 93.98) (xy 172.72 96.52)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "48952d41-645b-452c-8624-b9d8c9fced1b")
 	)
 	(wire
 		(pts
@@ -6240,6 +6267,16 @@
 	)
 	(wire
 		(pts
+			(xy 490.22 86.36) (xy 487.68 86.36)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "a68a1505-2bb1-4fa4-826e-bca07608032c")
+	)
+	(wire
+		(pts
 			(xy 304.8 167.64) (xy 314.96 167.64)
 		)
 		(stroke
@@ -6320,6 +6357,16 @@
 	)
 	(wire
 		(pts
+			(xy 487.68 86.36) (xy 487.68 88.9)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "bb804590-d8be-4401-9a81-56b1b2329a87")
+	)
+	(wire
+		(pts
 			(xy 457.2 91.44) (xy 457.2 88.9)
 		)
 		(stroke
@@ -6340,7 +6387,7 @@
 	)
 	(wire
 		(pts
-			(xy 487.68 83.82) (xy 487.68 88.9)
+			(xy 487.68 83.82) (xy 487.68 86.36)
 		)
 		(stroke
 			(width 0.5)
@@ -6462,7 +6509,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 96.52) (xy 251.46 96.52)
+			(xy 50.8 96.52) (xy 172.72 96.52)
 		)
 		(stroke
 			(width 0.5)
@@ -6521,6 +6568,16 @@
 			(type default)
 		)
 		(uuid "f4fa55aa-50ee-4564-b671-a745264e7e78")
+	)
+	(wire
+		(pts
+			(xy 172.72 96.52) (xy 251.46 96.52)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "f52869d7-9bda-4474-9fd7-40c16e722793")
 	)
 	(wire
 		(pts
@@ -6773,16 +6830,6 @@
 		)
 		(uuid "74892b12-2b14-493e-9264-673b1ef2e69b")
 	)
-	(label "V_BUS"
-		(at 58.42 96.52 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "77e12c7f-dbae-40b9-aaff-d909b4b26ffb")
-	)
 	(label "BST_MP"
 		(at 284.48 99.06 0)
 		(effects
@@ -6883,30 +6930,6 @@
 		)
 		(uuid "fe109506-c761-4900-9ca4-72f873f84749")
 	)
-	(global_label "D-"
-		(shape input)
-		(at 165.1 106.68 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "015c7305-58b2-4fc4-b31e-23a28a049869")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 165.1 112.5076 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "I2C1_SCL"
 		(shape input)
 		(at 271.78 83.82 90)
@@ -6979,30 +7002,6 @@
 			)
 		)
 	)
-	(global_label "D+"
-		(shape input)
-		(at 160.02 106.68 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b18cc559-2a46-4527-b86e-c4e1498ce0ca")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 160.02 112.5076 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "I2C1_SDA"
 		(shape input)
 		(at 269.24 83.82 90)
@@ -7049,6 +7048,50 @@
 				(justify left)
 			)
 		)
+	)
+	(hierarchical_label "V_BUS"
+		(shape output)
+		(at 172.72 93.98 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4a11e89f-97fa-4db0-9c47-4ccc41c6e0db")
+	)
+	(hierarchical_label "V_SYS"
+		(shape output)
+		(at 490.22 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "560c189d-c330-47e5-8a3d-89f43c531755")
+	)
+	(hierarchical_label "D+"
+		(shape bidirectional)
+		(at 160.02 106.68 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "624c2b4b-a504-4023-a486-676483b0c669")
+	)
+	(hierarchical_label "D-"
+		(shape bidirectional)
+		(at 165.1 106.68 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f6c613aa-d2a2-4ded-9087-172ede171e6b")
 	)
 	(symbol
 		(lib_id "Device:L_Small")
@@ -7332,7 +7375,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 370.84 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7491,7 +7534,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 35.5599 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7727,7 +7770,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 269.24 226.06 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7805,7 +7848,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 271.78 137.16 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7964,7 +8007,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 477.52 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8042,7 +8085,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 414.02 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8764,7 +8807,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 50.8 156.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8921,7 +8964,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 274.32 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8998,7 +9041,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 88.8999 87.63 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9158,7 +9201,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 457.2 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9236,7 +9279,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 314.96 200.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9474,7 +9517,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 294.64 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9552,7 +9595,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 467.36 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9630,7 +9673,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 396.24 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9868,7 +9911,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 426.72 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10026,7 +10069,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 299.72 203.2 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10105,7 +10148,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 309.88 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10264,7 +10307,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 441.96 175.26 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11041,7 +11084,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 281.94 199.3899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12135,7 +12178,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 403.86 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12861,7 +12904,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 419.1 121.92 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12939,7 +12982,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 243.84 214.6299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13018,7 +13061,7 @@
 				)
 			)
 		)
-		(property "Value" "Earth"
+		(property "Value" "PGND"
 			(at 266.7 180.34 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13095,7 +13138,7 @@
 				)
 			)
 		)
-		(property "Value" "GND"
+		(property "Value" "DGND"
 			(at 27.9399 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
