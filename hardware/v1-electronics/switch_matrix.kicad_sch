@@ -7720,7 +7720,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 251.46 308.61 90)
+		(at 190.5 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7731,7 +7731,7 @@
 		(fields_autoplaced yes)
 		(uuid "00c9d3e8-550e-4a78-bfd3-5757efcb200c")
 		(property "Reference" "D78"
-			(at 254 307.3399 90)
+			(at 193.04 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7742,7 +7742,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 254 309.8799 90)
+			(at 193.04 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7753,7 +7753,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 251.46 308.61 0)
+			(at 190.5 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7764,7 +7764,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 251.46 308.61 0)
+			(at 190.5 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7775,7 +7775,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 251.46 308.61 0)
+			(at 190.5 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7786,7 +7786,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 251.46 308.61 0)
+			(at 190.5 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7797,7 +7797,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 251.46 308.61 0)
+			(at 190.5 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8435,7 +8435,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "092cc84d-a660-4432-8922-2b82775690aa")
-		(property "Reference" "D72"
+		(property "Reference" "D74"
 			(at 76.2 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8521,7 +8521,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D72")
+					(reference "D74")
 					(unit 1)
 				)
 			)
@@ -8643,7 +8643,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a435bf5-3475-474e-be9a-cc52c19ad8ab")
-		(property "Reference" "SW22"
+		(property "Reference" "SW76"
 			(at 124.46 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8705,7 +8705,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW22")
+					(reference "SW76")
 					(unit 1)
 				)
 			)
@@ -9345,7 +9345,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 220.98 308.61 90)
+		(at 403.86 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9355,8 +9355,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f469671-ec09-4304-a5b3-bb16ba5f0d2a")
-		(property "Reference" "D77"
-			(at 223.52 307.3399 90)
+		(property "Reference" "D85"
+			(at 406.4 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9367,7 +9367,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 223.52 309.8799 90)
+			(at 406.4 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9378,7 +9378,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 308.61 0)
+			(at 403.86 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9389,7 +9389,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 220.98 308.61 0)
+			(at 403.86 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9400,7 +9400,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 220.98 308.61 0)
+			(at 403.86 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9411,7 +9411,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 220.98 308.61 0)
+			(at 403.86 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9422,7 +9422,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 220.98 308.61 0)
+			(at 403.86 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9441,7 +9441,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D77")
+					(reference "D85")
 					(unit 1)
 				)
 			)
@@ -9667,7 +9667,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ff97592-26a6-4e37-915d-add1b2f758ec")
-		(property "Reference" "SW73"
+		(property "Reference" "SW83"
 			(at 335.28 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9729,7 +9729,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW73")
+					(reference "SW83")
 					(unit 1)
 				)
 			)
@@ -10331,7 +10331,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a7a3698-dcea-44bc-865c-70717a30b60f")
-		(property "Reference" "SW21"
+		(property "Reference" "SW75"
 			(at 96.52 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10393,7 +10393,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW21")
+					(reference "SW75")
 					(unit 1)
 				)
 			)
@@ -11420,7 +11420,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21c11d14-c807-4e13-935e-db4a52142096")
-		(property "Reference" "D74"
+		(property "Reference" "D76"
 			(at 134.62 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11506,7 +11506,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D74")
+					(reference "D76")
 					(unit 1)
 				)
 			)
@@ -12514,7 +12514,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2ccf1a0e-532d-490e-8e3c-1e176994962b")
-		(property "Reference" "SW65"
+		(property "Reference" "SW82"
 			(at 304.8 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12576,7 +12576,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW65")
+					(reference "SW82")
 					(unit 1)
 				)
 			)
@@ -12741,7 +12741,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 281.94 308.61 90)
+		(at 220.98 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12752,7 +12752,7 @@
 		(fields_autoplaced yes)
 		(uuid "325f6ec4-2424-439e-b047-2fe5e3930727")
 		(property "Reference" "D79"
-			(at 284.48 307.3399 90)
+			(at 223.52 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12763,7 +12763,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 284.48 309.8799 90)
+			(at 223.52 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12774,7 +12774,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 281.94 308.61 0)
+			(at 220.98 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12785,7 +12785,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 281.94 308.61 0)
+			(at 220.98 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12796,7 +12796,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 281.94 308.61 0)
+			(at 220.98 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12807,7 +12807,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 281.94 308.61 0)
+			(at 220.98 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12818,7 +12818,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 281.94 308.61 0)
+			(at 220.98 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14002,7 +14002,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3c66774f-6b88-4dc4-873b-06ff8ff6ea34")
-		(property "Reference" "SW7"
+		(property "Reference" "SW73"
 			(at 35.56 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14064,7 +14064,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW7")
+					(reference "SW73")
 					(unit 1)
 				)
 			)
@@ -14346,7 +14346,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3cd13fd1-ad73-4b8f-8e73-9997214a614c")
-		(property "Reference" "SW76"
+		(property "Reference" "SW86"
 			(at 426.72 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14408,7 +14408,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW76")
+					(reference "SW86")
 					(unit 1)
 				)
 			)
@@ -14677,7 +14677,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 434.34 308.61 90)
+		(at 373.38 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14688,7 +14688,7 @@
 		(fields_autoplaced yes)
 		(uuid "3e2c058a-eb87-4424-b491-a0935dd2ee35")
 		(property "Reference" "D84"
-			(at 436.88 307.3399 90)
+			(at 375.92 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14699,7 +14699,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 436.88 309.8799 90)
+			(at 375.92 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14710,7 +14710,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 434.34 308.61 0)
+			(at 373.38 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14721,7 +14721,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 434.34 308.61 0)
+			(at 373.38 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14732,7 +14732,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 434.34 308.61 0)
+			(at 373.38 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14743,7 +14743,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 434.34 308.61 0)
+			(at 373.38 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14754,7 +14754,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 434.34 308.61 0)
+			(at 373.38 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14871,7 +14871,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "411465dc-06fc-4982-a509-d8ad09e1a35b")
-		(property "Reference" "SW49"
+		(property "Reference" "SW79"
 			(at 213.36 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14933,7 +14933,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW49")
+					(reference "SW79")
 					(unit 1)
 				)
 			)
@@ -15268,7 +15268,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46732654-143e-47ae-be5a-9f5f3cc4e376")
-		(property "Reference" "D75"
+		(property "Reference" "D77"
 			(at 162.56 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15354,7 +15354,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D75")
+					(reference "D77")
 					(unit 1)
 				)
 			)
@@ -18625,7 +18625,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "65af3367-e9ed-472d-98c3-3a872ab15621")
-		(property "Reference" "SW36"
+		(property "Reference" "SW78"
 			(at 182.88 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18687,7 +18687,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW36")
+					(reference "SW78")
 					(unit 1)
 				)
 			)
@@ -19477,7 +19477,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6dd47490-6ee7-4b4e-a8de-6033cec2e533")
-		(property "Reference" "SW74"
+		(property "Reference" "SW84"
 			(at 365.76 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19539,7 +19539,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW74")
+					(reference "SW84")
 					(unit 1)
 				)
 			)
@@ -20458,7 +20458,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "78df161f-7327-4617-955a-075d12fde32a")
-		(property "Reference" "SW8"
+		(property "Reference" "SW74"
 			(at 66.04 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20520,7 +20520,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW8")
+					(reference "SW74")
 					(unit 1)
 				)
 			)
@@ -21803,7 +21803,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "875d37fa-8323-49e5-a6ac-08fdcdabcef9")
-		(property "Reference" "D73"
+		(property "Reference" "D75"
 			(at 106.68 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21889,7 +21889,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D73")
+					(reference "D75")
 					(unit 1)
 				)
 			)
@@ -22477,7 +22477,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 190.5 308.61 90)
+		(at 434.34 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22488,7 +22488,7 @@
 		(fields_autoplaced yes)
 		(uuid "8fe7af53-afbf-4c88-82e1-4a7b82785828")
 		(property "Reference" "D76"
-			(at 193.04 307.3399 90)
+			(at 436.88 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22499,7 +22499,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 193.04 309.8799 90)
+			(at 436.88 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22510,7 +22510,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 190.5 308.61 0)
+			(at 434.34 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22521,7 +22521,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 190.5 308.61 0)
+			(at 434.34 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22532,7 +22532,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 190.5 308.61 0)
+			(at 434.34 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22543,7 +22543,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 190.5 308.61 0)
+			(at 434.34 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22554,7 +22554,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 190.5 308.61 0)
+			(at 434.34 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22897,7 +22897,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 342.9 308.61 90)
+		(at 281.94 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22908,7 +22908,7 @@
 		(fields_autoplaced yes)
 		(uuid "9337a308-bd95-44dd-a273-ce397091daf3")
 		(property "Reference" "D81"
-			(at 345.44 307.3399 90)
+			(at 284.48 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22919,7 +22919,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 345.44 309.8799 90)
+			(at 284.48 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22930,7 +22930,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 342.9 308.61 0)
+			(at 281.94 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22941,7 +22941,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 342.9 308.61 0)
+			(at 281.94 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22952,7 +22952,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 342.9 308.61 0)
+			(at 281.94 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22963,7 +22963,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 342.9 308.61 0)
+			(at 281.94 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22974,7 +22974,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 342.9 308.61 0)
+			(at 281.94 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23573,7 +23573,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 373.38 308.61 90)
+		(at 312.42 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23584,7 +23584,7 @@
 		(fields_autoplaced yes)
 		(uuid "9abef2ff-1fc4-402d-8860-d2f1248f8f3b")
 		(property "Reference" "D82"
-			(at 375.92 307.3399 90)
+			(at 314.96 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23595,7 +23595,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 375.92 309.8799 90)
+			(at 314.96 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23606,7 +23606,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 373.38 308.61 0)
+			(at 312.42 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23617,7 +23617,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 373.38 308.61 0)
+			(at 312.42 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23628,7 +23628,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 373.38 308.61 0)
+			(at 312.42 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23639,7 +23639,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 373.38 308.61 0)
+			(at 312.42 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23650,7 +23650,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 373.38 308.61 0)
+			(at 312.42 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24556,7 +24556,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 312.42 308.61 90)
+		(at 251.46 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24567,7 +24567,7 @@
 		(fields_autoplaced yes)
 		(uuid "a5c62c47-264a-4c71-8913-1852a20a1977")
 		(property "Reference" "D80"
-			(at 314.96 307.3399 90)
+			(at 254 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24578,7 +24578,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 314.96 309.8799 90)
+			(at 254 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24589,7 +24589,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 312.42 308.61 0)
+			(at 251.46 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24600,7 +24600,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 312.42 308.61 0)
+			(at 251.46 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24611,7 +24611,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 312.42 308.61 0)
+			(at 251.46 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24622,7 +24622,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 312.42 308.61 0)
+			(at 251.46 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24633,7 +24633,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 312.42 308.61 0)
+			(at 251.46 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26347,7 +26347,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b448e090-2e38-45f4-a71a-d18bb017cdb5")
-		(property "Reference" "SW64"
+		(property "Reference" "SW81"
 			(at 274.32 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26409,7 +26409,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW64")
+					(reference "SW81")
 					(unit 1)
 				)
 			)
@@ -28388,7 +28388,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d447dd94-a083-429d-96b4-9d4f025cd5db")
-		(property "Reference" "SW75"
+		(property "Reference" "SW85"
 			(at 396.24 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28450,7 +28450,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW75")
+					(reference "SW85")
 					(unit 1)
 				)
 			)
@@ -29359,7 +29359,7 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 403.86 308.61 90)
+		(at 342.9 308.61 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -29370,7 +29370,7 @@
 		(fields_autoplaced yes)
 		(uuid "e2aa84ec-eaae-430b-bda9-fc91e51ea549")
 		(property "Reference" "D83"
-			(at 406.4 307.3399 90)
+			(at 345.44 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29381,7 +29381,7 @@
 			)
 		)
 		(property "Value" "D"
-			(at 406.4 309.8799 90)
+			(at 345.44 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -29392,7 +29392,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 403.86 308.61 0)
+			(at 342.9 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29403,7 +29403,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 403.86 308.61 0)
+			(at 342.9 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29414,7 +29414,7 @@
 			)
 		)
 		(property "Description" "Diode"
-			(at 403.86 308.61 0)
+			(at 342.9 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29425,7 +29425,7 @@
 			)
 		)
 		(property "Sim.Device" "D"
-			(at 403.86 308.61 0)
+			(at 342.9 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29436,7 +29436,7 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
-			(at 403.86 308.61 0)
+			(at 342.9 308.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30163,7 +30163,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e98da33d-dd0b-40c5-8e01-d2abb613a74b")
-		(property "Reference" "D71"
+		(property "Reference" "D73"
 			(at 45.72 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30249,7 +30249,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D71")
+					(reference "D73")
 					(unit 1)
 				)
 			)
@@ -30267,7 +30267,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea8d28cb-39d0-4962-8761-d742988602fc")
-		(property "Reference" "SW50"
+		(property "Reference" "SW80"
 			(at 243.84 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30329,7 +30329,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW50")
+					(reference "SW80")
 					(unit 1)
 				)
 			)
@@ -30766,7 +30766,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f099b5ab-92dd-425b-bc00-d7f4154e17ab")
-		(property "Reference" "SW35"
+		(property "Reference" "SW77"
 			(at 152.4 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30828,7 +30828,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW35")
+					(reference "SW77")
 					(unit 1)
 				)
 			)

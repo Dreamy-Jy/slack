@@ -5,13 +5,14 @@
 	(symbol "USBLC6-2SC6"
 		(pin_names
 			(offset 0)
+			(hide yes)
 		)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
 		(duplicate_pin_numbers_are_jumpers no)
-		(property "Reference" "IC"
+		(property "Reference" "D"
 			(at 29.21 7.62 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -58,7 +59,7 @@
 			)
 		)
 		(property "Description" "TVS Diode Array Uni-Directional USBLC6-2SC6 17V, SOT-23 6-Pin"
-			(at 0 0 0)
+			(at -3.81 -23.876 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(hide yes)
@@ -154,8 +155,8 @@
 		)
 		(symbol "USBLC6-2SC6_0_1"
 			(rectangle
-				(start 5.08 -2.54)
-				(end 20.32 -17.78)
+				(start 7.62 2.54)
+				(end 27.94 -7.62)
 				(stroke
 					(width 0.254)
 					(type default)
@@ -166,7 +167,7 @@
 			)
 			(polyline
 				(pts
-					(xy 7.62 -7.62) (xy 5.08 -7.62)
+					(xy 11.938 0.762) (xy 13.462 0.762)
 				)
 				(stroke
 					(width 0)
@@ -178,30 +179,7 @@
 			)
 			(polyline
 				(pts
-					(xy 7.62 -10.16) (xy 7.62 -12.7)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(circle
-				(center 7.62 -10.16)
-				(radius 0.254)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy 7.62 -12.7) (xy 5.08 -12.7)
+					(xy 11.938 -0.508) (xy 13.462 -0.508) (xy 12.7 0.762) (xy 11.938 -0.508)
 				)
 				(stroke
 					(width 0)
@@ -213,7 +191,7 @@
 			)
 			(polyline
 				(pts
-					(xy 9.144 -7.366) (xy 11.176 -7.366) (xy 10.16 -5.334) (xy 9.144 -7.366)
+					(xy 11.938 -4.572) (xy 13.462 -4.572)
 				)
 				(stroke
 					(width 0)
@@ -225,7 +203,7 @@
 			)
 			(polyline
 				(pts
-					(xy 9.144 -14.986) (xy 11.176 -14.986) (xy 10.16 -12.954) (xy 9.144 -14.986)
+					(xy 11.938 -5.842) (xy 13.462 -5.842) (xy 12.7 -4.572) (xy 11.938 -5.842)
 				)
 				(stroke
 					(width 0)
@@ -236,20 +214,8 @@
 				)
 			)
 			(rectangle
-				(start 10.16 -3.81)
-				(end 15.24 -16.51)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 10.16 -10.16) (xy 7.62 -10.16) (xy 7.62 -7.62)
-				)
+				(start 12.7 1.27)
+				(end 22.86 -6.35)
 				(stroke
 					(width 0)
 					(type default)
@@ -259,7 +225,7 @@
 				)
 			)
 			(circle
-				(center 10.16 -10.16)
+				(center 12.7 -1.27)
 				(radius 0.254)
 				(stroke
 					(width 0)
@@ -271,43 +237,7 @@
 			)
 			(polyline
 				(pts
-					(xy 11.176 -5.334) (xy 9.144 -5.334)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 11.176 -12.954) (xy 9.144 -12.954)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 11.684 -11.176) (xy 13.716 -11.176) (xy 12.7 -9.144) (xy 11.684 -11.176)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 12.7 -3.81) (xy 12.7 -2.54)
+					(xy 16.51 -3.81) (xy 19.05 -3.81) (xy 17.78 -1.778) (xy 16.51 -3.81)
 				)
 				(stroke
 					(width 0)
@@ -318,7 +248,18 @@
 				)
 			)
 			(circle
-				(center 12.7 -3.81)
+				(center 17.78 1.27)
+				(radius 0.254)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(circle
+				(center 17.78 -6.35)
 				(radius 0.254)
 				(stroke
 					(width 0)
@@ -330,7 +271,7 @@
 			)
 			(polyline
 				(pts
-					(xy 12.7 -8.89) (xy 12.7 -3.81)
+					(xy 17.78 -7.62) (xy 17.78 2.54)
 				)
 				(stroke
 					(width 0)
@@ -342,7 +283,67 @@
 			)
 			(polyline
 				(pts
-					(xy 12.7 -16.51) (xy 12.7 -8.89)
+					(xy 19.05 -1.778) (xy 16.51 -1.778) (xy 16.51 -2.286)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 22.098 0.762) (xy 23.622 0.762)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 22.098 -0.508) (xy 23.622 -0.508) (xy 22.86 0.762) (xy 22.098 -0.508)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 22.098 -4.572) (xy 23.622 -4.572)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 22.098 -5.842) (xy 23.622 -5.842) (xy 22.86 -4.572) (xy 22.098 -5.842)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 22.86 -2.54) (xy 22.86 -2.54)
 				)
 				(stroke
 					(width 0)
@@ -353,7 +354,7 @@
 				)
 			)
 			(circle
-				(center 12.7 -16.51)
+				(center 22.86 -3.81)
 				(radius 0.254)
 				(stroke
 					(width 0)
@@ -365,7 +366,8 @@
 			)
 			(polyline
 				(pts
-					(xy 12.7 -17.78) (xy 12.7 -16.51)
+					(xy 27.94 0) (xy 25.4 0) (xy 25.4 -1.016) (xy 25.4 -1.27) (xy 20.32 -1.27) (xy 20.32 0) (xy 15.24 0)
+					(xy 15.24 -1.27) (xy 10.16 -1.27) (xy 10.16 0) (xy 7.62 0)
 				)
 				(stroke
 					(width 0)
@@ -377,125 +379,8 @@
 			)
 			(polyline
 				(pts
-					(xy 13.716 -9.144) (xy 13.462 -9.144) (xy 11.684 -9.144) (xy 11.684 -9.652)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 14.224 -5.334) (xy 16.256 -5.334)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 14.224 -12.954) (xy 16.256 -12.954)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 15.24 -10.16) (xy 17.78 -10.16) (xy 17.78 -7.62)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(circle
-				(center 15.24 -10.16)
-				(radius 0.254)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy 16.256 -7.366) (xy 14.224 -7.366) (xy 15.24 -5.334) (xy 16.256 -7.366)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 16.256 -14.986) (xy 14.224 -14.986) (xy 15.24 -12.954) (xy 16.256 -14.986)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 17.78 -7.62) (xy 20.32 -7.62)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(polyline
-				(pts
-					(xy 17.78 -10.16) (xy 17.78 -12.7)
-				)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type none)
-				)
-			)
-			(circle
-				(center 17.78 -10.16)
-				(radius 0.254)
-				(stroke
-					(width 0)
-					(type default)
-				)
-				(fill
-					(type outline)
-				)
-			)
-			(polyline
-				(pts
-					(xy 17.78 -12.7) (xy 20.32 -12.7)
+					(xy 27.94 -5.08) (xy 25.4 -5.08) (xy 25.4 -3.81) (xy 22.098 -3.81) (xy 20.32 -3.81) (xy 20.32 -5.08)
+					(xy 15.24 -5.08) (xy 15.24 -3.81) (xy 10.16 -3.81) (xy 10.16 -5.08) (xy 7.62 -5.08)
 				)
 				(stroke
 					(width 0)
@@ -508,8 +393,8 @@
 		)
 		(symbol "USBLC6-2SC6_1_1"
 			(pin passive line
-				(at -2.54 -12.7 0)
-				(length 7.62)
+				(at 5.08 0 0)
+				(length 2.54)
 				(name "I/O1"
 					(effects
 						(font
@@ -526,8 +411,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 -25.4 90)
-				(length 7.62)
+				(at 17.78 -10.16 90)
+				(length 2.54)
 				(name "GND"
 					(effects
 						(font
@@ -544,8 +429,8 @@
 				)
 			)
 			(pin passive line
-				(at 27.94 -12.7 180)
-				(length 7.62)
+				(at 5.08 -5.08 0)
+				(length 2.54)
 				(name "I/O2"
 					(effects
 						(font
@@ -562,8 +447,8 @@
 				)
 			)
 			(pin passive line
-				(at 27.94 -7.62 180)
-				(length 7.62)
+				(at 30.48 -5.08 180)
+				(length 2.54)
 				(name "I/O2"
 					(effects
 						(font
@@ -580,8 +465,8 @@
 				)
 			)
 			(pin passive line
-				(at 12.7 5.08 270)
-				(length 7.62)
+				(at 17.78 5.08 270)
+				(length 2.54)
 				(name "VBUS"
 					(effects
 						(font
@@ -598,8 +483,8 @@
 				)
 			)
 			(pin passive line
-				(at -2.54 -7.62 0)
-				(length 7.62)
+				(at 30.48 0 180)
+				(length 2.54)
 				(name "I/O1"
 					(effects
 						(font

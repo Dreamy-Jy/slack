@@ -1,0 +1,8 @@
+[package]
+name = "led_ref_remap"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+kiutils_kicad = "0.3.0"
+regex = "1.12.4"

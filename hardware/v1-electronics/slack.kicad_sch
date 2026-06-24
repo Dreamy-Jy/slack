@@ -45,7 +45,7 @@
 		)
 		(uuid "318bbcdc-ecd6-4797-9e06-8551b0b24f23")
 	)
-	(text "- Compare charger ICs\n- Check circuits\n- Choose passive conponent values\n- Connect the LED and Switch matrices. Assign LEDs to each inputs.\n- Select PCB foot prints\n\nI feel that my power and ground levels are confusing\n\nSchematic\n- Refactor Schematic to r/PrintedCircuitBoard Guide\n- [x] Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- Refactor chip configurations to explain my choices\n- Rename all the component references so they are grouped and easier to layout\n- Select actual components, footprints, 3D models for all components\n- Pass those design reviews softwares\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
+	(text "- Compare charger ICs\n- Check circuits\n- Choose passive conponent values\n- Connect the LED and Switch matrices. Assign LEDs to each inputs.\n- Select PCB foot prints\n\nI feel that my power and ground levels are confusing\n\nSchematic\n- [] Refactor Schematic to r/PrintedCircuitBoard Guide\n- [x] Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- [-] Refactor chip configurations to explain my choices\n- [] Rename all the component references so they are grouped and easier to layout\n- [] Select actual components, footprints, 3D models for all components\n- [] Pass those design reviews softwares\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
 		(exclude_from_sim no)
 		(at -101.6 53.34 0)
 		(effects
@@ -71,35 +71,43 @@
 		(at 190.5 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "8ddb6fc6-6d73-4359-b45e-95283515ade2")
+		(uuid "9d778f4d-8bb1-4afc-ae4a-1ef9752caea6")
 	)
 	(no_connect
-		(at 203.2 124.46)
-		(uuid "0101cb29-283d-4e8d-9529-c44bc0ef61cc")
+		(at 66.04 63.5)
+		(uuid "096c5096-e9be-4d9b-b4b4-f3ee4403fd3d")
 	)
 	(no_connect
-		(at 203.2 149.86)
+		(at 205.74 152.4)
 		(uuid "1e332e09-aff5-4adb-8f06-0798b49269e9")
 	)
 	(no_connect
-		(at 203.2 134.62)
-		(uuid "5aeeffe8-db3e-49fa-83ef-a0e2e934711c")
+		(at 205.74 134.62)
+		(uuid "3c3a9722-db1f-4c01-9026-19170a47b9e5")
 	)
-	(no_connect
-		(at 203.2 129.54)
-		(uuid "8849ccff-246e-495d-abea-592f25b4b71b")
+	(wire
+		(pts
+			(xy 198.12 78.74) (xy 198.12 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "198ed250-db92-48d4-a232-ca8b82cd90f1")
 	)
-	(no_connect
-		(at 203.2 144.78)
-		(uuid "a0de5b68-af5a-43f5-9d97-eb033fbeb019")
-	)
-	(no_connect
-		(at 203.2 139.7)
-		(uuid "ca03842b-a08f-4b66-b9ed-088a8afae077")
+	(wire
+		(pts
+			(xy 195.58 129.54) (xy 205.74 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37e1c8c1-15bc-42c1-a2c6-75d48ee8b319")
 	)
 	(bus
 		(pts
-			(xy 175.26 40.64) (xy 203.2 40.64)
+			(xy 177.8 40.64) (xy 203.2 40.64)
 		)
 		(stroke
 			(width 0)
@@ -107,9 +115,19 @@
 		)
 		(uuid "4641a91c-042e-4bc5-a5b6-28a347615512")
 	)
+	(wire
+		(pts
+			(xy 182.88 96.52) (xy 182.88 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ba0df5d-b18b-42de-b68c-c02fda38d431")
+	)
 	(bus
 		(pts
-			(xy 66.04 40.64) (xy 86.36 40.64)
+			(xy 66.04 40.64) (xy 88.9 40.64)
 		)
 		(stroke
 			(width 0)
@@ -119,7 +137,7 @@
 	)
 	(bus
 		(pts
-			(xy 175.26 60.96) (xy 203.2 60.96)
+			(xy 177.8 60.96) (xy 203.2 60.96)
 		)
 		(stroke
 			(width 0)
@@ -129,17 +147,27 @@
 	)
 	(bus
 		(pts
-			(xy 66.04 48.26) (xy 73.66 48.26)
+			(xy 190.5 114.3) (xy 205.74 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7250fe50-c3ce-4319-b46b-da7898243d52")
+		(uuid "7d608916-ab42-440c-b0de-4a6421330306")
+	)
+	(wire
+		(pts
+			(xy 185.42 142.24) (xy 205.74 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84384d23-913d-4d54-9ffe-dfe3f3bc9455")
 	)
 	(bus
 		(pts
-			(xy 175.26 55.88) (xy 203.2 55.88)
+			(xy 177.8 55.88) (xy 203.2 55.88)
 		)
 		(stroke
 			(width 0)
@@ -147,25 +175,35 @@
 		)
 		(uuid "8b50b809-caa9-4cb2-9987-a91a31e9b1b5")
 	)
-	(bus
+	(wire
 		(pts
-			(xy 190.5 114.3) (xy 203.2 114.3)
+			(xy 195.58 83.82) (xy 195.58 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8ebea711-4789-47c2-aa08-5440d66ab5d6")
+		(uuid "8e543dec-d55a-4693-ad45-3fdfb21d7947")
 	)
 	(bus
 		(pts
-			(xy 190.5 76.2) (xy 175.26 76.2)
+			(xy 190.5 68.58) (xy 177.8 68.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "91b36167-7ff0-4aa3-b0fd-253df7449356")
+	)
+	(wire
+		(pts
+			(xy 177.8 78.74) (xy 198.12 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9326147f-b3f8-4d24-87d3-5d287d6d392a")
 	)
 	(bus
 		(pts
@@ -179,13 +217,43 @@
 	)
 	(bus
 		(pts
-			(xy 175.26 45.72) (xy 203.2 45.72)
+			(xy 177.8 45.72) (xy 203.2 45.72)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a1638b35-c9c8-4bab-9616-0cd7058bbdf1")
+	)
+	(wire
+		(pts
+			(xy 185.42 91.44) (xy 185.42 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a23d1e1e-486d-4c62-9778-823555fddb30")
+	)
+	(wire
+		(pts
+			(xy 177.8 96.52) (xy 182.88 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b07192e1-0b2c-4a19-a1c3-a07553839980")
+	)
+	(wire
+		(pts
+			(xy 177.8 83.82) (xy 195.58 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b95522e1-38d6-427a-8c39-3ffcdd4d3339")
 	)
 	(bus
 		(pts
@@ -199,7 +267,7 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 58.42) (xy 86.36 58.42)
+			(xy 66.04 58.42) (xy 88.9 58.42)
 		)
 		(stroke
 			(width 0)
@@ -207,9 +275,39 @@
 		)
 		(uuid "cee9a46a-c21f-4690-ae37-b46fabd5a8e8")
 	)
+	(wire
+		(pts
+			(xy 177.8 91.44) (xy 185.42 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d32dd62c-4c46-46fa-a523-77c5517382fd")
+	)
+	(wire
+		(pts
+			(xy 198.12 124.46) (xy 205.74 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4d9d4c0-9301-4204-ac0c-1595d7c9968b")
+	)
 	(bus
 		(pts
-			(xy 190.5 76.2) (xy 190.5 114.3)
+			(xy 73.66 48.26) (xy 66.04 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7bcdf3a-2b38-473e-93c1-304340619943")
+	)
+	(bus
+		(pts
+			(xy 190.5 68.58) (xy 190.5 114.3)
 		)
 		(stroke
 			(width 0)
@@ -219,13 +317,13 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 63.5) (xy 86.36 63.5)
+			(xy 182.88 147.32) (xy 205.74 147.32)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fe713d6a-73e5-4c3c-86e4-c9c2245415c3")
+		(uuid "edf5083e-cb6f-4245-ab3f-4fb2f0cfe8a8")
 	)
 	(sheet
 		(at 203.2 25.4)
@@ -347,7 +445,7 @@
 			)
 		)
 		(property "Sheetfile" "power.kicad_sch"
-			(at 17.78 73.66 0)
+			(at 17.78 71.12 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -365,7 +463,7 @@
 			(uuid "17e801bb-3bac-4859-ae38-babf0a38835d")
 			(effects
 				(font
-					(size 2 2)
+					(size 1.3 1.3)
 					(thickness 0.25)
 				)
 				(justify right)
@@ -413,8 +511,8 @@
 		)
 	)
 	(sheet
-		(at 86.36 25.4)
-		(size 88.9 63.5)
+		(at 88.9 25.4)
+		(size 88.9 83.82)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -428,7 +526,7 @@
 		)
 		(uuid "af928721-79e0-4dbd-9302-cd57a57ce5a4")
 		(property "Sheetname" "MCU"
-			(at 86.36 33.02 0)
+			(at 88.9 33.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -440,7 +538,7 @@
 			)
 		)
 		(property "Sheetfile" "controller.kicad_sch"
-			(at 88.9 83.82 0)
+			(at 91.44 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -453,30 +551,8 @@
 				(justify left top)
 			)
 		)
-		(pin "TPS61288_EN" output
-			(at 86.36 63.5 180)
-			(uuid "ff8972a3-0d81-47e5-a826-5ad43d62b137")
-			(effects
-				(font
-					(size 2 2)
-					(thickness 0.25)
-				)
-				(justify left)
-			)
-		)
-		(pin "~{MP2721_INT}" input
-			(at 86.36 58.42 180)
-			(uuid "b95d99ad-f18d-4732-a47b-d5b9157c85de")
-			(effects
-				(font
-					(size 2 2)
-					(thickness 0.25)
-				)
-				(justify left)
-			)
-		)
 		(pin "I2C1{SDA, SCL}" bidirectional
-			(at 175.26 76.2 0)
+			(at 177.8 68.58 0)
 			(uuid "11cd7ed5-78ba-470c-bf79-f0a9572213f6")
 			(effects
 				(font
@@ -487,7 +563,7 @@
 			)
 		)
 		(pin "USB{D+, D-}" bidirectional
-			(at 86.36 40.64 180)
+			(at 88.9 40.64 180)
 			(uuid "ae6a4053-7d8a-4759-8372-aca3182e0f7b")
 			(effects
 				(font
@@ -498,7 +574,7 @@
 			)
 		)
 		(pin "Column[1..14]" output
-			(at 175.26 40.64 0)
+			(at 177.8 40.64 0)
 			(uuid "7a0d3ef2-2921-4b8c-9965-58db589a7053")
 			(effects
 				(font
@@ -509,7 +585,7 @@
 			)
 		)
 		(pin "RotaryEncoder_AChannel[1..10]" input
-			(at 175.26 55.88 0)
+			(at 177.8 55.88 0)
 			(uuid "6705a8d7-4fd2-4e67-8309-d58120b91d4f")
 			(effects
 				(font
@@ -520,7 +596,7 @@
 			)
 		)
 		(pin "RotaryEncoder_BChannel[1..10]" input
-			(at 175.26 60.96 0)
+			(at 177.8 60.96 0)
 			(uuid "ce5ac648-c284-4bab-99cf-39e0978a1723")
 			(effects
 				(font
@@ -531,7 +607,7 @@
 			)
 		)
 		(pin "Row[1..6]" input
-			(at 175.26 45.72 0)
+			(at 177.8 45.72 0)
 			(uuid "a25376dd-e582-45ba-9aa0-7373488750cb")
 			(effects
 				(font
@@ -539,6 +615,61 @@
 					(thickness 0.25)
 				)
 				(justify right)
+			)
+		)
+		(pin "LEDMatrix1Interrupt" input
+			(at 177.8 83.82 0)
+			(uuid "c72da52d-6332-4f13-bd79-a79ce6c08e98")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "LEDMatrix1Shutdown" output
+			(at 177.8 78.74 0)
+			(uuid "613310b8-7759-41af-be61-dc15e8671e64")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "LEDMatrix2Interrupt" input
+			(at 177.8 96.52 0)
+			(uuid "896cb035-eb5b-4eeb-98bc-12417d631963")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "LEDMatrix2Shutdown" output
+			(at 177.8 91.44 0)
+			(uuid "b6507de3-210b-4963-a544-a3a41f57c2dd")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify right)
+			)
+		)
+		(pin "~{ChargingChipInterrupt}" input
+			(at 88.9 58.42 180)
+			(uuid "cf83f410-520c-4a2a-82e2-15bb8f8b66b7")
+			(effects
+				(font
+					(size 2 2)
+					(thickness 0.25)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -550,8 +681,8 @@
 		)
 	)
 	(sheet
-		(at 203.2 101.6)
-		(size 50.8 58.42)
+		(at 205.74 101.6)
+		(size 50.8 60.96)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -565,7 +696,7 @@
 		)
 		(uuid "db75d338-3a03-4feb-a76e-be79011cbec0")
 		(property "Sheetname" "LED Matricies"
-			(at 203.2 109.22 0)
+			(at 205.74 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -577,7 +708,7 @@
 			)
 		)
 		(property "Sheetfile" "led_matrix.kicad_sch"
-			(at 205.74 154.94 0)
+			(at 208.28 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -591,18 +722,18 @@
 			)
 		)
 		(pin "Chip1I2C_Reset" input
-			(at 203.2 134.62 180)
+			(at 205.74 134.62 180)
 			(uuid "69075835-d3c2-4289-8df5-f2c55b96108e")
 			(effects
 				(font
-					(size 2 2)
+					(size 1.3 1.3)
 					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
-		(pin "Chip1Interrupt" input
-			(at 203.2 129.54 180)
+		(pin "Chip1Interrupt" output
+			(at 205.74 129.54 180)
 			(uuid "73f18f59-cfd2-4448-8566-f1defb2dd585")
 			(effects
 				(font
@@ -613,7 +744,7 @@
 			)
 		)
 		(pin "Chip1Shutdown" input
-			(at 203.2 124.46 180)
+			(at 205.74 124.46 180)
 			(uuid "7b385d46-f9a8-40f5-b416-fff6f7279e46")
 			(effects
 				(font
@@ -624,7 +755,7 @@
 			)
 		)
 		(pin "I2C1{SDA, SCL}" bidirectional
-			(at 203.2 114.3 180)
+			(at 205.74 114.3 180)
 			(uuid "cedf3e9e-d182-4842-9771-8ad55fe98202")
 			(effects
 				(font
@@ -635,18 +766,18 @@
 			)
 		)
 		(pin "Chip2I2C_Reset" input
-			(at 203.2 149.86 180)
+			(at 205.74 152.4 180)
 			(uuid "50ac7894-d5b9-44c8-9526-e0bbdd229309")
 			(effects
 				(font
-					(size 2 2)
+					(size 1.3 1.3)
 					(thickness 0.25)
 				)
 				(justify left)
 			)
 		)
-		(pin "Chip2Interrupt" input
-			(at 203.2 144.78 180)
+		(pin "Chip2Interrupt" output
+			(at 205.74 147.32 180)
 			(uuid "e74dced0-275a-4ec4-8ce7-1e062859ffe9")
 			(effects
 				(font
@@ -657,7 +788,7 @@
 			)
 		)
 		(pin "Chip2Shutdown" input
-			(at 203.2 139.7 180)
+			(at 205.74 142.24 180)
 			(uuid "02911a35-6019-4732-afea-01373422e4bd")
 			(effects
 				(font

@@ -9,3 +9,4 @@ docs/datasheets/
 ~slack.kicad_pro.lck
 ~slack.kicad_sch.lck
 .ipynb_checkpoints
+target/
