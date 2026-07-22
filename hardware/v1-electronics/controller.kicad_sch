@@ -6,8 +6,8 @@
 	(paper "A")
 	(title_block
 		(title "Slack")
-		(date "2026-07-12")
-		(rev "A.0.3")
+		(date "2026-07-25")
+		(rev "A.0.4")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x03"
@@ -2568,6 +2568,16 @@
 		)
 		(uuid "248a35b7-b09f-44b3-a519-bc38964a53d6")
 	)
+	(label "USB.CC2"
+		(at 177.8 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2816def4-5c83-4c66-98a3-62979be6f6f2")
+	)
 	(label "RotaryEncoder_BChannel10"
 		(at 177.8 71.12 180)
 		(effects
@@ -2727,6 +2737,16 @@
 			(justify right)
 		)
 		(uuid "581255b9-82c5-450f-9fce-70db9def618f")
+	)
+	(label "USB.CC1"
+		(at 177.8 73.66 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5e623f35-2e16-4366-bfdc-c6eb632b14e7")
 	)
 	(label "SWDCLK"
 		(at 25.4 71.12 180)
@@ -3038,27 +3058,16 @@
 		)
 		(uuid "f9860738-c011-4cbe-ba21-95752218f7d0")
 	)
-	(hierarchical_label "LEDMatrix2Shutdown"
-		(shape output)
-		(at 177.8 76.2 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0b6c46c4-2902-4b66-b9fb-50bf1652c78f")
-	)
-	(hierarchical_label "LEDMatrix2Interrupt"
+	(hierarchical_label "LEDMatrix1Interrupt"
 		(shape input)
-		(at 177.8 132.08 180)
+		(at 104.14 50.8 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "25a492be-2998-4fe3-bc38-0bb1a5403daf")
+		(uuid "2888b162-292a-4e36-9bd5-da7ecc734c6d")
 	)
 	(hierarchical_label "Row[1..6]"
 		(shape input)
@@ -3071,6 +3080,17 @@
 		)
 		(uuid "290784a7-3e64-4e81-a1d5-8d7e7bfb7718")
 	)
+	(hierarchical_label "LEDMatrix2Shutdown"
+		(shape output)
+		(at 218.44 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "649382b3-0223-41ee-8ed2-1ddbcb5411b2")
+	)
 	(hierarchical_label "Column[1..14]"
 		(shape output)
 		(at 83.82 30.48 0)
@@ -3082,38 +3102,27 @@
 		)
 		(uuid "662f0699-f8e4-4620-bac1-dcf43ec92454")
 	)
-	(hierarchical_label "~{ChargingChipInterrupt}"
+	(hierarchical_label "LEDMatrix2Interrupt"
 		(shape input)
-		(at 218.44 55.88 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "80e01a16-843f-4c77-83cd-289949a23e89")
-	)
-	(hierarchical_label "LEDMatrix1Shutdown"
-		(shape output)
-		(at 177.8 73.66 180)
+		(at 104.14 48.26 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "9240f441-7852-4da4-ab8c-872f4314fc14")
+		(uuid "6d06364c-4720-4a86-923c-2e0a8a55cf40")
 	)
-	(hierarchical_label "LEDMatrix1Interrupt"
+	(hierarchical_label "~{ChargingChipInterrupt}"
 		(shape input)
-		(at 218.44 116.84 0)
+		(at 104.14 53.34 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
-		(uuid "a1b647a5-a662-41fc-8e5b-c938e635b609")
+		(uuid "935339aa-639d-4d0d-88e5-c7b4a7414d7f")
 	)
 	(hierarchical_label "I2C1{SDA, SCL}"
 		(shape bidirectional)
@@ -3126,6 +3135,17 @@
 		)
 		(uuid "c51e9daa-68a9-4ece-bbb9-c35f0d4e9e18")
 	)
+	(hierarchical_label "LEDMatrix1Shutdown"
+		(shape output)
+		(at 177.8 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "db4758ab-bfe8-410f-a328-9d99f88e114c")
+	)
 	(hierarchical_label "RotaryEncoder_AChannel[1..10]"
 		(shape input)
 		(at 83.82 35.56 0)
@@ -3137,14 +3157,14 @@
 		)
 		(uuid "e388edfe-8b73-40b7-bc79-cf7cfc6968ec")
 	)
-	(hierarchical_label "USB{D+, D-}"
+	(hierarchical_label "USB{D+, D-, CC1, CC2}"
 		(shape bidirectional)
-		(at 167.64 93.98 180)
+		(at 83.82 40.64 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "e67efc27-7b79-479b-8a61-90cf046b1ca3")
 	)
@@ -3742,9 +3762,11 @@
 		)
 		(pin "14"
 			(uuid "718f5303-76e1-4cd6-85f0-4ab7aa25c2dd")
+			(alternate "AIN6")
 		)
 		(pin "12"
 			(uuid "681f9fb5-b6bf-4148-9642-67087b00043a")
+			(alternate "AIN7")
 		)
 		(pin "18"
 			(uuid "163a7c25-3a12-4525-8b76-d9c7a0ac54c8")

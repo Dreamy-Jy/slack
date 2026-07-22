@@ -6,8 +6,8 @@
 	(paper "User" 1040 355)
 	(title_block
 		(title "Slack")
-		(date "2026-07-12")
-		(rev "A.0.3")
+		(date "2026-07-25")
+		(rev "A.0.4")
 	)
 	(lib_symbols
 		(symbol "Jumper:Jumper_2_Open"
