@@ -617,7 +617,7 @@
 				(justify right)
 			)
 		)
-		(pin "LEDMatrix1Interrupt" input
+		(pin "~{LEDMatrix1Interrupt}" input
 			(at 177.8 83.82 0)
 			(uuid "c72da52d-6332-4f13-bd79-a79ce6c08e98")
 			(effects
@@ -639,7 +639,7 @@
 				(justify right)
 			)
 		)
-		(pin "LEDMatrix2Interrupt" input
+		(pin "~{LEDMatrix2Interrupt}" input
 			(at 177.8 96.52 0)
 			(uuid "896cb035-eb5b-4eeb-98bc-12417d631963")
 			(effects
@@ -732,7 +732,7 @@
 				(justify left)
 			)
 		)
-		(pin "Chip1Interrupt" output
+		(pin "~{Chip1Interrupt}" output
 			(at 205.74 129.54 180)
 			(uuid "73f18f59-cfd2-4448-8566-f1defb2dd585")
 			(effects
@@ -776,7 +776,7 @@
 				(justify left)
 			)
 		)
-		(pin "Chip2Interrupt" output
+		(pin "~{Chip2Interrupt}" output
 			(at 205.74 147.32 180)
 			(uuid "e74dced0-275a-4ec4-8ce7-1e062859ffe9")
 			(effects

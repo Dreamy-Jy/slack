@@ -891,7 +891,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "R60-61,R201-202,#PWR201-205,LED501-512,D87-89,D201-202",
+    "used_designators": "JP2-4,R60-65,R201-202,#PWR132-133,#PWR201-205,LED501-512,D87-89,D201-202",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",

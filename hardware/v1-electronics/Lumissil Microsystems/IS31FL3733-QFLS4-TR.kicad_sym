@@ -956,7 +956,7 @@
 			(pin passive line
 				(at 30.48 -53.34 180)
 				(length 5.08)
-				(name "INTB"
+				(name "~{INTB}"
 					(effects
 						(font
 							(size 1.27 1.27)
