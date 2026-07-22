@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "63b2a850-7f9c-453b-a7f7-06112e110106")
 	(paper "A")
+	(title_block
+		(title "Slack")
+		(date "2026-07-12")
+		(rev "A.0.3")
+	)
 	(lib_symbols
 		(symbol "Device:C_Small"
 			(pin_numbers
@@ -2191,27 +2196,6 @@
 		)
 		(uuid "f0cf3386-61ef-496e-8737-8b0bc710a40d")
 	)
-	(text_box "This circuit is incomplete:\n- SDB shuts the ic down when pulled low, why is it pulled low on the schematic?"
-		(exclude_from_sim no)
-		(at 121.92 193.04 0)
-		(size 38.1 10.1599)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type color)
-			(color 255 229 191 1)
-		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "6674f9af-e8c5-49f3-a88e-533ba17b2a02")
-	)
 	(junction
 		(at 73.66 55.88)
 		(diameter 0)
@@ -3815,23 +3799,25 @@
 		(dnp no)
 		(uuid "0d43c874-ff65-4c23-b210-89699fa1afbf")
 		(property "Reference" "IC3"
-			(at 231.14 45.72 0)
+			(at 218.44 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Value" "IS31FL3733-QFLS4-TR"
-			(at 231.14 48.26 0)
+			(at 218.44 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "QFN40P600X600X80-49N-D"
@@ -5095,7 +5081,7 @@
 				)
 			)
 		)
-		(property "Value" "V_SYS"
+		(property "Value" "+5V"
 			(at 58.42 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5329,7 +5315,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 88.9 101.6 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6205,7 +6191,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 53.34 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)

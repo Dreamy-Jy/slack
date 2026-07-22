@@ -6,8 +6,8 @@
 	(paper "User" 1040 355)
 	(title_block
 		(title "Slack")
-		(date "2026-06-17")
-		(rev "A.0.0")
+		(date "2026-07-12")
+		(rev "A.0.3")
 	)
 	(lib_symbols
 		(symbol "Jumper:Jumper_2_Open"
@@ -828,6 +828,18 @@
 		(uuid "311dfc5f-c062-4abe-8e95-5b5088e0e39d")
 	)
 	(rectangle
+		(start 910.59 15.24)
+		(end 1024.89 304.8)
+		(stroke
+			(width 1)
+			(type dash_dot_dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "4c4d7a68-217d-4df6-a8cd-7b51d49c48a8")
+	)
+	(rectangle
 		(start 20.32 261.62)
 		(end 43.18 271.78)
 		(stroke
@@ -943,6 +955,17 @@
 			(justify left top)
 		)
 		(uuid "1d22abf2-cb7d-4cd8-b5b9-13162fee2ff8")
+	)
+	(text "Indicators"
+		(exclude_from_sim no)
+		(at 932.18 22.86 0)
+		(effects
+			(font
+				(size 5 5)
+				(thickness 0.625)
+			)
+		)
+		(uuid "36cde64e-d61a-48e2-a887-9cf3e6f3f80e")
 	)
 	(text "Blue"
 		(exclude_from_sim no)
@@ -1067,6 +1090,12 @@
 		(uuid "057de04d-3d23-4e5f-99e1-976c7011780e")
 	)
 	(junction
+		(at 914.4 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "067fc6ff-3967-44b7-a50f-5602a3a7723a")
+	)
+	(junction
 		(at 264.16 147.32)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1077,6 +1106,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "06c6922a-d6cd-447e-857a-963e97756cef")
+	)
+	(junction
+		(at 868.68 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "06ebff00-2226-4a09-9f7b-525982ea2744")
 	)
 	(junction
 		(at 208.28 297.18)
@@ -1131,6 +1166,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0b155ad3-36d3-4fb0-80bb-58d05589f6d1")
+	)
+	(junction
+		(at 929.64 294.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0b19a0ab-8701-41ec-8239-3893d0124a61")
 	)
 	(junction
 		(at 538.48 144.78)
@@ -1245,6 +1286,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "17c79e4d-4ebd-4adc-a563-c0ac0dfb062f")
+	)
+	(junction
+		(at 868.68 292.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "17d79d0b-6c90-477f-bc7f-7a9a7383169e")
 	)
 	(junction
 		(at 320.04 233.68)
@@ -1403,6 +1450,12 @@
 		(uuid "23f6d5ec-86ed-49e6-b243-2c3d86576e7e")
 	)
 	(junction
+		(at 929.64 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "24a84442-d4e5-49c3-84e4-f0b46296c35f")
+	)
+	(junction
 		(at 152.4 233.68)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1511,6 +1564,18 @@
 		(uuid "2fd616d8-856a-4d98-b920-10b28f0ab52d")
 	)
 	(junction
+		(at 934.72 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3087104b-1c81-44ed-bdf8-0a4006b0aa5d")
+	)
+	(junction
+		(at 868.68 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "308d8fe1-386d-4bb0-bcd1-0cfa7b448271")
+	)
+	(junction
 		(at 858.52 246.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1563,6 +1628,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "349da900-5c76-48c2-9635-fa9b588148cc")
+	)
+	(junction
+		(at 883.92 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "353765be-5e5e-4db8-a147-40efd317951c")
 	)
 	(junction
 		(at 375.92 297.18)
@@ -1649,6 +1720,12 @@
 		(uuid "3bc2bb69-6758-4407-89ee-ae5c72a8953b")
 	)
 	(junction
+		(at 970.28 246.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3cb1adfd-a6f4-4954-99c8-0228dc616f2d")
+	)
+	(junction
 		(at 370.84 264.16)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1685,6 +1762,12 @@
 		(uuid "44b6696b-f85b-4556-bf7b-dcb714fa980e")
 	)
 	(junction
+		(at 929.64 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "45cd545e-6ebb-4ad9-a4b8-85799f1b5080")
+	)
+	(junction
 		(at 243.84 246.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1701,6 +1784,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "47f086fa-e96b-475b-85da-b7d1225401fa")
+	)
+	(junction
+		(at 934.72 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "487e0664-dff7-4058-9c8f-845aac30e536")
 	)
 	(junction
 		(at 817.88 231.14)
@@ -1755,6 +1844,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4f18e02c-1abb-4ad6-b432-a0cbcef0e782")
+	)
+	(junction
+		(at 929.64 231.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "51fcc29e-8ae0-46ea-8457-62bb656921f6")
 	)
 	(junction
 		(at 259.08 264.16)
@@ -1859,6 +1954,18 @@
 		(uuid "5ce56e33-35a6-42e2-957c-e77bc8db97bf")
 	)
 	(junction
+		(at 939.8 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d0363e5-1326-4f04-8cd8-722e03a46111")
+	)
+	(junction
+		(at 924.56 228.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5d84091c-0a66-4454-a39c-89f28d379cae")
+	)
+	(junction
 		(at 365.76 261.62)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1877,6 +1984,12 @@
 		(uuid "60900243-5fa4-4576-85c4-6a18f618a9d7")
 	)
 	(junction
+		(at 924.56 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "60d56878-6dbb-40cc-bbde-904c5bb4f43c")
+	)
+	(junction
 		(at 817.88 294.64)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1893,6 +2006,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "62c04743-c5b9-4e5a-a077-4e06f8210486")
+	)
+	(junction
+		(at 939.8 116.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "62e40ad4-012b-43ab-a2ca-99ab61226a06")
 	)
 	(junction
 		(at 147.32 78.74)
@@ -2003,6 +2122,12 @@
 		(uuid "716ab32f-9a23-4c94-8fac-b5fbb45a534d")
 	)
 	(junction
+		(at 868.68 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7362c7b8-6070-4879-b29c-cfefda706c87")
+	)
+	(junction
 		(at 492.76 269.24)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2013,6 +2138,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "745f1a65-99b9-4015-b291-0c8d2ead7aaa")
+	)
+	(junction
+		(at 939.8 236.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "75041573-88bb-4ebd-8403-3ec0512a4d57")
 	)
 	(junction
 		(at 812.8 261.62)
@@ -2045,6 +2176,18 @@
 		(uuid "789f2498-a471-48c7-85d7-fb62c970dd25")
 	)
 	(junction
+		(at 934.72 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "78ecd5ec-c7db-4699-9ba3-073638355c0c")
+	)
+	(junction
+		(at 883.92 299.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "79785932-a749-4294-b80f-e2be5bc28a5f")
+	)
+	(junction
 		(at 828.04 269.24)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2061,6 +2204,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7d39b0c4-6336-4855-ba00-17071822af0d")
+	)
+	(junction
+		(at 970.28 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7dee06bf-658a-4c86-99af-f26d2dcaa1a3")
 	)
 	(junction
 		(at 467.36 60.96)
@@ -2117,10 +2266,28 @@
 		(uuid "8465c357-ae01-42bc-a181-e6d0749dc35d")
 	)
 	(junction
+		(at 873.76 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "851c00d5-98d7-45e6-987d-980800f793d7")
+	)
+	(junction
 		(at 254 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "853f2bdd-c592-4ee8-ada5-0e807b5c2d69")
+	)
+	(junction
+		(at 873.76 231.14)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85bf90e1-b29f-4a3b-943e-684a7a304b18")
+	)
+	(junction
+		(at 878.84 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "868cccb5-9556-4309-b1af-1d45f182a0a4")
 	)
 	(junction
 		(at 828.04 236.22)
@@ -2141,10 +2308,22 @@
 		(uuid "87aa5fdb-994f-4d64-b2e4-7b2d877a0abd")
 	)
 	(junction
+		(at 970.28 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "881330fe-ca4b-438e-ac86-98cc0bc8cd80")
+	)
+	(junction
 		(at 645.16 76.2)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "88f834b4-a983-4a15-9082-c1964285c956")
+	)
+	(junction
+		(at 868.68 261.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "89c96ab7-2710-4279-b4c3-6be74ca20c61")
 	)
 	(junction
 		(at 213.36 83.82)
@@ -2177,6 +2356,12 @@
 		(uuid "8dcb6fa3-67f1-416d-b24d-d8d61f3a6c74")
 	)
 	(junction
+		(at 924.56 292.1)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8ef8eacd-1922-4bdc-984d-f6d4ae4c0147")
+	)
+	(junction
 		(at 533.4 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2189,10 +2374,28 @@
 		(uuid "8f15a2f4-25f3-4599-ae13-dadb836d3b22")
 	)
 	(junction
+		(at 934.72 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8f4be7ba-cb58-46a2-924b-07a7e163890f")
+	)
+	(junction
+		(at 939.8 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8faf6633-2ea8-457a-b9ec-c9237d227979")
+	)
+	(junction
 		(at 132.08 246.38)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8fe6c14c-fad1-413a-a29f-db30de4a2023")
+	)
+	(junction
+		(at 914.4 246.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8ffc472e-fbac-45ff-b5ac-b2c93881d501")
 	)
 	(junction
 		(at 594.36 111.76)
@@ -2255,6 +2458,18 @@
 		(uuid "96e36565-628c-494c-9b5d-f6c44098e8c2")
 	)
 	(junction
+		(at 924.56 261.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "975d5012-74d3-4e58-8797-c4d546849fed")
+	)
+	(junction
+		(at 939.8 269.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "989b6aaa-d09f-4eab-b6d0-8d8bb7ca2f0d")
+	)
+	(junction
 		(at 375.92 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2315,6 +2530,12 @@
 		(uuid "9d512345-9921-4d7d-99e8-bcc7278da516")
 	)
 	(junction
+		(at 924.56 76.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9deac35d-848a-458c-aeba-630a0ccc6afc")
+	)
+	(junction
 		(at 431.8 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2331,6 +2552,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9eb85f50-1389-4c67-b66c-eb1212ec3391")
+	)
+	(junction
+		(at 929.64 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9ecccbca-8da7-4565-9c4c-9816c050b961")
+	)
+	(junction
+		(at 914.4 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9fa9e1ff-2884-4236-85d3-6c037d9caea7")
 	)
 	(junction
 		(at 264.16 114.3)
@@ -2363,6 +2596,12 @@
 		(uuid "a31baab7-4b39-4e6c-be62-c504e7e0149b")
 	)
 	(junction
+		(at 924.56 142.24)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a3dd86ac-c05f-4777-bbcb-e87ff84188e4")
+	)
+	(junction
 		(at 767.08 297.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2373,6 +2612,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a6d8108d-2df8-4cb1-b158-c60e20780069")
+	)
+	(junction
+		(at 934.72 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a7f57a19-3345-4e2c-b799-38092a4a9768")
 	)
 	(junction
 		(at 320.04 147.32)
@@ -2411,6 +2656,12 @@
 		(uuid "ad043886-b75b-4380-bebb-2e70c22e6cb6")
 	)
 	(junction
+		(at 878.84 266.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "addccfb0-1f73-4ce5-8503-fa1f60dabdca")
+	)
+	(junction
 		(at 579.12 246.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2439,6 +2690,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b06c9b4c-dc65-44d7-bf44-9d708d5e51cd")
+	)
+	(junction
+		(at 970.28 213.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b0e33ffb-46f8-406b-8702-c37866f02c26")
 	)
 	(junction
 		(at 421.64 76.2)
@@ -2501,10 +2758,22 @@
 		(uuid "b4706d78-986a-465c-b709-e09a3cd9d5cc")
 	)
 	(junction
+		(at 939.8 299.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b4c1a8b9-5bf1-4dfb-88d9-b8ffde3a6f2a")
+	)
+	(junction
 		(at 254 292.1)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b58c56e3-7994-450c-b802-e8171eeef36b")
+	)
+	(junction
+		(at 873.76 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b6ae7977-5534-4756-831e-8b3f658a2004")
 	)
 	(junction
 		(at 152.4 147.32)
@@ -2645,6 +2914,12 @@
 		(uuid "c1995acc-f400-4230-9116-f412b98ed0a8")
 	)
 	(junction
+		(at 883.92 149.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c1f493be-979b-4627-acc2-81b369e62629")
+	)
+	(junction
 		(at 543.56 233.68)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2663,6 +2938,12 @@
 		(uuid "c25249b5-dbf3-4105-9b1a-194c8c736418")
 	)
 	(junction
+		(at 934.72 297.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c267acb2-0ba2-4c2e-84ce-b41645631d13")
+	)
+	(junction
 		(at 198.12 261.62)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2673,6 +2954,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c370b425-949f-4b05-882f-0c678b5dbb2e")
+	)
+	(junction
+		(at 914.4 213.36)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c48eaed9-cfc7-4c89-8ae6-365df21631c9")
 	)
 	(junction
 		(at 538.48 231.14)
@@ -2697,6 +2984,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c656ac06-2bb9-405c-b1b5-47037dfcfbfb")
+	)
+	(junction
+		(at 878.84 147.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c6e771d1-716a-4e06-a7f2-c5adaa98bb91")
 	)
 	(junction
 		(at 198.12 292.1)
@@ -2771,6 +3064,18 @@
 		(uuid "cf2bca99-b2f0-47b3-9694-b256fd19b017")
 	)
 	(junction
+		(at 929.64 264.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cf3faf00-f082-4f1b-821d-91e2d7694a59")
+	)
+	(junction
+		(at 873.76 264.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cfd17249-6336-43f5-919a-934261fa7824")
+	)
+	(junction
 		(at 264.16 297.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2831,6 +3136,12 @@
 		(uuid "d3da7d77-f5cb-4120-8d48-bddc415210a8")
 	)
 	(junction
+		(at 873.76 144.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d3de6e2b-65ee-4628-80d0-907a0a45daf1")
+	)
+	(junction
 		(at 370.84 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2889,6 +3200,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d809a36b-1d7c-4e01-9c72-8c048ea0419d")
+	)
+	(junction
+		(at 878.84 233.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d8774d6c-888d-43f5-9bf7-fce9c7384bf5")
 	)
 	(junction
 		(at 487.68 114.3)
@@ -2963,6 +3280,12 @@
 		(uuid "e12eaca0-c2a0-4fc1-972d-34a7912453af")
 	)
 	(junction
+		(at 873.76 294.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e24caae1-e659-4582-a64a-dd0309dae29d")
+	)
+	(junction
 		(at 157.48 149.86)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2979,6 +3302,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e436b6a9-1e25-4978-b577-b52e89e466c9")
+	)
+	(junction
+		(at 878.84 297.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e45b295f-7ca2-4ed9-b865-b5d99134a759")
 	)
 	(junction
 		(at 147.32 144.78)
@@ -3035,6 +3364,12 @@
 		(uuid "eb6d88ca-e027-456b-a169-a19b1f039c3c")
 	)
 	(junction
+		(at 868.68 228.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eb8f9eb3-5ece-4a66-9a64-2393c2d74c2f")
+	)
+	(junction
 		(at 533.4 292.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3083,6 +3418,12 @@
 		(uuid "efa219aa-417d-414e-a1e2-f39e63673313")
 	)
 	(junction
+		(at 878.84 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "efb17c2c-3862-4ff7-a566-178c99dc37b3")
+	)
+	(junction
 		(at 187.96 246.38)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3107,6 +3448,12 @@
 		(uuid "f2272ad9-4835-40a2-bc71-2a3072b1df68")
 	)
 	(junction
+		(at 883.92 116.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f230d49a-6d1e-4c67-a48c-83bdad66925e")
+	)
+	(junction
 		(at 645.16 228.6)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3123,6 +3470,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f2d89d2b-d8c1-4215-882c-e3498fc4e395")
+	)
+	(junction
+		(at 883.92 236.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f303a8ac-cc01-4963-9693-6f72b9e3fa82")
 	)
 	(junction
 		(at 142.24 261.62)
@@ -3153,6 +3506,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f77a39b7-01aa-4d79-b539-cfe2d762b121")
+	)
+	(junction
+		(at 883.92 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8f859dc-60b8-44ae-9c0c-862a7f9a2ca9")
 	)
 	(junction
 		(at 523.24 93.98)
@@ -3241,10 +3600,6 @@
 		(uuid "2ee47e08-70c9-49d3-a7d7-707e4e10c407")
 	)
 	(no_connect
-		(at 970.28 50.8)
-		(uuid "3a200100-b28d-4e4f-8970-c33876924c37")
-	)
-	(no_connect
 		(at 22.86 111.76)
 		(uuid "3ba46404-5508-4372-8780-310409552f8b")
 	)
@@ -3285,14 +3640,6 @@
 		(uuid "7294c8c5-a629-44bd-b7a2-8d195c5fefc6")
 	)
 	(no_connect
-		(at 914.4 203.2)
-		(uuid "7540d02e-b2f8-4f6d-8ade-f20150294b4f")
-	)
-	(no_connect
-		(at 914.4 50.8)
-		(uuid "7cea432d-56b8-4daa-8760-470e4281979e")
-	)
-	(no_connect
 		(at 48.26 246.38)
 		(uuid "8087a8db-b879-4a8b-95b0-df14abb019f4")
 	)
@@ -3328,9 +3675,15 @@
 		(at 22.86 96.52)
 		(uuid "f124c458-ea2b-4f25-b757-2bb9839dd98c")
 	)
-	(no_connect
-		(at 970.28 203.2)
-		(uuid "f7c0b8b1-ee2f-471e-8e42-b7876eb9b132")
+	(wire
+		(pts
+			(xy 939.8 226.06) (xy 939.8 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00babbe1-852e-4506-8d65-8df84b07f91b")
 	)
 	(wire
 		(pts
@@ -3371,6 +3724,26 @@
 			(type default)
 		)
 		(uuid "02f7cdd5-069d-4b70-a494-a3653a9719f8")
+	)
+	(wire
+		(pts
+			(xy 980.44 142.24) (xy 980.44 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0303975f-5dec-468f-a354-3cbfe2161f7a")
+	)
+	(wire
+		(pts
+			(xy 970.28 213.36) (xy 970.28 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "036bedd5-e8c7-42b6-b882-2ed295bb467f")
 	)
 	(wire
 		(pts
@@ -3524,6 +3897,16 @@
 	)
 	(wire
 		(pts
+			(xy 883.92 269.24) (xy 939.8 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09c7fb99-f38e-4ea2-8c02-6f93351c7fe3")
+	)
+	(wire
+		(pts
 			(xy 579.12 50.8) (xy 579.12 60.96)
 		)
 		(stroke
@@ -3551,6 +3934,16 @@
 			(type default)
 		)
 		(uuid "0b08a050-fc74-4af1-9ba8-d7e1a2b1e5ff")
+	)
+	(wire
+		(pts
+			(xy 924.56 259.08) (xy 924.56 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b43f828-ad6b-41cf-9e5f-9b05f02fe564")
 	)
 	(wire
 		(pts
@@ -3691,6 +4084,16 @@
 			(type default)
 		)
 		(uuid "10175a9e-1110-459c-9ac1-9723e1759653")
+	)
+	(wire
+		(pts
+			(xy 939.8 139.7) (xy 939.8 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1041bf17-7509-4f90-be24-cfe9135f94bb")
 	)
 	(wire
 		(pts
@@ -3924,6 +4327,16 @@
 	)
 	(wire
 		(pts
+			(xy 934.72 81.28) (xy 990.6 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "168819ba-4bae-431b-90be-1da341fed77f")
+	)
+	(wire
+		(pts
 			(xy 650.24 78.74) (xy 650.24 73.66)
 		)
 		(stroke
@@ -3994,6 +4407,16 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 149.86) (xy 995.68 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1839e595-86c5-4d6b-b3eb-71eec277ed36")
+	)
+	(wire
+		(pts
 			(xy 538.48 264.16) (xy 650.24 264.16)
 		)
 		(stroke
@@ -4021,6 +4444,16 @@
 			(type default)
 		)
 		(uuid "1a49cbd2-b100-45d3-803f-605cbff51d96")
+	)
+	(wire
+		(pts
+			(xy 995.68 269.24) (xy 995.68 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1aff53b8-96b1-4827-b006-b1c7cd6890ec")
 	)
 	(wire
 		(pts
@@ -4061,6 +4494,16 @@
 			(type default)
 		)
 		(uuid "1ca4de13-88f2-4089-bd29-eea886002eb8")
+	)
+	(wire
+		(pts
+			(xy 883.92 116.84) (xy 939.8 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ccf8e81-f69b-438d-89be-b57fe6a6e047")
 	)
 	(wire
 		(pts
@@ -4124,6 +4567,16 @@
 	)
 	(wire
 		(pts
+			(xy 929.64 144.78) (xy 985.52 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e53aaa0-e0a2-4058-87bf-bc2ecdfc031e")
+	)
+	(wire
+		(pts
 			(xy 873.76 144.78) (xy 873.76 139.7)
 		)
 		(stroke
@@ -4161,6 +4614,16 @@
 			(type default)
 		)
 		(uuid "2010ee0c-176a-4b2d-8cb4-e3cf8fa3741c")
+	)
+	(wire
+		(pts
+			(xy 914.4 246.38) (xy 914.4 276.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "204bdcb0-767e-4029-9d97-6c59f07b28d1")
 	)
 	(wire
 		(pts
@@ -4314,6 +4777,26 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 83.82) (xy 995.68 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "261fd0f4-9e01-46d4-931d-d9d10a656f74")
+	)
+	(wire
+		(pts
+			(xy 934.72 233.68) (xy 990.6 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26b1f478-8dae-4ecb-b588-65096cef5f48")
+	)
+	(wire
+		(pts
 			(xy 421.64 289.56) (xy 421.64 292.1)
 		)
 		(stroke
@@ -4351,6 +4834,16 @@
 			(type default)
 		)
 		(uuid "2939e932-44ba-4cd1-b2cd-1d05c295366f")
+	)
+	(wire
+		(pts
+			(xy 985.52 231.14) (xy 985.52 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2aa7a068-18a6-4788-9f92-bdaa474e18cb")
 	)
 	(wire
 		(pts
@@ -4394,7 +4887,7 @@
 	)
 	(polyline
 		(pts
-			(xy 12.7 167.64) (xy 1026.16 167.64)
+			(xy 12.7 167.64) (xy 1027.684 167.64)
 		)
 		(stroke
 			(width 1)
@@ -4424,6 +4917,16 @@
 	)
 	(wire
 		(pts
+			(xy 873.76 231.14) (xy 929.64 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ed32341-394b-4c0a-856a-1dce9f93a489")
+	)
+	(wire
+		(pts
 			(xy 533.4 289.56) (xy 533.4 292.1)
 		)
 		(stroke
@@ -4431,6 +4934,16 @@
 			(type default)
 		)
 		(uuid "2ef4d7cc-2de0-45ca-a84f-8d28833524df")
+	)
+	(wire
+		(pts
+			(xy 873.76 111.76) (xy 929.64 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ef641ff-bbb5-4d37-ba04-fd2b33dd8b63")
 	)
 	(wire
 		(pts
@@ -4471,6 +4984,16 @@
 			(type default)
 		)
 		(uuid "303eae44-2437-410c-b4c4-60ffa91a40dd")
+	)
+	(wire
+		(pts
+			(xy 980.44 292.1) (xy 980.44 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "305d8095-42b2-4c89-880b-5d11013a3457")
 	)
 	(wire
 		(pts
@@ -4571,6 +5094,46 @@
 			(type default)
 		)
 		(uuid "34b18299-47f8-498f-b4d0-ddfb1ccdabbe")
+	)
+	(wire
+		(pts
+			(xy 980.44 109.22) (xy 980.44 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "352df9e4-af92-4562-bf8e-58bb27ab51e9")
+	)
+	(wire
+		(pts
+			(xy 878.84 266.7) (xy 934.72 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35403a91-a1f4-48d3-8f3a-f5145455ce86")
+	)
+	(wire
+		(pts
+			(xy 924.56 226.06) (xy 924.56 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3556bf62-3abc-4489-ab9d-074348d7a386")
+	)
+	(wire
+		(pts
+			(xy 995.68 236.22) (xy 995.68 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "357db4a4-149c-4c5d-895b-88048a98336e")
 	)
 	(wire
 		(pts
@@ -4704,6 +5267,16 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 289.56) (xy 939.8 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bb26b05-b02c-4bcf-9a63-4643ba33deec")
+	)
+	(wire
+		(pts
 			(xy 309.88 226.06) (xy 309.88 228.6)
 		)
 		(stroke
@@ -4741,6 +5314,16 @@
 			(type default)
 		)
 		(uuid "3ca8e87a-0fbe-46aa-959c-a1a47d5d89e0")
+	)
+	(wire
+		(pts
+			(xy 990.6 233.68) (xy 990.6 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3cb41cb7-9d19-41ea-ba4d-dbfaf4d15a30")
 	)
 	(wire
 		(pts
@@ -4824,6 +5407,16 @@
 	)
 	(wire
 		(pts
+			(xy 868.68 228.6) (xy 924.56 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40a62291-0921-4ac8-a859-1668c4180a9e")
+	)
+	(wire
+		(pts
 			(xy 817.88 139.7) (xy 817.88 144.78)
 		)
 		(stroke
@@ -4894,6 +5487,16 @@
 	)
 	(wire
 		(pts
+			(xy 883.92 236.22) (xy 939.8 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "435f1f7c-03bd-4be8-bd97-fcf7bdeb5cf3")
+	)
+	(wire
+		(pts
 			(xy 594.36 259.08) (xy 594.36 264.16)
 		)
 		(stroke
@@ -4911,6 +5514,16 @@
 			(type default)
 		)
 		(uuid "440f60cf-2117-49ea-ac65-a35bbfea7765")
+	)
+	(wire
+		(pts
+			(xy 934.72 289.56) (xy 934.72 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "445b3b90-1d1e-4eea-845a-2aee8d123660")
 	)
 	(wire
 		(pts
@@ -4984,6 +5597,16 @@
 	)
 	(wire
 		(pts
+			(xy 985.52 264.16) (xy 985.52 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46bc9498-214b-4d4d-9aa8-25200494a423")
+	)
+	(wire
+		(pts
 			(xy 711.2 289.56) (xy 711.2 297.18)
 		)
 		(stroke
@@ -5034,6 +5657,16 @@
 	)
 	(wire
 		(pts
+			(xy 995.68 116.84) (xy 995.68 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "493549a3-beee-4279-8b79-1a46f99fd2bf")
+	)
+	(wire
+		(pts
 			(xy 198.12 289.56) (xy 198.12 292.1)
 		)
 		(stroke
@@ -5051,6 +5684,26 @@
 			(type default)
 		)
 		(uuid "4ad56eb2-3b99-4b91-882b-595b60ee8a52")
+	)
+	(wire
+		(pts
+			(xy 934.72 147.32) (xy 990.6 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b00ec3e-be90-4673-9eaf-27b927b09ac6")
+	)
+	(wire
+		(pts
+			(xy 868.68 76.2) (xy 924.56 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b6396ff-beda-4e85-b822-c045adb96e5c")
 	)
 	(wire
 		(pts
@@ -5091,6 +5744,16 @@
 			(type default)
 		)
 		(uuid "4c88353b-2133-4a34-95b3-ea9e0dcd5d0d")
+	)
+	(wire
+		(pts
+			(xy 924.56 142.24) (xy 980.44 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cb6ef1c-991a-456b-88d9-c3da354a81d3")
 	)
 	(wire
 		(pts
@@ -5174,6 +5837,16 @@
 	)
 	(wire
 		(pts
+			(xy 990.6 114.3) (xy 990.6 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f5f67cd-5e16-420d-b882-68cbbd58207d")
+	)
+	(wire
+		(pts
 			(xy 604.52 116.84) (xy 660.4 116.84)
 		)
 		(stroke
@@ -5191,6 +5864,16 @@
 			(type default)
 		)
 		(uuid "4fe3aa35-b73b-4aad-9de0-514e3dd5ac70")
+	)
+	(wire
+		(pts
+			(xy 868.68 261.62) (xy 924.56 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4fffbc30-de4a-4da1-83a9-4ef4f524517f")
 	)
 	(wire
 		(pts
@@ -5444,6 +6127,16 @@
 	)
 	(wire
 		(pts
+			(xy 985.52 144.78) (xy 985.52 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59fd3298-24f8-4dc4-baa8-0413cf7c6654")
+	)
+	(wire
+		(pts
 			(xy 147.32 106.68) (xy 147.32 111.76)
 		)
 		(stroke
@@ -5604,6 +6297,16 @@
 	)
 	(wire
 		(pts
+			(xy 914.4 203.2) (xy 914.4 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "607c899c-83ad-46e1-8bb1-96062ffef668")
+	)
+	(wire
+		(pts
 			(xy 543.56 226.06) (xy 543.56 233.68)
 		)
 		(stroke
@@ -5691,6 +6394,26 @@
 			(type default)
 		)
 		(uuid "61d3507a-1fb9-4f2d-9a5e-b3dd9b2c0546")
+	)
+	(wire
+		(pts
+			(xy 924.56 106.68) (xy 924.56 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61d8d970-3325-44ab-996b-72c22f2bda43")
+	)
+	(wire
+		(pts
+			(xy 878.84 114.3) (xy 934.72 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62220606-f60d-42e6-83a5-4a2e7c56ecb0")
 	)
 	(wire
 		(pts
@@ -5844,6 +6567,16 @@
 	)
 	(wire
 		(pts
+			(xy 990.6 266.7) (xy 990.6 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6651e6f4-8495-49b3-8e03-2590b48239ad")
+	)
+	(wire
+		(pts
 			(xy 858.52 60.96) (xy 858.52 93.98)
 		)
 		(stroke
@@ -5954,6 +6687,26 @@
 	)
 	(wire
 		(pts
+			(xy 970.28 50.8) (xy 970.28 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ba38a08-1a11-4b20-b4e6-775e5df5b50d")
+	)
+	(wire
+		(pts
+			(xy 929.64 259.08) (xy 929.64 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6bb5461a-bcd4-4ad7-bc39-f966c3ff0b09")
+	)
+	(wire
+		(pts
 			(xy 127 269.24) (xy 157.48 269.24)
 		)
 		(stroke
@@ -5971,6 +6724,16 @@
 			(type default)
 		)
 		(uuid "6c729317-98f9-4fa9-8136-67de538bdc0a")
+	)
+	(wire
+		(pts
+			(xy 980.44 228.6) (xy 980.44 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6d358eb7-98f6-4e11-ab28-9b096b8e1783")
 	)
 	(wire
 		(pts
@@ -6134,6 +6897,16 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 73.66) (xy 939.8 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "730bbade-ed1b-4611-98f8-aef112aa5186")
+	)
+	(wire
+		(pts
 			(xy 127 147.32) (xy 152.4 147.32)
 		)
 		(stroke
@@ -6201,6 +6974,16 @@
 			(type default)
 		)
 		(uuid "7405f835-ef5b-4406-abdc-39eb8b1e566d")
+	)
+	(wire
+		(pts
+			(xy 995.68 149.86) (xy 995.68 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7439ddcf-2b9e-465d-9936-2e11e77875ae")
 	)
 	(wire
 		(pts
@@ -6404,6 +7187,16 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 269.24) (xy 995.68 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e8cca7d-5294-48d2-ac6f-254946293a2a")
+	)
+	(wire
+		(pts
 			(xy 492.76 269.24) (xy 548.64 269.24)
 		)
 		(stroke
@@ -6461,6 +7254,16 @@
 			(type default)
 		)
 		(uuid "8091b01a-d20c-4995-840a-c279b44a802e")
+	)
+	(wire
+		(pts
+			(xy 924.56 292.1) (xy 980.44 292.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "812a866f-4314-424d-8eda-5a73ec4f1aff")
 	)
 	(wire
 		(pts
@@ -6584,6 +7387,16 @@
 	)
 	(wire
 		(pts
+			(xy 929.64 294.64) (xy 985.52 294.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "868b7805-354d-48f7-8d19-54228458d9dc")
+	)
+	(wire
+		(pts
 			(xy 325.12 73.66) (xy 325.12 83.82)
 		)
 		(stroke
@@ -6604,6 +7417,26 @@
 	)
 	(wire
 		(pts
+			(xy 868.68 142.24) (xy 924.56 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87c965d4-f9a0-4d54-ae19-430b377d13a1")
+	)
+	(wire
+		(pts
+			(xy 934.72 139.7) (xy 934.72 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87dfc6fc-04ce-47cd-85b0-732710600dc6")
+	)
+	(wire
+		(pts
 			(xy 264.16 73.66) (xy 264.16 81.28)
 		)
 		(stroke
@@ -6611,6 +7444,16 @@
 			(type default)
 		)
 		(uuid "88244b0e-ff38-4f9b-bc7b-2e2b482f2deb")
+	)
+	(wire
+		(pts
+			(xy 980.44 261.62) (xy 980.44 259.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88399f80-78df-4479-aa42-9eb823439a02")
 	)
 	(wire
 		(pts
@@ -6671,6 +7514,16 @@
 			(type default)
 		)
 		(uuid "8aa31f8a-afa9-42ab-8d7b-8b134bb93c46")
+	)
+	(wire
+		(pts
+			(xy 914.4 93.98) (xy 914.4 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ad7fd4b-5e55-42c0-a34b-1d844a71a7b8")
 	)
 	(wire
 		(pts
@@ -6774,6 +7627,16 @@
 	)
 	(wire
 		(pts
+			(xy 878.84 81.28) (xy 934.72 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8cf68430-e04b-494a-b9cd-2b752e830f09")
+	)
+	(wire
+		(pts
 			(xy 299.72 203.2) (xy 299.72 213.36)
 		)
 		(stroke
@@ -6791,6 +7654,16 @@
 			(type default)
 		)
 		(uuid "8e70c7aa-b457-468e-9676-cfc511e14da7")
+	)
+	(wire
+		(pts
+			(xy 929.64 111.76) (xy 985.52 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e8d0b30-ce56-4896-af41-b387fdc8d5cd")
 	)
 	(wire
 		(pts
@@ -6884,6 +7757,16 @@
 	)
 	(wire
 		(pts
+			(xy 970.28 93.98) (xy 970.28 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94693297-ca79-4929-835b-8b17d0c44631")
+	)
+	(wire
+		(pts
 			(xy 269.24 226.06) (xy 269.24 236.22)
 		)
 		(stroke
@@ -6921,6 +7804,16 @@
 			(type default)
 		)
 		(uuid "958c4c6a-2268-4937-aa9a-40682f8232b3")
+	)
+	(wire
+		(pts
+			(xy 980.44 76.2) (xy 980.44 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95c697b4-d840-4323-8ea6-136459252918")
 	)
 	(wire
 		(pts
@@ -7174,6 +8067,16 @@
 	)
 	(wire
 		(pts
+			(xy 929.64 289.56) (xy 929.64 294.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9dfb1af3-54e6-4ac1-b3dd-2bdbfff4767a")
+	)
+	(wire
+		(pts
 			(xy 375.92 139.7) (xy 375.92 147.32)
 		)
 		(stroke
@@ -7224,6 +8127,16 @@
 	)
 	(wire
 		(pts
+			(xy 934.72 266.7) (xy 990.6 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fc92e8f-cdb2-49ab-9a88-7f3f3b07cd03")
+	)
+	(wire
+		(pts
 			(xy 716.28 289.56) (xy 716.28 299.72)
 		)
 		(stroke
@@ -7231,6 +8144,16 @@
 			(type default)
 		)
 		(uuid "a0187167-726d-4564-90f6-07f559bb6702")
+	)
+	(wire
+		(pts
+			(xy 929.64 78.74) (xy 985.52 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a06d4b82-c3ed-4e5a-9439-9c68930fbfa0")
 	)
 	(wire
 		(pts
@@ -7334,6 +8257,16 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 236.22) (xy 995.68 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a48c2a73-d7be-4418-bad4-792550c38053")
+	)
+	(wire
+		(pts
 			(xy 817.88 111.76) (xy 873.76 111.76)
 		)
 		(stroke
@@ -7361,6 +8294,26 @@
 			(type default)
 		)
 		(uuid "a5ebe57a-7233-4e0b-a04e-788f79bc47fe")
+	)
+	(wire
+		(pts
+			(xy 929.64 226.06) (xy 929.64 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6130323-c3a9-45f0-9fd8-fa6b7d3d1d9a")
+	)
+	(wire
+		(pts
+			(xy 995.68 83.82) (xy 995.68 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6146533-615e-4483-aea0-0d91f4be1238")
 	)
 	(wire
 		(pts
@@ -7454,6 +8407,26 @@
 	)
 	(wire
 		(pts
+			(xy 924.56 76.2) (xy 980.44 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aac2bc0a-78ce-4356-acda-52781be69ec9")
+	)
+	(wire
+		(pts
+			(xy 924.56 139.7) (xy 924.56 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aad8821c-df01-4b84-97ee-d176b5c2a6c0")
+	)
+	(wire
+		(pts
 			(xy 426.72 111.76) (xy 482.6 111.76)
 		)
 		(stroke
@@ -7524,6 +8497,16 @@
 	)
 	(wire
 		(pts
+			(xy 990.6 297.18) (xy 990.6 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b042fd14-6e74-46aa-9758-d919af39f687")
+	)
+	(wire
+		(pts
 			(xy 436.88 259.08) (xy 436.88 269.24)
 		)
 		(stroke
@@ -7531,6 +8514,26 @@
 			(type default)
 		)
 		(uuid "b10ff675-e766-4b6d-b333-1b60b4bf6ff4")
+	)
+	(wire
+		(pts
+			(xy 924.56 228.6) (xy 980.44 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1173e8f-8531-4ebe-a93c-8ed021f48c0e")
+	)
+	(wire
+		(pts
+			(xy 883.92 299.72) (xy 939.8 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b15d1cd1-0efd-45e7-a30c-6e930767ac03")
 	)
 	(wire
 		(pts
@@ -7654,6 +8657,16 @@
 	)
 	(wire
 		(pts
+			(xy 914.4 213.36) (xy 914.4 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5e2aef2-2b16-4305-9b1c-981e8f24a6dc")
+	)
+	(wire
+		(pts
 			(xy 716.28 106.68) (xy 716.28 116.84)
 		)
 		(stroke
@@ -7694,6 +8707,16 @@
 	)
 	(wire
 		(pts
+			(xy 924.56 289.56) (xy 924.56 292.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b711ab23-04f2-4dd8-b33b-9c364092426c")
+	)
+	(wire
+		(pts
 			(xy 543.56 289.56) (xy 543.56 297.18)
 		)
 		(stroke
@@ -7721,6 +8744,16 @@
 			(type default)
 		)
 		(uuid "b78f1b6f-4c13-4f06-8e70-5d451b8f9a4b")
+	)
+	(wire
+		(pts
+			(xy 878.84 297.18) (xy 934.72 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b846d765-d561-497b-975f-ea2edf4b0e36")
 	)
 	(wire
 		(pts
@@ -7844,6 +8877,16 @@
 	)
 	(wire
 		(pts
+			(xy 914.4 50.8) (xy 914.4 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd4d61ce-75dc-4f3c-a868-79f8db21af13")
+	)
+	(wire
+		(pts
 			(xy 650.24 144.78) (xy 706.12 144.78)
 		)
 		(stroke
@@ -7851,6 +8894,26 @@
 			(type default)
 		)
 		(uuid "bd5793d8-69c6-4b1b-9645-0126d02bfccb")
+	)
+	(wire
+		(pts
+			(xy 929.64 73.66) (xy 929.64 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd669ef8-5cb2-4ebe-9734-d4a02f22c47a")
+	)
+	(wire
+		(pts
+			(xy 985.52 294.64) (xy 985.52 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bdb281f8-0160-4750-a72b-9edd79d11139")
 	)
 	(wire
 		(pts
@@ -7914,6 +8977,16 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 106.68) (xy 939.8 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c08b69c1-916b-4a29-b977-fe96f40ec648")
+	)
+	(wire
+		(pts
 			(xy 426.72 139.7) (xy 426.72 144.78)
 		)
 		(stroke
@@ -7944,6 +9017,16 @@
 	)
 	(wire
 		(pts
+			(xy 939.8 259.08) (xy 939.8 269.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c108ff54-b771-4ef4-b8bf-b39c862e42bc")
+	)
+	(wire
+		(pts
 			(xy 365.76 226.06) (xy 365.76 228.6)
 		)
 		(stroke
@@ -7954,6 +9037,26 @@
 	)
 	(wire
 		(pts
+			(xy 873.76 264.16) (xy 929.64 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c140d513-0dde-41f0-853f-b4563d2349e8")
+	)
+	(wire
+		(pts
+			(xy 878.84 147.32) (xy 934.72 147.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1471a5e-50b4-4d4a-b6f2-dbe7434542e6")
+	)
+	(wire
+		(pts
 			(xy 152.4 73.66) (xy 152.4 81.28)
 		)
 		(stroke
@@ -7961,6 +9064,26 @@
 			(type default)
 		)
 		(uuid "c16eea10-c8a8-43d6-9e65-331d60b1f7fd")
+	)
+	(wire
+		(pts
+			(xy 873.76 78.74) (xy 929.64 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c1b9007e-d3c2-480c-b545-304a5bd0cf07")
+	)
+	(wire
+		(pts
+			(xy 934.72 114.3) (xy 990.6 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c22704db-d385-47ae-9b79-3ed344f154bd")
 	)
 	(wire
 		(pts
@@ -8064,6 +9187,16 @@
 	)
 	(wire
 		(pts
+			(xy 914.4 60.96) (xy 914.4 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5a9f3dd-d32d-431b-b73d-439feae7c053")
+	)
+	(wire
+		(pts
 			(xy 711.2 147.32) (xy 769.62 147.32)
 		)
 		(stroke
@@ -8071,6 +9204,16 @@
 			(type default)
 		)
 		(uuid "c60b7545-714c-439f-b67b-132b8d5671f0")
+	)
+	(wire
+		(pts
+			(xy 929.64 231.14) (xy 985.52 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c671b1a5-fa05-41ca-a3d1-7cd050d31e42")
 	)
 	(wire
 		(pts
@@ -8274,6 +9417,16 @@
 	)
 	(wire
 		(pts
+			(xy 934.72 106.68) (xy 934.72 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cc01601b-b3a6-40c0-b8f2-853911cedfd4")
+	)
+	(wire
+		(pts
 			(xy 467.36 93.98) (xy 467.36 127)
 		)
 		(stroke
@@ -8404,6 +9557,16 @@
 	)
 	(wire
 		(pts
+			(xy 934.72 73.66) (xy 934.72 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf7c344e-89b6-4037-a625-f1facd578be4")
+	)
+	(wire
+		(pts
 			(xy 157.48 106.68) (xy 157.48 116.84)
 		)
 		(stroke
@@ -8421,6 +9584,16 @@
 			(type default)
 		)
 		(uuid "cfe02220-bcce-42e4-adf3-62ea9bc8a9dc")
+	)
+	(wire
+		(pts
+			(xy 970.28 203.2) (xy 970.28 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d00985eb-1ec7-4844-a697-5f22528ff644")
 	)
 	(wire
 		(pts
@@ -8464,6 +9637,16 @@
 	)
 	(wire
 		(pts
+			(xy 970.28 60.96) (xy 970.28 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d12f23a4-a24c-4cd8-b32d-f92c6efaf5e4")
+	)
+	(wire
+		(pts
 			(xy 436.88 289.56) (xy 436.88 299.72)
 		)
 		(stroke
@@ -8484,6 +9667,16 @@
 	)
 	(wire
 		(pts
+			(xy 883.92 83.82) (xy 939.8 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d211429e-223c-49a5-b187-b438aee30d3a")
+	)
+	(wire
+		(pts
 			(xy 482.6 294.64) (xy 538.48 294.64)
 		)
 		(stroke
@@ -8501,6 +9694,16 @@
 			(type default)
 		)
 		(uuid "d2a7004c-aad4-4651-8a29-92db4bc90855")
+	)
+	(wire
+		(pts
+			(xy 868.68 109.22) (xy 924.56 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2ae74ef-d6c4-417c-b974-c3a23f857a9d")
 	)
 	(wire
 		(pts
@@ -8674,6 +9877,36 @@
 	)
 	(wire
 		(pts
+			(xy 970.28 246.38) (xy 970.28 276.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d75665ed-557a-4095-921e-9d96d84c1e9d")
+	)
+	(wire
+		(pts
+			(xy 924.56 109.22) (xy 980.44 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d78b96e4-747a-41a4-9769-37bb9f80e0c1")
+	)
+	(wire
+		(pts
+			(xy 934.72 259.08) (xy 934.72 266.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8a60fb6-842c-4713-b70b-f029dfaf50a0")
+	)
+	(wire
+		(pts
 			(xy 259.08 289.56) (xy 259.08 294.64)
 		)
 		(stroke
@@ -8701,6 +9934,16 @@
 			(type default)
 		)
 		(uuid "d8c13ac6-f7ca-48b8-81dd-83f0c27cc826")
+	)
+	(wire
+		(pts
+			(xy 985.52 78.74) (xy 985.52 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8d16b0e-d2f9-486e-8a6e-0798ecc12716")
 	)
 	(wire
 		(pts
@@ -8804,6 +10047,16 @@
 	)
 	(wire
 		(pts
+			(xy 929.64 264.16) (xy 985.52 264.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc41d3cb-3a8a-49c8-af72-5207fe5a5dfe")
+	)
+	(wire
+		(pts
 			(xy 355.6 60.96) (xy 355.6 93.98)
 		)
 		(stroke
@@ -8834,6 +10087,16 @@
 	)
 	(wire
 		(pts
+			(xy 924.56 73.66) (xy 924.56 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddc01eee-f3ce-42c1-b01e-19c72c75a066")
+	)
+	(wire
+		(pts
 			(xy 421.64 109.22) (xy 477.52 109.22)
 		)
 		(stroke
@@ -8851,6 +10114,16 @@
 			(type default)
 		)
 		(uuid "dee4ef77-6c0e-452c-b687-9a52f5c041f9")
+	)
+	(wire
+		(pts
+			(xy 939.8 116.84) (xy 995.68 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "defa0438-f4d3-41d6-ac9d-05a9c84d28e7")
 	)
 	(wire
 		(pts
@@ -8931,6 +10204,16 @@
 			(type default)
 		)
 		(uuid "e0f7ce23-71e4-4e6f-8326-b5b093036493")
+	)
+	(wire
+		(pts
+			(xy 934.72 226.06) (xy 934.72 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0febace-f61b-4449-86e6-5ced7d7968d5")
 	)
 	(wire
 		(pts
@@ -9061,6 +10344,16 @@
 			(type default)
 		)
 		(uuid "e635591b-69a6-4314-baf1-6c400b497e01")
+	)
+	(wire
+		(pts
+			(xy 995.68 299.72) (xy 995.68 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e687207c-271f-431b-a491-fed6c4681a2c")
 	)
 	(wire
 		(pts
@@ -9244,6 +10537,16 @@
 	)
 	(wire
 		(pts
+			(xy 990.6 81.28) (xy 990.6 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec27ad95-d53f-4146-a543-4443cd5cb47d")
+	)
+	(wire
+		(pts
 			(xy 772.16 226.06) (xy 772.16 236.22)
 		)
 		(stroke
@@ -9271,6 +10574,16 @@
 			(type default)
 		)
 		(uuid "ecdd6737-934d-4431-89c3-b08eb7d57b9d")
+	)
+	(wire
+		(pts
+			(xy 868.68 292.1) (xy 924.56 292.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed0dffcf-30c8-4aec-8d7a-1845c8a895ec")
 	)
 	(wire
 		(pts
@@ -9351,6 +10664,16 @@
 			(type default)
 		)
 		(uuid "ef0c41c4-fc7e-495c-9923-9ca24ae5b012")
+	)
+	(wire
+		(pts
+			(xy 934.72 297.18) (xy 990.6 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef27c0c1-0f54-402a-b372-9edbc105c654")
 	)
 	(wire
 		(pts
@@ -9454,6 +10777,16 @@
 	)
 	(wire
 		(pts
+			(xy 990.6 147.32) (xy 990.6 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3d2380f-a5b3-4a72-927b-b03e85d58905")
+	)
+	(wire
+		(pts
 			(xy 548.64 139.7) (xy 548.64 149.86)
 		)
 		(stroke
@@ -9461,6 +10794,16 @@
 			(type default)
 		)
 		(uuid "f403e2cb-ae41-48ff-a898-2e8201a2736e")
+	)
+	(wire
+		(pts
+			(xy 873.76 144.78) (xy 929.64 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f41c638b-71bf-4cc0-bec4-14a2fa81bae3")
 	)
 	(wire
 		(pts
@@ -9494,6 +10837,16 @@
 	)
 	(wire
 		(pts
+			(xy 929.64 106.68) (xy 929.64 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f51d738f-6a7a-4db8-86ad-c0d7458d69cd")
+	)
+	(wire
+		(pts
 			(xy 157.48 289.56) (xy 157.48 299.72)
 		)
 		(stroke
@@ -9514,6 +10867,16 @@
 	)
 	(wire
 		(pts
+			(xy 924.56 261.62) (xy 980.44 261.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f59475af-feeb-4410-8add-e4081bcde1aa")
+	)
+	(wire
+		(pts
 			(xy 762 226.06) (xy 762 231.14)
 		)
 		(stroke
@@ -9531,6 +10894,16 @@
 			(type default)
 		)
 		(uuid "f6ee1311-1027-4a49-aa63-6fa482dafd3d")
+	)
+	(wire
+		(pts
+			(xy 878.84 233.68) (xy 934.72 233.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6f35185-4c69-4897-9ef0-5c3ab7de58d5")
 	)
 	(wire
 		(pts
@@ -9594,6 +10967,16 @@
 	)
 	(wire
 		(pts
+			(xy 873.76 294.64) (xy 929.64 294.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9a903b1-e0f9-4725-b6bf-0d3c92bedca6")
+	)
+	(wire
+		(pts
 			(xy 711.2 139.7) (xy 711.2 147.32)
 		)
 		(stroke
@@ -9601,6 +10984,16 @@
 			(type default)
 		)
 		(uuid "fa4374e0-956b-4efc-bda8-2f0709d51c1d")
+	)
+	(wire
+		(pts
+			(xy 883.92 149.86) (xy 939.8 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa4ca43f-88a2-48d1-bbd4-b512dbad9e09")
 	)
 	(wire
 		(pts
@@ -9664,6 +11057,16 @@
 	)
 	(wire
 		(pts
+			(xy 929.64 139.7) (xy 929.64 144.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd3eda00-d5a5-40d9-9295-b497df94c6fc")
+	)
+	(wire
+		(pts
 			(xy 436.88 149.86) (xy 492.76 149.86)
 		)
 		(stroke
@@ -9721,6 +11124,26 @@
 			(type default)
 		)
 		(uuid "ffc43c8f-8cd6-40f8-a155-cf0bcfbb3de8")
+	)
+	(wire
+		(pts
+			(xy 985.52 111.76) (xy 985.52 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffd99fbf-0efe-487d-9fda-5d67b5dc3cc2")
+	)
+	(wire
+		(pts
+			(xy 939.8 299.72) (xy 995.68 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffda86b4-e622-4429-9ec9-28436db2f0ad")
 	)
 	(label "Chip2CurrentSource16"
 		(at 970.28 203.2 90)
@@ -10651,6 +12074,114 @@
 			(justify left)
 		)
 		(uuid "e5f14beb-e3eb-474e-9510-574270390f57")
+	)
+	(rule_area
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(polyline
+			(pts
+				(xy 1003.3 152.4) (xy 1003.3 55.88) (xy 911.86 55.88) (xy 911.86 152.4)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+			)
+			(fill
+				(type none)
+			)
+			(uuid "1e02cb55-c4d5-4170-b72e-6d9a539140a6")
+		)
+	)
+	(rule_area
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(polyline
+			(pts
+				(xy 1003.3 304.8) (xy 1003.3 208.28) (xy 911.86 208.28) (xy 911.86 304.8)
+			)
+			(stroke
+				(width 0)
+				(type dash)
+			)
+			(fill
+				(type none)
+			)
+			(uuid "d3a02c89-c3bf-423c-a59a-96009efd18c2")
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 960.12 55.88 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6140db34-ed5e-4d6e-a46b-9f45dc516f1a")
+		(property "Netclass" "Indicators"
+			(at 960.8185 53.34 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 180.34 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 960.12 208.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7dfbee4a-be89-46da-99ac-25ca441f6c58")
+		(property "Netclass" "Indicators"
+			(at 960.8185 205.74 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Component Class" ""
+			(at 180.34 200.66 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
@@ -14702,6 +16233,182 @@
 	)
 	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 927.1 93.98 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "3e321bda-468f-49d6-97f5-5160b48e8f29")
+		(property "Reference" "LED502"
+			(at 943.61 95.8849 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 943.61 98.4249 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1000.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1100.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 918.21 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1300.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1400.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1500.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1600.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1700.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1800.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1900.43 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "2575230c-f905-437f-afed-f629853a9a44")
+		)
+		(pin "2"
+			(uuid "1dedf987-b89d-46f2-9764-1bd56a64d4aa")
+		)
+		(pin "3"
+			(uuid "60dc8887-9ba2-4409-ae84-01760c04ff80")
+		)
+		(pin "4"
+			(uuid "19ec1eeb-acdf-4d30-a9d6-4bc3fd9da22f")
+		)
+		(pin "5"
+			(uuid "10f62948-9feb-49e1-8656-0e1f5fa584ce")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED502")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
 		(at 759.46 213.36 90)
 		(unit 1)
 		(body_style 1)
@@ -15047,6 +16754,182 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
 					(reference "LED10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 982.98 276.86 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "404e080e-f11f-44d1-ab32-243fa6cef5eb")
+		(property "Reference" "LED512"
+			(at 999.49 278.7649 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 999.49 281.3049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1056.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1156.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 974.09 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1356.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1456.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1556.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1656.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1756.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1856.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1956.31 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "d7988f4c-1ee5-4c47-b5c1-f7e1f2116a83")
+		)
+		(pin "2"
+			(uuid "3f3451bb-6b86-4326-a361-3e560161fcd2")
+		)
+		(pin "3"
+			(uuid "55b0591b-0564-4d67-9e06-7d273f469c3a")
+		)
+		(pin "4"
+			(uuid "0aea0076-1dda-496a-bfc8-6432ed3143aa")
+		)
+		(pin "5"
+			(uuid "13f3465b-ec03-4963-9e53-4d75f0944845")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED512")
 					(unit 1)
 				)
 			)
@@ -18398,6 +20281,182 @@
 	)
 	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 927.1 276.86 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "72eec1ec-5a50-41fd-ac4e-dae9752769f3")
+		(property "Reference" "LED509"
+			(at 943.61 278.7649 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 943.61 281.3049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1000.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1100.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 918.21 294.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1300.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1400.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1500.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1600.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1700.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1800.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1900.43 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "1ceaf26e-8524-4f97-8ce8-cfdfe9ec9665")
+		)
+		(pin "2"
+			(uuid "be3ba1c1-4b4d-409f-8614-2501e0a706ba")
+		)
+		(pin "3"
+			(uuid "343ada8d-7ea3-4653-8e04-2be1fbcb967c")
+		)
+		(pin "4"
+			(uuid "49d851f2-7742-4c03-b08e-d6525a6e923f")
+		)
+		(pin "5"
+			(uuid "2d3238f2-1019-4cda-885c-82d90c27415f")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED509")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
 		(at 368.3 246.38 90)
 		(unit 1)
 		(body_style 1)
@@ -19102,6 +21161,182 @@
 	)
 	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 982.98 127 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7d9c01e6-e6d8-4a76-940e-6ff80de4f704")
+		(property "Reference" "LED506"
+			(at 999.49 128.9049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 999.49 131.4449 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1056.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1156.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 974.09 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1356.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1456.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1556.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1656.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1756.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1856.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1956.31 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "fc6eec21-72ba-46a8-9234-4b5333ce006b")
+		)
+		(pin "2"
+			(uuid "b001d0e0-d7f6-44c8-8479-d82cbe83a65e")
+		)
+		(pin "3"
+			(uuid "34233621-9e36-4635-8c2e-a7ef7826dea7")
+		)
+		(pin "4"
+			(uuid "493f8a10-58a8-427e-a9d3-d44e432aa215")
+		)
+		(pin "5"
+			(uuid "4c496ae3-dbb0-4a73-bba7-1e6ce8cd2c50")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED506")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
 		(at 368.3 60.96 90)
 		(unit 1)
 		(body_style 1)
@@ -19454,6 +21689,182 @@
 	)
 	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 982.98 60.96 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "86127e7b-e584-4d4b-ad4a-ef6fca40ee0e")
+		(property "Reference" "LED504"
+			(at 999.49 62.8649 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 999.49 65.4049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1056.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1156.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 974.09 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1356.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1456.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1556.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1656.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1756.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1856.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1956.31 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "d5b5ced8-6f06-46f1-9705-139db1e4c78d")
+		)
+		(pin "2"
+			(uuid "8aab8eeb-45f4-474d-862a-96c5e2374bcf")
+		)
+		(pin "3"
+			(uuid "7ede5c81-19c3-417a-b46c-540fc7c7dcc5")
+		)
+		(pin "4"
+			(uuid "3b34f115-93ff-4510-bd03-9d08ce30036d")
+		)
+		(pin "5"
+			(uuid "ccdede7a-98ee-464f-b8e9-fdec0867c007")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED504")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
 		(at 200.66 127 90)
 		(unit 1)
 		(body_style 1)
@@ -19799,6 +22210,358 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
 					(reference "LED84")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 927.1 127 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "996736e6-b4b1-4c6d-aa7c-5306a6095eb6")
+		(property "Reference" "LED503"
+			(at 943.61 128.9049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 943.61 131.4449 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1000.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1100.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 918.21 144.78 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1300.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1400.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1500.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1600.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1700.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1800.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1900.43 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "8d727a12-d5ed-47e0-a277-c0e673995266")
+		)
+		(pin "2"
+			(uuid "ad423bf9-9789-4c39-9feb-1700721d60b6")
+		)
+		(pin "3"
+			(uuid "11561ebe-56da-4b9e-8b7e-aa0b4d536570")
+		)
+		(pin "4"
+			(uuid "5dbeb054-0ec3-4568-aca9-402da6a4d3fc")
+		)
+		(pin "5"
+			(uuid "d354dca6-ae48-4b7e-8c95-5312e5458861")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED503")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 982.98 213.36 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9b5ee4d9-d811-414f-83c5-63ead58418c5")
+		(property "Reference" "LED510"
+			(at 999.49 215.2649 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 999.49 217.8049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1056.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1156.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 974.09 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1356.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1456.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1556.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1656.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1756.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1856.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1956.31 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "12293ae4-6fbb-4f23-8c54-0ba35ed6ca10")
+		)
+		(pin "2"
+			(uuid "f5cd8d92-9147-4427-b893-5a59f3bc1df1")
+		)
+		(pin "3"
+			(uuid "6debd2a7-247d-4f79-8ba5-65ebd311993d")
+		)
+		(pin "4"
+			(uuid "4a6eca43-0ccb-45ab-965f-9a8cb5170861")
+		)
+		(pin "5"
+			(uuid "dfdeaecb-cd2f-4fbe-86af-1608e3280707")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED510")
 					(unit 1)
 				)
 			)
@@ -20679,6 +23442,182 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
 					(reference "LED59")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 982.98 246.38 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a7445695-e59b-4b55-93f5-99f7af8fed70")
+		(property "Reference" "LED511"
+			(at 999.49 248.2849 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 999.49 250.8249 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1056.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1156.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 974.09 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1356.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1456.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1556.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1656.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1756.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1856.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1956.31 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "ac395a4f-2f8d-47de-b66b-e2b65efaf220")
+		)
+		(pin "2"
+			(uuid "0b9c94f9-aaa9-4973-a495-8cf838719e93")
+		)
+		(pin "3"
+			(uuid "046b11f0-25d1-4842-a8c1-dd149a327afb")
+		)
+		(pin "4"
+			(uuid "0eb4c0c6-8449-4617-994d-8d810d114c47")
+		)
+		(pin "5"
+			(uuid "e681b805-93d4-4dca-b9c2-db1c7adaf2c3")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED511")
 					(unit 1)
 				)
 			)
@@ -21641,6 +24580,182 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
 					(reference "JP1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 927.1 246.38 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c09151cd-d608-4ece-b4d8-f5444976ed81")
+		(property "Reference" "LED508"
+			(at 943.61 248.2849 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 943.61 250.8249 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1000.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1100.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 918.21 264.16 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1300.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1400.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1500.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1600.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1700.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1800.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1900.43 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "7d94bb3a-1bcf-48ec-918c-aaa6aa6916f2")
+		)
+		(pin "2"
+			(uuid "e275024d-cc31-41e4-a467-43c4e444f969")
+		)
+		(pin "3"
+			(uuid "23f462b4-7be9-4449-8dc4-a3b69903a7d4")
+		)
+		(pin "4"
+			(uuid "1cc43b5d-a741-4927-817a-015750e08715")
+		)
+		(pin "5"
+			(uuid "7ed21a8f-da55-4d65-affc-5237de62f2a9")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED508")
 					(unit 1)
 				)
 			)
@@ -24464,6 +27579,182 @@
 	)
 	(symbol
 		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 927.1 213.36 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f032d7d8-e85f-4544-b174-611ac5332d88")
+		(property "Reference" "LED507"
+			(at 943.61 215.2649 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 943.61 217.8049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1000.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1100.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 918.21 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1300.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1400.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1500.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1600.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1700.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1800.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1900.43 200.66 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "347d5c5f-2fc4-49a2-8380-b6b901debd8a")
+		)
+		(pin "2"
+			(uuid "f3034806-32e8-4791-8bdc-c276362c343f")
+		)
+		(pin "3"
+			(uuid "307bc726-efab-4931-bb0c-28eae92baf5a")
+		)
+		(pin "4"
+			(uuid "74049977-a19e-4acc-bf59-360e7bb98211")
+		)
+		(pin "5"
+			(uuid "1e56723a-a7e9-4fec-bc0c-b6f82a4660c1")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED507")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
 		(at 424.18 213.36 90)
 		(unit 1)
 		(body_style 1)
@@ -24809,6 +28100,358 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
 					(reference "LED8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 927.1 60.96 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f98040c2-3505-49a0-9f85-d05d1f97978e")
+		(property "Reference" "LED501"
+			(at 943.61 62.8649 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 943.61 65.4049 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1000.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1100.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 918.21 78.74 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1300.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1400.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1500.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1600.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1700.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1800.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1900.43 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "6ae99066-1a1e-47cb-82f4-fc701829acfa")
+		)
+		(pin "2"
+			(uuid "6b673bfe-92a9-4c26-86c6-9f43af7dab3d")
+		)
+		(pin "3"
+			(uuid "21447a71-a11f-4470-b53c-13ea512f4fcd")
+		)
+		(pin "4"
+			(uuid "01922767-dd93-43ec-b921-8dc6e035ff3f")
+		)
+		(pin "5"
+			(uuid "be947b5a-697a-437c-b1e5-fc4b6d4ac0a7")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED501")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Lite-On LTST-FC12WEGBD-5A:LTST-FC12WEGBD-5A")
+		(at 982.98 93.98 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f9c034e6-eb5a-4e96-a135-b50826114481")
+		(property "Reference" "LED505"
+			(at 999.49 95.8849 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LTST-FC12WEGBD-5A"
+			(at 999.49 98.4249 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LTSTFC12WEGBD5A"
+			(at 1056.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Datasheet" "https://www.mouser.com/datasheet/2/239/Lite_On_042022_LTST_FC12WEGBD_5A_VER__1_0-2940890.pdf"
+			(at 1156.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Description" "LED RGBW DIFFUSED SMD"
+			(at 974.09 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "0.5"
+			(at 1356.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "Lite-On"
+			(at 1456.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "LTST-FC12WEGBD-5A"
+			(at 1556.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "859-LTST-FC12WEGBD5A"
+			(at 1656.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/LITEON/LTST-FC12WEGBD-5A?qs=t7xnP681wgXLqKOmYrllMw%3D%3D"
+			(at 1756.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "LTST-FC12WEGBD-5A"
+			(at 1856.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/ltst-fc12wegbd-5a/lite-on-technology?utm_currency=USD&region=nac"
+			(at 1956.31 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "a5df2ade-c251-4fd9-8c9e-0c7575ad496d")
+		)
+		(pin "2"
+			(uuid "a54c0c9d-4d7d-4b14-a7e5-19249f667dae")
+		)
+		(pin "3"
+			(uuid "c4a381a5-1d2d-4636-8b2e-ddbc8b9fc2c8")
+		)
+		(pin "4"
+			(uuid "9a571e40-431d-43c0-8a74-bc7f026b860e")
+		)
+		(pin "5"
+			(uuid "211fb32a-80be-45f1-bd0d-711f4cc28429")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
+					(reference "LED505")
 					(unit 1)
 				)
 			)

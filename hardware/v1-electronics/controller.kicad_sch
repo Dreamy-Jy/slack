@@ -6,8 +6,8 @@
 	(paper "A")
 	(title_block
 		(title "Slack")
-		(date "2026-06-17")
-		(rev "A.0.0")
+		(date "2026-07-12")
+		(rev "A.0.3")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_01x03"
@@ -2132,8 +2132,8 @@
 		)
 	)
 	(rectangle
-		(start -93.98 5.08)
-		(end -5.08 78.74)
+		(start 15.24 147.32)
+		(end 93.98 203.2)
 		(stroke
 			(width 0)
 			(type default)
@@ -2194,7 +2194,7 @@
 	)
 	(text "Loose Notes"
 		(exclude_from_sim no)
-		(at -12.7 10.16 0)
+		(at 86.36 149.86 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -2226,28 +2226,6 @@
 			(justify left top)
 		)
 		(uuid "08c02167-f355-447f-bd01-3a7ff964f151")
-	)
-	(text "I need to add supporting circuitry\nI also need to check pin assignments agains the datasheet.\n(what is and what needs high speed digital io)"
-		(exclude_from_sim no)
-		(at -91.44 45.72 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2f3874a1-aafa-4202-bb77-8835cf396775")
-	)
-	(text "figure where to place these signal if at all.\nI should probably set ce to ground or disconnected."
-		(exclude_from_sim no)
-		(at -5.08 76.2 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "484a6925-86fe-4273-b50a-1bc0c82bc862")
 	)
 	(text "The datasheet\nin unclear about \nbehavior of this \npin"
 		(exclude_from_sim no)
@@ -2283,9 +2261,9 @@
 		)
 		(uuid "6877f17b-22a2-4fb1-ada2-6c33f4667b61")
 	)
-	(text "Low Frequency IO Pins: \n= P0.02 P0.03 P0.09 P0.10 P0.28 P0.29 P0.30 P0.31\n= P1.01 P1.02 P1.03 P1.04 P1.05 P1.06 P1.07 P1.10 \n= P1.11 P1.12 P1.13 P1.14 P1.15\n\nStandard Frequency IO Pins:\n= P0.00 P0.01 P0.04 P0.05 P0.06 P0.07 P0.08 P0.11 \n= P0.12 P0.13 P0.14 P0.15 P0.16 P0.17 P0.18 P0.19\n= P0.20 P0.21 P0.22 P0.23 P0.24 P0.25 P0.26 P0.27\n= P1.00 P1.08 P1.09\n\nP0.18 is the nRESET Pin.\n\nBe careful with the pin assignments as not every\npin can handle a high speed signal"
+	(text "Low Frequency IO Pins: \n= P0.02 P0.03 P0.09 P0.10 P0.28 P0.29 P0.30 P0.31\n= P1.01 P1.02 P1.03 P1.04 P1.05 P1.06 P1.07 P1.10 \n= P1.11 P1.12 P1.13 P1.14 P1.15\n\nStandard Frequency IO Pins:\n= P0.00 P0.01 P0.04 P0.05 P0.06 P0.07 P0.08 P0.11 \n= P0.12 P0.13 P0.14 P0.15 P0.16 P0.17 P0.18 P0.19\n= P0.20 P0.21 P0.22 P0.23 P0.24 P0.25 P0.26 P0.27\n= P1.00 P1.08 P1.09\n\nP0.18 is the nRESET Pin. The datasheet is unclear\nabout how reset works\n\nBe careful with the pin assignments as not every\npin can handle a high speed signal"
 		(exclude_from_sim no)
-		(at -91.44 22.86 0)
+		(at 17.78 165.1 0)
 		(effects
 			(font
 				(size 1.3 1.3)
@@ -2306,20 +2284,20 @@
 		)
 		(uuid "7def4b64-cd79-4d13-9049-223ea9ef9a3e")
 	)
-	(text "Mention USB here\nsome where"
+	(text "VDD is REG0,\nit defaults\nto +1V8 and\ncan be set\nto V_REG0."
 		(exclude_from_sim no)
-		(at 165.1 96.52 0)
+		(at 58.42 106.68 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 1.2 1.2)
 			)
-			(justify right top)
+			(justify left top)
 		)
-		(uuid "a567e501-f083-416b-bb7e-c980003c6ac6")
+		(uuid "9341f99d-c270-4bf2-92fe-af0cfd41fa73")
 	)
-	(text "Set up resets for the device.\nCentralize the decoupling for V_SYS"
+	(text "Set up resets for the device.\nCentralize the decoupling for VDDH"
 		(exclude_from_sim no)
-		(at -91.44 73.66 0)
+		(at 17.78 198.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2328,9 +2306,9 @@
 		)
 		(uuid "a6d10b6a-7858-464d-8140-b664cc3ae88c")
 	)
-	(text "Consider if there enough space for UART debug."
+	(text "Consider if there enough space for UART debug. No there will not be"
 		(exclude_from_sim no)
-		(at -91.44 68.58 0)
+		(at 17.78 193.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2339,9 +2317,20 @@
 		)
 		(uuid "b6f5a7a1-0838-4512-ae65-ae63eb063026")
 	)
+	(text "Verify that this is \nenough to program \nthis board"
+		(exclude_from_sim no)
+		(at 55.88 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "bb1ed79f-6da1-457e-91b4-2de6356e3d9f")
+	)
 	(text "Almost any pin can be used for i2c on the nrf52. Sight this source\nSo I'll use P0.00 and P0.01.\nThis might be problematic as these pins are used for the secondary clock."
 		(exclude_from_sim no)
-		(at -91.44 60.96 0)
+		(at 17.78 187.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2349,17 +2338,6 @@
 			(justify left)
 		)
 		(uuid "bb9c8b4c-5b9d-49c9-9d1f-c6f86b991897")
-	)
-	(text "I need 45 pins for I/O, The module exposes 48 io pins\nI also need reset and bootloading features"
-		(exclude_from_sim no)
-		(at -91.44 53.34 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c7144add-a251-4616-a0c9-7ce3fa73093d")
 	)
 	(text "Regulator 0 \n& Regulator 1\nare both set\nto LDO mode"
 		(exclude_from_sim no)
@@ -2374,7 +2352,7 @@
 	)
 	(text "Programmer"
 		(exclude_from_sim no)
-		(at 58.42 66.04 0)
+		(at 55.88 66.04 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -2384,36 +2362,15 @@
 		)
 		(uuid "f55bed08-558f-4c91-a8a9-4975fb4eab50")
 	)
-	(text_box "Discription Here"
-		(exclude_from_sim no)
-		(at -182.88 5.08 0)
-		(size 83.82 14.4611)
-		(margins 0.9525 0.9525 0.9525 0.9525)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill
-			(type color)
-			(color 255 229 191 1)
-		)
-		(effects
-			(font
-				(size 1.3 1.3)
-			)
-			(justify left top)
-		)
-		(uuid "e76b18ea-fe4d-42fa-83ca-519d277bc540")
-	)
 	(junction
-		(at 27.94 101.6)
+		(at 25.4 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "21471eee-240b-4695-ba87-c6c8392ce55b")
 	)
 	(wire
 		(pts
-			(xy 27.94 101.6) (xy 25.4 101.6)
+			(xy 25.4 101.6) (xy 22.86 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2423,7 +2380,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 104.14) (xy 27.94 101.6)
+			(xy 25.4 104.14) (xy 25.4 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2503,7 +2460,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 99.06) (xy 27.94 101.6)
+			(xy 25.4 99.06) (xy 25.4 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2922,7 +2879,7 @@
 		(uuid "94ef5a58-1114-49b5-a3ca-7ad823a9f82d")
 	)
 	(label "VDDH"
-		(at 25.4 101.6 180)
+		(at 22.86 101.6 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3032,7 +2989,7 @@
 		(uuid "e5a3194c-ad77-4e38-9c39-07bd308d5f80")
 	)
 	(label "RESET"
-		(at 22.86 127 0)
+		(at 25.4 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3609,25 +3566,25 @@
 		(dnp no)
 		(uuid "46d0e7e7-2fb9-4e3d-aa6f-b3c8c0e64858")
 		(property "Reference" "U1"
-			(at 231.14 48.26 0)
+			(at 215.9 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left top)
 			)
 		)
 		(property "Value" "MDBT50Q-1MV2"
-			(at 231.14 45.72 0)
+			(at 215.9 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "RF_Module:Raytac_MDBT50Q"
@@ -3857,7 +3814,7 @@
 	)
 	(symbol
 		(lib_id "power:VDD")
-		(at 27.94 99.06 0)
+		(at 25.4 99.06 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3868,7 +3825,7 @@
 		(fields_autoplaced yes)
 		(uuid "49cfae57-afe9-4696-ac67-2584bbd153ff")
 		(property "Reference" "#PWR0124"
-			(at 27.94 102.87 0)
+			(at 25.4 102.87 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3878,8 +3835,8 @@
 				)
 			)
 		)
-		(property "Value" "V_SYS"
-			(at 27.94 93.98 0)
+		(property "Value" "+5V"
+			(at 25.4 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3889,7 +3846,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 99.06 0)
+			(at 25.4 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3900,7 +3857,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 99.06 0)
+			(at 25.4 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3911,7 +3868,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VDD\""
-			(at 27.94 99.06 0)
+			(at 25.4 99.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4013,7 +3970,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 27.94 109.22 0)
+		(at 25.4 109.22 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4024,7 +3981,7 @@
 		(fields_autoplaced yes)
 		(uuid "5cddc1c7-eb82-4f45-9d22-cc5d98924e91")
 		(property "Reference" "#PWR0127"
-			(at 27.94 115.57 0)
+			(at 25.4 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4035,7 +3992,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 27.94 114.3 0)
+			(at 25.4 114.3 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4045,7 +4002,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 109.22 0)
+			(at 25.4 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4056,7 +4013,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 109.22 0)
+			(at 25.4 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4067,7 +4024,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 27.94 109.22 0)
+			(at 25.4 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4173,7 +4130,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_Push")
-		(at 22.86 132.08 90)
+		(at 25.4 129.54 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4184,7 +4141,7 @@
 		(fields_autoplaced yes)
 		(uuid "800934f6-b870-469f-8357-05250203dba4")
 		(property "Reference" "SW8"
-			(at 24.13 130.8099 90)
+			(at 26.67 128.2699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4195,7 +4152,7 @@
 			)
 		)
 		(property "Value" "SW_Push"
-			(at 24.13 133.3499 90)
+			(at 26.67 130.8099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4206,7 +4163,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 17.78 132.08 0)
+			(at 20.32 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4217,7 +4174,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 17.78 132.08 0)
+			(at 20.32 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4228,7 +4185,7 @@
 			)
 		)
 		(property "Description" "Push button switch, generic, two pins"
-			(at 22.86 132.08 0)
+			(at 25.4 129.54 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4358,7 +4315,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 195.58 38.3932 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4415,7 +4372,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 27.94 106.68 0)
+		(at 25.4 106.68 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4425,7 +4382,7 @@
 		(dnp no)
 		(uuid "bfa1000f-f7d3-4a5d-83af-1ca4fca8913c")
 		(property "Reference" "C51"
-			(at 25.4 105.4162 0)
+			(at 22.86 105.4162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4436,7 +4393,7 @@
 			)
 		)
 		(property "Value" "10μF"
-			(at 25.4 107.9562 0)
+			(at 22.86 107.9562 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4447,7 +4404,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 106.68 0)
+			(at 25.4 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4458,7 +4415,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 106.68 0)
+			(at 25.4 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4469,7 +4426,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 27.94 106.68 0)
+			(at 25.4 106.68 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4517,7 +4474,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 35.56 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4673,7 +4630,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 25.4 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4815,7 +4772,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 22.86 137.16 0)
+		(at 25.4 134.62 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -4826,7 +4783,7 @@
 		(dnp no)
 		(uuid "e763c2ae-f1f8-4fd0-b6bd-055918411123")
 		(property "Reference" "#PWR0130"
-			(at 22.86 143.51 0)
+			(at 25.4 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4837,7 +4794,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 22.86 142.24 0)
+			(at 25.4 139.7 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4847,7 +4804,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 22.86 137.16 0)
+			(at 25.4 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4858,7 +4815,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 22.86 137.16 0)
+			(at 25.4 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4869,7 +4826,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 22.86 137.16 0)
+			(at 25.4 134.62 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4914,7 +4871,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 40.64 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)

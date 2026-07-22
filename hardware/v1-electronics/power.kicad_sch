@@ -6,8 +6,8 @@
 	(paper "User" 510 300)
 	(title_block
 		(title "Slack")
-		(date "2026-06-17")
-		(rev "A.0.0")
+		(date "2026-07-12")
+		(rev "A.0.3")
 	)
 	(lib_symbols
 		(symbol "Connector:USB_C_Receptacle_USB2.0_14P"
@@ -2771,24 +2771,26 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "FL1"
-				(at -5.08 13.97 90)
+			(property "Reference" "FL"
+				(at 3.048 10.414 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left top)
 				)
 			)
 			(property "Value" "EXC14CE900U"
-				(at -7.62 13.97 90)
+				(at 3.048 7.874 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left top)
 				)
 			)
 			(property "Footprint" "EXC14CE900U"
@@ -2816,7 +2818,7 @@
 				)
 			)
 			(property "Description" "Series/Type: Common mode Filters (0302 small size, for Mbps, Gbps), Size [LW] (mm): 0.850.65, Height (mm): 0.45, Impedance [Common Mode] (): 90, Rated Voltage [DC] (V): 5, Rated Current [DC] (mA): 130, DC Resistance [max.] (): 2.5, Number of circuit: 1"
-				(at 0 0 0)
+				(at 0 1.27 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -2922,70 +2924,23 @@
 					(justify left top)
 				)
 			)
+			(symbol "EXC14CE900U_0_1"
+				(rectangle
+					(start 0 -2.032)
+					(end 15.24 -8.128)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
 			(symbol "EXC14CE900U_1_1"
 				(polyline
 					(pts
-						(xy -15.24 19.177) (xy -15.24 21.463)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -15.188 19.05)
-					(mid -13.9689 17.78)
-					(end -15.188 16.51)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -15.188 16.51)
-					(mid -13.9689 15.24)
-					(end -15.188 13.97)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -15.188 13.97)
-					(mid -13.9689 12.7)
-					(end -15.188 11.43)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -15.188 11.43)
-					(mid -13.9689 10.16)
-					(end -15.188 8.89)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -15.24 8.763) (xy -15.24 6.477)
+						(xy 2.54 -2.54) (xy 0 -2.54)
 					)
 					(stroke
 						(width 0.254)
@@ -2997,67 +2952,7 @@
 				)
 				(polyline
 					(pts
-						(xy -13.208 19.05) (xy -13.208 8.89)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -13.208 19.05) (xy -13.208 8.89)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -12.446 19.05) (xy -12.446 8.89)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -12.446 19.05) (xy -12.446 8.89)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -10.16 19.177) (xy -10.16 21.463)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -10.16 8.763) (xy -10.16 6.477)
+						(xy 2.54 -7.62) (xy 0 -7.62)
 					)
 					(stroke
 						(width 0.254)
@@ -3068,9 +2963,9 @@
 					)
 				)
 				(arc
-					(start -10.16 16.51)
-					(mid -11.3791 17.78)
-					(end -10.16 19.05)
+					(start 5.08 -2.54)
+					(mid 3.81 -3.7591)
+					(end 2.54 -2.54)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -3080,9 +2975,9 @@
 					)
 				)
 				(arc
-					(start -10.16 13.97)
-					(mid -11.3791 15.24)
-					(end -10.16 16.51)
+					(start 2.54 -7.62)
+					(mid 3.81 -6.4009)
+					(end 5.08 -7.62)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -3092,9 +2987,9 @@
 					)
 				)
 				(arc
-					(start -10.16 11.43)
-					(mid -11.3791 12.7)
-					(end -10.16 13.97)
+					(start 7.62 -2.54)
+					(mid 6.35 -3.7591)
+					(end 5.08 -2.54)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -3104,9 +2999,105 @@
 					)
 				)
 				(arc
-					(start -10.16 8.89)
-					(mid -11.3791 10.16)
-					(end -10.16 11.43)
+					(start 5.08 -7.62)
+					(mid 6.35 -6.4009)
+					(end 7.62 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 -2.54)
+					(mid 8.89 -3.7591)
+					(end 7.62 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 7.62 -7.62)
+					(mid 8.89 -6.4009)
+					(end 10.16 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 12.7 -2.54)
+					(mid 11.43 -3.7591)
+					(end 10.16 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 10.16 -7.62)
+					(mid 11.43 -6.4009)
+					(end 12.7 -7.62)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 -2.54) (xy 15.24 -2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 -4.572) (xy 2.54 -4.572)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 -5.588) (xy 2.54 -5.588)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 -7.62) (xy 15.24 -7.62)
+					)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -3116,8 +3107,8 @@
 					)
 				)
 				(pin passive line
-					(at -15.24 2.54 90)
-					(length 5.08)
+					(at -2.54 -7.62 0)
+					(length 2.54)
 					(name "1"
 						(effects
 							(font
@@ -3134,8 +3125,8 @@
 					)
 				)
 				(pin passive line
-					(at -10.16 2.54 90)
-					(length 5.08)
+					(at -2.54 -2.54 0)
+					(length 2.54)
 					(name "2"
 						(effects
 							(font
@@ -3152,8 +3143,8 @@
 					)
 				)
 				(pin passive line
-					(at -10.16 25.4 270)
-					(length 5.08)
+					(at 17.78 -2.54 180)
+					(length 2.54)
 					(name "3"
 						(effects
 							(font
@@ -3170,8 +3161,8 @@
 					)
 				)
 				(pin passive line
-					(at -15.24 25.4 270)
-					(length 5.08)
+					(at 17.78 -7.62 180)
+					(length 2.54)
 					(name "4"
 						(effects
 							(font
@@ -3691,12 +3682,9 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Switch:SW_SPDT"
 			(pin_names
-				(offset 1.016)
+				(offset 0)
 				(hide yes)
 			)
 			(exclude_from_sim no)
@@ -3705,18 +3693,17 @@
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
 			(property "Reference" "SW"
-				(at 1.27 2.54 0)
+				(at 0 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
+			(property "Value" "SW_SPDT"
+				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3726,7 +3713,7 @@
 				)
 			)
 			(property "Footprint" ""
-				(at 0 5.08 0)
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3737,7 +3724,7 @@
 				)
 			)
 			(property "Datasheet" ""
-				(at 0 5.08 0)
+				(at 0 -7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -3747,7 +3734,7 @@
 					)
 				)
 			)
-			(property "Description" "Push button switch, generic, two pins"
+			(property "Description" "Switch, single pole double throw"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3758,7 +3745,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
+			(property "ki_keywords" "switch single-pole double-throw spdt ON-ON"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -3769,10 +3756,10 @@
 					)
 				)
 			)
-			(symbol "SW_Push_0_1"
+			(symbol "SW_SPDT_0_1"
 				(circle
 					(center -2.032 0)
-					(radius 0.508)
+					(radius 0.4572)
 					(stroke
 						(width 0)
 						(type default)
@@ -3783,7 +3770,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 1.27) (xy 0 3.048)
+						(xy -1.651 0.254) (xy 1.651 2.286)
 					)
 					(stroke
 						(width 0)
@@ -3794,8 +3781,8 @@
 					)
 				)
 				(circle
-					(center 2.032 0)
-					(radius 0.508)
+					(center 2.032 2.54)
+					(radius 0.4572)
 					(stroke
 						(width 0)
 						(type default)
@@ -3804,22 +3791,34 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
-					)
+				(circle
+					(center 2.032 -2.54)
+					(radius 0.4572)
 					(stroke
 						(width 0)
 						(type default)
 					)
 					(fill
 						(type none)
+					)
+				)
+			)
+			(symbol "SW_SPDT_1_1"
+				(rectangle
+					(start -3.175 3.81)
+					(end 3.175 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at 5.08 2.54 180)
 					(length 2.54)
-					(name "1"
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3835,9 +3834,9 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
+					(at -5.08 0 0)
 					(length 2.54)
-					(name "2"
+					(name "B"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3845,6 +3844,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 -2.54 180)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4862,7 +4879,7 @@
 	)
 	(rectangle
 		(start 327.66 83.82)
-		(end 347.98 104.14)
+		(end 347.98 109.22)
 		(stroke
 			(width 0.5)
 			(type dash)
@@ -4923,7 +4940,7 @@
 	)
 	(rectangle
 		(start 396.24 149.86)
-		(end 436.88 246.38)
+		(end 436.88 243.84)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -4933,19 +4950,6 @@
 			(type none)
 		)
 		(uuid "6f626da2-d11c-4f13-8efe-6f72495954a0")
-	)
-	(rectangle
-		(start 12.7 347.98)
-		(end 254 378.46)
-		(stroke
-			(width 0.2)
-			(type default)
-		)
-		(fill
-			(type color)
-			(color 255 229 191 1)
-		)
-		(uuid "7f9a0ebb-be9e-4705-bb35-5609225556a2")
 	)
 	(rectangle
 		(start 259.08 185.42)
@@ -5042,7 +5046,7 @@
 	)
 	(text "Error Compensation"
 		(exclude_from_sim no)
-		(at 411.48 152.4 0)
+		(at 406.4 152.4 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -5109,20 +5113,9 @@
 		)
 		(uuid "3c0e8945-f514-44ba-ac11-83405342d468")
 	)
-	(text "Figure out the battery situation and circuitry\nConpare BQ25186DLHR and BQ25185DLHR"
-		(exclude_from_sim no)
-		(at 15.24 358.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "3e6a2a8c-7c96-4346-a72d-4d4ced9682df")
-	)
 	(text "Have not done the\nmath for this yet\n\nThis involves control theory\nnoise a big issue in these system"
 		(exclude_from_sim no)
-		(at 398.78 187.96 0)
+		(at 398.78 185.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5234,7 +5227,7 @@
 	)
 	(text "forgot what I was putting here\nSetup global reset\nHow to handle power and analog grounds???"
 		(exclude_from_sim no)
-		(at 15.24 365.76 0)
+		(at 12.7 276.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5256,7 +5249,7 @@
 	)
 	(text "Did the math, realized I don't\nhave control system intuition.\n\nI have raw values I need to map to\nstardard resistor and capcitor size\nand values:\n- R_C = 14403.29218 Ω\n- C_C = 2.673 nF\n- C_P = 6.4152 pF\n\nThese are the values after \nplugging in a real output \ncap (CL21A226MAQNNN): \n- R_C = 10020.57613 Ω\n- C_C = 2.673 nF\n- C_P = 2.88684 pF\n\nThese are the standard \nvalues I'm going with:\n- R_C = 10 kΩ\n- C_C = 2.7 nF"
 		(exclude_from_sim no)
-		(at 398.78 200.66 0)
+		(at 398.78 198.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5277,9 +5270,9 @@
 		)
 		(uuid "ad733384-ec71-4b6e-9ea9-aa0f0028d989")
 	)
-	(text "is this the simplest power/usb-c module possible?\nCentralize the decoupling for V_SYS"
+	(text "is this the simplest power/usb-c module possible?\nCentralize the decoupling for +5V"
 		(exclude_from_sim no)
-		(at 15.24 350.52 0)
+		(at 12.7 269.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5299,17 +5292,6 @@
 			(justify left)
 		)
 		(uuid "b6cc6baf-c30d-4b66-be6c-f722f40e324e")
-	)
-	(text "Loose Notes"
-		(exclude_from_sim no)
-		(at 246.38 350.52 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-				(thickness 0.1875)
-			)
-		)
-		(uuid "c91f3a84-cf8e-41ae-baee-f49807075d96")
 	)
 	(text "Boost Converter"
 		(exclude_from_sim no)
@@ -5344,9 +5326,9 @@
 		)
 		(uuid "ea7e06a3-2ce3-483e-b17e-7143fff413cd")
 	)
-	(text "Consider Alternative Chargers:\n- BQ25883 [2 cell](i2c, power path, boost charger)\n- BQ25188 (i2c, power path)\n- BQ25619 \n\nRedo your power budget\n\nConsider adding a fuel gauge ic:\n- i2c and led indictor\n- BQ27220"
+	(text "Consider adding a fuel gauge ic:\n- i2c and led indictor\n- BQ27220"
 		(exclude_from_sim no)
-		(at 76.2 350.52 0)
+		(at 68.58 269.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5357,7 +5339,7 @@
 	)
 	(text "Data Line ESD Protection"
 		(exclude_from_sim no)
-		(at 68.58 91.44 0)
+		(at 66.04 91.44 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -5367,10 +5349,10 @@
 		)
 		(uuid "f50b785c-7580-4583-abb9-a08c39e1e97e")
 	)
-	(text_box "Protection for USB-C\n- Electrostatic Discharge\n- Overvoltage and Power Protection\n	- polyfuse on vbus line\n- EMI filtering inline on D+/D-\n- USBLC6-2P6, IP4220CZ6,125\n\nProtection for Charger IC\n-\n\nProtection for Boost Converter\n-\n\n\n-----\nI placed EMI and ESD protection on my usb-c 2.0 D- and D+ lines in the form of USBLC6-2P6 and EXC14CE900U.\n\nDo I still need to add resistors or pull up these lines?\n\n"
+	(text_box "Do I have enough protect on the USB contector?\nDo I still need to add resistors or pull up these lines?\nHave I properly set up the charger and regulator correctily?\n\n"
 		(exclude_from_sim no)
-		(at 12.7 292.1 0)
-		(size 175.26 50.8)
+		(at 12.7 259.08 0)
+		(size 91.44 27.94)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -5407,12 +5389,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0d73991a-bafb-4e6b-a6a1-e775ac3131cf")
-	)
-	(junction
-		(at 370.84 101.6)
-		(diameter 1.5)
-		(color 0 0 0 0)
-		(uuid "0f735263-36b3-4db4-9353-a7509e8926dd")
 	)
 	(junction
 		(at 165.1 99.06)
@@ -5529,6 +5505,12 @@
 		(uuid "c556da0a-2fd3-44ef-909c-8c49a71eac79")
 	)
 	(junction
+		(at 370.84 101.6)
+		(diameter 1.5)
+		(color 0 0 0 0)
+		(uuid "c6d962da-1993-4245-935d-416b96116e9a")
+	)
+	(junction
 		(at 297.18 101.6)
 		(diameter 1.5)
 		(color 0 0 0 0)
@@ -5621,7 +5603,7 @@
 	)
 	(wire
 		(pts
-			(xy 342.9 101.6) (xy 370.84 101.6)
+			(xy 353.06 101.6) (xy 370.84 101.6)
 		)
 		(stroke
 			(width 0.5)
@@ -5661,7 +5643,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 104.14) (xy 119.38 104.14)
+			(xy 109.22 104.14) (xy 121.92 104.14)
 		)
 		(stroke
 			(width 0.5)
@@ -5784,6 +5766,16 @@
 	)
 	(wire
 		(pts
+			(xy 353.06 101.6) (xy 353.06 104.14)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "3e177132-d4bb-4d62-a838-c73096308a90")
+	)
+	(wire
+		(pts
 			(xy 50.8 111.76) (xy 55.88 111.76)
 		)
 		(stroke
@@ -5887,7 +5879,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 99.06) (xy 119.38 99.06)
+			(xy 104.14 99.06) (xy 121.92 99.06)
 		)
 		(stroke
 			(width 0.5)
@@ -5915,6 +5907,16 @@
 			(type default)
 		)
 		(uuid "51d48c76-cd10-468d-b3bf-3df2db1c5b5b")
+	)
+	(wire
+		(pts
+			(xy 353.06 104.14) (xy 342.9 104.14)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "5418842c-d19f-44b3-8cff-ddc86231f1ca")
 	)
 	(wire
 		(pts
@@ -6104,6 +6106,16 @@
 	)
 	(wire
 		(pts
+			(xy 419.1 177.8) (xy 419.1 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e03fa01-b281-4524-ab93-c9ba71ffb610")
+	)
+	(wire
+		(pts
 			(xy 55.88 106.68) (xy 66.04 106.68)
 		)
 		(stroke
@@ -6195,7 +6207,7 @@
 	)
 	(wire
 		(pts
-			(xy 406.4 170.18) (xy 406.4 165.1)
+			(xy 419.1 170.18) (xy 419.1 165.1)
 		)
 		(stroke
 			(width 0)
@@ -6257,16 +6269,6 @@
 	)
 	(wire
 		(pts
-			(xy 406.4 175.26) (xy 406.4 180.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a867acbc-0c81-4b3c-b0fb-389f3f4c141a")
-	)
-	(wire
-		(pts
 			(xy 444.5 165.1) (xy 447.04 165.1)
 		)
 		(stroke
@@ -6297,7 +6299,7 @@
 	)
 	(wire
 		(pts
-			(xy 403.86 157.48) (xy 406.4 157.48)
+			(xy 416.56 157.48) (xy 419.1 157.48)
 		)
 		(stroke
 			(width 0)
@@ -6548,7 +6550,7 @@
 	)
 	(wire
 		(pts
-			(xy 406.4 157.48) (xy 406.4 160.02)
+			(xy 419.1 157.48) (xy 419.1 160.02)
 		)
 		(stroke
 			(width 0)
@@ -6837,7 +6839,7 @@
 		(uuid "732fa12b-f6a5-4165-bdfc-bc3e86e982b3")
 	)
 	(label "COMP"
-		(at 403.86 157.48 180)
+		(at 416.56 157.48 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7813,7 +7815,7 @@
 				)
 			)
 		)
-		(property "Value" "V_SYS"
+		(property "Value" "+5V"
 			(at 487.68 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8273,7 +8275,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 406.4 162.56 180)
+		(at 419.1 162.56 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8283,7 +8285,7 @@
 		(dnp no)
 		(uuid "3632369e-dfe3-4e4e-b0e8-276443ad4943")
 		(property "Reference" "C45"
-			(at 408.94 161.2835 0)
+			(at 421.64 161.2835 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8294,7 +8296,7 @@
 			)
 		)
 		(property "Value" "2.7nF"
-			(at 408.94 163.8235 0)
+			(at 421.64 163.8235 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8305,7 +8307,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 406.4 162.56 0)
+			(at 419.1 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8316,7 +8318,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 406.4 162.56 0)
+			(at 419.1 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8327,7 +8329,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 406.4 162.56 0)
+			(at 419.1 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9007,7 +9009,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 271.78 157.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10014,7 +10016,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
+		(lib_id "Switch:SW_SPDT")
 		(at 337.82 101.6 0)
 		(unit 1)
 		(body_style 1)
@@ -10026,7 +10028,7 @@
 		(fields_autoplaced yes)
 		(uuid "79f0d074-1739-4917-8634-e2182a9f2ac3")
 		(property "Reference" "SW7"
-			(at 337.82 93.98 0)
+			(at 337.82 92.71 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10035,8 +10037,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 337.82 96.52 0)
+		(property "Value" "SW_SPDT"
+			(at 337.82 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10046,7 +10048,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 337.82 96.52 0)
+			(at 337.82 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10057,7 +10059,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 337.82 96.52 0)
+			(at 337.82 109.22 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10067,7 +10069,7 @@
 				)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
+		(property "Description" "Switch, single pole double throw"
 			(at 337.82 101.6 0)
 			(hide yes)
 			(show_name no)
@@ -10083,6 +10085,9 @@
 		)
 		(pin "1"
 			(uuid "2cc4a93e-4147-4fdd-aeff-3b67cc2de146")
+		)
+		(pin "3"
+			(uuid "71465bf9-5058-459b-9488-a91ce3f3b082")
 		)
 		(instances
 			(project "slack"
@@ -10990,7 +10995,7 @@
 				)
 			)
 		)
-		(property "Value" "V_OUT"
+		(property "Value" "V_OUT_TPS"
 			(at 452.12 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11129,8 +11134,7 @@
 	)
 	(symbol
 		(lib_id "Panasonic:EXC14CE900U")
-		(at 116.84 88.9 270)
-		(mirror x)
+		(at 124.46 96.52 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11140,7 +11144,7 @@
 		(dnp no)
 		(uuid "aeb67ad4-f38e-47e1-a7f1-59843049ce90")
 		(property "Reference" "FL1"
-			(at 129.54 106.68 90)
+			(at 132.08 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11150,7 +11154,7 @@
 			)
 		)
 		(property "Value" "EXC14CE900U"
-			(at 129.54 109.22 90)
+			(at 132.08 106.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11160,7 +11164,7 @@
 			)
 		)
 		(property "Footprint" "EXC14CE900U"
-			(at 24.714 85.852 0)
+			(at 127.508 188.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11172,7 +11176,7 @@
 			)
 		)
 		(property "Datasheet" "https://industrial.panasonic.com/cdbs/www-data/pdf/AWE0000/AWE0000C147.pdf"
-			(at -75.286 85.852 0)
+			(at 127.508 288.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11184,7 +11188,7 @@
 			)
 		)
 		(property "Description" "Series/Type: Common mode Filters (0302 small size, for Mbps, Gbps), Size [LW] (mm): 0.850.65, Height (mm): 0.45, Impedance [Common Mode] (): 90, Rated Voltage [DC] (V): 5, Rated Current [DC] (mA): 130, DC Resistance [max.] (): 2.5, Number of circuit: 1"
-			(at 116.84 88.9 0)
+			(at 124.46 96.52 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11195,7 +11199,7 @@
 			)
 		)
 		(property "Height" "0.5"
-			(at -275.286 85.852 0)
+			(at 127.508 488.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11207,7 +11211,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Panasonic"
-			(at -375.286 85.852 0)
+			(at 127.508 588.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11219,7 +11223,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "EXC14CE900U"
-			(at -475.286 85.852 0)
+			(at 127.508 688.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11231,7 +11235,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at -575.286 85.852 0)
+			(at 127.508 788.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11243,7 +11247,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at -675.286 85.852 0)
+			(at 127.508 888.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11255,7 +11259,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at -775.286 85.852 0)
+			(at 127.508 988.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11267,7 +11271,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at -875.286 85.852 0)
+			(at 127.508 1088.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11279,7 +11283,7 @@
 			)
 		)
 		(property "Simulation Data" "https://industrial.panasonic.com/content/data/CC/files/EXC14CE900U.zip"
-			(at -975.286 85.852 0)
+			(at 127.508 1188.646 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11528,7 +11532,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b2e334ed-cf64-4459-9d48-401b8205653d")
-		(property "Reference" "D86"
+		(property "Reference" "D87"
 			(at 322.5165 173.99 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11601,7 +11605,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "D86")
+					(reference "D87")
 					(unit 1)
 				)
 			)
@@ -11850,7 +11854,7 @@
 				)
 			)
 		)
-		(property "Value" "V_OUT"
+		(property "Value" "V_OUT_TPS"
 			(at 447.04 152.4 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11907,7 +11911,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 406.4 180.34 0)
+		(at 419.1 177.8 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -11919,7 +11923,7 @@
 		(fields_autoplaced yes)
 		(uuid "c9585385-5de1-4272-83c2-5e28abcf5861")
 		(property "Reference" "#PWR0114"
-			(at 406.4 186.69 0)
+			(at 419.1 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11930,7 +11934,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 406.4 185.42 0)
+			(at 419.1 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11940,7 +11944,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 406.4 180.34 0)
+			(at 419.1 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11951,7 +11955,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 406.4 180.34 0)
+			(at 419.1 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11962,7 +11966,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 406.4 180.34 0)
+			(at 419.1 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12390,7 +12394,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 406.4 172.72 0)
+		(at 419.1 172.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12401,7 +12405,7 @@
 		(fields_autoplaced yes)
 		(uuid "d77abda1-853d-4db9-b3d5-27fcddb03cf5")
 		(property "Reference" "R56"
-			(at 408.94 171.4499 0)
+			(at 421.64 171.4499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12412,7 +12416,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 408.94 173.9899 0)
+			(at 421.64 173.9899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12423,7 +12427,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 406.4 172.72 0)
+			(at 419.1 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12434,7 +12438,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 406.4 172.72 0)
+			(at 419.1 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12445,7 +12449,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 406.4 172.72 0)
+			(at 419.1 172.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

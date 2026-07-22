@@ -3,7 +3,12 @@
 	(generator "eeschema")
 	(generator_version "10.0")
 	(uuid "b7631d81-e253-44a6-9055-66bc11e06e07")
-	(paper "A4")
+	(paper "A")
+	(title_block
+		(title "Slack")
+		(date "2026-07-12")
+		(rev "A.0.3")
+	)
 	(lib_symbols
 		(symbol "Device:C_Small"
 			(pin_numbers
@@ -2149,7 +2154,7 @@
 	)
 	(text "*is the use of 2 seperate \ngrounds necessary for this?"
 		(exclude_from_sim no)
-		(at 220.98 144.78 0)
+		(at 195.58 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2194,7 +2199,7 @@
 		(uuid "d664412c-26b4-4463-b941-f80e48f09aeb")
 	)
 	(junction
-		(at 238.76 127)
+		(at 213.36 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3f083e2d-e303-421e-bf8e-cfc33f04eec7")
@@ -2236,7 +2241,7 @@
 		(uuid "a945e09e-8b4f-42f9-a386-2704891c738c")
 	)
 	(junction
-		(at 238.76 132.08)
+		(at 213.36 132.08)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b624433f-1fbe-41a3-877e-3a4d4684e285")
@@ -2260,7 +2265,7 @@
 		(uuid "dc0480cd-c875-46f0-9d2c-ee130442b796")
 	)
 	(junction
-		(at 226.06 127)
+		(at 200.66 127)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e90addf9-d0d8-4f48-8fe6-ba2bd4971f52")
@@ -2272,7 +2277,7 @@
 		(uuid "eaf674d0-8cb7-4e7f-9398-7144111c5436")
 	)
 	(no_connect
-		(at 223.52 121.92)
+		(at 198.12 121.92)
 		(uuid "020e10c0-c324-4779-82c0-d258ebd831bf")
 	)
 	(no_connect
@@ -2280,7 +2285,7 @@
 		(uuid "1c4a62f1-901c-4ebc-8a1a-4be251ef55a1")
 	)
 	(no_connect
-		(at 233.68 121.92)
+		(at 208.28 121.92)
 		(uuid "26e4324e-9c52-44e4-9ca5-77c8186b6ef4")
 	)
 	(no_connect
@@ -2329,7 +2334,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 121.92) (xy 238.76 127)
+			(xy 213.36 121.92) (xy 213.36 127)
 		)
 		(stroke
 			(width 0)
@@ -2369,7 +2374,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 127) (xy 226.06 137.16)
+			(xy 200.66 127) (xy 200.66 137.16)
 		)
 		(stroke
 			(width 0)
@@ -2389,7 +2394,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 127) (xy 238.76 132.08)
+			(xy 213.36 127) (xy 213.36 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2419,7 +2424,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 121.92) (xy 228.6 127)
+			(xy 203.2 121.92) (xy 203.2 127)
 		)
 		(stroke
 			(width 0)
@@ -2439,7 +2444,7 @@
 	)
 	(wire
 		(pts
-			(xy 226.06 121.92) (xy 226.06 127)
+			(xy 200.66 121.92) (xy 200.66 127)
 		)
 		(stroke
 			(width 0)
@@ -2459,7 +2464,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 121.92) (xy 231.14 132.08)
+			(xy 205.74 121.92) (xy 205.74 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2479,7 +2484,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 127) (xy 238.76 127)
+			(xy 210.82 127) (xy 213.36 127)
 		)
 		(stroke
 			(width 0)
@@ -2649,7 +2654,7 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 132.08) (xy 238.76 132.08)
+			(xy 205.74 132.08) (xy 213.36 132.08)
 		)
 		(stroke
 			(width 0)
@@ -2659,7 +2664,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 121.92) (xy 236.22 127)
+			(xy 210.82 121.92) (xy 210.82 127)
 		)
 		(stroke
 			(width 0)
@@ -2699,7 +2704,7 @@
 	)
 	(wire
 		(pts
-			(xy 228.6 127) (xy 226.06 127)
+			(xy 203.2 127) (xy 200.66 127)
 		)
 		(stroke
 			(width 0)
@@ -2719,7 +2724,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 132.08) (xy 238.76 137.16)
+			(xy 213.36 132.08) (xy 213.36 137.16)
 		)
 		(stroke
 			(width 0)
@@ -2808,7 +2813,7 @@
 		(uuid "ffda8da5-8af7-4705-b680-3783f9242293")
 	)
 	(label "CurrentSource10"
-		(at 248.92 78.74 0)
+		(at 223.52 78.74 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2828,7 +2833,7 @@
 		(uuid "0aefcd21-b3dc-4918-903d-6a4c5f33db79")
 	)
 	(label "PVCC1"
-		(at 233.68 40.64 90)
+		(at 208.28 40.64 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2838,7 +2843,7 @@
 		(uuid "12c74668-bfdd-4d5e-950e-ffd4b83b1cd0")
 	)
 	(label "SinkSwitch5"
-		(at 213.36 66.04 180)
+		(at 187.96 66.04 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2848,7 +2853,7 @@
 		(uuid "1678d3ca-498a-446f-94c6-a85ca06e38fd")
 	)
 	(label "I2C1.SCL"
-		(at 213.36 96.52 180)
+		(at 187.96 96.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2858,7 +2863,7 @@
 		(uuid "1e42d799-94de-408f-833b-9c18274cb182")
 	)
 	(label "SinkSwitch10"
-		(at 213.36 78.74 180)
+		(at 187.96 78.74 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2877,7 +2882,7 @@
 		(uuid "272f8ee1-04e0-47a4-80d9-e35ab3c79c36")
 	)
 	(label "CurrentSource12"
-		(at 248.92 83.82 0)
+		(at 223.52 83.82 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2897,7 +2902,7 @@
 		(uuid "346ad863-7349-4c7c-92f9-55f63224e0e3")
 	)
 	(label "CurrentSource8"
-		(at 248.92 73.66 0)
+		(at 223.52 73.66 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2907,7 +2912,7 @@
 		(uuid "3608ee30-19f2-4970-baf2-ebd4be2e9a6b")
 	)
 	(label "CurrentSource4"
-		(at 248.92 63.5 0)
+		(at 223.52 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2917,7 +2922,7 @@
 		(uuid "38601bed-f2e1-4da1-abc6-1afe0d0f35f6")
 	)
 	(label "CurrentSource7"
-		(at 248.92 71.12 0)
+		(at 223.52 71.12 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2937,7 +2942,7 @@
 		(uuid "458dd681-15cd-4d6d-81e3-595918e7affa")
 	)
 	(label "SinkSwitch12"
-		(at 213.36 83.82 180)
+		(at 187.96 83.82 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2947,7 +2952,7 @@
 		(uuid "46a40d60-30c2-41bf-ac1e-63707ee9af9e")
 	)
 	(label "SinkSwitch7"
-		(at 213.36 71.12 180)
+		(at 187.96 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2977,7 +2982,7 @@
 		(uuid "55a62b04-7834-43e1-aff9-e132aeb832ec")
 	)
 	(label "CurrentSource11"
-		(at 248.92 81.28 0)
+		(at 223.52 81.28 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2997,7 +3002,7 @@
 		(uuid "5a50e72f-99dd-4e9a-905f-e097aeef86aa")
 	)
 	(label "CurrentSource15"
-		(at 248.92 91.44 0)
+		(at 223.52 91.44 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3027,7 +3032,7 @@
 		(uuid "6ddb2b40-f98b-40e7-a10c-90cec47912ab")
 	)
 	(label "CurrentSource6"
-		(at 248.92 68.58 0)
+		(at 223.52 68.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3037,7 +3042,7 @@
 		(uuid "6e39dd2f-5f64-4164-8f8a-926cb21b09f7")
 	)
 	(label "I2C1.SDA"
-		(at 213.36 93.98 180)
+		(at 187.96 93.98 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3047,7 +3052,7 @@
 		(uuid "6eeea3d6-41c9-4575-a9b2-408a0c58127c")
 	)
 	(label "CurrentSource2"
-		(at 248.92 58.42 0)
+		(at 223.52 58.42 0)
 		(effects
 			(font
 				(face "KiCad Font")
@@ -3058,7 +3063,7 @@
 		(uuid "70066259-06e4-4a55-ace8-64b4d0e20ee2")
 	)
 	(label "SinkSwitch9"
-		(at 213.36 76.2 180)
+		(at 187.96 76.2 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3068,7 +3073,7 @@
 		(uuid "787fa8a9-ea13-49f8-8e66-81cfa1e35efb")
 	)
 	(label "CurrentSource16"
-		(at 248.92 93.98 0)
+		(at 223.52 93.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3098,7 +3103,7 @@
 		(uuid "837fad68-f076-4c89-ab57-462adae3b7d3")
 	)
 	(label "SinkSwitch11"
-		(at 213.36 81.28 180)
+		(at 187.96 81.28 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3108,7 +3113,7 @@
 		(uuid "849cde84-7963-4553-9149-707f0b87140d")
 	)
 	(label "CurrentSource9"
-		(at 248.92 76.2 0)
+		(at 223.52 76.2 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3118,7 +3123,7 @@
 		(uuid "8c1fc358-bb28-48dc-b89b-c8f24dcad90d")
 	)
 	(label "PVCC2"
-		(at 231.14 40.64 90)
+		(at 205.74 40.64 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3148,7 +3153,7 @@
 		(uuid "9c13ae73-82a6-4e1f-8e13-f462d197dec5")
 	)
 	(label "AVCC"
-		(at 228.6 40.64 90)
+		(at 203.2 40.64 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3158,7 +3163,7 @@
 		(uuid "a0abef4e-fecb-4915-b88a-dafda29d6cf2")
 	)
 	(label "V_IO"
-		(at 213.36 88.9 180)
+		(at 187.96 88.9 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3188,7 +3193,7 @@
 		(uuid "ae8913ae-5fdf-4091-abfd-2c1e934bbeb3")
 	)
 	(label "ADDR2"
-		(at 213.36 101.6 180)
+		(at 187.96 101.6 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3198,7 +3203,7 @@
 		(uuid "b235f1bf-0378-4336-9599-a762432830e3")
 	)
 	(label "SinkSwitch8"
-		(at 213.36 73.66 180)
+		(at 187.96 73.66 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3218,7 +3223,7 @@
 		(uuid "b3e9737b-6773-47c7-b173-b47dab844028")
 	)
 	(label "R_EXT"
-		(at 248.92 99.06 0)
+		(at 223.52 99.06 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3228,7 +3233,7 @@
 		(uuid "bb824035-9937-4ff2-b9ef-f9fbdf557c00")
 	)
 	(label "SinkSwitch2"
-		(at 213.36 58.42 180)
+		(at 187.96 58.42 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3238,7 +3243,7 @@
 		(uuid "c414afb9-4a0f-40c1-bb91-432698f81bc1")
 	)
 	(label "SinkSwitch3"
-		(at 213.36 60.96 180)
+		(at 187.96 60.96 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3248,7 +3253,7 @@
 		(uuid "c5627047-d960-4c21-90dd-d8c8fda1ad64")
 	)
 	(label "CurrentSource3"
-		(at 248.92 60.96 0)
+		(at 223.52 60.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3258,7 +3263,7 @@
 		(uuid "c63057ad-f1f4-43eb-a26c-b8fad67db8e2")
 	)
 	(label "ADDR1"
-		(at 213.36 99.06 180)
+		(at 187.96 99.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3268,7 +3273,7 @@
 		(uuid "cf2c0c90-9a6e-4328-9ebb-d86b74bfddb9")
 	)
 	(label "CurrentSource1"
-		(at 248.92 55.88 0)
+		(at 223.52 55.88 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3308,7 +3313,7 @@
 		(uuid "d7aa3777-9cc3-4b6c-b9ef-5ec716a7dab0")
 	)
 	(label "CurrentSource5"
-		(at 248.92 66.04 0)
+		(at 223.52 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3328,7 +3333,7 @@
 		(uuid "dcf1716a-caa3-410e-b660-9e179117d462")
 	)
 	(label "CurrentSource14"
-		(at 248.92 88.9 0)
+		(at 223.52 88.9 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3338,7 +3343,7 @@
 		(uuid "e1104b02-8d2a-4e2c-a3d6-ce0c15b19040")
 	)
 	(label "SinkSwitch4"
-		(at 213.36 63.5 180)
+		(at 187.96 63.5 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3348,7 +3353,7 @@
 		(uuid "e66d363f-12c5-4a4b-89d2-e2ac88a404de")
 	)
 	(label "CurrentSource13"
-		(at 248.92 86.36 0)
+		(at 223.52 86.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3368,7 +3373,7 @@
 		(uuid "f22a4ba1-a2d3-4d30-88bc-5c1ed14ae0dd")
 	)
 	(label "SinkSwitch1"
-		(at 213.36 55.88 180)
+		(at 187.96 55.88 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3378,7 +3383,7 @@
 		(uuid "f3f0cb18-6b96-4f11-9bca-f58f54e878c7")
 	)
 	(label "SinkSwitch6"
-		(at 213.36 68.58 180)
+		(at 187.96 68.58 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3388,7 +3393,7 @@
 		(uuid "f4d4b49a-3a0c-4334-b12f-a177e245a4bf")
 	)
 	(label "DVCC"
-		(at 226.06 40.64 90)
+		(at 200.66 40.64 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3410,7 +3415,7 @@
 	)
 	(hierarchical_label "Interrupt"
 		(shape output)
-		(at 248.92 101.6 0)
+		(at 223.52 101.6 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3432,7 +3437,7 @@
 	)
 	(hierarchical_label "Shutdown"
 		(shape input)
-		(at 248.92 104.14 0)
+		(at 223.52 104.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3443,7 +3448,7 @@
 	)
 	(hierarchical_label "SYNC"
 		(shape bidirectional)
-		(at 213.36 91.44 180)
+		(at 187.96 91.44 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3454,7 +3459,7 @@
 	)
 	(hierarchical_label "I2C_Reset"
 		(shape input)
-		(at 248.92 106.68 0)
+		(at 223.52 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3962,7 +3967,7 @@
 	)
 	(symbol
 		(lib_id "Lumissil Microsystems:IS31FL3733-QFLS4-TR")
-		(at 218.44 48.26 0)
+		(at 193.04 48.26 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3972,27 +3977,29 @@
 		(dnp no)
 		(uuid "429e89a8-367c-495b-9f68-1e853cc26bae")
 		(property "Reference" "IC4"
-			(at 256.54 43.18 0)
+			(at 218.44 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Value" "IS31FL3733-QFLS4-TR"
-			(at 256.54 45.72 0)
+			(at 218.44 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "QFN40P600X600X80-49N-D"
-			(at 260.35 133.02 0)
+			(at 234.95 133.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4004,7 +4011,7 @@
 			)
 		)
 		(property "Datasheet" "https://datasheet.datasheetarchive.com/originals/distributors/Datasheets_SAMA/c25b1ecfd559592dad0f5b77c16261d9.pdf"
-			(at 260.35 233.02 0)
+			(at 234.95 233.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4016,7 +4023,7 @@
 			)
 		)
 		(property "Description" "IC LED DRVR LINEAR 46MA 48QFN"
-			(at 218.44 48.26 0)
+			(at 193.04 48.26 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4027,7 +4034,7 @@
 			)
 		)
 		(property "Height" "0.8"
-			(at 260.35 433.02 0)
+			(at 234.95 433.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4039,7 +4046,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Lumissil Microsystems"
-			(at 260.35 533.02 0)
+			(at 234.95 533.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4051,7 +4058,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "IS31FL3733-QFLS4-TR"
-			(at 260.35 633.02 0)
+			(at 234.95 633.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4063,7 +4070,7 @@
 			)
 		)
 		(property "Mouser Part Number" "870-31FL3733QFLS4TR"
-			(at 260.35 733.02 0)
+			(at 234.95 733.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4075,7 +4082,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Lumissil/IS31FL3733-QFLS4-TR?qs=o7k0yqUNuKBbUnvOYXB0ug%3D%3D"
-			(at 260.35 833.02 0)
+			(at 234.95 833.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4087,7 +4094,7 @@
 			)
 		)
 		(property "Arrow Part Number" "IS31FL3733-QFLS4-TR"
-			(at 260.35 933.02 0)
+			(at 234.95 933.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4099,7 +4106,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/is31fl3733-qfls4-tr/integrated-silicon-solution-inc?utm_currency=USD&region=nac"
-			(at 260.35 1033.02 0)
+			(at 234.95 1033.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4351,7 +4358,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 238.76 137.16 0)
+		(at 213.36 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4362,7 +4369,7 @@
 		(fields_autoplaced yes)
 		(uuid "5120bd80-455c-4d5f-bd87-07ac2df09e06")
 		(property "Reference" "#PWR078"
-			(at 238.76 143.51 0)
+			(at 213.36 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4373,7 +4380,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 238.76 142.24 0)
+			(at 213.36 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4383,7 +4390,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 137.16 0)
+			(at 213.36 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4394,7 +4401,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 137.16 0)
+			(at 213.36 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4405,7 +4412,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 238.76 137.16 0)
+			(at 213.36 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4848,7 +4855,7 @@
 				)
 			)
 		)
-		(property "Value" "V_SYS"
+		(property "Value" "+5V"
 			(at 58.42 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5645,7 +5652,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 88.9 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5801,7 +5808,7 @@
 				)
 			)
 		)
-		(property "Value" "VDD"
+		(property "Value" "V_REG0"
 			(at 53.34 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5936,7 +5943,7 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
-		(at 226.06 137.16 0)
+		(at 200.66 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5947,7 +5954,7 @@
 		(fields_autoplaced yes)
 		(uuid "cb4d94a6-004d-44db-8f9b-801ed4e4d45b")
 		(property "Reference" "#PWR077"
-			(at 226.06 143.51 0)
+			(at 200.66 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5958,7 +5965,7 @@
 			)
 		)
 		(property "Value" "PGND"
-			(at 226.06 142.24 0)
+			(at 200.66 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5968,7 +5975,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 226.06 137.16 0)
+			(at 200.66 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5979,7 +5986,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 226.06 137.16 0)
+			(at 200.66 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5990,7 +5997,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 226.06 137.16 0)
+			(at 200.66 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

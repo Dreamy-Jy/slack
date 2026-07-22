@@ -6,13 +6,13 @@
 	(paper "A")
 	(title_block
 		(title "Slack")
-		(date "2026-06-17")
-		(rev "A.0.0")
+		(date "2026-07-12")
+		(rev "A.0.3")
 	)
 	(lib_symbols)
 	(rectangle
-		(start -104.14 40.64)
-		(end -2.54 215.9)
+		(start 15.24 124.46)
+		(end 106.68 200.66)
 		(stroke
 			(width 0.5)
 			(type default)
@@ -24,7 +24,7 @@
 	)
 	(text "Loose Notes"
 		(exclude_from_sim no)
-		(at -101.6 43.18 0)
+		(at 17.78 127 0)
 		(effects
 			(font
 				(size 5 5)
@@ -36,7 +36,7 @@
 	)
 	(text "KiCad Feature Requests:\nHierarchical Bus\nHierarchical Sheet Symbols"
 		(exclude_from_sim no)
-		(at -101.6 106.68 0)
+		(at 17.78 190.5 0)
 		(effects
 			(font
 				(size 1.6 1.6)
@@ -45,9 +45,9 @@
 		)
 		(uuid "318bbcdc-ecd6-4797-9e06-8551b0b24f23")
 	)
-	(text "- Compare charger ICs\n- Check circuits\n- Choose passive conponent values\n- Connect the LED and Switch matrices. Assign LEDs to each inputs.\n- Select PCB foot prints\n\nI feel that my power and ground levels are confusing\n\nSchematic\n- [] Refactor Schematic to r/PrintedCircuitBoard Guide\n- [x] Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- [-] Refactor chip configurations to explain my choices\n- [] Rename all the component references so they are grouped and easier to layout\n- [] Select actual components, footprints, 3D models for all components\n- [] Pass those design reviews softwares\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
+	(text "- Check circuits\n- I don't know if my circuit actually needs\n  seperate power and digital grounds.\n\nSchematic\n- [x] Refactor Schematic to r/PrintedCircuitBoard Guide\n- [x] Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- [-] Refactor chip configurations to explain my choices\n- [x] Rename all the component references so they are\n     grouped and easier to layout\n- [] Select actual components, footprints, 3D models for all components\n- [x] Pass those design reviews softwares\n- [] take review advice\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
 		(exclude_from_sim no)
-		(at -101.6 53.34 0)
+		(at 17.78 137.16 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -58,7 +58,7 @@
 	)
 	(text ""
 		(exclude_from_sim no)
-		(at -86.36 106.68 0)
+		(at 33.02 190.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
