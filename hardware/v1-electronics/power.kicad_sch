@@ -5211,7 +5211,7 @@
 	)
 	(rectangle
 		(start 439.42 149.86)
-		(end 487.68 205.74)
+		(end 487.68 180.34)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -5224,7 +5224,7 @@
 	)
 	(rectangle
 		(start 353.06 149.86)
-		(end 393.7 205.74)
+		(end 393.7 210.82)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -5260,7 +5260,7 @@
 	)
 	(rectangle
 		(start 396.24 149.86)
-		(end 436.88 243.84)
+		(end 436.88 231.14)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -5321,7 +5321,7 @@
 	)
 	(rectangle
 		(start 25.4 152.4)
-		(end 142.24 236.22)
+		(end 142.24 228.6)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -5400,7 +5400,7 @@
 		)
 		(uuid "1b2b1bd3-780b-4314-aad9-9ffb30b128ac")
 	)
-	(text "This circuit is designed to provide the option\nto manually insure highest charging current\npossible, by reading the USB CC pins voltage\n\nHow do zener diodes act when reversed biased?\n\nI don't think the 10kΩ resister are harmless\nor neceseary.\n\nMap scenarios for all USB pluggin cases."
+	(text "This circuit is designed to provide the option\nto manually insure highest charging current\npossible, by reading the USB CC pins voltage\n\nI'm uncertain of the necessity of the 10kΩ\nresistors so I've made them optional."
 		(exclude_from_sim no)
 		(at 27.94 215.9 0)
 		(effects
@@ -5457,31 +5457,9 @@
 		)
 		(uuid "374fa7f1-fe29-4473-9c9e-509245fbd5ff")
 	)
-	(text "Have not done the\nmath for this yet\n\nThis involves control theory\nnoise a big issue in these system"
+	(text "Set V_out to 5v\nDatasheet Section 9.2.2.1\n\nBecause R2(R55) < 15kΩ \nwe'll not be placing a noise\nreduction capacitor parallel\nto  R2"
 		(exclude_from_sim no)
-		(at 398.78 185.42 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "405154e8-377d-4dda-a4e5-8aeed072866d")
-	)
-	(text "Not sure if I should\nput a capacitor here.\n\nTI recommends putting \na capacitor across the \nsecond resistor(R2) to \nprotect against noise.\n\nThe criteria is whiether \nR2 > or < 15kΩ. Though\nthe datasheet has \nconfliciting suggestions\nbetween Section 9.2.2.1\nand Section 9.2"
-		(exclude_from_sim no)
-		(at 459.74 167.64 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "484cac4c-5271-4d17-84d9-270f826e4b0e")
-	)
-	(text "Set V_out to 5v\nDatasheet Section 9.2.2.1"
-		(exclude_from_sim no)
-		(at 459.74 160.02 0)
+		(at 459.74 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5489,17 +5467,6 @@
 			(justify left top)
 		)
 		(uuid "53bc5f1e-4435-4ceb-8025-6290c80fd9b2")
-	)
-	(text "Did a bunch of math\nto select a part for\nthis. It resulted\nin me going with the\nrecommended inductance"
-		(exclude_from_sim no)
-		(at 358.14 193.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "5d1b727f-82e5-452d-8f46-104b936e68a0")
 	)
 	(text "Charger"
 		(exclude_from_sim no)
@@ -5524,7 +5491,7 @@
 		)
 		(uuid "6b2916c0-e592-42ce-b28c-8891c9b80795")
 	)
-	(text "You should use the \nTPS61288L HotRod Lite \nvariant"
+	(text "You should use the \nTPS61288L HotRod Lite \nvariant\n\nDid a bunch of math\nto select a part for\nthis. It resulted\nin me going with the\nrecommended inductance\n\nPart selected: MWSA1004S-2R2MT"
 		(exclude_from_sim no)
 		(at 358.14 185.42 0)
 		(effects
@@ -5581,17 +5548,6 @@
 		)
 		(uuid "823bd237-164a-4ed6-bb54-d2edf93f1658")
 	)
-	(text "forgot what I was putting here\nSetup global reset\nHow to handle power and analog grounds???"
-		(exclude_from_sim no)
-		(at 15.24 279.4 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "8df3fb5e-66c8-4ebc-ae33-525e4299414a")
-	)
 	(text "*set to always on.\ntrying to control\nthis would be a power\nsquencing nightmare"
 		(exclude_from_sim no)
 		(at 414.02 60.96 0)
@@ -5603,9 +5559,9 @@
 		)
 		(uuid "9299f9f0-7960-428e-a28f-d8c3cfd30dd6")
 	)
-	(text "Did the math, realized I don't\nhave control system intuition.\n\nI have raw values I need to map to\nstardard resistor and capcitor size\nand values:\n- R_C = 14403.29218 Ω\n- C_C = 2.673 nF\n- C_P = 6.4152 pF\n\nThese are the values after \nplugging in a real output \ncap (CL21A226MAQNNN): \n- R_C = 10020.57613 Ω\n- C_C = 2.673 nF\n- C_P = 2.88684 pF\n\nThese are the standard \nvalues I'm going with:\n- R_C = 10 kΩ\n- C_C = 2.7 nF"
+	(text "Did the math, realized I don't\nhave control system intuition/\nbackground\n\nI have raw values I need to map to\nstardard resistor and capcitor size\nand values:\n- R_C = 14403.29218 Ω\n- C_C = 2.673 nF\n- C_P = 6.4152 pF\n\nThese are the values after \nplugging in a real output \ncap (CL21A226MAQNNN): \n- R_C = 10020.57613 Ω\n- C_C = 2.673 nF\n- C_P = 2.88684 pF\n\nThese are the standard \nvalues I'm going with:\n- R_C = 10 kΩ\n- C_C = 2.7 nF"
 		(exclude_from_sim no)
-		(at 398.78 198.12 0)
+		(at 398.78 185.42 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5625,17 +5581,6 @@
 			(justify left)
 		)
 		(uuid "ad733384-ec71-4b6e-9ea9-aa0f0028d989")
-	)
-	(text "is this the simplest power/usb-c module possible?\nCentralize the decoupling for +5V"
-		(exclude_from_sim no)
-		(at 15.24 274.32 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "b279d782-20af-4706-86d3-e8313374e4f8")
 	)
 	(text "Status Indicators"
 		(exclude_from_sim no)
@@ -5683,17 +5628,6 @@
 		)
 		(uuid "ea7e06a3-2ce3-483e-b17e-7143fff413cd")
 	)
-	(text "Consider adding a fuel gauge ic:\n- i2c and led indictor\n- BQ27220"
-		(exclude_from_sim no)
-		(at 71.12 279.4 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "f3a64789-bb77-4d9b-9630-23d466d4c717")
-	)
 	(text "Data Line ESD Protection"
 		(exclude_from_sim no)
 		(at 66.04 91.44 0)
@@ -5708,8 +5642,8 @@
 	)
 	(text_box "Do I have enough protect on the USB contector?\nDo I still need to add resistors or pull up these lines?\nHave I properly set up the charger and regulator correctily?\nwhy can charge current be higher than input current in battery charger\nZener Diodes vs Schottky Diode for pin protection"
 		(exclude_from_sim no)
-		(at 12.7 259.08 0)
-		(size 91.44 27.94)
+		(at 12.7 271.78 0)
+		(size 91.44 14.3727)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -5731,7 +5665,7 @@
 	)
 	(text_box "Power Ratings per Critical Line\nUSB-C plug → Charger IC input:\n- max 5V @ 3A\n- must be configured\n\nUSB-C plug → Charger IC output:\n- Worst case output current draw 6A\n- Max output current 5A\n- Voltage range  3.125V ↔ 3.913V\n   default 3.7V \n\nBattery → Charger IC output:\n- Worst case discharge current draw 7.5A\n- Max discharge current 8A\n- Battery Voltage 3V ↔ 4.2V\n\nVoltage Regulator: Rating 5A, 5.5V\n- max 5V @ 4A\n\nFIRMWARE NOTE:\nPower scenarios must be accounted for in \nthe firware."
 		(exclude_from_sim no)
-		(at 121.92 12.7 0)
+		(at 119.38 12.7 0)
 		(size 71.12 73.66)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
