@@ -6,4 +6,6 @@
 	(lib (name "Monolithic Power Systems") (type "KiCad") (uri "${KIPRJMOD}/Monolithic Power Systems") (options "") (descr ""))
 	(lib (name "Panasonic") (type "KiCad") (uri "${KIPRJMOD}/Panasonic") (options "") (descr ""))
 	(lib (name "STMicroelectronics") (type "KiCad") (uri "${KIPRJMOD}/STMicroelectronics") (options "") (descr ""))
+	(lib (name "Diodes Incorporated") (type "KiCad") (uri "${KIPRJMOD}/Diodes Incorporated") (options "") (descr ""))
+	(lib (name "Alpha & Omega Semiconductor") (type "KiCad") (uri "${KIPRJMOD}/Alpha & Omega Semiconductor") (options "") (descr ""))
 )

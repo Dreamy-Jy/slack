@@ -619,7 +619,7 @@
     "annotate_start_num": 0,
     "annotation": {
       "method": 0,
-      "sort_order": 0
+      "sort_order": 1
     },
     "bom_export_filename": "${PROJECTNAME}.csv",
     "bom_fmt_presets": [],
@@ -891,7 +891,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "JP2-4,R60-65,R201-202,#PWR132-133,#PWR201-205,LED501-512,D87-89,D201-202",
+    "used_designators": "SW7,Q1,#PWR62,#PWR76,#PWR111,#PWR132-136,#PWR201-205,D87-89,D201-202,LED501-512,R44,R48,R60-65,R201-202,JP2-6",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",
