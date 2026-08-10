@@ -61,6 +61,89 @@
 				)
 			)
 		)
+		(symbol "MP2721GRH-0000-Z_0_1"
+			(circle
+				(center -38.1 -10.16)
+				(radius 0.635)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy -36.83 -6.985) (xy -35.56 -4.445) (xy -34.29 -6.985) (xy -36.83 -6.985)
+				)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy -35.56 -13.335) (xy -33.02 -10.795) (xy -33.02 -9.525)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -35.56 -14.605) (xy -38.1 -12.065) (xy -38.1 -10.795)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(circle
+				(center -35.56 -17.145)
+				(radius 1.27)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+			(polyline
+				(pts
+					(xy -35.56 -17.145) (xy -35.56 -6.985)
+				)
+				(stroke
+					(width 0.508)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(rectangle
+				(start -33.655 -9.525)
+				(end -32.385 -8.255)
+				(stroke
+					(width 0.254)
+					(type default)
+				)
+				(fill
+					(type outline)
+				)
+			)
+		)
 		(symbol "MP2721GRH-0000-Z_1_1"
 			(rectangle
 				(start -22.86 2.54)

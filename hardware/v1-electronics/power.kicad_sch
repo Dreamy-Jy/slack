@@ -340,7 +340,7 @@
 						)
 					)
 				)
-				(pin input inverted
+				(pin input line
 					(at 2.54 -15.24 90)
 					(length 2.54)
 					(name "G"
@@ -5825,7 +5825,7 @@
 		(uuid "2f5afceb-2561-4b2b-9754-ef7527320f8c")
 	)
 	(rectangle
-		(start 360.68 170.18)
+		(start 358.14 170.18)
 		(end 401.32 231.14)
 		(stroke
 			(width 0.2)
@@ -5875,7 +5875,7 @@
 	)
 	(rectangle
 		(start 144.78 170.18)
-		(end 175.26 185.42)
+		(end 170.18 185.42)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -5923,7 +5923,7 @@
 	)
 	(rectangle
 		(start 25.4 170.18)
-		(end 142.24 246.38)
+		(end 142.24 241.3)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -5998,13 +5998,13 @@
 				(size 1.5 1.5)
 				(thickness 0.1875)
 			)
-			(justify left)
+			(justify left bottom)
 		)
 		(uuid "1b2b1bd3-780b-4314-aad9-9ffb30b128ac")
 	)
 	(text "This circuit is designed to provide the option\nto manually insure highest charging current\npossible, by reading the USB CC pins voltage\n\nI'm uncertain of the necessity of the 10kΩ\nresistors so I've made them optional."
 		(exclude_from_sim no)
-		(at 27.94 233.68 0)
+		(at 27.94 226.06 0)
 		(effects
 			(font
 				(size 1.2 1.2)
@@ -6027,7 +6027,7 @@
 	)
 	(text "Ground Config"
 		(exclude_from_sim no)
-		(at 165.1 172.72 0)
+		(at 157.48 172.72 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -6104,7 +6104,7 @@
 		)
 		(uuid "7824e034-f45f-4a9a-b30f-13deffd94054")
 	)
-	(text "calculations the value of the\ninductor for our usage is about\n509 nH, for part finding perposes\n560 nH part."
+	(text "Redid my calculations and selected\n1μH @ 10A I_sat\n\nCheck the footprint of this device\nagain"
 		(exclude_from_sim no)
 		(at 251.46 177.8 0)
 		(effects
@@ -6198,7 +6198,7 @@
 	)
 	(text "The resistors provide over\ncurrent protection, while\nthe zener diodes provide\nover voltage protection.\n\n3.6V rating is verified \nby the nrf52480 I/O Pin\nVoltage spec.\n\nVerify Pin Current rating"
 		(exclude_from_sim no)
-		(at 73.66 210.82 0)
+		(at 73.66 205.74 0)
 		(effects
 			(font
 				(size 1 1)
@@ -6230,17 +6230,6 @@
 		)
 		(uuid "ea7e06a3-2ce3-483e-b17e-7143fff413cd")
 	)
-	(text "Consider using USBLC6-4SC6\ninstead of using your own\nover voltage protection\n\nUSBLC6-4SC6 jlcpcb"
-		(exclude_from_sim no)
-		(at 101.6 231.14 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "eb53e23e-66d3-4f27-a4af-fec181ffd0bc")
-	)
 	(text "Data Line ESD Protection"
 		(exclude_from_sim no)
 		(at 66.04 91.44 0)
@@ -6253,7 +6242,7 @@
 		)
 		(uuid "f50b785c-7580-4583-abb9-a08c39e1e97e")
 	)
-	(text "Protected Cell for the battery (18650)\nPolyfuse\n\nRethink how the the tempature sensors\nwork with the new battery plug"
+	(text "Protected Cell for the battery (18650)\nPolyfuse\n\nRethink how the the tempature sensors\nwork with the new battery plug\n\nFor now we'll use XT30PW-M, but if\nWe decide to use a 3Pin solution we'll\nuse the MR30PW-M.\n\nAt the time of writing this we'll be\nusing a unprotected raw power lipo."
 		(exclude_from_sim no)
 		(at 299.72 241.3 0)
 		(effects
@@ -6289,8 +6278,8 @@
 	)
 	(text_box "Few desirable switches\nare rated for max\ncurrent of this system.\nSo we're using a load\nswitch MOSFET."
 		(exclude_from_sim no)
-		(at 284.48 144.3824 0)
-		(size 38.1 18.1776)
+		(at 284.48 142.24 0)
+		(size 38.1 20.32)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -6313,7 +6302,7 @@
 	(text_box "Power Ratings per Critical Line\nUSB-C plug → Charger IC input:\n- max 5V @ 3A\n- must be configured\n\nUSB-C plug → Charger IC output:\n- Worst case output current draw 6A\n- Max output current 5A\n- Voltage range  3.125V ↔ 3.913V\n   default 3.7V \n\nBattery → Charger IC output:\n- Worst case discharge current draw 7.5A\n- Max discharge current 8A\n- Battery Voltage 3V ↔ 4.2V\n\nVoltage Regulator: Rating 5A, 5.5V\n- max 5V @ 4A\n\nFIRMWARE NOTE:\nPower scenarios must be accounted for in \nthe firware."
 		(exclude_from_sim no)
 		(at 101.6 254 0)
-		(size 76.2 76.2)
+		(size 76.2 73.66)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -6333,10 +6322,10 @@
 		)
 		(uuid "94a3eff7-73f6-47a4-ba10-cc83e7d7f8b2")
 	)
-	(text_box "Selection of passives:\nresistors, capcitors, inductors, diodes, switchs, LEDs, usb port"
+	(text_box "Selection of passives:\nresistors, capcitors, inductors, diodes, switchs, LEDs, usb port\n\nConsider BQ25640 & BQ25895"
 		(exclude_from_sim no)
-		(at 200.66 298.1422 0)
-		(size 76.2 11.7378)
+		(at 195.58 307.34 0)
+		(size 76.2 20.32)
 		(margins 0.9525 0.9525 0.9525 0.9525)
 		(stroke
 			(width 0)
@@ -6393,6 +6382,12 @@
 		(uuid "25e6156e-3b93-4170-8914-176e9e6f6f0e")
 	)
 	(junction
+		(at 45.72 185.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3585173e-b2d3-414c-808d-3276b39e06d2")
+	)
+	(junction
 		(at 332.74 101.6)
 		(diameter 1.5)
 		(color 0 0 0 0)
@@ -6411,19 +6406,19 @@
 		(uuid "38918953-60ff-42a2-99d2-a6a9338cbe2b")
 	)
 	(junction
-		(at 426.72 127)
-		(diameter 0)
+		(at 302.26 101.6)
+		(diameter 1.5)
 		(color 0 0 0 0)
-		(uuid "3d16ea2e-a189-42d1-b697-facbba21925b")
+		(uuid "39d1380d-5bc8-4848-aa9f-bcfc3108d26f")
 	)
 	(junction
-		(at 104.14 200.66)
+		(at 104.14 195.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "41cfdd92-221a-4868-924c-59d0011f84c1")
 	)
 	(junction
-		(at 53.34 200.66)
+		(at 53.34 195.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4e4db991-626c-43f3-ae00-e5d5229025c4")
@@ -6441,7 +6436,13 @@
 		(uuid "50ec53b1-3ee0-457c-a584-e1d114a58217")
 	)
 	(junction
-		(at 93.98 200.66)
+		(at 426.72 125.73)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "513fe207-ba59-4345-b30e-6efe40f79898")
+	)
+	(junction
+		(at 93.98 195.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "597b07f6-fc2a-4e95-90aa-ab89a0f4a981")
@@ -6451,12 +6452,6 @@
 		(diameter 1.5)
 		(color 0 0 0 0)
 		(uuid "6646a45d-6483-4281-a29e-1bbeddd83914")
-	)
-	(junction
-		(at 86.36 185.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "68f8bcfb-ac2d-47bc-8c86-3cfc7f5c731d")
 	)
 	(junction
 		(at 332.74 137.16)
@@ -6471,10 +6466,10 @@
 		(uuid "70ac4ed1-c12b-411b-98fc-04f87c0b1dcf")
 	)
 	(junction
-		(at 309.88 101.6)
-		(diameter 1.5)
+		(at 109.22 185.42)
+		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7b77c421-1f26-4573-9014-c2a01fe83486")
+		(uuid "747e708d-cbf2-43e5-8534-aa1f1bb875d2")
 	)
 	(junction
 		(at 454.66 185.42)
@@ -6483,7 +6478,7 @@
 		(uuid "7dd02d76-484d-47f6-939c-0caf88799021")
 	)
 	(junction
-		(at 116.84 200.66)
+		(at 116.84 195.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "822e17e7-2c8e-4da7-a700-ff7b9f018d30")
@@ -6555,28 +6550,28 @@
 		(uuid "c7049923-aa4e-4b4b-8d2b-ddb8edd3e73c")
 	)
 	(junction
-		(at 109.22 185.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dc562738-3fd3-436c-98eb-9aabfe5f19f9")
-	)
-	(junction
 		(at 182.88 96.52)
 		(diameter 1.5)
 		(color 0 0 0 0)
 		(uuid "dea76f96-5209-48f5-883a-5ecfa4b6fee5")
 	)
 	(junction
-		(at 45.72 185.42)
-		(diameter 0)
+		(at 309.88 101.6)
+		(diameter 1.5)
 		(color 0 0 0 0)
-		(uuid "e3740784-a925-4ccd-9e80-26cfcad34a45")
+		(uuid "ed902e92-1a24-46ae-90d8-0639b528a45e")
 	)
 	(junction
 		(at 55.88 106.68)
 		(diameter 1.5)
 		(color 0 0 255 1)
 		(uuid "f4ff2deb-8439-45ec-83a6-1c89b0de60f3")
+	)
+	(junction
+		(at 86.36 185.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f8df7dd6-b921-4379-97b2-456307366fdb")
 	)
 	(junction
 		(at 375.92 190.5)
@@ -6647,6 +6642,16 @@
 			(type default)
 		)
 		(uuid "0746b2a0-63e8-4fea-a586-f18f05128465")
+	)
+	(wire
+		(pts
+			(xy 45.72 185.42) (xy 45.72 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "099813dc-7554-473b-8c4e-86c119c44d15")
 	)
 	(wire
 		(pts
@@ -6722,7 +6727,7 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 101.6) (xy 309.88 101.6)
+			(xy 297.18 101.6) (xy 302.26 101.6)
 		)
 		(stroke
 			(width 0.5)
@@ -6772,23 +6777,13 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 200.66) (xy 93.98 200.66)
+			(xy 53.34 195.58) (xy 93.98 195.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1d597bd8-41aa-4d91-9971-926acddcadae")
-	)
-	(wire
-		(pts
-			(xy 426.72 129.54) (xy 426.72 127)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "26f96011-587d-44b5-bdeb-eae3ed51464e")
 	)
 	(wire
 		(pts
@@ -6864,7 +6859,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 203.2) (xy 93.98 200.66)
+			(xy 96.52 198.12) (xy 93.98 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7038,13 +7033,23 @@
 	)
 	(polyline
 		(pts
-			(xy 127 175.26) (xy 127 228.6)
+			(xy 127 175.26) (xy 127 223.52)
 		)
 		(stroke
 			(width 0.2)
 			(type dash)
 		)
 		(uuid "52ffd516-d6d6-4d64-b286-3553839e2d2e")
+	)
+	(wire
+		(pts
+			(xy 426.72 125.73) (xy 426.72 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "534e32ea-20ae-4560-8fb7-21b281602b38")
 	)
 	(wire
 		(pts
@@ -7089,7 +7094,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 200.66) (xy 132.08 200.66)
+			(xy 116.84 195.58) (xy 132.08 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7116,16 +7121,6 @@
 			(type dash_dot_dot)
 		)
 		(uuid "5a40a034-bdc1-4238-aee7-e31b63f483b2")
-	)
-	(wire
-		(pts
-			(xy 45.72 185.42) (xy 45.72 213.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5a54cefc-a582-4cf0-abeb-2a8a7a1db6cc")
 	)
 	(wire
 		(pts
@@ -7160,6 +7155,16 @@
 	)
 	(wire
 		(pts
+			(xy 414.02 125.73) (xy 414.02 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63353164-ecf0-4d92-8b08-4bc833ac2fcb")
+	)
+	(wire
+		(pts
 			(xy 109.22 111.76) (xy 91.44 111.76)
 		)
 		(stroke
@@ -7181,7 +7186,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 203.2) (xy 104.14 200.66)
+			(xy 101.6 198.12) (xy 104.14 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7233,7 +7238,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 200.66) (xy 53.34 213.36)
+			(xy 53.34 195.58) (xy 53.34 208.28)
 		)
 		(stroke
 			(width 0)
@@ -7253,7 +7258,7 @@
 	)
 	(wire
 		(pts
-			(xy 53.34 218.44) (xy 53.34 220.98)
+			(xy 53.34 213.36) (xy 53.34 215.9)
 		)
 		(stroke
 			(width 0)
@@ -7284,7 +7289,7 @@
 	)
 	(wire
 		(pts
-			(xy 426.72 198.12) (xy 426.72 195.58)
+			(xy 421.64 198.12) (xy 421.64 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7335,6 +7340,16 @@
 	)
 	(wire
 		(pts
+			(xy 302.26 101.6) (xy 302.26 104.14)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+		)
+		(uuid "74248422-95ac-4134-8291-1ddc1b3e1e97")
+	)
+	(wire
+		(pts
 			(xy 332.74 147.32) (xy 335.28 147.32)
 		)
 		(stroke
@@ -7355,7 +7370,7 @@
 	)
 	(polyline
 		(pts
-			(xy 101.6 208.28) (xy 101.6 228.6)
+			(xy 101.6 203.2) (xy 101.6 223.52)
 		)
 		(stroke
 			(width 0.2)
@@ -7405,7 +7420,7 @@
 	)
 	(polyline
 		(pts
-			(xy 127 228.6) (xy 127 228.6)
+			(xy 127 223.52) (xy 127 223.52)
 		)
 		(stroke
 			(width 0)
@@ -7425,7 +7440,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 218.44) (xy 45.72 220.98)
+			(xy 45.72 213.36) (xy 45.72 215.9)
 		)
 		(stroke
 			(width 0)
@@ -7435,7 +7450,7 @@
 	)
 	(wire
 		(pts
-			(xy 426.72 190.5) (xy 426.72 185.42)
+			(xy 421.64 190.5) (xy 421.64 185.42)
 		)
 		(stroke
 			(width 0)
@@ -7455,7 +7470,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 218.44) (xy 116.84 220.98)
+			(xy 116.84 213.36) (xy 116.84 215.9)
 		)
 		(stroke
 			(width 0)
@@ -7465,7 +7480,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 200.66) (xy 116.84 213.36)
+			(xy 116.84 195.58) (xy 116.84 208.28)
 		)
 		(stroke
 			(width 0)
@@ -7475,7 +7490,7 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 198.12) (xy 93.98 200.66)
+			(xy 96.52 193.04) (xy 93.98 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7485,7 +7500,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 175.26) (xy 157.48 175.26)
+			(xy 149.86 175.26) (xy 165.1 175.26)
 		)
 		(stroke
 			(width 0)
@@ -7516,7 +7531,7 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 175.26) (xy 157.48 177.8)
+			(xy 165.1 175.26) (xy 165.1 177.8)
 		)
 		(stroke
 			(width 0)
@@ -7577,26 +7592,6 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 185.42) (xy 109.22 213.36)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b25a4744-c984-4991-a8fc-255ce9bb4f5c")
-	)
-	(wire
-		(pts
-			(xy 424.18 177.8) (xy 426.72 177.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5ead9b0-c7c3-42b0-8115-d00d6f4b95a6")
-	)
-	(wire
-		(pts
 			(xy 325.12 185.42) (xy 332.74 185.42)
 		)
 		(stroke
@@ -7607,7 +7602,7 @@
 	)
 	(polyline
 		(pts
-			(xy 101.6 228.6) (xy 127 228.6)
+			(xy 101.6 223.52) (xy 127 223.52)
 		)
 		(stroke
 			(width 0.2)
@@ -7654,6 +7649,16 @@
 			(type default)
 		)
 		(uuid "bec16f76-0c33-4d25-b10e-a4335eab1d20")
+	)
+	(wire
+		(pts
+			(xy 109.22 185.42) (xy 109.22 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2d1a48e-6506-4f3a-889b-a3a8778219c8")
 	)
 	(wire
 		(pts
@@ -7727,7 +7732,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 200.66) (xy 116.84 200.66)
+			(xy 104.14 195.58) (xy 116.84 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7788,7 +7793,7 @@
 	)
 	(polyline
 		(pts
-			(xy 73.66 175.26) (xy 73.66 208.28)
+			(xy 73.66 175.26) (xy 73.66 203.2)
 		)
 		(stroke
 			(width 0.2)
@@ -7818,7 +7823,7 @@
 	)
 	(wire
 		(pts
-			(xy 30.48 200.66) (xy 53.34 200.66)
+			(xy 30.48 195.58) (xy 53.34 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7828,13 +7833,13 @@
 	)
 	(wire
 		(pts
-			(xy 414.02 127) (xy 414.02 124.46)
+			(xy 302.26 101.6) (xy 309.88 101.6)
 		)
 		(stroke
-			(width 0)
+			(width 0.5)
 			(type default)
 		)
-		(uuid "df6e99e7-9652-49ab-b968-bc32781dbc06")
+		(uuid "dee3b4f2-3d0a-4f3f-8dc9-d70d71491fb5")
 	)
 	(wire
 		(pts
@@ -7888,7 +7893,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 218.44) (xy 109.22 220.98)
+			(xy 109.22 213.36) (xy 109.22 215.9)
 		)
 		(stroke
 			(width 0)
@@ -7908,7 +7913,7 @@
 	)
 	(polyline
 		(pts
-			(xy 73.66 208.28) (xy 101.6 208.28)
+			(xy 73.66 203.2) (xy 101.6 203.2)
 		)
 		(stroke
 			(width 0.2)
@@ -7918,7 +7923,7 @@
 	)
 	(wire
 		(pts
-			(xy 101.6 198.12) (xy 104.14 200.66)
+			(xy 101.6 193.04) (xy 104.14 195.58)
 		)
 		(stroke
 			(width 0)
@@ -7948,7 +7953,7 @@
 	)
 	(wire
 		(pts
-			(xy 426.72 177.8) (xy 426.72 180.34)
+			(xy 421.64 177.8) (xy 421.64 180.34)
 		)
 		(stroke
 			(width 0)
@@ -7988,7 +7993,7 @@
 	)
 	(wire
 		(pts
-			(xy 414.02 127) (xy 426.72 127)
+			(xy 414.02 125.73) (xy 426.72 125.73)
 		)
 		(stroke
 			(width 0)
@@ -7998,7 +8003,7 @@
 	)
 	(wire
 		(pts
-			(xy 426.72 116.84) (xy 426.72 127)
+			(xy 426.72 116.84) (xy 426.72 125.73)
 		)
 		(stroke
 			(width 0)
@@ -8247,7 +8252,7 @@
 		(uuid "732fa12b-f6a5-4165-bdfc-bc3e86e982b3")
 	)
 	(label "USB.CC2"
-		(at 132.08 200.66 0)
+		(at 132.08 195.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8257,12 +8262,12 @@
 		(uuid "744e8118-d090-4d00-a415-d4810c8fe15c")
 	)
 	(label "COMP"
-		(at 424.18 177.8 180)
+		(at 421.64 177.8 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify bottom)
 		)
 		(uuid "74892b12-2b14-493e-9264-673b1ef2e69b")
 	)
@@ -8347,7 +8352,7 @@
 		(uuid "d470f1b5-8d67-425a-9a59-8d2f3b6b043c")
 	)
 	(label "CC2"
-		(at 30.48 200.66 180)
+		(at 30.48 195.58 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8400,7 +8405,7 @@
 	)
 	(hierarchical_label "USB{D+, D-, CC1, CC2}"
 		(shape bidirectional)
-		(at 147.32 187.96 0)
+		(at 144.78 187.96 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8443,7 +8448,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "560nH"
+		(property "Value" "1μH"
 			(at 242.57 186.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8476,7 +8481,161 @@
 				)
 			)
 		)
-		(property "Description" "Part Selected: YSPIT0530A-R56M | Inductor, small symbol"
+		(property "Description" "part selected: APS0430M1R0F"
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 241.3 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 241.3 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -8535,7 +8694,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 81.28 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -8558,6 +8717,160 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 81.28 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 81.28 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -8667,30 +8980,31 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
+		(in_bom yes)
+		(on_board yes)
 		(in_pos_files no)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "09b678f1-5c68-409d-931a-4224b857e5d5")
 		(property "Reference" "SW7"
-			(at 340.36 128.27 0)
+			(at 337.82 127 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Value" "2TED1M2RES"
-			(at 340.36 130.81 0)
+			(at 337.82 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" ""
@@ -8715,7 +9029,161 @@
 				)
 			)
 		)
-		(property "Description" "Momentary Switch, dual pole double throw"
+		(property "Description" "part selected: 2TED1M2RES or 2TED3M6RES"
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 340.36 142.24 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 340.36 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -8787,7 +9255,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 299.72 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -8809,7 +9277,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A475KAQNNNE"
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 299.72 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 299.72 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -8907,6 +9529,243 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
 					(reference "#PWR0104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 302.26 106.68 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f34378b-9010-4e80-a939-6af3706a7946")
+		(property "Reference" "C54"
+			(at 299.72 105.4162 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10μF"
+			(at 299.72 107.9562 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "part selected: CL21A106KAYNNNE"
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 302.26 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "582b2243-f8e5-4750-b1d2-dcc7acfd149d")
+		)
+		(pin "2"
+			(uuid "aabf4d12-127c-4f4a-a88c-400aa1dd239b")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
+					(reference "C54")
 					(unit 1)
 				)
 			)
@@ -9148,7 +10007,7 @@
 	)
 	(symbol
 		(lib_id "Jumper:Jumper_2_Small_Open")
-		(at 99.06 203.2 0)
+		(at 99.06 198.12 0)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -9159,7 +10018,7 @@
 		(dnp no)
 		(uuid "14368052-f4c4-4066-b16f-7065369a6657")
 		(property "Reference" "JP6"
-			(at 99.06 205.74 0)
+			(at 99.06 200.66 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9169,7 +10028,7 @@
 			)
 		)
 		(property "Value" "Jumper_2_Small_Open"
-			(at 99.06 200.66 0)
+			(at 99.06 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9179,8 +10038,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 99.06 203.2 0)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 99.06 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9191,7 +10050,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 203.2 0)
+			(at 99.06 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9202,7 +10061,161 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, small symbol, open"
-			(at 99.06 203.2 0)
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 99.06 198.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 99.06 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9338,7 +10351,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 467.36 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -9360,7 +10373,161 @@
 				)
 			)
 		)
-		(property "Description" "part selected: CL21A226MAQNNNE | Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A226MAQNNNE"
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 467.36 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 467.36 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -9575,7 +10742,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 457.2 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -9597,7 +10764,161 @@
 				)
 			)
 		)
-		(property "Description" "part selected: CL21A226MAQNNNE | Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A226MAQNNNE"
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 457.2 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 457.2 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -9646,7 +10967,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20μF"
+		(property "Value" "10μF"
 			(at 307.34 232.4162 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9657,7 +10978,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 304.8 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -9679,7 +11000,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A106KAYNNNE"
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 304.8 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 304.8 231.14 0)
 			(hide yes)
 			(show_name no)
@@ -9707,7 +11182,7 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
-		(at 157.48 177.8 0)
+		(at 165.1 177.8 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9718,7 +11193,7 @@
 		(fields_autoplaced yes)
 		(uuid "2feb2e8f-2ce9-4382-b9b7-d9fa146c23f3")
 		(property "Reference" "#PWR0202"
-			(at 157.48 184.15 0)
+			(at 165.1 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9729,7 +11204,7 @@
 			)
 		)
 		(property "Value" "PGND"
-			(at 157.48 182.88 0)
+			(at 165.1 182.88 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9739,7 +11214,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 157.48 177.8 0)
+			(at 165.1 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9750,7 +11225,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 157.48 177.8 0)
+			(at 165.1 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9761,7 +11236,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 157.48 177.8 0)
+			(at 165.1 177.8 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9815,7 +11290,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 307.34 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -9837,8 +11312,162 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "part selected:  0805W8F1002T5E"
 			(at 307.34 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 307.34 187.96 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 307.34 187.96 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9897,7 +11526,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 273.558 232.41 90)
 			(hide yes)
 			(show_name no)
@@ -9919,7 +11548,161 @@
 				)
 			)
 		)
-		(property "Description" "Resistor"
+		(property "Description" "part selected:  0805W8F1002T5E"
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 271.78 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 271.78 232.41 0)
 			(hide yes)
 			(show_name no)
@@ -9952,8 +11735,8 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
+		(in_bom yes)
+		(on_board yes)
 		(in_pos_files no)
 		(dnp no)
 		(uuid "351e98db-e0c1-4976-9eea-9f1d8293f10b")
@@ -9979,7 +11762,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 332.74 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -9990,7 +11773,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.royalohm.com/assets/pdf/products/smd/1.pdf"
 			(at 332.74 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -10001,7 +11784,161 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "part selected: 1206W4F1001T5E"
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 332.74 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 332.74 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -10107,7 +12044,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 426.72 182.88 180)
+		(at 421.64 182.88 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10117,7 +12054,7 @@
 		(dnp no)
 		(uuid "3632369e-dfe3-4e4e-b0e8-276443ad4943")
 		(property "Reference" "C45"
-			(at 429.26 181.6035 0)
+			(at 424.18 181.6035 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10127,8 +12064,8 @@
 				(justify right)
 			)
 		)
-		(property "Value" "2.7nF"
-			(at 429.26 184.1435 0)
+		(property "Value" "2.2nF"
+			(at 424.18 184.1435 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10138,8 +12075,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
-			(at 426.72 182.88 0)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 421.64 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10150,7 +12087,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 426.72 182.88 0)
+			(at 421.64 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10160,8 +12097,162 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 426.72 182.88 0)
+		(property "Description" "part selected: CL21C222JBFNNNE"
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 421.64 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 421.64 182.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10220,7 +12311,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
 			(at 241.3 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -10242,7 +12333,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selection: CL31A226KAHNNNE"
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 241.3 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 241.3 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -10270,7 +12515,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 45.72 220.98 0)
+		(at 45.72 215.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10280,7 +12525,7 @@
 		(dnp no)
 		(uuid "3959bb4c-1b2d-49ea-984d-2f7ea43a61c4")
 		(property "Reference" "#PWR0110"
-			(at 45.72 227.33 0)
+			(at 45.72 222.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10291,7 +12536,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 45.72 226.06 0)
+			(at 45.72 220.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10301,7 +12546,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 45.72 220.98 0)
+			(at 45.72 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10312,7 +12557,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 45.72 220.98 0)
+			(at 45.72 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10323,7 +12568,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 45.72 220.98 0)
+			(at 45.72 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10601,7 +12846,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "44kΩ"
+		(property "Value" "22kΩ"
 			(at 457.2 181.6099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10612,7 +12857,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 454.66 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -10634,7 +12879,161 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "part selected: 0805W8F2202T5E"
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 454.66 180.34 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 454.66 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -10839,7 +13238,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20μF"
+		(property "Value" "10μF"
 			(at 312.42 107.9562 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10850,7 +13249,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 309.88 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -10872,7 +13271,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A106KAYNNNE"
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 309.88 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 309.88 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -11127,6 +13680,84 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
 					(reference "#PWR097")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:Earth")
+		(at 302.26 109.22 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "688fa730-7b23-48cd-9136-4d4b92bc68ee")
+		(property "Reference" "#PWR062"
+			(at 302.26 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PGND"
+			(at 302.26 114.3 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 302.26 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 302.26 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 302.26 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b3df29d0-699b-498e-90c4-6015c545aec4")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
+					(reference "#PWR062")
 					(unit 1)
 				)
 			)
@@ -11400,7 +14031,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 236.22 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -11422,7 +14053,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL05A105KA5NQNC"
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 236.22 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 236.22 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -11450,7 +14235,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 53.34 215.9 0)
+		(at 53.34 210.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -11461,7 +14246,7 @@
 		(fields_autoplaced yes)
 		(uuid "6cd45178-3584-48f1-90b7-5629b8009817")
 		(property "Reference" "R49"
-			(at 55.88 214.6299 0)
+			(at 55.88 209.5499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11472,7 +14257,7 @@
 			)
 		)
 		(property "Value" "5.1kΩ ≤1%"
-			(at 55.88 217.1699 0)
+			(at 55.88 212.0899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11482,8 +14267,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 53.34 215.9 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 53.34 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11494,7 +14279,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 215.9 0)
+			(at 53.34 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11504,8 +14289,162 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 53.34 215.9 0)
+		(property "Description" "part selected: 0805W8F5101T5E"
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 53.34 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 53.34 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11943,7 +14882,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "6kΩ"
+		(property "Value" "3kΩ"
 			(at 457.2 191.7699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11954,7 +14893,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 454.66 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -11976,7 +14915,161 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "part selected: 0805W8F3001T5E"
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 454.66 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 454.66 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -12009,8 +15102,8 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom no)
-		(on_board no)
+		(in_bom yes)
+		(on_board yes)
 		(in_pos_files no)
 		(dnp no)
 		(uuid "868a3f28-a3dd-4188-8809-db8930a8abc9")
@@ -12036,7 +15129,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric"
 			(at 332.74 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -12047,7 +15140,7 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.royalohm.com/assets/pdf/products/smd/1.pdf"
 			(at 332.74 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -12058,7 +15151,161 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "part selected: 1206W4F1003T5E"
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 332.74 109.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 332.74 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -12094,26 +15341,27 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "8badb205-cc5a-4597-84c6-ebe88988d05d")
 		(property "Reference" "Q1"
-			(at 340.36 93.98 0)
+			(at 337.82 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Value" "AON7423"
-			(at 340.36 96.52 0)
+			(at 337.82 96.52 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" ""
@@ -12139,6 +15387,160 @@
 			)
 		)
 		(property "Description" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 337.82 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 337.82 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -12218,7 +15620,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4085"
 			(at 39.37 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -12240,8 +15642,162 @@
 				)
 			)
 		)
-		(property "Description" "USB 2.0-only 14P Type-C Receptacle connector"
+		(property "Description" "part selected: USB4085-GF-A"
 			(at 35.56 83.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 35.56 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 35.56 111.76 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12328,7 +15884,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "0.10μF"
+		(property "Value" "0.1μF"
 			(at 398.78 107.9435 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12339,7 +15895,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 396.24 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -12361,7 +15917,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL05B104KB54PNC"
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 396.24 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 396.24 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -12389,7 +16099,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 53.34 220.98 0)
+		(at 53.34 215.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12399,7 +16109,7 @@
 		(dnp no)
 		(uuid "8f9f73ec-5505-4a70-ba02-0bb9b76ec0dc")
 		(property "Reference" "#PWR0205"
-			(at 53.34 227.33 0)
+			(at 53.34 222.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12410,7 +16120,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 53.34 226.06 0)
+			(at 53.34 220.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12420,7 +16130,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 53.34 220.98 0)
+			(at 53.34 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12431,7 +16141,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 53.34 220.98 0)
+			(at 53.34 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12442,7 +16152,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 53.34 220.98 0)
+			(at 53.34 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12498,7 +16208,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 370.84 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -12520,7 +16230,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol, use a low esr ceramic capacitor"
+		(property "Description" "part selected: CL21A106KAYNNNE"
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 370.84 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 370.84 106.68 0)
 			(hide yes)
 			(show_name no)
@@ -12580,7 +16444,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 238.76 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -12602,7 +16466,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A106KAYNNNE"
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 238.76 215.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 238.76 215.9 0)
 			(hide yes)
 			(show_name no)
@@ -12661,7 +16679,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" "SOT95P280X145-6N"
+		(property "Footprint" "STMicroelectronics:SOT95P280X145-6N"
 			(at 90.17 201.6 0)
 			(hide yes)
 			(show_name no)
@@ -12780,6 +16798,160 @@
 				(justify left top)
 			)
 		)
+		(property "Availability" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 60.96 106.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "4358e5c1-6ea7-4694-9891-90e863b52ef1")
 		)
@@ -12873,6 +17045,160 @@
 			)
 		)
 		(property "Sim.Pins" "1=K 2=A"
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 322.58 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 322.58 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -12999,7 +17325,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "0.10μF"
+		(property "Value" "0.1μF"
 			(at 378.46 194.3165 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13010,7 +17336,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 375.92 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -13032,7 +17358,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL05B104KB54PNC"
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 375.92 195.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 375.92 195.58 0)
 			(hide yes)
 			(show_name no)
@@ -13089,7 +17569,7 @@
 				)
 			)
 		)
-		(property "Footprint" "EXC14CE900U"
+		(property "Footprint" ""
 			(at 127.508 188.646 0)
 			(hide yes)
 			(show_name no)
@@ -13220,6 +17700,160 @@
 				(justify left top)
 			)
 		)
+		(property "Availability" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 124.46 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "9255ca8c-8029-4cdd-af9f-6c85aadb0bfe")
 		)
@@ -13274,7 +17908,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" "PTPS61288RQQR"
+		(property "Footprint" "Texas Instruments:PTPS61288RQQR"
 			(at 438.15 181.28 0)
 			(hide yes)
 			(show_name no)
@@ -13391,6 +18025,160 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(property "Availability" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 408.94 86.36 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(pin "4"
@@ -13522,6 +18310,160 @@
 				)
 			)
 		)
+		(property "Availability" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 322.58 187.96 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "42bfacde-136e-46cf-adda-5e68aad85fbb")
 		)
@@ -13593,6 +18535,160 @@
 			)
 		)
 		(property "Description" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 276.86 88.9 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 276.86 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -13680,7 +18776,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 45.72 215.9 0)
+		(at 45.72 210.82 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13690,7 +18786,7 @@
 		(dnp no)
 		(uuid "b933f887-1f93-4538-a519-f47ed5837a9f")
 		(property "Reference" "R51"
-			(at 43.18 214.63 0)
+			(at 43.18 209.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13701,7 +18797,7 @@
 			)
 		)
 		(property "Value" "5.1kΩ ≤1%"
-			(at 43.18 217.17 0)
+			(at 43.18 212.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13711,8 +18807,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
-			(at 45.72 215.9 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 45.72 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13723,7 +18819,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 45.72 215.9 0)
+			(at 45.72 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13733,8 +18829,162 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 45.72 215.9 0)
+		(property "Description" "part selected: 0805W8F5101T5E"
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 45.72 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 45.72 210.82 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13839,7 +19089,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener_Small_Filled")
-		(at 116.84 215.9 270)
+		(at 116.84 210.82 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13850,7 +19100,7 @@
 		(fields_autoplaced yes)
 		(uuid "c31bb74e-5053-4095-bea1-09638b26b68a")
 		(property "Reference" "D89"
-			(at 119.38 214.6299 90)
+			(at 119.38 209.5499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13861,7 +19111,7 @@
 			)
 		)
 		(property "Value" "3.6V"
-			(at 119.38 217.1699 90)
+			(at 119.38 212.0899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13871,8 +19121,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 116.84 215.9 90)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 116.84 210.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13883,7 +19133,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 215.9 90)
+			(at 116.84 210.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13893,8 +19143,162 @@
 				)
 			)
 		)
-		(property "Description" "Zener diode, small symbol, filled shape"
-			(at 116.84 215.9 0)
+		(property "Description" "part selected: MM1W3V6"
+			(at 116.84 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 116.84 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 116.84 210.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13921,7 +19325,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 116.84 220.98 0)
+		(at 116.84 215.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13931,7 +19335,7 @@
 		(dnp no)
 		(uuid "c5ac50d6-046c-4def-98de-eb595583e776")
 		(property "Reference" "#PWR0204"
-			(at 116.84 227.33 0)
+			(at 116.84 222.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13942,7 +19346,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 116.84 226.06 0)
+			(at 116.84 220.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13952,7 +19356,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 116.84 220.98 0)
+			(at 116.84 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13963,7 +19367,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 116.84 220.98 0)
+			(at 116.84 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13974,7 +19378,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 116.84 220.98 0)
+			(at 116.84 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13998,7 +19402,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 426.72 198.12 0)
+		(at 421.64 198.12 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -14010,7 +19414,7 @@
 		(fields_autoplaced yes)
 		(uuid "c9585385-5de1-4272-83c2-5e28abcf5861")
 		(property "Reference" "#PWR0114"
-			(at 426.72 204.47 0)
+			(at 421.64 204.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14021,7 +19425,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 426.72 203.2 0)
+			(at 421.64 203.2 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14031,7 +19435,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 426.72 198.12 0)
+			(at 421.64 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14042,7 +19446,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 426.72 198.12 0)
+			(at 421.64 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14053,7 +19457,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 426.72 198.12 0)
+			(at 421.64 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14108,7 +19512,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 477.52 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -14130,7 +19534,161 @@
 				)
 			)
 		)
-		(property "Description" "part selected: CL21A226MAQNNNE | Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A226MAQNNNE"
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 477.52 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 477.52 93.98 0)
 			(hide yes)
 			(show_name no)
@@ -14158,7 +19716,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 109.22 220.98 0)
+		(at 109.22 215.9 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14168,7 +19726,7 @@
 		(dnp no)
 		(uuid "ca336c90-042a-44f5-8287-9e8d61e3e0f6")
 		(property "Reference" "#PWR0203"
-			(at 109.22 227.33 0)
+			(at 109.22 222.25 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14179,7 +19737,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 109.22 226.06 0)
+			(at 109.22 220.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14189,7 +19747,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 109.22 220.98 0)
+			(at 109.22 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14200,7 +19758,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 220.98 0)
+			(at 109.22 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14211,7 +19769,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 109.22 220.98 0)
+			(at 109.22 215.9 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14235,7 +19793,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 99.06 198.12 90)
+		(at 99.06 193.04 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -14246,7 +19804,7 @@
 		(dnp no)
 		(uuid "cb4d5498-2adb-4539-8104-e2caaa9e76f4")
 		(property "Reference" "R61"
-			(at 99.06 193.04 90)
+			(at 99.06 187.96 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14256,7 +19814,7 @@
 			)
 		)
 		(property "Value" "10kΩ ≤1%"
-			(at 99.06 195.58 90)
+			(at 99.06 190.5 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14265,8 +19823,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 99.06 198.12 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 99.06 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14277,7 +19835,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 198.12 0)
+			(at 99.06 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14287,8 +19845,162 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 99.06 198.12 0)
+		(property "Description" "part selected: 0805W8F1002T5E"
+			(at 99.06 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 99.06 193.04 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 99.06 193.04 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14380,6 +20092,160 @@
 				)
 			)
 		)
+		(property "Availability" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 271.78 245.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "5a0eed85-f35a-4b2c-8773-050c898f16e1")
 		)
@@ -14428,7 +20294,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Sunlord_MWSA1005S"
 			(at 375.92 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -14450,7 +20316,161 @@
 				)
 			)
 		)
-		(property "Description" "Part Selected: MWSA1004S-2R2MT | Inductor with ferrite core, small symbol"
+		(property "Description" "part selected: MWSA1004S-2R2MT"
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 375.92 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 375.92 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -14556,7 +20576,7 @@
 	)
 	(symbol
 		(lib_id "Device:D_Zener_Small_Filled")
-		(at 109.22 215.9 90)
+		(at 109.22 210.82 90)
 		(mirror x)
 		(unit 1)
 		(body_style 1)
@@ -14567,7 +20587,7 @@
 		(dnp no)
 		(uuid "d411bbe0-08b1-4d0d-91bc-b505cbdb6959")
 		(property "Reference" "D88"
-			(at 106.68 214.6299 90)
+			(at 106.68 209.5499 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14578,7 +20598,7 @@
 			)
 		)
 		(property "Value" "3.6V"
-			(at 106.68 217.1699 90)
+			(at 106.68 212.0899 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14588,8 +20608,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 109.22 215.9 90)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 109.22 210.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14600,7 +20620,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 109.22 215.9 90)
+			(at 109.22 210.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14610,8 +20630,162 @@
 				)
 			)
 		)
-		(property "Description" "Zener diode, small symbol, filled shape"
-			(at 109.22 215.9 0)
+		(property "Description" "part selected: MM1W3V6"
+			(at 109.22 210.82 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 109.22 210.82 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 109.22 210.82 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14668,7 +20842,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 81.28 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -14690,8 +20864,162 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "part selected: 0805W8F1002T5E"
 			(at 81.28 182.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 81.28 182.88 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 81.28 182.88 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14739,7 +21067,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Female JST-VH"
+		(property "Value" "XT30PW-M"
 			(at 327.66 231.1399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14750,7 +21078,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal"
 			(at 325.12 228.6 0)
 			(hide yes)
 			(show_name no)
@@ -14783,6 +21111,160 @@
 				)
 			)
 		)
+		(property "Availability" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 325.12 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "1"
 			(uuid "3d94093b-eb2e-43b9-a6cc-046fb612e412")
 		)
@@ -14800,7 +21282,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 426.72 193.04 0)
+		(at 421.64 193.04 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14811,7 +21293,7 @@
 		(fields_autoplaced yes)
 		(uuid "d77abda1-853d-4db9-b3d5-27fcddb03cf5")
 		(property "Reference" "R56"
-			(at 429.26 191.7699 0)
+			(at 424.18 191.7699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14821,8 +21303,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10kΩ"
-			(at 429.26 194.3099 0)
+		(property "Value" "15kΩ"
+			(at 424.18 194.3099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14832,8 +21314,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
-			(at 426.72 193.04 0)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 421.64 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14844,7 +21326,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 426.72 193.04 0)
+			(at 421.64 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14854,8 +21336,162 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
-			(at 426.72 193.04 0)
+		(property "Description" "part selected:  0805W8F1502T5E"
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 421.64 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 421.64 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14912,7 +21548,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 307.34 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -14934,8 +21570,162 @@
 				)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "part selected:  0805W8F1002T5E"
 			(at 307.34 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 307.34 185.42 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 307.34 185.42 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14994,7 +21784,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 414.02 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -15016,7 +21806,161 @@
 				)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" "part selected: CL21A225KBQNNNE"
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 414.02 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
 			(at 414.02 121.92 0)
 			(hide yes)
 			(show_name no)

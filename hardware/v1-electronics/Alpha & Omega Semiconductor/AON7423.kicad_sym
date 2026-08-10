@@ -332,7 +332,7 @@
 					)
 				)
 			)
-			(pin input inverted
+			(pin input line
 				(at 2.54 -15.24 90)
 				(length 2.54)
 				(name "G"

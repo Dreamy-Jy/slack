@@ -484,7 +484,7 @@
 		(symbol "LTST-FC12WEGBD-5A_1_1"
 			(rectangle
 				(start -7.62 7.62)
-				(end 1.27 -15.24)
+				(end 2.54 -15.24)
 				(stroke
 					(width 0.254)
 					(type default)
