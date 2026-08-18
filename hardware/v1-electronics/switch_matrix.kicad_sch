@@ -29660,7 +29660,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 430.53 87.376 0)
 			(hide yes)
 			(show_name no)
@@ -29682,7 +29682,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 434.34 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -36939,7 +36939,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 222.25 197.104 0)
 			(hide yes)
 			(show_name no)
@@ -36961,7 +36961,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 218.44 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -45407,7 +45407,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 430.53 36.576 0)
 			(hide yes)
 			(show_name no)
@@ -45429,7 +45429,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 434.34 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -47860,7 +47860,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 430.53 188.976 0)
 			(hide yes)
 			(show_name no)
@@ -47882,7 +47882,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 434.34 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -49478,7 +49478,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 222.25 95.504 0)
 			(hide yes)
 			(show_name no)
@@ -49500,7 +49500,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 218.44 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -50316,7 +50316,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 222.25 44.704 0)
 			(hide yes)
 			(show_name no)
@@ -50338,7 +50338,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 218.44 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -54117,7 +54117,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 430.53 138.176 0)
 			(hide yes)
 			(show_name no)
@@ -54139,7 +54139,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 434.34 142.24 0)
 			(hide yes)
 			(show_name no)
@@ -57537,7 +57537,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:EC09E1524418"
+		(property "Footprint" "Bourns:PEC11S929KS0015"
 			(at 222.25 146.304 0)
 			(hide yes)
 			(show_name no)
@@ -57559,7 +57559,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: EC09E1524418"
+		(property "Description" "part selected: PEC11S929KS0015"
 			(at 218.44 142.24 0)
 			(hide yes)
 			(show_name no)

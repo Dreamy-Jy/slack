@@ -8459,7 +8459,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_Changjiang_FTC404030S"
 			(at 241.3 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -9007,7 +9007,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Dailywell:2TED3M6RES"
 			(at 340.36 137.16 0)
 			(hide yes)
 			(show_name no)
@@ -15364,7 +15364,7 @@
 				(justify left top)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Alpha & Omega Semiconductor:AON7423"
 			(at 337.82 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -15386,7 +15386,7 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "part selected: AON7423"
 			(at 337.82 96.52 0)
 			(hide yes)
 			(show_name no)
@@ -17011,7 +17011,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 322.58 185.42 90)
 			(hide yes)
 			(show_name no)
@@ -17033,7 +17033,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol, filled shape"
+		(property "Description" "part selected: KT-0805G"
 			(at 322.58 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -17569,7 +17569,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Panasonic:EXC14CE900U"
 			(at 127.508 188.646 0)
 			(hide yes)
 			(show_name no)
@@ -18266,7 +18266,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0805_2012Metric"
 			(at 322.58 187.96 90)
 			(hide yes)
 			(show_name no)
@@ -18288,7 +18288,7 @@
 				)
 			)
 		)
-		(property "Description" "Light emitting diode, small symbol, filled shape"
+		(property "Description" "part selected: KT-0805W"
 			(at 322.58 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -18512,7 +18512,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Monolithic Power Systems:QFN-22_MP2721_MNP"
 			(at 276.86 88.9 0)
 			(hide yes)
 			(show_name no)
@@ -20048,7 +20048,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "MF52A103J3435"
+		(property "Value" "10kΩ @ 25°C"
 			(at 275.59 246.0624 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20059,7 +20059,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Vishay Intertech:NTCLE413E2103F102L"
 			(at 271.78 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -20081,7 +20081,7 @@
 				)
 			)
 		)
-		(property "Description" "Temperature dependent resistor, negative temperature coefficient"
+		(property "Description" "part selected: NTCLE413E2103F102L"
 			(at 271.78 245.11 0)
 			(hide yes)
 			(show_name no)

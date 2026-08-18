@@ -11,4 +11,6 @@
 	(lib (name "Cherry") (type "KiCad") (uri "${KIPRJMOD}/Cherry") (options "") (descr ""))
 	(lib (name "ALPS Electric") (type "KiCad") (uri "${KIPRJMOD}/ALPS Electric") (options "") (descr ""))
 	(lib (name "Bourns") (type "KiCad") (uri "${KIPRJMOD}/Bourns") (options "") (descr ""))
+	(lib (name "Dailywell") (type "KiCad") (uri "${KIPRJMOD}/Dailywell") (options "") (descr ""))
+	(lib (name "Vishay Intertech") (type "KiCad") (uri "${KIPRJMOD}/Vishay Intertech") (options "") (descr ""))
 )

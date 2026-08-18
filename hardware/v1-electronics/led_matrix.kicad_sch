@@ -12216,7 +12216,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 441.63 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -12546,7 +12546,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 273.99 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -12876,7 +12876,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 776.91 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -13206,7 +13206,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 385.75 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -13536,7 +13536,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 665.15 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -13866,7 +13866,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 888.67 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -14196,7 +14196,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 944.55 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -14526,7 +14526,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 721.03 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -14856,7 +14856,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 441.63 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -15186,7 +15186,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 497.51 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -15516,7 +15516,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 218.11 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -15846,7 +15846,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 888.67 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -16176,7 +16176,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 944.55 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -16506,7 +16506,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 329.87 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -16836,7 +16836,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 609.27 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -17166,7 +17166,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 553.39 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -17496,7 +17496,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 441.63 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -17826,7 +17826,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 273.99 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -18156,7 +18156,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 721.03 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -18486,7 +18486,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 385.75 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -18816,7 +18816,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 832.79 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -19146,7 +19146,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 776.91 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -19476,7 +19476,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 273.99 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -19806,7 +19806,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1000.43 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -20136,7 +20136,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 832.79 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -20466,7 +20466,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 218.11 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -20796,7 +20796,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1056.31 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -21126,7 +21126,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 665.15 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -21456,7 +21456,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 329.87 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -21786,7 +21786,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 944.55 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -22116,7 +22116,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 553.39 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -22446,7 +22446,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 835.33 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -22776,7 +22776,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 609.27 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -23106,7 +23106,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 329.87 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -23436,7 +23436,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 385.75 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -23766,7 +23766,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 497.51 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -24096,7 +24096,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 888.67 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -24426,7 +24426,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 497.51 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -24756,7 +24756,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 218.11 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -25086,7 +25086,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 776.91 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -25416,7 +25416,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 665.15 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -25746,7 +25746,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 721.03 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -26076,7 +26076,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 329.87 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -26406,7 +26406,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 721.03 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -26736,7 +26736,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 721.03 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -27066,7 +27066,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 553.39 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -27396,7 +27396,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1000.43 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -27726,7 +27726,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 441.63 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -28056,7 +28056,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 888.67 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -28386,7 +28386,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 609.27 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -28716,7 +28716,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 329.87 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -29046,7 +29046,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1056.31 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -29376,7 +29376,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 441.63 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -29706,7 +29706,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 385.75 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -30036,7 +30036,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1056.31 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -30366,7 +30366,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 273.99 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -30696,7 +30696,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 944.55 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -31026,7 +31026,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1000.43 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -31356,7 +31356,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1056.31 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -31686,7 +31686,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 776.91 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -32016,7 +32016,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 721.03 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -32346,7 +32346,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 609.27 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -32676,7 +32676,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 888.67 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -33006,7 +33006,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 776.91 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -33336,7 +33336,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1056.31 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -33666,7 +33666,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 609.27 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -33996,7 +33996,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 218.11 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -34326,7 +34326,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 888.67 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -34656,7 +34656,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 776.91 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -34986,7 +34986,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 329.87 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -35552,7 +35552,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1000.43 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -35882,7 +35882,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 832.79 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -36212,7 +36212,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 665.15 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -36542,7 +36542,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 665.15 233.68 0)
 			(hide yes)
 			(show_name no)
@@ -36872,7 +36872,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 609.27 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -37202,7 +37202,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 553.39 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -37532,7 +37532,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 553.39 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -37862,7 +37862,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 441.63 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -38192,7 +38192,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 497.51 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -38522,7 +38522,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 218.11 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -38852,7 +38852,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 832.79 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -39182,7 +39182,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 944.55 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -39512,7 +39512,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 273.99 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -39842,7 +39842,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 944.55 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -40172,7 +40172,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 665.15 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -40502,7 +40502,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 273.99 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -40832,7 +40832,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 832.79 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -41162,7 +41162,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1000.43 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -41492,7 +41492,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 497.51 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -41822,7 +41822,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 218.11 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -42152,7 +42152,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1000.43 48.26 0)
 			(hide yes)
 			(show_name no)
@@ -42482,7 +42482,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 1056.31 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -42812,7 +42812,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 385.75 200.66 0)
 			(hide yes)
 			(show_name no)
@@ -43142,7 +43142,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 497.51 114.3 0)
 			(hide yes)
 			(show_name no)
@@ -43472,7 +43472,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 553.39 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -43802,7 +43802,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "LTSTFC12WEGBD5A"
+		(property "Footprint" "Liteon:LTSTFC12WEGBD5A"
 			(at 385.75 81.28 0)
 			(hide yes)
 			(show_name no)

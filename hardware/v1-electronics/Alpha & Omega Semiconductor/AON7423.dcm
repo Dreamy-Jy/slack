@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP AON7423
+D MOSFET P-CH 20V 28A 8DFN
+K
+F https://www.aosmd.com/sites/default/files/res/packaging_information/DFN3.3x3.3_8L_EP1_S.pdf
+$ENDCMP
+#
+#End Doc Library
