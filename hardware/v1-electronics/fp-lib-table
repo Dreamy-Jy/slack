@@ -13,4 +13,5 @@
 	(lib (name "Bourns") (type "KiCad") (uri "${KIPRJMOD}/Bourns") (options "") (descr ""))
 	(lib (name "Dailywell") (type "KiCad") (uri "${KIPRJMOD}/Dailywell") (options "") (descr ""))
 	(lib (name "Vishay Intertech") (type "KiCad") (uri "${KIPRJMOD}/Vishay Intertech") (options "") (descr ""))
+	(lib (name "Amazon") (type "KiCad") (uri "${KIPRJMOD}/Amazon") (options "") (descr ""))
 )
