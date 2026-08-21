@@ -1,0 +1,642 @@
+# =============================================================================
+#  DESIGN INVARIANTS  -  read this before editing anything below
+#
+#  Instructions for any AI (or person) editing this file:
+#   * Everything listed here is a deliberate decision the owner has made over
+#     the course of this design. It is the context every edit must keep.
+#   * Before making a change that would alter one of these qualities, even as
+#     a side effect (e.g. a number that silently breaks a clearance rule),
+#     STOP and ask the owner for permission. Do not assume.
+#   * Once a change to an invariant is approved, update the matching line in
+#     this list in the same edit, so the list is always true.
+#   * Plain tuning that keeps every quality below intact needs no permission.
+#   * After every edit: regenerate, open outlines/preview, and confirm the
+#     numeric rules (A2, A4, D6, F3, G3, I2, I4) still hold on the generated output.
+#
+#  A. Layout
+#   A1  Dygma Sonsei geometry: unibody, 6 columns x 4 rows per hand (number
+#       row + 3 letter rows), columnar stagger ring +0.36, middle +0.62,
+#       index/inner +0.36 key pitches above the pinky, hands splayed 10 deg.
+#   A2  19.05 mm pitch (kx = ky = U). Keycap design size 16.2 mm (the
+#       largest ULP keycap). No two keycaps anywhere - grid, thumbs, across
+#       the centre - closer than min_gap = kx - cap = 2.85 mm.
+#   A3  Both hands are exact mirrors (points.mirror); the thumb cluster and
+#       the encoders belong to their hand and move with it.
+#   A4  Hand gap (half_gap) is set by the centre channel: encoders and their
+#       LEDs on opposite hands stay >= 1 mm clear at the number row, the
+#       narrowest point of the V.
+#
+#  B. Thumb cluster (per hand, 6 keys)
+#   B1  t0 and t1 are square keys (0 deg); t1 sits at (-2.89 kx, -1.38 ky)
+#       from the inner-column bottom key, t0 one key to its left. The
+#       cluster is placed so t3 sits directly below the inner-column bottom
+#       key (same column line), scroll bar and t0-t2 outboard of it.
+#   B2  t2..t5 are a true fan: one pivot fan_radius below t1, fan_step deg per
+#       key, with the scroll bar (section I) between t2 and t3 at scroll_step
+#       deg to each side (3.4 / 3.12 -> t5 ends at -16.44), every element
+#       turned to face the pivot, so all bottom edges are tangent to one
+#       circle: one smooth line t0 -> t5.
+#   B3  The fan's radius is the smallest that keeps A2 at the chosen fan_step.
+#
+#  C. Switch (Cherry MX ULP, MX6C-K3NB)
+#   C1  SMD switch: no plate cutouts. The case top is a frame with one opening
+#       per keycap (cap + 2 x 0.4 mm) and one hole per encoder knob / LED.
+#   C2  footprints/ulp.js is a 1:1 copy of the owner's Cherry_ULP_SMD
+#       .kicad_mod (pads, pins, courtyard, pocket, keepout, 3D models).
+#   C3  The only space under the switch is the pocket drawn on Dwgs.User,
+#       x -3.6..3.1, y -4.2..-1.8 (switch coords), ~1.5 mm headroom.
+#
+#  D. Per-key parts (all in switch coordinates, identical on both hands)
+#   D1  Diode SOD-523 (footprints/sod523.js), standing vertically at the
+#       right-hand end of the pocket: (2.2, -3.0), rotate 90, front side.
+#   D2  LED LTST-FC12WEGBD-5A (footprints/ltst_fc12.js) at the centre of the
+#       pocket: (-0.25, -3.0). Pad 5 is the common pin.
+#   D3  Diode and LED courtyards do not overlap (0.15 mm apart).
+#   D4  Placement uses adjust + resist: true, because the switch footprint is
+#       never mirrored - the pocket is on the switch's own +x on both hands.
+#   D5  Wiring: switch from column_net to colrow, diode from colrow (anode) to
+#       row_net (cathode) = COL2ROW. Columns C0..C11 (left outer->inner C0..C5,
+#       right inner->outer C6..C11), rows R0 num .. R3 bottom, R4 thumbs.
+#   D6  Known/accepted: KiCad reports courtyard overlaps for parts inside the
+#       switch courtyard. Vertical diode pads end 0.15 mm from the pocket
+#       edge - check against a real switch before ordering.
+#
+#  E. Encoders (8x Bourns PEC11S-929K-S0015, footprints/pec11s.js 1:1)
+#   E1  One per main row per hand, beside the inner column, in the centre
+#       channel. Long axis along the row, switch-pad (D/E) end toward the
+#       keyswitch, A/B/C end toward the centre, rotated with the hand.
+#   E2  Keycap-to-encoder-courtyard gap = min_gap (same as switch to switch).
+#   E3  Nets: own A/B/SW per encoder ({{name}}_A ...), common and second
+#       switch pin on GND.
+#
+#  F. Encoder LEDs (same LTST-FC12)
+#   F1  One per encoder, on its free (centre-facing) end, centred on the
+#       encoder's axis, just outside the encoder courtyard (13.5 mm from the
+#       shaft). A 3 mm light window above each in the top frame.
+#   F2  All 68 LEDs share one placeholder matrix: common to LED_<row_net>,
+#       colours to LED_<column_net>_<R|G|B|W>; encoder LEDs use columns
+#       ENCL / ENCR. Rename once the LED driver is chosen.
+#   F3  LED polarity (pad 5 anode or cathode) is still unverified.
+#
+#  G. Case and PCB
+#   G1  Rectangular case: flat top, straight sides, flat bottom at the
+#       original chin height (the flattened fan fits above it), 6 mm corner
+#       radius. Width tracks half_gap; the top edge is unchanged from the
+#       Sonsei version.
+#   G2  PCB edge = case inset by pcb_inset (2.5 mm).
+#   G3  Every keycap and part sits >= 4 mm inside the case edge and >= 2.5 mm
+#       inside the PCB edge.
+#
+#  H. File conventions
+#   H1  Every tunable number lives in units: with a comment; the cheat-sheet
+#       below lists the ones to touch. Derived values stay formulas.
+#   H2  Tags drive the filters: switch = keys, encoder = encoders,
+#       scroll = scroll bars.
+#   H3  PCB template kicad8; all custom footprints are KiCad 8 syntax. Footprint
+#       param names must not collide with ergogen's own fields (r, x, y, at,
+#       ref ...) - use long names (red, not r).
+#   H4  Mirrored nets are set with mirror: { column_net: ... } on the key.
+#
+#  I. Thumb scroll bars (one per hand, between t2 and t3)
+#   I1  A 25.4 x 10 mm rolling bar (bar_l x bar_w) in each thumb fan, its
+#       centre on the same circle as the key centres, long axis pointing at
+#       the pivot: 10 mm wide along the curve, reaching 4.6 mm past the
+#       caps' edges radially in and out.
+#   I2  scroll_step is the angle from each flanking key to the bar, the
+#       smallest that keeps min_gap from the caps to the whole bar-and-
+#       encoder assembly; fan_step is the smallest that keeps every 2.85 mm
+#       clearance with t3 pinned under the inner column (the assembly under
+#       the matrix row binds). The two hands' t5 top inner corners must
+#       still sit >= 10 mm apart (currently 17.0 mm - the rule is slack).
+#   I3  Hardware per bar (per the owner's board): the EC10E hollow
+#       through-shaft encoder ({{name}}_A/_B, common on GND) sits at the
+#       bar's OUTER end - shaft on the bar's axis, footprint origin at
+#       +11.3 so the body straddles the bar's end - and the XKB TC-1109-C-E
+#       tact switch ({{name}}_SW / GND) sits centred on the INNER end:
+#       press the bar's inner half, the encoder end is the hinge. The top
+#       frame needs a pocket where the encoder pokes past the slot (not
+#       drawn yet). Offsets are PROVISIONAL - align them to the real axle
+#       before ordering, and verify the TC-1109's internally bridged pin
+#       pairs (it is wired on the safe diagonal, pads 1 and 4, until then).
+#   I4  The top frame gets one slot per bar: bar + 2 x frame_clr each side,
+#       like the keycap openings.
+# =============================================================================
+
+meta:
+  engine: 4.2.1
+  name: slack-ai-gen-starter-config
+  version: 0.9
+  author: jordane
+  notes: >
+    Dygma Sonsei-style unibody layout (6x4 per hand + 6 thumb keys per hand,
+    60 keys) plus 8 centre encoders (Bourns PEC11S, one per row per hand),
+    built for Cherry MX Ultra Low Profile switches (MX6C-K3NB), each with an
+    RGBW LED (Lite-On LTST-FC12WEGBD-5A) in the switch's open pocket, and
+    one more RGBW LED on the free (centre-facing) end of every encoder.
+    Key geometry reverse-engineered from Dygma's Bazecor key-map drawings.
+    The thumb keys t1-t5 are a true fan (same pivot, equal steps) so their
+    bottom edges form one smooth curve; no keycap comes closer than the
+    2.85 mm gap that already exists between the main keys. A 25.4 x 10 mm
+    clickable scroll bar (ALPS EC10E1220505 hollow-shaft encoder plus an XKB
+    TC-1109-C-E click) sits across the curve in each fan between t2 and t3,
+    long axis pointing at the pivot - the encoder sits at the outer end,
+    the click under the inner end. The cluster is placed so t3 sits
+    directly below the inner-column bottom key, and the fan is as straight
+    as the 2.85 mm clearances allow. The case is a plain rounded rectangle
+    with its flat bottom at the original chin height.
+
+units:
+  # ======================================================================
+  #  TUNING CHEAT-SHEET (everything you'd normally touch lives in this block)
+  #   * kx / ky ........ pitch of the whole grid (bigger = roomier keyboard)
+  #   * st_* ........... how far up each finger's column sits
+  #   * splay .......... tilt of each hand, degrees
+  #   * half_gap ....... distance between the hands (the encoders live here)
+  #   * t1_x / t1_y .... where the thumb fan starts (t0 is one key left of t1)
+  #   * fan_step ....... degrees between thumb keys (bigger = more curl)
+  #   * fan_radius ..... size of the thumb arc (bigger = flatter, wider arc)
+  #   * bar_* / scroll_* the thumb scroll bar: size, angle, hardware offsets
+  #   * enc_* / knob_* . encoder position next to the inner keys, knob hole
+  #   * body_* ......... the case; cap = keycap size used for the gap checks
+  #  After every edit: regenerate and look at outlines/preview - caps must not
+  #  touch each other (aim for >= min_gap between them) or poke out of the case.
+  # ======================================================================
+
+  # ---- key pitch --------------------------------------------------------
+  # ULP donor boards (Cherry KW X ULP, Corsair K100 Air) all use ~19 mm pitch
+  # with 15-16 mm caps, so the Sonsei's 19.05 mm grid works unchanged.
+  kx: U
+  ky: U
+
+  # ---- keycap / switch (Cherry MX ULP) ------------------------------------
+  cap: 16.2          # largest common ULP keycap (Mistel 16.1x16.2, Corsair 16x16, Cherry 15.2x15.2)
+  min_gap: kx - cap  # 2.85 mm: the gap between caps in the main grid, also the rule for the thumbs
+  sw_w: 14.2         # ULP switch module footprint
+  sw_h: 12.8
+  frame_clr: 0.4     # clearance each side between a cap and its top-frame opening
+  aperture: cap + 2 * frame_clr
+
+  # ---- per-key diode (SOD-523) ---------------------------------------------
+  # The ULP base has one open pocket, drawn on Dwgs.User in the footprint:
+  # x -3.6..+3.1, y +1.8..+4.2 (key frame, y up), about 1.5 mm of headroom.
+  # The diode stands vertically in that pocket, pushed to its right-hand end.
+  win_right: 3.1           # right edge of the pocket
+  win_cy: 3.0              # vertical centre of the pocket
+  diode_rot: 90            # 90 = vertical (long axis along the key's y), 0 = horizontal
+  diode_half_w: 0.7        # half the SOD-523 courtyard width when it stands vertically
+  diode_margin: 0.2        # gap between the courtyard and the pocket edge
+  diode_x: win_right - diode_margin - diode_half_w   # = 2.2
+  diode_y: win_cy
+
+  # ---- per-key RGBW LED (LTST-FC12WEGBD-5A, 1.2 x 1.2 x 0.5 mm) -----------
+  # Sits in the middle of the same pocket, left of the diode. Its 3.2 mm
+  # courtyard ends 0.15 mm short of the diode's, so they don't overlap.
+  win_cx: -0.25            # horizontal centre of the pocket (x -3.6..3.1)
+  led_x: win_cx
+  led_y: win_cy
+  led_rot: 0               # pads 1-3 toward the diode
+
+  # ---- columnar stagger, measured from the pinky column -------------------
+  st_ring: 0.36 * ky     # ~6.9 mm
+  st_middle: 0.62 * ky   # ~11.8 mm
+  st_index: 0.36 * ky
+  st_inner: 0.36 * ky
+
+  # ---- unibody geometry ---------------------------------------------------
+  splay: 10              # degrees each hand is rotated (left CW, right CCW)
+  half_gap: 4.90 * kx    # centre-to-centre gap between the two inner home keys (~93 mm);
+                         # 4.60 is the smallest that keeps the top-row encoder LEDs 1 mm clear
+                         # with enc_clr = min_gap; the rest is deliberate extra room
+
+  # ---- thumb cluster ------------------------------------------------------
+  # t0 and t1 are square keys; the cluster is placed so t3 sits directly
+  # below the inner-column bottom key (same column line).
+  # t2..t5 fan out from t1 around one pivot that sits fan_radius below t1,
+  # turning fan_step degrees per key - except around the scroll bar between
+  # t2 and t3, which takes scroll_step degrees on each side - so every
+  # bottom edge is tangent to the same circle: one smooth line from t0 to t5.
+  t1_x: -3 * kx       # t1 position, measured from the inner-column bottom key
+  t1_y: -1.38 * ky       # (x right, y up, in the hand's own rotated frame);
+                         # the drop is the smallest that gives the scroll
+                         # assembly its 2.85 mm under the matrix row
+  fan_step: 3.4          # degrees between neighbouring thumb keys; the smallest
+                         # that keeps every 2.85 mm clearance with t3 pinned
+                         # under the inner column - straighter needs a deeper
+                         # cluster (t5 ends at -3 * 3.4 - 2 * 3.12 = -16.44)
+  fan_radius: 17.28 * ky # pivot distance; 17.28 is the smallest that keeps 2.85 mm gaps at 3.4 deg
+
+  # ---- thumb scroll bars (ALPS EC10E1220505 + XKB TC-1109-C-E click) ------
+  # One 25.4 x 10 mm rolling bar per hand, between t2 and t3, its centre on
+  # the same circle as the key centres, long axis pointing at the pivot:
+  # 10 mm wide along the curve, reaching 4.6 mm past the caps' edges
+  # radially in and out. The encoder is a hollow through-shaft type - the
+  # roller's axle runs out of the bar's outer end and through it - and the
+  # tact switch under the bar's inner end gives the click (press the inner
+  # half; the encoder end is the hinge). Arrangement per the owner's board;
+  # the offsets below are PROVISIONAL: align them to the real axle parts.
+  bar_l: 25.4            # bar length, now across the curve (1 inch)
+  bar_w: 10              # bar width along the curve (1 cm)
+  scroll_step: 3.12      # degrees from t2 to the bar and from the bar to t3;
+                         # the smallest that keeps 2.85 mm gaps from the caps
+                         # to the whole bar-and-encoder assembly
+  scroll_rot: 0          # encoder upright: its hollow shaft already runs
+                         # along the (now radial) bar
+  scroll_enc_x: -2.48    # sideways nudge that puts the shaft line (footprint
+                         # x = 2.48) on the bar's centreline; resist keeps it
+                         # from flipping on the mirrored hand
+  scroll_enc_y: 11.3     # encoder origin at the bar's outer end: body
+                         # straddles the end, shaft crosses the axis at +11.6
+  scroll_clk_y: -12.5    # click switch centred on the bar's inner end
+
+  # ---- centre encoders (Bourns PEC11S-929K-S0015) -------------------------
+  # One per row per hand, next to the inner column, long axis along the row,
+  # switch-pad end (shorter courtyard side, 10.5 mm) facing the keyswitch.
+  enc_rot: 90            # 90 = body horizontal, A/B/C pads toward the centre
+  enc_clr: min_gap           # gap between the keycap edge and the encoder courtyard
+  enc_end: 10.5          # courtyard extent on the end that faces the switch
+  enc_x: cap / 2 + enc_clr + enc_end   # = 21.45 mm from the inner key to the shaft
+  enc_body_w: 11.7       # for the preview
+  enc_body_l: 14.2
+  knob_d: 12             # knob diameter, for the hole in the top frame
+  knob_clr: 0.5          # clearance around the knob
+
+  # ---- encoder LEDs (same LTST-FC12WEGBD-5A) ------------------------------
+  # One per encoder, on its free end (the A/B/C end that faces the centre),
+  # centred on the encoder's axis, just outside the encoder's courtyard.
+  enc_end_free: 11.7     # courtyard extent on the centre-facing end
+  enc_led_clr: 0.2       # gap between the encoder courtyard and the LED courtyard
+  enc_led_crt: 1.6       # half of the LED courtyard (3.2 mm)
+  enc_led_off: enc_end_free + enc_led_clr + enc_led_crt   # = 13.5 mm from the shaft
+  enc_led_hole_d: 3      # light window in the top frame above each encoder LED
+
+  # ---- case -----------------------------------------------------------------
+  body_w: 331            # Sonsei width plus the wider centre channel
+  body_h: 164            # back to the original Sonsei depth - the flattened
+                         # fan no longer reaches below the old chin
+  body_cy: -16           # body centre sits 16 mm below the inner home keys
+  body_r: 6              # corner radius
+  pcb_inset: 2.5         # PCB edge sits this far inside the case wall
+
+points:
+  zones:
+    matrix:
+      key:
+        spread: kx
+        padding: ky
+        width: cap
+        height: cap
+        tags: [switch]
+      anchor:
+        rotate: -splay
+      columns:
+        outer:                      # Esc / Tab / Caps / Shift column
+          key:
+            column_net: C0
+            mirror:
+              column_net: C11
+        pinky:
+          key:
+            column_net: C1
+            mirror:
+              column_net: C10
+        ring:
+          key:
+            stagger: st_ring
+            column_net: C2
+            mirror:
+              column_net: C9
+        middle:
+          key:
+            stagger: st_middle - st_ring
+            column_net: C3
+            mirror:
+              column_net: C8
+        index:
+          key:
+            stagger: st_index - st_middle
+            column_net: C4
+            mirror:
+              column_net: C7
+        inner:
+          key:
+            stagger: st_inner - st_index
+            column_net: C5
+            mirror:
+              column_net: C6
+      rows:
+        bottom:
+          row_net: R3
+        home:
+          row_net: R2
+        top:
+          row_net: R1
+        num:
+          row_net: R0
+
+    thumbs:
+      key:
+        spread: 0                   # t2..t5 don't step sideways, they swing around the pivot
+        padding: ky
+        width: cap
+        height: cap
+        name: '{{zone.name}}_{{col.name}}'
+        row_net: R4
+        tags: [switch]
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [t1_x - kx, t1_y]    # the zone starts at t0, one key left of t1
+      columns:
+        t0:
+          key:
+            column_net: C0
+            mirror:
+              column_net: C11
+        t1:
+          key:
+            spread: kx              # one key to the right of t0, still square
+            column_net: C1
+            mirror:
+              column_net: C10
+        t2:
+          key:
+            splay: -fan_step        # swing clockwise around the pivot below t1
+            origin: [0, -fan_radius]
+            column_net: C2
+            mirror:
+              column_net: C9
+        scroll:                     # the scroll bar, not a key - just a point
+          key:
+            splay: -scroll_step     # extra swing to make room for the bar
+            origin: [0, -fan_radius]
+            width: bar_w
+            height: bar_l
+            tags: [scroll]
+        t3:
+          key:
+            splay: -scroll_step     # the bar's other side, same wider swing
+            origin: [0, -fan_radius]
+            column_net: C3
+            mirror:
+              column_net: C8
+        t4:
+          key:
+            splay: -fan_step
+            origin: [0, -fan_radius]
+            column_net: C4
+            mirror:
+              column_net: C7
+        t5:
+          key:
+            splay: -fan_step
+            origin: [0, -fan_radius]
+            column_net: C5
+            mirror:
+              column_net: C6
+      rows:
+        cluster:
+
+    encoders:
+      key:
+        padding: ky                 # one per row, same pitch as the inner column
+        adjust:
+          rotate: enc_rot           # turn the part, not the column (adjust = per key, not cumulative)
+        name: '{{zone.name}}_{{row}}'
+        tags: [encoder]
+        column_net: ENCL            # only used to name the encoder-LED nets
+        mirror:
+          column_net: ENCR
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [enc_x, 0]           # beside the inner key, toward the centre
+      columns:
+        col:
+      rows:
+        bottom:
+          row_net: R3               # same LED-matrix row lines as the keys
+        home:
+          row_net: R2
+        top:
+          row_net: R1
+        num:
+          row_net: R0
+
+  mirror:
+    ref: matrix_inner_home
+    distance: half_gap
+
+outlines:
+  # keycaps, for the preview and for clearance checks
+  keycaps:
+    - what: rectangle
+      where: switch
+      size: [cap, cap]
+      corner: 1
+
+  # ULP switch modules (SMD, 14.2 x 12.8) - there is no plate cutout for these
+  switch_bodies:
+    - what: rectangle
+      where: switch
+      size: [sw_w, sw_h]
+      bound: false
+
+  # encoder bodies and knobs, for the preview
+  encoder_bodies:
+    - what: rectangle
+      where: encoder
+      size: [enc_body_w, enc_body_l]
+      bound: false
+  knobs:
+    - what: circle
+      where: encoder
+      radius: knob_d / 2
+
+  # scroll bars, for the preview and for clearance checks
+  scroll_bars:
+    - what: rectangle
+      where: scroll
+      size: [bar_w, bar_l]
+      corner: 1
+      bound: false
+
+  # openings in the top frame: one per keycap, one per knob
+  apertures:
+    - what: rectangle
+      where: switch
+      size: [aperture, aperture]
+      corner: 1.2
+      bound: false
+  knob_holes:
+    - what: circle
+      where: encoder
+      radius: knob_d / 2 + knob_clr
+  scroll_slots:
+    - what: rectangle
+      where: scroll
+      size: [bar_w + 2 * frame_clr, bar_l + 2 * frame_clr]
+      corner: 1.2
+      bound: false
+  enc_led_holes:
+    - what: circle
+      where: encoder
+      adjust:
+        shift: [0, -enc_led_off]    # the encoder's A/B/C end = its local -y (y up)
+      radius: enc_led_hole_d / 2
+
+  # unibody case: a plain rounded rectangle, flat bottom just below the fan
+  body:
+    - what: polygon
+      points:
+        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
+          shift: [-body_w / 2, body_cy + body_h / 2]
+        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
+          shift: [body_w / 2, body_cy + body_h / 2]
+        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
+          shift: [body_w / 2, body_cy - body_h / 2]
+        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
+          shift: [-body_w / 2, body_cy - body_h / 2]
+      fillet: body_r
+
+  # top frame: the case top with a hole for every keycap and every knob
+  top_frame:
+    - name: body
+    - operation: subtract
+      name: apertures
+    - operation: subtract
+      name: knob_holes
+    - operation: subtract
+      name: enc_led_holes
+    - operation: subtract
+      name: scroll_slots
+
+  # PCB edge: case outline inset by the wall thickness
+  pcb_edge:
+    - name: body
+      expand: -pcb_inset
+
+  # everything at once, for the preview image
+  preview:
+    - name: body
+    - operation: stack
+      name: pcb_edge
+    - operation: stack
+      name: keycaps
+    - operation: stack
+      name: switch_bodies
+    - operation: stack
+      name: encoder_bodies
+    - operation: stack
+      name: knobs
+    - operation: stack
+      name: scroll_bars
+    - operation: stack
+      name: enc_led_holes
+
+pcbs:
+  slack-ai-gen-starter-config:
+    template: kicad8          # all custom footprints are written in KiCad 8 syntax
+    outlines:
+      edge:
+        outline: pcb_edge
+        layer: Edge.Cuts
+      keycaps:
+        outline: keycaps
+        layer: Dwgs.User
+      knobs:
+        outline: knobs
+        layer: Dwgs.User
+      scroll_bars:
+        outline: scroll_bars
+        layer: Dwgs.User
+    footprints:
+      # Cherry_ULP_SMD, converted 1:1 from the attached .kicad_mod (footprints/ulp.js)
+      switches:
+        what: ulp
+        where: switch
+        params:
+          from: '{{column_net}}'
+          to: '{{colrow}}'
+      # SOD-523 diode standing vertically inside the switch's open pocket, at
+      # its right-hand end, on the same side as the switch. resist: true keeps
+      # the offset and rotation on the switch's own axes on the mirrored half
+      # (the footprint is never mirrored).
+      diodes:
+        what: sod523
+        where: switch
+        adjust:
+          shift: [diode_x, diode_y]
+          rotate: diode_rot
+          resist: true
+        params:
+          side: F
+          from: '{{colrow}}'
+          to: '{{row_net}}'
+      # RGBW LED in the centre of the switch pocket (footprints/ltst_fc12.js).
+      # Wired as a placeholder LED matrix: common pin to one line per key row,
+      # each colour to one line per key column - rename to suit your driver.
+      leds:
+        what: ltst_fc12
+        where: switch
+        adjust:
+          shift: [led_x, led_y]
+          rotate: led_rot
+          resist: true
+        params:
+          common: 'LED_{{row_net}}'
+          red: 'LED_{{column_net}}_R'
+          green: 'LED_{{column_net}}_G'
+          blue: 'LED_{{column_net}}_B'
+          white: 'LED_{{column_net}}_W'
+      # Bourns PEC11S encoders (footprints/pec11s.js). Each gets its own A/B
+      # and push-switch nets, named after the point: encoders_home_A, ...
+      encoders:
+        what: pec11s
+        where: encoder
+        params:
+          a: '{{name}}_A'
+          b: '{{name}}_B'
+          c: GND
+          s1: '{{name}}_SW'
+          s2: GND
+      # RGBW LED on the free end of each encoder, centred on its axis. Joins
+      # the placeholder LED matrix as columns ENCL / ENCR.
+      encoder_leds:
+        what: ltst_fc12
+        where: encoder
+        adjust:
+          shift: [0, -enc_led_off]
+        params:
+          common: 'LED_{{row_net}}'
+          red: 'LED_{{column_net}}_R'
+          green: 'LED_{{column_net}}_G'
+          blue: 'LED_{{column_net}}_B'
+          white: 'LED_{{column_net}}_W'
+      # ALPS EC10E1220505 hollow through-shaft encoder at each bar's outer
+      # end (footprints/ec10e.js, 1:1): the roller's axle runs out of the
+      # bar and through the shaft. Rotation 0 keeps the shaft along the
+      # radial bar; resist keeps the sideways centreline nudge from
+      # flipping on the mirrored hand. Shift values are provisional -
+      # align to the real axle before ordering.
+      scrolls:
+        what: ec10e
+        where: scroll
+        adjust:
+          shift: [scroll_enc_x, scroll_enc_y]
+          rotate: scroll_rot
+          resist: true
+        params:
+          a: '{{name}}_A'
+          b: '{{name}}_B'
+          c: GND
+      # XKB TC-1109-C-E tact switch under the inner end of each bar, so
+      # pressing the bar clicks (footprints/tc1109.js, 1:1). Wired on the
+      # diagonal (pads 1 and 4) so it is safe whichever pin pairs are
+      # internally common - verify the pairing before ordering.
+      clicks:
+        what: tc1109
+        where: scroll
+        adjust:
+          shift: [0, scroll_clk_y]
+          rotate: 90
+        params:
+          from: '{{name}}_SW'
+          to: GND
