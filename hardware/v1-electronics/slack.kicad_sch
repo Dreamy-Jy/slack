@@ -45,7 +45,7 @@
 		)
 		(uuid "318bbcdc-ecd6-4797-9e06-8551b0b24f23")
 	)
-	(text "- Check circuits\n- I don't know if my circuit actually needs\n  seperate power and digital grounds.\n\nSchematic\n- [x] Refactor Schematic to r/PrintedCircuitBoard Guide\n- [x] Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- [-] Refactor chip configurations to explain my choices\n- [x] Rename all the component references so they are\n     grouped and easier to layout\n- [] Select actual components, footprints, 3D models for all components\n- [x] Pass those design reviews softwares\n- [] take review advice\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
+	(text "- Check circuits\n- I don't know if my circuit actually needs\n  seperate power and digital grounds.\n\nSchematic\n- [x] Refactor Schematic to r/PrintedCircuitBoard Guide\n- [x] Refactor the root schematic to show how the system is connected\n	- I want to add logic levels and ground differentiation\n	- I want custom grapics for each symbol\n- [-] Refactor chip configurations to explain my choices\n- [x] Rename all the component references so they are\n     grouped and easier to layout\n- [x] Select actual components, footprints, 3D models for all components\n- [x] Pass those design reviews softwares\n- [x] take review advice\n\nPCB\n- generate and recreate ergonomic montary key layout in PCB\n- determine latch layout on PCB"
 		(exclude_from_sim no)
 		(at 17.78 137.16 0)
 		(effects

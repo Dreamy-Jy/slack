@@ -24826,7 +24826,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+		(property "Footprint" "XKB Connection:TC-1109-C-E"
 			(at 205.74 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -24848,7 +24848,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: TS-1187A-B-A-B"
+		(property "Description" "part selected: TC-1109-C-E"
 			(at 205.74 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -50895,7 +50895,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+		(property "Footprint" "XKB Connection:TC-1109-C-E"
 			(at 449.58 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -50917,7 +50917,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: TS-1187A-B-A-B"
+		(property "Description" "part selected: TC-1109-C-E"
 			(at 449.58 246.38 0)
 			(hide yes)
 			(show_name no)
