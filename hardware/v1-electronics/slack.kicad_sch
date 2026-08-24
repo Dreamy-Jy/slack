@@ -7,7 +7,7 @@
 	(title_block
 		(title "Slack")
 		(date "2026-07-25")
-		(rev "A.0.4")
+		(rev "A.0.5")
 	)
 	(lib_symbols)
 	(rectangle

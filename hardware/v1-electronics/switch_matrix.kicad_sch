@@ -7,7 +7,7 @@
 	(title_block
 		(title "Slack")
 		(date "2026-07-25")
-		(rev "A.0.4")
+		(rev "A.0.5")
 	)
 	(lib_symbols
 		(symbol "Device:C_Small"
@@ -9699,7 +9699,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 124.46 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -12263,7 +12263,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 533.4 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -13851,7 +13851,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 96.52 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -19422,7 +19422,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 505.46 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -23374,7 +23374,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 40.64 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -24334,7 +24334,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 617.22 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -25629,7 +25629,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SPEF110100"
 			(at 208.28 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -34157,7 +34157,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SPEF110100"
 			(at 180.34 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -36549,7 +36549,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 561.34 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -38762,7 +38762,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 68.58 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -52351,7 +52351,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SPEF110100"
 			(at 477.52 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -57780,7 +57780,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 589.28 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -62739,7 +62739,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SPEF110100"
 			(at 452.12 304.8 0)
 			(hide yes)
 			(show_name no)
@@ -63854,7 +63854,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Amazon:1208YD"
+		(property "Footprint" "ALPS Electric:SSSS820201"
 			(at 152.4 304.8 0)
 			(hide yes)
 			(show_name no)

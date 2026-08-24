@@ -11,7 +11,7 @@
 #     this list in the same edit, so the list is always true.
 #   * Plain tuning that keeps every quality below intact needs no permission.
 #   * After every edit: regenerate, open outlines/preview, and confirm the
-#     numeric rules (A2, A4, D6, F3, G3, I2, I4) still hold on the generated output.
+#     numeric rules (A2, A4, D6, F3, G3, I2, I4, J1, J2) still hold on the generated output.
 #
 #  A. Layout
 #   A1  Dygma Sonsei geometry: unibody, 6 columns x 4 rows per hand (number
@@ -26,16 +26,17 @@
 #       LEDs on opposite hands stay >= 1 mm clear at the number row, the
 #       narrowest point of the V.
 #
-#  B. Thumb cluster (per hand, 6 keys)
-#   B1  t0 and t1 are square keys (0 deg); t1 sits at (-2.89 kx, -1.38 ky)
-#       from the inner-column bottom key, t0 one key to its left. The
-#       cluster is placed so t3 sits directly below the inner-column bottom
-#       key (same column line), scroll bar and t0-t2 outboard of it.
+#  B. Thumb cluster (per hand, 5 keys)
+#   B1  t1 is a square key (0 deg) at (-3.00 kx, -1.38 ky) from the
+#       inner-column bottom key. t0 was removed after user testing (nobody
+#       could reach it); the zone anchor moved onto t1 so nothing else
+#       shifted. At -3.00, t3 sits ~2 mm outboard of the inner-column line
+#       (owner's choice; -2.89 puts it dead on).
 #   B2  t2..t5 are a true fan: one pivot fan_radius below t1, fan_step deg per
 #       key, with the scroll bar (section I) between t2 and t3 at scroll_step
 #       deg to each side (3.4 / 3.12 -> t5 ends at -16.44), every element
 #       turned to face the pivot, so all bottom edges are tangent to one
-#       circle: one smooth line t0 -> t5.
+#       circle: one smooth line t1 -> t5.
 #   B3  The fan's radius is the smallest that keeps A2 at the chosen fan_step.
 #
 #  C. Switch (Cherry MX ULP, MX6C-K3NB)
@@ -66,14 +67,15 @@
 #       channel. Long axis along the row, switch-pad (D/E) end toward the
 #       keyswitch, A/B/C end toward the centre, rotated with the hand.
 #   E2  Keycap-to-encoder-courtyard gap = min_gap (same as switch to switch).
-#   E3  Nets: own A/B/SW per encoder ({{name}}_A ...), common and second
-#       switch pin on GND.
+#   E3  Nets: own A/B per encoder ({{name}}_A/_B, common on GND). The push
+#       switch scans on the matrix: column ENCL / ENCR through the switch,
+#       then a diode to the encoder's row (J3).
 #
 #  F. Encoder LEDs (same LTST-FC12)
 #   F1  One per encoder, on its free (centre-facing) end, centred on the
 #       encoder's axis, just outside the encoder courtyard (13.5 mm from the
 #       shaft). A 3 mm light window above each in the top frame.
-#   F2  All 68 LEDs share one placeholder matrix: common to LED_<row_net>,
+#   F2  All 77 LEDs share one placeholder matrix: common to LED_<row_net>,
 #       colours to LED_<column_net>_<R|G|B|W>; encoder LEDs use columns
 #       ENCL / ENCR. Rename once the LED driver is chosen.
 #   F3  LED polarity (pad 5 anode or cathode) is still unverified.
@@ -112,7 +114,7 @@
 #       through-shaft encoder ({{name}}_A/_B, common on GND) sits at the
 #       bar's OUTER end - shaft on the bar's axis, footprint origin at
 #       +11.3 so the body straddles the bar's end - and the XKB TC-1109-C-E
-#       tact switch ({{name}}_SW / GND) sits centred on the INNER end:
+#       tact switch (C0/C11 x R4 through a diode, J3) sits centred on the INNER end:
 #       press the bar's inner half, the encoder end is the hinge. The top
 #       frame needs a pocket where the encoder pokes past the slot (not
 #       drawn yet). Offsets are PROVISIONAL - align them to the real axle
@@ -120,16 +122,40 @@
 #       pairs (it is wired on the safe diagonal, pads 1 and 4, until then).
 #   I4  The top frame gets one slot per bar: bar + 2 x frame_clr each side,
 #       like the keycap openings.
+#
+#  J. Latching switches (added v1.0)
+#   J1  Five SSSS820201 latching slides in one row across the top-centre
+#       channel - the only band where a touchable part clears the num-row
+#       caps by min_gap, keeps the G3 insets, and still carries its LED and
+#       diode. latch_pitch apart, centred on the axis (asym: left - a bank
+#       on the axis must not be mirrored onto itself). LED centred on each
+#       slide's pin-1-dot side (toward the top edge), diode on the other.
+#       The frame opening is PROVISIONAL: a full-body slot, knob travel TBD.
+#   J2  One SPEF110100 latching push above t4 and above t5 on each hand,
+#       plunger toward its key (the thumb slides up off the cap to press),
+#       courtyard >= min_gap above the keycap and >= min_gap from every cap
+#       and the axis twins; against the centre encoders it is part-to-part
+#       only (both live under the frame), courtyard clearance applies.
+#       LED on the axis-facing flank, diode on the outboard flank. Frame
+#       opening PROVISIONAL like J1, and the plunger needs a side channel.
+#   J3  Every switch scans through a diode (COL2ROW like D5): scroll clicks
+#       on C0/C11 x R4 (the slots t0 freed), encoder pushes on ENCL/ENCR x
+#       R0-R3, latches on C0-C4 x R5, SPEF locks on C5/C6 (mirror C8/C7) x
+#       R5. Diode spots: in line past each bar's click; midway to the next
+#       encoder up; under each latch; beside each SPEF.
+#   J4  SSSS820201 and SPEF110100 internal contact arrangements are NOT yet
+#       verified (which pads pair across the switch) - see the notes in
+#       footprints/ssss820201.js and spef110100.js. Confirm before ordering.
 # =============================================================================
 
 meta:
   engine: 4.2.1
-  name: slack-ai-gen-starter-config
-  version: 0.9
+  name: slack-starter
+  version: '1.0'
   author: jordane
   notes: >
-    Dygma Sonsei-style unibody layout (6x4 per hand + 6 thumb keys per hand,
-    60 keys) plus 8 centre encoders (Bourns PEC11S, one per row per hand),
+    Dygma Sonsei-style unibody layout (6x4 per hand + 5 thumb keys per hand,
+    58 keys) plus 8 centre encoders (Bourns PEC11S, one per row per hand),
     built for Cherry MX Ultra Low Profile switches (MX6C-K3NB), each with an
     RGBW LED (Lite-On LTST-FC12WEGBD-5A) in the switch's open pocket, and
     one more RGBW LED on the free (centre-facing) end of every encoder.
@@ -143,7 +169,11 @@ meta:
     the click under the inner end. The cluster is placed so t3 sits
     directly below the inner-column bottom key, and the fan is as straight
     as the 2.85 mm clearances allow. The case is a plain rounded rectangle
-    with its flat bottom at the original chin height.
+    with its flat bottom at the original chin height. Five latching slide
+    switches (ALPS SSSS820201) sit across the top-centre channel and a
+    latching push switch (ALPS SPEF110100) sits above t4 and t5 of each
+    fan; every switch on the board - keys, scroll clicks, encoder pushes,
+    latches - scans through its own diode.
 
 units:
   # ======================================================================
@@ -152,10 +182,11 @@ units:
   #   * st_* ........... how far up each finger's column sits
   #   * splay .......... tilt of each hand, degrees
   #   * half_gap ....... distance between the hands (the encoders live here)
-  #   * t1_x / t1_y .... where the thumb fan starts (t0 is one key left of t1)
+  #   * t1_x / t1_y .... where the thumb fan starts (the fan begins at t1)
   #   * fan_step ....... degrees between thumb keys (bigger = more curl)
   #   * fan_radius ..... size of the thumb arc (bigger = flatter, wider arc)
   #   * bar_* / scroll_* the thumb scroll bar: size, angle, hardware offsets
+  #   * latch_* / lock_* the latching switches: bank position, SPEF offsets
   #   * enc_* / knob_* . encoder position next to the inner keys, knob hole
   #   * body_* ......... the case; cap = keycap size used for the gap checks
   #  After every edit: regenerate and look at outlines/preview - caps must not
@@ -209,8 +240,8 @@ units:
                          # with enc_clr = min_gap; the rest is deliberate extra room
 
   # ---- thumb cluster ------------------------------------------------------
-  # t0 and t1 are square keys; the cluster is placed so t3 sits directly
-  # below the inner-column bottom key (same column line).
+  # t1 is a square key; t0 was removed after user testing (out of reach).
+  # t3 sits just outboard of the inner-column bottom key's line.
   # t2..t5 fan out from t1 around one pivot that sits fan_radius below t1,
   # turning fan_step degrees per key - except around the scroll bar between
   # t2 and t3, which takes scroll_step degrees on each side - so every
@@ -247,12 +278,36 @@ units:
   scroll_enc_y: 11.3     # encoder origin at the bar's outer end: body
                          # straddles the end, shaft crosses the axis at +11.6
   scroll_clk_y: -12.5    # click switch centred on the bar's inner end
+  scroll_dio_y: -17.6    # click diode just past the bar's inner end, in
+                         # line with encoder / bar / click (J3)
+  enc_dio_x: kx / 2      # encoder-push diode midway to the next encoder up
+
+  # ---- latching switches (J1/J2) -----------------------------------------
+  latch_pitch: 15        # spacing of the 5 slide switches - one key pitch,
+                         # the gap fingers already know
+  latch_y: 53.5          # bank centre height above the inner home keys
+                         # (lands at y ~62.5, the top-centre channel)
+  latch_led_y: 5.3       # LED centred over each slide on its pin-1-dot side
+  latch_dio_y: -5.0      # diode on the opposite side, under the frame
+  lock_cx: 5             # centres the SPEF courtyard on its point (rides on
+                         # the footprint with resist, like the key pockets)
+  lock4_dx: 0            # t4 switch slides inboard along its row to duck
+                         # under the bottom encoder (0.8 courtyard / 0.5 knob
+                         # clearance in plan - check part heights in 3D)
+  lock5_dx: 0            # ... and the t5 switch (J2 clearances)
+  lock_y: 14.2           # SPEF origin above its key: courtyard bottom sits
+                         # min_gap above the keycap (8.1 + 2.85 + 3.2)
+  lock_led_x: 10.2       # LED beside the SPEF on the axis-facing flank
+  lock_led_y: 5.5        # ... halfway along the body
+  lock_dio_x: -6.7       # diode on the outboard flank, just clear of the
+                         # SPEF courtyard edge
+  lock_dio_y: 5.5
 
   # ---- centre encoders (Bourns PEC11S-929K-S0015) -------------------------
   # One per row per hand, next to the inner column, long axis along the row,
   # switch-pad end (shorter courtyard side, 10.5 mm) facing the keyswitch.
   enc_rot: 90            # 90 = body horizontal, A/B/C pads toward the centre
-  enc_clr: min_gap           # gap between the keycap edge and the encoder courtyard
+  enc_clr: min_gap       # gap between the keycap edge and the encoder courtyard
   enc_end: 10.5          # courtyard extent on the end that faces the switch
   enc_x: cap / 2 + enc_clr + enc_end   # = 21.45 mm from the inner key to the shaft
   enc_body_w: 11.7       # for the preview
@@ -271,9 +326,9 @@ units:
 
   # ---- case -----------------------------------------------------------------
   body_w: 331            # Sonsei width plus the wider centre channel
-  body_h: 164            # back to the original Sonsei depth - the flattened
+  body_h: 180            # back to the original Sonsei depth - the flattened
                          # fan no longer reaches below the old chin
-  body_cy: -16           # body centre sits 16 mm below the inner home keys
+  body_cy: -5           # body centre sits 16 mm below the inner home keys
   body_r: 6              # corner radius
   pcb_inset: 2.5         # PCB edge sits this far inside the case wall
 
@@ -344,16 +399,10 @@ points:
         tags: [switch]
       anchor:
         ref: matrix_inner_bottom
-        shift: [t1_x - kx, t1_y]    # the zone starts at t0, one key left of t1
+        shift: [t1_x, t1_y]         # the zone starts at t1 (t0 is gone)
       columns:
-        t0:
-          key:
-            column_net: C0
-            mirror:
-              column_net: C11
         t1:
           key:
-            spread: kx              # one key to the right of t0, still square
             column_net: C1
             mirror:
               column_net: C10
@@ -371,6 +420,9 @@ points:
             width: bar_w
             height: bar_l
             tags: [scroll]
+            column_net: C0          # the matrix slot t0 freed - the click
+            mirror:                 #   scans here through its diode (J3)
+              column_net: C11
         t3:
           key:
             splay: -scroll_step     # the bar's other side, same wider swing
@@ -419,6 +471,67 @@ points:
           row_net: R1
         num:
           row_net: R0
+
+    latches:                        # 5 latching slide switches (J1)
+      key:
+        spread: latch_pitch
+        name: 'latch_{{col.name}}'
+        tags: [latch]
+        row_net: R5
+      anchor:                       # mirror points don't exist yet at zone
+        ref: matrix_inner_home      # parse time, so reach the axis by hand:
+        orient: splay               # un-tilt the frame, then half_gap / 2
+        shift: [-(half_gap) -10, latch_y + 20]
+      columns:
+        l0:
+          key:
+            column_net: C0
+        l1:
+          key:
+            column_net: C1
+        l2:
+          key:
+            column_net: C2
+        l3:
+          key:
+            column_net: C3
+        l4:
+          key:
+            column_net: C4
+      rows:
+        row:
+
+    lock4:                          # SPEF latching push above t4 (J2)
+      key:
+        name: 'lock4'
+        tags: [lock]
+        row_net: R5
+        column_net: C5
+        mirror:
+          column_net: C8
+      anchor:
+        ref: thumbs_t4
+        shift: [lock4_dx, lock_y]
+      columns:
+        lk4:                        # unique column name = unique colrow net
+      rows:
+        row:
+
+    lock5:                          # SPEF latching push above t5 (J2)
+      key:
+        name: 'lock5'
+        tags: [lock]
+        row_net: R5
+        column_net: C6
+        mirror:
+          column_net: C7
+      anchor:
+        ref: thumbs_t5
+        shift: [lock5_dx, lock_y]
+      columns:
+        lk5:                        # unique column name = unique colrow net
+      rows:
+        row:
 
   mirror:
     ref: matrix_inner_home
@@ -482,19 +595,34 @@ outlines:
         shift: [0, -enc_led_off]    # the encoder's A/B/C end = its local -y (y up)
       radius: enc_led_hole_d / 2
 
+  # latching switches: body boxes for the preview, slots for the top frame
+  latch_bodies:
+    - what: rectangle
+      where: latch
+      size: [8, 7]
+      bound: false
+  latch_slots:                      # PROVISIONAL full-body opening (J1)
+    - what: rectangle
+      where: latch
+      size: [8 + 2 * frame_clr, 7 + 2 * frame_clr]
+      corner: 1.2
+      bound: false
+  spef_slots:                       # PROVISIONAL full-courtyard opening (J2)
+    - what: rectangle
+      where: lock
+      adjust:
+        shift: [0, 5.49]            # the resisted courtyard's centre
+      size: [11.05 + 2 * frame_clr, 17.375 + 2 * frame_clr]
+      corner: 1.2
+      bound: false
+
   # unibody case: a plain rounded rectangle, flat bottom just below the fan
   body:
-    - what: polygon
-      points:
-        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
-          shift: [-body_w / 2, body_cy + body_h / 2]
-        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
-          shift: [body_w / 2, body_cy + body_h / 2]
-        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
-          shift: [body_w / 2, body_cy - body_h / 2]
-        - aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
-          shift: [-body_w / 2, body_cy - body_h / 2]
-      fillet: body_r
+    - what: rectangle
+      where:
+        aggregate: { parts: [matrix_inner_home, mirror_matrix_inner_home] }
+        shift: [0, body_cy]
+      size: [body_w, body_h]
 
   # top frame: the case top with a hole for every keycap and every knob
   top_frame:
@@ -507,6 +635,10 @@ outlines:
       name: enc_led_holes
     - operation: subtract
       name: scroll_slots
+    - operation: subtract
+      name: latch_slots
+    - operation: subtract
+      name: spef_slots
 
   # PCB edge: case outline inset by the wall thickness
   pcb_edge:
@@ -530,9 +662,11 @@ outlines:
       name: scroll_bars
     - operation: stack
       name: enc_led_holes
+    - operation: stack
+      name: latch_bodies
 
 pcbs:
-  slack-ai-gen-starter-config:
+  slack-starter:
     template: kicad8          # all custom footprints are written in KiCad 8 syntax
     outlines:
       edge:
@@ -587,7 +721,8 @@ pcbs:
           blue: 'LED_{{column_net}}_B'
           white: 'LED_{{column_net}}_W'
       # Bourns PEC11S encoders (footprints/pec11s.js). Each gets its own A/B
-      # and push-switch nets, named after the point: encoders_home_A, ...
+      # nets (encoders_home_A, ...); the push switch scans on the matrix
+      # through its own diode (J3).
       encoders:
         what: pec11s
         where: encoder
@@ -595,8 +730,8 @@ pcbs:
           a: '{{name}}_A'
           b: '{{name}}_B'
           c: GND
-          s1: '{{name}}_SW'
-          s2: GND
+          s1: '{{column_net}}'      # push switch scans the matrix: column in,
+          s2: '{{colrow}}'          #   diode from colrow to the row (J3)
       # RGBW LED on the free end of each encoder, centred on its axis. Joins
       # the placeholder LED matrix as columns ENCL / ENCR.
       encoder_leds:
@@ -616,7 +751,7 @@ pcbs:
       # radial bar; resist keeps the sideways centreline nudge from
       # flipping on the mirrored hand. Shift values are provisional -
       # align to the real axle before ordering.
-      scrolls:
+      scroll_encoders:
         what: ec10e
         where: scroll
         adjust:
@@ -631,12 +766,107 @@ pcbs:
       # pressing the bar clicks (footprints/tc1109.js, 1:1). Wired on the
       # diagonal (pads 1 and 4) so it is safe whichever pin pairs are
       # internally common - verify the pairing before ordering.
-      clicks:
+      scroll_clicks:
         what: tc1109
         where: scroll
         adjust:
           shift: [0, scroll_clk_y]
           rotate: 90
         params:
-          from: '{{name}}_SW'
-          to: GND
+          from: '{{column_net}}'
+          to: '{{colrow}}'
+      scroll_led:
+        what: ltst_fc12
+        where: scroll
+        adjust:
+          shift: [9.1, scroll_enc_y + 2.2]  # highest spot beside the encoder
+                                    # that keeps min_gap to the matrix row
+          rotate: scroll_rot
+        params:
+          common: 'LED_{{row_net}}'
+          red: 'LED_{{column_net}}_R'
+          green: 'LED_{{column_net}}_G'
+          blue: 'LED_{{column_net}}_B'
+          white: 'LED_{{column_net}}_W'
+      # click diode: in line with encoder / bar / click, just past the
+      # bar's inner end (J3)
+      scroll_diodes:
+        what: sod523
+        where: scroll
+        adjust:
+          shift: [0, scroll_dio_y]
+          rotate: 90
+        params:
+          side: F
+          from: '{{colrow}}'
+          to: '{{row_net}}'
+      # encoder-push diodes: midway to the next encoder up the column (J3)
+      encoder_diodes:
+        what: sod523
+        where: encoder
+        adjust:
+          shift: [enc_dio_x, -13]
+          rotate: 90
+        params:
+          side: F
+          from: '{{colrow}}'
+          to: '{{row_net}}'
+      # ---- latching switches (J1/J2) ----
+      latch_switches:
+        what: ssss820201
+        where: latch
+        params:
+          from: '{{column_net}}'
+          to: '{{colrow}}'
+      latch_leds:
+        what: ltst_fc12
+        where: latch
+        adjust:
+          shift: [0, latch_led_y]
+        params:
+          common: 'LED_{{row_net}}'
+          red: 'LED_{{column_net}}_R'
+          green: 'LED_{{column_net}}_G'
+          blue: 'LED_{{column_net}}_B'
+          white: 'LED_{{column_net}}_W'
+      latch_diodes:
+        what: sod523
+        where: latch
+        adjust:
+          shift: [0, latch_dio_y]
+        params:
+          side: F
+          from: '{{colrow}}'
+          to: '{{row_net}}'
+      lock_switches:
+        what: spef110100
+        where: lock
+        adjust:
+          shift: [lock_cx, 4]
+          rotate: 0               # plunger (footprint +x) toward the key;
+          resist: true              # never mirrored (D4-style) - the mirrored
+                                    # point frame is already reflected
+        params:
+          from: '{{column_net}}'
+          to: '{{colrow}}'
+      lock_leds:
+        what: ltst_fc12
+        where: lock
+        adjust:
+          shift: [lock_led_x - 4, lock_led_y+4]
+        params:
+          common: 'LED_{{row_net}}'
+          red: 'LED_{{column_net}}_R'
+          green: 'LED_{{column_net}}_G'
+          blue: 'LED_{{column_net}}_B'
+          white: 'LED_{{column_net}}_W'
+      lock_diodes:
+        what: sod523
+        where: lock
+        adjust:
+          shift: [lock_dio_x, lock_dio_y + 2]
+          rotate: diode_rot + 90
+        params:
+          side: F
+          from: '{{colrow}}'
+          to: '{{row_net}}'
