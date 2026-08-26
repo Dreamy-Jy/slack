@@ -10,6 +10,709 @@
 		(rev "A.0.5")
 	)
 	(lib_symbols
+		(symbol "ALPS Electric:SPEF110100"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 24.13 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "SPEF110100"
+				(at 24.13 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "SPEF110100"
+				(at 24.13 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+				(at 24.13 -194.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+				(at 2.54 12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "14.6"
+				(at 24.13 -394.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "ALPS Electric"
+				(at 24.13 -494.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "SPEF110100"
+				(at 24.13 -594.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" "688-SPEF110100"
+				(at 24.13 -694.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+				(at 24.13 -794.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" "SPEF110100"
+				(at 24.13 -894.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+				(at 24.13 -994.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "SPEF110100_0_1"
+				(rectangle
+					(start 15.24 2.54)
+					(end 20.32 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 15.24 -2.54) (xy 16.51 -2.54) (xy 15.748 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 16.51 1.27)
+					(end 19.05 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.32 0) (xy 19.05 0) (xy 19.812 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.32 -5.08) (xy 19.05 -5.08) (xy 19.812 -4.826)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SPEF110100_1_1"
+				(pin input line
+					(at 22.86 0 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 22.86 -5.08 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -2.54 0)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "C1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 -2.54 0)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "C2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 -10.16 90)
+					(length 3.81)
+					(name "MH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MH1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 -10.16 90)
+					(length 3.81)
+					(name "MH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MH2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 -10.16 90)
+					(length 3.81)
+					(name "MH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MH3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 -10.16 90)
+					(length 3.81)
+					(name "MH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MH4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "ALPS Electric:SSSS820201"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at -2.54 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SSSS820201"
+				(at -2.54 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ALPS Electric:SSSS820201"
+				(at 0 15.24 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+				(at 0 12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SSSS820201_0_1"
+				(rectangle
+					(start -7.62 0)
+					(end 5.08 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0) (xy -5.08 -1.016) (xy -5.334 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -5.08) (xy -5.08 -4.064) (xy -5.334 -4.826)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.556 -2.794) (xy -3.556 -3.81) (xy -1.524 -3.81) (xy -1.524 -3.302) (xy 0 -3.302) (xy 1.524 -3.302)
+						(xy 1.524 -3.81) (xy 3.556 -3.81) (xy 3.556 -2.794) (xy -3.556 -2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.524) (xy -0.254 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.254) (xy -2.54 -0.254) (xy -2.54 -1.016) (xy -2.794 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -4.826) (xy -2.54 -4.826) (xy -2.54 -4.064) (xy -2.794 -4.572)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 0 -3.556) (xy -0.254 -4.318)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 2.54 -1.016) (xy 2.286 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -5.08) (xy 2.54 -4.064) (xy 2.286 -4.826)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.556 -2.286) (xy 3.556 -1.27) (xy 1.524 -1.27) (xy 1.524 -1.778) (xy 0 -1.778) (xy -1.524 -1.778)
+						(xy -1.524 -1.27) (xy -3.556 -1.27) (xy -3.556 -2.286) (xy 3.556 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.318 -2.54) (xy -6.858 -2.54) (xy -5.842 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SSSS820201_1_1"
+				(pin output line
+					(at -5.08 2.54 270)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 2.54 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 2.54 2.54 270)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at -5.08 -7.62 90)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 2.54 -7.62 90)
+					(length 2.54)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -7.62 90)
+					(length 2.54)
+					(name "H"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Small"
 			(pin_numbers
 				(hide yes)
@@ -1197,180 +1900,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_DIP_x01"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "SW"
-				(at 0 3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SW_DIP_x01"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "dip switch"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SW?DIP?x1*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SW_DIP_x01_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.524 0.127) (xy 2.3622 1.1684)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.032 0)
-					(radius 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SW_DIP_x01_0_1"
-				(rectangle
-					(start -3.81 2.54)
-					(end 3.81 -2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "SW_DIP_x01_1_1"
-				(pin passive line
-					(at -7.62 0 0)
-					(length 5.08)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 0 180)
-					(length 5.08)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Switch:SW_Push"
 			(pin_numbers
 				(hide yes)
@@ -2157,6 +2686,12 @@
 		(uuid "202a561f-fcd8-4d35-bc71-ebf7ca8f5e54")
 	)
 	(junction
+		(at 497.84 243.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "20482a3a-195d-4327-bdca-15d5c3b28aa7")
+	)
+	(junction
 		(at 210.82 256.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2271,12 +2806,6 @@
 		(uuid "372247d8-5827-4e10-9e5c-a5e9a49af4f4")
 	)
 	(junction
-		(at 116.84 243.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "37325c5b-190e-4e6d-a092-1b2f14c0a02b")
-	)
-	(junction
 		(at 444.5 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2343,6 +2872,12 @@
 		(uuid "4c163256-b546-4487-89ff-28230dfb68cd")
 	)
 	(junction
+		(at 200.66 246.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4c917293-69ce-478d-bf15-c0c80f938670")
+	)
+	(junction
 		(at 406.4 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2401,12 +2936,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "56ede88a-3a96-4941-b1bb-68942fbab0e6")
-	)
-	(junction
-		(at 200.66 246.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "56f6c197-8fb4-480b-a03f-bea766a7b408")
 	)
 	(junction
 		(at 497.84 38.1)
@@ -2485,6 +3014,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "678e31ab-a4bd-445b-9185-b2e7b91457f3")
+	)
+	(junction
+		(at 172.72 243.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "69443bc6-3e34-48e6-9e9b-f1b76a88f8a6")
 	)
 	(junction
 		(at 563.88 101.6)
@@ -2631,6 +3166,12 @@
 		(uuid "859bef74-7816-4101-a232-10065aa8ccf0")
 	)
 	(junction
+		(at 469.9 243.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85c128ba-42ad-49fa-a7a2-f0ee1dc19a9e")
+	)
+	(junction
 		(at 200.66 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2677,12 +3218,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8a4dbad9-f94c-4799-8764-c825e695c805")
-	)
-	(junction
-		(at 444.5 246.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8c53aab9-0d8e-48cc-ba94-bd85a084c8c4")
 	)
 	(junction
 		(at 88.9 139.7)
@@ -2805,6 +3340,12 @@
 		(uuid "aa5df9fa-91fd-4659-8921-1213b525f118")
 	)
 	(junction
+		(at 444.5 246.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ab4da658-1fbf-43e7-94a5-6d123e69b884")
+	)
+	(junction
 		(at 279.4 243.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2865,12 +3406,6 @@
 		(uuid "c15f47c7-5b86-40d5-b278-8128b7629d2c")
 	)
 	(junction
-		(at 172.72 243.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c176f67d-52cf-4a0b-9dfc-a71c0b7ae325")
-	)
-	(junction
 		(at 154.94 256.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2929,12 +3464,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d360d5c0-2bf8-43f0-bebd-ba92b47eba1a")
-	)
-	(junction
-		(at 469.9 243.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d393e007-b33f-40f1-af70-d97e22a36fc9")
 	)
 	(junction
 		(at 154.94 203.2)
@@ -3009,22 +3538,16 @@
 		(uuid "e5502723-a1bc-4c39-92d7-997a78d59697")
 	)
 	(junction
-		(at 497.84 243.84)
+		(at 525.78 243.84)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "e7c5d32f-9128-4794-b62f-2d01820704e7")
+		(uuid "e6019c20-4468-4510-ae1c-48b23a211844")
 	)
 	(junction
 		(at 104.14 312.42)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e8afd6aa-f1ae-47ae-ac81-8457517a4d7f")
-	)
-	(junction
-		(at 525.78 243.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e9d1c7e7-2dd6-43ba-8174-00c053adfb0a")
 	)
 	(junction
 		(at 88.9 190.5)
@@ -3128,9 +3651,191 @@
 		(color 0 0 0 0)
 		(uuid "fe1cb77a-56bc-45bd-bc96-551f972d6d60")
 	)
+	(junction
+		(at 116.84 243.84)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ff2c3582-42e0-4f15-bac4-bf3e4b1d4a38")
+	)
+	(no_connect
+		(at 154.94 299.72)
+		(uuid "0164bcf6-9dc9-4f0a-b6ff-4001ec887330")
+	)
+	(no_connect
+		(at 68.58 299.72)
+		(uuid "0217993e-518f-4aa3-976c-bed58d5e5ba2")
+	)
+	(no_connect
+		(at 96.52 289.56)
+		(uuid "07bf387d-4a2f-499b-b553-110fa25d5d20")
+	)
+	(no_connect
+		(at 40.64 299.72)
+		(uuid "14119333-19b6-4c92-ac39-ac8a5b42b926")
+	)
+	(no_connect
+		(at 589.28 289.56)
+		(uuid "18eee7a3-32d2-4684-8e57-fcf5b2779281")
+	)
+	(no_connect
+		(at 99.06 299.72)
+		(uuid "31b17e60-1c9e-4482-b2f3-f2901a449ed3")
+	)
+	(no_connect
+		(at 127 299.72)
+		(uuid "37421208-7349-4b28-9548-4ce021d1f743")
+	)
+	(no_connect
+		(at 624.84 289.56)
+		(uuid "378b835e-eb22-41d6-b2dc-d284545b6032")
+	)
+	(no_connect
+		(at 96.52 299.72)
+		(uuid "3a02f543-ed32-4942-8a15-c54e0b2107a2")
+	)
+	(no_connect
+		(at 124.46 289.56)
+		(uuid "3c289828-a3eb-44fe-a9ce-c9f48c9f5ee2")
+	)
+	(no_connect
+		(at 76.2 289.56)
+		(uuid "5243a6ca-7d0d-418b-91d9-44743c37176f")
+	)
+	(no_connect
+		(at 561.34 289.56)
+		(uuid "5723c9c6-c227-45b9-b829-d2419b15f9b5")
+	)
+	(no_connect
+		(at 568.96 289.56)
+		(uuid "592e6dec-6f40-42d1-9031-b47da0aa2156")
+	)
+	(no_connect
+		(at 505.46 299.72)
+		(uuid "5c7299e5-47fa-4227-8d3f-d8480122b7b8")
+	)
+	(no_connect
+		(at 589.28 299.72)
+		(uuid "5db5634d-e7bc-40d5-9595-5dd629661529")
+	)
+	(no_connect
+		(at 617.22 289.56)
+		(uuid "625db242-651d-43da-93da-603d66f66174")
+	)
+	(no_connect
+		(at 617.22 299.72)
+		(uuid "64f621f1-0aec-4979-ac12-0aaf8803a4b7")
+	)
+	(no_connect
+		(at 48.26 289.56)
+		(uuid "66884018-97a3-48a7-b927-7e6a5aa02ee9")
+	)
+	(no_connect
+		(at 213.36 294.64)
+		(uuid "693a4dc1-c5fb-43e3-9d14-21b4dbb134d7")
+	)
+	(no_connect
+		(at 619.76 299.72)
+		(uuid "6988a491-cb17-4ab1-b8cc-9e3ceace1d1b")
+	)
+	(no_connect
+		(at 104.14 289.56)
+		(uuid "6b06266c-8729-477e-8975-50964239a05f")
+	)
+	(no_connect
+		(at 563.88 299.72)
+		(uuid "6d05c26a-a6d2-4a4c-a5ec-2c357f340ada")
+	)
+	(no_connect
+		(at 71.12 299.72)
+		(uuid "6e0f28d7-4d22-4763-863d-e42dd9a11e23")
+	)
+	(no_connect
+		(at 185.42 294.64)
+		(uuid "73774c09-7416-4fa7-8627-559a095466aa")
+	)
+	(no_connect
+		(at 482.6 294.64)
+		(uuid "747a859b-64aa-40a5-8ebe-25b385055435")
+	)
+	(no_connect
+		(at 160.02 289.56)
+		(uuid "7d56a694-e50c-46ba-afae-fdf85151d29e")
+	)
+	(no_connect
+		(at 124.46 299.72)
+		(uuid "843ae25d-5961-4740-8e8f-5fdd7ed554bb")
+	)
+	(no_connect
+		(at 533.4 289.56)
+		(uuid "87117a69-1ea0-4aa0-a46f-2fcc587db38d")
+	)
+	(no_connect
+		(at 533.4 299.72)
+		(uuid "9161ae6d-37c3-4dc2-8c35-25d7a01eca95")
+	)
+	(no_connect
+		(at 152.4 299.72)
+		(uuid "94d14949-f424-48aa-ae21-0a90ba88f4a8")
+	)
+	(no_connect
+		(at 43.18 299.72)
+		(uuid "9f76228d-26e4-45b6-9393-c47b3d6dd211")
+	)
+	(no_connect
+		(at 535.94 299.72)
+		(uuid "a702ce5c-15c9-4850-ac06-ef5332e07d30")
+	)
+	(no_connect
+		(at 596.9 289.56)
+		(uuid "a99e3ffb-d93c-42cf-a29d-9f0f7d4b78f8")
+	)
+	(no_connect
+		(at 541.02 289.56)
+		(uuid "abe95dac-d254-44fa-aa4c-c26410f5e79b")
+	)
+	(no_connect
+		(at 508 299.72)
+		(uuid "ac11e33a-7bcc-447d-ac86-8a44e6252499")
+	)
+	(no_connect
+		(at 513.08 289.56)
+		(uuid "b28ae4ec-8f04-49a8-a8bb-9673c30b7c89")
+	)
+	(no_connect
+		(at 591.82 299.72)
+		(uuid "ba28a28e-89cc-438b-8fb7-a076d73fb276")
+	)
+	(no_connect
+		(at 457.2 294.64)
+		(uuid "c6302353-2d99-4df1-9f42-9de5c724353a")
+	)
+	(no_connect
+		(at 505.46 289.56)
+		(uuid "c8f711a7-931e-4976-a8f8-38f2b98814f4")
+	)
+	(no_connect
+		(at 68.58 289.56)
+		(uuid "d7a266e7-2999-44b0-90e2-a9060f0c5b35")
+	)
+	(no_connect
+		(at 40.64 289.56)
+		(uuid "e46c9a1a-6abb-4151-903d-7feb18554fac")
+	)
+	(no_connect
+		(at 561.34 299.72)
+		(uuid "e8d2d08b-9cdc-4fd4-adff-5cc4eb1fd6c9")
+	)
+	(no_connect
+		(at 152.4 289.56)
+		(uuid "ef307381-e006-4980-b2ab-64a8203c016a")
+	)
+	(no_connect
+		(at 132.08 289.56)
+		(uuid "f412ac64-832a-47f6-b140-68eaa8b8ab5a")
+	)
 	(wire
 		(pts
-			(xy 144.78 243.84) (xy 144.78 304.8)
+			(xy 144.78 243.84) (xy 144.78 284.48)
 		)
 		(stroke
 			(width 0)
@@ -3170,6 +3875,16 @@
 	)
 	(wire
 		(pts
+			(xy 477.52 317.5) (xy 477.52 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0243fcff-70c1-4c48-86a3-109f308a3595")
+	)
+	(wire
+		(pts
 			(xy 33.02 38.1) (xy 38.1 38.1)
 		)
 		(stroke
@@ -3187,6 +3902,26 @@
 			(type default)
 		)
 		(uuid "0435fab8-1596-4148-b184-566d302a17b5")
+	)
+	(wire
+		(pts
+			(xy 571.5 299.72) (xy 571.5 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "044747e5-52aa-4f3d-9945-1b284ba47504")
+	)
+	(wire
+		(pts
+			(xy 116.84 284.48) (xy 127 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "045f8070-4c44-40d1-b8f4-a1c2b9ffa0b2")
 	)
 	(wire
 		(pts
@@ -3230,6 +3965,16 @@
 	)
 	(wire
 		(pts
+			(xy 444.5 297.18) (xy 447.04 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "078fa5ff-e69b-46bd-9876-e6f8fe1aeed5")
+	)
+	(wire
+		(pts
 			(xy 553.72 139.7) (xy 558.8 139.7)
 		)
 		(stroke
@@ -3237,6 +3982,16 @@
 			(type default)
 		)
 		(uuid "07da935a-9acd-4104-ace2-7e24c55c6268")
+	)
+	(wire
+		(pts
+			(xy 213.36 299.72) (xy 215.9 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "083637a0-79d4-4f3c-bc1e-1f45302a29ed")
 	)
 	(wire
 		(pts
@@ -3290,7 +4045,17 @@
 	)
 	(wire
 		(pts
-			(xy 497.84 243.84) (xy 497.84 304.8)
+			(xy 591.82 284.48) (xy 591.82 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0aeb8bbf-9032-4a76-a2e1-c92bf775a733")
+	)
+	(wire
+		(pts
+			(xy 497.84 190.5) (xy 497.84 243.84)
 		)
 		(stroke
 			(width 0)
@@ -3337,6 +4102,16 @@
 			(type default)
 		)
 		(uuid "1127e26e-f788-425e-aa41-59a15be5206e")
+	)
+	(wire
+		(pts
+			(xy 515.62 299.72) (xy 515.62 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "113b6895-5e39-4a2e-862d-b7b185ec7d0b")
 	)
 	(wire
 		(pts
@@ -3390,6 +4165,16 @@
 	)
 	(wire
 		(pts
+			(xy 627.38 299.72) (xy 627.38 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "123dda4e-2601-43c7-b1d2-b9ffff19bd54")
+	)
+	(wire
+		(pts
 			(xy 525.78 190.5) (xy 530.86 190.5)
 		)
 		(stroke
@@ -3427,16 +4212,6 @@
 			(type default)
 		)
 		(uuid "1553b0e3-09e6-4eed-b95e-17411f6cf04f")
-	)
-	(wire
-		(pts
-			(xy 525.78 243.84) (xy 525.78 304.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "155f78e7-288f-4ab9-ad73-f8431f74d3f5")
 	)
 	(wire
 		(pts
@@ -3480,6 +4255,16 @@
 	)
 	(wire
 		(pts
+			(xy 581.66 284.48) (xy 591.82 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19ad5f9d-9ba5-4ad7-a539-2f686cd127a4")
+	)
+	(wire
+		(pts
 			(xy 226.06 38.1) (xy 231.14 38.1)
 		)
 		(stroke
@@ -3497,6 +4282,26 @@
 			(type default)
 		)
 		(uuid "1ac44c29-f6ca-44c9-8b89-44289892fc77")
+	)
+	(wire
+		(pts
+			(xy 459.74 299.72) (xy 459.74 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1aec5b87-7cee-40c7-82f9-1f953be4bf74")
+	)
+	(wire
+		(pts
+			(xy 525.78 243.84) (xy 525.78 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bdf134c-71b0-4711-b7e5-4163c2b96e4f")
 	)
 	(wire
 		(pts
@@ -3560,6 +4365,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 284.48) (xy 154.94 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f7d431f-f2b8-4324-b4c7-629664e8605f")
+	)
+	(wire
+		(pts
 			(xy 563.88 256.54) (xy 591.82 256.54)
 		)
 		(stroke
@@ -3567,6 +4382,16 @@
 			(type default)
 		)
 		(uuid "212fbdad-6c48-4073-8b1e-aadbd5c47c84")
+	)
+	(wire
+		(pts
+			(xy 543.56 299.72) (xy 543.56 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "216beecb-08d8-49c5-95ec-023b954c9f50")
 	)
 	(wire
 		(pts
@@ -3650,6 +4475,16 @@
 	)
 	(wire
 		(pts
+			(xy 457.2 299.72) (xy 459.74 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24c49ef7-6cda-4b59-bbd2-6dce37faac0f")
+	)
+	(wire
+		(pts
 			(xy 33.02 190.5) (xy 38.1 190.5)
 		)
 		(stroke
@@ -3667,6 +4502,26 @@
 			(type default)
 		)
 		(uuid "25148e54-905f-4266-8673-cb57a01f867e")
+	)
+	(wire
+		(pts
+			(xy 599.44 299.72) (xy 599.44 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "258df698-6264-4d88-9ae4-7d018fa0bca3")
+	)
+	(wire
+		(pts
+			(xy 160.02 299.72) (xy 160.02 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "25a4702d-f780-4f73-bc28-123f196dfd13")
 	)
 	(wire
 		(pts
@@ -3710,6 +4565,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 297.18) (xy 203.2 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29007aa3-b5bd-4a0b-98ab-320dcc20b98b")
+	)
+	(wire
+		(pts
 			(xy 269.24 243.84) (xy 279.4 243.84)
 		)
 		(stroke
@@ -3747,6 +4612,26 @@
 			(type default)
 		)
 		(uuid "2a4aa26f-c6bd-4778-821a-bfc39c1c64bd")
+	)
+	(wire
+		(pts
+			(xy 187.96 299.72) (xy 187.96 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b2d0881-02d5-4eac-9337-78ee2098a71e")
+	)
+	(wire
+		(pts
+			(xy 485.14 299.72) (xy 485.14 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b86f59f-f274-47e2-9012-53bfadbb16b2")
 	)
 	(wire
 		(pts
@@ -3877,6 +4762,36 @@
 			(type default)
 		)
 		(uuid "34012419-be99-4600-aa3a-ac118d5a65c5")
+	)
+	(wire
+		(pts
+			(xy 50.8 299.72) (xy 50.8 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35acb10b-8ee4-414e-bb44-8734e9468d50")
+	)
+	(wire
+		(pts
+			(xy 482.6 299.72) (xy 485.14 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35fd16bd-a587-4b27-80ee-ad53cd8458ab")
+	)
+	(wire
+		(pts
+			(xy 525.78 284.48) (xy 535.94 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36507965-9a90-41d0-9490-28b030cfff70")
 	)
 	(wire
 		(pts
@@ -4060,6 +4975,16 @@
 	)
 	(wire
 		(pts
+			(xy 208.28 317.5) (xy 208.28 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40b3970e-e1cd-4f62-a792-fd8009f828f6")
+	)
+	(wire
+		(pts
 			(xy 274.32 38.1) (xy 294.64 38.1)
 		)
 		(stroke
@@ -4230,6 +5155,16 @@
 	)
 	(wire
 		(pts
+			(xy 48.26 299.72) (xy 48.26 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4cb0331e-cd38-411e-a197-29e570fa66ee")
+	)
+	(wire
+		(pts
 			(xy 71.12 203.2) (xy 99.06 203.2)
 		)
 		(stroke
@@ -4247,6 +5182,26 @@
 			(type default)
 		)
 		(uuid "4d892d0c-bcea-411c-93b5-05b7036050ef")
+	)
+	(wire
+		(pts
+			(xy 60.96 284.48) (xy 71.12 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ef064a3-0f3c-47fd-96a8-12357ad205b3")
+	)
+	(wire
+		(pts
+			(xy 624.84 299.72) (xy 624.84 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f018de1-b5c4-4e57-b646-a015f57834e5")
 	)
 	(wire
 		(pts
@@ -4380,6 +5335,16 @@
 	)
 	(wire
 		(pts
+			(xy 568.96 299.72) (xy 568.96 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59045814-5332-4f5e-9c2c-e6a1d3176b18")
+	)
+	(wire
+		(pts
 			(xy 289.56 93.98) (xy 294.64 93.98)
 		)
 		(stroke
@@ -4410,7 +5375,7 @@
 	)
 	(wire
 		(pts
-			(xy 60.96 243.84) (xy 60.96 304.8)
+			(xy 60.96 243.84) (xy 60.96 284.48)
 		)
 		(stroke
 			(width 0)
@@ -4420,7 +5385,7 @@
 	)
 	(wire
 		(pts
-			(xy 469.9 243.84) (xy 469.9 304.8)
+			(xy 469.9 243.84) (xy 469.9 297.18)
 		)
 		(stroke
 			(width 0)
@@ -4810,6 +5775,26 @@
 	)
 	(wire
 		(pts
+			(xy 104.14 299.72) (xy 104.14 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6fd98b04-5fdc-4600-89b6-b47ff18bed0a")
+	)
+	(wire
+		(pts
+			(xy 132.08 299.72) (xy 132.08 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7104c227-7d49-4138-9b10-f6c5c94b4d9f")
+	)
+	(wire
+		(pts
 			(xy 127 256.54) (xy 154.94 256.54)
 		)
 		(stroke
@@ -4930,6 +5915,16 @@
 	)
 	(wire
 		(pts
+			(xy 609.6 284.48) (xy 619.76 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74d84690-752c-49f3-9ca7-82f92e3ded5d")
+	)
+	(wire
+		(pts
 			(xy 581.66 190.5) (xy 586.74 190.5)
 		)
 		(stroke
@@ -4960,6 +5955,16 @@
 	)
 	(wire
 		(pts
+			(xy 78.74 299.72) (xy 78.74 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77558446-2125-4555-abb6-849033e0f6d3")
+	)
+	(wire
+		(pts
 			(xy 469.9 190.5) (xy 474.98 190.5)
 		)
 		(stroke
@@ -4967,6 +5972,16 @@
 			(type default)
 		)
 		(uuid "78a1734a-e88c-4449-893d-1fbf6f606597")
+	)
+	(wire
+		(pts
+			(xy 553.72 284.48) (xy 563.88 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "792d39c7-af06-41eb-b478-a15daf10874a")
 	)
 	(wire
 		(pts
@@ -4990,7 +6005,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 243.84) (xy 116.84 304.8)
+			(xy 116.84 243.84) (xy 116.84 284.48)
 		)
 		(stroke
 			(width 0)
@@ -5000,13 +6015,23 @@
 	)
 	(wire
 		(pts
-			(xy 581.66 243.84) (xy 581.66 304.8)
+			(xy 581.66 243.84) (xy 581.66 284.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "7d4a1050-0c1e-4636-bbdd-2476e06cbcf4")
+	)
+	(wire
+		(pts
+			(xy 154.94 284.48) (xy 154.94 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e7b528e-5407-4eda-a346-f1334a6bf47e")
 	)
 	(wire
 		(pts
@@ -5030,6 +6055,26 @@
 	)
 	(wire
 		(pts
+			(xy 43.18 284.48) (xy 43.18 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80204cca-0e52-45e4-a230-e612ace30c00")
+	)
+	(wire
+		(pts
+			(xy 71.12 284.48) (xy 71.12 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80df5770-55ef-40c9-aa7c-6762903be807")
+	)
+	(wire
+		(pts
 			(xy 127 203.2) (xy 154.94 203.2)
 		)
 		(stroke
@@ -5050,7 +6095,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 243.84) (xy 33.02 304.8)
+			(xy 33.02 243.84) (xy 33.02 284.48)
 		)
 		(stroke
 			(width 0)
@@ -5087,6 +6132,16 @@
 			(type default)
 		)
 		(uuid "84c05833-1ca2-4c39-bc18-21b9fdd5f8cb")
+	)
+	(wire
+		(pts
+			(xy 508 284.48) (xy 508 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "850c00d2-f543-4720-b832-3b72920d0c21")
 	)
 	(wire
 		(pts
@@ -5300,6 +6355,16 @@
 	)
 	(wire
 		(pts
+			(xy 33.02 284.48) (xy 43.18 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fb4d4f4-5858-433a-967f-c00c2888f6d9")
+	)
+	(wire
+		(pts
 			(xy 154.94 256.54) (xy 182.88 256.54)
 		)
 		(stroke
@@ -5340,6 +6405,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 299.72) (xy 106.68 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "939bd3fb-fc58-4b60-95a4-333f8b2db472")
+	)
+	(wire
+		(pts
 			(xy 424.18 210.82) (xy 424.18 193.04)
 		)
 		(stroke
@@ -5357,6 +6432,26 @@
 			(type default)
 		)
 		(uuid "951bcaed-38a8-4f41-8f9f-18422dc0a8d4")
+	)
+	(wire
+		(pts
+			(xy 563.88 284.48) (xy 563.88 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9535ec15-e2f5-44b8-9f41-9d0637dbaa79")
+	)
+	(wire
+		(pts
+			(xy 535.94 284.48) (xy 535.94 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9553b955-2abb-47dd-b722-8e3bbfdf1430")
 	)
 	(wire
 		(pts
@@ -5580,6 +6675,16 @@
 	)
 	(wire
 		(pts
+			(xy 513.08 299.72) (xy 513.08 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a360aa0d-82ca-4a79-b57a-85183857f699")
+	)
+	(wire
+		(pts
 			(xy 88.9 88.9) (xy 88.9 139.7)
 		)
 		(stroke
@@ -5587,6 +6692,16 @@
 			(type default)
 		)
 		(uuid "a50d6ca7-bdde-4ade-a934-a183bc1a4672")
+	)
+	(wire
+		(pts
+			(xy 127 284.48) (xy 127 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5ff056c-b26d-49e8-bb9b-3a6a83d3c581")
 	)
 	(wire
 		(pts
@@ -5860,6 +6975,16 @@
 	)
 	(wire
 		(pts
+			(xy 452.12 317.5) (xy 452.12 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6da6799-ae1c-497f-9fc8-0c8fdf7f980d")
+	)
+	(wire
+		(pts
 			(xy 525.78 38.1) (xy 530.86 38.1)
 		)
 		(stroke
@@ -5930,6 +7055,16 @@
 	)
 	(wire
 		(pts
+			(xy 180.34 317.5) (xy 180.34 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8eb41de-d844-48e9-a83c-d92393d0a627")
+	)
+	(wire
+		(pts
 			(xy 424.18 193.04) (xy 426.72 193.04)
 		)
 		(stroke
@@ -5980,7 +7115,7 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 246.38) (xy 200.66 304.8)
+			(xy 200.66 246.38) (xy 200.66 297.18)
 		)
 		(stroke
 			(width 0)
@@ -6040,6 +7175,26 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 299.72) (xy 134.62 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be899904-ac44-44e0-9566-0be40fde81f7")
+	)
+	(wire
+		(pts
+			(xy 185.42 299.72) (xy 187.96 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf269d0b-90eb-48a9-8e8f-54af711948d8")
+	)
+	(wire
+		(pts
 			(xy 469.9 139.7) (xy 474.98 139.7)
 		)
 		(stroke
@@ -6077,6 +7232,16 @@
 			(type default)
 		)
 		(uuid "c2fc5766-c310-41f7-bd49-cc6c8b784241")
+	)
+	(wire
+		(pts
+			(xy 76.2 299.72) (xy 76.2 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3cc8f4e-7fdf-4aba-bc35-ec77e620a1af")
 	)
 	(wire
 		(pts
@@ -6230,7 +7395,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.72 243.84) (xy 172.72 304.8)
+			(xy 172.72 243.84) (xy 172.72 297.18)
 		)
 		(stroke
 			(width 0)
@@ -6247,16 +7412,6 @@
 			(type default)
 		)
 		(uuid "cdf0f707-ccc2-4708-b304-1a2d840c50e6")
-	)
-	(wire
-		(pts
-			(xy 497.84 190.5) (xy 497.84 243.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce815817-6e6d-40a5-98a5-c45c8b615c37")
 	)
 	(wire
 		(pts
@@ -6370,13 +7525,23 @@
 	)
 	(wire
 		(pts
-			(xy 444.5 246.38) (xy 444.5 304.8)
+			(xy 444.5 246.38) (xy 444.5 297.18)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "d56af270-f7be-45df-aec1-c1c2d904bc1f")
+	)
+	(wire
+		(pts
+			(xy 215.9 299.72) (xy 215.9 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d670d0cb-ab78-41d3-ac38-90a25456a00e")
 	)
 	(wire
 		(pts
@@ -6490,6 +7655,16 @@
 	)
 	(wire
 		(pts
+			(xy 541.02 299.72) (xy 541.02 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df048bb5-a0bd-4b05-a0c4-f34c15536ad6")
+	)
+	(wire
+		(pts
 			(xy 27.94 101.6) (xy 43.18 101.6)
 		)
 		(stroke
@@ -6507,6 +7682,16 @@
 			(type default)
 		)
 		(uuid "e0c2b146-76ef-4341-bb38-cd59a71bb1b5")
+	)
+	(wire
+		(pts
+			(xy 497.84 243.84) (xy 497.84 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1a2bc85-df8a-46a5-bc11-9c375cfdae9b")
 	)
 	(wire
 		(pts
@@ -6570,7 +7755,17 @@
 	)
 	(wire
 		(pts
-			(xy 609.6 243.84) (xy 609.6 304.8)
+			(xy 619.76 284.48) (xy 619.76 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e3a1a4d6-0435-44ba-aed0-07309400a925")
+	)
+	(wire
+		(pts
+			(xy 609.6 243.84) (xy 609.6 284.48)
 		)
 		(stroke
 			(width 0)
@@ -6597,6 +7792,16 @@
 			(type default)
 		)
 		(uuid "e65c2348-d113-403b-828f-b3e8830cd09b")
+	)
+	(wire
+		(pts
+			(xy 596.9 299.72) (xy 596.9 304.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e77a759e-67f1-4e9e-8817-0a77c9c30ded")
 	)
 	(wire
 		(pts
@@ -6627,6 +7832,26 @@
 			(type default)
 		)
 		(uuid "e8a2e351-f795-4b7f-b8f0-2f61aabf5da6")
+	)
+	(wire
+		(pts
+			(xy 469.9 297.18) (xy 472.44 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8c08402-d498-4697-9a4c-145d32211768")
+	)
+	(wire
+		(pts
+			(xy 497.84 284.48) (xy 508 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e99655c6-5506-4ad5-9525-075b76a61bc0")
 	)
 	(wire
 		(pts
@@ -6667,6 +7892,16 @@
 			(type default)
 		)
 		(uuid "eac27c8b-c2f7-4d19-b542-ac7576101eaa")
+	)
+	(wire
+		(pts
+			(xy 88.9 284.48) (xy 99.06 284.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb140604-a30e-4c17-8fd6-2587b3031ffb")
 	)
 	(wire
 		(pts
@@ -6840,6 +8075,16 @@
 	)
 	(wire
 		(pts
+			(xy 99.06 284.48) (xy 99.06 289.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3ce7803-05d1-4bcf-9cd4-c0277efc62d4")
+	)
+	(wire
+		(pts
 			(xy 406.4 233.68) (xy 406.4 248.92)
 		)
 		(stroke
@@ -6920,6 +8165,16 @@
 	)
 	(wire
 		(pts
+			(xy 162.56 299.72) (xy 162.56 317.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8afbf90-65bd-44e0-a080-275bc51f57aa")
+	)
+	(wire
+		(pts
 			(xy 406.4 81.28) (xy 406.4 93.98)
 		)
 		(stroke
@@ -6930,7 +8185,7 @@
 	)
 	(wire
 		(pts
-			(xy 88.9 243.84) (xy 88.9 304.8)
+			(xy 88.9 243.84) (xy 88.9 284.48)
 		)
 		(stroke
 			(width 0)
@@ -6960,7 +8215,7 @@
 	)
 	(wire
 		(pts
-			(xy 553.72 243.84) (xy 553.72 304.8)
+			(xy 553.72 243.84) (xy 553.72 284.48)
 		)
 		(stroke
 			(width 0)
@@ -6977,6 +8232,16 @@
 			(type default)
 		)
 		(uuid "fd233c6e-bba6-46c8-b7b2-d8028e9484f5")
+	)
+	(wire
+		(pts
+			(xy 172.72 297.18) (xy 175.26 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fdcaa912-a0bb-4015-9340-2ce5be78f17f")
 	)
 	(wire
 		(pts
@@ -7935,6 +9200,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 515.62 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "00e1aaa1-f15c-4aa6-a7f0-f35ef222a0b4")
+		(property "Reference" "#PWR0136"
+			(at 515.62 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 515.62 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 515.62 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 515.62 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 515.62 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "38e59cdf-aaea-4201-b061-cfb784f95a42")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D")
 		(at 154.94 199.39 90)
 		(unit 1)
@@ -8841,6 +10184,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 106.68 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0671981c-0633-4858-b038-6dec8a160147")
+		(property "Reference" "#PWR0143"
+			(at 106.68 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 106.68 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 106.68 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0aa189ba-9fd4-4693-ae1e-35ac26600427")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0143")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 261.62 190.5 270)
 		(unit 1)
@@ -9146,6 +10567,84 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 627.38 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "08e3b24c-acf5-468f-aa37-da725a12dc24")
+		(property "Reference" "#PWR0140"
+			(at 627.38 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 627.38 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 627.38 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 627.38 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 627.38 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6b2827d7-cd26-4925-b649-daa889c25ae9")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
@@ -9668,8 +11167,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 124.46 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 127 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9677,10 +11177,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0a435bf5-3475-474e-be9a-cc52c19ad8ab")
 		(property "Reference" "SW76"
-			(at 124.46 297.18 0)
+			(at 134.62 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9689,8 +11188,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 124.46 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 134.62 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9700,7 +11199,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9710,8 +11209,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 124.46 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9722,7 +11221,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9733,7 +11232,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9744,7 +11243,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9755,7 +11254,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9766,7 +11265,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9777,7 +11276,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9788,7 +11287,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9799,7 +11298,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9810,7 +11309,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9821,7 +11320,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9832,7 +11331,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9843,7 +11342,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9854,7 +11353,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9865,7 +11364,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9876,7 +11375,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 124.46 304.8 0)
+			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9886,11 +11385,26 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "6"
 			(uuid "fc9b1e71-4586-4d29-9bce-c1bd59ed2055")
 		)
-		(pin "2"
+		(pin "4"
 			(uuid "3c89d38f-9892-4ffb-a01b-ad05fc72c7ce")
+		)
+		(pin "3"
+			(uuid "064f7b73-c691-4ab9-9b6e-89087fecc97b")
+		)
+		(pin "2"
+			(uuid "66abee43-c3ea-4bc1-9099-e9b0404a1f66")
+		)
+		(pin "1"
+			(uuid "6cbdd1b3-ca94-4c6d-b441-c0ef83e9762c")
+		)
+		(pin "5"
+			(uuid "37bf18dc-105e-490a-b3b6-f3836ed57226")
+		)
+		(pin "7"
+			(uuid "210b4276-f7de-43de-a693-12077bd98648")
 		)
 		(instances
 			(project "slack"
@@ -12232,8 +13746,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 533.4 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 535.94 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12241,10 +13756,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "0ff97592-26a6-4e37-915d-add1b2f758ec")
 		(property "Reference" "SW83"
-			(at 533.4 297.18 0)
+			(at 543.56 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12253,8 +13767,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 533.4 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 543.56 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12264,7 +13778,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12274,8 +13788,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 533.4 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12286,7 +13800,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12297,7 +13811,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12308,7 +13822,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12319,7 +13833,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12330,7 +13844,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12341,7 +13855,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12352,7 +13866,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12363,7 +13877,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12374,7 +13888,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12385,7 +13899,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12396,7 +13910,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12407,7 +13921,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12418,7 +13932,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12429,7 +13943,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12440,7 +13954,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 533.4 304.8 0)
+			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12455,6 +13969,21 @@
 		)
 		(pin "2"
 			(uuid "19fdad17-bd6f-4947-b368-c7b3123d9607")
+		)
+		(pin "5"
+			(uuid "69aafcfd-cd39-402b-b15a-40ce271f6533")
+		)
+		(pin "7"
+			(uuid "27daf1fc-67ad-4970-936d-0ca3a6df617c")
+		)
+		(pin "3"
+			(uuid "54839f23-a9c8-4fb4-bbe9-bed6204ce264")
+		)
+		(pin "6"
+			(uuid "d8ba4d1b-e32b-4f37-9fe1-5a482e9ce717")
+		)
+		(pin "4"
+			(uuid "b6b289d1-5d1b-4fdc-8a4b-40e8b28c2100")
 		)
 		(instances
 			(project "slack"
@@ -13820,8 +15349,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 96.52 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 99.06 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13829,10 +15359,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "1a7a3698-dcea-44bc-865c-70717a30b60f")
 		(property "Reference" "SW75"
-			(at 96.52 297.18 0)
+			(at 106.68 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13841,8 +15370,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 96.52 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 106.68 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13852,7 +15381,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13862,8 +15391,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 96.52 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13874,7 +15403,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13885,7 +15414,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13896,7 +15425,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13907,7 +15436,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13918,7 +15447,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13929,7 +15458,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13940,7 +15469,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13951,7 +15480,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13962,7 +15491,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13973,7 +15502,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13984,7 +15513,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13995,7 +15524,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14006,7 +15535,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14017,7 +15546,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14028,7 +15557,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 96.52 304.8 0)
+			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14038,11 +15567,26 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "4"
 			(uuid "fd75057b-2ebb-49d9-bbb8-19b4decc5de9")
 		)
-		(pin "2"
+		(pin "5"
 			(uuid "0688b586-8ce5-441b-aed5-8c5233aac5ad")
+		)
+		(pin "1"
+			(uuid "b760487d-29e3-4078-8e4e-9dfb30250d66")
+		)
+		(pin "2"
+			(uuid "50cf85e6-6688-49e6-9c9d-1b12d8585467")
+		)
+		(pin "3"
+			(uuid "1017f012-f416-49bd-b988-2e4ce6ab57a4")
+		)
+		(pin "6"
+			(uuid "5420f169-a227-4dbe-9508-2df00658feab")
+		)
+		(pin "7"
+			(uuid "eaaddb8c-207c-4f33-9fd8-fd73467f9bd9")
 		)
 		(instances
 			(project "slack"
@@ -19391,8 +20935,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 505.46 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 508 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19400,10 +20945,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2ccf1a0e-532d-490e-8e3c-1e176994962b")
 		(property "Reference" "SW82"
-			(at 505.46 297.18 0)
+			(at 515.62 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19412,8 +20956,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 505.46 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 515.62 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19423,7 +20967,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19433,8 +20977,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 505.46 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19445,7 +20989,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19456,7 +21000,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19467,7 +21011,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19478,7 +21022,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19489,7 +21033,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19500,7 +21044,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19511,7 +21055,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19522,7 +21066,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19533,7 +21077,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19544,7 +21088,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19555,7 +21099,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19566,7 +21110,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19577,7 +21121,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19588,7 +21132,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19599,7 +21143,103 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 505.46 304.8 0)
+			(at 508 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "5"
+			(uuid "b1898334-51a8-4e8c-8eb8-a465b3f79eaa")
+		)
+		(pin "2"
+			(uuid "2f2b0bbb-3c42-46cf-a2a8-030082e6dacb")
+		)
+		(pin "7"
+			(uuid "9f25edf6-1cac-4157-a1dd-b3480667ef72")
+		)
+		(pin "1"
+			(uuid "f7fa7b56-1c15-4bd7-87df-f913c038f1cd")
+		)
+		(pin "4"
+			(uuid "29720bcb-f09a-4216-b2b5-78d2dc3f66f9")
+		)
+		(pin "3"
+			(uuid "5a654f0a-1031-48cb-97c9-fb29e25b9730")
+		)
+		(pin "6"
+			(uuid "976fbe11-3cd8-497c-99ad-3179f285137f")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW82")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 543.56 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2e9aa693-1d2c-4d05-9b93-57f6e998bb6b")
+		(property "Reference" "#PWR0137"
+			(at 543.56 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 543.56 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 543.56 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 543.56 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 543.56 317.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19610,15 +21250,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "b1898334-51a8-4e8c-8eb8-a465b3f79eaa")
-		)
-		(pin "2"
-			(uuid "2f2b0bbb-3c42-46cf-a2a8-030082e6dacb")
+			(uuid "e6fd5576-bba1-4963-9d39-e6d2e97dc0cd")
 		)
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW82")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -23343,8 +24980,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 40.64 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 43.18 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23352,10 +24990,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3c66774f-6b88-4dc4-873b-06ff8ff6ea34")
 		(property "Reference" "SW73"
-			(at 40.64 297.18 0)
+			(at 50.8 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23364,8 +25001,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 40.64 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 50.8 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23375,7 +25012,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23385,8 +25022,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 40.64 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23397,7 +25034,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23408,7 +25045,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23419,7 +25056,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23430,7 +25067,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23441,7 +25078,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23452,7 +25089,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23463,7 +25100,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23474,7 +25111,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23485,7 +25122,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23496,7 +25133,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23507,7 +25144,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23518,7 +25155,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23529,7 +25166,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23540,7 +25177,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23551,7 +25188,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 40.64 304.8 0)
+			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23561,11 +25198,26 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "4"
 			(uuid "7db37472-0afd-4100-a9f9-329a01a73017")
 		)
-		(pin "2"
+		(pin "6"
 			(uuid "083089ce-21ca-44c9-9fcc-de3dee835b38")
+		)
+		(pin "7"
+			(uuid "b645ae97-2ce4-4fec-aa37-c86291bf327e")
+		)
+		(pin "5"
+			(uuid "cfeab42f-b60c-4371-a2da-aa7e3c83eff4")
+		)
+		(pin "1"
+			(uuid "c085eea5-16e7-4e61-8b45-97360801052c")
+		)
+		(pin "2"
+			(uuid "184489ac-a613-4566-b91d-09c1a68ab681")
+		)
+		(pin "3"
+			(uuid "4a2f0b0f-deff-4f75-9d42-2740af23b085")
 		)
 		(instances
 			(project "slack"
@@ -24303,8 +25955,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 617.22 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 619.76 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24312,10 +25965,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3cd13fd1-ad73-4b8f-8e73-9997214a614c")
 		(property "Reference" "SW86"
-			(at 617.22 297.18 0)
+			(at 627.38 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24324,8 +25976,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 617.22 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 627.38 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24335,7 +25987,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24345,8 +25997,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 617.22 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24357,7 +26009,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24368,7 +26020,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24379,7 +26031,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24390,7 +26042,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24401,7 +26053,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24412,7 +26064,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24423,7 +26075,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24434,7 +26086,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24445,7 +26097,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24456,7 +26108,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24467,7 +26119,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24478,7 +26130,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24489,7 +26141,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24500,7 +26152,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24511,7 +26163,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 617.22 304.8 0)
+			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24521,11 +26173,26 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "6"
 			(uuid "f334cc28-76a3-487c-9b81-b6f22c6898e9")
 		)
-		(pin "2"
+		(pin "4"
 			(uuid "fce2773e-afa1-4287-b1eb-cea0ddc477ca")
+		)
+		(pin "1"
+			(uuid "d6c60fc3-a1c7-4ae5-948a-87edde0100a5")
+		)
+		(pin "2"
+			(uuid "ff8be9b2-0389-4e68-bb08-c1dfc6c8a0ff")
+		)
+		(pin "3"
+			(uuid "e3833109-ef30-4263-8e66-e1dcddfcbe31")
+		)
+		(pin "5"
+			(uuid "9fa443f7-7fff-4dcf-b81b-acec1834dea4")
+		)
+		(pin "7"
+			(uuid "3215e097-ca4b-4466-9f0b-6e9a6fc6dcc9")
 		)
 		(instances
 			(project "slack"
@@ -25598,8 +27265,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 208.28 304.8 0)
+		(lib_id "ALPS Electric:SPEF110100")
+		(at 190.5 294.64 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -25610,7 +27277,7 @@
 		(fields_autoplaced yes)
 		(uuid "411465dc-06fc-4982-a509-d8ad09e1a35b")
 		(property "Reference" "SW79"
-			(at 208.28 297.18 0)
+			(at 208.28 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -25619,8 +27286,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 208.28 299.72 0)
+		(property "Value" "SPEF110100"
+			(at 208.28 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -25629,8 +27296,8 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
-			(at 208.28 304.8 0)
+		(property "Footprint" "SPEF110100"
+			(at 214.63 389.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25638,10 +27305,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" ""
-			(at 208.28 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+			(at 214.63 489.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25649,10 +27317,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 208.28 304.8 0)
+		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+			(at 193.04 281.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25663,7 +27332,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25674,7 +27343,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25685,7 +27354,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25696,7 +27365,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25707,7 +27376,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25718,7 +27387,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25729,7 +27398,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25740,7 +27409,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25751,7 +27420,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25762,7 +27431,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25773,7 +27442,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25784,7 +27453,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25795,7 +27464,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25806,7 +27475,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 208.28 304.8 0)
+			(at 190.5 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25816,11 +27485,113 @@
 				)
 			)
 		)
+		(property "Height" "14.6"
+			(at 214.63 689.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "ALPS Electric"
+			(at 214.63 789.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SPEF110100"
+			(at 214.63 889.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "688-SPEF110100"
+			(at 214.63 989.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+			(at 214.63 1089.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "SPEF110100"
+			(at 214.63 1189.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+			(at 214.63 1289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "1"
 			(uuid "1cca61a5-2f2f-4a60-a883-06c073cd0e7b")
 		)
 		(pin "2"
 			(uuid "aaa2a852-e622-4fc8-adeb-360fe3c61b70")
+		)
+		(pin "MH2"
+			(uuid "ebd6073f-23ae-411d-9ee1-407a056e26d9")
+		)
+		(pin "MH3"
+			(uuid "7cbada66-764d-4541-ac9f-19c597842b0d")
+		)
+		(pin "MH1"
+			(uuid "b94f8f95-5283-48d1-a86d-4474fbd4e969")
+		)
+		(pin "C1"
+			(uuid "2359cac9-5674-4636-8ab8-821cfff04198")
+		)
+		(pin "C2"
+			(uuid "693050cd-fbb6-43f8-ac41-46a7730f24ad")
+		)
+		(pin "MH4"
+			(uuid "b9e76a42-7dd8-46ac-9854-381cb8bb1c77")
 		)
 		(instances
 			(project "slack"
@@ -26813,6 +28584,84 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 452.12 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4914083a-6731-4e5d-9268-02e373e5c54c")
+		(property "Reference" "#PWR0111"
+			(at 452.12 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 452.12 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 452.12 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 452.12 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 452.12 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ae3fa05-230f-41aa-b56e-487e21c17995")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -34126,8 +35975,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 180.34 304.8 0)
+		(lib_id "ALPS Electric:SPEF110100")
+		(at 162.56 294.64 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -34138,7 +35987,7 @@
 		(fields_autoplaced yes)
 		(uuid "65af3367-e9ed-472d-98c3-3a872ab15621")
 		(property "Reference" "SW78"
-			(at 180.34 297.18 0)
+			(at 180.34 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -34147,8 +35996,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 180.34 299.72 0)
+		(property "Value" "SPEF110100"
+			(at 180.34 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -34157,8 +36006,8 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
-			(at 180.34 304.8 0)
+		(property "Footprint" "SPEF110100"
+			(at 186.69 389.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34166,10 +36015,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" ""
-			(at 180.34 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+			(at 186.69 489.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34177,10 +36027,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 180.34 304.8 0)
+		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+			(at 165.1 281.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34191,7 +36042,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34202,7 +36053,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34213,7 +36064,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34224,7 +36075,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34235,7 +36086,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34246,7 +36097,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34257,7 +36108,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34268,7 +36119,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34279,7 +36130,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34290,7 +36141,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34301,7 +36152,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34312,7 +36163,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34323,7 +36174,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34334,7 +36185,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 180.34 304.8 0)
+			(at 162.56 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34344,11 +36195,113 @@
 				)
 			)
 		)
+		(property "Height" "14.6"
+			(at 186.69 689.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "ALPS Electric"
+			(at 186.69 789.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SPEF110100"
+			(at 186.69 889.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "688-SPEF110100"
+			(at 186.69 989.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+			(at 186.69 1089.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "SPEF110100"
+			(at 186.69 1189.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+			(at 186.69 1289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "1"
 			(uuid "d59296a3-6ba8-43fe-a1f1-5d1e75c67aa7")
 		)
 		(pin "2"
 			(uuid "f7459d72-538b-4243-aabe-95048997d60d")
+		)
+		(pin "MH4"
+			(uuid "42f43a1e-45c0-4195-83fc-e6faad6d978c")
+		)
+		(pin "C1"
+			(uuid "9573256f-7dbf-49b4-b562-4619df1a27fb")
+		)
+		(pin "MH1"
+			(uuid "f89e9ecf-d555-4845-97d4-cff748bf17ee")
+		)
+		(pin "MH3"
+			(uuid "32797aa2-4faf-4ed3-9b05-f018cba14488")
+		)
+		(pin "C2"
+			(uuid "19294989-b794-4218-90a0-251375c05096")
+		)
+		(pin "MH2"
+			(uuid "333ffed7-b64f-477e-aeac-7d59e695730b")
 		)
 		(instances
 			(project "slack"
@@ -36518,8 +38471,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 561.34 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 563.88 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -36527,10 +38481,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "6dd47490-6ee7-4b4e-a8de-6033cec2e533")
 		(property "Reference" "SW84"
-			(at 561.34 297.18 0)
+			(at 571.5 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -36539,8 +38492,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 561.34 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 571.5 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -36550,7 +38503,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36560,8 +38513,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 561.34 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36572,7 +38525,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36583,7 +38536,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36594,7 +38547,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36605,7 +38558,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36616,7 +38569,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36627,7 +38580,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36638,7 +38591,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36649,7 +38602,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36660,7 +38613,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36671,7 +38624,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36682,7 +38635,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36693,7 +38646,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36704,7 +38657,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36715,7 +38668,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36726,7 +38679,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 561.34 304.8 0)
+			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36736,11 +38689,26 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "5"
 			(uuid "36e3f467-37cf-495e-9c1e-46774ccd00e8")
 		)
-		(pin "2"
+		(pin "4"
 			(uuid "487fdfd7-aff0-47e9-9877-efecb2495364")
+		)
+		(pin "7"
+			(uuid "493f7f57-8c23-488b-8833-28a32deb324f")
+		)
+		(pin "6"
+			(uuid "45a9e324-0533-4615-a973-326bff2a1cd2")
+		)
+		(pin "1"
+			(uuid "19ea0725-3837-497e-b416-6721a6ae7fdc")
+		)
+		(pin "2"
+			(uuid "bfe24d7f-8b77-4dcb-8f79-9d612a9d8058")
+		)
+		(pin "3"
+			(uuid "12d4c41f-e1bb-4163-be1b-ec60bf7cd4e3")
 		)
 		(instances
 			(project "slack"
@@ -38731,8 +40699,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 68.58 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 71.12 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -38740,10 +40709,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "78df161f-7327-4617-955a-075d12fde32a")
 		(property "Reference" "SW74"
-			(at 68.58 297.18 0)
+			(at 78.74 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -38752,8 +40720,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 68.58 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 78.74 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -38763,7 +40731,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38773,8 +40741,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 68.58 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38785,7 +40753,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38796,7 +40764,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38807,7 +40775,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38818,7 +40786,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38829,7 +40797,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38840,7 +40808,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38851,7 +40819,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38862,7 +40830,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38873,7 +40841,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38884,7 +40852,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38895,7 +40863,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38906,7 +40874,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38917,7 +40885,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38928,7 +40896,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38939,7 +40907,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 68.58 304.8 0)
+			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38954,6 +40922,21 @@
 		)
 		(pin "2"
 			(uuid "4bd6b6a5-ff71-4b00-b087-87b5037861f4")
+		)
+		(pin "3"
+			(uuid "7d394155-29a4-430b-b6c0-0c7bdf085c96")
+		)
+		(pin "6"
+			(uuid "0b4b3927-9a4b-4c18-bed1-8555354b85c8")
+		)
+		(pin "5"
+			(uuid "dabdc6a7-bec0-45f8-9bec-c76b1054c93f")
+		)
+		(pin "7"
+			(uuid "a84d9fe5-f1e8-49a6-aff7-336e4afa72fa")
+		)
+		(pin "4"
+			(uuid "2ae1aa81-46f9-4bf0-b96c-7cef5ff7bc3f")
 		)
 		(instances
 			(project "slack"
@@ -42907,6 +44890,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 134.62 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8c30ecf6-2903-4cca-8b47-fdefdead5c7d")
+		(property "Reference" "#PWR0144"
+			(at 134.62 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 134.62 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 134.62 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 134.62 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "913f208e-6c5e-432a-baa5-9c016158f189")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0144")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VDD")
 		(at 421.64 76.2 0)
 		(mirror y)
@@ -43784,6 +45845,84 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D86")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 599.44 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9012d6d9-40be-4afc-939b-44884e38b15d")
+		(property "Reference" "#PWR0139"
+			(at 599.44 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 599.44 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 599.44 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 599.44 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 599.44 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f21f11b7-a40e-49d4-801d-59673e87bb90")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -51570,6 +53709,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 208.28 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b19eac81-dbab-419c-9e9e-26b7a639b65d")
+		(property "Reference" "#PWR0135"
+			(at 208.28 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 208.28 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 208.28 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c323bb6f-0265-473e-bafb-e254e6e69d22")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0135")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D")
 		(at 452.12 199.39 90)
 		(unit 1)
@@ -52320,8 +54537,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 477.52 304.8 0)
+		(lib_id "ALPS Electric:SPEF110100")
+		(at 459.74 294.64 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -52332,7 +54549,7 @@
 		(fields_autoplaced yes)
 		(uuid "b448e090-2e38-45f4-a71a-d18bb017cdb5")
 		(property "Reference" "SW81"
-			(at 477.52 297.18 0)
+			(at 477.52 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -52341,8 +54558,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 477.52 299.72 0)
+		(property "Value" "SPEF110100"
+			(at 477.52 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -52351,8 +54568,8 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
-			(at 477.52 304.8 0)
+		(property "Footprint" "SPEF110100"
+			(at 483.87 389.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52360,10 +54577,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" ""
-			(at 477.52 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+			(at 483.87 489.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52371,10 +54589,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 477.52 304.8 0)
+		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+			(at 462.28 281.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52385,7 +54604,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52396,7 +54615,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52407,7 +54626,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52418,7 +54637,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52429,7 +54648,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52440,7 +54659,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52451,7 +54670,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52462,7 +54681,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52473,7 +54692,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52484,7 +54703,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52495,7 +54714,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52506,7 +54725,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52517,7 +54736,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52528,7 +54747,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 477.52 304.8 0)
+			(at 459.74 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52538,11 +54757,113 @@
 				)
 			)
 		)
+		(property "Height" "14.6"
+			(at 483.87 689.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "ALPS Electric"
+			(at 483.87 789.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SPEF110100"
+			(at 483.87 889.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "688-SPEF110100"
+			(at 483.87 989.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+			(at 483.87 1089.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "SPEF110100"
+			(at 483.87 1189.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+			(at 483.87 1289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "1"
 			(uuid "9f175098-6460-4dd3-9034-3824a79a6d89")
 		)
 		(pin "2"
 			(uuid "16c890ae-24f0-4b03-93ba-20348024071a")
+		)
+		(pin "C1"
+			(uuid "d113b58e-d168-49da-a1aa-d566deddf127")
+		)
+		(pin "MH1"
+			(uuid "b2e8b7db-b1d8-414c-a6e9-840c871392d6")
+		)
+		(pin "MH4"
+			(uuid "e33d9aa2-7bba-41de-8e42-193eb0feab1a")
+		)
+		(pin "MH3"
+			(uuid "117e62d1-45c7-4f11-bf1a-43c63de24b22")
+		)
+		(pin "C2"
+			(uuid "5cc3b75a-1ef0-44f1-8812-049816294b51")
+		)
+		(pin "MH2"
+			(uuid "ec7a7a1c-f1e6-4d3c-9cb9-29269912cc61")
 		)
 		(instances
 			(project "slack"
@@ -57271,6 +59592,162 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 50.8 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cf1e91f9-6371-490e-8c0a-0e142d7e1531")
+		(property "Reference" "#PWR0141"
+			(at 50.8 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 50.8 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 50.8 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 50.8 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 50.8 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ef7cd116-7fce-4578-a677-406ac9fdb14c")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0141")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 477.52 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cffcea27-6c70-49d6-8e2c-cd28bd195028")
+		(property "Reference" "#PWR0133"
+			(at 477.52 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 477.52 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 477.52 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 477.52 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 477.52 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6708a02f-4cef-4dd9-829a-c2cd8a03f8a4")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0133")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 393.7 88.9 270)
 		(mirror x)
@@ -57749,8 +60226,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 589.28 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 591.82 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -57758,10 +60236,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d447dd94-a083-429d-96b4-9d4f025cd5db")
 		(property "Reference" "SW85"
-			(at 589.28 297.18 0)
+			(at 599.44 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -57770,8 +60247,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 589.28 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 599.44 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -57781,7 +60258,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57791,8 +60268,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 589.28 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57803,7 +60280,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57814,7 +60291,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57825,7 +60302,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57836,7 +60313,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57847,7 +60324,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57858,7 +60335,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57869,7 +60346,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57880,7 +60357,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57891,7 +60368,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57902,7 +60379,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57913,7 +60390,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57924,7 +60401,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57935,7 +60412,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57946,7 +60423,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57957,7 +60434,103 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 589.28 304.8 0)
+			(at 591.82 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "6"
+			(uuid "d24d97a6-8c41-49b5-8423-4ada7c4f9b6a")
+		)
+		(pin "2"
+			(uuid "5b9d3fb8-26cb-4ff5-ba62-9338aeba7a8d")
+		)
+		(pin "1"
+			(uuid "f505e899-691e-4226-97ac-1dc3b5ed69cd")
+		)
+		(pin "7"
+			(uuid "bd798b49-e280-4117-980d-fa4a57d62c8d")
+		)
+		(pin "3"
+			(uuid "a64ab5f2-41f5-43ff-93fb-af666706ffe0")
+		)
+		(pin "4"
+			(uuid "f2235301-de42-4c35-901e-d9268e98a76f")
+		)
+		(pin "5"
+			(uuid "fd31ba78-60bd-430c-a9a9-b1c72786f919")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW85")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 162.56 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d53766b2-e5ab-4615-962a-7cf67bb1b05e")
+		(property "Reference" "#PWR0145"
+			(at 162.56 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 162.56 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 162.56 317.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57968,15 +60541,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "d24d97a6-8c41-49b5-8423-4ada7c4f9b6a")
-		)
-		(pin "2"
-			(uuid "5b9d3fb8-26cb-4ff5-ba62-9338aeba7a8d")
+			(uuid "dc3d6eef-446a-4492-a6ee-1b72a2409358")
 		)
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW85")
+					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
@@ -59668,6 +62238,162 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 78.74 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dfa81b61-6392-4720-9cd4-88280575fee4")
+		(property "Reference" "#PWR0142"
+			(at 78.74 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 78.74 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 78.74 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 78.74 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 78.74 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "80e0f8b1-d6ae-49fa-8439-f18d69f163ab")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0142")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 571.5 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e064135a-f330-46af-9808-ea21c1378965")
+		(property "Reference" "#PWR0138"
+			(at 571.5 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 571.5 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 571.5 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 571.5 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 571.5 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ce446d6c-12d9-4c28-b2a9-5e040e8d643c")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0138")
 					(unit 1)
 				)
 			)
@@ -62708,8 +65434,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 452.12 304.8 0)
+		(lib_id "ALPS Electric:SPEF110100")
+		(at 434.34 294.64 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -62720,7 +65446,7 @@
 		(fields_autoplaced yes)
 		(uuid "ea8d28cb-39d0-4962-8761-d742988602fc")
 		(property "Reference" "SW80"
-			(at 452.12 297.18 0)
+			(at 452.12 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -62729,8 +65455,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 452.12 299.72 0)
+		(property "Value" "SPEF110100"
+			(at 452.12 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -62739,8 +65465,8 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
-			(at 452.12 304.8 0)
+		(property "Footprint" "SPEF110100"
+			(at 458.47 389.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62748,10 +65474,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" ""
-			(at 452.12 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+			(at 458.47 489.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62759,10 +65486,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 452.12 304.8 0)
+		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+			(at 436.88 281.94 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62773,7 +65501,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62784,7 +65512,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62795,7 +65523,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62806,7 +65534,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62817,7 +65545,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62828,7 +65556,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62839,7 +65567,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62850,7 +65578,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62861,7 +65589,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62872,7 +65600,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62883,7 +65611,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62894,7 +65622,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62905,7 +65633,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62916,7 +65644,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 452.12 304.8 0)
+			(at 434.34 294.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62926,11 +65654,113 @@
 				)
 			)
 		)
+		(property "Height" "14.6"
+			(at 458.47 689.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "ALPS Electric"
+			(at 458.47 789.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SPEF110100"
+			(at 458.47 889.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "688-SPEF110100"
+			(at 458.47 989.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+			(at 458.47 1089.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "SPEF110100"
+			(at 458.47 1189.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+			(at 458.47 1289.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "1"
 			(uuid "ee20a703-b3a1-45d5-82d2-e84da97191c8")
 		)
 		(pin "2"
 			(uuid "0c93f407-740c-4414-81c2-ea001cf4e89e")
+		)
+		(pin "C1"
+			(uuid "1b6c3b12-8c9d-42ad-af2a-1b9ea4a2654a")
+		)
+		(pin "C2"
+			(uuid "e4ff2f1a-db9f-4648-aa26-dbc0eecac4ab")
+		)
+		(pin "MH1"
+			(uuid "277ef13c-3fcb-4dd7-ac12-61e42a22da27")
+		)
+		(pin "MH2"
+			(uuid "0559b117-1bb7-453f-ac12-63e9db47ff62")
+		)
+		(pin "MH3"
+			(uuid "60fd57a7-1a8e-4e02-8976-dd41412980f7")
+		)
+		(pin "MH4"
+			(uuid "5f8cd0f6-87ce-4f49-86e3-99071809c0e6")
 		)
 		(instances
 			(project "slack"
@@ -63435,6 +66265,84 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 180.34 317.5 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef421a38-e3c7-460a-ab52-cfcda1e4d687")
+		(property "Reference" "#PWR0134"
+			(at 180.34 323.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 180.34 322.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 180.34 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 180.34 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 180.34 317.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "6af39161-cb1a-411d-874a-363eccbc872c")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "#PWR0134")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 228.6 58.42 0)
 		(unit 1)
 		(body_style 1)
@@ -63823,8 +66731,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_DIP_x01")
-		(at 152.4 304.8 0)
+		(lib_id "ALPS Electric:SSSS820201")
+		(at 154.94 292.1 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -63832,10 +66741,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f099b5ab-92dd-425b-bc00-d7f4154e17ab")
 		(property "Reference" "SW77"
-			(at 152.4 297.18 0)
+			(at 162.56 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -63844,8 +66752,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_DIP_x01"
-			(at 152.4 299.72 0)
+		(property "Value" "SSSS820201"
+			(at 162.56 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -63855,7 +66763,7 @@
 			)
 		)
 		(property "Footprint" "ALPS Electric:SSSS820201"
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63865,8 +66773,8 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 152.4 304.8 0)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63877,7 +66785,7 @@
 			)
 		)
 		(property "Description" "part selected: amazon latching switches"
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63888,7 +66796,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63899,7 +66807,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63910,7 +66818,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63921,7 +66829,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63932,7 +66840,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63943,7 +66851,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63954,7 +66862,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63965,7 +66873,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63976,7 +66884,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63987,7 +66895,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63998,7 +66906,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64009,7 +66917,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64020,7 +66928,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64031,7 +66939,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 152.4 304.8 0)
+			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64041,11 +66949,26 @@
 				)
 			)
 		)
-		(pin "1"
+		(pin "6"
 			(uuid "9c9381e0-7307-4949-ac9d-921fc2067f85")
 		)
-		(pin "2"
+		(pin "4"
 			(uuid "98278fff-2eb6-401a-8b31-61826c11315a")
+		)
+		(pin "7"
+			(uuid "96c8228c-0f68-42ab-a2ee-661f89eacbae")
+		)
+		(pin "5"
+			(uuid "f7a10ef3-73fd-4a7e-9799-4335141719c4")
+		)
+		(pin "3"
+			(uuid "03910672-f69b-4667-a461-8dcae3eecdcc")
+		)
+		(pin "2"
+			(uuid "8e13d4ca-4bad-4c9d-aed9-396773b145c9")
+		)
+		(pin "1"
+			(uuid "8e045b19-2d42-4a74-ae9a-a6d6f4e282c3")
 		)
 		(instances
 			(project "slack"
