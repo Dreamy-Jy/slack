@@ -3,11 +3,23 @@
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "c28dffbc-bb9c-49b9-9502-91841f17f1a2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
 	(property "Value" "TC-1109-C-E"
 		(at 0 4.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "297bbb22-ccce-49a4-96c9-245f98a317db")
+		(uuid "7275afc8-0edc-4d64-a6b9-2e2d1a1dfb74")
 		(effects
 			(font
 				(size 1 1)
@@ -20,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "5bcf6f90-2ba4-4379-9ba8-c184d4dae37b")
+		(uuid "7bf0114d-ffc6-4e59-a69f-18329ef6d346")
 		(effects
 			(font
 				(size 1 1)
@@ -33,23 +45,11 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "8e600a79-077f-4451-8d39-ca4ab9046fb6")
+		(uuid "4cbab45c-995b-4eb4-ab27-00b998fc778b")
 		(effects
 			(font
 				(size 1 1)
 				(thickness 0.15)
-			)
-		)
-	)
-	(property "Reference" "REF**"
-		(at 0 -4 0)
-		(unlocked yes)
-		(layer "F.SilkS")
-		(uuid "24e77b72-50f8-4c39-8d21-364591d27e5b")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.1)
 			)
 		)
 	)
@@ -63,7 +63,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "ba0b1140-ace9-4053-b4eb-91db3b612cfb")
+		(uuid "d1fb3f2e-965a-4838-8d2f-6546fb8bb8f9")
 	)
 	(fp_line
 		(start -3.5 -1)
@@ -73,7 +73,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "2e7b1bd8-9ddd-4bdc-91f8-f4c55f371671")
+		(uuid "8143c879-48f5-4660-a39b-8cb1e8cd77c6")
 	)
 	(fp_line
 		(start 3.5 1)
@@ -83,7 +83,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "d7ce6544-86ac-4ed1-bc61-f226baf1be5a")
+		(uuid "87fb3558-d6ef-4c88-9d92-c62a021fde5d")
 	)
 	(fp_line
 		(start 4 2.5)
@@ -93,7 +93,7 @@
 			(type default)
 		)
 		(layer "F.SilkS")
-		(uuid "72dd6f82-63ed-4e94-b6e3-8bc0288a4b68")
+		(uuid "63311934-397b-4860-bf47-5d04c84a75a0")
 	)
 	(fp_rect
 		(start -3.5 -2.5)
@@ -104,13 +104,13 @@
 		)
 		(fill no)
 		(layer "Margin")
-		(uuid "dfa61a00-84cf-4cb5-8099-8148d9a3a573")
+		(uuid "1efa61da-27d3-4715-9819-ec844cf0df69")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 6 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "4fddf0f2-e2f4-4c88-ad24-4783cf0d7eac")
+		(uuid "6572b0ff-dd06-47f8-be04-32a63e5770e0")
 		(effects
 			(font
 				(size 1 1)
@@ -121,7 +121,7 @@
 	(dimension
 		(type orthogonal)
 		(layer "User.1")
-		(uuid "34e9fe1a-7e44-41f6-8c9d-755150e21c6f")
+		(uuid "5931ab5e-ad16-4faa-9312-d6b928583242")
 		(pts
 			(xy -2.5 -1.5) (xy -2.5 1.5)
 		)
@@ -147,7 +147,7 @@
 		(gr_text "3"
 			(at -7.6 0 90)
 			(layer "User.1")
-			(uuid "34e9fe1a-7e44-41f6-8c9d-755150e21c6f")
+			(uuid "5931ab5e-ad16-4faa-9312-d6b928583242")
 			(effects
 				(font
 					(size 1 1)
@@ -159,7 +159,7 @@
 	(dimension
 		(type orthogonal)
 		(layer "User.1")
-		(uuid "7302f866-42b6-437e-9ce6-009484683747")
+		(uuid "dda3a7fd-8634-4dab-9611-423438d1a423")
 		(pts
 			(xy -2.5 -1.5) (xy 2.5 -1.5)
 		)
@@ -185,7 +185,7 @@
 		(gr_text "5"
 			(at 0 -8.6 0)
 			(layer "User.1")
-			(uuid "7302f866-42b6-437e-9ce6-009484683747")
+			(uuid "dda3a7fd-8634-4dab-9611-423438d1a423")
 			(effects
 				(font
 					(size 1 1)
@@ -201,34 +201,34 @@
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0.15)
-		(uuid "493069b2-d654-43c4-9597-7a52b0ff2c8d")
+		(uuid "8a970d6c-2ffc-4710-b412-4557091c6c05")
 	)
-	(pad "2" thru_hole roundrect
+	(pad "1" thru_hole roundrect
 		(at 2.5 -1.5)
 		(size 1.27 1.27)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0.15)
-		(uuid "9ecaf4e2-31bd-4fbf-8271-8e42a682c046")
+		(uuid "ff44f784-ae2f-42ea-92f0-cebd9e043caf")
 	)
-	(pad "3" thru_hole roundrect
+	(pad "2" thru_hole roundrect
 		(at -2.5 1.5)
 		(size 1.27 1.27)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0.15)
-		(uuid "1d8b1171-f471-420b-a8db-efb111063de5")
+		(uuid "7ab950d3-1b85-448d-8fcd-18662a0867e1")
 	)
-	(pad "4" thru_hole roundrect
+	(pad "2" thru_hole roundrect
 		(at 2.5 1.5)
 		(size 1.27 1.27)
 		(drill 1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(roundrect_rratio 0.15)
-		(uuid "c6a88325-c78f-4099-9eda-195fe8087387")
+		(uuid "963c77f1-68d2-48c7-bb76-3b03c7df8427")
 	)
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/XKB Connection/tc-1109-c-e.stp"

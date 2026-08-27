@@ -482,7 +482,7 @@
 					(justify left)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4085"
 				(at 3.81 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -504,8 +504,162 @@
 					)
 				)
 			)
-			(property "Description" "USB 2.0-only 14P Type-C Receptacle connector"
+			(property "Description" "part selected: USB4085-GF-A"
 				(at 0 27.94 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Availability" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "CREATOR" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Check_prices" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MANUFACTURER" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MF" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MP" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "PARTREV" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Package" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SNAPEDA_PACKAGE_ID" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "STANDARD" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SnapEDA_Link" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "VERIFIER" ""
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -539,8 +693,8 @@
 			)
 			(symbol "USB_C_Receptacle_USB2.0_14P_0_0"
 				(rectangle
-					(start -0.254 -17.78)
-					(end 0.254 -16.764)
+					(start -0.254 -21.844)
+					(end 0.254 -22.86)
 					(stroke
 						(width 0)
 						(type default)
@@ -626,11 +780,33 @@
 						(type none)
 					)
 				)
+				(rectangle
+					(start 10.16 -17.526)
+					(end 9.144 -18.034)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 10.16 -20.066)
+					(end 9.144 -20.574)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 			)
 			(symbol "USB_C_Receptacle_USB2.0_14P_0_1"
 				(rectangle
 					(start -10.16 17.78)
-					(end 10.16 -17.78)
+					(end 10.16 -22.86)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -830,7 +1006,7 @@
 			)
 			(symbol "USB_C_Receptacle_USB2.0_14P_1_1"
 				(pin passive line
-					(at 0 -22.86 90)
+					(at 0 -27.94 90)
 					(length 5.08)
 					(name "GND"
 						(effects
@@ -919,6 +1095,24 @@
 						)
 					)
 				)
+				(pin bidirectional line
+					(at 15.24 -17.78 180)
+					(length 5.08)
+					(name "SBU1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "A8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin passive line
 					(at 15.24 15.24 180)
 					(length 5.08)
@@ -939,7 +1133,7 @@
 					)
 				)
 				(pin passive line
-					(at 0 -22.86 90)
+					(at 0 -27.94 90)
 					(length 5.08)
 					(hide yes)
 					(name "GND"
@@ -958,7 +1152,7 @@
 					)
 				)
 				(pin passive line
-					(at 0 -22.86 90)
+					(at 0 -27.94 90)
 					(length 5.08)
 					(hide yes)
 					(name "GND"
@@ -1049,6 +1243,24 @@
 						)
 					)
 				)
+				(pin bidirectional line
+					(at 15.24 -20.32 180)
+					(length 5.08)
+					(name "SBU2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "B8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin passive line
 					(at 15.24 15.24 180)
 					(length 5.08)
@@ -1069,7 +1281,7 @@
 					)
 				)
 				(pin passive line
-					(at 0 -22.86 90)
+					(at 0 -27.94 90)
 					(length 5.08)
 					(hide yes)
 					(name "GND"
@@ -1088,7 +1300,7 @@
 					)
 				)
 				(pin passive line
-					(at -7.62 -22.86 90)
+					(at -7.62 -27.94 90)
 					(length 5.08)
 					(name "SHIELD"
 						(effects
@@ -1108,7 +1320,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_01x02"
+		(symbol "Connector_Generic_MountingPin:Conn_01x02_MountingPin"
 			(pin_names
 				(offset 1.016)
 				(hide yes)
@@ -1128,14 +1340,15 @@
 					)
 				)
 			)
-			(property "Value" "Conn_01x02"
-				(at 0 -5.08 0)
+			(property "Value" "Conn_01x02_MountingPin"
+				(at 1.27 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Footprint" ""
@@ -1160,7 +1373,7 @@
 					)
 				)
 			)
-			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(property "Description" "Generic connectable mounting pin connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1182,7 +1395,7 @@
 					)
 				)
 			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
+			(property "ki_fp_filters" "Connector*:*_1x??-1MP*"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1193,7 +1406,7 @@
 					)
 				)
 			)
-			(symbol "Conn_01x02_1_1"
+			(symbol "Conn_01x02_MountingPin_1_1"
 				(rectangle
 					(start -1.27 1.27)
 					(end 1.27 -3.81)
@@ -1227,6 +1440,26 @@
 						(type none)
 					)
 				)
+				(polyline
+					(pts
+						(xy -1.016 -4.572) (xy 1.016 -4.572)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(text "Mounting"
+					(at 0 -4.191 0)
+					(effects
+						(font
+							(size 0.381 0.381)
+						)
+					)
+				)
 				(pin passive line
 					(at -5.08 0 0)
 					(length 3.81)
@@ -1256,6 +1489,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 90)
+					(length 3.048)
+					(name "MountPin"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "MP"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6484,7 +6735,7 @@
 		(uuid "822e17e7-2c8e-4da7-a700-ff7b9f018d30")
 	)
 	(junction
-		(at 304.8 228.6)
+		(at 304.8 226.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8315af0f-e4d9-450e-a039-8b1f12c0d663")
@@ -6526,7 +6777,7 @@
 		(uuid "be895088-3c5d-419a-81b1-3bb5a96283a8")
 	)
 	(junction
-		(at 320.04 228.6)
+		(at 320.04 226.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c1b78fc0-b944-42be-9bcc-f94f4c090247")
@@ -6580,8 +6831,16 @@
 		(uuid "ffe495a5-9bc2-44d1-a694-9eb33209bb97")
 	)
 	(no_connect
+		(at 50.8 129.54)
+		(uuid "098e5648-572b-4d48-a73d-6312555bcf72")
+	)
+	(no_connect
 		(at 345.44 149.86)
 		(uuid "30026afb-0438-4683-b9cd-0089691ee83c")
+	)
+	(no_connect
+		(at 50.8 132.08)
+		(uuid "ad944c06-92e2-4f8c-80b6-710aedad4c5b")
 	)
 	(no_connect
 		(at 345.44 139.7)
@@ -6889,7 +7148,7 @@
 	)
 	(wire
 		(pts
-			(xy 302.26 228.6) (xy 304.8 228.6)
+			(xy 302.26 226.06) (xy 304.8 226.06)
 		)
 		(stroke
 			(width 0)
@@ -7023,7 +7282,7 @@
 	)
 	(wire
 		(pts
-			(xy 302.26 226.06) (xy 320.04 226.06)
+			(xy 302.26 223.52) (xy 320.04 223.52)
 		)
 		(stroke
 			(width 0)
@@ -7320,7 +7579,7 @@
 	)
 	(wire
 		(pts
-			(xy 304.8 228.6) (xy 320.04 228.6)
+			(xy 304.8 226.06) (xy 320.04 226.06)
 		)
 		(stroke
 			(width 0)
@@ -7497,6 +7756,16 @@
 			(type default)
 		)
 		(uuid "98169488-fcbb-4e01-af4e-91e352d4bfdf")
+	)
+	(wire
+		(pts
+			(xy 27.94 137.16) (xy 27.94 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98b103c6-af28-4199-91bf-837bf8450fa7")
 	)
 	(wire
 		(pts
@@ -7692,6 +7961,16 @@
 	)
 	(wire
 		(pts
+			(xy 35.56 137.16) (xy 35.56 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c57e7d00-e81f-4f34-9c30-1a19e600417c")
+	)
+	(wire
+		(pts
 			(xy 241.3 182.88) (xy 241.3 180.34)
 		)
 		(stroke
@@ -7883,7 +8162,7 @@
 	)
 	(wire
 		(pts
-			(xy 320.04 226.06) (xy 320.04 228.6)
+			(xy 320.04 223.52) (xy 320.04 226.06)
 		)
 		(stroke
 			(width 0)
@@ -8102,7 +8381,7 @@
 		(uuid "41e3ec02-8bcf-4de8-8617-8829c1de5d91")
 	)
 	(label "BATT"
-		(at 302.26 228.6 180)
+		(at 302.26 226.06 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8232,7 +8511,7 @@
 		(uuid "69d28641-b5ab-4295-9415-95fc5e95793f")
 	)
 	(label "BATTSNS"
-		(at 302.26 226.06 180)
+		(at 302.26 223.52 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8996,7 +9275,7 @@
 				(justify left top)
 			)
 		)
-		(property "Value" "2TED1M2RES"
+		(property "Value" "2TED3M6RES"
 			(at 337.82 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9459,7 +9738,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 35.56 134.62 0)
+		(at 35.56 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9469,7 +9748,7 @@
 		(dnp no)
 		(uuid "0c1c0ffb-5f2b-4a67-ac18-93014180ad69")
 		(property "Reference" "#PWR0104"
-			(at 35.56 140.97 0)
+			(at 35.56 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9480,7 +9759,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 35.5599 138.43 0)
+			(at 35.5599 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9490,7 +9769,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 35.56 134.62 0)
+			(at 35.56 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9501,7 +9780,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 134.62 0)
+			(at 35.56 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9512,7 +9791,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 35.56 134.62 0)
+			(at 35.56 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10946,7 +11225,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 304.8 231.14 0)
+		(at 304.8 228.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10957,7 +11236,7 @@
 		(fields_autoplaced yes)
 		(uuid "2ee927a6-62fe-4969-bee9-0b3f083316e4")
 		(property "Reference" "C50"
-			(at 307.34 229.8762 0)
+			(at 307.34 227.3362 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10968,7 +11247,7 @@
 			)
 		)
 		(property "Value" "10μF"
-			(at 307.34 232.4162 0)
+			(at 307.34 229.8762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10979,7 +11258,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10990,7 +11269,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11001,7 +11280,7 @@
 			)
 		)
 		(property "Description" "part selected: CL21A106KAYNNNE"
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11012,7 +11291,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11023,7 +11302,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11034,7 +11313,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11045,7 +11324,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11056,7 +11335,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11067,7 +11346,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11078,7 +11357,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11089,7 +11368,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11100,7 +11379,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11111,7 +11390,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11122,7 +11401,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11133,7 +11412,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11144,7 +11423,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11155,7 +11434,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 304.8 231.14 0)
+			(at 304.8 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12591,6 +12870,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:Earth")
+		(at 325.12 233.68 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3d3c5293-18a9-4a7f-856a-c083e316b0e1")
+		(property "Reference" "#PWR0157"
+			(at 325.12 240.03 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PGND"
+			(at 325.12 238.76 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 325.12 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 325.12 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"Earth\""
+			(at 325.12 233.68 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "88c1bc72-fd1a-4ffd-8f25-48840c881ca5")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
+					(reference "#PWR0157")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+5F")
 		(at 297.18 96.52 0)
 		(unit 1)
@@ -13139,7 +13496,7 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
-		(at 320.04 231.14 0)
+		(at 320.04 228.6 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13150,7 +13507,7 @@
 		(fields_autoplaced yes)
 		(uuid "5527ae3e-dcdc-47d2-af32-66a67df7f17e")
 		(property "Reference" "#PWR0116"
-			(at 320.04 237.49 0)
+			(at 320.04 234.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13161,7 +13518,7 @@
 			)
 		)
 		(property "Value" "PGND"
-			(at 320.04 236.22 0)
+			(at 320.04 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13171,7 +13528,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 320.04 231.14 0)
+			(at 320.04 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13182,7 +13539,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 320.04 231.14 0)
+			(at 320.04 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13193,7 +13550,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 320.04 231.14 0)
+			(at 320.04 228.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14471,7 +14828,7 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
-		(at 304.8 233.68 0)
+		(at 304.8 231.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14482,7 +14839,7 @@
 		(fields_autoplaced yes)
 		(uuid "75af61a1-9584-4c94-8167-d08315493ea6")
 		(property "Reference" "#PWR0117"
-			(at 304.8 240.03 0)
+			(at 304.8 237.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14493,7 +14850,7 @@
 			)
 		)
 		(property "Value" "PGND"
-			(at 304.8 238.76 0)
+			(at 304.8 236.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14503,7 +14860,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 304.8 233.68 0)
+			(at 304.8 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14514,7 +14871,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 304.8 233.68 0)
+			(at 304.8 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14525,7 +14882,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 304.8 233.68 0)
+			(at 304.8 231.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15851,6 +16208,12 @@
 		)
 		(pin "B9"
 			(uuid "6f2dfe1a-6129-4033-abca-9743fb61f81d")
+		)
+		(pin "A8"
+			(uuid "6694b99e-c11b-4a0b-b4cd-d7660f6ea7e5")
+		)
+		(pin "B8"
+			(uuid "c845c93f-f6da-4c70-96dd-15653b4bf65d")
 		)
 		(instances
 			(project "slack"
@@ -21045,8 +21408,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 325.12 228.6 0)
+		(lib_id "Connector_Generic_MountingPin:Conn_01x02_MountingPin")
+		(at 325.12 226.06 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21057,7 +21420,7 @@
 		(fields_autoplaced yes)
 		(uuid "d57f8343-7153-4f0d-932f-d02e74c9b096")
 		(property "Reference" "J2"
-			(at 327.66 228.5999 0)
+			(at 327.66 226.4155 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21068,7 +21431,7 @@
 			)
 		)
 		(property "Value" "XT30PW-M"
-			(at 327.66 231.1399 0)
+			(at 327.66 228.9555 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21079,7 +21442,7 @@
 			)
 		)
 		(property "Footprint" "Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal"
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21090,7 +21453,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21100,8 +21463,8 @@
 				)
 			)
 		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 325.12 228.6 0)
+		(property "Description" "Generic connectable mounting pin connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21112,7 +21475,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21123,7 +21486,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21134,7 +21497,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21145,7 +21508,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21156,7 +21519,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21167,7 +21530,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21178,7 +21541,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21189,7 +21552,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21200,7 +21563,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21211,7 +21574,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21222,7 +21585,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21233,7 +21596,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21244,7 +21607,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21255,7 +21618,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 325.12 228.6 0)
+			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21270,6 +21633,9 @@
 		)
 		(pin "2"
 			(uuid "82c2a4f9-96b7-4bdf-8eb1-85da1b98983b")
+		)
+		(pin "MP"
+			(uuid "48399e93-3a29-457f-8243-580f693987eb")
 		)
 		(instances
 			(project "slack"
@@ -22298,7 +22664,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 27.94 134.62 0)
+		(at 27.94 137.16 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22308,7 +22674,7 @@
 		(dnp no)
 		(uuid "fcffeb78-af5f-45be-a5ab-07bbd09ff453")
 		(property "Reference" "#PWR0103"
-			(at 27.94 140.97 0)
+			(at 27.94 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22319,7 +22685,7 @@
 			)
 		)
 		(property "Value" "DGND"
-			(at 27.9399 138.43 0)
+			(at 27.9399 140.97 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22329,7 +22695,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 27.94 134.62 0)
+			(at 27.94 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22340,7 +22706,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 27.94 134.62 0)
+			(at 27.94 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22351,7 +22717,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 27.94 134.62 0)
+			(at 27.94 137.16 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
