@@ -49108,7 +49108,7 @@
 			(pts
 				(xy -5.55 11.5) (xy -5.55 8.5) (xy -6.65 8.5)
 				(arc
-					(start -6.65 9.299998)
+					(start -6.65 9.299999)
 					(mid -5.95 10)
 					(end -6.65 10.7)
 				)
@@ -49248,7 +49248,7 @@
 		)
 		(fp_circle
 			(center -4.75 4.75)
-			(end -3.25 4.250002)
+			(end -3.25 4.250001)
 			(stroke
 				(width 0.1)
 				(type default)
@@ -49345,6 +49345,17 @@
 			(uuid "a27d55af-7014-4d08-bf44-a7a3389cbf31")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Sprintek Cap 109/v8B/cap.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "LTSTFC12WEGBD5A"
 		(layer "F.Cu")
@@ -55497,6 +55508,17 @@
 			(uuid "a6d3712c-c8f3-4555-8810-e5dd09233080")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Sprintek Cap 109/v8B/cap.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Diode_SMD:D_SOD-523"
 		(layer "F.Cu")
@@ -133328,6 +133350,17 @@
 			(uuid "aaf97607-4d6b-4707-a017-004f14a56fa2")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Sprintek Cap 109/v8B/cap.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
@@ -188032,7 +188065,7 @@
 			(pts
 				(xy -5.55 11.5) (xy -5.55 8.5) (xy -6.65 8.5)
 				(arc
-					(start -6.65 9.299998)
+					(start -6.65 9.299999)
 					(mid -5.95 10)
 					(end -6.65 10.7)
 				)
@@ -188172,7 +188205,7 @@
 		)
 		(fp_circle
 			(center -4.75 4.75)
-			(end -3.25 4.250002)
+			(end -3.25 4.250001)
 			(stroke
 				(width 0.1)
 				(type default)
@@ -188269,6 +188302,17 @@
 			(uuid "6deb9af6-5b49-4885-bb39-90cd70bd8565")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Sprintek Cap 109/v8B/cap.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Cherry:Cherry_ULP_SMD"
 		(layer "F.Cu")
