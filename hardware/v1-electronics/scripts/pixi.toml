@@ -6,11 +6,13 @@ platforms = ["osx-arm64"]
 version = "0.1.0"
 
 [tasks]
+transfer = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 /Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/scripts/layout_support/layout_porter/ai_swap.py"
 
 [dependencies]
-rust = ">=1.95.0,<1.96"
+rust = ">=1.98.0,<1.99"
 python = ">=3.14.4,<3.15"
 jupyterlab = ">=4.5.7,<5"
+cmake = ">=4.4.3,<5"
 
 [pypi-dependencies]
 kicad-skip = ">=0.2.5, <0.3"

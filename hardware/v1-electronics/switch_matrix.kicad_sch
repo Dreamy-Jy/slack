@@ -7,7 +7,7 @@
 	(title_block
 		(title "Slack")
 		(date "2026-07-25")
-		(rev "A.0.5")
+		(rev "A.0.7")
 	)
 	(lib_symbols
 		(symbol "ALPS Electric:EC10E1220505"
@@ -852,7 +852,7 @@
 				)
 				(polyline
 					(pts
-						(xy -5.08 0) (xy -5.08 -1.016) (xy -5.334 -0.254)
+						(xy -5.08 0) (xy -5.08 -1.016) (xy -5.334 -0.508)
 					)
 					(stroke
 						(width 0)
@@ -864,7 +864,7 @@
 				)
 				(polyline
 					(pts
-						(xy -5.08 -5.08) (xy -5.08 -4.064) (xy -5.334 -4.826)
+						(xy -5.08 -5.08) (xy -5.08 -4.064) (xy -5.334 -4.572)
 					)
 					(stroke
 						(width 0)
@@ -889,7 +889,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 -1.524) (xy -0.254 -0.762)
+						(xy 0 0) (xy 0 -1.524) (xy -0.254 -1.016)
 					)
 					(stroke
 						(width 0)
@@ -901,7 +901,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -0.254) (xy -2.54 -0.254) (xy -2.54 -1.016) (xy -2.794 -0.508)
+						(xy 0 -0.508) (xy -2.54 -0.508) (xy -2.54 -1.016) (xy -2.794 -0.762)
 					)
 					(stroke
 						(width 0)
@@ -913,7 +913,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -4.826) (xy -2.54 -4.826) (xy -2.54 -4.064) (xy -2.794 -4.572)
+						(xy 0 -4.572) (xy -2.54 -4.572) (xy -2.54 -4.064) (xy -2.794 -4.318)
 					)
 					(stroke
 						(width 0)
@@ -925,7 +925,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -5.08) (xy 0 -3.556) (xy -0.254 -4.318)
+						(xy 0 -5.08) (xy 0 -3.556) (xy -0.254 -4.064)
 					)
 					(stroke
 						(width 0)
@@ -937,7 +937,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 0) (xy 2.54 -1.016) (xy 2.286 -0.254)
+						(xy 2.54 0) (xy 2.54 -1.016) (xy 2.286 -0.508)
 					)
 					(stroke
 						(width 0)
@@ -949,7 +949,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 -5.08) (xy 2.54 -4.064) (xy 2.286 -4.826)
+						(xy 2.54 -5.08) (xy 2.54 -4.064) (xy 2.286 -4.572)
 					)
 					(stroke
 						(width 0)
@@ -974,7 +974,7 @@
 				)
 				(polyline
 					(pts
-						(xy 4.318 -2.54) (xy -6.858 -2.54) (xy -5.842 -2.286)
+						(xy 4.318 -2.54) (xy -6.858 -2.54) (xy -6.096 -2.286)
 					)
 					(stroke
 						(width 0)
@@ -2890,12 +2890,6 @@
 		(uuid "0a8069f7-8b01-4a37-b8c4-e2a97f0aa41e")
 	)
 	(junction
-		(at 591.82 256.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0aefdde6-39f0-4fec-a7c0-a4b3a59249a6")
-	)
-	(junction
 		(at 33.02 38.1)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3128,12 +3122,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "384eadb7-ce08-477b-83cb-1d1421da2a44")
-	)
-	(junction
-		(at 609.6 243.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3864ac4c-e4ef-4412-8af6-f5992b512771")
 	)
 	(junction
 		(at 236.22 243.84)
@@ -3808,12 +3796,6 @@
 		(uuid "d75d843b-66c9-4280-b8e7-b72663b70a16")
 	)
 	(junction
-		(at 43.18 256.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d9ae71b7-9ff5-4c62-ae95-62fc4e68715a")
-	)
-	(junction
 		(at 406.4 195.58)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3872,12 +3854,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eb04001a-cb37-4819-9512-a2cd11e06335")
-	)
-	(junction
-		(at 33.02 243.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ee40d50d-2f9c-48e7-84d5-738320c8e5f5")
 	)
 	(junction
 		(at 215.9 312.42)
@@ -4467,16 +4443,6 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 256.54) (xy 71.12 256.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "122d3b4a-cdd8-4a8b-8c06-19bbbdf3fef9")
-	)
-	(wire
-		(pts
 			(xy 627.38 299.72) (xy 627.38 317.5)
 		)
 		(stroke
@@ -4754,16 +4720,6 @@
 			(type default)
 		)
 		(uuid "228e73d4-a2bf-4e77-9de5-f653163881bc")
-	)
-	(wire
-		(pts
-			(xy 609.6 243.84) (xy 614.68 243.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "228fcec5-66b0-46dc-b281-ff7448994057")
 	)
 	(wire
 		(pts
@@ -5987,16 +5943,6 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 243.84) (xy 38.1 243.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "68c4d198-84c7-4c90-a8d6-0f97dc8d25a7")
-	)
-	(wire
-		(pts
 			(xy 200.66 88.9) (xy 210.82 88.9)
 		)
 		(stroke
@@ -6164,16 +6110,6 @@
 			(type default)
 		)
 		(uuid "72b7025d-b9cd-4d5c-8aea-c20f88e2b501")
-	)
-	(wire
-		(pts
-			(xy 609.6 190.5) (xy 609.6 243.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "72d1bc51-d110-4052-a1fe-f2ac3679a141")
 	)
 	(wire
 		(pts
@@ -6444,16 +6380,6 @@
 			(type default)
 		)
 		(uuid "8166cd21-4499-4cb2-9015-da4101f7ef47")
-	)
-	(wire
-		(pts
-			(xy 33.02 243.84) (xy 33.02 284.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8415f47b-b773-4dc7-a346-466528bde92f")
 	)
 	(wire
 		(pts
@@ -6937,7 +6863,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 190.5) (xy 33.02 243.84)
+			(xy 33.02 190.5) (xy 33.02 284.48)
 		)
 		(stroke
 			(width 0)
@@ -7127,7 +7053,7 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 256.54) (xy 43.18 256.54)
+			(xy 27.94 256.54) (xy 71.12 256.54)
 		)
 		(stroke
 			(width 0)
@@ -7154,16 +7080,6 @@
 			(type default)
 		)
 		(uuid "abf7fcf7-b551-4587-97da-493e8d6fb5d3")
-	)
-	(wire
-		(pts
-			(xy 591.82 256.54) (xy 619.76 256.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac3ef3da-2446-4ea8-a5c6-d3c580d560ea")
 	)
 	(wire
 		(pts
@@ -8137,7 +8053,7 @@
 	)
 	(wire
 		(pts
-			(xy 609.6 243.84) (xy 609.6 284.48)
+			(xy 609.6 190.5) (xy 609.6 284.48)
 		)
 		(stroke
 			(width 0)
@@ -9368,7 +9284,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00c9d3e8-550e-4a78-bfd3-5757efcb200c")
-		(property "Reference" "D78"
+		(property "Reference" "D74"
 			(at 190.5 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9608,7 +9524,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D78")
+					(reference "D74")
 					(unit 1)
 				)
 			)
@@ -11157,7 +11073,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "092cc84d-a660-4432-8922-2b82775690aa")
-		(property "Reference" "D74"
+		(property "Reference" "D70"
 			(at 78.74 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11397,7 +11313,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D74")
+					(reference "D70")
 					(unit 1)
 				)
 			)
@@ -11673,7 +11589,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0a435bf5-3475-474e-be9a-cc52c19ad8ab")
-		(property "Reference" "SW76"
+		(property "Reference" "SW72"
 			(at 134.62 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11904,7 +11820,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW76")
+					(reference "SW72")
 					(unit 1)
 				)
 			)
@@ -12158,7 +12074,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0afe199b-e82b-46a0-8628-ae44bdfdda88")
-		(property "Reference" "SW61"
+		(property "Reference" "SW60"
 			(at 152.4 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12377,7 +12293,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW61")
+					(reference "SW60")
 					(unit 1)
 				)
 			)
@@ -13483,7 +13399,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f469671-ec09-4304-a5b3-bb16ba5f0d2a")
-		(property "Reference" "D85"
+		(property "Reference" "D81"
 			(at 599.44 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13723,7 +13639,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D85")
+					(reference "D81")
 					(unit 1)
 				)
 			)
@@ -13999,7 +13915,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f9d495b-e5c4-490d-a35a-aa2bc4849f44")
-		(property "Reference" "D71"
+		(property "Reference" "D68"
 			(at 594.36 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14239,7 +14155,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D71")
+					(reference "D68")
 					(unit 1)
 				)
 			)
@@ -14257,7 +14173,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0ff97592-26a6-4e37-915d-add1b2f758ec")
-		(property "Reference" "SW83"
+		(property "Reference" "SW79"
 			(at 543.56 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14488,7 +14404,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW83")
+					(reference "SW79")
 					(unit 1)
 				)
 			)
@@ -15866,7 +15782,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1a7a3698-dcea-44bc-865c-70717a30b60f")
-		(property "Reference" "SW75"
+		(property "Reference" "SW71"
 			(at 106.68 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16097,7 +16013,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW75")
+					(reference "SW71")
 					(unit 1)
 				)
 			)
@@ -17084,7 +17000,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1ce13ddd-b275-480f-9868-27f1bdeb6c3b")
-		(property "Reference" "D68"
+		(property "Reference" "D65"
 			(at 510.54 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17324,7 +17240,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D68")
+					(reference "D65")
 					(unit 1)
 				)
 			)
@@ -17579,7 +17495,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1ddaf446-b182-4ab4-b986-343fa6499ee2")
-		(property "Reference" "SW69"
+		(property "Reference" "SW66"
 			(at 533.4 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17798,7 +17714,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW69")
+					(reference "SW66")
 					(unit 1)
 				)
 			)
@@ -18836,7 +18752,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21c11d14-c807-4e13-935e-db4a52142096")
-		(property "Reference" "D76"
+		(property "Reference" "D72"
 			(at 134.62 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19076,7 +18992,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D76")
+					(reference "D72")
 					(unit 1)
 				)
 			)
@@ -19094,7 +19010,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "22a90289-cfd2-46c5-8e38-4afbc2c64532")
-		(property "Reference" "SW70"
+		(property "Reference" "SW67"
 			(at 561.34 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19313,7 +19229,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW70")
+					(reference "SW67")
 					(unit 1)
 				)
 			)
@@ -21479,7 +21395,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2ccf1a0e-532d-490e-8e3c-1e176994962b")
-		(property "Reference" "SW82"
+		(property "Reference" "SW78"
 			(at 515.62 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21710,7 +21626,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW82")
+					(reference "SW78")
 					(unit 1)
 				)
 			)
@@ -22120,7 +22036,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "325f6ec4-2424-439e-b047-2fe5e3930727")
-		(property "Reference" "D79"
+		(property "Reference" "D75"
 			(at 218.44 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22360,7 +22276,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D79")
+					(reference "D75")
 					(unit 1)
 				)
 			)
@@ -22696,264 +22612,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D")
-		(at 619.76 252.73 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "34986162-7d65-4c22-936e-c1872c8e17f6")
-		(property "Reference" "D72"
-			(at 622.3 251.4599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D"
-			(at 622.3 253.9999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 619.76 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 619.76 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "part selected: BAS16TS_R1_00001"
-			(at 619.76 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 619.76 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 619.76 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 619.76 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "284a242f-01af-4715-a0a4-893cbfe0fc97")
-		)
-		(pin "2"
-			(uuid "82c7143c-4453-4dc9-b863-f265d21e5b87")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D72")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 248.92 129.54 180)
 		(unit 1)
@@ -23200,7 +22858,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3513f318-a763-4125-8a29-f5eeaf963176")
-		(property "Reference" "D61"
+		(property "Reference" "D60"
 			(at 157.48 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23440,7 +23098,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D61")
+					(reference "D60")
 					(unit 1)
 				)
 			)
@@ -25628,7 +25286,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3c66774f-6b88-4dc4-873b-06ff8ff6ea34")
-		(property "Reference" "SW73"
+		(property "Reference" "SW69"
 			(at 50.8 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25859,7 +25517,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW73")
+					(reference "SW69")
 					(unit 1)
 				)
 			)
@@ -26686,7 +26344,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3cd13fd1-ad73-4b8f-8e73-9997214a614c")
-		(property "Reference" "SW86"
+		(property "Reference" "SW82"
 			(at 627.38 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26917,7 +26575,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW86")
+					(reference "SW82")
 					(unit 1)
 				)
 			)
@@ -27193,7 +26851,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3d5484b9-d4be-4755-a621-3d154de3e57f")
-		(property "Reference" "SW63"
+		(property "Reference" "SW62"
 			(at 205.74 238.76 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27409,7 +27067,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW63")
+					(reference "SW62")
 					(unit 1)
 				)
 			)
@@ -27504,7 +27162,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3e2c058a-eb87-4424-b491-a0935dd2ee35")
-		(property "Reference" "D84"
+		(property "Reference" "D80"
 			(at 571.5 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27744,7 +27402,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D84")
+					(reference "D80")
 					(unit 1)
 				)
 			)
@@ -27996,7 +27654,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "411465dc-06fc-4982-a509-d8ad09e1a35b")
-		(property "Reference" "SW79"
+		(property "Reference" "SW75"
 			(at 208.28 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28316,7 +27974,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW79")
+					(reference "SW75")
 					(unit 1)
 				)
 			)
@@ -28959,7 +28617,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46732654-143e-47ae-be5a-9f5f3cc4e376")
-		(property "Reference" "D77"
+		(property "Reference" "D73"
 			(at 162.56 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29199,7 +28857,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D77")
+					(reference "D73")
 					(unit 1)
 				)
 			)
@@ -31144,7 +30802,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5206032d-0eb3-4992-bdea-01255026a6a5")
-		(property "Reference" "D69"
+		(property "Reference" "D66"
 			(at 538.48 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31384,7 +31042,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D69")
+					(reference "D66")
 					(unit 1)
 				)
 			)
@@ -31402,7 +31060,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "537ec510-6ad2-4c3e-9717-c990d175a35e")
-		(property "Reference" "SW62"
+		(property "Reference" "SW61"
 			(at 180.34 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31621,7 +31279,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW62")
+					(reference "SW61")
 					(unit 1)
 				)
 			)
@@ -32716,7 +32374,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5655e1ce-ee28-42b8-8a55-059e059d056c")
-		(property "Reference" "SW67"
+		(property "Reference" "SW64"
 			(at 477.52 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32935,7 +32593,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW67")
+					(reference "SW64")
 					(unit 1)
 				)
 			)
@@ -33032,7 +32690,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "570f2532-98cb-4801-9a4f-763c46050edb")
-		(property "Reference" "D60"
+		(property "Reference" "D59"
 			(at 129.54 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33272,7 +32930,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D60")
+					(reference "D59")
 					(unit 1)
 				)
 			)
@@ -33290,7 +32948,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "57842d68-2aeb-4bf5-876a-42e3cf6f8aa0")
-		(property "Reference" "D70"
+		(property "Reference" "D67"
 			(at 566.42 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33530,7 +33188,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D70")
+					(reference "D67")
 					(unit 1)
 				)
 			)
@@ -35734,7 +35392,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "631cb4c7-ab77-4c56-bc73-486d2658dc54")
-		(property "Reference" "D62"
+		(property "Reference" "D61"
 			(at 185.42 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35974,7 +35632,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D62")
+					(reference "D61")
 					(unit 1)
 				)
 			)
@@ -36979,7 +36637,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "65af3367-e9ed-472d-98c3-3a872ab15621")
-		(property "Reference" "SW78"
+		(property "Reference" "SW74"
 			(at 180.34 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37299,7 +36957,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW78")
+					(reference "SW74")
 					(unit 1)
 				)
 			)
@@ -37537,264 +37195,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "C10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D")
-		(at 43.18 252.73 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "66125974-6269-48a4-a03c-d3ad1d6b9613")
-		(property "Reference" "D57"
-			(at 45.72 251.4599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "D"
-			(at 45.72 253.9999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 43.18 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 43.18 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "part selected: BAS16TS_R1_00001"
-			(at 43.18 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 43.18 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 43.18 252.73 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 43.18 252.73 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d038e801-1bfe-407e-96f0-27673824edb8")
-		)
-		(pin "2"
-			(uuid "d89e024c-3f51-491e-829b-46a323bd9521")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D57")
 					(unit 1)
 				)
 			)
@@ -39487,7 +38887,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6dd47490-6ee7-4b4e-a8de-6033cec2e533")
-		(property "Reference" "SW84"
+		(property "Reference" "SW80"
 			(at 571.5 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -39718,7 +39118,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW84")
+					(reference "SW80")
 					(unit 1)
 				)
 			)
@@ -41250,7 +40650,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "772492d4-cff3-416a-ab65-bfda9835f8f7")
-		(property "Reference" "D63"
+		(property "Reference" "D62"
 			(at 213.36 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41490,7 +40890,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D63")
+					(reference "D62")
 					(unit 1)
 				)
 			)
@@ -41822,7 +41222,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "78df161f-7327-4617-955a-075d12fde32a")
-		(property "Reference" "SW74"
+		(property "Reference" "SW70"
 			(at 78.74 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -42053,7 +41453,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW74")
+					(reference "SW70")
 					(unit 1)
 				)
 			)
@@ -45270,7 +44670,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "875d37fa-8323-49e5-a6ac-08fdcdabcef9")
-		(property "Reference" "D75"
+		(property "Reference" "D71"
 			(at 106.68 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45510,7 +44910,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D75")
+					(reference "D71")
 					(unit 1)
 				)
 			)
@@ -45528,7 +44928,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "88b8ca81-84d7-40d1-a310-4f2ccd2caade")
-		(property "Reference" "SW58"
+		(property "Reference" "SW57"
 			(at 68.58 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45747,7 +45147,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW58")
+					(reference "SW57")
 					(unit 1)
 				)
 			)
@@ -46885,7 +46285,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8fe7af53-afbf-4c88-82e1-4a7b82785828")
-		(property "Reference" "D86"
+		(property "Reference" "D82"
 			(at 627.38 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47125,7 +46525,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D86")
+					(reference "D82")
 					(unit 1)
 				)
 			)
@@ -47611,7 +47011,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "924b7eda-5781-497c-aa61-4c49ca59d125")
-		(property "Reference" "SW59"
+		(property "Reference" "SW58"
 			(at 96.52 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47830,7 +47230,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW59")
+					(reference "SW58")
 					(unit 1)
 				)
 			)
@@ -47848,7 +47248,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9337a308-bd95-44dd-a273-ce397091daf3")
-		(property "Reference" "D81"
+		(property "Reference" "D77"
 			(at 487.68 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48088,7 +47488,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D81")
+					(reference "D77")
 					(unit 1)
 				)
 			)
@@ -48579,7 +47979,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "973e3763-b3d5-4af0-b88b-51d847ee5d34")
-		(property "Reference" "SW60"
+		(property "Reference" "SW59"
 			(at 124.46 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48798,7 +48198,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW60")
+					(reference "SW59")
 					(unit 1)
 				)
 			)
@@ -49712,7 +49112,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9abef2ff-1fc4-402d-8860-d2f1248f8f3b")
-		(property "Reference" "D82"
+		(property "Reference" "D78"
 			(at 515.62 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -49952,7 +49352,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D82")
+					(reference "D78")
 					(unit 1)
 				)
 			)
@@ -51877,7 +51277,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a5c62c47-264a-4c71-8913-1852a20a1977")
-		(property "Reference" "D80"
+		(property "Reference" "D76"
 			(at 462.28 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52117,7 +51517,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D80")
+					(reference "D76")
 					(unit 1)
 				)
 			)
@@ -53782,7 +53182,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "adb96c92-be6c-4b8c-bf49-1563312b5325")
-		(property "Reference" "D66"
+		(property "Reference" "D63"
 			(at 457.2 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -54022,7 +53422,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D66")
+					(reference "D63")
 					(unit 1)
 				)
 			)
@@ -54800,7 +54200,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b0615bce-0fa3-4dbf-9e47-88ed6bb0fc45")
-		(property "Reference" "SW66"
+		(property "Reference" "SW63"
 			(at 449.58 238.76 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -55016,7 +54416,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW66")
+					(reference "SW63")
 					(unit 1)
 				)
 			)
@@ -56337,7 +55737,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b448e090-2e38-45f4-a71a-d18bb017cdb5")
-		(property "Reference" "SW81"
+		(property "Reference" "SW77"
 			(at 477.52 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -56657,7 +56057,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW81")
+					(reference "SW77")
 					(unit 1)
 				)
 			)
@@ -60791,7 +60191,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cbe4380b-5724-4413-a8c2-cd39d6f013b3")
-		(property "Reference" "D58"
+		(property "Reference" "D57"
 			(at 73.66 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -61031,7 +60431,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D58")
+					(reference "D57")
 					(unit 1)
 				)
 			)
@@ -61269,243 +60669,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Cherry:MX6C-K3NB")
-		(at 617.22 241.3 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cdc8c3cd-cc4b-4ba4-891f-8fe1bdc73d7f")
-		(property "Reference" "SW72"
-			(at 617.22 233.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MSwitch"
-			(at 617.22 236.22 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Cherry:Cherry_ULP_SMD"
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "part selected: MX6C-K3NB"
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 617.22 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "47cd436f-1725-401c-b8c3-4f07d077c94e")
-		)
-		(pin "1"
-			(uuid "06a7d351-7e36-47b4-bdae-c341a964970a")
-		)
-		(pin "3"
-			(uuid "6ad6ba93-a673-4f37-956f-6de2b37b041f")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW72")
 					(unit 1)
 				)
 			)
@@ -62261,7 +61424,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d447dd94-a083-429d-96b4-9d4f025cd5db")
-		(property "Reference" "SW85"
+		(property "Reference" "SW81"
 			(at 599.44 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62492,7 +61655,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW85")
+					(reference "SW81")
 					(unit 1)
 				)
 			)
@@ -64595,7 +63758,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e0aa0813-dbfa-4284-8bf5-a15ddf97a249")
-		(property "Reference" "D67"
+		(property "Reference" "D64"
 			(at 482.6 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64835,7 +63998,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D67")
+					(reference "D64")
 					(unit 1)
 				)
 			)
@@ -64853,7 +64016,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e1479321-29bd-430b-bc1b-685ece6524b1")
-		(property "Reference" "D59"
+		(property "Reference" "D58"
 			(at 101.6 251.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -65093,7 +64256,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D59")
+					(reference "D58")
 					(unit 1)
 				)
 			)
@@ -65348,7 +64511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2aa84ec-eaae-430b-bda9-fc91e51ea549")
-		(property "Reference" "D83"
+		(property "Reference" "D79"
 			(at 543.56 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -65588,7 +64751,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D83")
+					(reference "D79")
 					(unit 1)
 				)
 			)
@@ -65864,7 +65027,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e3bd5dc7-066f-4df3-9eb1-445178069a58")
-		(property "Reference" "SW71"
+		(property "Reference" "SW68"
 			(at 589.28 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -66083,7 +65246,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW71")
+					(reference "SW68")
 					(unit 1)
 				)
 			)
@@ -66662,243 +65825,6 @@
 	)
 	(symbol
 		(lib_id "Cherry:MX6C-K3NB")
-		(at 40.64 241.3 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e58cb1e5-838f-4d34-b915-634cf4f02b4b")
-		(property "Reference" "SW57"
-			(at 40.64 233.68 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "MSwitch"
-			(at 40.64 236.22 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Cherry:Cherry_ULP_SMD"
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "part selected: MX6C-K3NB"
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 40.64 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "933466de-6b79-4f95-98a4-49973004f67f")
-		)
-		(pin "1"
-			(uuid "e7f52454-553c-4a5a-a169-b981d3db775e")
-		)
-		(pin "3"
-			(uuid "4ff6a4e0-4d60-4485-9559-c477a48a161e")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW57")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Cherry:MX6C-K3NB")
 		(at 589.28 35.56 0)
 		(unit 1)
 		(body_style 1)
@@ -67383,7 +66309,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e98da33d-dd0b-40c5-8e01-d2abb613a74b")
-		(property "Reference" "D73"
+		(property "Reference" "D69"
 			(at 50.8 307.3399 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -67623,7 +66549,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D73")
+					(reference "D69")
 					(unit 1)
 				)
 			)
@@ -67641,7 +66567,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea8d28cb-39d0-4962-8761-d742988602fc")
-		(property "Reference" "SW80"
+		(property "Reference" "SW76"
 			(at 452.12 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -67961,7 +66887,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW80")
+					(reference "SW76")
 					(unit 1)
 				)
 			)
@@ -68237,7 +67163,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed3dea3d-9f3f-41c5-bf64-0dbd34ffc9b6")
-		(property "Reference" "SW68"
+		(property "Reference" "SW65"
 			(at 505.46 233.68 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -68456,7 +67382,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW68")
+					(reference "SW65")
 					(unit 1)
 				)
 			)
@@ -68944,7 +67870,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f099b5ab-92dd-425b-bc00-d7f4154e17ab")
-		(property "Reference" "SW77"
+		(property "Reference" "SW73"
 			(at 162.56 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -69175,7 +68101,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW77")
+					(reference "SW73")
 					(unit 1)
 				)
 			)

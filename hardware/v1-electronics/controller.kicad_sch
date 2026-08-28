@@ -7,7 +7,7 @@
 	(title_block
 		(title "Slack")
 		(date "2026-07-25")
-		(rev "A.0.5")
+		(rev "A.0.7")
 	)
 	(lib_symbols
 		(symbol "Connector_Generic_MountingPin:Conn_01x03_MountingPin"

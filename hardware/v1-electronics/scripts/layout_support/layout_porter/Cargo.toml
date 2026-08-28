@@ -1,0 +1,10 @@
+[package]
+name = "layout_porter"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+kicad-ipc-rs = "0.5.1"
+kiutils_kicad = "0.3.0"
+kiutils_sexpr = "0.1.1"
+regex = "1.13.1"

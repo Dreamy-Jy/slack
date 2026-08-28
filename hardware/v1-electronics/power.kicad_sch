@@ -7,7 +7,7 @@
 	(title_block
 		(title "Slack")
 		(date "2026-07-25")
-		(rev "A.0.5")
+		(rev "A.0.7")
 	)
 	(lib_symbols
 		(symbol "Alpha & Omega Semiconductor:AON7423"
@@ -17020,7 +17020,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a27ef1ca-595f-4424-9c37-c15a810e1688")
-		(property "Reference" "D64"
+		(property "Reference" "D0"
 			(at 86.36 116.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17336,7 +17336,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "D64")
+					(reference "D0")
 					(unit 1)
 				)
 			)
@@ -17354,7 +17354,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a2d01b51-ebcd-43d9-abf7-4793efe1d5fd")
-		(property "Reference" "D65"
+		(property "Reference" "D90"
 			(at 322.5165 179.07 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17581,7 +17581,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "D65")
+					(reference "D90")
 					(unit 1)
 				)
 			)
