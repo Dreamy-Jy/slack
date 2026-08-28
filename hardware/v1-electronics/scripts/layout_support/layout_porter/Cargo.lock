@@ -83,6 +83,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "kiutils-rs"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bd236b23a3047882e47e9f4fa1e6c6c10c12264f3137e67f2c0b95d5f771b38e"
+dependencies = [
+ "kiutils_kicad",
+]
+
+[[package]]
 name = "kiutils_kicad"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -107,6 +116,7 @@ name = "layout_porter"
 version = "0.1.0"
 dependencies = [
  "kicad-ipc-rs",
+ "kiutils-rs",
  "kiutils_kicad",
  "kiutils_sexpr",
  "regex",
