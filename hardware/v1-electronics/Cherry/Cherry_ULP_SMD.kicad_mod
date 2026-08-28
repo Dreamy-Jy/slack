@@ -7,7 +7,7 @@
 		(at -0.05 -7.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "494f8013-575f-4f8d-8523-7865b3a05782")
+		(uuid "70d6fa5c-a675-4b6c-ad3b-6f08af50170b")
 		(effects
 			(font
 				(size 1 1)
@@ -20,7 +20,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "6abf10e9-9e34-4e58-97df-ec64584546c7")
+		(uuid "86f7231b-e0b6-498e-9eca-7acb55622fb4")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "f8f8ec06-d627-4004-a1a9-3ca97f4a916e")
+		(uuid "8a4ae971-25bb-4072-951e-09e2298dadda")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -44,7 +44,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "ce78a8cb-03fb-4475-af51-5bb149914442")
+		(uuid "c27b0cd9-9328-48bf-a587-fcbcea045a59")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -63,7 +63,7 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "3bb26482-945f-469a-ac30-1030cfeb7989")
+		(uuid "2e9f81fc-2e66-4e6f-81a9-94cf9a3f1f69")
 	)
 	(fp_rect
 		(start -3.6 -1.8)
@@ -74,168 +74,96 @@
 		)
 		(fill no)
 		(layer "Dwgs.User")
-		(uuid "d8a6b846-42b1-42d4-9916-31c23511ffa2")
+		(uuid "221aa131-feaf-4e98-8242-9a0112e3f23d")
 	)
 	(fp_rect
-		(start -9 -9)
-		(end 9 9)
+		(start -9.5 -9.5)
+		(end 9.5 9.5)
 		(stroke
-			(width 0.05)
-			(type default)
+			(width 0.3)
+			(type solid)
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "6ee7134e-be55-4d41-890f-14bd5e3851a9")
+		(uuid "c7713967-027a-4607-9fb9-144f2c55520f")
 	)
 	(fp_rect
 		(start -6.8 -6.1)
 		(end 6.8 6.1)
 		(stroke
-			(width 0.1)
+			(width 0.05)
 			(type solid)
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "c474288f-680a-4ba2-ba01-7d40df4a260b")
-	)
-	(dimension
-		(type aligned)
-		(layer "Cmts.User")
-		(uuid "9a408cbd-8049-41b0-ab5a-350aa51dc0f6")
-		(pts
-			(xy -7.1 6.4) (xy -7.1 -6.4)
-		)
-		(height -2.9)
-		(format
-			(prefix "")
-			(suffix "")
-			(units 3)
-			(units_format 1)
-			(precision 4)
-		)
-		(style
-			(thickness 0.1)
-			(arrow_length 1.27)
-			(text_position_mode 0)
-			(arrow_direction outward)
-			(extension_height 0.58642)
-			(extension_offset 0.5)
-			(keep_text_aligned yes)
-		)
-		(gr_text "12.8000 mm"
-			(at -11.1 0 90)
-			(layer "Cmts.User")
-			(uuid "9a408cbd-8049-41b0-ab5a-350aa51dc0f6")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-			)
-		)
-	)
-	(dimension
-		(type aligned)
-		(layer "Cmts.User")
-		(uuid "e380572d-2a16-4e88-8087-9a669fdec406")
-		(pts
-			(xy -7.1 -6.4) (xy 6.8 -6.4)
-		)
-		(height -2.1)
-		(format
-			(prefix "")
-			(suffix "")
-			(units 3)
-			(units_format 1)
-			(precision 4)
-		)
-		(style
-			(thickness 0.1)
-			(arrow_length 1.27)
-			(text_position_mode 0)
-			(arrow_direction outward)
-			(extension_height 0.58642)
-			(extension_offset 0.5)
-			(keep_text_aligned yes)
-		)
-		(gr_text "13.9000 mm"
-			(at -0.15 -9.6 0)
-			(layer "Cmts.User")
-			(uuid "e380572d-2a16-4e88-8087-9a669fdec406")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.1)
-				)
-			)
-		)
+		(uuid "49d8b037-3a7b-4842-8e78-01d41f424bff")
 	)
 	(pad "" np_thru_hole circle
 		(at -5.8 1.2)
 		(size 1.05 1.05)
 		(drill 1.05)
 		(layers "*.Cu" "*.Mask")
-		(uuid "c05b279c-2217-4001-959a-b237c005f4b2")
+		(uuid "8649ddf4-00ee-49f6-a3e9-76317185898b")
 	)
 	(pad "" np_thru_hole circle
 		(at 5.8 -3.26)
 		(size 1.2 1.2)
 		(drill 1.2)
 		(layers "*.Cu" "*.Mask")
-		(uuid "681ed7a1-f29a-45c4-948f-13baa33853c3")
+		(uuid "371302a4-654b-4fd8-b69b-035a9545cfa1")
 	)
 	(pad "" np_thru_hole circle
 		(at 5.8 3.26)
 		(size 1.2 1.2)
 		(drill 1.2)
 		(layers "*.Cu" "*.Mask")
-		(uuid "e920818a-d083-4c65-ba28-55b3c89525d5")
+		(uuid "dc670b4a-681c-488f-8194-b64a744890f7")
 	)
 	(pad "1" smd rect
 		(at -0.65 2.3)
 		(size 0.7 3.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "5727075d-e75b-493f-a0a7-c5ce4261fb43")
+		(uuid "1d3a28b5-22f3-4806-8397-58d2162d08bf")
 	)
 	(pad "2" smd rect
 		(at 1.8 2.3)
 		(size 0.7 3.4)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "0409f86f-6fa8-4535-8315-559e7a6d558b")
+		(uuid "8b72311e-f3e6-4fc8-a028-6f766e694332")
 	)
 	(pad "3" smd rect
 		(at -6.2 -3.9)
 		(size 1.6 3.8)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "b76deed0-14ab-483a-adbf-bb7b02ac759c")
+		(uuid "59f2fc25-813d-4cf4-98dd-75a9acba30c7")
 	)
 	(pad "3" smd rect
 		(at -6.2 4.5)
 		(size 1.6 3)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "cce26103-fb96-40b9-bab6-8a20385f21d2")
+		(uuid "b6eedb44-42fc-45a1-8cdf-2d8eb07535de")
 	)
 	(pad "3" smd rect
 		(at 6.2 -5.025)
 		(size 1.6 1.8)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "8c5557cc-f834-4262-9ddb-b3f4ae415b15")
+		(uuid "8a73382d-3d78-4e8f-9b89-0d97c58553b6")
 	)
 	(pad "3" smd rect
 		(at 6.2 0)
 		(size 1.6 2.6)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "4211d3cf-c91c-4324-9506-1a24eff5bbde")
+		(uuid "718656d8-5a53-49b9-8f4b-ba8825fba358")
 	)
 	(pad "3" smd rect
 		(at 6.2 5.025)
 		(size 1.6 1.8)
 		(layers "F.Cu" "F.Mask" "F.Paste")
-		(uuid "3e452b3d-0f01-48da-9f81-3d6788f32f5d")
+		(uuid "03ffe01d-c934-4fee-a8b8-46056fa07514")
 	)
 	(zone
 		(layer "Dwgs.User")
-		(uuid "1dbf16db-104d-43f5-9946-402060e517ad")
+		(uuid "b785a7a6-adbb-42da-b8d1-ffb3475110f3")
 		(hatch edge 0.508)
 		(connect_pads
 			(clearance 0)
@@ -264,39 +192,6 @@
 		)
 	)
 	(embedded_fonts no)
-	(model "${CHERRY_MX_ULP_DIR}/Cherry_MX_ULP.step"
-		(offset
-			(xyz -5.5 0 3)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz -0 -0 -90)
-		)
-	)
-	(model "${CHERRY_MX_ULTRA}/Switch-Cherry_MX_ULP.step"
-		(offset
-			(xyz -5.5 0 3)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 -90)
-		)
-	)
-	(model "${KIPRJMOD}/Cherry/Keycap-Cairn-Mesa.IGS"
-		(offset
-			(xyz 0 0 4.5)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz -90 -0 -0)
-		)
-	)
 	(model "${KIPRJMOD}/Cherry/Switch-Cherry_MX_ULP.step"
 		(offset
 			(xyz -5.5 0 3)
@@ -306,6 +201,41 @@
 		)
 		(rotate
 			(xyz -0 -0 -90)
+		)
+	)
+	(model "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/keycaps/OVT13_keycap.step"
+		(hide yes)
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(model "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/keycaps/mnhttn_keycap.step"
+		(hide yes)
+		(offset
+			(xyz 0 0 4)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -180 -0 -0)
+		)
+	)
+	(model "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/keycaps/ulp_dactyl_keycap.step"
+		(offset
+			(xyz 0 0 4.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -180 -0 -0)
 		)
 	)
 )
