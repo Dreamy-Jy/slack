@@ -1,3 +1,4 @@
+# AI Generated, Hand Tuned
 # =============================================================================
 #  DESIGN INVARIANTS  -  read this before editing anything below
 #
@@ -151,7 +152,7 @@
 meta:
   engine: 4.2.1
   name: slack-starter
-  version: '1.0'
+  version: '1.1'
   author: jordane
   notes: >
     Dygma Sonsei-style unibody layout (6x4 per hand + 5 thumb keys per hand,
@@ -200,7 +201,7 @@ units:
   ky: U
 
   # ---- keycap / switch (Cherry MX ULP) ------------------------------------
-  cap: 16.2          # largest common ULP keycap (Mistel 16.1x16.2, Corsair 16x16, Cherry 15.2x15.2)
+  cap: 16          # largest common ULP keycap (Mistel 16.1x16.2, Corsair 16x16, Cherry 15.2x15.2)
   min_gap: kx - cap  # 2.85 mm: the gap between caps in the main grid, also the rule for the thumbs
   sw_w: 14.2         # ULP switch module footprint
   sw_h: 12.8
@@ -285,11 +286,11 @@ units:
   # ---- latching switches (J1/J2) -----------------------------------------
   latch_pitch: 15        # spacing of the 5 slide switches - one key pitch,
                          # the gap fingers already know
-  latch_y: 53.5          # bank centre height above the inner home keys
+  latch_y: 18            # bank centre height above the inner home keys
                          # (lands at y ~62.5, the top-centre channel)
   latch_led_y: 5.3       # LED centred over each slide on its pin-1-dot side
   latch_dio_y: -5.0      # diode on the opposite side, under the frame
-  lock_cx: 5             # centres the SPEF courtyard on its point (rides on
+  lock_cx: 5.55             # centres the SPEF courtyard on its point (rides on
                          # the footprint with resist, like the key pockets)
   lock4_dx: 0            # t4 switch slides inboard along its row to duck
                          # under the bottom encoder (0.8 courtyard / 0.5 knob
@@ -297,9 +298,9 @@ units:
   lock5_dx: 0            # ... and the t5 switch (J2 clearances)
   lock_y: 14.2           # SPEF origin above its key: courtyard bottom sits
                          # min_gap above the keycap (8.1 + 2.85 + 3.2)
-  lock_led_x: 10.2       # LED beside the SPEF on the axis-facing flank
-  lock_led_y: 5.5        # ... halfway along the body
-  lock_dio_x: -6.7       # diode on the outboard flank, just clear of the
+  lock_led_x: 7.3       # LED beside the SPEF on the axis-facing flank
+  lock_led_y: 12.4 -4       # ... halfway along the body
+  lock_dio_x: 0       # diode on the outboard flank, just clear of the
                          # SPEF courtyard edge
   lock_dio_y: 5.5
 
@@ -336,8 +337,8 @@ points:
   zones:
     matrix:
       key:
-        spread: kx
-        padding: ky
+        spread: kx + -1
+        padding: ky + -1
         width: cap
         height: cap
         tags: [switch]
@@ -390,8 +391,8 @@ points:
 
     thumbs:
       key:
-        spread: 0                   # t2..t5 don't step sideways, they swing around the pivot
-        padding: ky
+        spread: -1                   # t2..t5 don't step sideways, they swing around the pivot
+        # padding: ky
         width: cap
         height: cap
         name: '{{zone.name}}_{{col.name}}'
@@ -399,7 +400,7 @@ points:
         tags: [switch]
       anchor:
         ref: matrix_inner_bottom
-        shift: [t1_x, t1_y]         # the zone starts at t1 (t0 is gone)
+        shift: [t1_x, t1_y-2]         # the zone starts at t1 (t0 is gone)
       columns:
         t1:
           key:
@@ -459,7 +460,7 @@ points:
           column_net: ENCR
       anchor:
         ref: matrix_inner_bottom
-        shift: [enc_x, 0]           # beside the inner key, toward the centre
+        shift: [enc_x, 1]           # beside the inner key, toward the centre
       columns:
         col:
       rows:
@@ -472,35 +473,47 @@ points:
         num:
           row_net: R0
 
-    latches:                        # 5 latching slide switches (J1)
-      key:
-        spread: latch_pitch
+    latches:                        # 5 latching slide switches (J1), one
+      key:                          # above each pinky..inner num-row key
+        spread: kx + -1                 # same pitch as the columns below
         name: 'latch_{{col.name}}'
         tags: [latch]
         row_net: R5
-      anchor:                       # mirror points don't exist yet at zone
-        ref: matrix_inner_home      # parse time, so reach the axis by hand:
-        orient: splay               # un-tilt the frame, then half_gap / 2
-        shift: [-(half_gap) -10, latch_y + 20]
-      columns:
-        l0:
-          key:
-            column_net: C0
-        l1:
+      anchor:
+        ref: matrix_pinky_num       # inherits the hand's splay, so the
+        shift: [0, latch_y]         # switches tilt with the keys
+      columns:                      # staggers copied from the matrix zone
+        pinky:
           key:
             column_net: C1
-        l2:
+            mirror:
+              column_net: C10
+        ring:
           key:
+            stagger: st_ring
             column_net: C2
-        l3:
+            mirror:
+              column_net: C9
+        middle:
           key:
+            stagger: st_middle - st_ring
             column_net: C3
-        l4:
+            mirror:
+              column_net: C8
+        index:
           key:
+            stagger: st_index - st_middle
             column_net: C4
+            mirror:
+              column_net: C7
+        inner:
+          key:
+            stagger: st_inner - st_index
+            column_net: C5
+            mirror:
+              column_net: C6
       rows:
         row:
-
     lock4:                          # SPEF latching push above t4 (J2)
       key:
         name: 'lock4'
@@ -672,12 +685,12 @@ pcbs:
       edge:
         outline: pcb_edge
         layer: Edge.Cuts
-      keycaps:
-        outline: keycaps
-        layer: Dwgs.User
-      knobs:
-        outline: knobs
-        layer: Dwgs.User
+      # keycaps:
+      #   outline: keycaps
+      #   layer: Dwgs.User
+      # knobs:
+      #   outline: knobs
+      #   layer: Dwgs.User
       scroll_bars:
         outline: scroll_bars
         layer: Dwgs.User
@@ -738,7 +751,7 @@ pcbs:
         what: ltst_fc12
         where: encoder
         adjust:
-          shift: [0, -enc_led_off]
+          shift: [0, -enc_led_off -2]
         params:
           common: 'LED_{{row_net}}'
           red: 'LED_{{column_net}}_R'
@@ -755,7 +768,7 @@ pcbs:
         what: ec10e
         where: scroll
         adjust:
-          shift: [scroll_enc_x, scroll_enc_y]
+          shift: [scroll_enc_x, scroll_enc_y -4]
           rotate: scroll_rot
           resist: true
         params:
@@ -770,8 +783,8 @@ pcbs:
         what: tc1109
         where: scroll
         adjust:
-          shift: [0, scroll_clk_y]
-          rotate: 90
+          shift: [0, scroll_clk_y +4]
+          rotate: 0
         params:
           from: '{{column_net}}'
           to: '{{colrow}}'
@@ -779,7 +792,7 @@ pcbs:
         what: ltst_fc12
         where: scroll
         adjust:
-          shift: [9.1, scroll_enc_y + 2.2]  # highest spot beside the encoder
+          shift: [0, scroll_enc_y -29]  # highest spot beside the encoder
                                     # that keeps min_gap to the matrix row
           rotate: scroll_rot
         params:
@@ -794,8 +807,8 @@ pcbs:
         what: sod523
         where: scroll
         adjust:
-          shift: [0, scroll_dio_y]
-          rotate: 90
+          shift: [0, scroll_dio_y +5]
+          rotate: 0
         params:
           side: F
           from: '{{colrow}}'
@@ -822,7 +835,7 @@ pcbs:
         what: ltst_fc12
         where: latch
         adjust:
-          shift: [0, latch_led_y]
+          shift: [0, latch_led_y+2]
         params:
           common: 'LED_{{row_net}}'
           red: 'LED_{{column_net}}_R'
@@ -853,7 +866,7 @@ pcbs:
         what: ltst_fc12
         where: lock
         adjust:
-          shift: [lock_led_x - 4, lock_led_y+4]
+          shift: [lock_led_x, lock_led_y + 2]
         params:
           common: 'LED_{{row_net}}'
           red: 'LED_{{column_net}}_R'
