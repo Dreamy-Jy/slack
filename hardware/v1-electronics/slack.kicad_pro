@@ -40,8 +40,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 1.0,
-          "height": 1.27,
-          "width": 1.27
+          "height": 1.5,
+          "width": 1.5
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -526,7 +526,7 @@
       "netlist": "",
       "plot": "",
       "specctra_dsn": "",
-      "step": "slack.step",
+      "step": "../v1-mechanics/scrollbars/example_assembly.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
