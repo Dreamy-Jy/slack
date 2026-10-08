@@ -6,7 +6,23 @@ drivers/
 docs/datasheets/
 *-backups
 .history
-~slack.kicad_pro.lck
-~slack.kicad_sch.lck
+
+# KiCad lock files (any project)
+~*.lck
+
+# KiCad unsaved/temp exports
+*-unsaved-export-*
+
+# KiCad push annotations
+*.kicad_pcb.push.json
+
+# KiCad restore backups
+_restore_backup_*/
+
 .ipynb_checkpoints
 target/
+__pycache__/
+thumbnails/
+*.FCBak
+*.push.json
+manufacturability/
