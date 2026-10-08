@@ -1,0 +1,819 @@
+# Manufacturability check: measure the bar and both caps, and hold every
+# measurement to JLC's and PCBWay's published rules for every 3D-printing
+# process and CNC milling, in every material group.
+#
+# Run it in FreeCAD 1.1.3 with scrollbar.FCStd open. It only reports. It
+# switches cap_mount between pegs and inserts to check both, inside one undo
+# step that it throws away at the end, so the model ends exactly as it was.
+#
+# For each part it measures:
+#   size      the part's exact box
+#   wall      the thinnest wall: from points spread over every face, a line
+#             straight into the material; where it comes out is the wall there
+#   holes     every round hole: diameter and depth
+#   pins      every round pin (pegs, bar sections), plus the bar's hex shaft
+#   spin      the gap around the bar where it turns in its cap (the shortest
+#             distance from each bar to its cap, in the assembly)
+#   click     whether that gap lets the bar wobble more than its switch's travel
+#   fits      the bar's fits to bought parts: the switches (actuation_gap) and
+#             the encoder's bore (1.73 +0.05/0)
+#   detail    the shortest straight run in each cap's bottom outline
+#   corners   sharp inside corners running up and down (CNC only)
+# Then it prints one table per part: a row per check, a column per process
+# and material group, each cell "JLC/PCBWay":
+#   ok    meets the rule          warn  close to it, or a tolerance is bigger
+#   FAIL  under the limit                than the gap it has to keep
+#   -     the maker publishes no rule for this
+#   .     the maker doesn't offer this process
+# Under each table it says what value would pass, for every warn and FAIL.
+# It ends with every FAIL, worst first.
+# It also saves a picture of each part next to your FreeCAD file, in a
+# "manufacturability" folder: three views (from below, the bottom, and a cut
+# along the bar's axis with the bar drawn in) with every problem numbered on
+# the part and explained in a list under the views. It needs matplotlib, which
+# comes with FreeCAD; without it the check still runs, without pictures.
+#
+# Rules read 2026-10-12 from:
+#   JLC3DP  https://jlc3dp.com/help/article/3D-Printing-Design-Guideline
+#   JLCCNC  https://jlccnc.com/help/article/cnc-machining-design-guideline
+#   PCBWay  https://www.pcbway.com/rapid-prototyping/3D-Printing/ (SLA, DLP,
+#           PolyJet, SLS, SLM, FDM pages) and /rapid-prototyping/cnc-machining/
+# Decided 2026-10-13: the gap where the bar turns is held to the makers'
+# fitted-parts gap (not the moving-parts gap), and checked against the
+# switch's travel, so the fix for rubbing doesn't add more wobble than the
+# click can take. Decided 2026-10-12: PCBWay CNC uses
+# ISO 2768-m (±0.1 for sizes up to 6 mm); PCBWay MJF rules are only on its
+# quote page, so its MJF column is all "-".
+
+import math
+import os
+import textwrap
+import time
+
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+
+PARTS = {   # name in the report: master body
+    "bar": "Body005",
+    "switched cap": "Body007",
+    "plain cap": "Body010",
+}
+PAIRS = [   # (board, bar link, cap link, cap part): bar and cap as assembled
+    ("B1", "Link007", "Link009", "switched cap"),
+    ("B2", "Link008", "Link010", "plain cap"),
+]
+HEX_FIT = 0.05   # the encoder's bore: 1.73 +0.05/0 (Alps drawing, detail E)
+# How far each board's switch travels before it clicks, from its datasheet.
+# None = not filled in yet: the click check then shows "-". Fill these in.
+SWITCH_TRAVEL = {
+    "switched cap": None,   # B1: XKB TC-1109-C-E, under the bar's end in this cap
+    "plain cap": None,      # B2: Alps SKQGAKE010, under the bar's middle
+}
+SAMPLES = (0.2, 0.5, 0.8)   # where on each face the wall probe starts (u and v)
+RAY = 30.0   # longest wall a probe looks for, mm
+
+# ================================================================ the rules
+# wall: thinnest wall; a dict means "by the part's largest size, up to N mm"
+# wall_rec: recommended wall (under it is a warn, under wall a FAIL)
+# hole: smallest hole; deep: deepest hole as a multiple of its diameter
+# pins: (smallest diameter, tallest pin at that diameter); 3.0 and up passes
+# gap: moving-parts gap (kept for reference; the bar is held to fit)
+# fit / fit_rec: gap between parts printed apart and fitted together
+#   (under fit is a FAIL, under fit_rec a warn); detail: smallest detail; tol: ± tolerance
+# small / big: smallest and largest part (sorted sizes); several = any one
+# protrude: thinnest peg or snap; corner: CNC inside-corner rule
+
+JLC_PINS = [(2.0, 4.0), (3.0, 6.0)]
+RULES = {
+    "SLA": {
+        "JLC": dict(wall={5: 0.5, 10: 0.8, 50: 1.0, 100: 1.5, 200: 2.0}, hole=1.0, deep=3,
+                    pins=[(1.0, 1.0)] + JLC_PINS, gap=0.5, fit=0.2, detail=0.8, tol=0.2,
+                    small=[(5, 5, 5), (2, 2, 10)], big=(530, 780, 780), protrude=1.5),
+        "PCBWay": dict(wall=0.8, tol=0.2, big=(700, 800, 2100)),
+    },
+    "DLP": {
+        "JLC": None,
+        "PCBWay": dict(wall=0.8, tol=0.1, big=(130, 230, 300)),
+    },
+    "Jetting": {   # JLC WJP, PCBWay PolyJet
+        "JLC": dict(small=[(5, 5, 5), (2, 2, 10)], big=(230, 330, 380)),
+        "PCBWay": dict(wall=1.0, tol=0.1, small=[(5, 5, 5)], big=(200, 390, 490)),
+    },
+    "MJF": {
+        "JLC": dict(wall={5: 1.0, 10: 1.2, 50: 1.5, 100: 2.0, 200: 2.0}, hole=1.5, deep=3,
+                    pins=JLC_PINS, gap=0.6, fit=0.2, fit_rec=0.4, detail=0.8, tol=0.3,
+                    small=[(5, 5, 5), (2, 2, 10)], big=(276, 360, 370), protrude=1.5),
+        "PCBWay": dict(),
+    },
+    "SLS": {
+        "JLC": dict(wall={5: 1.0, 10: 1.2, 50: 1.5, 100: 2.0, 200: 2.0}, hole=1.5, deep=3,
+                    pins=JLC_PINS, gap=0.6, fit=0.2, fit_rec=0.4, detail=0.8, tol=0.3,
+                    small=[(5, 5, 5), (2, 2, 10)], big=(350, 350, 400), protrude=1.5),
+        "PCBWay": dict(wall=1.0, tol=0.25, big=(390, 390, 400)),
+    },
+    "SLM": {
+        "JLC": dict(wall={5: 1.5, 10: 1.5, 50: 1.5, 100: 2.0, 200: 2.5}, hole=1.5, deep=3,
+                    pins=JLC_PINS, gap=1.0, fit=0.5, detail=1.0, tol=0.3,
+                    small=[(5, 5, 5), (2, 2, 10)], big=(290, 390, 390), protrude=1.5),
+        "PCBWay": dict(wall=1.0, tol=0.3, big=(300, 300, 300)),
+    },
+    "Binder jet": {
+        "JLC": dict(wall={5: 1.5, 10: 1.5, 50: 1.5, 100: 2.0}, hole=1.5, deep=3,
+                    pins=JLC_PINS, gap=1.0, fit=0.5, detail=1.0, tol=0.3,
+                    small=[(5, 5, 5), (2, 2, 10)], big=(100, 100, 100), protrude=1.5),
+        "PCBWay": None,
+    },
+    "FDM": {
+        "JLC": dict(wall={50: 1.6, 100: 2.0, 200: 2.5}, hole=1.5, deep=3,
+                    pins=JLC_PINS, gap=0.5, fit=0.5, detail=1.0, tol=0.3,
+                    small=[(10, 30, 30)], big=(480, 480, 580), protrude=1.5),
+        "PCBWay": dict(wall=1.5, tol=0.2, big=(500, 500, 600)),
+    },
+    "CNC metal": {
+        "JLC": dict(wall=0.5, wall_rec=0.8, tol=0.1, corner="JLC"),
+        "PCBWay": dict(wall=0.8, tol=0.1, corner="PCBWay", small=[(2, 2, 2)], big=(1000, 1000, 1000)),
+    },
+    "CNC plastic": {
+        "JLC": dict(wall=1.0, wall_rec=1.5, tol=0.1, corner="JLC"),
+        "PCBWay": dict(wall=1.5, tol=0.1, corner="PCBWay", small=[(2, 2, 2)], big=(1000, 1000, 1000)),
+    },
+}
+GROUPS = list(RULES)
+SHORT = ["SLA", "DLP", "Jet", "MJF", "SLS", "SLM", "BJ", "FDM", "CNC-M", "CNC-P"]
+
+
+def corner_radius(rule, depth):
+    """The smallest inside-corner radius a CNC shop asks for at this depth."""
+    if rule == "JLC":
+        return max(0.5, depth / 10 + 0.5)
+    return depth / 3
+
+
+# ================================================================ helpers
+
+def glob(o):
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def assembled(link):
+    s = Part.getShape(link.LinkedObject).copy()
+    s.Placement = glob(link)
+    return s
+
+
+def local_solid(body_name):
+    s = doc.getObject(body_name).Shape.copy()
+    s.Placement = App.Placement()   # in the body's own frame
+    return s
+
+
+def where(p):
+    return f"({p.x:.2f}, {p.y:.2f}, {p.z:.2f})"
+
+
+# ================================================================ measuring
+
+def measure_size(solid):
+    b = solid.optimalBoundingBox(False, False)
+    return tuple(sorted((b.XLength, b.YLength, b.ZLength)))
+
+
+THIN = 1.6   # walls under this are kept for the pictures (JLC's thickest wall rule for parts our size)
+
+
+def thin_spots(found):
+    """The thinnest reading on each face, then only one per mm of the part, thinnest first."""
+    per_face = {}
+    for t, p, face in found:
+        if face not in per_face or t < per_face[face][0]:
+            per_face[face] = (t, p, face)
+    out = []
+    for t, p, face in sorted(per_face.values(), key=lambda x: x[0]):
+        if all((p - q).Length > 1.0 for _, q, _ in out):
+            out.append((t, p, face))
+    return out[:8]
+
+
+def measure_wall(solid, thin=None):
+    """The thinnest wall: (thickness, point, face number). Thin spots go into `thin`."""
+    best = (math.inf, None, None)
+    for i, f in enumerate(solid.Faces):
+        u0, u1, v0, v1 = f.ParameterRange
+        for a in SAMPLES:
+            for b in SAMPLES:
+                u, v = u0 + (u1 - u0) * a, v0 + (v1 - v0) * b
+                p = f.valueAt(u, v)
+                if not f.isInside(p, 1e-6, True):
+                    continue
+                n = f.normalAt(u, v)
+                if solid.isInside(p + n * 0.01, 1e-7, False):
+                    n = -n   # make it point out of the material
+                start = p - n * 1e-4
+                inside = solid.common(Part.makeLine(start, p - n * RAY))
+                for e in inside.Edges:
+                    if e.distToShape(Part.Vertex(start))[0] < 1e-3:
+                        t = e.Length + 1e-4
+                        if thin is not None and t < THIN:
+                            thin.append((t, p, i + 1))
+                        if t < best[0]:
+                            best = (t, p, i + 1)
+    return best
+
+
+def measure_round(solid):
+    """Every full round face: holes and pins as (diameter, length, point)."""
+    groups = {}
+    for f in solid.Faces:
+        s = f.Surface
+        if s.TypeId != "Part::GeomCylinder":
+            continue
+        ax = App.Vector(s.Axis)
+        ax.normalize()
+        if (ax.x, ax.y, ax.z) < (0, 0, 0):
+            ax = -ax
+        c = App.Vector(s.Center)
+        foot = c - ax * c.dot(ax)   # where the axis crosses the plane through the origin
+        key = (round(s.Radius, 3), round(ax.x, 3), round(ax.y, 3), round(ax.z, 3),
+               round(foot.x, 3), round(foot.y, 3), round(foot.z, 3))
+        u0, u1, _, _ = f.ParameterRange
+        along = [(v.Point - c).dot(ax) for v in f.Vertexes]
+        g = groups.setdefault(key, {"span": 0.0, "lo": math.inf, "hi": -math.inf, "c": c, "ax": ax, "r": s.Radius})
+        g["span"] += u1 - u0
+        g["lo"], g["hi"] = min(g["lo"], *along), max(g["hi"], *along)
+    holes, pins = [], []
+    for g in groups.values():
+        if g["span"] < 2 * math.pi - 0.05:
+            continue   # part of a curve, not a full hole or pin
+        mid = g["c"] + g["ax"] * ((g["lo"] + g["hi"]) / 2)
+        item = (2 * g["r"], g["hi"] - g["lo"], mid)
+        (pins if solid.isInside(mid, 1e-6, True) else holes).append(item)
+    return holes, pins
+
+
+def measure_corners(solid):
+    """Sharp inside corners running up and down: (depth, point) each."""
+    out = []
+    for e in solid.Edges:
+        if e.Curve.TypeId != "Part::GeomLine" or e.Length < 1e-3:
+            continue
+        d = e.Vertexes[1].Point - e.Vertexes[0].Point
+        d.normalize()
+        if abs(abs(d.z) - 1) > 1e-3:
+            continue
+        faces = solid.ancestorsOfType(e, Part.Face)
+        if len(faces) != 2 or any(f.Surface.TypeId != "Part::GeomPlane" for f in faces):
+            continue
+        mid = e.valueAt((e.FirstParameter + e.LastParameter) / 2)
+        into = App.Vector()
+        for f in faces:
+            t = d.cross(f.Surface.Axis)
+            t.normalize()
+            into += t if f.isInside(mid + t * 0.01, 1e-6, True) else -t
+        if into.Length < 0.1:
+            continue   # the two faces are flat to each other
+        into.normalize()
+        if not solid.isInside(mid + into * 0.01, 1e-7, False):
+            out.append((e.Length, mid))   # between the faces is empty: an inside corner
+    return out
+
+
+def measure_detail(solid, seat_z):
+    """The shortest straight run in the bottom outline: (length, point)."""
+    best = (math.inf, None)
+    for w in solid.slice(App.Vector(0, 0, 1), seat_z + 0.01):
+        for e in w.Edges:
+            if e.Curve.TypeId == "Part::GeomLine" and e.Length < best[0]:
+                best = (e.Length, e.valueAt((e.FirstParameter + e.LastParameter) / 2))
+    return best
+
+
+# ================================================================ judging
+
+def size_class(rule_wall, size):
+    if not isinstance(rule_wall, dict):
+        return rule_wall
+    for limit in sorted(rule_wall):
+        if size[-1] <= limit:
+            return rule_wall[limit]
+    return rule_wall[max(rule_wall)]
+
+
+def judge(check, r, m):
+    """One cell: 'ok', 'warn', 'FAIL', or '-' for no rule. m holds the measurements."""
+    if check == "size":
+        if "small" not in r and "big" not in r:
+            return "-"
+        if "small" in r and not any(all(a >= b - 1e-6 for a, b in zip(m["size"], s)) for s in r["small"]):
+            return "FAIL"
+        if "big" in r and any(a > b for a, b in zip(m["size"], r["big"])):
+            return "FAIL"
+        return "ok"
+    if check == "wall":
+        if "wall" not in r:
+            return "-"
+        t, w = m["wall"][0], size_class(r["wall"], m["size"])
+        if t < w - 1e-6:
+            return "FAIL"
+        return "warn" if t < r.get("wall_rec", 0) - 1e-6 else "ok"
+    if check == "holes":
+        if "hole" not in r or not m["holes"]:
+            return "-" if "hole" not in r else "ok"
+        if any(d < r["hole"] - 1e-6 for d, _, _ in m["holes"]):
+            return "FAIL"
+        return "warn" if any(depth > r["deep"] * d for d, depth, _ in m["holes"]) else "ok"
+    if check == "pins":
+        if "pins" not in r or not m["pins"]:
+            return "-" if "pins" not in r else "ok"
+        worst = "ok"
+        for d, h, _ in m["pins"]:
+            if d >= 3.0 - 1e-6:
+                continue
+            if d < r["pins"][0][0] - 1e-6:
+                return "FAIL"
+            if not any(d >= pd - 1e-6 and h <= ph + 1e-6 for pd, ph in r["pins"]):
+                worst = "warn"   # thick enough, but taller than the rule allows at that size
+        return worst
+    if check == "protrude":
+        if "protrude" not in r or not m["pegs"]:
+            return "-"
+        return "FAIL" if any(d <= r["protrude"] + 1e-6 for d, _, _ in m["pegs"]) else "ok"
+    if check == "spin":
+        if m["gap"] is None:
+            return "-"
+        g = m["gap"][0]
+        if "fit" in r and g < r["fit"] - 1e-6:
+            return "FAIL"
+        if "fit_rec" in r and g < r["fit_rec"] - 1e-6:
+            return "warn"
+        if "tol" in r and g <= 2 * r["tol"] + 1e-6:
+            return "warn"   # two parts' tolerances added could close it
+        return "ok" if ("fit" in r or "tol" in r) else "-"
+    if check == "click":
+        travel = m.get("travel")
+        if m["gap"] is None or travel is None or "tol" not in r:
+            return "-"
+        g = m["gap"][0]
+        if g > travel + 1e-6:
+            return "FAIL"   # the bar can wobble further than the click
+        return "warn" if g + 2 * r["tol"] > travel + 1e-6 else "ok"   # the tolerances could take it past
+    if check == "fits":
+        if not m["fits"] or "tol" not in r:
+            return "-"
+        return "warn" if any(r["tol"] > band for _, band in m["fits"]) else "ok"
+    if check == "detail":
+        if "detail" not in r or m["detail"] is None:
+            return "-"
+        return "warn" if m["detail"][0] < r["detail"] - 1e-6 else "ok"
+    if check == "corners":
+        if "corner" not in r:
+            return "-"
+        return "FAIL" if m["corners"] else "ok"
+    return "-"
+
+
+CHECKS = ["size", "wall", "holes", "pins", "protrude", "spin", "click", "fits", "detail", "corners"]
+
+
+def describe(check, m):
+    """The measurement in words, for the row's label."""
+    if check == "size":
+        return " x ".join(f"{v:.2f}" for v in m["size"])
+    if check == "wall":
+        t, p, face = m["wall"]
+        return f"{t:.2f} at {where(p)}, Face{face}" if p else "none found"
+    if check == "holes":
+        return ", ".join(f"Ø{d:.2f} x {h:.2f} deep" for d, h, _ in m["holes"]) or "none"
+    if check == "pins":
+        return ", ".join(f"Ø{d:.2f} x {h:.2f}" for d, h, _ in m["pins"]) or "none"
+    if check == "protrude":
+        return ", ".join(f"Ø{d:.2f}" for d, _, _ in m["pegs"]) or "no pegs"
+    if check == "spin":
+        if not m["gap"]:
+            return "n/a"
+        g, board = m["gap"][0], m["gap"][1]
+        return f"{g:.3f} to its bar ({board})" + (": they touch" if g < 1e-6 else "")
+    if check == "click":
+        if not m["gap"]:
+            return "n/a"
+        t = m.get("travel")
+        return (f"wobble {m['gap'][0]:.3f} vs switch travel {t:g}" if t is not None
+                else "switch travel not set (SWITCH_TRAVEL at the top)")
+    if check == "fits":
+        return ", ".join(f"{name} {band:g}" for name, band in m["fits"]) or "n/a"
+    if check == "detail":
+        return f"{m['detail'][0]:.2f} at {where(m['detail'][1])}" if m["detail"] else "n/a"
+    if check == "corners":
+        if not m["corners"]:
+            return "none sharp"
+        deepest = max(m["corners"], key=lambda c: c[0])
+        return (f"{len(m['corners'])} sharp, deepest {deepest[0]:.2f} at {where(deepest[1])}: needs "
+                f"R{corner_radius('JLC', deepest[0]):.2f} (JLC), R{corner_radius('PCBWay', deepest[0]):.2f} (PCBWay)")
+    return ""
+
+
+def limit_of(check, r, m):
+    """The number a FAIL broke, and the measured number, for sorting the fails."""
+    if check == "wall":
+        return m["wall"][0], size_class(r["wall"], m["size"])
+    if check == "holes":
+        return min(d for d, _, _ in m["holes"]), r["hole"]
+    if check == "pins":
+        return min(d for d, _, _ in m["pins"]), r["pins"][0][0]
+    if check == "protrude":
+        return min(d for d, _, _ in m["pegs"]), r["protrude"]
+    if check == "spin":
+        return m["gap"][0], r.get("fit", 2 * r.get("tol", 0))
+    if check == "click":
+        return m.get("travel") or 0.0, m["gap"][0]
+    if check == "size":   # the first size that's under the smallest part, or over the largest
+        for got, want in zip(m["size"], (r.get("small") or [(0, 0, 0)])[0]):
+            if got < want - 1e-6:
+                return got, want
+        for got, want in zip(m["size"], r.get("big", (math.inf,) * 3)):
+            if got > want:
+                return want, got
+        return 1.0, 1.0
+    if check == "corners":
+        return 0.0, max(corner_radius(r["corner"], c[0]) for c in m["corners"])
+    return 0.0, 1.0
+
+
+# ================================================================ what would pass
+
+HINTS = {   # the value in the model that sets each kind of feature, where there is one
+    "pins": "the pegs: Cap_Vars.mount_hole_diameter; the hex: set by the encoder, can't change",
+    "protrude": "Cap_Vars.mount_hole_diameter",
+    "holes": "Cap_Vars.mount_hole_diameter, Cap_Vars.mount_depth",
+    "spin": "the cap's entrance around Bar_Vars.spacer_diameter",
+    "click": "the cap's entrance around Bar_Vars.spacer_diameter",
+    "fits": "Bar_Vars.actuation_gap; the hex fit is set by the encoder",
+}
+
+
+def target(check, state, r, m):
+    """What would pass this cell, in words: 'at least 1.0', 'R0.86', ..."""
+    if check == "wall":
+        w = size_class(r["wall"], m["size"])
+        return f"at least {w:g}" if state == "FAIL" else f"{r['wall_rec']:g} recommended"
+    if check == "holes":
+        if state == "FAIL":
+            return f"\u00d8{r['hole']:g} or wider"
+        return f"no deeper than {r['deep']:g} \u00d7 the diameter"
+    if check == "pins":
+        if state == "FAIL":
+            return f"\u00d8{r['pins'][0][0]:g} or wider"
+        return "thicker, or shorter: " + ", ".join(f"\u00d8{d:g} up to {h:g} tall" for d, h in r["pins"])
+    if check == "protrude":
+        return f"thicker than {r['protrude']:g}"
+    if check == "spin":
+        if state == "FAIL":
+            return f"at least {r['fit']:g}" if "fit" in r else f"more than {2 * r['tol']:g}"
+        if "fit_rec" in r and m["gap"][0] < r["fit_rec"]:
+            return f"{r['fit_rec']:g} to be safe"
+        return f"more than {2 * r['tol']:g} (two \u00b1{r['tol']:g} tolerances)"
+    if check == "click":
+        travel = m["travel"]
+        if state == "FAIL":
+            return f"no more than {travel:g} (the switch's travel)"
+        room = travel - 2 * r["tol"]   # what's left of the travel once both tolerances open the gap
+        if room > 1e-6:
+            return f"no more than {room:g} (the travel {travel:g} less two \u00b1{r['tol']:g} tolerances)"
+        return (f"a process held to \u00b1{travel / 2:g} or better: \u00b1{r['tol']:g} can open the gap by "
+                f"{2 * r['tol']:g}, past the {travel:g} travel")
+    if check == "fits":
+        band = min(b for _, b in m["fits"])
+        return f"a process held to \u00b1{band:g} or better (this one is \u00b1{r['tol']:g})"
+    if check == "detail":
+        return f"at least {r['detail']:g}"
+    if check == "size":
+        small = r.get("small") or []
+        return "at least " + " or ".join(" \u00d7 ".join(f"{v:g}" for v in sm) for sm in small) if small else "smaller"
+    if check == "corners":
+        deepest = max(c[0] for c in m["corners"])
+        return f"inside corners of R{corner_radius(r['corner'], deepest):.2f} or more (deepest is {deepest:.2f})"
+    return ""
+
+
+def what_would_pass(check, m, cells=None):
+    """Lines like 'needs at least 1.0: JLC SLA; at least 1.5: JLC MJF SLS'. Groups cells by their target."""
+    short = dict(zip(GROUPS, SHORT))
+    by_target = {}
+    for g in GROUPS:
+        for maker in ("JLC", "PCBWay"):
+            r = RULES[g][maker]
+            if r is None:
+                continue
+            state = cells[(check, g, maker)] if cells else judge(check, r, m)
+            if state in ("FAIL", "warn"):
+                key = (state, target(check, state, r, m))
+                by_target.setdefault(key, []).append(f"{maker} {short[g]}")
+    out = []
+    for (state, want), who in sorted(by_target.items(), key=lambda kv: kv[0][0] != "FAIL"):
+        out.append(f"{'fails' if state == 'FAIL' else 'warns'} {', '.join(who)}: needs {want}")
+    return out
+
+
+# ================================================================ pictures
+
+try:
+    import numpy as np
+    import matplotlib
+    matplotlib.use("Agg")   # draw to a file, not a window
+    import matplotlib.pyplot as plt
+    from matplotlib.collections import PolyCollection
+except ImportError:
+    plt = None
+
+RED, AMBER, INK, QUIET = "#c0392b", "#d68910", "#1f1f1f", "#6b6b6b"
+PART_COLOUR, BAR_COLOUR = "#b9c7d6", "#e3b778"
+VIEWS = [   # (title, looking along, up on the page)
+    ("Seen from below", (-1.0, -1.0, 1.1), (0, 0, 1)),
+    ("The bottom, looking up", (0.0, 0.0, 1.0), (0, 1, 0)),
+]
+
+
+def mesh(shape):
+    """The shape as triangles: an array of (n, 3 corners, xyz)."""
+    pts, tris = shape.tessellate(0.03)
+    p = np.array([[v.x, v.y, v.z] for v in pts])
+    return p[np.array(tris)] if tris else np.zeros((0, 3, 3))
+
+
+def cut(shape):
+    """The shape cut along the bar's axis (the plane x = 0), as triangles in (y, z)."""
+    wires = shape.slice(App.Vector(1, 0, 0), 0.0)
+    if not wires:
+        return np.zeros((0, 3, 2))
+    try:
+        face = Part.makeFace(wires, "Part::FaceMakerBullseye")
+    except Exception:
+        return np.zeros((0, 3, 2))
+    return mesh(face)[:, :, 1:3]
+
+
+def view_axes(look, up):
+    d = np.array(look, float)
+    d /= np.linalg.norm(d)
+    r = np.cross(d, up)
+    r /= np.linalg.norm(r)
+    return d, r, np.cross(r, d)
+
+
+def shade(ax, tris, look, up, colour):
+    """Draw triangles as a shaded picture seen along `look`, far ones first."""
+    d, r, u = view_axes(look, up)
+    light = -d + 0.6 * u + 0.3 * r
+    light /= np.linalg.norm(light)
+    n = np.cross(tris[:, 1] - tris[:, 0], tris[:, 2] - tris[:, 0])
+    size = np.linalg.norm(n, axis=1)
+    keep = size > 1e-12
+    tris, n = tris[keep], n[keep] / size[keep, None]
+    bright = 0.45 + 0.55 * np.abs(n @ light)
+    order = np.argsort(-(tris.mean(axis=1) @ d))
+    flat = np.stack([tris @ r, tris @ u], axis=-1)[order]
+    rgb = np.array(matplotlib.colors.to_rgb(colour))
+    cols = np.clip(bright[order, None] * rgb, 0, 1)
+    ax.add_collection(PolyCollection(flat, facecolors=cols, edgecolors=cols, linewidths=0.2))
+    return flat.reshape(-1, 2), (r, u)
+
+
+def tidy(ax, pts, title):
+    ax.set_aspect("equal")
+    if len(pts):
+        lo, hi = pts.min(axis=0), pts.max(axis=0)
+        pad = 0.08 * (hi - lo).max() + 0.5
+        ax.set_xlim(lo[0] - pad, hi[0] + pad)
+        ax.set_ylim(lo[1] - pad, hi[1] + pad)
+    ax.axis("off")
+    ax.set_title(title, loc="left", fontsize=10.5, fontweight="bold", color=INK)
+
+
+def numbered(ax, x, y, k, colour):
+    ax.plot([x], [y], "o", ms=15, mfc="white", mec=colour, mew=2, zorder=20)
+    ax.text(x, y, str(k), ha="center", va="center", fontsize=8.5, fontweight="bold", color=colour, zorder=21)
+
+
+def row_result(check, m):
+    """How one check comes out for these measurements: the worst cell, and which processes failed or warned."""
+    got = {(g, maker): ("." if RULES[g][maker] is None else judge(check, RULES[g][maker], m))
+           for g in GROUPS for maker in ("JLC", "PCBWay")}
+    short = dict(zip(GROUPS, SHORT))
+    def names(state):
+        out = []
+        for maker in ("JLC", "PCBWay"):
+            hit = [short[g] for g in GROUPS if got.get((g, maker)) == state]
+            if hit:
+                out.append(f"{maker} {' '.join(hit)}")
+        return "; ".join(out)
+    states = set(got.values())
+    worst = "FAIL" if "FAIL" in states else "warn" if "warn" in states else "ok"
+    return worst, names("FAIL"), names("warn")
+
+
+def issues_of(m):
+    """The problems to draw, each judged on its own: (text, point or None, colour)."""
+    out = []
+    def add(check, text, point, **only):
+        worst, fails, warns = row_result(check, dict(m, **only))
+        if worst == "ok":
+            return
+        mm = dict(m, **only)
+        why = "; ".join(what_would_pass(check, mm))
+        hint = f" [{HINTS[check]}]" if check in HINTS else ""
+        out.append((f"{text}: {why}{hint}", point, RED if worst == "FAIL" else AMBER))
+    for spot in m.get("thin") or ([m["wall"]] if m["wall"][1] is not None else []):
+        add("wall", f"wall {spot[0]:.2f}", spot[1], wall=spot)
+    for pin in m["pins"]:
+        if pin[0] < 3.0:
+            hexed = pin is m.get("hex")
+            add("pins", f"pin \u00d8{pin[0]:.2f} x {pin[1]:.2f}" + (" (the hex shaft, set by the encoder)" if hexed else ""),
+                pin[2], pins=[pin])
+    for hole in m["holes"]:
+        add("holes", f"hole \u00d8{hole[0]:.2f}, {hole[1]:.2f} deep", hole[2], holes=[hole])
+    if m["gap"]:
+        g = m["gap"][0]
+        spot = m["gap"][2] if len(m["gap"]) > 2 else None
+        add("spin", "touches its bar" if g < 1e-6 else f"gap to its bar {g:.2f}", spot)
+        add("click", f"wobble {g:.2f} vs the switch's travel", None)   # same spot as the gap: listed, not marked
+    if m["detail"]:
+        add("detail", f"smallest step {m['detail'][0]:.2f}", m["detail"][1])
+    add("size", "size " + " x ".join(f"{v:.1f}" for v in m["size"]), None)
+    add("fits", "fits to bought parts (" + ", ".join(f"{n} {b:g}" for n, b in m["fits"]) + ")", None)
+    if m["corners"]:
+        add("corners", f"{len(m['corners'])} sharp inside corners (squares)", None)
+    return out
+
+
+def draw_part(title, solid, m, cells, bar_here):
+    """Save a picture of the part with its problems numbered. Returns the file's path."""
+    if plt is None:
+        return None
+    issues = issues_of(m)
+    fig = plt.figure(figsize=(15, 6.8))
+    grid = fig.add_gridspec(2, 3, height_ratios=[4.3, 1.6], width_ratios=[1.1, 1, 1.15])
+    n_fail, n_warn = sum(1 for i in issues if i[2] == RED), sum(1 for i in issues if i[2] == AMBER)
+    fig.suptitle(f"{title}: {n_fail} failing, {n_warn} warning{'' if n_warn == 1 else 's'}", x=0.01, ha="left",
+                 fontsize=13, fontweight="bold", color=INK)
+    tris = mesh(solid)
+    for col, (name, look, up) in enumerate(VIEWS):
+        ax = fig.add_subplot(grid[0, col])
+        pts, (r, u) = shade(ax, tris, look, up, PART_COLOUR)
+        for _, p in m["corners"]:
+            ax.plot([p.x * r[0] + p.y * r[1] + p.z * r[2]], [p.x * u[0] + p.y * u[1] + p.z * u[2]],
+                    "s", ms=4, color=AMBER, zorder=15)
+        for k, (text, p, colour) in enumerate(issues, 1):
+            if p is not None:
+                numbered(ax, p.x * r[0] + p.y * r[1] + p.z * r[2], p.x * u[0] + p.y * u[1] + p.z * u[2], k, colour)
+        tidy(ax, pts, name)
+    ax = fig.add_subplot(grid[0, 2])
+    part_cut = cut(solid)
+    ax.add_collection(PolyCollection(part_cut, facecolors=PART_COLOUR, edgecolors=PART_COLOUR, linewidths=0.3))
+    pts = part_cut.reshape(-1, 2)
+    if bar_here is not None:
+        bar_cut = cut(bar_here)
+        ax.add_collection(PolyCollection(bar_cut, facecolors=BAR_COLOUR, edgecolors=BAR_COLOUR,
+                                         linewidths=0.3, alpha=0.9, zorder=2))
+    for k, (text, p, colour) in enumerate(issues, 1):
+        if p is not None and abs(p.x) < 0.75:   # only problems that lie on the cut
+            numbered(ax, p.y, p.z, k, colour)
+    tidy(ax, pts, "Cut along the bar's axis" + (", bar in tan" if bar_here is not None else ""))
+    ax = fig.add_subplot(grid[1, :])
+    ax.axis("off")
+    lines = []
+    for k, (text, p, colour) in enumerate(issues, 1):
+        where_txt = "" if p is None else f"  at {where(p)}"
+        lines.append((f"{k}. " if p is not None else "\u2022 ") + text + where_txt)
+    y = 1.0
+    for (text, p, colour), line in zip(issues, lines):
+        for piece in textwrap.wrap(line, 190):
+            ax.text(0.0, y, piece, transform=ax.transAxes, fontsize=8.8, color=colour, va="top")
+            y -= 0.14
+    ax.text(0.0, y - 0.04, "Red: under a maker's limit. Amber: a warning, or CNC only. Squares: sharp inside corners. "
+            "Coordinates in mm, in the part's own frame.", transform=ax.transAxes, fontsize=8.3, color=QUIET, va="top")
+    folder = os.path.join(os.path.dirname(doc.FileName) or os.path.expanduser("~"), "manufacturability")
+    os.makedirs(folder, exist_ok=True)
+    path = os.path.join(folder, title.replace(", ", "_").replace(" ", "_") + ".png")
+    fig.savefig(path, dpi=140, bbox_inches="tight")
+    plt.close(fig)
+    return path
+
+
+# ================================================================ the run
+
+def measure_part(name, body_name, gaps):
+    solid = local_solid(body_name)
+    pv, partv, barv = doc.getObject("Places_Vars"), doc.getObject("Parts_Vars"), doc.getObject("Bar_Vars")
+    holes, pins = measure_round(solid)
+    found = []
+    m = {"size": measure_size(solid), "wall": measure_wall(solid, found), "holes": holes, "pins": list(pins),
+         "pegs": [], "gap": None, "fits": [], "detail": None, "corners": measure_corners(solid)}
+    if name == "bar":
+        hex_d = float(partv.encoder_opening.Value)
+        hex_h = float(barv.straight_shaft_length.Value) + float(barv.angled_shaft_length.Value)
+        # The hex shaft isn't round, so it's named here. It runs from the shaft's end
+        # (the bar's y = 0) back along -y; its marker goes halfway along it.
+        m["hex"] = (hex_d, hex_h, App.Vector(0, -hex_h / 2, 0))
+        m["pins"].append(m["hex"])
+        m["fits"] = [("actuation_gap", float(barv.actuation_gap.Value)), ("hex in encoder bore", HEX_FIT)]
+    else:
+        seat = -float(partv.encoder_to_pcb.Value)   # the cap's bottom, in its own frame
+        m["pegs"] = [p for p in pins if p[2].z < seat + 1e-3]
+        m["detail"] = measure_detail(solid, seat)
+        m["gap"] = gaps.get(name)
+        m["travel"] = SWITCH_TRAVEL.get(name)
+    m["thin"] = thin_spots(found)
+    return m, solid
+
+
+def print_table(title, m):
+    say(f"\n{title}\n")
+    for check in CHECKS:
+        say(f"  {check:9} {describe(check, m)}\n")
+    head = "  " + " " * 10 + "".join(f"{s:>11}" for s in SHORT)
+    say(head + "\n")
+    cells = {}
+    for check in CHECKS:
+        row = f"  {check:10}"
+        for g in GROUPS:
+            pair = []
+            for maker in ("JLC", "PCBWay"):
+                r = RULES[g][maker]
+                c = "." if r is None else judge(check, r, m)
+                cells[(check, g, maker)] = c
+                pair.append(c)
+            row += f"{'/'.join(pair):>11}"
+        say(row + "\n")
+    lines = []
+    for check in CHECKS:
+        for line in what_would_pass(check, m, cells):
+            lines.append(f"  {check:9} {line}" + (f"  [{HINTS[check]}]" if check in HINTS and line == what_would_pass(check, m, cells)[0] else ""))
+    if lines:
+        say("  To pass:\n" + "".join(textwrap.fill(l, 150, subsequent_indent=" " * 12) + "\n" for l in lines))
+    return cells
+
+
+def run():
+    t0 = time.time()
+    pv = doc.getObject("Places_Vars")
+    for n in ("Places_Vars", "Parts_Vars", "Bar_Vars", "Cap_Vars"):
+        if doc.getObject(n) is None:
+            raise RuntimeError(f"can't find {n}")
+    for body in PARTS.values():
+        if doc.getObject(body) is None:
+            raise RuntimeError(f"can't find {body}")
+    mounts = pv.getEnumerationsOfProperty("cap_mount")
+    was = pv.cap_mount
+    say(f"Manufacturability check, {len(GROUPS)} process and material groups, JLC/PCBWay in each cell\n"
+        f"cap_mount is '{was}' now; checking the caps with {', '.join(mounts)}\n")
+
+    fails, pictures = [], []
+    doc.openTransaction("Manufacturability check (thrown away)")
+    try:
+        for mount in mounts:
+            pv.cap_mount = mount
+            doc.recompute()
+            gaps = {}
+            for board, bar_link, cap_link, cap in PAIRS:
+                cap_obj = doc.getObject(cap_link)
+                d, pts, _ = assembled(doc.getObject(bar_link)).distToShape(assembled(cap_obj))
+                gaps[cap] = (d, board, glob(cap_obj).inverse().multVec(pts[0][1]))
+            for name, body in PARTS.items():
+                if name == "bar" and mount != mounts[0]:
+                    continue   # cap_mount doesn't change the bar
+                m, solid = measure_part(name, body, gaps)
+                title = name if name == "bar" else f"{name}, {mount}"
+                cells = print_table(title.upper(), m)
+                bar_here = None
+                for board, bar_link, cap_link, cap in PAIRS:
+                    if cap == name:   # the bar as it sits in this cap, in the cap's own frame
+                        bar_here = assembled(doc.getObject(bar_link))
+                        bar_here.Placement = glob(doc.getObject(cap_link)).inverse().multiply(bar_here.Placement)
+                pictures.append(draw_part(title, solid, m, cells, bar_here))
+                for (check, g, maker), c in cells.items():
+                    if c == "FAIL":
+                        got, limit = limit_of(check, RULES[g][maker], m)
+                        fails.append((got / limit if limit else 0, title, check, g, maker, got, limit))
+    finally:
+        doc.abortTransaction()
+        pv.cap_mount = was
+        doc.recompute()
+
+    say(f"\nFAILS, worst first ({len(fails)})\n")
+    for ratio, title, check, g, maker, got, limit in sorted(fails):
+        say(f"  {title:24} {check:9} {g:12} {maker:7} {got:.2f} vs {limit:.2f}\n")
+    saved = [p for p in pictures if p]
+    if saved:
+        say(f"\nPictures saved:\n" + "".join(f"  {p}\n" for p in saved))
+    say(f"\nDone in {time.time() - t0:.0f} s. cap_mount is back to '{pv.cap_mount}'; the model is unchanged.\n")
+
+
+try:
+    run()
+except RuntimeError as e:
+    App.Console.PrintError(f"\nThe check stopped: {e}\n")

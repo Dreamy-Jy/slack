@@ -1,0 +1,236 @@
+# Push 1: move the KiCad footprints to where FreeCAD has them.
+#
+# Run it in FreeCAD 1.1.3 with scrollbar.FCStd open. Close the board in
+# KiCad first (or reload it afterwards without saving), so KiCad doesn't
+# save its old positions over the push.
+#
+# Set BOARD below to your board file. The push writes OUT, a copy next to
+# it, and never touches BOARD itself. Once you've opened OUT in KiCad and
+# it looks right, set OUT = BOARD to push for real.
+#
+#   1. Reads every footprint's position from FreeCAD: each footprint
+#      container's place on its board, which the VarSets drive. The board's
+#      origin is its encoder's pad A1, so
+#        KiCad x = encoder x + FreeCAD x
+#        KiCad y = encoder y - FreeCAD y   (KiCad's y points down)
+#        KiCad rotation = FreeCAD rotation (both counter-clockwise on screen)
+#   2. Checks the two encoders sit at their board's origin (they're locked
+#      in KiCad and never move), and that nothing was moved by hand in KiCad
+#      since the last push (from OUT's .push.json record).
+#   3. Writes only the numbers in each footprint's translate and rotate
+#      lines; every other line of the file stays as it was.
+#   4. Reads OUT back: every footprint where FreeCAD has it (to 0.001), and
+#      nothing else in the file changed.
+
+import json
+import math
+import os
+import re
+
+try:
+    import FreeCAD as App
+except ImportError:   # lets the file-editing part be tested outside FreeCAD
+    App = None
+
+BOARD = "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/example_scrollbar.kicad_pcb"
+OUT = BOARD.replace(".kicad_pcb", ".kicad_pcb")
+TOL = 0.001
+
+BOARDS = {   # board container: its encoder footprint (the board's origin)
+    "Lever class 3": "B1-RE9",
+    "Lever class 2": "B2-RE9",
+}
+PUSHED = {   # reference in KiCad: footprint container in FreeCAD
+    "B1-MP": "B1-MP Switched cap",
+    "B1-SW62": "B1-SW62 TC-1109",
+    "B1-LED62": "B1-LED62 LED",
+    "B1-D62": "B1-D62 Diode",
+    "B2-MP": "B2-MP Plain cap",
+    "B2-SW62": "B2-SW62 SKQG",
+    "B2-LED62": "B2-LED62 LED",
+    "B2-D62": "B2-D62 Diode",
+}
+
+problems = []
+
+
+def say(msg):
+    (App.Console.PrintMessage if App else print)(msg.rstrip("\n") + ("\n" if App else ""))
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            (App.Console.PrintError if App else print)(f"  FAIL  {p}\n")
+        raise RuntimeError("The push stopped.")
+    say(f"  ok    {title}\n")
+
+
+# ================================================================ the board file
+
+FOOTPRINT = re.compile(r'\n\t\(footprint "')
+TRANSFORM = re.compile(r'(\(transform\s*\(translate )([-\d.e]+) ([-\d.e]+)(\)\s*\(rotate )([-\d.e]+)(\))')
+
+
+def footprints(text):
+    """Every footprint in the file: reference -> (start, end, x, y, rotation)."""
+    out = {}
+    starts = [m.start() for m in FOOTPRINT.finditer(text)]
+    for i, s in enumerate(starts):
+        end = starts[i + 1] if i + 1 < len(starts) else len(text)
+        block = text[s:end]
+        ref = re.search(r'\(property "Reference" "([^"]+)"', block).group(1).rstrip("*")
+        t = TRANSFORM.search(block)
+        if t is None:
+            raise RuntimeError(f"{ref} has no transform block; this push expects KiCad's 10.99 format")
+        out[ref] = (s, end, float(t.group(2)), float(t.group(3)), float(t.group(5)))
+    return out
+
+
+def kicad_number(v):
+    """Write a number the way KiCad does: up to 6 decimals, no trailing zeros."""
+    s = f"{v:.6f}".rstrip("0").rstrip(".")
+    return "0" if s in ("-0", "") else s
+
+
+def write_positions(text, moves):
+    """Change only the translate and rotate numbers of the footprints in moves."""
+    fps = footprints(text)
+    pieces, last = [], 0
+    for ref, (s, end, *_) in sorted(fps.items(), key=lambda kv: kv[1][0]):
+        if ref not in moves:
+            continue
+        x, y, rot = moves[ref]
+        block = text[s:end]
+        block = TRANSFORM.sub(lambda m: f"{m.group(1)}{kicad_number(x)} {kicad_number(y)}{m.group(4)}"
+                                        f"{kicad_number(rot)}{m.group(6)}", block, count=1)
+        pieces += [text[last:s], block]
+        last = end
+    pieces.append(text[last:])
+    return "".join(pieces)
+
+
+def angle_diff(a, b):
+    return abs((a - b + 180) % 360 - 180)
+
+
+def check_written(old, new, moves):
+    """Read the new file back: positions as asked, and no other line changed."""
+    got = footprints(new)
+    for ref, (x, y, rot) in moves.items():
+        _, _, gx, gy, grot = got[ref]
+        if abs(gx - x) > TOL or abs(gy - y) > TOL or angle_diff(grot, rot) > TOL:
+            fail(f"{ref} reads back at ({gx}, {gy}, {grot}°), expected ({x:.4f}, {y:.4f}, {rot}°)")
+    if set(got) != set(footprints(old)):
+        fail("the footprints in the new file aren't the same set as before")
+    a, b = old.split("\n"), new.split("\n")
+    if len(a) != len(b):
+        fail(f"the file went from {len(a)} lines to {len(b)}")
+    else:
+        changed = [i for i, (p, q) in enumerate(zip(a, b)) if p != q]
+        bad = [i for i in changed if not re.match(r"\s*\((translate|rotate) ", a[i])]
+        if bad:
+            fail(f"{len(bad)} lines other than translate or rotate changed, first at line {bad[0] + 1}")
+        say(f"  {len(changed)} lines changed, all of them translate or rotate lines\n")
+
+
+# ================================================================ FreeCAD
+
+def one(label):
+    found = App.ActiveDocument.getObjectsByLabel(label)
+    if len(found) != 1:
+        fail(f"expected one object labelled '{label}', found {len(found)}")
+        return None
+    return found[0]
+
+
+def on_board(container, board):
+    """The container's place in its board's frame: (x, y, rotation in degrees)."""
+    p = board.getGlobalPlacement().inverse().multiply(container.getGlobalPlacement())
+    yaw, pitch, roll = p.Rotation.toEuler()
+    if abs(pitch) > TOL or abs(roll) > TOL:
+        fail(f"{container.Label} is tilted (pitch {pitch:.3f}°, roll {roll:.3f}°); the push only handles turns about z")
+    return p.Base.x, p.Base.y, yaw
+
+
+def step1_read(fps):
+    say("\nStep 1: read the positions from FreeCAD\n")
+    moves = {}
+    for board_label, enc_ref in BOARDS.items():
+        board = one(board_label)
+        enc = one(f"{enc_ref} Encoder")
+        if board is None or enc is None or enc_ref not in fps:
+            fail(f"{board_label}: can't find the board, its encoder container, or {enc_ref} in the board file")
+            continue
+        ex, ey, erot = on_board(enc, board)
+        if math.hypot(ex, ey) > TOL or angle_diff(erot, 0) > TOL:
+            fail(f"{enc.Label} isn't at its board's origin ({ex:.4f}, {ey:.4f}, {erot:.3f}°)")
+        _, _, kx, ky, krot = fps[enc_ref]
+        for ref, label in PUSHED.items():
+            if not ref.startswith(enc_ref.split("-")[0] + "-"):
+                continue
+            c = one(label)
+            if c is None:
+                continue
+            if ref not in fps:
+                fail(f"{ref} isn't in the board file")
+                continue
+            x, y, rot = on_board(c, board)
+            moves[ref] = (kx + x, ky - y, round(krot + rot, 6) % 360)
+    end_step(f"read {len(moves)} footprint positions; both encoders at their board's origin")
+    return moves
+
+
+def step2_compare(fps, moves, record):
+    say("\nStep 2: compare with the board file\n")
+    for ref, (x, y, rot) in moves.items():
+        _, _, fx, fy, frot = fps[ref]
+        if ref in record:
+            rx, ry, rrot = record[ref]
+            if abs(fx - rx) > TOL or abs(fy - ry) > TOL or angle_diff(frot, rrot) > TOL:
+                fail(f"{ref} was moved in KiCad since the last push: now ({fx}, {fy}, {frot}°), "
+                     f"pushed ({rx}, {ry}, {rrot}°). Move it back, or delete the .push.json to overwrite it.")
+        d = (x - fx, y - fy, angle_diff(rot, frot))
+        if max(abs(d[0]), abs(d[1]), d[2]) <= TOL:
+            moves[ref] = (fx, fy, frot)   # keep KiCad's own numbers, so the line doesn't change
+            say(f"  same  {ref}\n")
+        else:
+            say(f"  move  {ref}: x {fx:.4f} -> {x:.4f} ({d[0]:+.4f}), y {fy:.4f} -> {y:.4f} ({d[1]:+.4f})"
+                + (f", rotation {frot:g}° -> {rot:g}°" if d[2] > TOL else "") + "\n")
+    end_step("nothing was moved by hand in KiCad since the last push")
+
+
+def run():
+    if not os.path.exists(BOARD):
+        fail(f"can't find the board file at {BOARD}; set BOARD at the top of this macro")
+        end_step("")
+    src = OUT if os.path.exists(OUT) else BOARD   # push onto the copy once it exists
+    old = open(src, encoding="utf-8").read()
+    fps = footprints(old)
+    record_path = OUT + ".push.json"
+    record = json.load(open(record_path)) if os.path.exists(record_path) else {}
+    say(f"Reading {src}\n" + ("" if record else "No earlier push recorded; this is the first.\n"))
+
+    moves = step1_read(fps)
+    step2_compare(fps, moves, record)
+
+    say("\nStep 3: write and read back\n")
+    new = write_positions(old, moves)
+    check_written(old, new, moves)
+    end_step("every footprint reads back where FreeCAD has it, and nothing else changed")
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write(new)
+    with open(record_path, "w") as f:
+        json.dump(moves, f, indent=1)
+    say(f"  wrote {OUT}\n  wrote {record_path}\n\nPush done. Open {os.path.basename(OUT)} in KiCad to look.\n")
+
+
+if App is not None:
+    try:
+        run()
+    except RuntimeError as e:
+        App.Console.PrintError(f"\n{e} The board file was not written.\n")

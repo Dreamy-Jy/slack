@@ -1,0 +1,307 @@
+# Push 2: redraw KiCad's two cap footprints from the FreeCAD caps, and
+# export the cap STEP files their 3D models point to.
+#
+# Run it after push_positions.py, in FreeCAD 1.1.3 with scrollbar.FCStd
+# open, with the board closed in KiCad. Set BOARD and OUT the same as in
+# push_positions.py; this push edits OUT (or BOARD if OUT doesn't exist yet).
+#
+# For each cap it slices the FreeCAD cap just above where it sits on the board
+# (part_seat), in the cap footprint's own frame, and from that slice:
+#   - the outline (with the notch or switch opening) goes on F.SilkS and
+#     F.Fab, and the same outline grown by COURTYARD goes on F.CrtYd;
+#   - the pocket opening (the hole the LED and diode sit in) goes on F.SilkS
+#     and F.Fab as its own closed line, and on F.CrtYd COURTYARD bigger, as a
+#     hole in the courtyard so the LED's and diode's courtyards don't overlap it;
+#   - the round holes (or the peg tips, with pegs) set the two pads' positions;
+#     the drill is mount_hole_diameter (pad copper size and net stay as they are).
+# The 3D model line points at a fresh STEP export of the cap (pegged_… or
+# insert_…, from cap_mount, in the folder the model is in today), with the
+# offset the cap has inside its footprint in FreeCAD.
+# Then it reads the file back: outlines, holes and model as computed, the
+# footprints where they were, and nothing outside the two cap footprints changed.
+
+import os
+import re
+import uuid
+
+import FreeCAD as App
+import Part
+
+BOARD = "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/example_scrollbar.kicad_pcb"
+OUT = BOARD.replace(".kicad_pcb", ".kicad_pcb")
+TOL = 0.001
+COURTYARD = 0.25   # how far the courtyard sits outside the outline (as today)
+SLICE = 0.01       # how far above the board, or the lowest point, to slice
+
+CAPS = {   # reference: (footprint container, cap link, footprint name in KiCad)
+    "B1-MP": ("B1-MP Switched cap", "Link009", "switched_grounded_scrollcap"),
+    "B2-MP": ("B2-MP Plain cap", "Link010", "grounded_scrollcap"),
+}
+LINES = {"F.SilkS": 0.12, "F.CrtYd": 0.05, "F.Fab": 0.1}   # line widths, as today
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The push stopped.")
+    say(f"  ok    {title}\n")
+
+
+def num(v):
+    s = f"{v:.4f}".rstrip("0").rstrip(".")
+    return "0" if s in ("-0", "") else s
+
+
+# ================================================================ 1. measure the caps
+
+def wire_points(w):
+    """A closed wire of straight edges as KiCad points (x, -y), in order."""
+    if any(e.Curve.TypeId != "Part::GeomLine" for e in w.Edges):
+        return None
+    return [(round(v.Point.x, 4), round(-v.Point.y, 4)) for v in w.OrderedVertexes]
+
+
+def measure(ref):
+    fp_label, link_name, _ = CAPS[ref]
+    link = doc.getObject(link_name)
+    body = link.LinkedObject
+    local = body.Shape.copy()
+    local.Placement = App.Placement()           # the cap in its own body frame
+    in_fp = local.copy()
+    in_fp.Placement = link.Placement            # the cap in its footprint's frame
+    # Two slices. The cap sits on the board at part_seat; the outline and the
+    # pocket come from just above that. Pegs reach below it into the board,
+    # so the holes come from just above the lowest point: the peg tips with
+    # pegs, the same slice as the outline with inserts.
+    # (optimalBoundingBox: the plain BoundBox is loose around curved faces.)
+    seat = float(doc.getObject("Parts_Vars").part_seat.Value)
+    z0 = in_fp.optimalBoundingBox(False, False).ZMin
+    if z0 > seat + TOL:
+        fail(f"{ref}: the cap's lowest point (z {z0:.4f}) is above the board (z {seat:.4f})")
+        return None
+
+    def cut(z):
+        holes, others = [], []
+        for w in in_fp.slice(App.Vector(0, 0, 1), z):
+            if len(w.Edges) == 1 and w.Edges[0].Curve.TypeId == "Part::GeomCircle":
+                c = w.Edges[0].Curve
+                holes.append((round(c.Center.x, 4), round(-c.Center.y, 4), round(2 * c.Radius, 4)))
+            else:
+                others.append(w)
+        return holes, others
+
+    seat_holes, others = cut(seat + SLICE)
+    low_holes, _ = cut(z0 + SLICE)
+    pegs_below = z0 < seat - TOL
+    holes = low_holes if pegs_below else seat_holes
+    say(f"  {ref}: sits on the board at z {seat:.4f}, lowest point z {z0:.4f}"
+        f" ({'pegs below the board' if pegs_below else 'nothing below the board'});"
+        f" {len(others)} outline lines, {len(holes)} holes\n")
+    if not others:
+        fail(f"{ref}: the slice found no outline")
+        return None
+    outer = max(others, key=lambda w: Part.Face(w).Area)
+    pockets = [w for w in others if w is not outer]
+
+    outline = wire_points(outer)
+    court = wire_points(Part.Face(outer).makeOffset2D(COURTYARD, 2).OuterWire)
+    pocket_pts = [wire_points(w) for w in pockets]
+    # A hole in the courtyard over each pocket, COURTYARD bigger than the
+    # pocket, so the LED's and diode's own courtyards fit inside it
+    holes_crt = [wire_points(Part.Face(w).makeOffset2D(COURTYARD, 2).OuterWire) for w in pockets]
+    if outline is None or court is None or None in pocket_pts or None in holes_crt:
+        fail(f"{ref}: an outline has curved edges; this push only draws straight ones")
+    if len(holes) != 2:
+        fail(f"{ref}: found {len(holes)} round holes in the cap's bottom, expected 2")
+    # The board's drill is mount_hole_diameter, as on the FreeCAD boards; a peg
+    # or insert hole found here must not be bigger than that
+    drill = float(doc.getObject("Cap_Vars").mount_hole_diameter.Value)
+    for h in holes:
+        if h[2] > drill + TOL:
+            fail(f"{ref}: a {'peg' if pegs_below else 'hole'} is {h[2]} across, wider than mount_hole_diameter {drill}")
+    holes = [(h[0], h[1], drill) for h in holes]
+
+    pegs = doc.getObject("Places_Vars").getEnumerationsOfProperty("cap_mount").index(
+        doc.getObject("Places_Vars").cap_mount) == 0
+    lp = link.Placement.Base
+    return {
+        "outline": outline, "courtyard": court, "pockets": pocket_pts, "courtyard_holes": holes_crt,
+        "holes": sorted(holes), "local": local,
+        "step": f"{'pegged' if pegs else 'insert'}_{CAPS[ref][2]}.step",   # folder set from the footprint
+        "offset": (round(lp.x, 4), round(lp.y, 4), round(lp.z - seat, 4)),
+    }
+
+
+def step1_measure():
+    say("\nStep 1: measure the caps\n")
+    caps = {}
+    for ref in CAPS:
+        m = measure(ref)
+        if m:
+            caps[ref] = m
+            say(f"  {ref}: outline {len(m['outline'])} corners, {len(m['pockets'])} pocket, holes "
+                + ", ".join(f"({h[0]}, {h[1]}) Ø{h[2]}" for h in m["holes"])
+                + f", model offset {m['offset']}\n")
+            for p in m["pockets"]:
+                xs, ys = [q[0] for q in p], [q[1] for q in p]
+                say(f"        pocket x {min(xs)} to {max(xs)}, y {min(ys)} to {max(ys)}\n")
+    end_step("both caps measured")
+    return caps
+
+
+# ================================================================ 2. rewrite the footprints
+
+FOOTPRINT = re.compile(r'\n\t\(footprint "')
+
+
+def find_footprint(text, ref):
+    starts = [m.start() for m in FOOTPRINT.finditer(text)] + [len(text)]
+    for s, e in zip(starts, starts[1:]):
+        if re.search(rf'\(property "Reference" "{re.escape(ref)}\**"', text[s:e]):
+            return s, e
+    return None
+
+
+def poly(points, layer):
+    pts = " ".join(f"(xy {num(x)} {num(y)})" for x, y in points)
+    return (f"\t\t(fp_poly\n\t\t\t(pts\n\t\t\t\t{pts}\n\t\t\t)\n"
+            f"\t\t\t(stroke\n\t\t\t\t(width {LINES[layer]})\n\t\t\t\t(type solid)\n\t\t\t)\n"
+            f"\t\t\t(fill no)\n\t\t\t(layer \"{layer}\")\n\t\t\t(uuid \"{uuid.uuid4()}\")\n\t\t)\n")
+
+
+def rewrite(block, m, ref):
+    # Drawings: every fp_poly goes; the new ones go where the first one was
+    polys = list(re.finditer(r"\t\t\(fp_poly\n.*?\n\t\t\)\n", block, re.S))
+    if not polys:
+        fail(f"{ref}: no outline drawings found in the footprint")
+        return block
+    new = poly(m["outline"], "F.SilkS") + poly(m["courtyard"], "F.CrtYd") + poly(m["outline"], "F.Fab")
+    for p in m["pockets"]:
+        new += poly(p, "F.SilkS") + poly(p, "F.Fab")
+    for p in m["courtyard_holes"]:
+        new += poly(p, "F.CrtYd")   # a closed line inside the courtyard is a hole in it
+    first, last = polys[0].start(), polys[-1].end()
+    between = block[first:last]
+    for p in polys:
+        between = between.replace(p.group(0), "", 1)
+    if between.strip():
+        fail(f"{ref}: something other than outlines sits between the outlines; not rewriting it")
+        return block
+    block = block[:first] + new + block[last:]
+
+    # Pads: same pads, new positions and drill, in order of x
+    pads = list(re.finditer(r'\t\t\(pad "[^"]*" thru_hole circle\n\t\t\t\(at ([-\d.]+) ([-\d.]+)( [-\d.]+)?\)', block))
+    if len(pads) != len(m["holes"]):
+        fail(f"{ref}: the footprint has {len(pads)} round pads, the cap {len(m['holes'])} holes")
+        return block
+    for p, h in sorted(zip(sorted(pads, key=lambda p: float(p.group(1))), m["holes"]),
+                       key=lambda ph: -ph[0].start()):
+        s = p.group(0)
+        s = re.sub(r"\(at [-\d.]+ [-\d.]+", f"(at {num(h[0])} {num(h[1])}", s, count=1)
+        block = block[:p.start()] + s + block[p.end():]
+    block = re.sub(r"(\t\t\(pad \"[^\"]*\" thru_hole circle\n(?:\t\t\t.*\n)*?\t\t\t\(drill )[-\d.]+",
+                   lambda q: q.group(1) + num(m["holes"][0][2]), block)
+
+    # 3D model: the fresh STEP, at the cap's offset in its footprint
+    model = re.search(r'\(model "([^"]*)"', block)
+    if model is None:
+        fail(f"{ref}: no 3D model line in the footprint")
+        return block
+    # The STEP goes in the folder the footprint's model already lives in
+    m["step"] = os.path.join(os.path.dirname(model.group(1)), os.path.basename(m["step"]))
+    block = re.sub(r'\(model "[^"]*"', f'(model "{m["step"]}"', block, count=1)
+    ox, oy, oz = m["offset"]
+    block = re.sub(r"(\(offset\n\t+\(xyz )[^)]*\)", lambda q: f"{q.group(1)}{num(ox)} {num(oy)} {num(oz)})", block, count=1)
+    return block
+
+
+# ================================================================ 3. read back
+
+def read_back(new, caps, old):
+    for ref, m in caps.items():
+        s, e = find_footprint(new, ref)
+        block = new[s:e]
+        polys = {}
+        for p in re.finditer(r'\(fp_poly\n\t+\(pts\n\t+(.*?)\n\t+\).*?\(layer "([^"]+)"\)', block, re.S):
+            pts = [(float(x), float(y)) for x, y in re.findall(r"\(xy ([-\d.]+) ([-\d.]+)\)", p.group(1))]
+            polys.setdefault(p.group(2), []).append(pts)
+
+        def same(a, b):
+            return len(a) == len(b) and all(abs(p[0] - q[0]) <= TOL and abs(p[1] - q[1]) <= TOL for p, q in zip(a, b))
+        if not any(same(p, m["outline"]) for p in polys.get("F.SilkS", [])):
+            fail(f"{ref}: the silkscreen outline doesn't read back")
+        if not any(same(p, m["courtyard"]) for p in polys.get("F.CrtYd", [])):
+            fail(f"{ref}: the courtyard doesn't read back")
+        for pk in m["courtyard_holes"]:
+            if not any(same(p, pk) for p in polys.get("F.CrtYd", [])):
+                fail(f"{ref}: the courtyard hole over the pocket doesn't read back")
+        for pk in m["pockets"]:
+            if not any(same(p, pk) for p in polys.get("F.Fab", [])):
+                fail(f"{ref}: the pocket outline doesn't read back")
+        pads = sorted((float(x), float(y)) for x, y in re.findall(r'thru_hole circle\n\t+\(at ([-\d.]+) ([-\d.]+)', block))
+        if not same(pads, [(h[0], h[1]) for h in m["holes"]]):
+            fail(f"{ref}: the pads read back at {pads}")
+        if f'(model "{m["step"]}"' not in block:
+            fail(f"{ref}: the 3D model doesn't point at {m['step']}")
+        ob = old[slice(*find_footprint(old, ref))]
+        tr = re.compile(r"\(transform\s*\(translate [^)]*\)\s*\(rotate [^)]*\)")
+        if tr.search(ob).group(0) != tr.search(block).group(0):
+            fail(f"{ref}: the footprint's position changed")
+    # Outside the two cap footprints, nothing changed
+    def rest(t):
+        for ref in sorted(caps, key=lambda r: -find_footprint(t, r)[0]):
+            s, e = find_footprint(t, ref)
+            t = t[:s] + t[e:]
+        return t
+    if rest(new) != rest(old):
+        fail("something outside the two cap footprints changed")
+
+
+# ================================================================ run
+
+def run():
+    src = OUT if os.path.exists(OUT) else BOARD
+    if not os.path.exists(src):
+        fail(f"can't find the board file at {BOARD}; set BOARD at the top of this macro")
+        end_step("")
+    old = open(src, encoding="utf-8").read()
+    say(f"Reading {src}\n")
+    caps = step1_measure()
+
+    say("\nStep 2: rewrite the cap footprints\n")
+    new = old
+    for ref, m in caps.items():
+        where = find_footprint(new, ref)
+        if where is None:
+            fail(f"{ref} isn't in the board file")
+            continue
+        s, e = where
+        new = new[:s] + rewrite(new[s:e], m, ref) + new[e:]
+    end_step("both cap footprints rewritten")
+
+    say("\nStep 3: read back\n")
+    read_back(new, caps, old)
+    end_step("outlines, pocket, pads and models read back as measured; nothing else changed")
+
+    say("\nStep 4: write\n")
+    for ref, m in caps.items():
+        m["local"].exportStep(m["step"])
+        say(f"  wrote {m['step']}\n")
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write(new)
+    say(f"  wrote {OUT}\n\nPush done. Open {os.path.basename(OUT)} in KiCad to look.\n")
+
+
+try:
+    run()
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Nothing was written.\n")
