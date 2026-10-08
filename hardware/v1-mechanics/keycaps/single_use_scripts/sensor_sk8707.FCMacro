@@ -1,0 +1,281 @@
+"""Parametric model of the Sprintek SK8707-01-004 pointing-stick sensor.
+
+Run as a FreeCAD macro: builds the sensor in a new document and leaves it open.
+
+Dimensions come from Sprintek datasheet DS0048 v1.04 p.6, the Sprintek product
+render (disc, screws), the Sprintek PCB gerbers (receiving pads: 2.13 mm wide on a
+2.49 mm pitch) and Jordane's corrections of 2026-10-09. Every size lives in the
+"Sensor Params" VarSet and every shape is bound to it by expressions.
+
+Castellated-edge layout, x from the board centerline:
+    pitch = reciever_w + reciever_gap        (receiving pad centers on the host board)
+    pair  = small_pad_w + small_cast_gap     (the two pins of a small pair)
+    big1 = -3.75, big2 = -1.25               (explicit on the datasheet drawing)
+    small1 = big2 + pitch - pair/2           small2 = small1 + pair
+    small3 = small1 + pitch                  small4 = small3 + pair
+
+Local coordinate frame (what the assembly will place):
+    origin  = center of the stem, on the sensor PCB's top face
+    +Z      = stem direction (up through the keyboard PCB hole)
+    -Y      = the castellated edge; +X = toward the four small castellations
+"""
+import FreeCAD
+
+from fc_helpers import make_varset as _make_varset
+
+# name -> (value in mm, tooltip). Sources: DS0048 v1.04 p.6 unless the tooltip says otherwise.
+DIMENSIONS = {
+    "pcb_w": (13.20, "Sensor PCB width, across the castellated edge (X)."),
+    "pcb_l": (18.29, "Sensor PCB length, from the castellated edge to the far edge (Y)."),
+    "pcb_t": (0.80, "Sensor PCB thickness."),
+    "stem_size": (2.40, "Side of the square prism stick the cap grips."),
+    "stem_h": (2.40, "Stem height above the sensor PCB's top face."),
+    "stem_from_pad_edge": (10.84, "Distance from the stem center to the castellated edge."),
+    "hole_pitch": (9.50, "Spacing of the 4 screw holes, on a square centered on the stem."),
+    "hole_d": (1.80, "Screw hole diameter."),
+    "disc_d": (10.10, "Diameter of the grey metal sensor disc around the stem (scaled from the drawing, corrected)."),
+    "disc_t": (0.05, "Sensor disc thickness (cosmetic; not on the drawing)."),
+    "screw_head_d": (2.80, "Screw head diameter. Sprintek 109-00045: M1.4 x 0.3, L 1.2 mm wafer head."),
+    "screw_head_h": (0.15, "Screw head thickness (from the product photo)."),
+    "screw_head_edge": (0.05, "How much the head narrows toward its top, giving the rounded-edge look."),
+    "screw_recess_w": (0.30, "Width of each Phillips slot in the head."),
+    "screw_shank_d": (1.40, "Screw shank (thread) diameter, M1.4."),
+    "screw_total_len": (1.20, "Overall screw length including the head, the 'L 1.2 mm' in the part number."),
+    "reciever_w": (2.10, "Width of the matching pads on the keyboard PCB (Sprintek gerber: 2.13 mm)."),
+    "reciever_gap": (0.40, "Gap between neighbouring receiving pads on the keyboard PCB."),
+    "big_cast_r": (0.60, "Radius of the 2 large edge castellations (R0.60 x2)."),
+    "big_pad_w": (1.60, "Width of the copper pad around each large castellation."),
+    "small_cast_r": (0.35, "Radius of the 4 small edge castellations (scaled from the drawing)."),
+    "small_cast_gap": (0.10, "Copper gap between the two pads of a small pair."),
+    "small_cast_total_w": (2.15, "Width of one small pair, both pads plus the gap ('2.15' on the drawing)."),
+    "pad_h": (1.35, "How far the edge pads reach in from the castellated edge."),
+    "corner_w": (1.15, "Width of each corner copper block (holds a half-hole on the outer side edge)."),
+    "corner_h": (3.00, "Height of each corner copper block."),
+    "corner_cast_r": (0.75, "Radius of the corner half-holes (R0.75 x2)."),
+    "corner_cast_y": (1.75, "Corner half-hole center, measured in from the castellated edge."),
+    "plating_t": (0.05, "Copper thickness used for pads and screw rings (cosmetic)."),
+}
+BIG_X = ["-3.75 mm", "-1.25 mm"]   # explicit on DS0048 p.6; the small pins hang off big pin 2
+DERIVED = {                    # name -> (formula, tooltip)
+    "reciever_pitch": ("SensorParams.reciever_w + SensorParams.reciever_gap",
+                       "Center-to-center spacing of the receiving pads; also the spacing between pin groups."),
+    "small_pad_w": ("(SensorParams.small_cast_total_w - SensorParams.small_cast_gap) / 2",
+                    "Width of one small pad, from the pair width and the gap."),
+    "small_pair_pitch": ("SensorParams.small_pad_w + SensorParams.small_cast_gap",
+                         "Center-to-center spacing of the two pins in a small pair."),
+    "screw_len": ("SensorParams.screw_total_len - SensorParams.screw_head_h",
+                  "Shank length below the head."),
+    "screw_recess_d": ("SensorParams.screw_head_h * 0.67",
+                       "Phillips recess depth, kept at two thirds of the head so it never cuts through."),
+    "screw_ring_r": ("SensorParams.screw_head_d / 2 + 0.2 mm",
+                     "Radius of the copper ring under each screw head (solders to the keyboard PCB)."),
+}
+
+
+def make_varset(doc):
+    """One VarSet holding every sensor dimension: the inputs as numbers, the rest as formulas."""
+    return _make_varset(doc, "SensorParams", "Sensor Params", DIMENSIONS, DERIVED, "Sensor",
+                        description="Every sensor dimension; hover a value for what it means")
+
+
+# Expression shorthands.
+P = "SensorParams."
+EDGE = "-" + P + "stem_from_pad_edge"              # y of the castellated edge
+THRU_Z = "-" + P + "pcb_t - 0.1 mm"                # cutting tools start below the board...
+THRU_H = P + "pcb_t + 0.2 mm"                      # ...and end above it
+PITCH = P + "reciever_pitch"
+PAIR = P + "small_pair_pitch"
+
+
+
+def x_of(name):
+    """Expression for another object's x position."""
+    return name + ".Placement.Base.x"
+
+
+def small_pin_x(suffix):
+    """x expressions of the 4 small castellations, chained: 1 off big pin 2, 2 off 1, 3 off 1, 4 off 3.
+
+    The Copper copies of pins 1 and 3 simply follow their Pcb twins.
+    """
+    if suffix == "Pcb":
+        x1 = x_of("BigCastellation2Pcb") + " + " + PITCH + " - " + PAIR + " / 2"
+        x3 = x_of("SmallCastellation1Pcb") + " + " + PITCH
+    else:
+        x1 = x_of("SmallCastellation1Pcb")
+        x3 = x_of("SmallCastellation3Pcb")
+    x2 = x_of(f"SmallCastellation1{suffix}") + " + " + PAIR
+    x4 = x_of(f"SmallCastellation3{suffix}") + " + " + PAIR
+    return [x1, x2, x3, x4]
+
+SCREW_CORNERS = [(1, 1), (-1, 1), (-1, -1), (1, -1)]
+
+
+def bind(obj, **expressions):
+    """Attach expressions, e.g. Length="SensorParams.pcb_w", x="..." (x/y/z = Placement)."""
+    for prop, expr in expressions.items():
+        if prop in ("x", "y", "z"):
+            prop = ".Placement.Base." + prop
+        obj.setExpression(prop, expr)
+    return obj
+
+
+def box(doc, name, length, width, height, x, y, z):
+    """Part::Box with size and corner position given as expression strings."""
+    return bind(doc.addObject("Part::Box", name),
+                Length=length, Width=width, Height=height, x=x, y=y, z=z)
+
+
+def cylinder(doc, name, radius, height, x, y, z):
+    """Part::Cylinder with size and base-center position given as expression strings."""
+    return bind(doc.addObject("Part::Cylinder", name),
+                Radius=radius, Height=height, x=x, y=y, z=z)
+
+
+def fuse(doc, name, label, shapes):
+    f = doc.addObject("Part::MultiFuse", name)
+    f.Shapes, f.Label = shapes, label
+    return f
+
+
+def cut(doc, name, label, base, tool):
+    c = doc.addObject("Part::Cut", name)
+    c.Base, c.Tool, c.Label = base, tool, label
+    return c
+
+
+def make_cutouts(doc, suffix):
+    """Fused cutting tool: 4 screw holes + all edge castellations, taller than the board."""
+    tools = []
+    for i, (sx, sy) in enumerate(SCREW_CORNERS):
+        tools.append(cylinder(doc, f"ScrewHole{i + 1}{suffix}", P + "hole_d / 2", THRU_H,
+                              f"{sx} * {P}hole_pitch / 2", f"{sy} * {P}hole_pitch / 2", THRU_Z))
+    for i, x in enumerate(BIG_X):
+        tools.append(cylinder(doc, f"BigCastellation{i + 1}{suffix}", P + "big_cast_r", THRU_H,
+                              x, EDGE, THRU_Z))
+    for i, x in enumerate(small_pin_x(suffix)):
+        tools.append(cylinder(doc, f"SmallCastellation{i + 1}{suffix}", P + "small_cast_r", THRU_H,
+                              x, EDGE, THRU_Z))
+    for i, sx in enumerate([-1, 1]):   # corner half-holes, centered on the outer side edge
+        tools.append(cylinder(doc, f"CornerCastellation{i + 1}{suffix}", P + "corner_cast_r", THRU_H,
+                              f"{sx} * {P}pcb_w / 2", EDGE + " + " + P + "corner_cast_y", THRU_Z))
+    return fuse(doc, f"Cutouts{suffix}", f"cut-outs ({suffix})", tools)
+
+
+def make_pcb(doc):
+    """Bare green PCB: box minus the cut-outs."""
+    blank = box(doc, "SensorPcbBlank", P + "pcb_w", P + "pcb_l", P + "pcb_t",
+                "-" + P + "pcb_w / 2", EDGE, "-" + P + "pcb_t")
+    return cut(doc, "SensorPcb", "Sensor PCB", blank, make_cutouts(doc, "Pcb"))
+
+
+def make_copper(doc):
+    """Gold copper on the top face: edge pads, corner blocks, rings around the screw holes."""
+    copper = []
+    for i, x in enumerate(BIG_X):
+        copper.append(box(doc, f"SensorBigPad{i + 1}", P + "big_pad_w", P + "pad_h", P + "plating_t",
+                          x + " - " + P + "big_pad_w / 2", EDGE, "0 mm"))
+    small_pad_x = [x_of("SmallCastellation1Pcb") + " - " + P + "small_pad_w / 2",
+                   x_of("SensorSmallPad1") + " + " + PAIR,
+                   x_of("SmallCastellation3Pcb") + " - " + P + "small_pad_w / 2",
+                   x_of("SensorSmallPad3") + " + " + PAIR]
+    for i, x in enumerate(small_pad_x):
+        copper.append(box(doc, f"SensorSmallPad{i + 1}", P + "small_pad_w", P + "pad_h", P + "plating_t",
+                          x, EDGE, "0 mm"))
+    corner_y = EDGE + " + " + P + "corner_cast_y - " + P + "corner_h / 2"   # centered on the half-hole
+    copper.append(box(doc, "SensorCornerPadL", P + "corner_w", P + "corner_h", P + "plating_t",
+                      "-" + P + "pcb_w / 2", corner_y, "0 mm"))
+    copper.append(box(doc, "SensorCornerPadR", P + "corner_w", P + "corner_h", P + "plating_t",
+                      P + "pcb_w / 2 - " + P + "corner_w", corner_y, "0 mm"))
+    for i, (sx, sy) in enumerate(SCREW_CORNERS):
+        copper.append(cylinder(doc, f"SensorScrewRing{i + 1}", P + "screw_ring_r", P + "plating_t", f"{sx} * {P}hole_pitch / 2",
+                               f"{sy} * {P}hole_pitch / 2", "0 mm"))
+    plated = fuse(doc, "SensorCopperAll", "copper (uncut)", copper)
+    return cut(doc, "SensorCopper", "Sensor Copper", plated, make_cutouts(doc, "Copper"))
+
+
+def make_disc_and_stem(doc):
+    disc = cylinder(doc, "SensorDisc", P + "disc_d / 2", P + "disc_t", "0 mm", "0 mm", "0 mm")
+    disc.Label, disc.Label2 = "Sensor Disc", "Grey metal disc around the stem"
+    stem = box(doc, "SensorStem", P + "stem_size", P + "stem_size", P + "stem_h",
+               "-" + P + "stem_size / 2", "-" + P + "stem_size / 2", "0 mm")
+    stem.Label, stem.Label2 = "Sensor Stem", "2.4 mm square stick the cap grips"
+    return disc, stem
+
+
+def make_screw(doc, index, sx, sy):
+    """Sprintek 109-00045 wafer-head screw: thin head (slightly narrowing toward the top,
+    like the rounded edge in the photo) + threaded shank + shallow Phillips recess.
+    Threads are not modeled. Swap for a Fasteners-workbench part if wanted.
+    """
+    cx, cy = f"{sx} * {P}hole_pitch / 2", f"{sy} * {P}hole_pitch / 2"
+    head = bind(doc.addObject("Part::Cone", f"ScrewHead{index}"),
+                Radius1=P + "screw_head_d / 2",
+                Radius2=P + "screw_head_d / 2 - " + P + "screw_head_edge",
+                Height=P + "screw_head_h", x=cx, y=cy, z="0 mm")
+    shank = cylinder(doc, f"ScrewShank{index}", P + "screw_shank_d / 2", P + "screw_len",
+                     cx, cy, "-" + P + "screw_len")
+    body = fuse(doc, f"ScrewBody{index}", "screw body", [head, shank])
+    slot_len, slot_w = P + "screw_head_d * 0.6", P + "screw_recess_w"
+    slot_z = P + "screw_head_h - " + P + "screw_recess_d"
+    slot_h = P + "screw_recess_d + 0.1 mm"
+    slot_a = box(doc, f"ScrewSlotA{index}", slot_len, slot_w, slot_h,
+                 cx + " - " + P + "screw_head_d * 0.3", cy + " - " + slot_w + " / 2", slot_z)
+    slot_b = box(doc, f"ScrewSlotB{index}", slot_w, slot_len, slot_h,
+                 cx + " - " + slot_w + " / 2", cy + " - " + P + "screw_head_d * 0.3", slot_z)
+    recess = fuse(doc, f"ScrewRecess{index}", "recess", [slot_a, slot_b])
+    return cut(doc, f"Screw{index}", f"Screw {index} (109-00045 M1.4x1.2)", body, recess)
+
+
+def build_sensor(doc, with_screws=True):
+    """Create the sensor as an App::Part; return (part, {object: color}). Only the objects made
+    here go into the part, so the sensor can be built inside a document that holds other things.
+    with_screws=False leaves out the four screws (the PCB keeps its screw holes and rings)."""
+    before = set(doc.Objects)
+    vs = make_varset(doc)
+    pcb = make_pcb(doc)
+    copper = make_copper(doc)
+    disc, stem = make_disc_and_stem(doc)
+    screws = [make_screw(doc, i + 1, sx, sy) for i, (sx, sy) in enumerate(SCREW_CORNERS)] if with_screws else []
+
+    part = doc.addObject("App::Part", "Sensor")
+    part.Label = "Sensor SK8707-01-004"
+    part.Label2 = "Sprintek FlexPoint sensor, parametric (sensor_sk8707.py)"
+    for obj in doc.Objects:                      # everything built here lives in the container
+        if obj not in before and obj is not part and obj.TypeId not in ("App::Origin", "App::Line", "App::Plane", "App::Point"):
+            part.addObject(obj)
+    doc.recompute()
+    shown = {vs, pcb, copper, disc, stem, *screws}
+    for obj in part.Group:
+        obj.Visibility = obj in shown
+
+    GREEN, GOLD = (0.11, 0.42, 0.26), (0.83, 0.66, 0.20)
+    STEEL, WHITE = (0.72, 0.73, 0.76), (0.93, 0.93, 0.90)
+    colors = {pcb: GREEN, copper: GOLD, disc: STEEL, stem: WHITE}
+    colors.update({s: STEEL for s in screws})
+    return part, colors
+
+
+def paint(colors):
+    """Set each object's color. Only possible when FreeCAD's GUI is running."""
+    if not FreeCAD.GuiUp:
+        print("no GUI: colors skipped")
+        return
+    for obj, rgb in colors.items():
+        obj.ViewObject.ShapeColor = rgb
+
+
+if __name__ == "__main__":
+    doc = FreeCAD.newDocument("sensor_sk8707")
+    part, colors = build_sensor(doc)
+    paint(colors)
+    import Part
+    bb = Part.getShape(part).BoundBox
+    print(f"sensor bbox x {bb.XMin:.2f}..{bb.XMax:.2f}  y {bb.YMin:.2f}..{bb.YMax:.2f}  z {bb.ZMin:.2f}..{bb.ZMax:.2f}")
+    xs = [doc.getObject(n).Placement.Base.x for n in
+          ["BigCastellation1Pcb", "BigCastellation2Pcb", "SmallCastellation1Pcb",
+           "SmallCastellation2Pcb", "SmallCastellation3Pcb", "SmallCastellation4Pcb"]]
+    print("castellation x:", ", ".join(f"{x:.4f}" for x in xs))
+    if FreeCAD.GuiUp:
+        import FreeCADGui
+        FreeCADGui.SendMsgToActiveView("ViewFit")
