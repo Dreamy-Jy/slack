@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SKQGAFE010
+D Tact switch,SMT,SPST,with stem,0.98N o/f Stem Tactile Switch, SPST-NO 50 mA 1.5mm
+K
+F http://www.alps.com/prod/info/E/HTML/Tact/SurfaceMount/SKQG/SKQGAFE010.html
+$ENDCMP
+#
+#End Doc Library
