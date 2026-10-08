@@ -1,0 +1,927 @@
+"""Rebuild the keycaps test assembly as a clean, parametric FreeCAD document.
+
+Run as a FreeCAD macro. The only input is the KiCad board file: positions come
+from its footprints and the vendor bodies from the STEP paths its footprints list.
+The output is a new document (save it as keycaps_test_assembly_clean.FCStd).
+Each step below is a function; we fill and test them one at a time, in order.
+A step that grows big moves to its own file and is imported here.
+
+Coordinate frame: the sensor center (footprint REF**) is the origin, +Z up out of
+the board's top face, +Y toward the top of the board as seen in KiCad (KiCad's
+Y points down, so read_board flips it).
+"""
+import os
+from dataclasses import dataclass, field
+import importlib
+import math
+import FreeCAD
+import fc_helpers
+import sensor_sk8707
+# FreeCAD keeps imported modules for the whole session, so an edited helper file would be
+# ignored until restart. Reloading here makes every run use the files as they are on disk.
+importlib.reload(fc_helpers)
+importlib.reload(sensor_sk8707)
+from fc_helpers import (Document, Object, RGB, make_varset, bind, box, cylinder, fuse, cut,
+                        container, paint, fit_view)
+
+# ---- inputs (Jordane's Mac) --------------------------------------------------
+BOARD_FILE = "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/keycaps/keycaps_test_assembly/keycaps_test_assembly.kicad_pcb"
+
+SWITCHES = ["SW33", "SW34", "SW47", "SW48"]          # each owns LED## and D## with the same number
+SENSOR = "REF**"
+
+# Step 9 can also print the phase 2 gaps (cap to keycap, keycap to keycap). They are exact but
+# take a few minutes on the 12,000-triangle keycap and cap meshes, so they are off by default.
+MEASURE_GAPS = False
+MIN_HOLE_CLEARANCE = 0.25   # mm, min_hole_clearance in keycaps_test_assembly.kicad_pro
+
+# Colors (r, g, b, each 0..1) of the bodies modeled here; vendor models keep their STEP colors.
+PCB_GREEN: RGB = (0.11, 0.42, 0.26)
+COPPER_GOLD: RGB = (0.83, 0.66, 0.20)
+
+# Root VarSet "Params": name -> (value or formula, tooltip). board_thickness is added from the board file.
+ROOT_INPUTS = {
+    "cu_thickness": (0.04, "Copper pad thickness. 0.04 mm matches KiCad's own STEP export."),
+    "solder_sink": (0.02, "How far each soldered part sinks into its pads, standing in for the solder joint."),
+    "keycap_ceiling": (3.50, "Height of the keycap's inner ceiling above the switch's bottom (the PCB top in Cherry's files) "
+                             "when the key is at rest. "
+                             "Measured by lowering Cherry's official keycap onto Cherry's switch model."),
+    "keycap_seat": (0.00, "Fine-tune added to keycap_ceiling, if your keycap models sit differently."),
+    "cap_offset": (0.00, "Sensor cap height relative to resting its socket floor on the stem top. "
+                         "Positive raises the cap."),
+}
+ROOT_DERIVED = {
+    "board_top": ("Params.board_thickness", "Z of the PCB's top face. The PCB spans z = 0 to board_top."),
+    "pad_top": ("Params.board_top + Params.cu_thickness", "Z of the top of the front (F.Cu) pads."),
+    "part_seat": ("Params.pad_top - Params.solder_sink", "Z where the bottoms of soldered parts sit."),
+    "back_pad_bottom": ("-Params.cu_thickness", "Z of the bottom of the back (B.Cu) pads, under the board."),
+    "keycap_ceiling_z": ("Params.part_seat + Params.keycap_ceiling + Params.keycap_seat",
+                         "Z of the keycap's inner ceiling, where every keycap is placed."),
+    "sensor_top_z": ("Params.back_pad_bottom + Params.solder_sink",
+                     "Z of the sensor PCB's top face. The sensor hangs under the board, stem up, soldered to "
+                     "the back pads and sunk into them like every soldered part (no screws in this model)."),
+}
+
+
+# ---- data read from the board file ------------------------------------------
+@dataclass
+class Pad:
+    """One SMD pad, position relative to its footprint's center, in mm."""
+    number: str                 # "1", "2", "3"... ("" for NPTH)
+    shape: str                  # "rect" | "roundrect" | "circle"
+    x: float
+    y: float
+    rot: float                  # degrees
+    width: float
+    height: float
+    layer: str                  # "F.Cu" | "B.Cu"
+    corner_ratio: float = 0.0   # roundrect only: corner radius / min(width, height)
+
+
+@dataclass
+class Hole:
+    """One non-plated through hole, position relative to its footprint's center."""
+    x: float
+    y: float
+    diameter: float
+
+
+@dataclass
+class Model:
+    """One 3D model listed in a footprint, with the placement KiCad gives it there."""
+    path: str                                   # file path as written in the board file
+    offset: tuple[float, float, float]          # mm, in the footprint's frame (Y up)
+    rotate: tuple[float, float, float]          # degrees, as stored by KiCad
+
+
+@dataclass
+class Footprint:
+    ref: str                    # "SW33", "LED33", "D33", "REF**"
+    x: float                    # assembly frame: origin at REF**, Y up
+    y: float
+    rot: float                  # degrees, counter-clockwise
+    pads: list[Pad] = field(default_factory=list)
+    holes: list[Hole] = field(default_factory=list)
+    models: list[Model] = field(default_factory=list)  # 3D models listed in the footprint, not hidden
+    courtyard: tuple[float, float, float, float] | None = None   # largest F.CrtYd outline: left, bottom, right, top
+
+
+@dataclass
+class PcbConfig:
+    thickness: float
+    outline: tuple[float, float, float, float]     # xmin, ymin, xmax, ymax, assembly frame
+    footprints: dict[str, Footprint]               # keyed by ref
+
+
+Library = dict[str, Object]     # one imported body per model file, keyed by the file name without extension
+
+
+# ---- step 1 ------------------------------------------------------------------
+# The board file is an s-expression tree, parsed here with ~30 lines of plain Python.
+# Third-party readers were tried on the KiCad 10.99 file: kiutils and kicad-skip fail
+# on its `transform` syntax; sexpdata works but was judged not worth a dependency.
+MAX_TESTED_KICAD_FILE_VERSION = 20260901      # (version ...) in the board file; KiCad 10.99
+
+
+def _tokens(text: str) -> list[str]:
+    """Split s-expression text into '(', ')' and atoms; quoted strings keep their spaces."""
+    out, i, n = [], 0, len(text)
+    while i < n:
+        c = text[i]
+        if c in "()":
+            out.append(c); i += 1
+        elif c == '"':
+            j = text.index('"', i + 1)
+            out.append(text[i + 1:j]); i = j + 1
+        elif c.isspace():
+            i += 1
+        else:
+            j = i
+            while j < n and not text[j].isspace() and text[j] not in "()":
+                j += 1
+            out.append(text[i:j]); i = j
+    return out
+
+
+def _parse(text: str) -> list:
+    """Nested lists: '(pad "1" smd rect (at 1 2))' -> ['pad', '1', 'smd', 'rect', ['at', '1', '2']]."""
+    stack = [[]]
+    for t in _tokens(text):
+        if t == "(":
+            stack.append([])
+        elif t == ")":
+            done = stack.pop(); stack[-1].append(done)
+        else:
+            stack[-1].append(t)
+    return stack[0][0]
+
+
+def _check_version(board: list) -> None:
+    version = int(_child(board, "version")[1])
+    if version > MAX_TESTED_KICAD_FILE_VERSION:
+        print(f"WARNING: board file version {version} is newer than the last tested "
+              f"{MAX_TESTED_KICAD_FILE_VERSION}; check the footprint positions in describe().")
+
+
+def _children(node: list, key: str) -> list[list]:
+    """All sub-lists of `node` whose first element is `key`."""
+    return [c for c in node if isinstance(c, list) and c and c[0] == key]
+
+
+def _child(node: list, key: str) -> list:
+    found = _children(node, key)
+    return found[0] if found else []
+
+
+def _numbers(node: list) -> list[float]:
+    return [float(t) for t in node[1:] if not isinstance(t, list)]
+
+
+def _read_footprint(node: list) -> Footprint:
+    """One (footprint ...) node -> Footprint, still in KiCad's frame (y down, board coords)."""
+    ref = next(p[2] for p in _children(node, "property") if p[1] == "Reference")
+    transform = _child(node, "transform")
+    x, y = _numbers(_child(transform, "translate"))
+    rot = _numbers(_child(transform, "rotate"))[0]
+    fp = Footprint(ref=ref, x=x, y=y, rot=rot)
+    for p in _children(node, "pad"):
+        number, kind, shape = p[1], p[2], p[3]
+        at = _numbers(_child(p, "at"))
+        px, py, prot = at[0], at[1], (at[2] if len(at) > 2 else 0.0)
+        size = _numbers(_child(p, "size"))
+        if kind == "np_thru_hole":
+            fp.holes.append(Hole(x=px, y=py, diameter=_numbers(_child(p, "drill"))[0]))
+        elif kind == "smd":
+            layer = _child(p, "layers")[1]
+            ratio = _numbers(_child(p, "roundrect_rratio"))
+            fp.pads.append(Pad(number=number, shape=shape, x=px, y=py, rot=prot - rot,
+                               width=size[0], height=size[1], layer=layer,
+                               corner_ratio=ratio[0] if ratio else 0.0))
+    outlines = []                                    # F.CrtYd rectangles and polygons, as (xmin, ymin, xmax, ymax)
+    for g in _children(node, "fp_rect") + _children(node, "fp_poly"):
+        if _child(g, "layer")[1] == "F.CrtYd":
+            pts = [_numbers(p) for p in _children(_child(g, "pts"), "xy")] or \
+                  [_numbers(_child(g, "start")), _numbers(_child(g, "end"))]
+            xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+            outlines.append((min(xs), min(ys), max(xs), max(ys)))
+    if outlines:
+        fp.courtyard = max(outlines, key=lambda o: (o[2] - o[0]) * (o[3] - o[1]))
+    for m in _children(node, "model"):
+        if not _child(m, "hide"):
+            xyz = lambda key: tuple(_numbers(_child(_child(m, key), "xyz")))
+            fp.models.append(Model(path=m[1], offset=xyz("offset"), rotate=xyz("rotate")))
+    return fp
+
+
+def get_pcb_config(path: str) -> PcbConfig:
+    """Read the .kicad_pcb with plain Python (no KiCad needed) into a PcbConfig,
+    converted to the assembly frame: origin at REF**, Y flipped to point up.
+
+    KiCad facts used: pad positions are relative to the footprint and rotate with it;
+    a pad's own rotation is absolute (verified against KiCad's exported pad solids),
+    so Pad.rot is stored relative to the footprint. Rotation signs are unchanged by
+    the Y flip because KiCad's positive rotation is counter-clockwise on screen.
+    """
+    board = _parse(open(path, encoding="utf-8").read())
+    _check_version(board)
+    thickness = _numbers(_child(_child(board, "general"), "thickness"))[0]
+    footprints = [_read_footprint(f) for f in _children(board, "footprint")]
+    origin = next(f for f in footprints if f.ref == SENSOR)
+    ox, oy = origin.x, origin.y
+
+    def to_assembly(x: float, y: float) -> tuple[float, float]:
+        return x - ox, -(y - oy)
+
+    for fp in footprints:
+        fp.x, fp.y = to_assembly(fp.x, fp.y)
+        for pad in fp.pads:
+            pad.y = -pad.y
+        for hole in fp.holes:
+            hole.y = -hole.y
+        if fp.courtyard:                             # KiCad (y down) -> assembly (y up)
+            x0, y0, x1, y1 = fp.courtyard
+            fp.courtyard = (x0, -y1, x1, -y0)
+
+    edge = next(r for r in _children(board, "gr_rect") if _child(r, "layer")[1] == "Edge.Cuts")
+    x0, y0 = to_assembly(*_numbers(_child(edge, "start")))
+    x1, y1 = to_assembly(*_numbers(_child(edge, "end")))
+    outline = (min(x0, x1), min(y0, y1), max(x0, x1), max(y0, y1))
+    return PcbConfig(thickness=thickness, outline=outline,
+                     footprints={fp.ref: fp for fp in footprints})
+
+
+# ---- step 2 ------------------------------------------------------------------
+# Where KiCad's path variables point on this machine (KiCad -> Preferences -> Configure Paths).
+KICAD_PATH_VARS = {
+    "KICAD10_3DMODEL_DIR": "/Applications/KiCad/KiCad.app/Contents/SharedSupport/3dmodels",
+}
+
+STEP_FORMATS = (".step", ".stp", ".iges", ".igs")   # imported with their parts, names and colors
+SHAPE_FORMATS = (".brep",)                            # read as one bare shape
+SKIP_MODELS = {"SK8707-01-004"}   # vendor sensor STEP: step 7 builds the sensor with sensor_sk8707 instead
+MESH_FORMATS = (".stl", ".obj", ".ply", ".off")               # read as triangle meshes (Mesh)
+# .wrl (VRML) is what KiCad's own library mostly ships; FreeCAD cannot read it -> use the .step twin.
+
+
+def _resolve_model_path(path: str) -> str:
+    """Expand KiCad's ${VAR} placeholders using KICAD_PATH_VARS, then the environment."""
+    for var, folder in KICAD_PATH_VARS.items():
+        path = path.replace("${" + var + "}", folder)
+    return os.path.expandvars(path)
+
+
+def _library_key(path: str) -> str:
+    """Library name of a model file: its file name without the extension."""
+    return os.path.splitext(os.path.basename(path))[0]
+
+
+def _make_solid(obj: Object) -> None:
+    """Some STEP files hold a closed skin instead of a solid (e.g. an OpenSCAD mesh export, like
+    the dactyl keycap). Overlap and height checks only work on solids, so wrap each closed skin."""
+    import Part
+    shape = getattr(obj, "Shape", None)
+    if obj.TypeId != "Part::Feature" or shape is None or shape.Solids or not shape.Shells:
+        return
+    if all(shell.isClosed() for shell in shape.Shells):
+        solids = [Part.Solid(shell) for shell in shape.Shells]
+        obj.Shape = Part.makeCompound([s if s.Volume > 0 else s.reversed() for s in solids])
+        print(f"  {obj.Label}: closed skin turned into a solid")
+
+
+def _import_model(doc: Document, path: str, name: str) -> Object:
+    """One document object holding the model: for STEP/IGES the importer's top object (an App::Part
+    holding the named parts, or one Part::Feature), for BREP a Part::Feature, for meshes a Mesh::Feature."""
+    ext = os.path.splitext(path)[1].lower()
+    if ext in STEP_FORMATS:
+        # FreeCAD's own STEP importer keeps the file's parts, their names and (with the GUI) their
+        # colors. The keyword arguments override the user's import preferences: one document,
+        # parts kept separate, no link groups.
+        importer = __import__("ImportGui" if FreeCAD.GuiUp else "Import")
+        before = set(doc.Objects)
+        importer.insert(path, doc.Name, merge=False, useLinkGroup=False, mode=0)
+        new = [o for o in doc.Objects if o not in before]
+        roots = [o for o in new if not any(parent in new for parent in o.InList)]
+        obj = roots[0] if len(roots) == 1 else container(doc, name, name, roots)
+        for part in new:
+            _make_solid(part)
+    elif ext in SHAPE_FORMATS:
+        import Part
+        obj = doc.addObject("Part::Feature", name)
+        obj.Shape = Part.read(path)
+    elif ext in MESH_FORMATS:
+        import Mesh
+        obj = doc.addObject("Mesh::Feature", name)
+        obj.Mesh = Mesh.Mesh(path)
+    else:
+        raise ValueError(f"{path}: format {ext} not supported ({STEP_FORMATS + SHAPE_FORMATS + MESH_FORMATS})")
+    obj.Label = "LIB " + name
+    obj.Label2 = f"Imported from {path}"
+    return obj
+
+
+def build_3d_model_library(doc: Document, pcb: PcbConfig) -> Library:
+    """Import each distinct model file named by the footprints once, into a hidden
+    'Library' group. Later steps Link to these bodies; the old FCStd is not needed.
+    Missing files are reported and skipped so one bad path does not stop the build."""
+    group = doc.addObject("App::DocumentObjectGroup", "Library")
+    group.Label2 = "One hidden copy of each 3D model; everything visible links to these"
+    library: Library = {}
+    seen: set[str] = set()
+    for fp in pcb.footprints.values():
+        for model in fp.models:
+            raw = model.path
+            key = _library_key(raw)
+            if key in seen or key in SKIP_MODELS:
+                continue
+            seen.add(key)
+            path = _resolve_model_path(raw)
+            if not os.path.isfile(path):
+                print(f"build_3d_model_library: missing {path}  (from {fp.ref})")
+                continue
+            obj = _import_model(doc, path, key)
+            obj.Visibility = False
+            group.addObject(obj)
+            library[key] = obj
+            print(f"  LIB {key:28} <- {fp.ref:6} {os.path.basename(path)}")
+    return library
+
+
+# ---- step 3 ------------------------------------------------------------------
+def build_root_varset(doc: Document, pcb: PcbConfig) -> Object:
+    """Root VarSet 'Params': board_thickness from the board file, the rest from
+    ROOT_INPUTS (numbers) and ROOT_DERIVED (formulas). Every placement in the
+    assembly refers back to these, e.g. Params.part_seat."""
+    inputs = {"board_thickness": (pcb.thickness, "PCB thickness, read from the KiCad board file."),
+              **ROOT_INPUTS}
+    return make_varset(doc, "Params", "Params", inputs, ROOT_DERIVED, "Assembly",
+                       description="Assembly-wide heights; every placement refers back here")
+
+
+def _current_gaps(pcb: PcbConfig) -> list[float]:
+    """The four courtyard gaps on the board as KiCad has it: left-right in the top and bottom
+    rows, top-bottom in the left and right columns."""
+    fp = pcb.footprints
+    left, bottom, right, top = fp[SWITCHES[0]].courtyard
+    row = lambda a, b: (fp[b].x + left) - (fp[a].x + right)             # a left of b
+    column = lambda a, b: (fp[a].y + bottom) - (fp[b].y + top)          # a above b
+    return [row("SW33", "SW34"), row("SW47", "SW48"), column("SW33", "SW47"), column("SW34", "SW48")]
+
+
+def make_layout_varsets(doc: Document, pcb: PcbConfig) -> Object:
+    """'Layout' VarSet (switch_gap, sensor_hole_d, the switch courtyard), with every default
+    read from the board file, then every '<REF> Params' bound to it:
+    switches sit so that all four courtyard gaps equal switch_gap, centered on the sensor;
+    each LED and diode keeps its KiCad offset from its switch; the sensor stays where KiCad has it.
+    Returns the Layout VarSet."""
+    courtyards = {pcb.footprints[ref].courtyard for ref in SWITCHES}
+    assert len(courtyards) == 1 and None not in courtyards, f"switch courtyards differ: {courtyards}"
+    left, bottom, right, top = courtyards.pop()
+    gaps = _current_gaps(pcb)
+    print("      courtyard gaps on the board: " + ", ".join(f"{g:.3f}" for g in gaps) + f"  -> switch_gap starts at {min(gaps):.3f}")
+    inputs = {
+        "switch_gap": (min(gaps), "Space between neighbouring switch courtyards, the same left-right and top-bottom. "
+                                  "Starts at the smallest gap on the board."),
+        "sensor_hole_d": (pcb.footprints[SENSOR].holes[0].diameter, "Diameter of the TrackPoint hole. Starts at the board's value."),
+        # Courtyard reach as positive distances (a Length VarSet value cannot be negative).
+        "crtyd_left": (-left, "How far the switch courtyard reaches left of the switch center (from the footprint)."),
+        "crtyd_right": (right, "How far the switch courtyard reaches right of the switch center (from the footprint)."),
+        "crtyd_down": (-bottom, "How far the switch courtyard reaches below the switch center (from the footprint)."),
+        "crtyd_up": (top, "How far the switch courtyard reaches above the switch center (from the footprint)."),
+    }
+    derived = {
+        "sw_x_right": ("Layout.switch_gap / 2 + Layout.crtyd_left", "Center x of the right-hand switches."),
+        "sw_x_left": ("-Layout.switch_gap / 2 - Layout.crtyd_right", "Center x of the left-hand switches."),
+        "sw_y_top": ("Layout.switch_gap / 2 + Layout.crtyd_down", "Center y of the top switches."),
+        "sw_y_bottom": ("-Layout.switch_gap / 2 - Layout.crtyd_up", "Center y of the bottom switches."),
+    }
+    # Board outline: each side keeps the original margin past the outermost courtyard, but never
+    # comes in past KiCad's original edge. Stored as positive reaches from the sensor center.
+    xmin, ymin, xmax, ymax = pcb.outline
+    fp = pcb.footprints
+    reach = {"left": -min(fp[r].x for r in SWITCHES) - left, "right": max(fp[r].x for r in SWITCHES) + right,
+             "down": -min(fp[r].y for r in SWITCHES) - bottom, "up": max(fp[r].y for r in SWITCHES) + top}
+    board = {"left": -xmin, "right": xmax, "down": -ymin, "up": ymax}
+    for side in board:
+        inputs[f"board_{side}_min"] = (board[side], f"Board edge {side} of the sensor center in the KiCad file; the board never gets smaller.")
+        inputs[f"board_{side}_margin"] = (board[side] - reach[side], f"Board margin past the outermost switch courtyard, {side} side, as in the KiCad file.")
+    needed = {"left": "-Layout.sw_x_left + Layout.crtyd_left", "right": "Layout.sw_x_right + Layout.crtyd_right",
+              "down": "-Layout.sw_y_bottom + Layout.crtyd_down", "up": "Layout.sw_y_top + Layout.crtyd_up"}
+    for side, courtyard in needed.items():
+        derived[f"board_{side}"] = (f"max(Layout.board_{side}_min, {courtyard} + Layout.board_{side}_margin)",
+                                    f"Board edge {side} of the sensor center now: the outermost courtyard plus the margin, "
+                                    f"never less than the KiCad edge.")
+    layout = make_varset(doc, "Layout", "Layout", inputs, derived, "Layout",
+                         description="Switch gap and sensor hole; every component position follows these")
+    for ref in SWITCHES:
+        fp = pcb.footprints[ref]
+        vs = make_component_varset(doc, fp)
+        vs.setExpression("x", "Layout.sw_x_right" if fp.x > 0 else "Layout.sw_x_left")
+        vs.setExpression("y", "Layout.sw_y_top" if fp.y > 0 else "Layout.sw_y_bottom")
+        for prefix in SWITCH_PARTS:                   # LED## and D## ride along with their switch
+            part = pcb.footprints[prefix + ref[2:]]
+            turn = math.radians(-fp.rot)              # offset measured in the switch's own frame
+            dx, dy = part.x - fp.x, part.y - fp.y
+            local = (dx * math.cos(turn) - dy * math.sin(turn), dx * math.sin(turn) + dy * math.cos(turn))
+            x, y = _on_board(vs.Name, *local)
+            pv = make_component_varset(doc, part)
+            pv.setExpression("x", x)
+            pv.setExpression("y", y)
+            pv.setExpression("rot", f"{vs.Name}.rot + ({part.rot - fp.rot} deg)")
+    return layout
+
+
+# ---- step 4 ------------------------------------------------------------------
+HOLE_OVERSHOOT = "0.1 mm"       # hole cutters stick out this far past both board faces, for a clean cut
+
+
+def _object_name(ref: str) -> str:
+    """FreeCAD object names allow only letters and digits: 'REF**' -> 'REF'."""
+    return "".join(c for c in ref if c.isalnum())
+
+
+def make_component_varset(doc: Document, footprint: Footprint) -> Object:
+    """'<REF> Params' VarSet: where the component sits on the board (x, y, rot), from the
+    board file. Holes, pads and bodies all refer to it. Returns the existing one if it was
+    already made, so make_pcb and make_component can both ask for it."""
+    name = _object_name(footprint.ref) + "Params"
+    vs = doc.getObject(name)
+    if vs is not None:
+        return vs
+    vs = doc.addObject("App::VarSet", name)
+    vs.Label = footprint.ref + " Params"
+    vs.Label2 = f"Position of {footprint.ref} on the board; its holes, pads and body follow these"
+    vs.addProperty("App::PropertyDistance", "x", footprint.ref,
+                   "Center of the footprint, left/right from the sensor center (+ = right).")
+    vs.addProperty("App::PropertyDistance", "y", footprint.ref,
+                   "Center of the footprint, up/down from the sensor center (+ = toward the board's top edge in KiCad).")
+    vs.addProperty("App::PropertyAngle", "rot", footprint.ref,
+                   "Rotation of the footprint, counter-clockwise seen from above.")
+    vs.x, vs.y, vs.rot = footprint.x, footprint.y, footprint.rot
+    return vs
+
+
+def _on_board(params: str, x: float, y: float) -> tuple[str, str]:
+    """Expressions for where a footprint-local point (x, y) lands on the board:
+    turned by the component's rot, then moved to its x, y."""
+    p = params + "."
+    return (f"{p}x + ({x} mm) * cos({p}rot) - ({y} mm) * sin({p}rot)",
+            f"{p}y + ({x} mm) * sin({p}rot) + ({y} mm) * cos({p}rot)")
+
+
+def make_mount_holes(doc: Document, footprint: Footprint) -> Object:
+    """'<REF> Mount Holes': one cutter cylinder per hole of the footprint, fused,
+    positioned off '<REF> Params' so moving the component moves its holes."""
+    params = make_component_varset(doc, footprint).Name
+    key = _object_name(footprint.ref)
+    cutters = []
+    for i, hole in enumerate(footprint.holes):
+        x, y = _on_board(params, hole.x, hole.y)
+        radius = "Layout.sensor_hole_d / 2" if footprint.ref == SENSOR else f"{hole.diameter} mm / 2"
+        cutters.append(cylinder(doc, f"{key}Hole{i + 1}", radius,
+                                f"Params.board_top + 2 * {HOLE_OVERSHOOT}", x, y, "-" + HOLE_OVERSHOOT))
+    if len(cutters) == 1:                    # a fuse needs at least two shapes
+        holes = cutters[0]
+        holes.Label = footprint.ref + " Mount Hole"
+    else:
+        holes = fuse(doc, key + "MountHoles", footprint.ref + " Mount Holes", cutters)
+    holes.Label2 = f"Holes the board needs for {footprint.ref}; they follow {footprint.ref} Params"
+    return holes
+
+
+def make_pcb(doc: Document, pcb: PcbConfig) -> Object:
+    """Board box sized by Layout (KiCad's outline or larger, see make_layout_varsets) x board_thickness,
+    cut by the hole groups.
+
+    Hole groups are named '<REF> Mount Holes' and positioned off that component's
+    VarSet, so moving a switch moves its holes. Returns the PCB container.
+    """
+    blank = box(doc, "BoardBlank", "Layout.board_left + Layout.board_right", "Layout.board_down + Layout.board_up",
+                "Params.board_top", "-Layout.board_left", "-Layout.board_down", "0 mm")   # grows with the switches
+    blank.Label = "Board (uncut)"
+    hole_groups = [make_mount_holes(doc, fp) for fp in pcb.footprints.values() if fp.holes]
+    all_holes = fuse(doc, "BoardHoles", "All Mount Holes", hole_groups)
+    board = cut(doc, "Board", "Board", blank, all_holes)
+    board.Label2 = "Bare PCB: outline from Edge.Cuts, thickness from Params, minus every mount hole"
+    paint({board: PCB_GREEN})
+    members = [board] + [o for o in board.OutListRecursive if o.TypeId != "App::VarSet"]   # the board and its cutters
+    return container(doc, "PCB", "PCB", members, description="The bare board and the hole cutters that shape it")
+
+
+def check_pcb(doc: Document, pcb: PcbConfig) -> bool:
+    """Part of step 9's report: the board's volume must equal the outline box minus every hole;
+    each hole center is printed. Returns True when it passes."""
+    import math
+    layout = doc.getObject("Layout")
+    width = layout.board_left.Value + layout.board_right.Value
+    depth = layout.board_down.Value + layout.board_up.Value
+    expected = width * depth * pcb.thickness
+    sensor_hole_d = doc.getObject("Layout").sensor_hole_d.Value       # the sensor hole is a parameter now
+    for fp in pcb.footprints.values():
+        for hole in fp.holes:
+            d = sensor_hole_d if fp.ref == SENSOR else hole.diameter
+            expected -= math.pi * (d / 2) ** 2 * pcb.thickness
+    board = doc.getObject("Board")
+    bb = board.Shape.BoundBox
+    print(f"board x {bb.XMin:.2f}..{bb.XMax:.2f}  y {bb.YMin:.2f}..{bb.YMax:.2f}  z {bb.ZMin:.2f}..{bb.ZMax:.2f}")
+    ok = abs(board.Shape.Volume - expected) < 0.01
+    print(f"{'PASS' if ok else 'FAIL'}  board volume {board.Shape.Volume:.3f} mm3, expected {expected:.3f}")
+    for fp in pcb.footprints.values():
+        key = _object_name(fp.ref)
+        centers = [doc.getObject(f"{key}Hole{i + 1}").Placement.Base for i in range(len(fp.holes))]
+        if centers:
+            print(f"      {fp.ref:6} holes at " + ", ".join(f"({c.x:.2f}, {c.y:.2f})" for c in centers))
+    return ok
+
+
+# ---- step 5 ------------------------------------------------------------------
+def _pad_size(pad: Pad) -> tuple[float, float]:
+    """Pad width (x) and height (y) in the footprint's frame. Every pad on this board is
+    turned by a multiple of 90 deg, so a turned pad is just an upright one with w and h swapped."""
+    turn = pad.rot % 360
+    if turn % 90:
+        raise ValueError(f"pad {pad.number}: rotation {pad.rot} is not a multiple of 90 deg")
+    return (pad.height, pad.width) if turn in (90, 270) else (pad.width, pad.height)
+
+
+def _rounded_rect(doc: Document, name: str, w: float, h: float, r: float,
+                  x: float, y: float, z: str) -> Object:
+    """Rounded-rectangle pad, cu_thickness tall, centered on (x, y): a flat rectangle
+    shrunk by r on every side, grown back by r with round corners (Offset2D), then extruded."""
+    core = doc.addObject("Part::Plane", name + "Core")
+    core.Length, core.Width = w - 2 * r, h - 2 * r
+    bind(core, x=f"{x - w / 2 + r} mm", y=f"{y - h / 2 + r} mm", z=z)
+    outline = doc.addObject("Part::Offset2D", name + "Outline")
+    outline.Source, outline.Value, outline.Join = core, r, "Arc"
+    core.Visibility = outline.Visibility = False        # flat helpers; only the extruded pad shows
+    pad = doc.addObject("Part::Extrusion", name)
+    pad.Base, pad.Dir, pad.Solid = outline, FreeCAD.Vector(0, 0, 1), True
+    return bind(pad, LengthFwd="Params.cu_thickness")
+
+
+def make_solder_pads(doc: Document, footprint: Footprint) -> Object:
+    """'<REF> Pads': one solid per SMD pad (rect / roundrect / circle), cu_thickness tall,
+    on the top face (F.Cu) or under the bottom face (B.Cu).
+
+    The pads are built in the footprint's own frame with the board file's numbers, and the
+    container is placed by '<REF> Params' (x, y, rot), so the group moves with the component."""
+    key = _object_name(footprint.ref)
+    pads = []
+    for i, pad in enumerate(footprint.pads):
+        name = f"{key}Pad{i + 1}"
+        z = "Params.board_top" if pad.layer == "F.Cu" else "Params.back_pad_bottom"
+        w, h = _pad_size(pad)
+        if pad.shape == "circle":
+            obj = cylinder(doc, name, f"{w} mm / 2", "Params.cu_thickness",
+                           f"{pad.x} mm", f"{pad.y} mm", z)
+        elif pad.shape == "roundrect":
+            obj = _rounded_rect(doc, name, w, h, pad.corner_ratio * min(w, h), pad.x, pad.y, z)
+        else:  # rect
+            obj = box(doc, name, f"{w} mm", f"{h} mm", "Params.cu_thickness",
+                      f"{pad.x - w / 2} mm", f"{pad.y - h / 2} mm", z)
+        obj.Label = f"{footprint.ref} pad {pad.number}"
+        pads.append(obj)
+    paint({pad: COPPER_GOLD for pad in pads})
+    helpers = [o for p in pads for o in p.OutListRecursive if o.TypeId != "App::VarSet"]
+    group = container(doc, key + "Pads", footprint.ref + " Pads", pads + helpers,
+                      description=f"Copper pads of {footprint.ref}, in its own frame; placed by {footprint.ref} Params")
+    params = make_component_varset(doc, footprint).Name
+    bind(group, x=f"{params}.x", y=f"{params}.y")
+    group.setExpression(".Placement.Rotation.Angle", f"{params}.rot")
+    return group
+
+
+def check_solder_pads(doc: Document, pcb: PcbConfig) -> bool:
+    """Part of step 9's report: per footprint, total pad volume vs the formula, and every pad
+    standing on its board face (top pads start at board_top, bottom pads end at 0).
+    Returns True when all pass."""
+    import math
+    import Part
+    params = doc.getObject("Params")
+    cu = params.cu_thickness.Value
+    all_ok = True
+    for fp in pcb.footprints.values():
+        if not fp.pads:
+            continue
+        expected = 0.0
+        for pad in fp.pads:
+            w, h = _pad_size(pad)
+            r = pad.corner_ratio * min(w, h)
+            area = {"circle": math.pi * (w / 2) ** 2,
+                    "roundrect": w * h - (4 - math.pi) * r * r}.get(pad.shape, w * h)
+            expected += area * cu
+        key = _object_name(fp.ref)
+        volume = sum(doc.getObject(f"{key}Pad{i + 1}").Shape.Volume for i in range(len(fp.pads)))
+        bb = Part.getShape(doc.getObject(key + "Pads")).BoundBox      # whole group, placed on the board
+        on_face = (abs(bb.ZMin - params.board_top.Value) < 1e-6 if fp.pads[0].layer == "F.Cu"
+                   else abs(bb.ZMax) < 1e-6)
+        ok = abs(volume - expected) < 1e-4 and on_face
+        all_ok &= ok
+        print(f"{'PASS' if ok else 'FAIL'}  {fp.ref:6} {len(fp.pads):2} pads  volume {volume:.5f} expected {expected:.5f}  "
+              f"z {bb.ZMin:.3f}..{bb.ZMax:.3f}")
+    return all_ok
+
+
+# ---- step 6 ------------------------------------------------------------------
+SWITCH_PARTS = ("LED", "D")     # each switch SW## owns LED## and D## with the same number
+KEYCAP_WORD = "keycap"          # model files with this in their name are keycaps (seated by step 8)
+
+
+def _kicad_rotation(model: Model) -> str:
+    """Expression for the model's rotation as KiCad applies it: about X, then Y, then Z,
+    each by minus the stored angle (checked: it puts Cherry's switch pins in their holes)."""
+    rx, ry, rz = model.rotate
+    return (f"rotation(vector(0; 0; 1); {-rz} deg) * rotation(vector(0; 1; 0); {-ry} deg)"
+            f" * rotation(vector(1; 0; 0); {-rx} deg)")
+
+
+def _model_placement(params: str, model: Model, base_z: str) -> str:
+    """Expression for where KiCad puts `model`: the footprint's spot (VarSet `params`: x, y, rot,
+    at height base_z), then the model's own x/y offset and rotation from the board file.
+    KiCad's z offset is not used: every height comes from Params (part_seat, the keycap and cap
+    rules), e.g. the LED footprint's -0.01 mm would otherwise sink the LED 0.03 instead of 0.02."""
+    ox, oy, _ = model.offset
+    return (f"placement(vector({params}.x; {params}.y; {base_z}); rotation(vector(0; 0; 1); {params}.rot))"
+            f" * placement(vector({ox} mm; {oy} mm; 0 mm); {_kicad_rotation(model)})")
+
+
+def place_model(doc: Document, footprint: Footprint, model: Model, library: Library,
+                base_z: str) -> Object | None:
+    """Link to the model's library body, placed as KiCad places it on this footprint:
+    the footprint's spot ('<REF> Params' x, y, rot, at height base_z), then the model's
+    own offset and rotation from the board file. None if the model was not imported."""
+    body = library.get(_library_key(model.path))
+    if body is None:
+        return None
+    link = doc.addObject("App::Link", _object_name(footprint.ref) + "Link")
+    link.LinkedObject = body
+    link.setExpression("Placement", _model_placement(make_component_varset(doc, footprint).Name, model, base_z))
+    return link
+
+
+def group_by_component(doc: Document, footprint: Footprint, pcb: PcbConfig, library: Library) -> Object:
+    """'<REF>' container holding everything that belongs to one component: '<REF> Params',
+    its body Link (sitting on part_seat), its keycap Link for a switch (on the board top
+    for now; step 8 seats it), '<REF> Pads', and for a switch the LED## and D## containers.
+    Containers do not move anything: every Link and pad group is placed by its own Params."""
+    members = [make_component_varset(doc, footprint), make_solder_pads(doc, footprint)]
+    for model in footprint.models:
+        keycap = KEYCAP_WORD in _library_key(model.path).lower()
+        link = place_model(doc, footprint, model, library, "Params.board_top" if keycap else "Params.part_seat")
+        if link is not None:
+            role = "Keycap" if keycap else ("Switch" if footprint.ref.startswith("SW") else "Body")
+            link.Label = f"{footprint.ref} {role}"
+            members.append(link)
+    if footprint.ref.startswith("SW"):
+        number = footprint.ref[2:]
+        for prefix in SWITCH_PARTS:
+            members.append(group_by_component(doc, pcb.footprints[prefix + number], pcb, library))
+    return container(doc, _object_name(footprint.ref), footprint.ref, members,
+                     description=f"Everything belonging to {footprint.ref}; positions come from {footprint.ref} Params")
+
+
+# ---- step 7 ------------------------------------------------------------------
+CAP_MODEL_KEY = "cap"   # the sensor cap's file name (cap.step); the vendor sensor STEP is replaced by sensor_sk8707
+
+
+def _lowest_material_z(shape: object, x: float, y: float) -> float:
+    """Z of the lowest material on the vertical line through (x, y). For the cap on the sensor
+    axis that is its socket floor; for a keycap beside its center nub, its inner ceiling."""
+    import Part
+    line = Part.makeLine(FreeCAD.Vector(x, y, -50), FreeCAD.Vector(x, y, 50))
+    return shape.common(line).BoundBox.ZMin
+
+
+def place_trackpoint_sensor(doc: Document, footprint: Footprint, library: Library) -> Object:
+    """'REF**' container: 'REF** Params', 'REF** Pads' (under the board), the parametric
+    SK8707-01-004 from sensor_sk8707.build_sensor without its screws, soldered under the board
+    (top face at Params.sensor_top_z, stem up through the 7.5 mm hole), and the cap Link with
+    its socket floor resting on the stem top, raised by Params.cap_offset."""
+    import Part
+    params = make_component_varset(doc, footprint)
+    p = params.Name
+    sensor, colors = sensor_sk8707.build_sensor(doc, with_screws=False)
+    sensor.setExpression("Placement", f"placement(vector({p}.x; {p}.y; Params.sensor_top_z); "
+                                      f"rotation(vector(0; 0; 1); {p}.rot))")
+    paint(colors)
+    members = [params, make_solder_pads(doc, footprint), sensor]
+    cap_model = next((m for m in footprint.models if _library_key(m.path) == CAP_MODEL_KEY), None)
+    cap = place_model(doc, footprint, cap_model, library, "0 mm") if cap_model else None
+    if cap is not None:
+        doc.recompute()                                   # measure the socket floor with the cap at height 0...
+        floor = _lowest_material_z(Part.getShape(cap), params.x.Value, params.y.Value)
+        stem_top = "Params.sensor_top_z + SensorParams.stem_h"
+        cap.setExpression("Placement", _model_placement(p, cap_model, f"{stem_top} - {floor:.4f} mm + Params.cap_offset"))
+        cap.Label = footprint.ref + " Cap"                # ...then lift it so that floor lands on the stem top
+        members.append(cap)
+    return container(doc, _object_name(footprint.ref), footprint.ref, members,
+                     description=f"TrackPoint sensor, its pads and cap; positions come from {footprint.ref} Params")
+
+
+# ---- step 8 ------------------------------------------------------------------
+KEYCAP_PROBES = ((3, 0), (-3, 0), (0, 3), (0, -3))   # mm from the switch center: inside the keycap,
+                                                      # clear of its center nub and its skirt
+
+
+def _keycap_ceiling_z(shape: object, x: float, y: float) -> float:
+    """Z of a keycap's inner ceiling (underside of its top plate) over the switch centered at (x, y)."""
+    return min(_lowest_material_z(shape, x + dx, y + dy) for dx, dy in KEYCAP_PROBES)
+
+
+def seat_keycaps(doc: Document, pcb: PcbConfig) -> dict[str, float]:
+    """Move each switch's keycap up or down so its inner ceiling sits at Params.keycap_ceiling_z
+    (Cherry's measured rest height above the switch's bottom, plus keycap_seat). The ceiling is
+    measured once on the keycap model, then the height stays an expression. Returns {ref: ceiling z}."""
+    import Part
+    ceilings = {}
+    for ref in SWITCHES:
+        fp = pcb.footprints[ref]
+        model = next((m for m in fp.models if KEYCAP_WORD in _library_key(m.path).lower()), None)
+        links = doc.getObjectsByLabel(f"{ref} Keycap")
+        if model is None or not links:
+            continue
+        link, params = links[0], make_component_varset(doc, fp).Name
+        link.setExpression("Placement", _model_placement(params, model, "0 mm"))       # measure at height 0...
+        doc.recompute()
+        ceiling_at_0 = _keycap_ceiling_z(Part.getShape(link), fp.x, fp.y)
+        link.setExpression("Placement", _model_placement(params, model, f"Params.keycap_ceiling_z - {ceiling_at_0:.4f} mm"))
+        doc.recompute()                                                                 # ...then lift it into place
+        ceilings[ref] = _keycap_ceiling_z(Part.getShape(link), fp.x, fp.y)
+        print(f"      {ref} keycap ({link.LinkedObject.Label[4:]}) ceiling at z {ceilings[ref]:.3f}")
+    return ceilings
+
+
+# ---- step 9 ------------------------------------------------------------------
+def _report(ok: bool, text: str) -> bool:
+    print(f"{'PASS' if ok else 'FAIL'}  {text}")
+    return ok
+
+
+def _placed(doc: Document, label: str) -> object | None:
+    """World-placed shape of the object with this label, or None if it is not in the document."""
+    import Part
+    found = doc.getObjectsByLabel(label)
+    if not found:
+        return None
+    obj = found[0]
+    placement = obj.Placement
+    parents = [p for p in obj.InList if p.TypeId == "App::Part" and obj in p.Group]
+    while parents:                                         # add every container it sits in (e.g. the sensor)
+        placement = parents[0].Placement.multiply(placement)
+        parents = [p for p in parents[0].InList if p.TypeId == "App::Part" and parents[0] in p.Group]
+    shape = Part.getShape(obj, transform=False)
+    shape.Placement = placement
+    return shape
+
+
+def _box_gap(a: object, b: object) -> float:
+    """Distance between two bounding boxes (0 when they touch or overlap)."""
+    d = [max(a.XMin - b.XMax, b.XMin - a.XMax, 0), max(a.YMin - b.YMax, b.YMin - a.YMax, 0),
+         max(a.ZMin - b.ZMax, b.ZMin - a.ZMax, 0)]
+    return sum(x * x for x in d) ** 0.5
+
+
+def _clearance(a: object, b: object) -> float:
+    """Smallest 3D distance between two shapes, exact. Comparing every face with every face takes
+    minutes on two 12,000-triangle meshes (the dactyl keycap, the cap), so first get an upper bound
+    from the shapes' corner points (points on the surfaces are never closer than the true distance),
+    then measure exactly between only the faces whose box is within that bound of the other shape."""
+    import numpy
+    import Part
+    pa = numpy.array([tuple(v.Point) for v in a.Vertexes])
+    pb = numpy.array([tuple(v.Point) for v in b.Vertexes])
+    bound = min(numpy.linalg.norm(pa[i:i + 500, None, :] - pb[None, :, :], axis=2).min()
+                for i in range(0, len(pa), 500))                 # in chunks to keep memory small
+    faces_a = [f for f in a.Faces if _box_gap(f.BoundBox, b.BoundBox) <= bound]
+    faces_b = [f for f in b.Faces if _box_gap(f.BoundBox, a.BoundBox) <= bound]
+    return Part.makeCompound(faces_a).distToShape(Part.makeCompound(faces_b))[0]
+
+
+def check(doc: Document, pcb: PcbConfig) -> bool:
+    """Print the pass/fail report and return True when every check passes:
+    board and pads (steps 4-5), parts sunk into their pads, switch pins inside their holes,
+    keycap clear of its switch, sensor stem through the hole, cap on the stem and clear of the
+    keycaps. Then the gaps that phase 2 works on, as plain numbers (3D clearance)."""
+    import math
+    import Part
+    params = doc.getObject("Params")
+    pad_top, sink = params.pad_top.Value, params.solder_sink.Value
+    print("---- check ----")
+    results = [check_pcb(doc, pcb), check_solder_pads(doc, pcb)]
+
+    for ref in SWITCHES:
+        n = ref[2:]
+        for label in (f"{ref} Switch", f"LED{n} Body", f"D{n} Body"):
+            body = _placed(doc, label)
+            if body is not None:          # lowest face lying wholly above the board top (pins reach below, so they're skipped)
+                bottom = min(f.BoundBox.ZMin for f in body.Faces if f.BoundBox.ZMin >= params.board_top.Value - 1e-6)
+                results.append(_report(0 < pad_top - bottom <= sink + 1e-3,
+                                       f"{label:12} sunk {pad_top - bottom:.3f} mm into its pads (expected {sink:.3f})"))
+        switch, fp = _placed(doc, f"{ref} Switch"), pcb.footprints[ref]
+        if switch is not None:
+            p = doc.getObject(_object_name(ref) + "Params")                  # where the switch is now, not in KiCad
+            turn = math.radians(p.rot.Value)
+            holes = [(p.x.Value + h.x * math.cos(turn) - h.y * math.sin(turn),
+                      p.y.Value + h.x * math.sin(turn) + h.y * math.cos(turn), h.diameter) for h in fp.holes]
+            gaps = []
+            for wire in switch.slice(FreeCAD.Vector(0, 0, 1), params.board_top.Value - 0.02):   # pins just inside the board
+                c, d = wire.BoundBox.Center, max(wire.BoundBox.XLength, wire.BoundBox.YLength)
+                hx, hy, hd = min(holes, key=lambda h: math.hypot(h[0] - c.x, h[1] - c.y))
+                gaps.append(hd / 2 - (math.hypot(hx - c.x, hy - c.y) + d / 2))
+            results.append(_report(len(gaps) == 3 and min(gaps) >= 0,
+                                   f"{ref} pins in holes: {len(gaps)} pins, smallest clearance {min(gaps, default=-1):.3f}"))
+        keycap = _placed(doc, f"{ref} Keycap")
+        if switch is not None and keycap is not None:
+            overlap = keycap.common(switch).Volume
+            results.append(_report(overlap < 1e-4, f"{ref} keycap clear of its switch: overlap {overlap:.4f} mm3"))
+
+    board, stem = doc.getObject("Board").Shape, _placed(doc, "Sensor Stem")
+    if stem is not None:
+        results.append(_report(stem.common(board).Volume < 1e-6,
+                               f"sensor stem through the board hole without touching (stem top z {stem.BoundBox.ZMax:.3f})"))
+    cap = _placed(doc, "REF** Cap")
+    keycaps = {ref: _placed(doc, f"{ref} Keycap") for ref in SWITCHES}
+    keycaps = {ref: k for ref, k in keycaps.items() if k is not None}
+    if cap is not None and stem is not None:
+        center = stem.BoundBox.Center
+        floor = _lowest_material_z(cap, center.x, center.y)
+        target = stem.BoundBox.ZMax + params.cap_offset.Value
+        results.append(_report(abs(floor - target) < 1e-3, f"cap socket floor z {floor:.3f} on stem top + cap_offset ({target:.3f})"))
+        for ref, k in keycaps.items():
+            results.append(_report(cap.common(k).Volume < 1e-4, f"cap clear of {ref} keycap"))
+
+    layout = doc.getObject("Layout")
+    gap = layout.switch_gap.Value
+    now = {ref: FreeCAD.Vector(doc.getObject(_object_name(ref) + "Params").x.Value,
+                               doc.getObject(_object_name(ref) + "Params").y.Value, 0) for ref in SWITCHES}
+    left, right = -layout.crtyd_left.Value, layout.crtyd_right.Value        # back to edges around the center
+    bottom, top = -layout.crtyd_down.Value, layout.crtyd_up.Value
+    measured = [(now["SW34"].x + left) - (now["SW33"].x + right), (now["SW48"].x + left) - (now["SW47"].x + right),
+                (now["SW33"].y + bottom) - (now["SW47"].y + top), (now["SW34"].y + bottom) - (now["SW48"].y + top)]
+    results.append(_report(all(abs(m - gap) < 1e-6 for m in measured) and gap >= 0,
+                           f"courtyard gaps all {gap:.3f} mm: " + ", ".join(f"{m:.3f}" for m in measured)))
+    xmin, xmax = -layout.board_left.Value, layout.board_right.Value
+    ymin, ymax = -layout.board_down.Value, layout.board_up.Value
+    inside = all(xmin <= p.x + left and p.x + right <= xmax and ymin <= p.y + bottom and p.y + top <= ymax for p in now.values())
+    results.append(_report(inside, "switch courtyards inside the board outline"))
+    hole_r = layout.sensor_hole_d.Value / 2
+    wall = Part.makeCylinder(hole_r, 10, FreeCAD.Vector(0, 0, -5))
+    nearest = min(min(wall.distToShape(Part.getShape(doc.getObject(_object_name(r) + "Pads")))[0],
+                      wall.distToShape(doc.getObject(_object_name(r) + "MountHoles").Shape)[0]) for r in SWITCHES)
+    results.append(_report(nearest >= MIN_HOLE_CLEARANCE, f"sensor hole wall {nearest:.3f} mm from the nearest switch pad or hole "
+                                                          f"(KiCad minimum {MIN_HOLE_CLEARANCE})"))
+    if cap is not None:
+        results.append(_report(cap.common(board).Volume < 1e-6, "cap clear of the board (hole wall included)"))
+    print("---- gaps for phase 2 (3D clearance, mm) ----")
+    if not MEASURE_GAPS:
+        print("      skipped (set MEASURE_GAPS = True at the top of build_assembly.py to measure them)")
+    elif cap is not None:
+        print("      cap to keycap: " + ", ".join(f"{ref} {_clearance(cap, k):.3f}" for ref, k in keycaps.items()))
+    pairs = [("SW33", "SW34"), ("SW47", "SW48"), ("SW33", "SW47"), ("SW34", "SW48")]
+    if MEASURE_GAPS:
+        print("      keycap to keycap: " + ", ".join(f"{a}-{b} {_clearance(keycaps[a], keycaps[b]):.3f}"
+                                                   for a, b in pairs if a in keycaps and b in keycaps))
+    print("      not checked yet: rebuilt pads vs KiCad's own export (needs the Gerber/drill files)")
+    passed = all(results)
+    print(f"---- {sum(results)}/{len(results)} checks passed ----")
+    return passed
+
+
+# ---- step 10 -----------------------------------------------------------------
+HELPER_USERS = ("Part::Cut", "Part::MultiFuse", "Part::Extrusion", "Part::Offset2D")
+
+
+def finish(doc: Document) -> None:
+    """Hide every helper shape (anything a cut, fuse or extrusion is built from), so only finished
+    bodies show; colors were already set as each step made its bodies. Library models are left
+    alone: the Links show them. Then fit the view."""
+    for obj in doc.Objects:
+        if any(user.TypeId in HELPER_USERS for user in obj.InList):
+            obj.Visibility = False
+    fit_view()
+
+
+def describe(pcb: PcbConfig) -> None:
+    """One line per footprint, for checking get_pcb_config by eye."""
+    print(f"board {pcb.thickness} mm, outline {tuple(round(v, 2) for v in pcb.outline)}")
+    for fp in pcb.footprints.values():
+        print(f"  {fp.ref:6} at ({fp.x:7.3f}, {fp.y:7.3f}) rot {fp.rot:5.0f}  "
+              f"{len(fp.pads)} pads  {len(fp.holes)} holes  models: {[_library_key(m.path) for m in fp.models]}")
+
+
+if __name__ == "__main__":
+    doc = FreeCAD.newDocument("keycaps")
+    pcb = get_pcb_config(BOARD_FILE)
+    library = build_3d_model_library(doc, pcb)
+    build_root_varset(doc, pcb)
+    make_layout_varsets(doc, pcb)
+    make_pcb(doc, pcb)
+    doc.recompute()
+    for ref in SWITCHES:
+        group_by_component(doc, pcb.footprints[ref], pcb, library)
+    doc.recompute()                     # recompute after every step, so a later failure leaves the earlier ones drawn
+    place_trackpoint_sensor(doc, pcb.footprints[SENSOR], library)
+    doc.recompute()
+    seat_keycaps(doc, pcb)
+    doc.recompute()
+    check(doc, pcb)
+    finish(doc)

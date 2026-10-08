@@ -1,0 +1,101 @@
+"""Small FreeCAD helpers shared by sensor_sk8707.py and build_assembly.py.
+
+These are the pieces that made the sensor model readable: every shape is a Part
+primitive whose size and position are expressions, VarSets hold the numbers, and
+only final bodies stay visible. Put this file in the same folder as the macros
+(FreeCAD's Macro folder is on the Python path, so `import fc_helpers` works).
+"""
+import FreeCAD
+
+Document = FreeCAD.Document
+Object = FreeCAD.DocumentObject          # any object in the tree (Box, Cut, VarSet, Part, ...)
+RGB = tuple[float, float, float]        # 0..1 each
+
+
+Inputs = dict[str, tuple[float, str]]     # name -> (value in mm, tooltip)
+Derived = dict[str, tuple[str, str]]      # name -> (FreeCAD expression, tooltip)
+
+
+def make_varset(doc: Document, name: str, label: str, inputs: Inputs, derived: Derived,
+                group: str, description: str = "") -> Object:
+    """VarSet with plain numbers (`inputs`, in `group`) and formulas (`derived`, in
+    `group` + ' derived'). Each property's tooltip says what it means; derived tooltips
+    also show their formula. `description` goes in the object's Description column."""
+    vs = doc.addObject("App::VarSet", name)
+    vs.Label, vs.Label2 = label, description
+    for prop, (value, tip) in inputs.items():
+        vs.addProperty("App::PropertyLength", prop, group, tip)
+        setattr(vs, prop, value)
+    for prop, (expression, tip) in derived.items():
+        vs.addProperty("App::PropertyLength", prop, group + " derived", f"{tip}\n= {expression}")
+        vs.setExpression(prop, expression)
+    return vs
+
+
+def bind(obj: Object, **expressions: str) -> Object:
+    """Attach expressions, e.g. Length="Params.pcb_w", x="..." (x/y/z = Placement.Base)."""
+    for prop, expr in expressions.items():
+        if prop in ("x", "y", "z"):
+            prop = ".Placement.Base." + prop
+        obj.setExpression(prop, expr)
+    return obj
+
+
+def box(doc: Document, name: str, length: str, width: str, height: str,
+        x: str, y: str, z: str) -> Object:
+    """Part::Box with size and corner position given as expression strings."""
+    return bind(doc.addObject("Part::Box", name),
+                Length=length, Width=width, Height=height, x=x, y=y, z=z)
+
+
+def cylinder(doc: Document, name: str, radius: str, height: str,
+             x: str, y: str, z: str) -> Object:
+    """Part::Cylinder with size and base-center position given as expression strings."""
+    return bind(doc.addObject("Part::Cylinder", name),
+                Radius=radius, Height=height, x=x, y=y, z=z)
+
+
+def fuse(doc: Document, name: str, label: str, shapes: list[Object]) -> Object:
+    f = doc.addObject("Part::MultiFuse", name)
+    f.Shapes, f.Label = shapes, label
+    return f
+
+
+def cut(doc: Document, name: str, label: str, base: Object, tool: Object) -> Object:
+    c = doc.addObject("Part::Cut", name)
+    c.Base, c.Tool, c.Label = base, tool, label
+    return c
+
+
+def container(doc: Document, name: str, label: str, members: list[Object],
+              description: str = "") -> Object:
+    """App::Part holding `members` (helpers included, so the tree stays self-contained).
+    `description` goes in the Description column of the tree."""
+    part = doc.addObject("App::Part", name)
+    part.Label, part.Label2 = label, description
+    for obj in members:
+        part.addObject(obj)
+    return part
+
+
+def show_only(doc: Document, visible: list[Object]) -> None:
+    """Hide every helper object; keep only the finished bodies (and VarSets) visible."""
+    skip = ("App::Origin", "App::Line", "App::Plane", "App::Point", "App::Part")
+    for obj in doc.Objects:
+        if obj.TypeId not in skip:
+            obj.Visibility = obj in visible
+
+
+def paint(colors: dict[Object, RGB]) -> None:
+    """Set each object's color ({object: (r, g, b)}). Only possible with the GUI running."""
+    if not FreeCAD.GuiUp:
+        print("no GUI: colors skipped")
+        return
+    for obj, rgb in colors.items():
+        obj.ViewObject.ShapeColor = rgb
+
+
+def fit_view() -> None:
+    if FreeCAD.GuiUp:
+        import FreeCADGui
+        FreeCADGui.SendMsgToActiveView("ViewFit")
