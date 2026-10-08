@@ -1,0 +1,388 @@
+# Macro: LED colours, boards whose holes follow their parts, and clean-up.
+#
+# Run it on a COPY of scrollbar.FCStd saved after macro 3, in FreeCAD 1.1.3,
+# with example_scrollbar.kicad_pcb in the same folder.
+#
+#   1. Colours both LEDs as the STEP does: a pale lavender body with red,
+#      green, blue and white chips.
+#   2. Rebuilds each board as a plain block (board_thickness thick) with one
+#      cylinder cut out per drilled pad. Each cylinder's x and y follow its
+#      footprint, so moving a cap or the TC-1109 moves its holes too. The cap
+#      holes also follow mount_hole_spacing, mount_hole_inset and
+#      mount_hole_diameter.
+#   3. Deletes what nothing uses any more: the old boards and copper (with the
+#      1,074 exploded pieces), the boards imported from the STEP once the
+#      rebuilt ones match them, the empty old holders, and the three loose
+#      insert imports.
+# Then it checks the rebuilt boards match the old ones, nudges cap_y and
+# end_switch_y to prove the holes follow their copper, and checks nothing
+# else moved. If a check fails, the macro undoes everything it did.
+
+import math, os, re
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+BOARD_FILE = os.path.join(os.path.dirname(doc.FileName), "example_scrollbar.kicad_pcb")
+TOL = 0.001
+Z = App.Vector(0, 0, 1)
+
+BOARD = {"B1": "Lever class 3", "B2": "Lever class 2"}
+# Footprints with drilled pads, and their containers (as macro 2 named them)
+DRILLED = {"B1-RE9": "B1-RE9 Encoder", "B1-MP**": "B1-MP Switched cap", "B1-SW62": "B1-SW62 TC-1109",
+           "B2-RE9": "B2-RE9 Encoder", "B2-MP**": "B2-MP Plain cap"}
+CAPS = ("B1-MP**", "B2-MP**")
+
+# LED colours from the STEP: the body, and each chip face by where it sits
+# from the LED's origin (x, y) and its area
+LED_BODY = (0.792, 0.820, 0.933)
+LED_CHIPS = [((-0.31, 0.34), 0.0608, (1.0, 0.0, 0.0)),     # red
+             ((-0.31, 0.00), 0.0608, (0.0, 1.0, 0.0)),     # green
+             ((-0.31, -0.34), 0.0608, (0.502, 0.502, 1.0)),  # blue
+             ((0.30, 0.00), 0.1120, (1.0, 1.0, 1.0))]      # white
+LEDS = {"B1-LED62 LTST-FC12WEGBD-5A": "B1-LED62 LED", "B2-LED62 LTST-FC12WEGBD-5A": "B2-LED62 LED"}
+
+# Old things nothing uses (internal names); everything inside them goes too
+OLD = ["Part__Feature153", "GrExplode_Part__Feature153", "Part__Feature154", "Part__Feature156",
+       "scrollbar004", "scrollbar005", "Part", "switchcap003", "example_assembly_001",
+       "Part__Feature157", "Part__Feature158", "Part__Feature159"]
+
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The macro stopped.")
+    say(f"  ok    {title}\n")
+
+
+def one(label):
+    found = doc.getObjectsByLabel(label)
+    if len(found) != 1:
+        fail(f"expected one object labelled '{label}', found {len(found)}")
+        return None
+    return found[0]
+
+
+def box(shape):
+    return shape.optimalBoundingBox(False, False)
+
+
+def box_close(a, b, tol=TOL):
+    return all(abs(x - y) <= tol for x, y in zip(
+        (a.XMin, a.YMin, a.ZMin, a.XMax, a.YMax, a.ZMax), (b.XMin, b.YMin, b.ZMin, b.XMax, b.YMax, b.ZMax)))
+
+
+def glob(o):
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def global_shape(o):
+    s = o.Shape.copy()
+    s.Placement = glob(o)
+    return s
+
+
+def flat(v):
+    return App.Vector(v.x, v.y, 0)
+
+
+def everything_in(o):
+    """o, everything inside it, and every container's origin."""
+    out = [o]
+    origin = getattr(o, "Origin", None)
+    if origin is not None:
+        out += [origin] + list(origin.OriginFeatures)
+    for child in getattr(o, "Group", []):
+        out += everything_in(child)
+    return out
+
+
+# ================================================================ the board file
+
+def parse(text):
+    tokens = re.findall(r'\(|\)|"(?:[^"\\]|\\.)*"|[^\s()]+', text)
+    stack = [[]]
+    for t in tokens:
+        if t == "(":
+            stack.append([])
+        elif t == ")":
+            done = stack.pop()
+            stack[-1].append(done)
+        else:
+            stack[-1].append(t[1:-1] if t.startswith('"') else t)
+    return stack[0][0]
+
+
+def items(node, key):
+    return [c for c in node if isinstance(c, list) and c and c[0] == key]
+
+
+def read_drills():
+    """Each drilled pad: its footprint, its offset from the footprint's origin
+    in the board's frame (y up, footprint rotation applied), its drill."""
+    out = []
+    for fp in items(parse(open(BOARD_FILE).read()), "footprint"):
+        ref = [p[2] for p in items(fp, "property") if p[1] == "Reference"][0]
+        rot = float(items(items(fp, "transform")[0], "rotate")[0][1])
+        for pd in items(fp, "pad"):
+            drill = items(pd, "drill")
+            if not drill:
+                continue
+            px, py = map(float, items(pd, "at")[0][1:3])
+            # KiCad's y points down; turn the pad's offset by the footprint's rotation
+            d = App.Rotation(Z, rot).multVec(App.Vector(px, -py, 0))
+            out.append((ref, pd[1], d, float(drill[0][1])))
+    return out
+
+
+# ================================================================ 1. LED colours
+
+def step1_leds():
+    say("\nStep 1: LED colours\n")
+    for label, fp_label in LEDS.items():
+        o, fp = one(label), one(fp_label)
+        if o is None or fp is None:
+            continue
+        origin = fp.getGlobalPlacement().Base
+        colours, chips = [], 0
+        for f in global_shape(o).Faces:
+            c = flat(f.CenterOfMass - origin)
+            colour = LED_BODY
+            for (x, y), area, chip in LED_CHIPS:
+                if (c - App.Vector(x, y, 0)).Length < 0.01 and abs(f.Area - area) < 0.002:
+                    colour = chip
+                    chips += 1
+            colours.append(colour)
+        if chips != 4:
+            fail(f"{label}: found {chips} of its 4 chip faces")
+            continue
+        if App.GuiUp:
+            try:
+                materials = []
+                for colour in colours:
+                    m = App.Material()
+                    m.DiffuseColor = colour
+                    materials.append(m)
+                o.ViewObject.ShapeAppearance = materials
+            except AttributeError:
+                o.ViewObject.DiffuseColor = colours
+        say(f"  made  {label}: {len(colours)} faces coloured, 4 of them chips\n")
+    end_step("both LEDs coloured as in the STEP")
+
+
+# ================================================================ 2. boards
+
+def step2_boards():
+    global holes, new_boards
+    say("\nStep 2: rebuild the boards so their holes follow their parts\n")
+    gv = one("Global_Vars")
+    drills = read_drills()
+    holes, new_boards = [], {}
+    for b, lever_label in BOARD.items():
+        lever = one(lever_label)
+        old = one(f"{b} Board")
+        if lever is None or old is None:
+            continue
+        old.Label = f"{b} Board (from the STEP)"
+        bb = box(old.Shape)   # in the board container's frame
+        if abs(bb.ZLength - float(gv.board_thickness.Value)) > TOL:
+            fail(f"{b}: the board is {bb.ZLength:.3f} thick, board_thickness is {gv.board_thickness}")
+
+        blank = doc.addObject("Part::Box", "Blank")
+        blank.Label = f"{b} Board blank"
+        blank.Label2 = "The board's outline from the STEP, board_thickness thick, before its holes."
+        blank.Length, blank.Width = bb.XLength, bb.YLength
+        blank.setExpression("Height", "Global_Vars.board_thickness")
+        blank.Placement = App.Placement(App.Vector(bb.XMin, bb.YMin, 0), App.Rotation())
+        lever.addObject(blank)
+
+        group = doc.addObject("App::DocumentObjectGroup", "Holes")
+        group.Label = f"{b} Board holes"
+        group.Label2 = "One cylinder per drilled pad; each follows its footprint."
+        lever.addObject(group)
+        cyls = []
+        counts = {}
+        for ref, num, d, drill in [x for x in drills if x[0].startswith(b + "-")]:
+            fp = DRILLED[ref]
+            counts[(ref, num)] = counts.get((ref, num), 0) + 1
+            c = doc.addObject("Part::Cylinder", "Hole")
+            c.Label = f"{ref.rstrip('*')} hole {num}" + (" (2 of 2)" if counts[(ref, num)] == 2 else "")
+            c.Placement = App.Placement(App.Vector(0, 0, -0.1), App.Rotation())
+            c.setExpression("Height", "Global_Vars.board_thickness + 0.2 mm")
+            if ref in CAPS:
+                side = "+" if d.x > 0 else "-"
+                c.setExpression("Radius", "Global_Vars.mount_hole_diameter / 2")
+                c.setExpression(".Placement.Base.x", f"<<{fp}>>.Placement.Base.x {side} Global_Vars.mount_hole_spacing / 2")
+                c.setExpression(".Placement.Base.y", f"<<{fp}>>.Placement.Base.y - Global_Vars.mount_hole_inset")
+                if abs(abs(d.x) - float(gv.mount_hole_spacing.Value) / 2) > TOL or \
+                        abs(-d.y - float(gv.mount_hole_inset.Value)) > TOL or \
+                        abs(drill - float(gv.mount_hole_diameter.Value)) > TOL:
+                    fail(f"{ref} pad {num}: the board file's hole doesn't match the cap's values")
+            else:
+                c.Radius = drill / 2
+                c.setExpression(".Placement.Base.x", f"<<{fp}>>.Placement.Base.x + {d.x:.4f} mm")
+                c.setExpression(".Placement.Base.y", f"<<{fp}>>.Placement.Base.y + {d.y:.4f} mm")
+            group.addObject(c)
+            cyls.append(c)
+            holes.append((c, ref))
+
+        tool = doc.addObject("Part::Compound", "Holes")
+        tool.Label = f"{b} Board hole cutters"
+        tool.Links = cyls
+        lever.addObject(tool)
+        cut = doc.addObject("Part::Cut", "Board")
+        cut.Label = f"{b} Board"
+        cut.Label2 = "The board: the blank with every drilled pad's hole cut where its footprint sits."
+        cut.Base, cut.Tool = blank, tool
+        lever.addObject(cut)
+        new_boards[b] = (cut, old)
+        if App.GuiUp:
+            cut.ViewObject.ShapeColor = (0.15, 0.45, 0.25)
+            for x in [blank, tool] + cyls:
+                x.ViewObject.Visibility = False
+        say(f"  made  {cut.Label}: the blank minus {len(cyls)} holes\n")
+    doc.recompute()
+
+    for b, (cut, old) in new_boards.items():
+        if not cut.isValid():
+            fail(f"{cut.Label} didn't build")
+            continue
+        a, o = global_shape(cut), global_shape(old)
+        if abs(a.Volume - o.Volume) > 0.01 or not box_close(box(a), box(o)):
+            fail(f"{cut.Label} doesn't match the board from the STEP (volume {a.Volume:.3f} vs {o.Volume:.3f})")
+    end_step("each rebuilt board matches the board from the STEP")
+
+
+def copper_centres(fp_label):
+    fp = one(fp_label)
+    pads = [p for g in fp.Group if g.TypeId == "App::DocumentObjectGroup" for p in g.Group]
+    return [flat(global_shape(p).CenterOfMass) for p in pads]
+
+
+def holes_on_copper(when):
+    for c, ref in holes:
+        at = flat(c.getGlobalPlacement().Base)
+        if min((at - p).Length for p in copper_centres(DRILLED[ref])) > TOL:
+            fail(f"{when}: {c.Label} is not under its copper")
+
+
+def step3_follow():
+    say("\nStep 3: nudge the values and see the holes follow\n")
+    holes_on_copper("now")
+    end_step(f"all {len(holes)} holes under their copper")
+    for vs_label, value in (("Global_Vars", "cap_y"), ("Lever3_Vars", "end_switch_y"),
+                            ("Global_Vars", "mount_hole_spacing")):
+        vs = one(vs_label)
+        start = float(getattr(vs, value).Value)
+        setattr(vs, value, start + 0.5)
+        doc.recompute()
+        if value == "mount_hole_spacing":
+            # The cap copper doesn't change with this value, so check the holes moved apart instead
+            for b in BOARD:
+                pair = [c for c, ref in holes if ref == f"{b}-MP**"]
+                gap = abs(pair[0].getGlobalPlacement().Base.x - pair[1].getGlobalPlacement().Base.x)
+                if abs(gap - (start + 0.5)) > TOL:
+                    fail(f"mount_hole_spacing + 0.5: {b}'s cap holes are {gap:.3f} apart")
+        else:
+            holes_on_copper(f"{value} + 0.5")
+        for b, (cut, _) in new_boards.items():
+            if not cut.isValid():
+                fail(f"{value} + 0.5: {cut.Label} didn't rebuild")
+        setattr(vs, value, start)
+        doc.recompute()
+        say(f"  {value:18} the holes followed\n")
+    holes_on_copper("after putting the values back")
+    end_step("the holes follow their parts and the cap's hole values")
+
+
+# ================================================================ 4. clean up
+
+def step4_clean():
+    say("\nStep 4: clean up\n")
+    doomed = []
+    for name in OLD:
+        o = doc.getObject(name)
+        if o is None:
+            fail(f"can't find {name}")
+            continue
+        doomed += everything_in(o)
+    for b, (cut, old) in new_boards.items():
+        doomed.append(old)
+    names = {o.Name for o in doomed}
+    for o in doomed:
+        for user in o.InList:
+            # The container a thing sits in only holds it; that isn't a use
+            if user.Name not in names and o not in getattr(user, "Group", []):
+                fail(f"{user.Label} still uses {o.Label}, so it can't be deleted")
+    keep_types = ("App::Link",)
+    for o in doomed:
+        if o.TypeId in keep_types:
+            fail(f"{o.Label} is a link still inside an old holder")
+    end_step(f"{len(names)} old objects, and nothing else uses them")
+
+    labels = sorted({doc.getObject(n).Label for n in OLD} | {old.Label for _, old in new_boards.values()})
+    # Note every name before deleting anything: a deleted object can't be
+    # asked its name, and deleting a holder can take its contents with it.
+    # Delete what's inside first, then the holders.
+    order = list(dict.fromkeys(o.Name for o in doomed))
+    for name in reversed(order):
+        if doc.getObject(name) is not None:
+            doc.removeObject(name)
+    for name in names:
+        if doc.getObject(name) is not None:
+            fail(f"{name} is still there")
+    doc.recompute()
+    for label in labels:
+        say(f"  gone  {label}\n")
+    end_step(f"{len(names)} objects deleted")
+
+
+# ================================================================ run
+
+try:
+    for f in (BOARD_FILE,):
+        if not os.path.exists(f):
+            fail(f"can't find {f}")
+    for label in list(BOARD.values()) + list(DRILLED.values()) + list(LEDS) + list(LEDS.values()):
+        one(label)
+    end_step("found the boards, footprints and LEDs")
+    doc.recompute()
+    before = {o.Name: glob(o) for o in doc.Objects if isinstance(getattr(o, "Placement", None), App.Placement)}
+    bodies = {o.Name: (o.Shape.Volume, box(o.Shape)) for o in doc.Objects if o.TypeId == "PartDesign::Body"}
+
+    doc.openTransaction("LED colours, parametric boards, clean-up")
+    try:
+        step1_leds()
+        step2_boards()
+        step3_follow()
+        step4_clean()
+        say("\nStep 5: check nothing else moved\n")
+        for name, was in before.items():
+            o = doc.getObject(name)
+            if o is not None and not glob(o).isSame(was, TOL):
+                fail(f"{o.Label} moved")
+        for name, (vol, bb) in bodies.items():
+            o = doc.getObject(name)
+            if abs(o.Shape.Volume - vol) > TOL or not box_close(box(o.Shape), bb):
+                fail(f"{o.Label} changed shape")
+        end_step("nothing that stayed moved or changed")
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything this macro did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nAll done. Save the copy.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

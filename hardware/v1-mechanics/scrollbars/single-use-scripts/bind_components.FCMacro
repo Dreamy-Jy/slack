@@ -1,0 +1,241 @@
+# Macro 4: link positions. Each bar seats on its encoder's hex face, and the
+# bar's main section works out its own length from cap_y.
+#
+# Run it on a COPY of scrollbar.FCStd saved after macro 3 (before or after
+# tidy_boards.py), in FreeCAD 1.1.3.
+#
+#   1. Adds encoder_hex_face_y (1.29765): how far along y the encoder's hex
+#      face sits from its bore centre, measured once from the encoder model.
+#   2. Puts a hex_face LCS in the bar body, straight_shaft_length in from the
+#      shaft end, where the straight hex meets the tapered hex.
+#   3. Puts an encoder_hex_face LCS in each encoder footprint, on the
+#      encoder's hex face.
+#   4. Places each bar link so its hex face sits on its encoder's hex face.
+#   5. Makes main_length a formula, so the main section ends bar_gap short
+#      of the cap: encoder_hex_face_y + cap_y - angled_shaft_length
+#      - front_spacer_length - bar_gap (10.398 today, was 11.0).
+# Then it checks the hexes line up corner to corner, the gap to each cap is
+# bar_gap, and nudges cap_y to prove the bar follows. If a check fails, the
+# macro undoes everything it did.
+
+import math
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+TOL = 0.001
+
+BAR_BODY = "Body005"
+BOARDS = {   # board: (encoder footprint, encoder model holder, bar link, cap footprint)
+    "B1": ("B1-RE9 Encoder", "EC10E1220509", "Link007", "B1-MP Switched cap"),
+    "B2": ("B2-RE9 Encoder", "EC10E1220510", "Link008", "B2-MP Plain cap"),
+}
+HEX_FACE_Y = 1.29765
+MAIN_LENGTH = "encoder_hex_face_y + cap_y - angled_shaft_length - front_spacer_length - bar_gap"
+
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("Macro 4 stopped.")
+    say(f"  ok    {title}\n")
+
+
+def one(label):
+    found = doc.getObjectsByLabel(label)
+    if len(found) != 1:
+        fail(f"expected one object labelled '{label}', found {len(found)}")
+        return None
+    return found[0]
+
+
+def glob(o):
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def global_shape(o):
+    s = (Part.getShape(o.LinkedObject) if o.TypeId == "App::Link" else o.Shape).copy()
+    s.Placement = glob(o)
+    return s
+
+
+def box(shape):
+    return shape.optimalBoundingBox(False, False)
+
+
+def new_lcs(name):
+    """A coordinate system that can sit in any container."""
+    for kind in ("Part::LocalCoordinateSystem", "App::LocalCoordinateSystem"):
+        try:
+            return doc.addObject(kind, name)
+        except Exception:
+            continue
+    raise RuntimeError("This FreeCAD can't make a coordinate system outside a body.")
+
+
+def hex_ring(shape, centre):
+    """The corners of a hex lying in the plane y = centre.y, around the bar's axis."""
+    return [v.Point for v in shape.Vertexes
+            if abs(v.Point.y - centre.y) < 0.002 and math.hypot(v.Point.x - centre.x, v.Point.z - centre.z) < 1.2]
+
+
+def main_end_y(bar_shape, axis):
+    """Where the bar's main section ends: the lowest-y corner on its outer surface."""
+    gv = doc.getObject("Global_Vars")
+    r = float(gv.main_diameter.Value) / 2
+    ys = [v.Point.y for v in bar_shape.Vertexes if abs(math.hypot(v.Point.x - axis.x, v.Point.z - axis.z) - r) < 0.002]
+    return min(ys) if ys else None
+
+
+# ================================================================ build
+
+def step1_find():
+    global gv, body, parts
+    say("\nStep 1: find everything\n")
+    gv = doc.getObject("Global_Vars")
+    body = doc.getObject(BAR_BODY)
+    if gv is None or body is None:
+        fail("can't find Global_Vars or the bar body")
+    elif "encoder_hex_face_y" in gv.PropertiesList:
+        fail("Global_Vars already has encoder_hex_face_y: this copy has been through macro 4")
+    parts = {}
+    for b, (enc, holder, link, cap) in BOARDS.items():
+        e, h, l, c = one(enc), doc.getObject(holder), doc.getObject(link), one(cap)
+        if None in (e, h, l, c):
+            fail(f"{b}: missing {enc}, {holder}, {link} or {cap}")
+            continue
+        if l.getParentGeoFeatureGroup() != e:
+            fail(f"{b}: {l.Label} isn't inside {enc}; run macro 3 first")
+        parts[b] = (e, h, l, c)
+    end_step("found the bar body, both encoders, both bar links and both caps")
+
+
+def step2_build():
+    say("\nStep 2: bind the bars\n")
+    gv.addProperty("App::PropertyLength", "encoder_hex_face_y", "Encoder",
+                   "Distance along y from the encoder's bore centre to its hex face, where the bar's "
+                   "straight hex seats. Measured once from the encoder model.")
+    gv.encoder_hex_face_y = HEX_FACE_Y
+    say(f"  made  Global_Vars.encoder_hex_face_y ({HEX_FACE_Y})\n")
+
+    lcs = body.newObject("PartDesign::CoordinateSystem", "hex_face")
+    lcs.Label = "hex_face"
+    lcs.Label2 = "Where the bar's straight hex meets its tapered hex; it seats on the encoder's hex face."
+    lcs.MapMode = "Deactivated"
+    lcs.setExpression(".Placement.Base.y", "-Global_Vars.straight_shaft_length")
+    say("  made  hex_face in the bar body, straight_shaft_length in from the shaft end\n")
+
+    for b, (enc, holder, link, cap) in parts.items():
+        m = new_lcs("encoder_hex_face")
+        m.Label = f"{b} encoder_hex_face"
+        m.Label2 = "The encoder's hex face, on the bore's axis; the bar's hex_face sits here."
+        enc.addObject(m)
+        m.setExpression(".Placement.Base.x", f"<<{holder.Label}>>.Placement.Base.x")
+        m.setExpression(".Placement.Base.y", "Global_Vars.encoder_hex_face_y - Global_Vars.encoder_bore_y")
+        m.setExpression(".Placement.Base.z", "Global_Vars.part_seat + Global_Vars.encoder_to_pcb")
+
+        for path, _ in list(link.ExpressionEngine):
+            if "Placement" in path:
+                link.setExpression(path, None)
+        link.Placement = App.Placement()
+        link.setExpression(".Placement.Base.x", f"<<{m.Label}>>.Placement.Base.x")
+        link.setExpression(".Placement.Base.y", f"<<{m.Label}>>.Placement.Base.y + Global_Vars.straight_shaft_length")
+        link.setExpression(".Placement.Base.z", f"<<{m.Label}>>.Placement.Base.z")
+        say(f"  made  {m.Label}, and {link.Label} now sits on it\n")
+
+    gv.setExpression("main_length", MAIN_LENGTH)
+    doc.recompute()
+    say(f"  made  main_length = {MAIN_LENGTH} ({float(gv.main_length.Value):.4f})\n")
+
+
+# ================================================================ check
+
+def check_bars(when):
+    for b, (enc, holder, link, cap) in parts.items():
+        m = one(f"{b} encoder_hex_face")
+        seat = glob(m).Base
+        enc_shape = Part.makeCompound([global_shape(l) for l in holder.OutListRecursive
+                                       if l.TypeId == "Part::Feature"])
+        bar = global_shape(link)
+        mine, theirs = hex_ring(bar, seat), hex_ring(enc_shape, seat)
+        if len(mine) < 6 or len(theirs) < 6:
+            fail(f"{when}: {b}: found {len(mine)} bar and {len(theirs)} encoder hex corners at the hex face")
+        elif max(min((p - q).Length for q in theirs) for p in mine) > TOL:
+            fail(f"{when}: {b}: the bar's hex corners don't sit on the encoder's")
+        lcs = doc.getObjectsByLabel("hex_face")[0]
+        if not glob(link).multiply(lcs.Placement).Base.isEqual(seat, TOL):
+            fail(f"{when}: {b}: the bar's hex_face isn't on {m.Label}")
+        end = main_end_y(bar, seat)
+        edge = glob(cap).Base.y
+        if end is None or abs(end - edge - float(gv.bar_gap.Value)) > TOL:
+            fail(f"{when}: {b}: the main section ends {None if end is None else round(end - edge, 4)} "
+                 f"from the cap, expected bar_gap {float(gv.bar_gap.Value)}")
+
+
+def step3_check():
+    say("\nStep 3: check\n")
+    want = HEX_FACE_Y + float(gv.cap_y.Value) - float(gv.angled_shaft_length.Value) \
+        - float(gv.front_spacer_length.Value) - float(gv.bar_gap.Value)
+    if abs(float(gv.main_length.Value) - want) > TOL:
+        fail(f"main_length is {gv.main_length}, expected {want:.4f}")
+    check_bars("now")
+    end_step("both bars seated on their encoders' hex faces, bar_gap from their caps")
+
+    start = float(gv.cap_y.Value)
+    gv.cap_y = start + 0.5
+    doc.recompute()
+    if abs(float(gv.main_length.Value) - (want + 0.5)) > TOL:
+        fail("cap_y + 0.5: main_length didn't grow by 0.5")
+    check_bars("cap_y + 0.5")
+    gv.cap_y = start
+    doc.recompute()
+    check_bars("after putting cap_y back")
+    end_step("cap_y + 0.5 grows the bar by 0.5 and it stays seated, bar_gap from the cap")
+
+    for name, was in before.items():
+        o = doc.getObject(name)
+        if o is not None and name not in moving and not glob(o).isSame(was, TOL):
+            fail(f"{o.Label} moved")
+    for name, (vol, bb) in bodies.items():
+        o = doc.getObject(name)
+        if name != BAR_BODY and abs(o.Shape.Volume - vol) > TOL:
+            fail(f"{o.Label} changed shape")
+    end_step("nothing but the bars moved; the caps are unchanged")
+
+
+# ================================================================ run
+
+try:
+    step1_find()
+    doc.recompute()
+    # The bar links move on purpose, and the bar body's own sketches may
+    # follow its new length
+    moving = {l.Name for _, _, l, _ in parts.values()} | {o.Name for o in body.Group}
+    if body.Origin is not None:
+        moving |= {body.Origin.Name} | {f.Name for f in body.Origin.OriginFeatures}
+    before = {o.Name: glob(o) for o in doc.Objects if isinstance(getattr(o, "Placement", None), App.Placement)}
+    bodies = {o.Name: (o.Shape.Volume, box(o.Shape)) for o in doc.Objects if o.TypeId == "PartDesign::Body"}
+    doc.openTransaction("Macro 4: bind the bars")
+    try:
+        step2_build()
+        step3_check()
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything macro 4 did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nMacro 4 passed. Save the copy.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

@@ -1,0 +1,416 @@
+# Macro 2: start the new tree and rebuild both boards with their copper.
+#
+# Run it on a COPY of scrollbar.FCStd (after macro 1), in FreeCAD 1.1.3.
+# example_scrollbar.kicad_pcb and example_assembly.step must sit in the same
+# folder as the copy; change BOARD_FILE and STEP_FILE below if they don't.
+#
+# What it does:
+#   1. Reads the board file (footprints, pads) and the STEP (boards, copper).
+#      It finds every copper piece's pad before it touches your model.
+#   2. Puts the three master bodies in a Masters group.
+#   3. Builds Lever class 3 (B1) and Lever class 2 (B2), each with its own
+#      VarSet, its board, and one container per footprint holding that
+#      footprint's copper. Each board lines up with the encoder already in
+#      your file, so the encoder's pins land on the new pads.
+#   4. Checks that every new board and copper piece is where the STEP puts
+#      it (shifted to your encoder), and that nothing already in your file moved.
+#
+# The old boards, the old copper and every existing part stay as they are.
+# If a check fails, the macro undoes everything it made; close the copy
+# without saving anyway, and send me the Report view.
+
+import math, os, re
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+here = os.path.dirname(doc.FileName)
+BOARD_FILE = os.path.join(here, "example_scrollbar.kicad_pcb")
+STEP_FILE = os.path.join(here, "example_assembly.step")
+TOL = 0.001
+Z = App.Vector(0, 0, 1)
+
+MASTERS = ["Body005", "Body007", "Body010"]   # the bar and the two caps
+
+# One entry per board. old_encoder is the encoder solid already in your file.
+BOARDS = {
+    "B1": dict(
+        label="Lever class 3",
+        about="Board 1 (B1): end click. TC-1109 switch under the switched cap. Origin at the encoder's pad A1.",
+        vars="Lever3_Vars",
+        value=("end_switch_y", 2.153,
+               "Distance from the switched cap's open edge to the TC-1109's center; the switch rides with the cap."),
+        old_encoder="Part__Feature140",
+        names={"RE9": "Encoder", "MP**": "Switched cap", "SW62": "TC-1109",
+               "LED62": "LED", "D62": "Diode"}),
+    "B2": dict(
+        label="Lever class 2",
+        about="Board 3 (B2): middle click. SKQG switch under the bar. Origin at the encoder's pad A1.",
+        vars="Lever2_Vars",
+        value=("middle_switch_y", 7.56,
+               "Distance from the encoder's bore center to the SKQG's center."),
+        old_encoder="Part__Feature142",
+        names={"RE9": "Encoder", "MP**": "Plain cap", "SW62": "SKQG",
+               "LED62": "LED", "D62": "Diode"}),
+}
+COPPER_COLOR = (0.80, 0.50, 0.20)
+BOARD_COLOR = (0.15, 0.45, 0.25)
+
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("Macro 2 stopped.")
+    say(f"  ok    {title}\n")
+
+
+def to_step(x, y):
+    """KiCad x, y to STEP x, y (Reference tab): x - 116.12, 115.175 - y."""
+    return App.Vector(x - 116.12, 115.175 - y, 0)
+
+
+# ================================================================ read the files
+
+def parse(text):
+    """The board file is nested lists in brackets; turn it into Python lists."""
+    tokens = re.findall(r'\(|\)|"(?:[^"\\]|\\.)*"|[^\s()]+', text)
+    stack = [[]]
+    for t in tokens:
+        if t == "(":
+            stack.append([])
+        elif t == ")":
+            done = stack.pop()
+            stack[-1].append(done)
+        else:
+            stack[-1].append(t[1:-1] if t.startswith('"') else t)
+    return stack[0][0]
+
+
+def items(node, key):
+    return [c for c in node if isinstance(c, list) and c and c[0] == key]
+
+
+def read_footprints():
+    """Every footprint: where it sits (STEP x, y), its rotation, its copper pads."""
+    board = parse(open(BOARD_FILE).read())
+    out = {}
+    for fp in items(board, "footprint"):
+        ref = [p[2] for p in items(fp, "property") if p[1] == "Reference"][0]
+        tr = items(fp, "transform")[0]
+        fx, fy = map(float, items(tr, "translate")[0][1:3])
+        rot = float(items(tr, "rotate")[0][1])
+        a = math.radians(rot)
+        pads = []
+        for pd in items(fp, "pad"):
+            if not any("Cu" in layer for layer in items(pd, "layers")[0][1:]):
+                continue
+            px, py = map(float, items(pd, "at")[0][1:3])
+            # KiCad's y points down and its angles turn counter-clockwise on screen
+            kx = fx + px * math.cos(a) + py * math.sin(a)
+            ky = fy - px * math.sin(a) + py * math.cos(a)
+            pads.append((pd[1], to_step(kx, ky)))
+        out[ref] = dict(pos=to_step(fx, fy), rot=rot, pads=pads)
+    return out
+
+
+def box(shape):
+    """The exact bounding box; the quick one grows once a shape has been drawn."""
+    return shape.optimalBoundingBox(False, False)
+
+
+def bbox_close(a, b):
+    return all(abs(x - y) <= TOL for x, y in zip(
+        (a.XMin, a.YMin, a.ZMin, a.XMax, a.YMax, a.ZMax),
+        (b.XMin, b.YMin, b.ZMin, b.XMax, b.YMax, b.ZMax)))
+
+
+def centre(shape):
+    """Centre of mass of a shape, whether it is one solid or several."""
+    total, c = 0.0, App.Vector()
+    for solid in shape.Solids:
+        c += solid.CenterOfMass * solid.Volume
+        total += solid.Volume
+    return c * (1.0 / total)
+
+
+def flat(v):
+    return App.Vector(v.x, v.y, 0)
+
+
+def step1_read():
+    global fps, boards, copper, shift
+    say("\nStep 1: read the board file and the STEP\n")
+    for f in (BOARD_FILE, STEP_FILE):
+        if not os.path.exists(f):
+            fail(f"can't find {f}")
+    end_step("both files found")
+
+    fps = read_footprints()
+    solids = Part.read(STEP_FILE).Solids
+    say(f"  {len(fps)} footprints, {sum(len(f['pads']) for f in fps.values())} copper pads, "
+        f"{len(solids)} solids in the STEP\n")
+
+    # The boards: 1.51 thick, sitting on z = 0
+    flat_big = [s for s in solids if s.Volume > 1000 and abs(s.BoundBox.ZMin) < 0.01
+                and abs(s.BoundBox.ZMax - 1.51) < 0.01]
+    # The copper: thin pieces between -0.04 and 1.55
+    pieces = [s for s in solids if s.Volume < 20 and s.BoundBox.ZMin > -0.05
+              and s.BoundBox.ZMax < 1.56]
+    if len(flat_big) != 2:
+        fail(f"expected 2 boards in the STEP, found {len(flat_big)}")
+    if len(pieces) != 36:
+        fail(f"expected 36 copper pieces in the STEP, found {len(pieces)}")
+    end_step("2 boards and 36 copper pieces in the STEP")
+
+    boards, copper, shift = {}, {}, {}
+    used = set()
+    for b, spec in BOARDS.items():
+        a1 = dict(fps[f"{b}-RE9"]["pads"])["A1"]
+        # This board's blank is the one under its encoder's pad A1
+        under = [s for s in flat_big if s.BoundBox.isInside(App.Vector(a1.x, a1.y, 0.5))]
+        if len(under) != 1:
+            fail(f"{b}: expected one board under the encoder, found {len(under)}")
+            continue
+        boards[b] = under[0]
+        # Each copper pad gets the one piece centred on it
+        for ref in [r for r in fps if r.startswith(b + "-")]:
+            for num, at in fps[ref]["pads"]:
+                hits = [i for i, s in enumerate(pieces)
+                        if (flat(centre(s)) - at).Length <= 0.01]
+                if len(hits) != 1:
+                    fail(f"{ref} pad {num}: {len(hits)} copper pieces on it, expected 1")
+                    continue
+                if hits[0] in used:
+                    fail(f"{ref} pad {num}: its copper piece is already another pad's")
+                used.add(hits[0])
+                copper.setdefault(ref, []).append((num, pieces[hits[0]]))
+        # How far your file's encoder sits from the STEP's: same model, so
+        # the move between their centres moves the whole board onto yours
+        old = doc.getObject(spec["old_encoder"])
+        if old is None:
+            fail(f"{b}: can't find your encoder {spec['old_encoder']}")
+            continue
+        mine = old.Shape.copy()
+        mine.Placement = old.getGlobalPlacement()
+        theirs = [s for s in solids if abs(s.Volume - mine.Volume) < 0.01
+                  and (flat(centre(s)) - a1).Length < 5]
+        if len(theirs) != 1:
+            fail(f"{b}: expected one encoder in the STEP near pad A1, found {len(theirs)}")
+            continue
+        d = flat(centre(mine) - centre(theirs[0]))
+        moved = theirs[0].copy()
+        moved.translate(d)
+        a, m = box(moved), box(mine)
+        if not bbox_close(App.BoundBox(a.XMin, a.YMin, m.ZMin, a.XMax, a.YMax, m.ZMax), m):
+            fail(f"{b}: your encoder and the STEP's don't line up, even after the shift")
+        shift[b] = d
+        say(f"  {spec['label']}: your parts sit ({d.x:.3f}, {d.y:.3f}) from the STEP's\n")
+    if len(used) != 36:
+        fail(f"{len(used)} of 36 copper pieces matched a pad")
+    end_step("every copper pad has exactly one piece, and each piece one pad")
+
+
+# ================================================================ snapshot
+
+def placements():
+    out = {}
+    for o in doc.Objects:
+        p = getattr(o, "Placement", None)
+        if isinstance(p, App.Placement):
+            out[o.Name] = App.Placement(p)
+    return out
+
+
+def body_facts():
+    out = {}
+    for o in doc.Objects:
+        if o.TypeId == "PartDesign::Body" and not o.Shape.isNull():
+            out[o.Name] = (o.Shape.Volume, box(o.Shape))
+    return out
+
+
+def step2_snapshot():
+    global before_places, before_bodies, before_names
+    say("\nStep 2: snapshot\n")
+    doc.recompute()
+    before_places = placements()
+    before_bodies = body_facts()
+    before_names = {o.Name for o in doc.Objects}
+    for name in MASTERS:
+        if doc.getObject(name) is None or doc.getObject(name).TypeId != "PartDesign::Body":
+            fail(f"can't find the master body {name}")
+    for spec in BOARDS.values():
+        if doc.getObjectsByLabel(spec["label"]):
+            fail(f"{spec['label']} already exists: this copy has been through macro 2")
+    end_step(f"{len(before_places)} positions and {len(before_bodies)} bodies recorded")
+
+
+# ================================================================ build
+
+made = {}   # new object name -> (expected global placement of its frame, or None)
+
+
+def new_part(label, about, parent, rel, frame):
+    """An App::Part container at `rel` inside `parent`; `frame` is where it
+    ends up in the whole model."""
+    p = doc.addObject("App::Part", "Part")
+    p.Label = label
+    p.Label2 = about
+    p.Placement = rel
+    if parent is not None:
+        parent.addObject(p)
+    made[p.Name] = frame
+    return p
+
+
+def new_shape(label, shape, parent, frame, d, color):
+    """A Part::Feature holding `shape` (in STEP coordinates), placed inside
+    `parent` (whose frame is `frame`) so it lands at its STEP place + d."""
+    s = shape.copy()
+    s.Placement = frame.inverse().multiply(App.Placement(d, App.Rotation())).multiply(shape.Placement)
+    o = doc.addObject("Part::Feature", "Feature")
+    o.Label = label
+    o.Shape = s
+    parent.addObject(o)
+    made[o.Name] = None
+    expect[o.Name] = (shape, d)
+    if App.GuiUp:
+        o.ViewObject.ShapeColor = color
+    return o
+
+
+expect = {}   # new shape name -> (STEP shape, shift) for the check
+
+
+def step3_build():
+    say("\nStep 3: build the new tree\n")
+    masters = doc.addObject("App::DocumentObjectGroup", "Masters")
+    masters.Label2 = "The bar and the two caps you edit. Each board shows them through links."
+    for name in MASTERS:
+        masters.addObject(doc.getObject(name))
+    made[masters.Name] = None
+    say("  made  Masters, holding the bar and both caps\n")
+
+    for b, spec in BOARDS.items():
+        d = shift[b]
+        a1 = dict(fps[f"{b}-RE9"]["pads"])["A1"]
+        board_frame = App.Placement(a1 + d, App.Rotation())
+        lever = new_part(spec["label"], spec["about"], None, board_frame, board_frame)
+
+        vs = doc.addObject("App::VarSet", spec["vars"])
+        vs.Label2 = f"Values that belong to {spec['label']} only."
+        name, value, tip = spec["value"]
+        vs.addProperty("App::PropertyLength", name, "Positioning", tip)
+        setattr(vs, name, value)
+        lever.addObject(vs)
+        made[vs.Name] = None
+
+        new_shape(f"{b} Board", boards[b], lever, board_frame, d, BOARD_COLOR)
+
+        indicator = None
+        for ref in sorted(r for r in fps if r.startswith(b + "-")):
+            fp = fps[ref]
+            key = ref.split("-", 1)[1]
+            kind = spec["names"][key]
+            here_frame = App.Placement(fp["pos"] + d, App.Rotation(Z, fp["rot"]))
+            if key in ("LED62", "D62"):
+                if indicator is None:
+                    led = fps[f"{b}-LED62"]
+                    ind_frame = App.Placement(led["pos"] + d, App.Rotation())
+                    indicator = new_part(f"{b} Indicator", "The LED and the diode, which move together along y.",
+                                         lever, board_frame.inverse().multiply(ind_frame), ind_frame)
+                parent, parent_frame = indicator, made[indicator.Name]
+            else:
+                parent, parent_frame = lever, board_frame
+            part = new_part(f"{ref.rstrip('*')} {kind}", f"Footprint {ref}. Origin and rotation are the footprint's.",
+                            parent, parent_frame.inverse().multiply(here_frame), here_frame)
+            part.addProperty("App::PropertyString", "Reference", "KiCad", "This footprint's KiCad reference.")
+            part.Reference = ref
+            seen = {}
+            for num, piece in copper[ref]:
+                seen[num] = seen.get(num, 0) + 1
+                n_same = sum(1 for p, _ in copper[ref] if p == num)
+                label = f"{ref.rstrip('*')} pad {num}" + (f" ({seen[num]} of {n_same})" if n_same > 1 else "")
+                new_shape(label, piece, part, here_frame, d, COPPER_COLOR)
+        say(f"  made  {spec['label']}: {spec['vars']}, the board, "
+            f"{len([r for r in fps if r.startswith(b + '-')])} footprints, "
+            f"{sum(len(copper[r]) for r in fps if r.startswith(b + '-'))} copper pads\n")
+    doc.recompute()
+
+
+# ================================================================ check
+
+def step4_check():
+    say("\nStep 4: check\n")
+    for name, frame in made.items():
+        o = doc.getObject(name)
+        if frame is not None and not o.getGlobalPlacement().isSame(frame, TOL):
+            fail(f"{o.Label} is not where its footprint is")
+    for name, (shape, d) in expect.items():
+        o = doc.getObject(name)
+        mine = o.Shape.copy()
+        mine.Placement = o.getGlobalPlacement()
+        want = shape.copy()
+        want.translate(d)
+        if not bbox_close(box(mine), box(want)) or \
+                (centre(mine) - centre(want)).Length > TOL or abs(mine.Volume - want.Volume) > TOL:
+            fail(f"{o.Label} is not where the STEP puts it")
+    end_step(f"{len(expect)} boards and copper pieces where the STEP puts them, shifted to your encoders")
+
+    for o in (doc.getObject(n) for n in made):
+        if o.TypeId == "App::DocumentObjectGroup":
+            continue
+        holders = [p for p in o.InList if p.TypeId == "App::Part" and o in p.Group]
+        if len(holders) != 1 and o.Label not in [s["label"] for s in BOARDS.values()]:
+            fail(f"{o.Label} is in {len(holders)} containers, expected 1")
+    end_step("every new object is in exactly one container")
+
+    after = placements()
+    for name, p in before_places.items():
+        if name not in after:
+            fail(f"{name} has disappeared")
+        elif not after[name].isSame(p, TOL):
+            fail(f"{doc.getObject(name).Label} moved")
+    bodies = body_facts()
+    for name, (vol, bb) in before_bodies.items():
+        if abs(bodies[name][0] - vol) > TOL or not bbox_close(bodies[name][1], bb):
+            fail(f"{doc.getObject(name).Label} changed shape")
+    end_step("nothing already in your file moved or changed")
+
+    # For your information: the new boards against the old ones
+    for b, old_name in (("B1", "Part__Feature154"), ("B2", "Part__Feature156")):
+        old = doc.getObject(old_name)
+        new = doc.getObjectsByLabel(f"{b} Board")[0]
+        g = new.Shape.copy()
+        g.Placement = new.getGlobalPlacement()
+        if old is not None:
+            c = box(g).Center - box(old.Shape).Center
+            say(f"  note  {b} Board sits ({c.x:.3f}, {c.y:.3f}) from the old {old.Label}\n")
+
+
+# ================================================================ run
+
+try:
+    step1_read()
+    step2_snapshot()
+    doc.openTransaction("Macro 2: new boards")
+    try:
+        step3_build()
+        step4_check()
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything macro 2 made has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nMacro 2 passed. Hide the old boards and copper to compare, then save the copy.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

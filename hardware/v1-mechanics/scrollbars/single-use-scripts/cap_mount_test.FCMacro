@@ -1,0 +1,70 @@
+# cap_mount test: can a VarSet value switch features on and off through Suppressed?
+# Run in FreeCAD 1.1. It makes its own new document and never touches your files.
+# A 10 x 10 x 5 block gets an insert pocket and a peg from the same 1.8 mm circle,
+# so the block's volume says which one is active:
+#   pegs on, pocket off = 505.09    pocket on, pegs off = 494.91
+# Results appear in the Report view (View > Panels > Report view).
+import FreeCAD as App
+import Part
+
+
+def print(text):
+    App.Console.PrintMessage(str(text) + "\n")
+
+
+doc = App.newDocument("cap_mount_test")
+v = doc.addObject("App::VarSet", "Vars")
+v.addProperty("App::PropertyEnumeration", "cap_mount", "Test")
+v.cap_mount = ["pegs", "inserts"]
+v.addProperty("App::PropertyBool", "use_pegs", "Test")
+
+body = doc.addObject("PartDesign::Body", "Body")
+block = body.newObject("PartDesign::AdditiveBox", "Block")
+block.Length, block.Width, block.Height = 10, 10, 5
+xy = [f for f in body.Origin.OriginFeatures if f.Role == "XY_Plane"][0]
+sk = body.newObject("Sketcher::SketchObject", "Holes")
+sk.AttachmentSupport = [(xy, "")]
+sk.MapMode = "FlatFace"
+sk.AttachmentOffset = App.Placement(App.Vector(0, 0, 5), App.Rotation())  # top of the block
+sk.addGeometry(Part.Circle(App.Vector(5, 5, 0), App.Vector(0, 0, 1), 0.9))
+pocket = body.newObject("PartDesign::Pocket", "Insert_Pocket")
+pocket.Profile, pocket.Length = sk, 2
+pegs = body.newObject("PartDesign::Pad", "Pegs")
+pegs.Profile, pegs.Length = sk, 2
+doc.recompute()
+
+print("FreeCAD " + ".".join(App.Version()[:3]))
+print("Features have a Suppressed setting: %s" % hasattr(pocket, "Suppressed"))
+print("Start volume (both on, should be 500.00): %.2f" % body.Shape.Volume)
+
+PEGS, INSERTS = 505.09, 494.91
+tests = [
+    ("text choice", "Vars.cap_mount == <<pegs>>", "Vars.cap_mount == <<inserts>>",
+     [("cap_mount", "pegs", PEGS), ("cap_mount", "inserts", INSERTS)]),
+    ("choice number", "Vars.cap_mount == 0", "Vars.cap_mount == 1",
+     [("cap_mount", "pegs", PEGS), ("cap_mount", "inserts", INSERTS)]),
+    ("on/off value", "Vars.use_pegs", "Vars.use_pegs == 0",
+     [("use_pegs", True, PEGS), ("use_pegs", False, INSERTS)]),
+]
+for name, pocket_formula, pegs_formula, states in tests:
+    try:
+        pocket.setExpression("Suppressed", pocket_formula)
+        pegs.setExpression("Suppressed", pegs_formula)
+    except Exception as e:
+        print(f"{name}: formula refused: {e}")
+        continue
+    for prop, value, expected in states:
+        setattr(v, prop, value)
+        doc.recompute()
+        vol = body.Shape.Volume
+        verdict = "OK" if abs(vol - expected) < 0.01 else "WRONG"
+        print(f"{name}: {prop} = {value} -> volume {vol:.2f}, expected {expected:.2f}  {verdict}")
+    pocket.setExpression("Suppressed", None)
+    pegs.setExpression("Suppressed", None)
+
+# Leave the dropdown wired up, so you can switch it yourself and watch the block change.
+pocket.setExpression("Suppressed", tests[0][1])
+pegs.setExpression("Suppressed", tests[0][2])
+v.cap_mount = "pegs"
+doc.recompute()
+print("Done. Select Vars, change cap_mount in the property editor, and press Ctrl+R (Cmd+R) to rebuild.")

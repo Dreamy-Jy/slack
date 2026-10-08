@@ -1,0 +1,72 @@
+# peg_or_hole_test.FCMacro  (FreeCAD 1.1)
+# A 20 x 20 x 10 block whose top has EITHER a 6 mm peg (5 tall) OR a 6 mm hole (5 deep),
+# chosen by one dropdown value: Vars.mount. Runs in a new document; your files are untouched.
+# Results print in the Report view (View > Panels > Report view).
+import math
+import FreeCAD as App
+import Part
+
+try:
+    import FreeCADGui as Gui
+except ImportError:
+    Gui = None
+
+
+def say(text):
+    App.Console.PrintMessage(text + "\n")
+
+
+doc = App.newDocument("peg_or_hole")
+App.setActiveDocument(doc.Name)
+
+# The one value that decides. A dropdown: entry 0 = pegs, entry 1 = inserts.
+vset = doc.addObject("App::VarSet", "Vars")
+vset.addProperty("App::PropertyEnumeration", "mount", "Choice", "pegs or inserts")
+vset.mount = ["pegs", "inserts"]
+
+body = doc.addObject("PartDesign::Body", "Body")
+block = body.newObject("PartDesign::AdditiveBox", "Block")
+block.Length, block.Width, block.Height = 20, 20, 10
+
+# One circle on the top face. Both features are built from it, in the same spot.
+xy = [f for f in body.Origin.OriginFeatures if f.Role == "XY_Plane"][0]
+circle = body.newObject("Sketcher::SketchObject", "Circle")
+circle.AttachmentSupport = [(xy, "")]
+circle.MapMode = "FlatFace"
+circle.AttachmentOffset = App.Placement(App.Vector(0, 0, 10), App.Rotation())
+circle.addGeometry(Part.Circle(App.Vector(10, 10, 0), App.Vector(0, 0, 1), 3))
+
+hole = body.newObject("PartDesign::Pocket", "Hole")   # cuts the circle 5 down into the block
+hole.Profile, hole.Length = circle, 5
+peg = body.newObject("PartDesign::Pad", "Peg")        # pushes the circle 5 up out of the block
+peg.Profile, peg.Length = circle, 5
+
+# The switch. Suppressed = true means "skip this step when building the body".
+# A formula sees the dropdown as the number of the chosen entry, so compare numbers.
+hole.setExpression("Suppressed", "Vars.mount == 0")   # pegs chosen    -> skip the hole
+peg.setExpression("Suppressed", "Vars.mount == 1")    # inserts chosen -> skip the peg
+
+if Gui:
+    for obj in body.Group:              # show only the finished body, as the GUI does
+        obj.ViewObject.Visibility = False
+    body.Tip.ViewObject.Visibility = True
+
+cylinder = math.pi * 3 ** 2 * 5         # 141.37: the peg's or the hole's volume
+for choice, want_volume, want_top in [("pegs", 4000 + cylinder, 15),
+                                      ("inserts", 4000 - cylinder, 10),
+                                      ("pegs", 4000 + cylinder, 15)]:
+    vset.mount = choice
+    doc.recompute()
+    shape = body.Shape
+    ok = abs(shape.Volume - want_volume) < 0.01 and abs(shape.BoundBox.ZMax - want_top) < 0.01
+    say(f"mount = {choice:7}  hole skipped: {hole.Suppressed!s:5}  peg skipped: {peg.Suppressed!s:5}  "
+        f"volume {shape.Volume:.2f} (expect {want_volume:.2f})  "
+        f"top at z = {shape.BoundBox.ZMax:.1f} (expect {want_top})  {'OK' if ok else 'WRONG'}")
+
+if Gui:
+    view = Gui.getDocument(doc.Name).ActiveView
+    view.viewIsometric()
+    view.fitAll()
+say("Left on 'pegs': a peg should be standing on the block.")
+say("Select Vars in the tree and change 'mount' to inserts in the property editor: the peg becomes a hole.")
+say("Or paste in the Python console:  App.ActiveDocument.Vars.mount = 'inserts'; App.ActiveDocument.recompute()")

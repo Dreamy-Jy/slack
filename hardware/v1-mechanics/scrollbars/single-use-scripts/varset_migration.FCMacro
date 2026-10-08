@@ -1,0 +1,550 @@
+# Macro 1: move scrollbar.FCStd onto the new VarSets.
+#
+# Run it on a COPY of scrollbar.FCStd, in FreeCAD 1.1.3 (Macro > Macros...,
+# pick this file, Execute). It never saves the file.
+#
+# It follows the six steps on the "Moving to the new VarSets" page. After
+# each step it prints a check in the Report view. If a check fails, the
+# macro stops at that step: close the copy without saving, and send me the
+# Report view.
+
+import re
+import FreeCAD as App
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+TOL = 0.001  # allowed difference: mm, mm3 or degrees
+
+
+# ================================================================ the plan
+
+OLD_VARSETS = ["ScrollBar_Vars", "SwitchCap_Vars", "Physical_Vars"]
+
+# The seven values renamed to fit the naming scheme: old name -> new name
+RENAMED = {
+    "grounding_length": "front_spacer_length",
+    "spacer_length": "back_spacer_length",
+    "space_diameter": "spacer_diameter",
+    "insert_diameter": "mount_hole_diameter",
+    "insert_depth": "mount_depth",
+    "insert_y_offset": "mount_hole_spacing",
+    "insert_back_offset": "mount_hole_inset",
+}
+OLD_NAME = {new: old for old, new in RENAMED.items()}
+
+# The six values nothing will read; they disappear with the old VarSets
+UNUSED = {"actuation_length", "grounding_diameter", "ground_pin_activation_height",
+          "ground_pin_height", "level2_switch_body_width", "total_shaft_length"}
+
+# Every value in Global_Vars: (name, property type, group, start, tooltip).
+# start is FILE (copied from your file), a new value, or "= formula".
+# Derived values start with today's formula; step 6 gives them the new one.
+FILE = "file"
+L, ANG = "App::PropertyLength", "App::PropertyAngle"
+BOOL, ENUM = "App::PropertyBool", "App::PropertyEnumeration"
+VALUES = [
+    # Positioning
+    ("cap_y", L, "Positioning", 13.700, "Distance from the encoder's bore center to the cap's open edge, on both boards. Sets the bar's length."),
+    ("bar_gap", L, "Positioning", FILE, "Gap between the end of the bar's main section and the cap."),
+    ("indicator_y", L, "Positioning", 6.37, "Distance from the cap's open edge to the LED's center, on both boards; the diode moves with it."),
+    ("led_diode_gap", L, "Positioning", 1.04, "Gap between the LED's and the diode's indicator_width squares, across the bar; their centers sit 2.74 apart today."),
+    ("cap_mount", ENUM, "Positioning", ["pegs", "inserts"], "Pegs or inserts on both caps. Formulas read pegs as 0 and inserts as 1, so keep that order."),
+    ("indicator_pocket", BOOL, "Positioning", True, "The LED and diode pocket on or off in both caps, so the caps can be designed without it."),
+    # Scroll Bar Design
+    ("straight_shaft_length", L, "Scroll Bar Design", FILE, "Length of the straight hex at the shaft end; its far face seats on the encoder's hex face."),
+    ("angled_shaft_length", L, "Scroll Bar Design", FILE, "Length of the tapered hex after the straight hex."),
+    ("shaft_angle", ANG, "Scroll Bar Design", FILE, "Draft angle of the tapered hex, matching the encoder's drafted bore."),
+    ("front_spacer_length", L, "Scroll Bar Design", FILE, "Length of the spacer between the shaft and the main section."),
+    ("back_spacer_length", L, "Scroll Bar Design", FILE, "Length of the spacer between the main section and the actuator."),
+    ("spacer_diameter", L, "Scroll Bar Design", FILE, "Diameter of both spacers."),
+    ("actuation_gap", L, "Scroll Bar Design", FILE, "Gap between the bar and each switch at rest. The bar's diameters are drawn to leave it; the caps' channels add it back."),
+    ("main_length", L, "Scroll Bar Design", FILE, "The part your finger rolls: from the front spacer to bar_gap short of the cap, so cap_y sets it (from macro 4; typed until then)."),
+    ("main_diameter", L, "Scroll Bar Design", "= (encoder_to_pcb - lever2_switch_height) * 2", "(encoder_to_pcb - lever2_switch_height - actuation_gap) x 2: its bottom sits actuation_gap above the lever 2 switch."),
+    ("actuation_diameter", L, "Scroll Bar Design", "= (encoder_to_pcb - lever3_switch_height) * 2", "(encoder_to_pcb - lever3_switch_height - actuation_gap) x 2: the bar's end sits actuation_gap above the lever 3 switch."),
+    # Scroll Cap Design
+    ("cap_width", L, "Scroll Cap Design", FILE, "Width of the cap body, not counting the lips."),
+    ("switch_gap", L, "Scroll Cap Design", FILE, "Clearance around the lever 3 switch inside the switched cap: along the bar, and above its body."),
+    ("switch_width_gap", L, "Scroll Cap Design", 0.35, "Extra width of the switch opening beyond the TC-1109's terminals, across the bar; the opening is lever3_switch_width + this (6.35 today)."),
+    ("attachment_lip_width", L, "Scroll Cap Design", FILE, "Width of the lip on each side of the cap; sets the wall around the holes."),
+    ("attachment_lip_height", L, "Scroll Cap Design", FILE, "Height of the lip that carries the mounting holes."),
+    ("mount_hole_diameter", L, "Scroll Cap Design", FILE, "Diameter of the mounting holes, for pegs or inserts, and of the board holes."),
+    ("mount_depth", L, "Scroll Cap Design", FILE, "Depth of the insert holes, or length of the pegs."),
+    ("mount_hole_spacing", L, "Scroll Cap Design", FILE, "Distance between the two hole centers, across the cap."),
+    ("pocket_clearance", L, "Scroll Cap Design", 0.3, "Gap around and above the LED and diode inside the pocket."),
+    ("above_origin_height", L, "Scroll Cap Design", "= actuation_diameter + 0.6 mm", "actuation_diameter + 2 x actuation_gap + 0.6: height of the cap's top above the bar's center line."),
+    ("body_length", L, "Scroll Cap Design", "= 1 mm + lever3_switch_length + switch_gap", "1 + lever3_switch_length + switch_gap: the switch, its gap and a 1 mm back wall."),
+    ("mount_hole_inset", L, "Scroll Cap Design", "= (body_length + attachment_lip_width) / 2", "(body_length + attachment_lip_width) / 2: holes midway along the cap."),
+    # Bought parts and the board
+    ("encoder_to_pcb", L, "Encoder", FILE, "Height of the encoder's bore center above the board. Alps EC10E1220505 drawing, mount height H."),
+    ("encoder_opening", L, "Encoder", FILE, "Across-flats size of the encoder's hex bore; the bar's hex is drawn to it. Alps drawing, detail E."),
+    ("lever2_switch_height", L, "Lever 2 Switch", FILE, "Height of the SKQG to the top of its stem. Alps SKQG drawing."),
+    ("lever3_switch_height", L, "Lever 3 Switch", FILE, "Height of the TC-1109 to the top of its plunger. XKB drawing, height code E."),
+    ("lever3_switch_body_height", L, "Lever 3 Switch", FILE, "Height of the TC-1109's body, bumps included; the switch opening clears it by switch_gap."),
+    ("lever3_switch_length", L, "Lever 3 Switch", FILE, "Length of the TC-1109 along the bar. XKB drawing, 4.50 square body."),
+    ("lever3_switch_width", L, "Lever 3 Switch", FILE, "Width of the TC-1109 across the bar, terminals included; sets the switch opening. XKB drawing."),
+    ("indicator_width", L, "Indicators", 1.7, "Side of the square the pocket allows for each part (BAS16TS 1.70 max over its leads; LED 1.2)."),
+    ("indicator_height", L, "Indicators", 0.65, "Height of the taller part; sets the pocket's depth (BAS16TS 0.65 max; LED 0.4)."),
+    ("board_thickness", L, "Board", 1.51, "Board thickness, from the STEP export; the caps sit on its top and the bar's height counts from it."),
+    ("min_wall", L, "Manufacturing", 0.5, "Thinnest wall the manufacturability check accepts. 0.5 is JLC's resin minimum; it changes with the process."),
+]
+
+# The two caps: (body kept, pegged body deleted, insert pocket, pegs feature)
+CAPS = [
+    ("Body007", "Body011", "Pocket007", "Mounting Pegs001"),      # switched cap
+    ("Body010", "Body012", "Insert Pocket", "Mounting Pegs"),     # plain cap
+]
+BAR = "Body005"
+PAD_SETTINGS = ["Type", "Reversed", "SideType", "Offset", "Length2", "UseCustomVector",
+                "Direction", "AlongSketchNormal", "TaperAngle", "TaperAngle2", "Refine"]
+
+
+# ================================================================ helpers
+
+problems = []
+gone = set()       # names of objects this macro deleted
+edited = {}        # (object name, path) -> value that formula must now give
+broken_before = set()
+gv = None          # Global_Vars, once built
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(n, title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError(f"Step {n} failed. Close this copy without saving.")
+    say(f"  ok    {title}\n")
+
+
+def num(v):
+    """A property or formula result as a plain number, if it is one."""
+    v = getattr(v, "Value", v)
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return str(v)
+
+
+def same(a, b):
+    if isinstance(a, float) and isinstance(b, float):
+        return abs(a - b) <= TOL
+    return a == b
+
+
+def shape_facts(body):
+    """Volume and bounding box of a body, in its own frame."""
+    s = body.Shape.copy()
+    s.Placement = App.Placement()
+    b = s.BoundBox
+    return [s.Volume, b.XMin, b.YMin, b.ZMin, b.XMax, b.YMax, b.ZMax]
+
+
+def sizes(facts):
+    return [facts[4] - facts[1], facts[5] - facts[2], facts[6] - facts[3]]
+
+
+def formula_values():
+    out = {}
+    for o in doc.Objects:
+        for path, expr in o.ExpressionEngine:
+            try:
+                out[(o.Name, path)] = num(o.evalExpression(expr))
+            except Exception:
+                out[(o.Name, path)] = "error"
+    return out
+
+
+def broken_objects():
+    bad = {o.Name for o in doc.Objects if not o.isValid()}
+    bad |= {o.Name for o in doc.Objects
+            if o.TypeId == "Sketcher::SketchObject" and o.solve() != 0}
+    return bad - broken_before
+
+
+def set_mount(value):
+    gv.cap_mount = value
+    doc.recompute()
+
+
+def compare_to_snapshot(changed_bodies=()):
+    """Every body, position and formula result must match step 1 to 0.001,
+    except what the plan changes. The caps are compared as inserts, as they
+    were in step 1."""
+    set_mount("inserts")
+    for name in broken_objects():
+        fail(f"{doc.getObject(name).Label} is broken (a sketch won't solve or a feature errors)")
+    for name, facts in snap_bodies.items():
+        o = doc.getObject(name)
+        if o is None:
+            if name not in gone:
+                fail(f"body {name} has disappeared")
+        elif name not in changed_bodies:
+            now = shape_facts(o)
+            if not all(abs(a - b) <= TOL for a, b in zip(now, facts)):
+                fail(f"body {o.Label} ({name}) changed shape: volume {facts[0]:.3f} -> {now[0]:.3f}")
+    for name, (base, rot) in snap_places.items():
+        o = doc.getObject(name)
+        if o is None:
+            if name not in gone:
+                fail(f"object {name} has disappeared")
+            continue
+        p = o.Placement
+        if (p.Base - base).Length > TOL or not p.Rotation.isSame(rot, 1e-6):
+            fail(f"{o.Label} moved")
+    now = formula_values()
+    for key, v in snap_formulas.items():
+        if key[0] in gone or key in edited:
+            continue
+        if key not in now:
+            fail(f"the formula on {key[0]} {key[1]} has gone")
+        elif not same(now[key], v):
+            fail(f"the formula on {doc.getObject(key[0]).Label} {key[1]} went from {v} to {now[key]}")
+    for (name, path), want in edited.items():
+        o = doc.getObject(name)
+        got = num(o.evalExpression(dict(o.ExpressionEngine)[path]))
+        if not same(got, want):
+            fail(f"the formula on {o.Label} {path} gives {got}, the plan says {want}")
+    set_mount("pegs")
+
+
+# ================================================================ step 1
+
+def step1_snapshot():
+    global snap_bodies, snap_places, snap_formulas
+    say("\nStep 1: snapshot\n")
+    doc.recompute()
+    broken_before.update(broken_objects())
+    for name in broken_before:
+        say(f"  note  {doc.getObject(name).Label} was already broken; it is ignored\n")
+    snap_bodies = {o.Name: shape_facts(o) for o in doc.Objects
+                   if o.TypeId == "PartDesign::Body" and not o.Shape.isNull()}
+    # Each object's own position, relative to the container it sits in.
+    # If no object's own position changes, nothing in the assembly moves.
+    snap_places = {}
+    for o in doc.Objects:
+        p = getattr(o, "Placement", None)
+        if isinstance(p, App.Placement):
+            snap_places[o.Name] = (App.Vector(p.Base), App.Rotation(p.Rotation))
+    snap_formulas = formula_values()
+    say(f"  {len(snap_bodies)} bodies, {len(snap_places)} positions, "
+        f"{len(snap_formulas)} formulas (the plan counted 108)\n")
+    end_step(1, "snapshot taken")
+
+
+# ================================================================ step 2
+
+def step2_build_global_vars():
+    global gv, old, old_values
+    say("\nStep 2: build Global_Vars\n")
+    old = {}
+    for label in OLD_VARSETS:
+        found = [o for o in doc.getObjectsByLabel(label) if o.TypeId == "App::VarSet"]
+        if len(found) != 1:
+            fail(f"expected one VarSet labelled {label}, found {len(found)}")
+        else:
+            old[label] = found[0]
+    if doc.getObjectsByLabel("Global_Vars"):
+        fail("Global_Vars already exists: this copy was migrated before")
+    end_step(2, "found the three old VarSets")
+
+    # The properties every VarSet has, so only your own values are read
+    tmp = doc.addObject("App::VarSet", "TmpVarSet")
+    builtin = set(tmp.PropertiesList)
+    doc.removeObject(tmp.Name)
+
+    old_values = {}
+    for vs in old.values():
+        for p in vs.PropertiesList:
+            if p in builtin:
+                continue
+            v = getattr(vs, p)
+            if p in old_values and not same(num(old_values[p]), num(v)):
+                fail(f"{p} has two different values in the old VarSets")
+            old_values[p] = v
+    kept = {OLD_NAME.get(n, n) for n, t, g, start, tip in VALUES
+            if start == FILE or str(start).startswith("=")}
+    for p in old_values:
+        if p not in kept and p not in UNUSED:
+            fail(f"{p} is in your old VarSets but not in the plan")
+    for p in kept:
+        if p not in old_values:
+            fail(f"{p} is in the plan but not in your old VarSets")
+    end_step(2, f"the old VarSets hold the {len(kept)} values the plan keeps, "
+                f"plus {len(set(old_values) & UNUSED)} unused ones")
+
+    gv = doc.addObject("App::VarSet", "Global_Vars")
+    gv.Label2 = "Every shared value: positions, bar and cap design, bought parts, board, manufacturing."
+    # First every value, then the formulas, so no formula names a value
+    # that doesn't exist yet
+    for name, ptype, group, start, tip in VALUES:
+        gv.addProperty(ptype, name, group, tip)
+        if start == FILE:
+            setattr(gv, name, old_values[OLD_NAME.get(name, name)])
+        elif isinstance(start, str) and start.startswith("="):
+            pass
+        elif ptype == ENUM:
+            setattr(gv, name, start)       # the list of choices
+            setattr(gv, name, start[0])    # starts at pegs
+        else:
+            setattr(gv, name, start)
+    for name, ptype, group, start, tip in VALUES:
+        if isinstance(start, str) and start.startswith("="):
+            gv.setExpression(name, start[1:].strip())
+    doc.recompute()
+
+    for name, ptype, group, start, tip in VALUES:
+        if start == FILE or str(start).startswith("="):
+            want = num(old_values[OLD_NAME.get(name, name)])
+            got = num(getattr(gv, name))
+            if not same(got, want):
+                fail(f"Global_Vars.{name} is {got}, your file has {want}")
+    if len(VALUES) != 39:
+        fail(f"Global_Vars has {len(VALUES)} values, the plan has 39")
+    end_step(2, "Global_Vars built: 39 values, each kept one equal to your file")
+
+
+# ================================================================ step 3
+
+def feature(body, label):
+    found = [f for f in body.Group if f.Label == label]
+    if len(found) != 1:
+        fail(f"{body.Label}: expected one feature labelled '{label}', found {len(found)}")
+        return None
+    return found[0]
+
+
+def step3_merge_caps():
+    say("\nStep 3: merge the cap bodies\n")
+    merged = []
+    for keep_name, peg_name, pocket_label, pegs_label in CAPS:
+        keep, peg = doc.getObject(keep_name), doc.getObject(peg_name)
+        if keep is None or peg is None:
+            fail(f"can't find {keep_name} or {peg_name}")
+            continue
+        pocket, old_pegs = feature(keep, pocket_label), feature(peg, pegs_label)
+        if pocket is None or old_pegs is None:
+            continue
+        # A pegs pad on the insert body's own Mounting Holes sketch,
+        # set up like the pegged body's pad
+        pad = keep.newObject("PartDesign::Pad", "MountingPegs")
+        pad.Profile = pocket.Profile[0]
+        for p in PAD_SETTINGS:
+            if p in old_pegs.PropertiesList and p in pad.PropertiesList:
+                setattr(pad, p, getattr(old_pegs, p))
+        pad.setExpression("Length", "Global_Vars.mount_depth")
+        keep.Tip = pad
+        pocket.setExpression("Suppressed", "Global_Vars.cap_mount == 0")
+        pad.setExpression("Suppressed", "Global_Vars.cap_mount == 1")
+        merged.append((keep, peg, pad, pegs_label))
+    end_step(3, "pegs pad added to both insert bodies")
+
+    # Pegs: each merged cap must match its old pegged body
+    set_mount("pegs")
+    for keep, peg, pad, _ in merged:
+        a, b = shape_facts(keep), shape_facts(peg)
+        if not all(abs(x - y) <= TOL for x, y in zip(a, b)):
+            fail(f"{keep.Label} set to pegs doesn't match {peg.Label}: volume {a[0]:.3f} vs {b[0]:.3f}")
+    # Inserts: each merged cap must match itself in step 1
+    set_mount("inserts")
+    for keep, peg, pad, _ in merged:
+        a = shape_facts(keep)
+        if not all(abs(x - y) <= TOL for x, y in zip(a, snap_bodies[keep.Name])):
+            fail(f"{keep.Label} set to inserts doesn't match itself before the macro")
+    set_mount("pegs")
+    end_step(3, "each merged cap matches its old body, set either way")
+
+    # Anything showing a pegged body now shows the merged one; anything else
+    # that uses a pegged body stops the macro before it is deleted
+    for keep, peg, pad, _ in merged:
+        doomed = {f.Name for f in peg.Group} | {peg.Name}
+        origin = getattr(peg, "Origin", None)
+        if origin:
+            doomed |= {origin.Name} | {f.Name for f in origin.OriginFeatures}
+        for name in list(doomed):
+            o = doc.getObject(name)
+            for user in o.InList:
+                if user.Name in doomed:
+                    continue
+                if user.TypeId == "App::Link" and user.LinkedObject == peg:
+                    user.LinkedObject = keep
+                    say(f"  link  {user.Label} now shows {keep.Label}\n")
+                elif o == peg and peg in getattr(user, "Group", []):
+                    continue  # the folder the body sits in
+                else:
+                    fail(f"{user.Label} uses {o.Label} from {peg.Label}")
+        gone.update(doomed)
+    end_step(3, "nothing but links uses the pegged bodies")
+
+    for keep, peg, pad, pegs_label in merged:
+        label = peg.Label
+        for name in sorted(gone & ({f.Name for f in peg.Group}), reverse=True):
+            doc.removeObject(name)
+        # Note the origin's names first: deleting the body can delete its
+        # origin too, and a deleted object can't be asked its name
+        origin = getattr(peg, "Origin", None)
+        leftovers = [f.Name for f in origin.OriginFeatures] + [origin.Name] if origin else []
+        doc.removeObject(peg.Name)
+        for name in leftovers:
+            if doc.getObject(name):
+                doc.removeObject(name)
+        pad.Label = pegs_label
+        say(f"  gone  {label}\n")
+    doc.recompute()
+    compare_to_snapshot()
+    end_step(3, "pegged bodies deleted; everything else matches the snapshot")
+
+
+# ================================================================ step 4
+
+def step4_point_at_global_vars():
+    global pattern, old_names
+    say("\nStep 4: point the remaining formulas at Global_Vars\n")
+    old_names = [vs.Name for vs in old.values()]
+    longest_first = lambda xs: sorted(xs, key=len, reverse=True)
+    refs = "|".join(map(re.escape, longest_first(old_names + OLD_VARSETS)))
+    bare = "|".join(map(re.escape, longest_first(old_names)))
+    # Matches <<ScrollBar_Vars>>.x, <<VarSet>>.x and VarSet.x; group 1 is x
+    pattern = re.compile(rf"(?:<<(?:{refs})>>|\b(?:{bare}))\.(\w+)")
+
+    def new_ref(m):
+        name = m.group(1)
+        if name == "total_shaft_length":
+            return "(Global_Vars.straight_shaft_length + Global_Vars.angled_shaft_length)"
+        new = RENAMED.get(name, name)
+        if name in UNUSED or new not in gv.PropertiesList:
+            fail(f"a formula reads {name}, which Global_Vars doesn't have")
+            return m.group(0)
+        return "Global_Vars." + new
+
+    skip = set(old_names) | {gv.Name}
+    formulas = refs_done = 0
+    for o in doc.Objects:
+        if o.Name in skip:
+            continue
+        for path, expr in o.ExpressionEngine:
+            new, n = pattern.subn(new_ref, expr)
+            if n:
+                o.setExpression(path, new)
+                formulas += 1
+                refs_done += n
+    say(f"  {refs_done} references rewritten in {formulas} formulas (the plan counted 71 in 55)\n")
+    for o in doc.Objects:
+        if o.Name not in skip:
+            for path, expr in o.ExpressionEngine:
+                if pattern.search(expr):
+                    fail(f"{o.Label} {path} still reads an old VarSet: {expr}")
+    doc.recompute()
+    compare_to_snapshot()
+    end_step(4, "no formula reads an old VarSet; nothing moved")
+
+
+# ================================================================ step 5
+
+def step5_delete_old_varsets():
+    say("\nStep 5: delete the old VarSets\n")
+    for vs in old.values():
+        users = [u.Label for u in vs.InList if u.Name not in old_names]
+        if users:
+            fail(f"{vs.Label} is still used by {', '.join(users)}")
+    end_step(5, "nothing uses the old VarSets")
+    for vs in old.values():
+        say(f"  gone  {vs.Label}\n")
+        doc.removeObject(vs.Name)
+    gone.update(old_names)
+    doc.recompute()
+    compare_to_snapshot()
+    end_step(5, "old VarSets deleted; everything matches the snapshot")
+
+
+# ================================================================ step 6
+
+def edit(body_names, match, new_expr, count, value):
+    """Rewrite every formula in these bodies whose text (spaces removed)
+    matches `match`; there must be exactly `count` of them."""
+    hits = []
+    for bn in body_names:
+        for f in doc.getObject(bn).Group:
+            for path, expr in f.ExpressionEngine:
+                if re.fullmatch(match, expr.replace(" ", "")):
+                    hits.append((f, path))
+    if len(hits) != count:
+        fail(f"expected {count} formulas like {match}, found {len(hits)}")
+        return
+    for f, path in hits:
+        f.setExpression(path, new_expr)
+        edited[(f.Name, path)] = value
+        say(f"  edit  {f.Label} {path} = {new_expr}\n")
+
+
+def check_global(name, want):
+    got = num(getattr(gv, name))
+    if not same(got, want):
+        fail(f"Global_Vars.{name} is {got}, the plan says {want}")
+
+
+def step6_agreed_changes():
+    switched, plain = CAPS[0][0], CAPS[1][0]
+
+    say("\nStep 6a: actuation_gap fix\n")
+    gv.setExpression("actuation_diameter", "(encoder_to_pcb - lever3_switch_height - actuation_gap) * 2")
+    gv.setExpression("main_diameter", "(encoder_to_pcb - lever2_switch_height - actuation_gap) * 2")
+    gv.setExpression("above_origin_height", "actuation_diameter + 2 * actuation_gap + 0.6 mm")
+    edit([BAR], r"Global_Vars\.main_diameter-Global_Vars\.actuation_gap-0(\.0*)?mm",
+         "Global_Vars.main_diameter", 1, 10.8)
+    edit([BAR], r"Global_Vars\.actuation_diameter-Global_Vars\.actuation_gap-0\.10*mm",
+         "Global_Vars.actuation_diameter", 1, 2.8)
+    edit([switched, plain], r"Global_Vars\.actuation_diameter",
+         "Global_Vars.actuation_diameter + 2 * Global_Vars.actuation_gap", 4, 3.0)
+    end_step(6, "formulas found where the plan says")
+    doc.recompute()
+    check_global("main_diameter", 10.8)
+    check_global("actuation_diameter", 2.8)
+    check_global("above_origin_height", 3.6)
+    before, after = sizes(snap_bodies[BAR]), sizes(shape_facts(doc.getObject(BAR)))
+    shrunk = sorted(round(b - a, 3) for a, b in zip(after, before))
+    if shrunk != [0.0, 0.1, 0.1]:
+        fail(f"the bar's size changed by {shrunk}; the plan says only its diameter, by 0.1")
+    compare_to_snapshot(changed_bodies={BAR})
+    end_step(6, "main section 10.9 -> 10.8; nothing else changed")
+
+    say("\nStep 6b: switch width\n")
+    gv.lever3_switch_width = 6.0
+    edit([switched], r"Global_Vars\.lever3_switch_width",
+         "Global_Vars.lever3_switch_width + Global_Vars.switch_width_gap", 2, 6.35)
+    end_step(6, "formulas found where the plan says")
+    doc.recompute()
+    compare_to_snapshot(changed_bodies={BAR})
+    end_step(6, "lever3_switch_width 6.35 -> 6.0; the opening stays 6.35, nothing moved")
+
+    say("\nStep 6c: switch body height\n")
+    gv.lever3_switch_body_height = 3.3
+    edit([switched], r"Global_Vars\.lever3_switch_body_height",
+         "Global_Vars.lever3_switch_body_height + Global_Vars.switch_gap", 2, 3.5)
+    end_step(6, "formulas found where the plan says")
+    doc.recompute()
+    set_mount("inserts")
+    before, after = snap_bodies[switched], shape_facts(doc.getObject(switched))
+    if not all(abs(a - b) <= TOL for a, b in zip(before[1:], after[1:])):
+        fail("the switched cap's outside size changed; only its opening should")
+    if not after[0] < before[0] - TOL:
+        fail("the switched cap's volume didn't drop; its opening should have grown")
+    set_mount("pegs")
+    compare_to_snapshot(changed_bodies={BAR, switched})
+    end_step(6, "switch opening 3.4 -> 3.5 tall; nothing else changed")
+
+
+# ================================================================ run
+
+try:
+    step1_snapshot()
+    step2_build_global_vars()
+    step3_merge_caps()
+    step4_point_at_global_vars()
+    step5_delete_old_varsets()
+    step6_agreed_changes()
+    say("\nAll six steps passed. cap_mount is set to pegs. Look the model over, then save the copy.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e}\n")

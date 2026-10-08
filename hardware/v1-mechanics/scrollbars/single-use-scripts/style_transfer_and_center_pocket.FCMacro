@@ -1,0 +1,193 @@
+# Centre the LED, diode and pocket on each cap, and give every model the
+# caps' line width.
+#
+# Run it on a COPY of scrollbar.FCStd saved after split_vars_and_pocket.py,
+# in FreeCAD 1.1.3.
+#
+#   1. indicator_x becomes a formula: (indicator_width + led_diode_gap) / 2.
+#      That's half the distance between the LED's and the diode's centres
+#      (1.37 today, was 0.850577), so the pair sits on the cap's centre line.
+#   2. Each Indicator Pocket's x becomes -Length / 2, so the box sits on the
+#      cap's centre line too, whatever its size.
+#   3. Checks: the pair and the pocket are on each cap's centre, the parts
+#      still clear the caps by 0.25, nothing else moved.
+#   4. Every model gets the same line width as the caps.
+# If a check fails, the macro undoes steps 1 and 2.
+
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+TOL = 0.001
+
+BOARDS = {   # board: (cap link, master cap, LED, diode holder)
+    "B1": ("Link009", "Body007", "B1-LED62 LTST-FC12WEGBD-5A", "D_SOD_526"),
+    "B2": ("Link010", "Body010", "B2-LED62 LTST-FC12WEGBD-5A", "D_SOD_527"),
+}
+INDICATOR_X = "(Parts_Vars.indicator_width + Places_Vars.led_diode_gap) / 2"
+
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The macro stopped.")
+    say(f"  ok    {title}\n")
+
+
+def glob(o):
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def global_shape(o):
+    if o.TypeId == "App::Link":
+        s = Part.getShape(o.LinkedObject).copy()
+    elif o.TypeId == "Part::Feature":
+        s = o.Shape.copy()
+    else:   # a holder: everything solid inside it
+        return Part.makeCompound([global_shape(x) for x in o.OutListRecursive if x.TypeId == "Part::Feature"])
+    s.Placement = glob(o)
+    return s
+
+
+def mid_x(shape):
+    b = shape.optimalBoundingBox(False, False)
+    return (b.XMin + b.XMax) / 2
+
+
+def inside(container):
+    """The container and everything in it, its origins included."""
+    names = {container.Name}
+    origin = getattr(container, "Origin", None)
+    if origin is not None:
+        names |= {origin.Name} | {f.Name for f in origin.OriginFeatures}
+    for child in getattr(container, "Group", []):
+        names |= inside(child)
+    return names
+
+
+def pocket_of(master):
+    # By type, not label: FreeCAD renamed the second one "Indicator Pocket001"
+    found = [f for f in doc.getObject(master).Group
+             if f.TypeId == "PartDesign::SubtractiveBox" and f.Label.startswith("Indicator Pocket")]
+    if len(found) != 1:
+        raise RuntimeError(f"expected one Indicator Pocket in {doc.getObject(master).Label}, found {len(found)}")
+    return found[0]
+
+
+def snapshot():
+    return {o.Name: glob(o) for o in doc.Objects if isinstance(getattr(o, "Placement", None), App.Placement)}
+
+
+# ================================================================ 1-2. centre
+
+def step1_centre():
+    say("\nStep 1: centre the LED, diode and pocket\n")
+    pv = doc.getObject("Places_Vars")
+    if pv is None or "indicator_x" not in pv.PropertiesList:
+        fail("can't find Places_Vars.indicator_x; run split_vars_and_pocket.py first")
+    end_step("found indicator_x")
+
+    was = float(pv.indicator_x.Value)
+    pv.setExpression("indicator_x", INDICATOR_X)
+    try:
+        pv.setGroupOfProperty("indicator_x", "Derived")
+    except Exception:
+        pass   # older builds can't regroup; the value still works
+    pv.setDocumentationOfProperty(
+        "indicator_x",
+        "Distance across the bar from the cap's centre to the LED's centre: half the distance between "
+        "the LED's and diode's centres, so the pair sits on the cap's centre line. "
+        "(indicator_width + led_diode_gap) / 2.")
+    for b, (link, master, led, diode) in BOARDS.items():
+        p = pocket_of(master)
+        p.setExpression(".Placement.Base.x", "-Length / 2")
+    doc.recompute()
+    say(f"  made  indicator_x = {INDICATOR_X} ({float(pv.indicator_x.Value):.4f}, was {was:.4f})\n")
+    say("  made  both pockets' x = -Length / 2\n")
+
+
+# ================================================================ 3. check
+
+def step2_check(before):
+    say("\nStep 2: check\n")
+    moving = set()
+    for b, (link, master, led, diode) in BOARDS.items():
+        cap = global_shape(doc.getObject(link))
+        led_o = doc.getObjectsByLabel(led)[0]
+        diode_o = doc.getObject(diode)
+        moving |= inside(doc.getObjectsByLabel(f"{b} Indicator")[0])
+        centre = mid_x(cap)
+        pair = (mid_x(global_shape(led_o)) + mid_x(global_shape(diode_o))) / 2
+        say(f"  {b}: cap centre x {centre:.4f}, LED/diode pair centre x {pair:.4f}\n")
+        if abs(pair - centre) > 0.01:
+            fail(f"{b}: the LED and diode sit {pair - centre:+.4f} off the cap's centre")
+
+        # The pocket on its own, placed like the cap: compare its centre too
+        p = pocket_of(master)
+        moving.add(p.Name)   # the pocket moves on purpose
+        tool = Part.makeBox(float(p.Length.Value), float(p.Width.Value), float(p.Height.Value))
+        tool.Placement = glob(doc.getObject(link)).multiply(p.Placement)
+        if abs(mid_x(tool) - centre) > TOL:
+            fail(f"{b}: the pocket sits {mid_x(tool) - centre:+.4f} off the cap's centre")
+
+        for part in (led_o, diode_o):
+            s = global_shape(part)
+            if cap.common(s).Volume > 1e-6:
+                fail(f"{b}: {part.Label} runs into the cap")
+            elif cap.distToShape(s)[0] < 0.25:
+                fail(f"{b}: {part.Label} is only {cap.distToShape(s)[0]:.3f} from the cap")
+    end_step("the pair and the pocket sit on each cap's centre, and clear it by at least 0.25")
+
+    after = snapshot()
+    for name, was in before.items():
+        if name in moving or name not in after:
+            continue
+        if not after[name].isSame(was, TOL):
+            fail(f"{doc.getObject(name).Label} moved")
+    end_step("only the indicators moved")
+
+
+# ================================================================ 4. line width
+
+def step3_lines():
+    say("\nStep 3: line width\n")
+    width = doc.getObject("Body007").ViewObject.LineWidth
+    n = 0
+    for o in doc.Objects:
+        vo = getattr(o, "ViewObject", None)
+        if vo is not None and "LineWidth" in vo.PropertiesList and vo.LineWidth != width:
+            vo.LineWidth = width
+            n += 1
+    say(f"  ok    {n} models now draw their lines {width} wide, like the caps\n")
+
+
+# ================================================================ run
+
+try:
+    doc.recompute()
+    before = snapshot()
+    doc.openTransaction("Centre the indicators and pockets")
+    try:
+        step1_centre()
+        step2_check(before)
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything this macro did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    step3_lines()
+    say("\nAll done. Save the copy.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

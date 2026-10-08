@@ -1,0 +1,326 @@
+# Replace the two box pockets with sketch pockets, one per cap, that you can
+# move independently, with each cap's LED and diode bound to its pocket.
+#
+# Run it on a COPY of scrollbar.FCStd, in FreeCAD 1.1.3.
+#
+#   1. Deletes the two box pockets ("Indicator Pocket" in the switched cap,
+#      "Indicator Pocket001" in the plain cap).
+#   2. Adds four values to Places_Vars, group "Pocket offsets", all 0:
+#        switched_pocket_x, switched_pocket_y, plain_pocket_x, plain_pocket_y
+#      Each moves one cap's pocket AND that cap's LED and diode, in the cap's
+#      own frame: x across the bar, y along it (plus = away from the open edge).
+#   3. In each cap: a sketch on the cap's XY plane, lowered to its bottom face
+#      (-encoder_to_pcb), with a rectangle whose size and corner are formulas:
+#        length  2 * indicator_width + led_diode_gap + 2 * pocket_clearance
+#        width   indicator_width + 2 * pocket_clearance
+#        corner  centred on indicator_x / indicator_y, plus the cap's offsets
+#      and a Pocket cutting it indicator_height + pocket_clearance up into the
+#      cap. indicator_pocket still switches it off.
+#   4. Binds each Indicator (the LED and diode) to its cap's offsets, so the
+#      parts follow their pocket.
+# Then it checks: both caps have exactly their old shape; nothing else moved;
+# each pocket is centred on its LED and diode and clears them; moving one
+# cap's offsets moves that pocket and its parts and nothing on the other
+# board; indicator_pocket still switches the pockets off. If a check fails,
+# the macro undoes everything it did.
+
+import FreeCAD as App
+import Part
+import Sketcher
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+TOL = 0.001
+
+CAPS = {   # prefix: (cap body, old box, cap link, cap footprint, indicator, LED, diode holder, origin XY plane, extra y)
+    "switched": ("Body007", "IndicatorPocket", "Link009", "B1-MP Switched cap", "B1 Indicator",
+                 "B1-LED62 LTST-FC12WEGBD-5A", "D_SOD_526", "XY_Plane054", " - Cap_Vars.body_length"),
+    "plain": ("Body010", "IndicatorPocket001", "Link010", "B2-MP Plain cap", "B2 Indicator",
+              "B2-LED62 LTST-FC12WEGBD-5A", "D_SOD_527", "XY_Plane057", ""),
+}
+LENGTH = "2 * Parts_Vars.indicator_width + Places_Vars.led_diode_gap + 2 * Cap_Vars.pocket_clearance"
+WIDTH = "Parts_Vars.indicator_width + 2 * Cap_Vars.pocket_clearance"
+DEPTH = "Parts_Vars.indicator_height + Cap_Vars.pocket_clearance"
+
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The macro stopped.")
+    say(f"  ok    {title}\n")
+
+
+def one(label):
+    found = doc.getObjectsByLabel(label)
+    if len(found) != 1:
+        fail(f"expected one object labelled '{label}', found {len(found)}")
+        return None
+    return found[0]
+
+
+def glob(o):
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def global_shape(o):
+    if o.TypeId == "App::Link":
+        s = Part.getShape(o.LinkedObject).copy()
+    elif o.TypeId == "Part::Feature":
+        s = o.Shape.copy()
+    else:   # a holder: everything solid inside it
+        return Part.makeCompound([global_shape(x) for x in o.OutListRecursive if x.TypeId == "Part::Feature"])
+    s.Placement = glob(o)
+    return s
+
+
+def mid(shape):
+    b = shape.optimalBoundingBox(False, False)
+    return App.Vector((b.XMin + b.XMax) / 2, (b.YMin + b.YMax) / 2, (b.ZMin + b.ZMax) / 2)
+
+
+def snapshot():
+    return {o.Name: glob(o) for o in doc.Objects if isinstance(getattr(o, "Placement", None), App.Placement)}
+
+
+# ================================================================ 1. find, and remove the boxes
+
+def step1_remove():
+    global parts, volumes
+    say("\nStep 1: remove the box pockets\n")
+    pv = doc.getObject("Places_Vars")
+    if pv is None:
+        fail("can't find Places_Vars")
+    elif "switched_pocket_x" in pv.PropertiesList:
+        fail("Places_Vars already has switched_pocket_x: this copy has been through this macro")
+    parts, volumes = {}, {}
+    for p, (body, box, link, cap, ind, led, diode, xy, _) in CAPS.items():
+        objs = [doc.getObject(body), doc.getObject(box), doc.getObject(link), one(cap), one(ind), one(led),
+                doc.getObject(diode), doc.getObject(xy)]
+        if None in objs:
+            fail(f"{p} cap: missing one of {body}, {box}, {link}, {cap}, {ind}, {led}, {diode}, {xy}")
+            continue
+        if objs[1].TypeId != "PartDesign::SubtractiveBox":
+            fail(f"{objs[1].Label} isn't a box pocket ({objs[1].TypeId})")
+        parts[p] = objs
+        volumes[p] = objs[0].Shape.Volume
+    end_step("found both caps, their box pockets, indicators, LEDs and diodes")
+
+    for p, (body, box, *_rest) in parts.items():
+        label = box.Label
+        body.removeObject(box)        # the body's Tip goes back to the feature before it
+        doc.removeObject(box.Name)
+        say(f"  gone  {label} from {body.Label}\n")
+    doc.recompute()
+    for p, (body, *_rest) in parts.items():
+        if body.Shape.Volume <= volumes[p] + TOL:
+            fail(f"{body.Label}: removing the box didn't fill the pocket back in")
+    end_step("both box pockets removed; the caps are solid there again")
+
+
+# ================================================================ 2. the offsets
+
+def step2_values():
+    say("\nStep 2: pocket offsets\n")
+    pv = doc.getObject("Places_Vars")
+    for p, what in (("switched", "switched cap (B1)"), ("plain", "plain cap (B2)")):
+        pv.addProperty("App::PropertyDistance", f"{p}_pocket_x", "Pocket offsets",
+                       f"Moves the {what}'s LED/diode pocket, and its LED and diode with it, across the bar "
+                       f"(the cap's own x). 0 = centred on indicator_x.")
+        pv.addProperty("App::PropertyDistance", f"{p}_pocket_y", "Pocket offsets",
+                       f"Moves the {what}'s LED/diode pocket, and its LED and diode with it, along the bar "
+                       f"(the cap's own y; plus = away from the open edge). 0 = at indicator_y.")
+        setattr(pv, f"{p}_pocket_x", 0)
+        setattr(pv, f"{p}_pocket_y", 0)
+        say(f"  made  Places_Vars.{p}_pocket_x and {p}_pocket_y (0)\n")
+
+
+# ================================================================ 3. sketch pockets
+
+def rectangle(sk, p, extra_y):
+    """A rectangle with its size and bottom-left corner set by formulas."""
+    x0, y0, x1, y1 = -2.5, 1.0, 2.5, 3.0   # rough start; the formulas move it
+    pts = [App.Vector(x0, y0, 0), App.Vector(x1, y0, 0), App.Vector(x1, y1, 0), App.Vector(x0, y1, 0)]
+    for i in range(4):
+        sk.addGeometry(Part.LineSegment(pts[i], pts[(i + 1) % 4]), False)
+    for i in range(4):
+        sk.addConstraint(Sketcher.Constraint("Coincident", i, 2, (i + 1) % 4, 1))
+    sk.addConstraint(Sketcher.Constraint("Horizontal", 0))
+    sk.addConstraint(Sketcher.Constraint("Horizontal", 2))
+    sk.addConstraint(Sketcher.Constraint("Vertical", 1))
+    sk.addConstraint(Sketcher.Constraint("Vertical", 3))
+    dims = [
+        ("pocket_length", Sketcher.Constraint("DistanceX", 0, 1, 0, 2, x1 - x0), LENGTH),
+        ("pocket_width", Sketcher.Constraint("DistanceY", 1, 1, 1, 2, y1 - y0), WIDTH),
+        ("corner_x", Sketcher.Constraint("DistanceX", -1, 1, 0, 1, x0),
+         f"-({LENGTH}) / 2 + Places_Vars.{p}_pocket_x"),
+        ("corner_y", Sketcher.Constraint("DistanceY", -1, 1, 0, 1, y0),
+         f"Places_Vars.indicator_y - Parts_Vars.indicator_width / 2 - Cap_Vars.pocket_clearance{extra_y}"
+         f" + Places_Vars.{p}_pocket_y"),
+    ]
+    for name, c, expr in dims:
+        i = sk.addConstraint(c)
+        sk.renameConstraint(i, name)
+        sk.setExpression(f"Constraints.{name}", expr)
+
+
+def step3_pockets():
+    global pockets
+    say("\nStep 3: sketch pockets\n")
+    pockets = {}
+    for p, (body, _box, link, cap, ind, led, diode, xy) in parts.items():
+        extra_y = CAPS[p][8]
+        sk = body.newObject("Sketcher::SketchObject", "IndicatorPocketSketch")
+        sk.Label = "Indicator Pocket Sketch"
+        sk.Label2 = "The LED/diode pocket's outline on the cap's bottom face. Size and corner are formulas."
+        sk.AttachmentSupport = [(xy, "")]
+        sk.MapMode = "FlatFace"
+        sk.setExpression(".AttachmentOffset.Base.z", "-Parts_Vars.encoder_to_pcb")
+        rectangle(sk, p, extra_y)
+        pk = body.newObject("PartDesign::Pocket", "IndicatorPocketCut")
+        pk.Label = "Indicator Pocket"
+        pk.Label2 = ("Room for the LED and diode: the sketch cut indicator_height + pocket_clearance up into "
+                     "the cap. indicator_pocket switches it off.")
+        pk.Profile = sk
+        pk.Type = "Length"
+        pk.setExpression("Length", DEPTH)
+        pk.setExpression("Suppressed", "Places_Vars.indicator_pocket == 0")
+        body.Tip = pk
+        try:
+            sk.Visibility = False
+        except Exception:
+            pass
+        doc.recompute()
+        # A pocket cuts away from the sketch's face; if it went down, out of the cap, turn it round
+        if abs(body.Shape.Volume - volumes[p]) > TOL:
+            pk.Reversed = not pk.Reversed
+            doc.recompute()
+        if not sk.isValid() or not pk.isValid():
+            fail(f"{body.Label}: the sketch or pocket didn't build")
+        elif abs(body.Shape.Volume - volumes[p]) > TOL:
+            fail(f"{body.Label}: the new pocket doesn't cut the same as the old box "
+                 f"(volume {body.Shape.Volume:.4f}, was {volumes[p]:.4f})")
+        pockets[p] = (sk, pk)
+        say(f"  made  {sk.Label} and {pk.Label} in {body.Label}\n")
+    end_step("both caps have exactly their old shape, now from sketches")
+
+
+# ================================================================ 4. bind the parts
+
+def step4_bind():
+    say("\nStep 4: bind each LED and diode to its pocket\n")
+    for p, (body, _box, link, cap, ind, led, diode, xy) in parts.items():
+        ind.setExpression(".Placement.Base.x",
+                          f"<<{cap.Label}>>.Placement.Base.x + Places_Vars.indicator_x - Places_Vars.{p}_pocket_x")
+        ind.setExpression(".Placement.Base.y",
+                          f"<<{cap.Label}>>.Placement.Base.y - Places_Vars.indicator_y - Places_Vars.{p}_pocket_y")
+        say(f"  made  {ind.Label} follows Places_Vars.{p}_pocket_x and _y\n")
+    doc.recompute()
+
+
+# ================================================================ 5. check
+
+def pocket_centre(p):
+    """The pocket outline's centre, where the cap sits in the assembly."""
+    body, _box, link = parts[p][:3]
+    sk = pockets[p][0]
+    return glob(link).multVec(mid(sk.Shape))   # the link shows the body in its own frame
+
+
+def check_bound(when):
+    for p, (body, _box, link, cap, ind, led, diode, xy) in parts.items():
+        c = pocket_centre(p)
+        pair = (mid(global_shape(led)) + mid(global_shape(diode))) * 0.5
+        if abs(c.x - pair.x) > 0.01 or abs(c.y - pair.y) > 0.05:
+            fail(f"{when}: {p} cap: the pocket's centre ({c.x:.3f}, {c.y:.3f}) isn't on its LED and diode "
+                 f"({pair.x:.3f}, {pair.y:.3f})")
+        capshape = global_shape(link)
+        for part in (led, diode):
+            s = global_shape(part)
+            if capshape.common(s).Volume > 1e-6:
+                fail(f"{when}: {part.Label} runs into the {p} cap")
+            elif capshape.distToShape(s)[0] < 0.25:
+                fail(f"{when}: {part.Label} is only {capshape.distToShape(s)[0]:.3f} from the {p} cap")
+
+
+def step5_check(before):
+    say("\nStep 5: check\n")
+    moved = snapshot()
+    for name, was in before.items():
+        o = doc.getObject(name)
+        if o is not None and name in moved and not moved[name].isSame(was, TOL):
+            fail(f"{o.Label} moved")
+    end_step("with the offsets at 0, nothing moved")
+
+    check_bound("offsets 0")
+    end_step("each pocket is centred on its LED and diode, and clears them by at least 0.25")
+
+    pv = doc.getObject("Places_Vars")
+    for p, other in (("switched", "plain"), ("plain", "switched")):
+        held = {n: glob(o) for n, o in [(x.Name, x) for x in (parts[other][5], parts[other][6])]}
+        held_vol = parts[other][0].Shape.Volume
+        start_c = pocket_centre(p)
+        setattr(pv, f"{p}_pocket_x", 0.3)
+        setattr(pv, f"{p}_pocket_y", 0.2)
+        doc.recompute()
+        check_bound(f"{p}_pocket_x/y = 0.3/0.2")
+        moved_by = pocket_centre(p) - start_c
+        if abs(abs(moved_by.x) - 0.3) > TOL or abs(abs(moved_by.y) - 0.2) > TOL:
+            fail(f"{p}_pocket_x/y = 0.3/0.2 moved the pocket by ({moved_by.x:.3f}, {moved_by.y:.3f})")
+        for n, was in held.items():
+            if not glob(doc.getObject(n)).isSame(was, TOL):
+                fail(f"{p}_pocket_x/y moved {doc.getObject(n).Label} on the other board")
+        if abs(parts[other][0].Shape.Volume - held_vol) > TOL:
+            fail(f"{p}_pocket_x/y changed the {other} cap")
+        setattr(pv, f"{p}_pocket_x", 0)
+        setattr(pv, f"{p}_pocket_y", 0)
+        doc.recompute()
+    end_step("each cap's offsets move its pocket, LED and diode together, and nothing on the other board")
+
+    was_on = pv.indicator_pocket
+    if pv.getTypeIdOfProperty("indicator_pocket") == "App::PropertyEnumeration":
+        pv.indicator_pocket = pv.getEnumerationsOfProperty("indicator_pocket")[0]
+    else:
+        pv.indicator_pocket = False
+    doc.recompute()
+    for p, (body, *_r) in parts.items():
+        if body.Shape.Volume <= volumes[p] + TOL:
+            fail(f"indicator_pocket off: {body.Label} still has its pocket")
+    pv.indicator_pocket = was_on
+    doc.recompute()
+    for p, (body, *_r) in parts.items():
+        if abs(body.Shape.Volume - volumes[p]) > TOL:
+            fail(f"indicator_pocket on: {body.Label} didn't get its pocket back")
+    end_step("indicator_pocket still switches both pockets off and on")
+
+
+# ================================================================ run
+
+try:
+    doc.recompute()
+    before = snapshot()
+    doc.openTransaction("Sketch pockets, bound to their LEDs and diodes")
+    try:
+        step1_remove()
+        step2_values()
+        step3_pockets()
+        step4_bind()
+        step5_check(before)
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything this macro did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nAll done. Save the copy. Move a pocket with Places_Vars > Pocket offsets.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

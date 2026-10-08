@@ -1,0 +1,516 @@
+# Macro 3: stitch the boards together.
+#
+# Run it on a COPY of scrollbar.FCStd saved after macro 2, in FreeCAD 1.1.3,
+# with example_scrollbar.kicad_pcb and example_assembly.step in the same folder.
+#
+# What it does, on each board:
+#   1. Puts each footprint's copper in a Copper group inside its footprint.
+#   2. Chains the footprints along y with formulas: cap from the encoder's
+#      bore, TC-1109 and indicator from the cap, SKQG from the encoder's bore.
+#   3. Moves each existing part (encoders, TC-1109, SKQG, diodes) into its
+#      footprint, where KiCad puts it on its pads. The TC-1109 and SKQG sit
+#      flush on the board instead of KiCad's 0.1 and 0.02 high.
+#   4. Brings the two LEDs in from the STEP.
+#   5. Moves each cap link into its cap footprint, at the cap's KiCad spot,
+#      and each bar link into its encoder footprint without moving it.
+#      (Macro 4 binds the bar to the encoder and sets its length.)
+#   6. Removes the old placement formulas the new chain replaces.
+# Then it checks every position, and nudges each driving value to prove
+# exactly the right parts follow it.
+#
+# The old boards and copper stay. If a check fails, the macro undoes
+# everything it made; close the copy without saving anyway, and send me
+# the Report view.
+
+import math, os, re
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+here = os.path.dirname(doc.FileName)
+BOARD_FILE = os.path.join(here, "example_scrollbar.kicad_pcb")
+STEP_FILE = os.path.join(here, "example_assembly.step")
+TOL = 0.001
+Z = App.Vector(0, 0, 1)
+
+BOARD = {"B1": "Lever class 3", "B2": "Lever class 2"}
+# Footprint container labels, as macro 2 made them
+FOOTPRINT = {
+    "B1-RE9": "B1-RE9 Encoder", "B1-MP**": "B1-MP Switched cap", "B1-SW62": "B1-SW62 TC-1109",
+    "B1-LED62": "B1-LED62 LED", "B1-D62": "B1-D62 Diode",
+    "B2-RE9": "B2-RE9 Encoder", "B2-MP**": "B2-MP Plain cap", "B2-SW62": "B2-SW62 SKQG",
+    "B2-LED62": "B2-LED62 LED", "B2-D62": "B2-D62 Diode",
+}
+INDICATOR = {"B1": "B1 Indicator", "B2": "B2 Indicator"}
+
+# The parts already in your file (internal names) and the footprint each sits on
+PARTS = {"B1-RE9": "EC10E1220509", "B2-RE9": "EC10E1220510", "B1-SW62": "tc_1109_c_e002",
+         "B2-SW62": "SKQGAFE010", "B1-D62": "D_SOD_526", "B2-D62": "D_SOD_527"}
+SEAT_FIX = {"B1-SW62": -0.1, "B2-SW62": -0.02}   # flush on the board, not KiCad's height
+LEDS = ["B1-LED62", "B2-LED62"]
+# Cap links: (link, its y inside the cap footprint). KiCad's model offsets
+# are (0, 5.7, 7) for the switched cap and (0, 0, 7) for the plain one.
+CAP_LINKS = {"B1-MP**": ("Link009", "Global_Vars.body_length"), "B2-MP**": ("Link010", "0 mm")}
+BAR_LINKS = {"B1-RE9": "Link007", "B2-RE9": "Link008"}
+# The holders whose placement formulas the new chain replaces
+OLD_FORMULAS = ["EC10E1220509", "scrollbar004", "scrollbar005", "switchcap003", "Part"]
+
+NEW_VALUES = [  # (name, group, value, tooltip)
+    ("encoder_bore_y", "Encoder", 0.348,
+     "Distance along y from the encoder's pad A1 to its bore centre (KiCad's 3D model offset)."),
+    ("part_seat", "Board", 1.595,
+     "Height above the board's bottom where KiCad seats every part (STEP export)."),
+]
+DRIVERS = [  # value nudged in the check, and the footprints that must follow it
+    ("Global_Vars", "cap_y", ["B1-MP**", "B1-SW62", "B1-LED62", "B1-D62",
+                              "B2-MP**", "B2-LED62", "B2-D62"]),
+    ("Global_Vars", "indicator_y", ["B1-LED62", "B1-D62", "B2-LED62", "B2-D62"]),
+    ("Lever3_Vars", "end_switch_y", ["B1-SW62"]),
+    ("Lever2_Vars", "middle_switch_y", ["B2-SW62"]),
+]
+
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("Macro 3 stopped.")
+    say(f"  ok    {title}\n")
+
+
+def one(label):
+    found = doc.getObjectsByLabel(label)
+    if len(found) != 1:
+        fail(f"expected one object labelled '{label}', found {len(found)}")
+        return None
+    return found[0]
+
+
+def to_step(x, y):
+    """KiCad x, y to STEP x, y (Reference tab)."""
+    return App.Vector(x - 116.12, 115.175 - y, 0)
+
+
+def flat(v):
+    return App.Vector(v.x, v.y, 0)
+
+
+def box(shape):
+    """The exact bounding box; the quick one grows once a shape has been drawn."""
+    return shape.optimalBoundingBox(False, False)
+
+
+def box_close(a, b):
+    return all(abs(x - y) <= TOL for x, y in zip(
+        (a.XMin, a.YMin, a.ZMin, a.XMax, a.YMax, a.ZMax), (b.XMin, b.YMin, b.ZMin, b.XMax, b.YMax, b.ZMax)))
+
+
+def centre(shape):
+    total, c = 0.0, App.Vector()
+    for s in shape.Solids:
+        c += s.CenterOfMass * s.Volume
+        total += s.Volume
+    return c * (1.0 / total)
+
+
+def glob(o):
+    """Where an object sits in the whole model. Links have no
+    getGlobalPlacement, so for them it is worked out from their parent."""
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def global_shape(o):
+    if o.TypeId == "App::Link":
+        s = Part.getShape(o.LinkedObject).copy()
+    else:
+        s = o.Shape.copy()
+    s.Placement = glob(o)
+    return s
+
+
+def leaves(o):
+    """Every shape-holding object inside a part's holder."""
+    if o.TypeId == "Part::Feature":
+        return [o]
+    return [x for child in getattr(o, "Group", []) for x in leaves(child)]
+
+
+def descendants(o):
+    """Everything that moves with o: its children, and each container's
+    origin (its own axes and planes), which isn't listed among them."""
+    out = []
+    origin = getattr(o, "Origin", None)
+    if origin is not None:
+        out += [origin] + list(origin.OriginFeatures)
+    for child in getattr(o, "Group", []):
+        out += [child] + descendants(child)
+    return out
+
+
+def move_into(o, container, global_place):
+    """Put o inside container, keeping it at global_place."""
+    old = o.getParentGeoFeatureGroup()
+    if old is not None and old != container:
+        old.removeObject(o)
+    if o not in container.Group:
+        container.addObject(o)
+    o.Placement = container.getGlobalPlacement().inverse().multiply(global_place)
+
+
+def clear_placement_formulas(o):
+    for path, _ in list(o.ExpressionEngine):
+        if path.startswith(".Placement") or path.startswith("Placement"):
+            o.setExpression(path, None)
+
+
+# ================================================================ read the files
+
+def parse(text):
+    tokens = re.findall(r'\(|\)|"(?:[^"\\]|\\.)*"|[^\s()]+', text)
+    stack = [[]]
+    for t in tokens:
+        if t == "(":
+            stack.append([])
+        elif t == ")":
+            done = stack.pop()
+            stack[-1].append(done)
+        else:
+            stack[-1].append(t[1:-1] if t.startswith('"') else t)
+    return stack[0][0]
+
+
+def items(node, key):
+    return [c for c in node if isinstance(c, list) and c and c[0] == key]
+
+
+def read_footprints():
+    out = {}
+    for fp in items(parse(open(BOARD_FILE).read()), "footprint"):
+        ref = [p[2] for p in items(fp, "property") if p[1] == "Reference"][0]
+        tr = items(fp, "transform")[0]
+        fx, fy = map(float, items(tr, "translate")[0][1:3])
+        out[ref] = dict(pos=to_step(fx, fy), ky=fy)
+        pads = {}
+        for pd in items(fp, "pad"):
+            px, py = map(float, items(pd, "at")[0][1:3])
+            pads.setdefault(pd[1], (fx + px, fy + py))   # only used for the encoders, which aren't turned
+        out[ref]["pads"] = pads
+    return out
+
+
+def turn_to(mine, target):
+    """The quarter turn about z plus move that puts `mine` exactly on
+    `target`, and how far its worst point ends up from target's corners."""
+    c_o, c_t = centre(mine), centre(target)
+    pts = [v.Point for v in mine.Vertexes]
+    pts = pts[::max(1, len(pts) // 150)]
+    goal = [v.Point for v in target.Vertexes]
+    best = None
+    for k in range(4):
+        t = App.Placement(c_t, App.Rotation(Z, 90 * k)).multiply(App.Placement(-c_o, App.Rotation()))
+        worst = max(min((t.multVec(p) - q).Length for q in goal) for p in pts)
+        if best is None or worst < best[1]:
+            best = (t, worst, 90 * k)
+    return best
+
+
+def step1_read():
+    global fps, solids, shift, gv, targets, led_shapes, cap_boxes
+    say("\nStep 1: read the files and find every part's place\n")
+    for f in (BOARD_FILE, STEP_FILE):
+        if not os.path.exists(f):
+            fail(f"can't find {f}")
+    gv = one("Global_Vars")
+    for label in list(BOARD.values()) + list(FOOTPRINT.values()) + list(INDICATOR.values()) + ["Lever3_Vars", "Lever2_Vars"]:
+        one(label)
+    for name in list(PARTS.values()) + [l for l, _ in CAP_LINKS.values()] + list(BAR_LINKS.values()) + OLD_FORMULAS:
+        if doc.getObject(name) is None:
+            fail(f"can't find {name} in your file")
+    if gv is not None:
+        for name, *_ in NEW_VALUES:
+            if name in gv.PropertiesList:
+                fail(f"Global_Vars already has {name}: this copy has been through macro 3")
+    end_step("found the boards, footprints, parts and links")
+
+    fps = read_footprints()
+    solids = Part.read(STEP_FILE).Solids
+
+    # How macro 2 shifted each board: its container sits at pad A1 + shift
+    shift = {}
+    for b, label in BOARD.items():
+        ax, ay = fps[f"{b}-RE9"]["pads"]["A1"]
+        shift[b] = flat(one(label).getGlobalPlacement().Base - to_step(ax, ay))
+
+    # Each existing part against KiCad's copy of it in the STEP
+    targets = {}
+    for ref, name in PARTS.items():
+        holder = doc.getObject(name)
+        mine = Part.makeCompound([global_shape(l) for l in leaves(holder)])
+        near = fps[ref]["pos"]
+        theirs, used = [], set()
+        for s in mine.Solids:
+            hits = [i for i, t in enumerate(solids) if i not in used and abs(t.Volume - s.Volume) < 0.002
+                    and (flat(centre(t)) - near).Length < 8]
+            if not hits:
+                fail(f"{ref}: no solid in the STEP matches a piece of {holder.Label}")
+                break
+            used.add(hits[0])
+            theirs.append(solids[hits[0]])
+        else:
+            target = Part.makeCompound(theirs)
+            target.translate(shift[ref[:2]])
+            t, worst, deg = turn_to(mine, target)
+            if worst > TOL:
+                fail(f"{ref}: {holder.Label} doesn't match KiCad's model (worst point {worst:.3f} off)")
+            fix = App.Placement(App.Vector(0, 0, SEAT_FIX.get(ref, 0)), App.Rotation())
+            targets[ref] = (fix.multiply(t), target, deg)
+            say(f"  {ref}: {holder.Label} moves {(centre(target) - centre(mine)).Length:.3f}"
+                f"{f', turns {deg} deg' if deg else ''}{f', then {SEAT_FIX[ref]} in z' if ref in SEAT_FIX else ''}\n")
+
+    # The LEDs: seven small solids each, sitting on the LED's pads
+    led_shapes = {}
+    for ref in LEDS:
+        c = fps[ref]["pos"]
+        bits = [s for s in solids if (flat(centre(s)) - c).Length < 0.8
+                and s.BoundBox.ZMin > 1.57 and s.BoundBox.ZMax < 2.0]
+        if len(bits) != 7:
+            fail(f"{ref}: expected the LED's 7 solids in the STEP, found {len(bits)}")
+            continue
+        led = Part.makeCompound(bits)
+        led.translate(shift[ref[:2]])
+        led_shapes[ref] = led
+
+    # KiCad's cap models, to check the cap links land in the same spot
+    cap_boxes = {}
+    for ref in CAP_LINKS:
+        c = fps[ref]["pos"]
+        found = [s for s in solids if abs(s.BoundBox.ZMin + 0.405) < 0.01
+                 and s.BoundBox.XMin < c.x < s.BoundBox.XMax and abs(s.BoundBox.YMax - c.y) < 0.01]
+        if len(found) != 1:
+            fail(f"{ref}: expected KiCad's cap model in the STEP, found {len(found)}")
+            continue
+        s = found[0].copy()
+        s.translate(shift[ref[:2]])
+        cap_boxes[ref] = box(s)
+    end_step("every part matches KiCad's model, and both LEDs and both caps are in the STEP")
+
+
+# ================================================================ snapshot
+
+def step2_snapshot():
+    global before, copper_before
+    say("\nStep 2: snapshot\n")
+    doc.recompute()
+    before = {}
+    for o in doc.Objects:
+        p = getattr(o, "Placement", None)
+        if isinstance(p, App.Placement):
+            before[o.Name] = glob(o)
+    copper_before = {}
+    for ref, label in FOOTPRINT.items():
+        for c in one(label).Group:
+            if c.TypeId == "Part::Feature" and " pad " in c.Label:
+                copper_before[c.Name] = (centre(global_shape(c)), ref)
+    if len(copper_before) != 36:
+        fail(f"found {len(copper_before)} copper pads in the footprints, expected 36")
+    end_step(f"{len(before)} positions and {len(copper_before)} copper pads recorded")
+
+
+# ================================================================ build
+
+def step3_build():
+    say("\nStep 3: stitch\n")
+    for name, group, value, tip in NEW_VALUES:
+        gv.addProperty("App::PropertyLength", name, group, tip)
+        setattr(gv, name, value)
+    say("  made  Global_Vars.encoder_bore_y (0.348) and Global_Vars.part_seat (1.595)\n")
+
+    for ref, label in FOOTPRINT.items():
+        fp = one(label)
+        pads = [c for c in fp.Group if c.TypeId == "Part::Feature" and " pad " in c.Label]
+        group = doc.addObject("App::DocumentObjectGroup", "Copper")
+        group.Label = f"{label.split()[0]} Copper"
+        group.Label2 = "This footprint's copper pads, from the STEP."
+        fp.addObject(group)
+        for c in pads:
+            fp.removeObject(c)
+            group.addObject(c)
+    say("  made  a Copper group in each of the 10 footprints\n")
+
+    bars = {ref: glob(doc.getObject(n)) for ref, n in BAR_LINKS.items()}
+    for name in OLD_FORMULAS:
+        clear_placement_formulas(doc.getObject(name))
+    say(f"  gone  the old placement formulas on {len(OLD_FORMULAS)} holders\n")
+
+    for ref, name in PARTS.items():
+        holder = doc.getObject(name)
+        t = targets[ref][0]
+        move_into(holder, one(FOOTPRINT[ref]), t.multiply(holder.getGlobalPlacement()))
+        say(f"  moved {holder.Label} onto {ref}\n")
+
+    for ref, shape in led_shapes.items():
+        fp = one(FOOTPRINT[ref])
+        o = doc.addObject("Part::Feature", "LED")
+        o.Label = f"{ref} LTST-FC12WEGBD-5A"
+        s = shape.copy()
+        s.Placement = fp.getGlobalPlacement().inverse().multiply(s.Placement)
+        o.Shape = s
+        fp.addObject(o)
+        say(f"  made  {o.Label} from the STEP\n")
+
+    for ref, (name, y) in CAP_LINKS.items():
+        link = doc.getObject(name)
+        fp = one(FOOTPRINT[ref])
+        move_into(link, fp, fp.getGlobalPlacement())
+        link.Placement = App.Placement()
+        link.setExpression(".Placement.Base.y", y)
+        link.setExpression(".Placement.Base.z", "Global_Vars.part_seat + Global_Vars.encoder_to_pcb")
+        say(f"  moved {link.Label} into {fp.Label}\n")
+
+    for ref, name in BAR_LINKS.items():
+        link = doc.getObject(name)
+        move_into(link, one(FOOTPRINT[ref]), bars[ref])
+        say(f"  moved {link.Label} into {FOOTPRINT[ref]}, where it was\n")
+    for b in BOARD:
+        enc, cap = FOOTPRINT[f"{b}-RE9"], FOOTPRINT[f"{b}-MP**"]
+        bore = f"<<{enc}>>.Placement.Base.y - Global_Vars.encoder_bore_y"
+        one(cap).setExpression(".Placement.Base.y", f"{bore} - Global_Vars.cap_y")
+        one(INDICATOR[b]).setExpression(".Placement.Base.y", f"<<{cap}>>.Placement.Base.y - Global_Vars.indicator_y")
+        one(FOOTPRINT[f"{b}-D62"]).setExpression(
+            ".Placement.Base.x", "-(Global_Vars.indicator_width + Global_Vars.led_diode_gap)")
+    one(FOOTPRINT["B1-SW62"]).setExpression(
+        ".Placement.Base.y", f"<<{FOOTPRINT['B1-MP**']}>>.Placement.Base.y - Lever3_Vars.end_switch_y")
+    one(FOOTPRINT["B2-SW62"]).setExpression(
+        ".Placement.Base.y", f"<<{FOOTPRINT['B2-RE9']}>>.Placement.Base.y - Global_Vars.encoder_bore_y"
+                             " - Lever2_Vars.middle_switch_y")
+    doc.recompute()
+    say("  made  the y chain: cap from the encoder's bore, TC-1109 and indicator from the cap, SKQG from the bore\n")
+
+
+
+# ================================================================ check
+
+def expected_footprint(ref):
+    """Where a footprint container should sit: its KiCad spot, except the
+    indicator family, which follows indicator_y from the cap."""
+    b = ref[:2]
+    p = fps[ref]["pos"] + shift[b]
+    if ref.endswith(("LED62", "D62")):
+        # indicator_y measured in KiCad today, against the value
+        today = fps[f"{b}-LED62"]["ky"] - fps[f"{b}-MP**"]["ky"]
+        p = p - App.Vector(0, float(gv.indicator_y.Value) - today, 0)
+    return p
+
+
+def footprint_spots():
+    return {ref: one(label).getGlobalPlacement().Base for ref, label in FOOTPRINT.items()}
+
+
+def step4_check():
+    say("\nStep 4: check\n")
+    for ref, at in footprint_spots().items():
+        if (flat(at) - flat(expected_footprint(ref))).Length > TOL:
+            fail(f"{FOOTPRINT[ref]} is {(flat(at) - flat(expected_footprint(ref))).Length:.3f} from its spot")
+    end_step("every footprint on its KiCad spot (B2's LED and diode 0.32 further, as decided)")
+
+    for name, (was, ref) in copper_before.items():
+        o = doc.getObject(name)
+        now = centre(global_shape(o))
+        moved = flat(expected_footprint(ref)) - flat(fps[ref]["pos"] + shift[ref[:2]])
+        if (now - was - moved).Length > TOL:
+            fail(f"{o.Label} is not on its footprint")
+        if o.getParentGeoFeatureGroup() != one(FOOTPRINT[ref]):
+            fail(f"{o.Label} is not inside {FOOTPRINT[ref]}")
+    end_step("all 36 copper pads in their footprint's Copper group, still on their footprint")
+
+    for ref, name in PARTS.items():
+        holder = doc.getObject(name)
+        mine = Part.makeCompound([global_shape(l) for l in leaves(holder)])
+        want = targets[ref][1].copy()
+        want.translate(App.Vector(0, 0, SEAT_FIX.get(ref, 0)) + (
+            flat(expected_footprint(ref)) - flat(fps[ref]["pos"] + shift[ref[:2]])))
+        if (centre(mine) - centre(want)).Length > TOL or not box_close(box(mine), box(want)):
+            fail(f"{holder.Label} is not on {ref}'s pads")
+        if holder.getParentGeoFeatureGroup() != one(FOOTPRINT[ref]):
+            fail(f"{holder.Label} is not inside {FOOTPRINT[ref]}")
+    for ref, shape in led_shapes.items():
+        o = one(f"{ref} LTST-FC12WEGBD-5A")
+        want = shape.copy()
+        want.translate(flat(expected_footprint(ref)) - flat(fps[ref]["pos"] + shift[ref[:2]]))
+        if (centre(global_shape(o)) - centre(want)).Length > TOL:
+            fail(f"{o.Label} is not on its pads")
+    end_step("every part and both LEDs on their pads, TC-1109 and SKQG flush")
+
+    for ref, (name, _) in CAP_LINKS.items():
+        b = box(global_shape(doc.getObject(name)))
+        if not box_close(b, cap_boxes[ref]):
+            fail(f"{doc.getObject(name).Label} is not where KiCad shows the cap")
+    for ref, name in BAR_LINKS.items():
+        if not glob(doc.getObject(name)).isSame(before[name], TOL):
+            fail(f"{doc.getObject(name).Label} moved; it should stay put until macro 4")
+    end_step("both cap links where KiCad shows the caps; both bars where they were")
+
+    # Nothing else may move
+    skip = set(PARTS.values()) | {n for n, _ in CAP_LINKS.values()} | set(BAR_LINKS.values())
+    for name in PARTS.values():
+        skip |= {d.Name for d in descendants(doc.getObject(name))}
+    for b in BOARD:
+        ind = one(INDICATOR[b])
+        skip |= {ind.Name} | {d.Name for d in descendants(ind)}
+    for name, was in before.items():
+        o = doc.getObject(name)
+        if name in skip or name in copper_before or o is None:
+            continue
+        if not glob(o).isSame(was, TOL):
+            fail(f"{o.Label} moved")
+    end_step("nothing else moved")
+
+    # Nudge each driving value and see who follows
+    for vs_label, value, followers in DRIVERS:
+        vs = one(vs_label)
+        start = float(getattr(vs, value).Value)
+        spots = footprint_spots()
+        setattr(vs, value, start + 0.5)
+        doc.recompute()
+        after = footprint_spots()
+        setattr(vs, value, start)
+        doc.recompute()
+        for ref in FOOTPRINT:
+            dy = after[ref].y - spots[ref].y
+            want = -0.5 if ref in followers else 0.0
+            if abs(dy - want) > TOL or abs(after[ref].x - spots[ref].x) > TOL:
+                fail(f"{vs_label}.{value} + 0.5 moved {FOOTPRINT[ref]} by {dy:+.3f} in y, expected {want:+.3f}")
+        if any((footprint_spots()[r] - spots[r]).Length > TOL for r in FOOTPRINT):
+            fail(f"{value} put back, but the footprints didn't return")
+        say(f"  {value:16} moves {len(followers)} footprints, and only those\n")
+    end_step("each value moves exactly the parts that ride on it")
+
+
+# ================================================================ run
+
+try:
+    step1_read()
+    step2_snapshot()
+    doc.openTransaction("Macro 3: stitch the boards")
+    try:
+        step3_build()
+        step4_check()
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything macro 3 made has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nMacro 3 passed. The bars are still at their old height; macro 4 binds them. Save the copy.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

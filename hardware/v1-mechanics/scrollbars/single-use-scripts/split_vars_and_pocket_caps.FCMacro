@@ -1,0 +1,429 @@
+# Macro: split Global_Vars, add the LED and diode pocket, and float each
+# master cap above its cap on the board.
+#
+# Run it on a COPY of scrollbar.FCStd, in FreeCAD 1.1.3.
+#
+#   1. Splits Global_Vars into four VarSets:
+#        Places_Vars  where things sit (the Positioning values)
+#        Bar_Vars     the bar's shape        (Static and Derived groups)
+#        Cap_Vars     the caps' shape        (Static and Derived groups)
+#        Parts_Vars   bought parts, board and manufacturing (groups kept)
+#      Every formula is pointed at the new VarSet, every formula's result
+#      must stay the same, and then Global_Vars is deleted.
+#   2. Adds three values: indicator_x (the LED's offset across the bar from
+#      its cap, now a formula on each indicator), master_height and
+#      encoder_bore_x (for step 4).
+#   3. Cuts the LED and diode pocket into both caps: one box under the two
+#      parts, indicator_width squares led_diode_gap apart, indicator_height
+#      deep, all plus pocket_clearance. indicator_pocket switches it off.
+#   4. Places each master cap straight above its cap on the board,
+#      master_height up, so it follows cap_y.
+# If any check fails, the macro undoes everything it did.
+
+import re
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+TOL = 0.001
+
+NEW = {  # VarSet: (description, {value: group}); None keeps Global_Vars' group
+    "Places_Vars": ("Where things sit along the bar, and the cap feature switches.", {
+        "cap_y": "Static", "bar_gap": "Static", "indicator_y": "Static", "led_diode_gap": "Static",
+        "cap_mount": "Static", "indicator_pocket": "Static"}),
+    "Bar_Vars": ("The scroll bar's shape.", {
+        "straight_shaft_length": "Static", "angled_shaft_length": "Static", "shaft_angle": "Static",
+        "front_spacer_length": "Static", "back_spacer_length": "Static", "spacer_diameter": "Static",
+        "actuation_gap": "Static",
+        "main_length": "Derived", "main_diameter": "Derived", "actuation_diameter": "Derived"}),
+    "Cap_Vars": ("The scroll caps' shape.", {
+        "cap_width": "Static", "switch_gap": "Static", "switch_width_gap": "Static",
+        "attachment_lip_width": "Static", "attachment_lip_height": "Static",
+        "mount_hole_diameter": "Static", "mount_depth": "Static", "mount_hole_spacing": "Static",
+        "pocket_clearance": "Static",
+        "above_origin_height": "Derived", "body_length": "Derived", "mount_hole_inset": "Derived"}),
+    "Parts_Vars": ("Facts about the bought parts and the board, and the manufacturing limits.", {
+        n: None for n in ["encoder_to_pcb", "encoder_opening", "encoder_bore_y", "encoder_hex_face_y",
+                          "lever2_switch_height", "lever3_switch_height", "lever3_switch_body_height",
+                          "lever3_switch_length", "lever3_switch_width", "indicator_width",
+                          "indicator_height", "board_thickness", "part_seat", "min_wall"]}),
+}
+ADDED = [  # (VarSet, value, group, number, tooltip)
+    ("Places_Vars", "indicator_x", "Static", 0.850577,
+     "Distance across the bar from the cap's centre to the LED's centre, on both boards (from KiCad)."),
+    ("Places_Vars", "master_height", "Static", 25.0,
+     "How high the master bodies' origins float above the board containers."),
+    ("Parts_Vars", "encoder_bore_x", "Encoder", 2.5,
+     "Distance along x from the encoder's pad A1 to its bore centre (the pin pitch)."),
+]
+BOARDS = {   # board: (board container, cap footprint, indicator, cap link, master cap, LED, diode holder)
+    "B1": ("Lever class 3", "B1-MP Switched cap", "B1 Indicator", "Link009", "Body007",
+           "B1-LED62 LTST-FC12WEGBD-5A", "D_SOD_526"),
+    "B2": ("Lever class 2", "B2-MP Plain cap", "B2 Indicator", "Link010", "Body010",
+           "B2-LED62 LTST-FC12WEGBD-5A", "D_SOD_527"),
+}
+# Short names for each board's position values in Places_Vars
+LEVER_TAG = {"Lever class 3": "lever3", "Lever class 2": "lever2"}
+# Where each master cap's origin sits from its open edge along y (its link's y)
+CAP_OFFSET = {"Body007": " - Cap_Vars.body_length", "Body010": ""}
+
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The macro stopped.")
+    say(f"  ok    {title}\n")
+
+
+def one(label):
+    found = doc.getObjectsByLabel(label)
+    if len(found) != 1:
+        fail(f"expected one object labelled '{label}', found {len(found)}")
+        return None
+    return found[0]
+
+
+def num(v):
+    v = getattr(v, "Value", v)
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return str(v)
+
+
+def same(a, b):
+    if isinstance(a, float) and isinstance(b, float):
+        return abs(a - b) <= TOL
+    return a == b
+
+
+def glob(o):
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def global_shape(o):
+    s = (Part.getShape(o.LinkedObject) if o.TypeId == "App::Link" else o.Shape).copy()
+    s.Placement = glob(o)
+    return s
+
+
+def box(shape):
+    return shape.optimalBoundingBox(False, False)
+
+
+def formula_values():
+    out = {}
+    for o in doc.Objects:
+        for path, expr in o.ExpressionEngine:
+            try:
+                out[(o.Name, path)] = num(o.evalExpression(expr))
+            except Exception:
+                out[(o.Name, path)] = "error"
+    return out
+
+
+def snapshot():
+    places = {o.Name: glob(o) for o in doc.Objects if isinstance(getattr(o, "Placement", None), App.Placement)}
+    bodies = {o.Name: o.Shape.Volume for o in doc.Objects if o.TypeId == "PartDesign::Body"}
+    return places, bodies
+
+
+def compare(places, bodies, skip=(), when=""):
+    p2, b2 = snapshot()
+    for name, was in places.items():
+        if name in skip or name not in p2:
+            continue
+        if not p2[name].isSame(was, TOL):
+            fail(f"{when}{doc.getObject(name).Label} moved")
+    for name, vol in bodies.items():
+        if name not in skip and abs(b2[name] - vol) > TOL:
+            fail(f"{when}{doc.getObject(name).Label} changed shape")
+
+
+# ================================================================ 1. split Global_Vars
+
+def step1_split():
+    global owner
+    say("\nStep 1: split Global_Vars\n")
+    gv = doc.getObject("Global_Vars")
+    if gv is None:
+        fail("can't find Global_Vars")
+    for name in NEW:
+        if doc.getObject(name) is not None or doc.getObjectsByLabel(name):
+            fail(f"{name} already exists: this copy has been through this macro")
+    end_step("found Global_Vars")
+
+    tmp = doc.addObject("App::VarSet", "TmpVarSet")
+    builtin = set(tmp.PropertiesList)
+    doc.removeObject(tmp.Name)
+    values = [p for p in gv.PropertiesList if p not in builtin]
+    owner = {v: vs for vs, (_, vals) in NEW.items() for v in vals}
+    for v in values:
+        if v not in owner:
+            fail(f"Global_Vars.{v} has no new VarSet in the plan")
+    for v in owner:
+        if v not in values:
+            fail(f"the plan moves {v}, which Global_Vars doesn't have")
+    end_step(f"all {len(values)} values have a new home")
+
+    before = formula_values()
+    own_formulas = dict(gv.ExpressionEngine)
+    places, bodies = snapshot()
+
+    def qualify_bare(expr):
+        """A formula inside Global_Vars names its neighbours bare; name their VarSet."""
+        for v in sorted(owner, key=len, reverse=True):
+            expr = re.sub(rf"(?<![\w.>]){re.escape(v)}\b", f"{owner[v]}.{v}", expr)
+        return expr
+
+    made = {}
+    for vs_name, (about, vals) in NEW.items():
+        vs = doc.addObject("App::VarSet", vs_name)
+        vs.Label2 = about
+        made[vs_name] = vs
+        for v, group in vals.items():
+            kind = gv.getTypeIdOfProperty(v)
+            vs.addProperty(kind, v, group or gv.getGroupOfProperty(v), gv.getDocumentationOfProperty(v))
+            if kind == "App::PropertyEnumeration":
+                setattr(vs, v, gv.getEnumerationsOfProperty(v))
+            setattr(vs, v, getattr(gv, v))
+    for v, expr in own_formulas.items():
+        made[owner[v]].setExpression(v, qualify_bare(expr))
+
+    pattern = re.compile(r"(?:<<Global_Vars>>|\bGlobal_Vars)\.(\w+)")
+    rewritten = 0
+    for o in doc.Objects:
+        if o == gv:
+            continue
+        for path, expr in o.ExpressionEngine:
+            new, n = pattern.subn(lambda m: f"{owner[m.group(1)]}.{m.group(1)}", expr)
+            if n:
+                o.setExpression(path, new)
+                rewritten += 1
+    doc.recompute()
+    say(f"  {rewritten} formulas now read the new VarSets\n")
+
+    for o in doc.Objects:
+        if o != gv:
+            for path, expr in o.ExpressionEngine:
+                if "Global_Vars" in expr:
+                    fail(f"{o.Label} {path} still reads Global_Vars")
+    after = formula_values()
+    for (name, path), was in before.items():
+        key = (owner[path], path) if name == "Global_Vars" else (name, path)
+        if key not in after:
+            fail(f"the formula on {name} {path} has gone")
+        elif not same(after[key], was):
+            fail(f"the formula on {doc.getObject(key[0]).Label} {path} went from {was} to {after[key]}")
+    for v, vs in owner.items():
+        if not same(num(getattr(made[vs], v)), num(getattr(gv, v))):
+            fail(f"{vs}.{v} is {getattr(made[vs], v)}, Global_Vars has {getattr(gv, v)}")
+    compare(places, bodies, skip={gv.Name})
+    end_step("every value moved, every formula gives the same result, nothing moved")
+
+    users = [u.Label for u in gv.InList]
+    if users:
+        fail(f"Global_Vars is still used by {', '.join(users)}")
+    end_step("nothing uses Global_Vars any more")
+    doc.removeObject(gv.Name)
+    doc.recompute()
+    say("  gone  Global_Vars\n")
+
+
+# ================================================================ 2. new values
+
+def step2_values():
+    say("\nStep 2: new values\n")
+    places, bodies = snapshot()
+    for vs, name, group, value, tip in ADDED:
+        o = doc.getObject(vs)
+        o.addProperty("App::PropertyLength", name, group, tip)
+        setattr(o, name, value)
+        say(f"  made  {vs}.{name} ({value})\n")
+    for b, (lever, cap, ind, *_rest) in BOARDS.items():
+        one(ind).setExpression(".Placement.Base.x", f"<<{cap}>>.Placement.Base.x + Places_Vars.indicator_x")
+    doc.recompute()
+    compare(places, bodies)
+    end_step("both indicators now sit indicator_x from their cap, where they were")
+
+
+# ================================================================ 3. the pocket
+
+def interference(a, b):
+    return a.common(b).Volume
+
+
+def check_pocket(when):
+    for b, (lever, cap, ind, link, master, led, diode) in BOARDS.items():
+        c = global_shape(doc.getObject(link))
+        for part in (one(led), doc.getObject(diode)):
+            s = global_shape(part) if part.TypeId == "Part::Feature" else Part.makeCompound(
+                [global_shape(x) for x in part.OutListRecursive if x.TypeId == "Part::Feature"])
+            if interference(c, s) > 1e-6:
+                fail(f"{when}: {part.Label} runs into the {b} cap")
+            elif c.distToShape(s)[0] < 0.25:
+                fail(f"{when}: {part.Label} is only {c.distToShape(s)[0]:.3f} from the {b} cap")
+
+
+def step3_pocket():
+    say("\nStep 3: the LED and diode pocket\n")
+    before = {v[4]: doc.getObject(v[4]).Shape.Volume for v in BOARDS.values()}
+    pockets = {}
+    for b, (lever, cap, ind, link, master, led, diode) in BOARDS.items():
+        body = doc.getObject(master)
+        pocket = body.newObject("PartDesign::SubtractiveBox", "IndicatorPocket")
+        pocket.Label = "Indicator Pocket"
+        pocket.Label2 = ("Room for the LED and the diode: two indicator_width squares led_diode_gap apart, "
+                         "indicator_height deep, all plus pocket_clearance. indicator_pocket switches it off.")
+        pocket.MapMode = "Deactivated"
+        pocket.setExpression("Length", "2 * Parts_Vars.indicator_width + Places_Vars.led_diode_gap"
+                                       " + 2 * Cap_Vars.pocket_clearance")
+        pocket.setExpression("Width", "Parts_Vars.indicator_width + 2 * Cap_Vars.pocket_clearance")
+        # 0.1 mm below the cap's bottom face, so the cut opens cleanly
+        pocket.setExpression("Height", "Parts_Vars.indicator_height + Cap_Vars.pocket_clearance + 0.1 mm")
+        pocket.setExpression(".Placement.Base.x", "-Places_Vars.indicator_x - Parts_Vars.indicator_width / 2"
+                                                  " - Cap_Vars.pocket_clearance")
+        pocket.setExpression(".Placement.Base.y", "Places_Vars.indicator_y - Parts_Vars.indicator_width / 2"
+                                                  f" - Cap_Vars.pocket_clearance{CAP_OFFSET[master]}")
+        pocket.setExpression(".Placement.Base.z", "-Parts_Vars.encoder_to_pcb - 0.1 mm")
+        pocket.setExpression("Suppressed", "Places_Vars.indicator_pocket == 0")
+        body.Tip = pocket
+        pockets[master] = pocket
+    doc.recompute()
+    for master, p in pockets.items():
+        body = doc.getObject(master)
+        if not p.isValid() or not body.isValid():
+            fail(f"{body.Label}: the pocket didn't build")
+        cut = before[master] - body.Shape.Volume
+        if cut <= TOL:
+            fail(f"{body.Label}: the pocket cut nothing (is indicator_pocket switched on?)")
+        else:
+            say(f"  made  the pocket in {body.Label}: {cut:.3f} mm3 removed\n")
+    end_step("both pockets built")
+
+    check_pocket("now")
+    end_step("the LED and diode clear both caps by at least 0.25")
+
+    pv = doc.getObject("Places_Vars")
+    start = float(pv.indicator_y.Value)
+    pv.indicator_y = start + 0.5
+    doc.recompute()
+    check_pocket("indicator_y + 0.5")
+    pv.indicator_y = start
+    # indicator_pocket is a dropdown (its first choice means off) or a tick box
+    was_on = pv.indicator_pocket
+    if pv.getTypeIdOfProperty("indicator_pocket") == "App::PropertyEnumeration":
+        off = pv.getEnumerationsOfProperty("indicator_pocket")[0]
+    else:
+        off = False
+    pv.indicator_pocket = off
+    doc.recompute()
+    for master in pockets:
+        if abs(doc.getObject(master).Shape.Volume - before[master]) > TOL:
+            fail(f"indicator_pocket off: {doc.getObject(master).Label} didn't go back to its old shape")
+    pv.indicator_pocket = was_on
+    doc.recompute()
+    for master, p in pockets.items():
+        if abs(before[master] - doc.getObject(master).Shape.Volume) <= TOL:
+            fail(f"indicator_pocket on: {doc.getObject(master).Label} has no pocket")
+    end_step("the pocket follows indicator_y, and indicator_pocket switches it off and on")
+
+
+# ================================================================ 4. masters over their caps
+
+def check_masters(when):
+    pv = doc.getObject("Places_Vars")
+    for b, (lever, cap, ind, link, master, led, diode) in BOARDS.items():
+        a, m = box(global_shape(doc.getObject(link))), box(doc.getObject(master).Shape)
+        lift = m.ZMin - a.ZMin
+        if any(abs(x - y) > TOL for x, y in ((a.XMin, m.XMin), (a.XMax, m.XMax), (a.YMin, m.YMin), (a.YMax, m.YMax))):
+            fail(f"{when}: {doc.getObject(master).Label} isn't straight above the {b} cap")
+        want = float(pv.master_height.Value) - float(doc.getObject("Parts_Vars").part_seat.Value) \
+            - float(doc.getObject("Parts_Vars").encoder_to_pcb.Value)
+        if abs(lift - want) > TOL:
+            fail(f"{when}: {doc.getObject(master).Label} floats {lift:.3f} above its cap, expected {want:.3f}")
+
+
+def step4_masters():
+    say("\nStep 4: float each master cap above its cap\n")
+    # The board holds a link to the master cap, so the master can't read the
+    # board's position (that's a loop). Both read these values instead.
+    pv = doc.getObject("Places_Vars")
+    places, bodies = snapshot()
+    for b, (lever, *_rest) in BOARDS.items():
+        part = one(lever)
+        if part is None:
+            continue
+        if any("Placement" in path for path, _ in part.ExpressionEngine):
+            fail(f"{lever} already has a position formula; this macro expects a hand-placed board")
+            continue
+        tag = LEVER_TAG[lever]
+        for axis in "xyz":
+            name = f"{tag}_{axis}"
+            pv.addProperty("App::PropertyDistance", name, "Board positions",
+                           f"Where the '{lever}' board sits along {axis}. Its master cap follows it.")
+            setattr(pv, name, getattr(part.Placement.Base, axis))
+            part.setExpression(f".Placement.Base.{axis}", f"Places_Vars.{name}")
+        say(f"  made  Places_Vars.{tag}_x/y/z, and {lever} now reads them\n")
+    doc.recompute()
+    compare(places, bodies)
+    end_step("both boards read their position from Places_Vars, and nothing moved")
+
+    for b, (lever, cap, ind, link, master, led, diode) in BOARDS.items():
+        tag = LEVER_TAG[lever]
+        body = doc.getObject(master)
+        for path, _ in list(body.ExpressionEngine):
+            if "Placement" in path:
+                body.setExpression(path, None)
+        body.Placement = App.Placement(body.Placement.Base, App.Rotation(App.Vector(0, 0, 1), 180))
+        body.setExpression(".Placement.Base.x", f"Places_Vars.{tag}_x + Parts_Vars.encoder_bore_x")
+        body.setExpression(".Placement.Base.y", f"Places_Vars.{tag}_y - Parts_Vars.encoder_bore_y"
+                                                f" - Places_Vars.cap_y{CAP_OFFSET[master]}")
+        body.setExpression(".Placement.Base.z", f"Places_Vars.{tag}_z + Places_Vars.master_height")
+        say(f"  made  {body.Label} follows the {b} cap, master_height up\n")
+    doc.recompute()
+    check_masters("now")
+    pv = doc.getObject("Places_Vars")
+    start = float(pv.cap_y.Value)
+    pv.cap_y = start + 0.5
+    doc.recompute()
+    check_masters("cap_y + 0.5")
+    pv.cap_y = start
+    pv.lever3_x = float(pv.lever3_x.Value) + 1
+    doc.recompute()
+    check_masters("lever3_x + 1")
+    pv.lever3_x = float(pv.lever3_x.Value) - 1
+    doc.recompute()
+    end_step("both master caps straight above their caps, and they follow cap_y and the boards")
+
+
+# ================================================================ run
+
+try:
+    doc.recompute()
+    doc.openTransaction("Split Global_Vars, indicator pocket, masters over caps")
+    try:
+        step1_split()
+        step2_values()
+        step3_pocket()
+        step4_masters()
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything this macro did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nAll done. Save the copy.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")
