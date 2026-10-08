@@ -1,0 +1,24 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model P70-2300045R
+#/541547/2047877/2.50/1/2/Connector
+DEF P70-2300045R J 0 30 Y Y 1 F N
+F0 "J" 650 300 50 H V L CNN
+F1 "P70-2300045R" 650 200 50 H V L CNN
+F2 "P702300045R" 650 100 50 H I L CNN
+F3 "https://content.harwin.com/m/39282b850102871e/original/DRG-02625-Technical-Drawing-Datasheet-P70-230-pdf.pdf" 650 0 50 H I L CNN
+F4 "Pogo Pins: Individual SMT Spring Loaded Pogo Pin with Peg 6.2mm high" 650 -100 50 H I L CNN "Description"
+F5 "6.2" 650 -200 50 H I L CNN "Height"
+F6 "Harwin" 650 -300 50 H I L CNN "Manufacturer_Name"
+F7 "P70-2300045R" 650 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "855-P70-2300045R" 650 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/Harwin/P70-2300045R?qs=k41KVqW3ymr3abjq94iB4Q%3D%3D" 650 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "" 650 -700 50 H I L CNN "Arrow Part Number"
+F11 "" 650 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X 1 1 0 0 200 R 50 50 0 0 P
+P 5 0 1 6 200 100 600 100 600 -100 200 -100 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
