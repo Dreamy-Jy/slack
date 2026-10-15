@@ -1,13 +1,14 @@
-(footprint "TP_Sprintek_SK8707-01_Sensor_reversible"
+(footprint "TP_Sprintek_SK8707-01-004"
 	(version 20260206)
 	(generator "pcbnew")
 	(generator_version "10.0")
 	(layer "F.Cu")
+	(descr "Sprintek SK8707-01-004 FlexPoint sensor PCB, mounted under the board, stem up through the center hole. Receivers from DS0048 p.6 + Sprintek gerbers.")
+	(tags "trackpoint pointing stick sprintek")
 	(property "Reference" "REF**"
-		(at 0 -0.5 0)
-		(unlocked yes)
-		(layer "F.SilkS")
-		(uuid "7a85e8f3-05fb-41fa-be83-925171169f89")
+		(at 0 -5 0)
+		(layer "B.SilkS")
+		(uuid "f2ff8d68-aab4-4848-a0ac-aa7b0f1759af")
 		(effects
 			(font
 				(size 1 1)
@@ -15,11 +16,10 @@
 			)
 		)
 	)
-	(property "Value" "TP_Sprintek_SK8707-01_Sensor_reversible"
-		(at 0 23.5 0)
-		(unlocked yes)
+	(property "Value" "TP_Sprintek_SK8707-01-004"
+		(at 0 13.5 0)
 		(layer "F.Fab")
-		(uuid "7c0121fe-ed67-4b01-8b06-350cbdd0ace6")
+		(uuid "7a9e2b15-a94e-4e92-982d-2bb7e116ed44")
 		(effects
 			(font
 				(size 1 1)
@@ -29,285 +29,111 @@
 	)
 	(property "Datasheet" ""
 		(at 0 0 0)
-		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "65e901c6-ec72-4496-a7a1-5d1ea053e72a")
+		(uuid "f6cde1d2-8113-46ff-8333-344cad88aa4e")
 		(effects
 			(font
-				(size 1 1)
-				(thickness 0.15)
+				(size 1.27 1.27)
 			)
 		)
 	)
 	(property "Description" ""
 		(at 0 0 0)
-		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "293216c7-3b03-4eed-a358-9523cfd2167e")
+		(uuid "b169505f-694e-44a1-b633-54de70c52662")
 		(effects
 			(font
-				(size 1 1)
-				(thickness 0.15)
+				(size 1.27 1.27)
 			)
 		)
 	)
 	(attr smd)
 	(duplicate_pad_numbers_are_jumpers no)
 	(fp_circle
-		(center -4.75 -4.75)
-		(end -3.168861 -4.75)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill yes)
-		(layers "B.Cu" "B.Mask")
-		(uuid "0ec2bec3-d1cd-4344-ba7c-952c923045e2")
-	)
-	(fp_circle
-		(center -4.75 4.75)
-		(end -3.168861 4.75)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill yes)
-		(layers "B.Cu" "B.Mask")
-		(uuid "e236970a-1aad-44ac-a771-d8a13a962b83")
-	)
-	(fp_circle
-		(center 4.75 -4.75)
-		(end 6.331139 -4.75)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill yes)
-		(layers "B.Cu" "B.Mask")
-		(uuid "04ccc200-a29d-4bb8-916c-6cb87b00966b")
-	)
-	(fp_circle
-		(center 4.75 4.75)
-		(end 6.331139 4.75)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill yes)
-		(layers "B.Cu" "B.Mask")
-		(uuid "9be2ccf9-4eda-4354-8936-7cdada6de394")
-	)
-	(fp_poly
-		(pts
-			(xy -5.55 11.5) (xy -5.55 8.5) (xy -6.65 8.5)
-			(arc
-				(start -6.65 9.3)
-				(mid -5.95 10)
-				(end -6.65 10.7)
-			)
-			(xy -6.65 11.5)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill yes)
-		(layers "B.Cu" "B.Mask")
-		(uuid "bf971bea-60bc-49ca-8cd0-54700e0622b6")
-	)
-	(fp_poly
-		(pts
-			(arc
-				(start 6.65 9.35)
-				(mid 5.95 10.05)
-				(end 6.65 10.75)
-			)
-			(xy 6.65 11.55) (xy 5.55 11.55) (xy 5.55 8.55) (xy 6.65 8.55)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill yes)
-		(layers "B.Cu" "B.Mask")
-		(uuid "b64424ef-3224-447f-9bc3-ddc230fce5c6")
-	)
-	(fp_circle
-		(center -5.4 13.05)
-		(end -4.8 13.05)
+		(center -5.4 12.6)
+		(end -4.8 12.6)
 		(stroke
 			(width 0.1)
 			(type solid)
 		)
 		(fill yes)
 		(layer "B.SilkS")
-		(uuid "a1d3bf9d-ad17-46fb-93b8-940e18c8ca7b")
+		(uuid "41133664-847b-4e28-8a2e-43f03ad3196f")
 	)
-	(fp_line
-		(start -5.75 -4.75)
-		(end -3.75 -4.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "97d49165-9f33-46cb-bf8a-baecaa7eb20d")
-	)
-	(fp_line
-		(start -5.75 4.75)
-		(end -3.75 4.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "9dd4f756-2d44-4389-b764-2b913f26ca75")
-	)
-	(fp_line
-		(start -4.75 -5.75)
-		(end -4.75 -3.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "68c424e1-52d3-48ad-a38a-a348fa9055d0")
-	)
-	(fp_line
-		(start -4.75 3.75)
-		(end -4.75 5.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "e49d43db-5786-4997-81f0-7742cf7e54c6")
-	)
-	(fp_line
-		(start 3.75 -4.75)
-		(end 5.75 -4.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "400f6ef3-638d-454e-b983-c8c313834c01")
-	)
-	(fp_line
-		(start 3.75 4.75)
-		(end 5.75 4.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "64a09f6c-86f4-4261-9bec-fdf1b4feeb74")
-	)
-	(fp_line
-		(start 4.75 -5.75)
-		(end 4.75 -3.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "888910c3-31b4-4bcf-95a0-b4febfe3e1c3")
-	)
-	(fp_line
-		(start 4.75 3.75)
-		(end 4.75 5.75)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "Dwgs.User")
-		(uuid "d6465c7f-508b-4af0-8390-a05327b64ebb")
-	)
-	(fp_rect
-		(start -6.6 -7.4)
-		(end 6.6 11.8)
+	(fp_circle
+		(center -4.75 -4.75)
+		(end -3.85 -4.75)
 		(stroke
 			(width 0.1)
 			(type default)
 		)
 		(fill no)
 		(layer "Dwgs.User")
-		(uuid "b289617a-6f17-4117-ba9d-1fb1d81a8322")
+		(uuid "a24eb993-2056-4e69-8309-ebd70a9362f2")
 	)
-	(fp_rect
-		(start -1.2 -1.2)
-		(end 1.2 1.2)
+	(fp_circle
+		(center -4.75 4.75)
+		(end -3.85 4.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "ef4171d1-e93b-4af3-8093-ab3aee98537a")
+	)
+	(fp_circle
+		(center 4.75 -4.75)
+		(end 5.65 -4.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "4da5cacd-272d-4e74-924e-5b5f88651c95")
+	)
+	(fp_circle
+		(center 4.75 4.75)
+		(end 5.65 4.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "44c5cc27-74ad-4fd2-909f-7212c19bd107")
+	)
+	(fp_poly
+		(pts
+			(xy -6.6 -7.45) (xy 6.6 -7.45) (xy 6.6 10.84) (xy -6.6 10.84)
+		)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "dceda9f6-4fe8-42d5-84d1-41ee8a9c779d")
+	)
+	(fp_poly
+		(pts
+			(xy -1.2 -1.2) (xy 1.2 -1.2) (xy 1.2 1.2) (xy -1.2 1.2)
+		)
 		(stroke
 			(width 0.1)
 			(type solid)
 		)
 		(fill yes)
 		(layer "Dwgs.User")
-		(uuid "1641de7b-5fbb-46bc-a875-318f4d424a40")
-	)
-	(fp_circle
-		(center -4.75 -4.75)
-		(end -3.25 -5.25)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill no)
-		(layer "Dwgs.User")
-		(uuid "0abc9717-e6e2-4768-8b4d-429b80510a06")
-	)
-	(fp_circle
-		(center -4.75 4.75)
-		(end -3.25 4.25)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill no)
-		(layer "Dwgs.User")
-		(uuid "dc16a2b6-25a5-46fb-abf9-356220da7f42")
-	)
-	(fp_circle
-		(center 4.75 -4.75)
-		(end 6.25 -5.25)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill no)
-		(layer "Dwgs.User")
-		(uuid "a235b9a8-19df-42c6-b18b-beb1a2c12d0c")
-	)
-	(fp_circle
-		(center 4.75 4.75)
-		(end 6.25 4.25)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill no)
-		(layer "Dwgs.User")
-		(uuid "9e448f02-4fc1-43ea-a2ad-3bf0da737742")
+		(uuid "343e8b00-2751-4465-8525-2d89f036fa8e")
 	)
 	(fp_text user "${REFERENCE}"
-		(at 0 20.9 0)
-		(unlocked yes)
+		(at 0 -5 0)
 		(layer "F.Fab")
-		(uuid "8acc96c6-98a8-4a44-bcbd-c8d012237bde")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(fp_text user "${REFERENCE}"
-		(at 0.19 14.425 180)
-		(unlocked yes)
-		(layer "F.Fab")
-		(uuid "82df80cb-b8b3-4ab0-a8bf-cf9326585e3b")
+		(uuid "c3e123be-76d4-497a-badb-eed129c33c01")
 		(effects
 			(font
 				(size 1 1)
@@ -317,47 +143,81 @@
 	)
 	(pad "" np_thru_hole circle
 		(at 0 0)
-		(size 8 8)
-		(drill 7.5)
+		(size 5.5 5.5)
+		(drill 5)
 		(layers "*.Cu" "*.Mask")
-		(uuid "5326baa4-6179-4952-a4cd-47e114d6ab44")
+		(uuid "df0fe115-2d7f-4b3d-be66-22b6df3edd78")
 	)
 	(pad "1" smd roundrect
-		(at 3.675 11.8 90)
-		(size 2.5 2)
+		(at -3.75 10.84)
+		(size 2.1 2.8)
 		(layers "B.Cu" "B.Mask" "B.Paste")
 		(roundrect_rratio 0.25)
-		(thermal_bridge_angle 45)
-		(uuid "9084c29a-c9f1-4d1d-99f6-e22d10cfe502")
+		(uuid "15577502-f317-4887-be32-e58a1ff0c968")
 	)
 	(pad "2" smd roundrect
-		(at 1.225 11.8 90)
-		(size 2.5 2)
+		(at -1.25 10.84)
+		(size 2.1 2.8)
 		(layers "B.Cu" "B.Mask" "B.Paste")
 		(roundrect_rratio 0.25)
-		(thermal_bridge_angle 45)
-		(uuid "0f56f7b4-950d-4dc4-96ae-8082a0af123f")
+		(uuid "558eb641-d56b-49c2-b439-523a5998c907")
 	)
 	(pad "3" smd roundrect
-		(at -1.225 11.8 90)
-		(size 2.5 2)
+		(at 1.25 10.84)
+		(size 2.1 2.8)
 		(layers "B.Cu" "B.Mask" "B.Paste")
 		(roundrect_rratio 0.25)
-		(thermal_bridge_angle 45)
-		(uuid "94a4cf2f-3781-4d7c-aed3-92d782d3f469")
+		(uuid "2cd71cb2-0446-49b7-bf64-c5c00c3d651c")
 	)
 	(pad "4" smd roundrect
-		(at -3.675 11.8 90)
-		(size 2.5 2)
+		(at 3.75 10.84)
+		(size 2.1 2.8)
 		(layers "B.Cu" "B.Mask" "B.Paste")
 		(roundrect_rratio 0.25)
-		(thermal_bridge_angle 45)
-		(uuid "e19beb95-93f8-4693-acf8-46c935c2435c")
+		(uuid "fef96a4b-996b-437f-85c2-1f5a7527b58b")
+	)
+	(pad "5" smd roundrect
+		(at -6.525 9.09)
+		(size 2.15 3)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "f7129c0d-56df-4f3c-809e-af701b4236b9")
+	)
+	(pad "6" smd roundrect
+		(at 6.525 9.09)
+		(size 2.15 3)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "f4cb3e72-65c5-4c0f-9954-464ac9b62cc1")
+	)
+	(pad "7" smd circle
+		(at -4.75 -4.75)
+		(size 3.2 3.2)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "2ee135b9-39ce-4aa3-8235-94219da33782")
+	)
+	(pad "8" smd circle
+		(at 4.75 -4.75)
+		(size 3.2 3.2)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "6ec8d1f0-18b0-4380-b303-4fc94841f0f5")
+	)
+	(pad "9" smd circle
+		(at -4.75 4.75)
+		(size 3.2 3.2)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "28314e18-90af-4d1c-b10c-a6310c232ecd")
+	)
+	(pad "10" smd circle
+		(at 4.75 4.75)
+		(size 3.2 3.2)
+		(layers "B.Cu" "B.Mask" "B.Paste")
+		(uuid "8d63086b-57db-4034-97e0-145594a4f0a2")
 	)
 	(embedded_fonts no)
-	(model "${KIPRJMOD}/Sprintek Cap 109/v8B/cap.step"
+	(model "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/keycaps/SK8707-01-004.step"
 		(offset
-			(xyz 0 0 0)
+			(xyz 0 0 -1.6)
 		)
 		(scale
 			(xyz 1 1 1)
@@ -366,4 +226,15 @@
 			(xyz 0 0 0)
 		)
 	)
-)
+	(model "${KIPRJMOD}/Sprintek Cap 109/v8B/cap.step"
+		(offset
+			(xyz 0 0 -1.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	)
