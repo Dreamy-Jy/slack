@@ -1,9 +1,11 @@
 # Push 2: redraw KiCad's two cap footprints from the FreeCAD caps, and
 # export the cap STEP files their 3D models point to.
 #
-# Run it after push_positions.py, in FreeCAD 1.1.3 with scrollbar.FCStd
-# open, with the board closed in KiCad. Set BOARD and OUT the same as in
-# push_positions.py; this push edits OUT (or BOARD if OUT doesn't exist yet).
+# Run it after push_board_to_kicad, in FreeCAD 1.1.3 with scrollbar.FCStd
+# open, with the board closed in KiCad. Set TARGET the same as in
+# push_board_to_kicad; this push edits OUT (or BOARD if OUT doesn't exist yet).
+# Curved edges (the CNC roundings) are drawn as short straight runs that stay
+# within 0.005 of the curve.
 #
 # For each cap it slices the FreeCAD cap just above where it sits on the board
 # (part_seat), in the cap footprint's own frame, and from that slice:
@@ -27,16 +29,27 @@ import uuid
 import FreeCAD as App
 import Part
 
-BOARD = "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/example_scrollbar.kicad_pcb"
-OUT = BOARD.replace(".kicad_pcb", ".kicad_pcb")
+TARGET = "example"   # "slack" or "example", the same as in push_board_to_kicad
+TARGETS = {   # reference in KiCad: (footprint container, cap link, footprint name in KiCad)
+    "example": {
+        "board": "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/example_scrollbar/example_scrollbar.kicad_pcb",
+        "out": "",
+        "caps": {"B1-MP": ("B1-MP Switched cap", "Link009", "switched_grounded_scrollcap"),
+                 "B2-MP": ("B2-MP Plain cap", "Link010", "grounded_scrollcap")},
+    },
+    "slack": {   # left scroll bar: middle click, plain cap. Right: end click, switched cap.
+        "board": "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/slack.kicad_pcb",
+        "out": "_scrollbars",
+        "caps": {"MP62": ("B2-MP Plain cap", "Link010", "grounded_scrollcap"),
+                 "MP63": ("B1-MP Switched cap", "Link009", "switched_grounded_scrollcap")},
+    },
+}
+BOARD = TARGETS[TARGET]["board"]
+OUT = BOARD.replace(".kicad_pcb", TARGETS[TARGET]["out"] + ".kicad_pcb")
+CAPS = TARGETS[TARGET]["caps"]
 TOL = 0.001
 COURTYARD = 0.25   # how far the courtyard sits outside the outline (as today)
 SLICE = 0.01       # how far above the board, or the lowest point, to slice
-
-CAPS = {   # reference: (footprint container, cap link, footprint name in KiCad)
-    "B1-MP": ("B1-MP Switched cap", "Link009", "switched_grounded_scrollcap"),
-    "B2-MP": ("B2-MP Plain cap", "Link010", "grounded_scrollcap"),
-}
 LINES = {"F.SilkS": 0.12, "F.CrtYd": 0.05, "F.Fab": 0.1}   # line widths, as today
 
 doc = App.ActiveDocument
@@ -64,10 +77,17 @@ def num(v):
 # ================================================================ 1. measure the caps
 
 def wire_points(w):
-    """A closed wire of straight edges as KiCad points (x, -y), in order."""
-    if any(e.Curve.TypeId != "Part::GeomLine" for e in w.Edges):
-        return None
-    return [(round(v.Point.x, 4), round(-v.Point.y, 4)) for v in w.OrderedVertexes]
+    """A closed wire as KiCad points (x, -y), in order. A curved edge becomes
+    short straight runs that stay within 0.005 of the curve."""
+    pts = [w.OrderedVertexes[0].Point]
+    for e in w.OrderedEdges:
+        run = e.discretize(Deflection=0.005)
+        if (run[0] - pts[-1]).Length > (run[-1] - pts[-1]).Length:
+            run = run[::-1]   # walk the edge from where the last one ended
+        pts += run[1:]
+    if (pts[0] - pts[-1]).Length < 1e-4:
+        pts = pts[:-1]
+    return [(round(p.x, 4), round(-p.y, 4)) for p in pts]
 
 
 def measure(ref):
@@ -118,8 +138,6 @@ def measure(ref):
     # A hole in the courtyard over each pocket, COURTYARD bigger than the
     # pocket, so the LED's and diode's own courtyards fit inside it
     holes_crt = [wire_points(Part.Face(w).makeOffset2D(COURTYARD, 2).OuterWire) for w in pockets]
-    if outline is None or court is None or None in pocket_pts or None in holes_crt:
-        fail(f"{ref}: an outline has curved edges; this push only draws straight ones")
     if len(holes) != 2:
         fail(f"{ref}: found {len(holes)} round holes in the cap's bottom, expected 2")
     # The board's drill is mount_hole_diameter, as on the FreeCAD boards; a peg

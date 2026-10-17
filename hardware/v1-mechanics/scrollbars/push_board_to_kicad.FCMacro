@@ -32,7 +32,7 @@ try:
 except ImportError:   # lets the file-editing part be tested outside FreeCAD
     App = None
 
-BOARD = "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/example_scrollbar.kicad_pcb"
+BOARD = "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/example_scrollbar/example_scrollbar.kicad_pcb"
 OUT = BOARD.replace(".kicad_pcb", ".kicad_pcb")
 TOL = 0.001
 
