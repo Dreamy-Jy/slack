@@ -26871,7 +26871,7 @@
 				)
 			)
 		)
-		(property "Footprint" "XKB Connection:TC-1109-C-E"
+		(property "Footprint" "ALPS Electric:SKQGAKE010"
 			(at 205.74 241.3 0)
 			(hide yes)
 			(show_name no)
@@ -26893,7 +26893,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: TC-1109-C-E"
+		(property "Description" "part selected: SKQGAKE010"
 			(at 205.74 246.38 0)
 			(hide yes)
 			(show_name no)
@@ -54242,7 +54242,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: TC-1109-C-E"
+		(property "Description" "part selected: TC-1109"
 			(at 449.58 246.38 0)
 			(hide yes)
 			(show_name no)

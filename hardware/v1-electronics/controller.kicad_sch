@@ -6274,7 +6274,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+		(property "Footprint" "ALPS Electric:SKQGAKE010"
 			(at 20.32 129.54 0)
 			(hide yes)
 			(show_name no)
@@ -6296,7 +6296,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: TS-1187A-B-A-B"
+		(property "Description" "part selected: SKQGAKE010"
 			(at 25.4 129.54 0)
 			(hide yes)
 			(show_name no)

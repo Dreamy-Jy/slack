@@ -16,4 +16,5 @@
 	(lib (name "Amazon") (type "KiCad") (uri "${KIPRJMOD}/Amazon") (options "") (descr ""))
 	(lib (name "XKB Connection") (type "KiCad") (uri "${KIPRJMOD}/XKB Connection") (options "") (descr ""))
 	(lib (name "Harwin") (type "KiCad") (uri "${KIPRJMOD}/Harwin") (options "") (descr ""))
+	(lib (name "Mechanical") (type "KiCad") (uri "${KIPRJMOD}/Mechanical") (options "") (descr ""))
 )

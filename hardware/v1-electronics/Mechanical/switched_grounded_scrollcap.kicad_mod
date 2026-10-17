@@ -1,0 +1,185 @@
+(footprint "switched_grounded_scrollcap"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "Scroll bar end cap over the click switch; 2x plated 1.8 mm holes for pegs or inserts, tie to GND")
+	(tags "scrollbar cap mounting GND")
+	(property "Reference" "REF**"
+		(at 0 -10.75 180)
+		(layer "F.SilkS")
+		(uuid "da370601-7cc9-4b25-be4c-244148991b0d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "switched_grounded_scrollcap"
+		(at 0 1.4 180)
+		(layer "F.Fab")
+		(uuid "ee011c98-520c-46a1-a700-3c45ec3bbe90")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3b9e3bfd-722f-41ec-ac68-9de2385f9cce")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Scroll bar end cap over the click switch; 2x plated 1.8 mm holes for pegs or inserts, tie to GND"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ab17d8e2-a4a8-4062-a498-0557b4c8f7c3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole exclude_from_pos_files exclude_from_bom)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_poly
+		(pts
+			(xy 2.5 -5.8) (xy 2.7084 -5.7818) (xy 2.9104 -5.7276) (xy 3.1 -5.6392) (xy 3.2713 -5.5193) (xy 3.4193 -5.3713)
+			(xy 3.5392 -5.2) (xy 3.6276 -5.0104) (xy 3.6818 -4.8084) (xy 3.7 -4.6) (xy 3.7 0) (xy 8 0) (xy 8 -7.6)
+			(xy 4 -11.6) (xy -4 -11.6) (xy -8 -7.6) (xy -8 0) (xy -3.7 0) (xy -3.7 -4.6) (xy -3.6818 -4.8084)
+			(xy -3.6276 -5.0104) (xy -3.5392 -5.2) (xy -3.4193 -5.3713) (xy -3.2713 -5.5193) (xy -3.1 -5.6392)
+			(xy -2.9104 -5.7276) (xy -2.7084 -5.7818) (xy -2.5 -5.8)
+		)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "215bb680-f53d-42c2-a364-98da5b413787")
+	)
+	(fp_poly
+		(pts
+			(xy 1.9 -7.55) (xy -1.9 -7.55) (xy -2.0335 -7.565) (xy -2.1603 -7.6094) (xy -2.2741 -7.6809) (xy -2.3691 -7.7759)
+			(xy -2.4406 -7.8897) (xy -2.485 -8.0165) (xy -2.5 -8.15) (xy -2.5 -9.25) (xy -2.485 -9.3835) (xy -2.4406 -9.5103)
+			(xy -2.3691 -9.6241) (xy -2.2741 -9.7191) (xy -2.1603 -9.7906) (xy -2.0335 -9.835) (xy -1.9 -9.85)
+			(xy 1.9 -9.85) (xy 2.0335 -9.835) (xy 2.1603 -9.7906) (xy 2.2741 -9.7191) (xy 2.3691 -9.6241) (xy 2.4406 -9.5103)
+			(xy 2.485 -9.3835) (xy 2.5 -9.25) (xy 2.5 -8.15) (xy 2.485 -8.0165) (xy 2.4406 -7.8897) (xy 2.3691 -7.7759)
+			(xy 2.2741 -7.6809) (xy 2.1603 -7.6094) (xy 2.0335 -7.565)
+		)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "168ef48a-b3b6-477e-af41-dfd5e430f879")
+	)
+	(fp_poly
+		(pts
+			(xy 2.5 -5.55) (xy 2.6853 -5.5317) (xy 2.8635 -5.4777) (xy 3.0278 -5.3899) (xy 3.1718 -5.2718) (xy 3.2899 -5.1278)
+			(xy 3.3777 -4.9635) (xy 3.4317 -4.7853) (xy 3.45 -4.6) (xy 3.45 0.25) (xy 8.25 0.25) (xy 8.25 -7.7036)
+			(xy 4.1036 -11.85) (xy -4.1036 -11.85) (xy -8.25 -7.7036) (xy -8.25 0.25) (xy -3.45 0.25) (xy -3.45 -4.6)
+			(xy -3.4317 -4.7853) (xy -3.3777 -4.9635) (xy -3.2899 -5.1278) (xy -3.1718 -5.2718) (xy -3.0278 -5.3899)
+			(xy -2.8635 -5.4777) (xy -2.6853 -5.5317) (xy -2.5 -5.55)
+		)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "87782f8f-e00f-4c07-b19c-c95b70350b0e")
+	)
+	(fp_poly
+		(pts
+			(xy -1.9 -7.3) (xy 1.9 -7.3) (xy 2.0658 -7.3163) (xy 2.2253 -7.3647) (xy 2.3722 -7.4433) (xy 2.501 -7.549)
+			(xy 2.6067 -7.6778) (xy 2.6853 -7.8247) (xy 2.7337 -7.9842) (xy 2.75 -8.15) (xy 2.75 -9.25) (xy 2.7337 -9.4158)
+			(xy 2.6853 -9.5753) (xy 2.6067 -9.7222) (xy 2.501 -9.851) (xy 2.3722 -9.9567) (xy 2.2253 -10.0353)
+			(xy 2.0658 -10.0837) (xy 1.9 -10.1) (xy -1.9 -10.1) (xy -2.0658 -10.0837) (xy -2.2253 -10.0353) (xy -2.3722 -9.9567)
+			(xy -2.501 -9.851) (xy -2.6067 -9.7222) (xy -2.6853 -9.5753) (xy -2.7337 -9.4158) (xy -2.75 -9.25)
+			(xy -2.75 -8.15) (xy -2.7337 -7.9842) (xy -2.6853 -7.8247) (xy -2.6067 -7.6778) (xy -2.501 -7.549)
+			(xy -2.3722 -7.4433) (xy -2.2253 -7.3647) (xy -2.0658 -7.3163)
+		)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "0d88137d-85bf-408a-b38a-a2d187ae880a")
+	)
+	(fp_poly
+		(pts
+			(xy 2.5 -5.8) (xy 2.7084 -5.7818) (xy 2.9104 -5.7276) (xy 3.1 -5.6392) (xy 3.2713 -5.5193) (xy 3.4193 -5.3713)
+			(xy 3.5392 -5.2) (xy 3.6276 -5.0104) (xy 3.6818 -4.8084) (xy 3.7 -4.6) (xy 3.7 0) (xy 8 0) (xy 8 -7.6)
+			(xy 4 -11.6) (xy -4 -11.6) (xy -8 -7.6) (xy -8 0) (xy -3.7 0) (xy -3.7 -4.6) (xy -3.6818 -4.8084)
+			(xy -3.6276 -5.0104) (xy -3.5392 -5.2) (xy -3.4193 -5.3713) (xy -3.2713 -5.5193) (xy -3.1 -5.6392)
+			(xy -2.9104 -5.7276) (xy -2.7084 -5.7818) (xy -2.5 -5.8)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "0b741a0b-3c03-4dde-9f11-88270df7280e")
+	)
+	(fp_poly
+		(pts
+			(xy 1.9 -7.55) (xy -1.9 -7.55) (xy -2.0335 -7.565) (xy -2.1603 -7.6094) (xy -2.2741 -7.6809) (xy -2.3691 -7.7759)
+			(xy -2.4406 -7.8897) (xy -2.485 -8.0165) (xy -2.5 -8.15) (xy -2.5 -9.25) (xy -2.485 -9.3835) (xy -2.4406 -9.5103)
+			(xy -2.3691 -9.6241) (xy -2.2741 -9.7191) (xy -2.1603 -9.7906) (xy -2.0335 -9.835) (xy -1.9 -9.85)
+			(xy 1.9 -9.85) (xy 2.0335 -9.835) (xy 2.1603 -9.7906) (xy 2.2741 -9.7191) (xy 2.3691 -9.6241) (xy 2.4406 -9.5103)
+			(xy 2.485 -9.3835) (xy 2.5 -9.25) (xy 2.5 -8.15) (xy 2.485 -8.0165) (xy 2.4406 -7.8897) (xy 2.3691 -7.7759)
+			(xy 2.2741 -7.6809) (xy 2.1603 -7.6094) (xy 2.0335 -7.565)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "a22227f1-82f9-4be3-aa64-22b1b78a5f30")
+	)
+	(pad "1" thru_hole circle
+		(at -5.75 -5.8)
+		(size 2.6 2.6)
+		(drill 3.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "7c201746-e41d-4286-9993-14e9e0c56499")
+	)
+	(pad "1" thru_hole circle
+		(at 5.75 -5.8)
+		(size 2.6 2.6)
+		(drill 3.1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "abcca469-3269-4f17-9098-d69217e5e840")
+	)
+	(embedded_fonts no)
+	(model "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/pegged_switched_grounded_scrollcap.step"
+		(opacity 0.7800)
+		(offset
+			(xyz 0 8.6 7)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

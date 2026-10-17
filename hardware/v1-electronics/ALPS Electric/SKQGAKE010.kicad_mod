@@ -24,7 +24,7 @@
   (pad 2 smd rect (at 3.1 -1.85 90) (size 1.1 1.8) (layers F.Cu F.Paste F.Mask))
   (pad 3 smd rect (at -3.1 1.85 90) (size 1.1 1.8) (layers F.Cu F.Paste F.Mask))
   (pad 4 smd rect (at 3.1 1.85 90) (size 1.1 1.8) (layers F.Cu F.Paste F.Mask))
-  (model SKQGAFE010.stp
+  (model SKQGAKE010.stp
     (at (xyz 0.0047244093432201 0.0023622046716101 0.00078740155720335))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
