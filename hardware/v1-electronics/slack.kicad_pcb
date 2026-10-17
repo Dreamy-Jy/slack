@@ -19276,7 +19276,7 @@
 		(property "Reference" "J2"
 			(at -2.5 -14.5 0)
 			(layer "F.SilkS")
-			(uuid "7b27f481-fd98-4ca5-9147-f515927c0ce0")
+			(uuid "495569de-619b-4437-bb55-f350c593fb28")
 			(effects
 				(font
 					(size 1 1)
@@ -19287,7 +19287,7 @@
 		(property "Value" "XT30PW-M"
 			(at -2.5 3.5 0)
 			(layer "F.Fab")
-			(uuid "f26a3e9b-442f-4d81-bfba-5c3f50642df7")
+			(uuid "8e6e28dd-7812-4127-99b5-6e1690b67af3")
 			(effects
 				(font
 					(size 1 1)
@@ -19300,7 +19300,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "261ecc1d-bbe9-46ab-8806-d082b9e10285")
+			(uuid "f5bbbc83-5af4-492b-b0d0-bf4f22f193e5")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19313,7 +19313,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "72bced61-f883-4665-9ae0-cd2af982a162")
+			(uuid "929f0752-e77e-4a2f-ab59-99206d52be88")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -154185,7 +154185,7 @@
 		(property "Reference" "J1"
 			(at 2.975 -1.8 0)
 			(layer "F.SilkS")
-			(uuid "b6afc79d-6589-4a28-a4a4-62c769c47f49")
+			(uuid "474d617e-ef56-4a93-95fb-9cb3a93b8b02")
 			(effects
 				(font
 					(size 1 1)
@@ -154196,7 +154196,7 @@
 		(property "Value" "Female USB-C USB2.0"
 			(at 2.975 9.925 0)
 			(layer "F.Fab")
-			(uuid "e6a2a5b2-4d2b-4aa5-ab39-30d32a26e49e")
+			(uuid "c6847bae-3c95-47c1-91d5-ae353abcb3e8")
 			(effects
 				(font
 					(size 1 1)
@@ -154209,7 +154209,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "cb0497b5-3036-4cf0-9530-3ffb33c52400")
+			(uuid "9f75fc9c-7750-46cb-924f-1e2fb3a7c015")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -154222,7 +154222,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b7742c8a-fe6f-4e22-af93-cdbddb273052")
+			(uuid "45fbc308-3486-4ded-a7a1-dc4ff4a2d2ca")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -160434,7 +160434,7 @@
 			(at 0 8.89 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "a8a4ccbf-4fc5-41bd-a36b-4764e79b7611")
+			(uuid "849aa864-ad39-40f1-8fe7-76795fbbdae6")
 			(effects
 				(font
 					(size 1 1)
@@ -160446,7 +160446,7 @@
 			(at 0 14.375 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "8ecbe660-0cc0-4f35-a596-cb4d834a7faa")
+			(uuid "0d701eb5-8474-41c3-b634-24a737753d66")
 			(effects
 				(font
 					(size 1 1)
@@ -160459,7 +160459,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "77414078-89d8-4142-bdf1-562d2e6d8d7a")
+			(uuid "530adaa4-e4cd-4a15-83d9-afc5cd973e1c")
 			(effects
 				(font
 					(size 1 1)
@@ -160472,7 +160472,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "39d3bd2f-48e9-4834-a806-9e5c442d982f")
+			(uuid "8ccdc649-fc16-4531-b756-e1f74ce5d77b")
 			(effects
 				(font
 					(size 1 1)
@@ -179552,7 +179552,7 @@
 			(at 0.3048 -1.4732 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "3179ed92-fbae-4e95-9800-0ff26a0a8de6")
+			(uuid "02b4a014-e8a5-4e01-8c5a-7bd45bd97463")
 			(effects
 				(font
 					(size 1 1)
@@ -179564,7 +179564,7 @@
 			(at 0 2.056 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "29869310-ce0a-4f8d-af76-2904ba618998")
+			(uuid "aede88c9-ae39-4e75-a6df-9553598c43be")
 			(effects
 				(font
 					(size 1 1)
@@ -179577,7 +179577,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a6a18f2e-6cfb-4443-b407-019cb58e9175")
+			(uuid "1236b521-db6e-49fd-8e4b-5968679f2ab3")
 			(effects
 				(font
 					(size 1 1)
@@ -179590,7 +179590,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e9cbdd80-815e-48e3-b961-6636eec8a5de")
+			(uuid "549b9fce-6429-4197-bbe4-9e9fbd44930b")
 			(effects
 				(font
 					(size 1 1)
@@ -185038,247 +185038,266 @@
 		(layer "Dwgs.User")
 		(uuid "a76554b2-4fbd-4b15-a513-56c74419653e")
 	)
-	(gr_rect
-		(start 53.99 45.559999)
-		(end 389.23 216.289999)
-		(radius 6)
+	(gr_poly
+		(pts
+			(arc
+				(start 248.93 74.2937)
+				(mid 250.3997 73.4905)
+				(end 250.7292 71.7827)
+			)
+			(arc
+				(start 249.8974 67.7977)
+				(mid 250.2698 66.335)
+				(end 251.6382 65.5348)
+			)
+			(arc
+				(start 267.9807 62.657)
+				(mid 268.2237 62.6392)
+				(end 268.8022 62.5435)
+			)
+			(arc
+				(start 279.7043 60.5875)
+				(mid 281.9154 59.6091)
+				(end 283.5906 57.7965)
+			)
+			(arc
+				(start 287.1494 52.7187)
+				(mid 288.9276 51.1256)
+				(end 291.237 50.3094)
+			)
+			(arc
+				(start 299.2906 48.8923)
+				(mid 301.677 49.0109)
+				(end 303.9172 50.0748)
+			)
+			(arc
+				(start 308.7354 53.4545)
+				(mid 311.0345 54.5802)
+				(end 313.7596 54.6175)
+			)
+			(arc
+				(start 322.6511 53.0546)
+				(mid 324.0555 53.4383)
+				(end 324.8501 54.7927)
+			)
+			(arc
+				(start 325.3886 57.6559)
+				(mid 326.2578 58.8493)
+				(end 327.7774 59.1096)
+			)
+			(arc
+				(start 342.5959 56.5016)
+				(mid 344.0176 56.8987)
+				(end 344.7944 58.242)
+			)
+			(arc
+				(start 346.5009 67.6317)
+				(mid 347.3684 68.8319)
+				(end 348.8924 69.0947)
+			)
+			(arc
+				(start 372.9519 64.8573)
+				(mid 374.3765 65.2568)
+				(end 375.151 66.6058)
+			)
+			(arc
+				(start 390.9207 156.0679)
+				(mid 390.4797 157.5455)
+				(end 389.0378 158.2791)
+			)
+			(arc
+				(start 351.924 162.2776)
+				(mid 351.1607 162.5836)
+				(end 350.5425 163.2283)
+			)
+			(arc
+				(start 348.2778 166.4708)
+				(mid 348.0163 167.1803)
+				(end 348.0472 168.006)
+			)
+			(arc
+				(start 350.5358 182.1474)
+				(mid 350.1102 183.606)
+				(end 348.6964 184.3562)
+			)
+			(arc
+				(start 348.6964 184.3562)
+				(mid 333.6813 186.7133)
+				(end 318.5714 189.853)
+			)
+			(arc
+				(start 318.5714 189.853)
+				(mid 315.9017 191.4045)
+				(end 314.3683 194.0175)
+			)
+			(arc
+				(start 314.3683 194.0175)
+				(mid 314.1093 194.6537)
+				(end 313.7788 195.2834)
+			)
+			(arc
+				(start 311.052 200.3007)
+				(mid 309.4882 202.0712)
+				(end 307.2618 203.1627)
+			)
+			(arc
+				(start 299.4212 205.4848)
+				(mid 296.9764 205.6293)
+				(end 294.6893 204.8346)
+			)
+			(arc
+				(start 289.5642 202.0506)
+				(mid 289.0889 201.7441)
+				(end 288.5736 201.343)
+			)
+			(arc
+				(start 288.5736 201.343)
+				(mid 285.75 200.1518)
+				(end 282.6438 200.5308)
+			)
+			(arc
+				(start 282.6438 200.5308)
+				(mid 263.5833 208.1789)
+				(end 245.0645 217.0588)
+			)
+			(arc
+				(start 245.0645 217.0588)
+				(mid 240.5839 218.7448)
+				(end 235.831 219.3178)
+			)
+			(arc
+				(start 207.0658 219.3178)
+				(mid 202.3129 218.7448)
+				(end 197.8323 217.0588)
+			)
+			(arc
+				(start 197.8323 217.0588)
+				(mid 179.3135 208.1789)
+				(end 160.253 200.5308)
+			)
+			(arc
+				(start 160.253 200.5308)
+				(mid 157.1468 200.1518)
+				(end 154.3232 201.343)
+			)
+			(arc
+				(start 154.3232 201.343)
+				(mid 153.8079 201.7441)
+				(end 153.3326 202.0506)
+			)
+			(arc
+				(start 148.2075 204.8346)
+				(mid 145.9204 205.6293)
+				(end 143.4756 205.4848)
+			)
+			(arc
+				(start 135.635 203.1627)
+				(mid 133.4086 202.0712)
+				(end 131.8448 200.3007)
+			)
+			(arc
+				(start 129.118 195.2834)
+				(mid 128.7875 194.6537)
+				(end 128.5285 194.0175)
+			)
+			(arc
+				(start 128.5285 194.0175)
+				(mid 126.9951 191.4045)
+				(end 124.3254 189.853)
+			)
+			(arc
+				(start 124.3254 189.853)
+				(mid 109.2155 186.7133)
+				(end 94.2004 184.3562)
+			)
+			(arc
+				(start 94.2004 184.3562)
+				(mid 92.7866 183.606)
+				(end 92.361 182.1474)
+			)
+			(arc
+				(start 94.8496 168.006)
+				(mid 94.8805 167.1803)
+				(end 94.619 166.4708)
+			)
+			(arc
+				(start 92.3543 163.2283)
+				(mid 91.7361 162.5836)
+				(end 90.9728 162.2776)
+			)
+			(arc
+				(start 53.859 158.2791)
+				(mid 52.4171 157.5455)
+				(end 51.9761 156.0679)
+			)
+			(arc
+				(start 67.7458 66.6058)
+				(mid 68.5203 65.2568)
+				(end 69.9449 64.8573)
+			)
+			(arc
+				(start 94.0044 69.0947)
+				(mid 95.5284 68.8319)
+				(end 96.3959 67.6317)
+			)
+			(arc
+				(start 98.1024 58.242)
+				(mid 98.8792 56.8987)
+				(end 100.3009 56.5016)
+			)
+			(arc
+				(start 115.1194 59.1096)
+				(mid 116.639 58.8493)
+				(end 117.5082 57.6559)
+			)
+			(arc
+				(start 118.0467 54.7927)
+				(mid 118.8413 53.4383)
+				(end 120.2457 53.0546)
+			)
+			(arc
+				(start 129.1372 54.6175)
+				(mid 131.8623 54.5802)
+				(end 134.1614 53.4545)
+			)
+			(arc
+				(start 138.9796 50.0748)
+				(mid 141.2198 49.0109)
+				(end 143.6062 48.8923)
+			)
+			(arc
+				(start 151.6598 50.3094)
+				(mid 153.9692 51.1256)
+				(end 155.7474 52.7187)
+			)
+			(arc
+				(start 159.3062 57.7965)
+				(mid 160.9814 59.6091)
+				(end 163.1925 60.5875)
+			)
+			(arc
+				(start 174.0946 62.5435)
+				(mid 174.6731 62.6392)
+				(end 174.9161 62.657)
+			)
+			(arc
+				(start 191.2586 65.5348)
+				(mid 192.627 66.335)
+				(end 192.9994 67.7977)
+			)
+			(arc
+				(start 192.1676 71.7827)
+				(mid 192.4971 73.4905)
+				(end 193.9668 74.2937)
+			)
+		)
 		(stroke
-			(width 0.15)
+			(width 0.05)
 			(type solid)
 		)
 		(fill no)
 		(layer "Edge.Cuts")
-		(uuid "9f8d47c6-c02c-432e-9021-77b7a5d74971")
-	)
-	(gr_line
-		(start 189.955 74.31)
-		(end 251.265 74.31)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "fa2e78db-d4cb-40f5-b0cf-e983c11f6d5f")
-	)
-	(gr_line
-		(start 204.14 215.7)
-		(end 238.75 215.7)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "c02d6506-cf63-4bdf-9ac5-7f838b9724cf")
-	)
-	(gr_line
-		(start 238.75 215.7)
-		(end 247.15 210.35)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "4263676c-03fc-47e6-96b4-cdb360dfe73f")
-	)
-	(gr_line
-		(start 247.15 210.35)
-		(end 256.98 205.62)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "3c13fe4a-c255-47fd-a66b-a6bba8ada502")
-	)
-	(gr_line
-		(start 250.84 69.76)
-		(end 286.2 63.61)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "8e35381c-bcce-4782-b2ec-60632faafca7")
-	)
-	(gr_line
-		(start 256.98 205.62)
-		(end 271.92 199.79)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "35ca1ebf-d824-4959-88db-ca04244d3e35")
-	)
-	(gr_line
-		(start 271.92 199.79)
-		(end 283.76 194.87)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "22ed8573-d12c-4a27-9728-8ba26e2426f7")
-	)
-	(gr_line
-		(start 283.76 194.87)
-		(end 292.5 199.61)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "61ee14c8-e1ee-4276-9e36-a8dd2d681523")
-	)
-	(gr_line
-		(start 286.2 63.61)
-		(end 289.34 58.48)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "841df219-77ed-4384-b3a0-73431ebcb78b")
-	)
-	(gr_line
-		(start 289.34 58.48)
-		(end 292.95 54.19)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "e90e225a-71cd-4877-a37a-abce1febe596")
-	)
-	(gr_line
-		(start 292.5 199.61)
-		(end 298.51 201.43)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "fce2f40c-462d-44cd-be78-2e67c464dc6c")
-	)
-	(gr_line
-		(start 298.35 52.59)
-		(end 303.35 54.81)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "c617a96c-8281-4463-be3d-99d7d6c75200")
-	)
-	(gr_line
-		(start 298.51 201.43)
-		(end 306.34 199.61)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "37d02bcc-c450-4935-b343-31a4616181e4")
-	)
-	(gr_line
-		(start 303.35 54.81)
-		(end 306.67 59.04)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "0d883ebc-2e95-4912-b6a6-6435b637b174")
-	)
-	(gr_line
-		(start 306.34 199.61)
-		(end 310.49 195.29)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "c4ac44d5-5792-4d13-9cf9-af36d1a3ea74")
-	)
-	(gr_line
-		(start 306.67 59.04)
-		(end 308.01 60.22)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "b27f2603-e165-4998-9c6d-3a98dfde5545")
-	)
-	(gr_line
-		(start 308.01 60.22)
-		(end 324.97 57.26)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "d343fef6-a7b1-4b13-99a6-420868e69009")
-	)
-	(gr_line
-		(start 310.49 195.29)
-		(end 310.49 191.92)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "b866d240-030d-4a6f-9662-0babf6013a6a")
-	)
-	(gr_line
-		(start 327.43 61.51)
-		(end 345.79 58.55)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "943e066b-d553-4717-b9f1-a4b636a177c7")
-	)
-	(gr_line
-		(start 346.96 165.14)
-		(end 349.13 180.29)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "800edb6a-4393-4181-9e98-b68155e53e25")
-	)
-	(gr_line
-		(start 348.32 71.98)
-		(end 366.83 69.02)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "460d960f-eb64-4146-adf6-2a6314b40393")
-	)
-	(gr_line
-		(start 383.06 153.7)
-		(end 349.46 161.6)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "c1a258f4-2c2a-49ce-98b3-658b219eee9c")
-	)
-	(gr_line
-		(start 386.32 150.52)
-		(end 371.54 71.78)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "05894501-fa29-44d8-9703-c3c231fb1caf")
+		(uuid "30c3c1b1-ee3d-4ec2-b174-4c69b284b3c3")
 	)
 	(gr_text_box "PCB To Do List:\n- [x] generate and recreate ergonomic montary key layout in PCB\n- [x] determine latch layout on PCB\n- [X] map switches to generated layout\n- [-] Verify nipple keycap configuration(1/2 the margins)\n- [ ] verify physical usability\n- [ ] verify color scheme\n- [ ] verify physical BOM (Body, Cover, Defusers, Scroll Bars)"
 		(start 19.07 254)

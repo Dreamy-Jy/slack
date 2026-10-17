@@ -10,6 +10,8 @@ transfer = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/V
 scrollbar = "python3 /Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/scripts/layout_support/layout_porter/ai_transfer_scrollbars.py"
 mountholes = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 /Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/scripts/single_use/ai_add_mounting_holes.py"
 moveMountHoles1 = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 /Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/scripts/single_use/ai_move_mounting_holes.py"
+writeOutline = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 /Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/scripts/single_use/ai_write_outline.py"
+writeOutlinePolygon = "/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3 /Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-electronics/scripts/single_use/ai_write_outline_polygon.py"
 
 [dependencies]
 rust = ">=1.98.0,<1.99"
