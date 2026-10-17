@@ -69,7 +69,7 @@ HEX_FIT = 0.05   # the encoder's bore: 1.73 +0.05/0 (Alps drawing, detail E)
 # How far each board's switch travels before it clicks, from its datasheet.
 # None = not filled in yet: the click check then shows "-". Fill these in.
 SWITCH_TRAVEL = {
-    "switched cap": None,   # B1: XKB TC-1109-C-E, under the bar's end in this cap
+    "switched cap": 0.25,   # B1: XKB TC-1109-B-D, under the bar's end in this cap. XKB drawing: travel 0.25
     "plain cap": None,      # B2: Alps SKQGAKE010, under the bar's middle
 }
 SAMPLES = (0.2, 0.5, 0.8)   # where on each face the wall probe starts (u and v)
@@ -304,12 +304,15 @@ def size_class(rule_wall, size):
     return rule_wall[max(rule_wall)]
 
 
+EPS = 1e-3   # measuring a fillet or bevel is only exact to about 0.0001: 0.1999 still counts as 0.2
+
+
 def judge(check, r, m):
     """One cell: 'ok', 'warn', 'FAIL', or '-' for no rule. m holds the measurements."""
     if check == "size":
         if "small" not in r and "big" not in r:
             return "-"
-        if "small" in r and not any(all(a >= b - 1e-6 for a, b in zip(m["size"], s)) for s in r["small"]):
+        if "small" in r and not any(all(a >= b - EPS for a, b in zip(m["size"], s)) for s in r["small"]):
             return "FAIL"
         if "big" in r and any(a > b for a, b in zip(m["size"], r["big"])):
             return "FAIL"
@@ -318,13 +321,13 @@ def judge(check, r, m):
         if "wall" not in r:
             return "-"
         t, w = m["wall"][0], size_class(r["wall"], m["size"])
-        if t < w - 1e-6:
+        if t < w - EPS:
             return "FAIL"
-        return "warn" if t < r.get("wall_rec", 0) - 1e-6 else "ok"
+        return "warn" if t < r.get("wall_rec", 0) - EPS else "ok"
     if check == "holes":
         if "hole" not in r or not m["holes"]:
             return "-" if "hole" not in r else "ok"
-        if any(d < r["hole"] - 1e-6 for d, _, _ in m["holes"]):
+        if any(d < r["hole"] - EPS for d, _, _ in m["holes"]):
             return "FAIL"
         return "warn" if any(depth > r["deep"] * d for d, depth, _ in m["holes"]) else "ok"
     if check == "pins":
@@ -332,26 +335,26 @@ def judge(check, r, m):
             return "-" if "pins" not in r else "ok"
         worst = "ok"
         for d, h, _ in m["pins"]:
-            if d >= 3.0 - 1e-6:
+            if d >= 3.0 - EPS:
                 continue
-            if d < r["pins"][0][0] - 1e-6:
+            if d < r["pins"][0][0] - EPS:
                 return "FAIL"
-            if not any(d >= pd - 1e-6 and h <= ph + 1e-6 for pd, ph in r["pins"]):
+            if not any(d >= pd - EPS and h <= ph + EPS for pd, ph in r["pins"]):
                 worst = "warn"   # thick enough, but taller than the rule allows at that size
         return worst
     if check == "protrude":
         if "protrude" not in r or not m["pegs"]:
             return "-"
-        return "FAIL" if any(d <= r["protrude"] + 1e-6 for d, _, _ in m["pegs"]) else "ok"
+        return "FAIL" if any(d <= r["protrude"] + EPS for d, _, _ in m["pegs"]) else "ok"
     if check == "spin":
         if m["gap"] is None:
             return "-"
         g = m["gap"][0]
-        if "fit" in r and g < r["fit"] - 1e-6:
+        if "fit" in r and g < r["fit"] - EPS:
             return "FAIL"
-        if "fit_rec" in r and g < r["fit_rec"] - 1e-6:
+        if "fit_rec" in r and g < r["fit_rec"] - EPS:
             return "warn"
-        if "tol" in r and g <= 2 * r["tol"] + 1e-6:
+        if "tol" in r and g <= 2 * r["tol"] + EPS:
             return "warn"   # two parts' tolerances added could close it
         return "ok" if ("fit" in r or "tol" in r) else "-"
     if check == "click":
@@ -359,9 +362,9 @@ def judge(check, r, m):
         if m["gap"] is None or travel is None or "tol" not in r:
             return "-"
         g = m["gap"][0]
-        if g > travel + 1e-6:
+        if g > travel + EPS:
             return "FAIL"   # the bar can wobble further than the click
-        return "warn" if g + 2 * r["tol"] > travel + 1e-6 else "ok"   # the tolerances could take it past
+        return "warn" if g + 2 * r["tol"] > travel + EPS else "ok"   # the tolerances could take it past
     if check == "fits":
         if not m["fits"] or "tol" not in r:
             return "-"
@@ -369,7 +372,7 @@ def judge(check, r, m):
     if check == "detail":
         if "detail" not in r or m["detail"] is None:
             return "-"
-        return "warn" if m["detail"][0] < r["detail"] - 1e-6 else "ok"
+        return "warn" if m["detail"][0] < r["detail"] - EPS else "ok"
     if check == "corners":
         if "corner" not in r:
             return "-"
@@ -450,8 +453,8 @@ HINTS = {   # the value in the model that sets each kind of feature, where there
     "pins": "the pegs: Cap_Vars.mount_hole_diameter; the hex: set by the encoder, can't change",
     "protrude": "Cap_Vars.mount_hole_diameter",
     "holes": "Cap_Vars.mount_hole_diameter, Cap_Vars.mount_depth",
-    "spin": "the cap's entrance around Bar_Vars.spacer_diameter",
-    "click": "the cap's entrance around Bar_Vars.spacer_diameter",
+    "spin": "the cap's entrance around Bar_Vars.back_spacer_diameter",
+    "click": "the cap's entrance around Bar_Vars.back_spacer_diameter",
     "fits": "Bar_Vars.actuation_gap; the hex fit is set by the encoder",
 }
 

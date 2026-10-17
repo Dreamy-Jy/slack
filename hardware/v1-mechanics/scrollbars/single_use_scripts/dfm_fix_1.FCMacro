@@ -1,0 +1,465 @@
+# Fix the caps' DFM problems: the bar touching the caps (spin), and the sharp
+# inside corners a CNC cutter can't make. Keeps the cliff that holds the spacer.
+#
+# Run it on a COPY of scrollbar.FCStd, in FreeCAD 1.1.3, after thumb_cuts.
+#
+#   1. Values (each with a tooltip)
+#      - Bar_Vars.spacer_step 1.3: the spacers (both) become actuation_diameter
+#        + 2 x 1.3 = 6.4 wide, so each cap's cliff is 1.3 wide and can be rounded.
+#      - Cap_Vars: corner radii for CNC milling, spacer_reach, top_wall.
+#      - The cap's top rises to keep top_wall (1.5) over the wider entrance.
+#      - back_spacer_length 1.2 -> 1.8, so each cap's entrance (1.5 long) is longer
+#        than the cliff's corner rounding; the actuator shortens to match.
+#      - plain_actuation_gap grows so the plain channel's rounded end clears the bar.
+#   2. Spin
+#      - Spacer Chiff (switched cap) is cut spacer_gap deeper, so the spacer no
+#        longer sits flat against the cliff; Spacer Cliff (plain cap) uses
+#        Cap_Vars.spacer_gap instead of 0.2 mm.
+#      - Both bar channels clear the actuation end by spacer_gap.
+#      - The bar's spacer gets a bevel on its cap end ("Spacer End Bevel"), so it
+#        clears the cliff's rounded corners by spacer_gap.
+#   3. In each cap, moves the LED/diode pocket up the tree, before the pegs and
+#      insert holes, so its edges don't change when cap_mount changes.
+#   4. Before the thumb cuts, PartDesign Fillets round every vertical inside
+#      corner still there: the cliffs, the far end of the switch opening and bar
+#      channel, and the LED/diode pocket (switched off with the pocket).
+#   5. After the thumb cuts, rounds any new sharp inside corner (none expected).
+#   6. Checks, with cap_mount on pegs AND inserts: every feature builds, no sharp
+#      inside corner is left, and the bar clears both caps by spacer_gap.
+#      If a check fails, the macro undoes everything it did.
+# JLC FDM's part size is not touched: the parts can't reach 10 x 30 x 30.
+
+import FreeCAD as App
+import Part
+import Sketcher
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+OLD_GAP = "Bar_Vars.actuation_diameter + 2 * Bar_Vars.actuation_gap"
+
+CAPS = {   # cap: (body, its cliff, the pocket that ends the bar channel, that end's corner radius)
+    "switched": ("Body007", "Pocket002", "Pocket003", "cnc_corner_radius"),
+    "plain": ("Body010", "Pocket004", "Pocket005", "cnc_channel_end_radius"),
+}
+INDICATOR = {"switched": ("IndicatorPocketSketch", "IndicatorPocketCut"),
+             "plain": ("IndicatorPocketSketch001", "IndicatorPocketCut001")}
+# (VarSet, name, group, value or formula, tooltip)
+VALUES = [
+    ("Bar_Vars", "spacer_step", "Static", 1.3,
+     "How far each spacer stands out from the actuation section, all round. It sets the width of the cap's cliff: "
+     "cnc_cliff_radius (1.2, so a CNC cutter can make its corners) + spacer_reach (0.1)."),
+    ("Cap_Vars", "spacer_reach", "Static", 0.1,
+     "How far the spacer's flat end reaches onto the cliff, past the bar channel, after its bevel."),
+    ("Cap_Vars", "cnc_cliff_radius", "Derived", "(Bar_Vars.spacer_diameter - Bar_Vars.actuation_diameter) / 2 - spacer_reach",
+     "Inside-corner radius where the entrance meets the cliff, for a round milling cutter. The plain cap's cliff "
+     "corners are 7 deep: JLC asks 1.2 (depth / 10 + 0.5), PCBWay 2.33 (depth / 3). The switched cap's are 3.5 deep: "
+     "JLC 0.85, PCBWay 1.17."),
+    ("Cap_Vars", "cnc_corner_radius", "Static", 1.2,
+     "Inside-corner radius at the far end of the switched cap's switch opening and bar channel, for a round "
+     "milling cutter. 3.5 deep: JLC asks 0.85, PCBWay 1.17. Also used for any other corner a cut leaves."),
+    ("Cap_Vars", "cnc_channel_end_radius", "Static", 1.25,
+     "Inside-corner radius at the far end of the plain cap's bar channel. 7 deep: JLC asks 1.2, PCBWay 2.33. "
+     "plain_actuation_gap follows it so the rounding clears the bar's end."),
+    ("Cap_Vars", "cnc_pocket_corner_radius", "Static", 0.6,
+     "Inside-corner radius of the LED/diode pocket's corners. 0.95 deep: JLC asks 0.6, PCBWay 0.32."),
+    ("Cap_Vars", "top_wall", "Static", 1.5,
+     "Wall over the entrance, at the cap's top. 1.5 is the thinnest JLC MJF, SLS, SLM and binder jet accept."),
+]
+CHANGED = [   # (VarSet, name, new formula, new group, new tooltip)
+    ("Bar_Vars", "spacer_diameter", "actuation_diameter + 2 * spacer_step", "Derived",
+     "actuation_diameter + 2 x spacer_step: both spacers."),
+    ("Cap_Vars", "above_origin_height", "Bar_Vars.spacer_diameter / 2 + spacer_gap + top_wall", None,
+     "spacer_diameter / 2 + spacer_gap + top_wall: height of the cap's top above the bar's centre line."),
+    ("Cap_Vars", "plain_actuation_gap", "cnc_channel_end_radius - spacer_gap", "Derived",
+     "cnc_channel_end_radius - spacer_gap: gap from the bar's end to the plain cap's channel end, so the channel "
+     "end's rounded corners clear the bar by spacer_gap."),
+]
+PAIRS = [("Link007", "Link009"), ("Link008", "Link010")]   # (bar, cap) as assembled on each board
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The macro stopped.")
+    say(f"  ok    {title}\n")
+
+
+def swap(obj, old, new, expected):
+    """Replace `old` with `new` in obj's formulas; there should be `expected` of them."""
+    found = [(path, f) for path, f in obj.ExpressionEngine if old in f]
+    if len(found) != expected:
+        fail(f"{obj.Label}: expected {expected} formula(s) with '{old}', found {len(found)}")
+        return
+    for path, f in found:
+        obj.setExpression(path, f.replace(old, new))
+
+
+def needed(depth):
+    """Smallest corner radius each shop asks for at this depth (same rules as check_dfm)."""
+    return {"JLC": max(0.5, depth / 10 + 0.5), "PCBWay": depth / 3}
+
+
+def sharp_corners(shape):
+    """Vertical inside corners between two flat faces: [(edge name, depth, middle point)]."""
+    out = []
+    for i, e in enumerate(shape.Edges):
+        if e.Curve.TypeId != "Part::GeomLine" or e.Length < 1e-3:
+            continue
+        d = e.Vertexes[1].Point - e.Vertexes[0].Point
+        d.normalize()
+        if abs(abs(d.z) - 1) > 1e-3:
+            continue
+        faces = shape.ancestorsOfType(e, Part.Face)
+        if len(faces) != 2 or any(f.Surface.TypeId != "Part::GeomPlane" for f in faces):
+            continue
+        mid = e.valueAt((e.FirstParameter + e.LastParameter) / 2)
+        into = App.Vector()
+        for f in faces:
+            t = d.cross(f.Surface.Axis)
+            t.normalize()
+            into += t if f.isInside(mid + t * 0.01, 1e-6, True) else -t
+        if into.Length < 0.1:
+            continue
+        into.normalize()
+        if not shape.isInside(mid + into * 0.01, 1e-7, False):
+            out.append((f"Edge{i + 1}", e.Length, mid))
+    return out
+
+
+def local(shape):
+    """A copy of the shape in the part's own frame (as check_dfm measures it)."""
+    s = shape.copy()
+    s.Placement = App.Placement()
+    return s
+
+
+def new_corners(feature, base_shape):
+    """Sharp inside corners in feature's shape that weren't in base_shape."""
+    old = [m for _n, _d, m in sharp_corners(local(base_shape))]
+    return [c for c in sharp_corners(local(feature.Shape)) if all((c[2] - m).Length > 1e-4 for m in old)]
+
+
+def glob(o):
+    """Where o sits in the whole assembly (same as check_dfm)."""
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def assembled(link):
+    s = Part.getShape(link.LinkedObject).copy()
+    s.Placement = glob(link)
+    return s
+
+
+def relink(body):
+    """Each solid feature builds on the one before it, in tree order."""
+    prev = None
+    for f in body.Group:
+        if f.isDerivedFrom("PartDesign::Feature"):
+            if f.BaseFeature != prev:
+                f.BaseFeature = prev
+            prev = f
+
+
+def fillet_after(body, target, corners, radius_name, label, tip):
+    fl = doc.addObject("PartDesign::Fillet", "CNCFillet")
+    body.insertObject(fl, target, True)
+    fl.Base = (target, [n for n, _d, _m in corners])
+    fl.setExpression("Radius", f"Cap_Vars.{radius_name}")
+    fl.Label = label
+    fl.Label2 = tip
+    relink(body)
+    return fl
+
+
+def shapes_by_mode(fn):
+    """Run fn() with cap_mount on each setting; put it back after."""
+    pv = doc.getObject("Places_Vars")
+    was = pv.cap_mount
+    for mode in pv.getEnumerationsOfProperty("cap_mount"):
+        pv.cap_mount = mode
+        doc.recompute()
+        fn(mode)
+    pv.cap_mount = was
+    doc.recompute()
+
+
+# ================================================================ 1. values
+
+def step1_values():
+    say("\nStep 1: values\n")
+    for vs, name, *_r in VALUES:
+        if name in doc.getObject(vs).PropertiesList:
+            fail(f"{vs} already has {name}: this copy has been through this macro")
+    if "spacer_gap" not in doc.getObject("Cap_Vars").PropertiesList:
+        fail("Cap_Vars has no spacer_gap")
+    for vs, name, *_r in CHANGED:
+        if name not in doc.getObject(vs).PropertiesList:
+            fail(f"{vs} has no {name}")
+    end_step("found the VarSets")
+    for vs, name, group, value, tip in VALUES:
+        o = doc.getObject(vs)
+        o.addProperty("App::PropertyLength", name, group, tip)
+        if isinstance(value, str):
+            o.setExpression(name, value)
+        else:
+            setattr(o, name, value)
+    for vs, name, formula, group, tip in CHANGED:
+        o = doc.getObject(vs)
+        o.setExpression(name, formula)
+        o.setDocumentationOfProperty(name, tip)
+        if group:
+            try:
+                o.setGroupOfProperty(name, group)
+            except Exception:
+                pass   # only where it's listed; the value is right either way
+    # the entrance (spacer length - bar_gap + spacer_gap) must be longer than the cliff's corner radius,
+    # or there's no wall for the rounding to run along
+    bv = doc.getObject("Bar_Vars")
+    bv.back_spacer_length = 1.8
+    bv.setDocumentationOfProperty("back_spacer_length",
+        "Length of the spacer between the main section and the actuator. 1.8 makes each cap's entrance "
+        "(back_spacer_length - bar_gap + spacer_gap = 1.5) longer than the cliff's corner rounding (cnc_cliff_radius 1.2); "
+        "the actuator gets shorter by the same amount, so the bar's end stays put.")
+    doc.getObject("Parts_Vars").setDocumentationOfProperty(
+        "lever3_switch_height", "Height of the TC-1109-B-D to the top of its plunger. XKB drawing, height code D.")
+    doc.recompute()
+    for vs, name, *_r in VALUES + CHANGED + [("Bar_Vars", "back_spacer_length")]:
+        say(f"        {vs}.{name} = {getattr(doc.getObject(vs), name).Value:g}\n")
+    bv, cv = doc.getObject("Bar_Vars"), doc.getObject("Cap_Vars")
+    if abs(bv.spacer_diameter.Value - 6.4) > 1e-6 or abs(cv.cnc_cliff_radius.Value - 1.2) > 1e-6:
+        fail(f"spacer_diameter is {bv.spacer_diameter.Value:g} and cnc_cliff_radius {cv.cnc_cliff_radius.Value:g} "
+             "(expected 6.4 and 1.2)")
+    end_step("values made")
+
+
+# ================================================================ 2. spin
+
+def step2_spin():
+    say("\nStep 2: clear the bar\n")
+    pk2 = doc.getObject("Pocket002")
+    if dict(pk2.ExpressionEngine).get("Length") != "Bar_Vars.back_spacer_length - Places_Vars.bar_gap":
+        fail(f"{pk2.Label}'s Length isn't 'Bar_Vars.back_spacer_length - Places_Vars.bar_gap'")
+    else:
+        pk2.setExpression("Length", "Bar_Vars.back_spacer_length - Places_Vars.bar_gap + Cap_Vars.spacer_gap")
+    swap(doc.getObject("Pocket004"), "+ 0.2 mm", "+ Cap_Vars.spacer_gap", 1)
+    for name in ("Sketch033", "Sketch036"):
+        swap(doc.getObject(name), OLD_GAP, "Bar_Vars.actuation_diameter + 2 * Cap_Vars.spacer_gap", 2)
+    end_step("found every formula to change")
+    doc.recompute()
+
+    # the spacer's bevel, on its cap end, last in the bar
+    bar = doc.getObject("Body005")
+    last = doc.getObject("Pad026")
+    if bar.Tip != last:
+        fail(f"{bar.Label}'s last feature isn't {last.Label}")
+    end_step(f"{bar.Label} ends with {last.Label}")
+    sp = doc.getObject("Bar_Vars").spacer_diameter.Value / 2
+    ac = doc.getObject("Bar_Vars").actuation_diameter.Value / 2
+    shape = local(last.Shape)
+
+    def circle(e, r):
+        return e.Curve.TypeId == "Part::GeomCircle" and abs(e.Curve.Radius - r) < 1e-4
+
+    edges = []   # the spacer's outer rim on the face it shares with the actuation section
+    for i, e in enumerate(shape.Edges):
+        if circle(e, sp):
+            faces = [f for f in shape.ancestorsOfType(e, Part.Face) if f.Surface.TypeId == "Part::GeomPlane"]
+            if any(circle(fe, ac) for f in faces for fe in f.Edges):
+                edges.append(f"Edge{i + 1}")
+    if len(edges) != 1:
+        fail(f"{bar.Label}: expected one rim on the spacer's cap end, found {len(edges)}")
+    end_step("found the spacer's rim")
+    ch = doc.addObject("PartDesign::Chamfer", "SpacerEndBevel")
+    bar.addObject(ch)
+    ch.Base = (last, edges)
+    ch.setExpression("Size", "Cap_Vars.cnc_cliff_radius - Cap_Vars.spacer_gap")
+    ch.Label = "Spacer End Bevel"
+    ch.Label2 = ("Bevels the spacer's cap end by cnc_cliff_radius - spacer_gap, so it clears the rounded corners "
+                 "of the cap's cliff by spacer_gap.")
+    bar.Tip = ch
+    relink(bar)
+    doc.recompute()
+
+    for body_name in [b for b, *_r in CAPS.values()] + ["Body005"]:
+        b = doc.getObject(body_name)
+        for f in [b] + b.Group:
+            if hasattr(f, "isValid") and not f.isValid():
+                fail(f"{b.Label}: {f.Label} doesn't build")
+    end_step("chiff and cliff spacer_gap deeper; channels spacer_gap clear; spacer bevelled "
+             f"{ch.Size.Value:g}")
+
+
+# ================================================================ 3. move the LED/diode pocket up
+
+def step3_move_pockets():
+    say("\nStep 3: LED/diode pockets before the pegs and insert holes\n")
+    for cap, (body_name, _cliff, channel_name, _r) in CAPS.items():
+        body, channel = doc.getObject(body_name), doc.getObject(channel_name)
+        sk, pk = (doc.getObject(n) for n in INDICATOR[cap])
+        before = body.Shape.Volume
+        body.removeObject(pk)
+        body.removeObject(sk)
+        body.insertObject(sk, channel, True)
+        body.insertObject(pk, sk, True)
+        relink(body)
+        doc.recompute()
+        if not pk.isValid() or abs(body.Shape.Volume - before) > 1e-4:
+            fail(f"{body.Label}: moving {pk.Label} changed the cap ({body.Shape.Volume:.4f}, was {before:.4f})")
+        say(f"  moved {pk.Label} to just after {channel.Label} in {body.Label}\n")
+    end_step("both pockets moved; both caps unchanged")
+
+
+# ================================================================ 4. round the corners before the thumb cuts
+
+def step4_fillets_before():
+    say("\nStep 4: round the inside corners (before the thumb cuts)\n")
+    global made
+    made = []
+    for cap, (body_name, cliff_name, channel_name, radius_name) in CAPS.items():
+        body = doc.getObject(body_name)
+        named = {   # features we know: (radius value, label, description)
+            cliff_name: ("cnc_cliff_radius", "CNC Corners, Spacer Cliff",
+                "Rounds the vertical inside corners where the entrance meets the cliff that holds the spacer, "
+                "for a round milling cutter. The spacer's bevel clears them."),
+            channel_name: (radius_name, "CNC Corners, " + ("Switch Opening End" if cap == "switched" else "Bar Channel End"),
+                "Rounds the vertical inside corners at the far end of the "
+                + ("switch opening and bar channel" if cap == "switched" else "bar channel")
+                + " for a round milling cutter."),
+            INDICATOR[cap][1]: ("cnc_pocket_corner_radius", "CNC Corners, LED/Diode Pocket",
+                "Rounds the LED/diode pocket's four inside corners for a round milling cutter. "
+                "Switched off with the pocket (indicator_pocket)."),
+        }
+        # every solid feature before the thumb cuts, in tree order
+        features = []
+        for f in body.Group:
+            if f.Label.startswith("Thumb Curve"):
+                break
+            if f.isDerivedFrom("PartDesign::Feature") and f.BaseFeature is not None:
+                features.append(f)
+        # corners a later cut removes don't need rounding: keep only those still there before the thumb cuts
+        doc.recompute()
+        last = [m for _n, _d, m in sharp_corners(local(features[-1].Shape))]
+        for target in features:
+            if problems:
+                break
+            doc.recompute()
+            corners = [c for c in new_corners(target, target.BaseFeature.Shape)
+                       if any((c[2] - m).Length < 1e-4 for m in last)]
+            if not corners:
+                continue
+            groups = [(corners,) + named.get(target.Name, ("cnc_corner_radius", f"CNC Corners, {target.Label}",
+                f"Rounds the vertical inside corners {target.Label} makes, so a round milling cutter can make them."))]
+            after = target
+            for group, rname, label, tip in groups:
+                if not group or problems:
+                    continue
+                doc.recompute()
+                mids = [m for _n, _d, m in group]   # find the same corners again in the shape they're cut from
+                here = [c for c in sharp_corners(local(after.Shape)) if any((c[2] - m).Length < 1e-4 for m in mids)]
+                fl = fillet_after(body, after, here, rname, label, tip)
+                supp = dict(target.ExpressionEngine).get("Suppressed")
+                if supp:   # off whenever the cut it rounds is off
+                    fl.setExpression("Suppressed", supp)
+                doc.recompute()
+                if not fl.isValid():
+                    where = ", ".join(f"({m.x:.2f}, {m.y:.2f}, {m.z:.2f}) {d:.2f} deep" for _n, d, m in here)
+                    fail(f"{body.Label}: {label} doesn't build at "
+                         f"R{getattr(doc.getObject('Cap_Vars'), rname).Value:g}; corners at {where}")
+                    break
+                made.append((cap, fl, max(dep for _n, dep, _m in here), rname))
+                say(f"  made  {label} in {body.Label}: {len(here)} corners after {after.Label}, R = Cap_Vars.{rname}\n")
+                after = fl
+    end_step("inside corners rounded before the thumb cuts")
+
+
+# ================================================================ 5. after the thumb cuts
+
+def step5_fillets_after():
+    say("\nStep 5: any new sharp corners after the thumb cuts\n")
+    for cap, (body_name, *_r) in CAPS.items():
+        body = doc.getObject(body_name)
+        thumbs = [f for f in body.Group if f.Label.startswith("Thumb Curve") and f.isDerivedFrom("PartDesign::Feature")]
+        if not thumbs:
+            say(f"        {body.Label}: no thumb cuts, nothing to do\n")
+            continue
+        tip = body.Tip
+        corners = new_corners(tip, thumbs[0].BaseFeature.Shape)
+        if not corners:
+            say(f"        {body.Label}: the thumb cuts made no sharp inside corners, nothing to round\n")
+            continue
+        fl = fillet_after(body, tip, corners, "cnc_corner_radius", "CNC Corners, After Thumb Cuts",
+                          "Rounds the inside corners the thumb cuts made, for a round milling cutter.")
+        body.Tip = fl
+        doc.recompute()
+        if not fl.isValid():
+            fail(f"{body.Label}: CNC Corners, After Thumb Cuts doesn't build")
+        made.append((cap, fl, max(d for _n, d, _m in corners), "cnc_corner_radius"))
+        say(f"  made  CNC Corners, After Thumb Cuts in {body.Label}: {len(corners)} corners\n")
+    end_step("thumb cuts checked")
+
+
+# ================================================================ 6. check
+
+def step6_check():
+    say("\nStep 6: check, with pegs and with inserts\n")
+    gap = float(doc.getObject("Cap_Vars").spacer_gap.Value)
+
+    def check(mode):
+        for cap, (body_name, *_r) in CAPS.items():
+            body = doc.getObject(body_name)
+            for f in [body] + body.Group:
+                if hasattr(f, "isValid") and not f.isValid():
+                    fail(f"{mode}: {body.Label}: {f.Label} doesn't build")
+            left = sharp_corners(local(body.Shape))
+            if left:
+                p = left[0][2]
+                fail(f"{mode}: {body.Label} still has {len(left)} sharp inside corners, e.g. at "
+                     f"({p.x:.2f}, {p.y:.2f}, {p.z:.2f})")
+        for bar_link, cap_link in PAIRS:
+            cap_obj = doc.getObject(cap_link)
+            d, pts, _ = assembled(doc.getObject(bar_link)).distToShape(assembled(cap_obj))
+            if d < gap - 1e-3:
+                at = glob(cap_obj).inverse().multVec(pts[0][1])   # in the cap's own frame
+                fail(f"{mode}: the bar is only {d:.3f} from {cap_obj.Label} (needs {gap:g}), "
+                     f"at ({at.x:.2f}, {at.y:.2f}, {at.z:.2f}) in the cap")
+            say(f"        {mode}: bar to {doc.getObject(cap_link).Label}: {d:.3f}\n")
+    shapes_by_mode(check)
+    end_step(f"every feature builds, no sharp inside corners, the bar clears both caps by {gap:g}")
+
+    cv = doc.getObject("Cap_Vars")
+    for cap, fl, depth, rname in made:
+        r = float(getattr(cv, rname).Value)
+        meets = [shop for shop, need in needed(depth).items() if r >= need - 1e-6]
+        say(f"        {cap}: {fl.Label}: R{r:g} at {depth:.2f} deep meets {', '.join(meets) or 'neither shop'}\n")
+
+
+# ================================================================ run
+
+try:
+    doc.recompute()
+    doc.openTransaction("Cap DFM fixes: spin, CNC corners")
+    try:
+        step1_values()
+        step2_spin()
+        step3_move_pockets()
+        step4_fillets_before()
+        step5_fillets_after()
+        step6_check()
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything this macro did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nAll done. Save the copy, then run check_dfm.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

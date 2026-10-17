@@ -1,0 +1,150 @@
+# Make the roller length the one value that sets the scroll bar's length.
+#
+# Run it in FreeCAD 1.1.3 on a COPY of scrollbar.FCStd. It changes which value
+# you type; nothing moves except 0.002 mm, from rounding the roller to 12.1.
+#
+#   Bar_Vars.main_length          the roller (the Ø10.8 part your thumb turns).
+#                                 Was a formula; becomes the value you type.
+#   Places_Vars.cap_y             encoder bore centre to the caps' open edge.
+#                                 Was typed; becomes a formula of the roller.
+#   Places_Vars.assembly_length   new read-out: encoder bore centre to the caps'
+#                                 far end, the length the PCB must leave room for.
+#
+# Why this way round: Cap_Vars reads Bar_Vars, so Bar_Vars can never read
+# anything that reads Cap_Vars. With the roller typed into Bar_Vars, Places_Vars
+# can read both, and no VarSet reads one that reads it back.
+# Also fixes Bar_Vars.front_spacer_diameter's tooltip (it still said "+ 1.2").
+#
+# Steps print ok or FAIL. Any FAIL undoes everything.
+
+import FreeCAD as App
+
+ROLLER = 12.1   # mm
+TOL = 0.005     # how far anything may move (the rounding is 0.0024)
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+problems = []
+
+WATCH = ["B1-MP Switched cap", "B2-MP Plain cap", "B1-SW62 TC-1109", "B2-SW62 SKQG",
+         "B1 Indicator", "B2 Indicator"]
+
+CAP_Y = ("Bar_Vars.main_length + Bar_Vars.angled_shaft_length + Bar_Vars.front_spacer_length"
+         " + bar_gap - Parts_Vars.encoder_hex_face_y")
+TIPS = {
+    ("Bar_Vars", "main_length"): "Roller length: the Ø10.8 main section your thumb turns. The one input "
+                                 "for the assembly's length; the caps, end switch and indicators follow it.",
+    ("Places_Vars", "cap_y"): "Encoder bore centre to the caps' open edge. Derived from Bar_Vars.main_length.",
+    ("Places_Vars", "assembly_length"): "Read-out: encoder bore centre to the caps' far end, "
+                                        "the length the PCB must leave room for.",
+    ("Bar_Vars", "front_spacer_diameter"): "Front spacer diameter, equal to actuation_diameter.",
+}
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("Stopped.")
+    say(f"  ok    {title}\n")
+
+
+def where():
+    """Global positions of the parts that follow the length, and the bar's length."""
+    out = {}
+    for label in WATCH:
+        found = doc.getObjectsByLabel(label)
+        if len(found) != 1:
+            fail(f"expected one object labelled '{label}', found {len(found)}")
+            continue
+        out[label] = found[0].getGlobalPlacement().Base
+    bar = doc.getObject("Body005").Shape.copy()
+    bar.Placement = App.Placement()
+    out["bar length"] = bar.BoundBox.YLength
+    return out
+
+
+def broken():
+    return [o.Label for o in doc.Objects if "Invalid" in o.State or (hasattr(o, "isValid") and not o.isValid())]
+
+
+def run():
+    bv, pv, cv = (doc.getObject(n) for n in ("Bar_Vars", "Places_Vars", "Cap_Vars"))
+
+    say("\nStep 1: check the model is as expected\n")
+    if None in (bv, pv, cv):
+        fail("can't find Bar_Vars, Places_Vars or Cap_Vars")
+        end_step("")
+    exprs = {e[0].lstrip("."): e[1] for e in bv.ExpressionEngine}
+    if "main_length" not in exprs:
+        fail("Bar_Vars.main_length has no formula; this macro may already have run")
+    if any(e[0].lstrip(".") == "cap_y" for e in pv.ExpressionEngine):
+        fail("Places_Vars.cap_y already has a formula; this macro may already have run")
+    if "assembly_length" in pv.PropertiesList:
+        fail("Places_Vars.assembly_length already exists")
+    if broken():
+        fail("objects with errors before the change: " + ", ".join(broken()))
+    end_step(f"roller is {float(bv.main_length.Value):.5f} from a formula; cap_y is typed ({float(pv.cap_y.Value):.5f})")
+    before = where()
+    end_step("recorded where the caps, switches, indicators and bar are")
+
+    say("\nStep 2: make the roller the input\n")
+    bv.setExpression("main_length", None)
+    bv.main_length = ROLLER
+    pv.setExpression("cap_y", CAP_Y)
+    pv.addProperty("App::PropertyLength", "assembly_length", "Derived", TIPS[("Places_Vars", "assembly_length")])
+    pv.setExpression("assembly_length", "cap_y + Cap_Vars.cap_length")
+    moved_groups = hasattr(bv, "setGroupOfProperty")
+    if moved_groups:
+        bv.setGroupOfProperty("main_length", "Static")
+        pv.setGroupOfProperty("cap_y", "Derived")
+    tips_set = hasattr(bv, "setDocumentationOfProperty")
+    if tips_set:
+        for (vs, prop), tip in TIPS.items():
+            doc.getObject(vs).setDocumentationOfProperty(prop, tip)
+    doc.recompute()
+    end_step(f"main_length typed ({ROLLER}), cap_y and assembly_length from formulas"
+             + (", tooltips set" if tips_set else " (tooltips not changed: setDocumentationOfProperty isn't available)")
+             + ("" if moved_groups else " (groups left as they were: setGroupOfProperty isn't available)"))
+
+    say("\nStep 3: check the result\n")
+    want_cap_y = (ROLLER + float(bv.angled_shaft_length.Value) + float(bv.front_spacer_length.Value)
+                  + float(pv.bar_gap.Value) - float(doc.getObject("Parts_Vars").encoder_hex_face_y.Value))
+    got_cap_y, got_total = float(pv.cap_y.Value), float(pv.assembly_length.Value)
+    if abs(got_cap_y - want_cap_y) > 1e-6:
+        fail(f"cap_y is {got_cap_y:.5f}, expected {want_cap_y:.5f}")
+    if abs(got_total - (want_cap_y + float(cv.cap_length.Value))) > 1e-6:
+        fail(f"assembly_length is {got_total:.5f}, expected cap_y + cap_length")
+    mounts = pv.getEnumerationsOfProperty("cap_mount")
+    was = pv.cap_mount
+    for mount in mounts:
+        pv.cap_mount = mount
+        doc.recompute()
+        if broken():
+            fail(f"with cap_mount '{mount}', objects with errors: " + ", ".join(broken()))
+    pv.cap_mount = was
+    doc.recompute()
+    end_step(f"cap_y {got_cap_y:.4f}, assembly_length {got_total:.4f}; no errors with " + " or ".join(mounts))
+    after = where()
+    for name, b in before.items():
+        a = after[name]
+        d = abs(a - b) if name == "bar length" else (a - b).Length
+        if d > TOL:
+            fail(f"{name} moved {d:.4f}")
+        say(f"        {name}: moved {d:.4f}\n")
+    end_step(f"nothing moved more than {TOL}")
+
+
+doc.openTransaction("Roller length as the one input")
+try:
+    run()
+    doc.commitTransaction()
+    say("\nDone. Save the file if it looks right; change the length with Bar_Vars.main_length.\n")
+except Exception as e:
+    doc.abortTransaction()
+    doc.recompute()
+    App.Console.PrintError(f"\n{e} Everything was undone.\n")

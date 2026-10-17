@@ -1,0 +1,275 @@
+# Thumb cuts on both scroll caps: the curved top, the far-edge bevel and the
+# far-corner bevels (Steps 2, 4 and 5 of "Thumb cuts, step by step").
+#
+# Run it on a COPY of scrollbar.FCStd, after remove_cap_lips, in FreeCAD 1.1.3.
+#
+# Without the trim (Step 1), the cuts sit on the cap's real far end:
+#   switched cap: Cap_Vars.end_wall      plain cap: Cap_Vars.cap_length
+# In each cap it adds three sketches on the cap's own origin planes, fully
+# constrained by Cap_Vars formulas, each cut by a Pocket through all, both ways:
+#   Thumb Curve        XZ plane  an arc through the top over the bar,
+#                                thumb_edge_height at the sides (radius
+#                                thumb_curve_radius); everything above it goes
+#   Thumb End Bevel    YZ plane  a thumb_bevel x thumb_bevel triangle on the
+#                                top far edge
+#   Thumb Corners      XY plane  a thumb_corner x thumb_corner triangle on each
+#                                far corner, the left one mirrored from the right
+# Then it checks each cut took the expected volume, in pegs AND inserts mode.
+# If a check fails, the macro undoes everything it did.
+# Afterwards, run check_dfm: in pegs mode it should still read 1.6 thinnest wall.
+
+import math
+import FreeCAD as App
+import Part
+import Sketcher
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+V = App.Vector
+
+CAPS = {   # cap: (body, XY plane, XZ plane, YZ plane, formula for the far end's y)
+    "switched": ("Body007", "XY_Plane054", "XZ_Plane054", "YZ_Plane054", "Cap_Vars.end_wall"),
+    "plain": ("Body010", "XY_Plane057", "XZ_Plane057", "YZ_Plane057", "Cap_Vars.cap_length"),
+}
+NEEDS = ["above_origin_height", "half_width", "thumb_curve_radius", "thumb_edge_height",
+         "thumb_bevel", "thumb_corner", "end_wall", "cap_length"]
+# What each cut should remove with today's values, in mm³ (from the same cuts made outside FreeCAD)
+EXPECTED = {"Thumb Curve": 253.06, "Thumb End Bevel": 117.32, "Thumb Corners": 102.57}
+VOL_TOL = 0.5
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The macro stopped.")
+    say(f"  ok    {title}\n")
+
+
+def cv(name):
+    return float(getattr(doc.getObject("Cap_Vars"), name).Value)
+
+
+def dim(sk, constraint, name, formula):
+    """Add a dimension, give it a name, and drive it with a formula."""
+    i = sk.addConstraint(constraint)
+    sk.renameConstraint(i, name)
+    sk.setExpression(f"Constraints.{name}", formula)
+
+
+def line(sk, a, b):
+    return sk.addGeometry(Part.LineSegment(a, b), False)
+
+
+def triangle(sk, corner, across, down, names, formulas):
+    """A right triangle with its square corner at `corner`, one leg running `across`
+    (x, toward the middle) and one running `down` (y). Returns the three line ids.
+    Line 0: across-point -> corner, line 1: corner -> down-point, line 2: back."""
+    a = V(corner.x - across, corner.y, 0)
+    d = V(corner.x, corner.y - down, 0)
+    l0, l1, l2 = line(sk, a, corner), line(sk, corner, d), line(sk, d, a)
+    sk.addConstraint(Sketcher.Constraint("Coincident", l0, 2, l1, 1))
+    sk.addConstraint(Sketcher.Constraint("Coincident", l1, 2, l2, 1))
+    sk.addConstraint(Sketcher.Constraint("Coincident", l2, 2, l0, 1))
+    sk.addConstraint(Sketcher.Constraint("Horizontal", l0))
+    sk.addConstraint(Sketcher.Constraint("Vertical", l1))
+    x_name, y_name, across_name, down_name = names
+    x_f, y_f, across_f, down_f = formulas
+    dim(sk, Sketcher.Constraint("DistanceX", l0, 2, corner.x), x_name, x_f)
+    dim(sk, Sketcher.Constraint("DistanceY", l0, 2, corner.y), y_name, y_f)
+    dim(sk, Sketcher.Constraint("DistanceX", l0, 1, l0, 2, across), across_name, across_f)
+    dim(sk, Sketcher.Constraint("DistanceY", l1, 2, l1, 1, down), down_name, down_f)
+    return l0, l1, l2
+
+
+def mirror(sk, lines):
+    """A copy of a triangle mirrored about the sketch's vertical axis, held there by symmetry."""
+    pts = [sk.getPoint(lines[0], 1), sk.getPoint(lines[0], 2), sk.getPoint(lines[1], 2)]
+    m = [V(-p.x, p.y, 0) for p in pts]
+    n0, n1, n2 = line(sk, m[0], m[1]), line(sk, m[1], m[2]), line(sk, m[2], m[0])
+    sk.addConstraint(Sketcher.Constraint("Coincident", n0, 2, n1, 1))
+    sk.addConstraint(Sketcher.Constraint("Coincident", n1, 2, n2, 1))
+    sk.addConstraint(Sketcher.Constraint("Coincident", n2, 2, n0, 1))
+    for (g, pos), (h, hpos) in (((lines[0], 1), (n0, 1)), ((lines[0], 2), (n0, 2)), ((lines[1], 2), (n1, 2))):
+        sk.addConstraint(Sketcher.Constraint("Symmetric", g, pos, h, hpos, -2))
+
+
+def curve(sk):
+    """Arc over the top, closed by a box above it; the pocket removes everything above the arc."""
+    top, hw, edge, r = cv("above_origin_height"), cv("half_width"), cv("thumb_edge_height"), cv("thumb_curve_radius")
+    zc = top - r
+    a1 = math.atan2(edge - zc, hw)
+    arc = sk.addGeometry(Part.ArcOfCircle(Part.Circle(V(0, zc, 0), V(0, 0, 1), r), a1, math.pi - a1), False)
+    b, a = V(hw, edge, 0), V(-hw, edge, 0)              # arc start (right) and end (left)
+    c, d = V(hw, top + 1, 0), V(-hw, top + 1, 0)
+    l0, l1, l2 = line(sk, b, c), line(sk, c, d), line(sk, d, a)
+    sk.addConstraint(Sketcher.Constraint("Coincident", arc, 1, l0, 1))
+    sk.addConstraint(Sketcher.Constraint("Coincident", l0, 2, l1, 1))
+    sk.addConstraint(Sketcher.Constraint("Coincident", l1, 2, l2, 1))
+    sk.addConstraint(Sketcher.Constraint("Coincident", l2, 2, arc, 2))
+    sk.addConstraint(Sketcher.Constraint("Vertical", l0))
+    sk.addConstraint(Sketcher.Constraint("Horizontal", l1))
+    sk.addConstraint(Sketcher.Constraint("Vertical", l2))
+    sk.addConstraint(Sketcher.Constraint("PointOnObject", arc, 3, -2))          # centre on the vertical axis
+    dim(sk, Sketcher.Constraint("DistanceY", arc, 3, zc), "curve_centre_z",
+        "Cap_Vars.above_origin_height - Cap_Vars.thumb_curve_radius")
+    dim(sk, Sketcher.Constraint("Radius", arc, r), "curve_radius", "Cap_Vars.thumb_curve_radius")
+    dim(sk, Sketcher.Constraint("DistanceX", arc, 1, hw), "curve_right_x", "Cap_Vars.half_width")
+    dim(sk, Sketcher.Constraint("DistanceX", arc, 2, -hw), "curve_left_x", "-Cap_Vars.half_width")
+    dim(sk, Sketcher.Constraint("DistanceY", l0, 2, top + 1), "curve_box_top", "Cap_Vars.above_origin_height + 1 mm")
+
+
+def end_bevel(sk, far_end):
+    top, k, end = cv("above_origin_height"), cv("thumb_bevel"), value(far_end)
+    triangle(sk, V(end, top, 0), k, k,
+             ("end_bevel_y", "end_bevel_z", "end_bevel_across", "end_bevel_down"),
+             (far_end, "Cap_Vars.above_origin_height", "Cap_Vars.thumb_bevel", "Cap_Vars.thumb_bevel"))
+
+
+def corners(sk, far_end):
+    hw, L, end = cv("half_width"), cv("thumb_corner"), value(far_end)
+    right = triangle(sk, V(hw, end, 0), L, L,
+                     ("corner_x", "corner_y", "corner_across", "corner_down"),
+                     ("Cap_Vars.half_width", far_end, "Cap_Vars.thumb_corner", "Cap_Vars.thumb_corner"))
+    mirror(sk, right)
+
+
+def value(formula):
+    return float(doc.getObject("Cap_Vars").evalExpression(formula).Value)
+
+
+def through_all_both_ways(pk):
+    """Pocket through all, both sides of the sketch. The option names differ between versions."""
+    kinds = pk.getEnumerationsOfProperty("Type")
+    through = [t for t in kinds if "through" in t.lower()]
+    if len(through) != 1:
+        fail(f"{pk.Label}: no 'through all' option in {kinds}")
+        return
+    pk.Type = through[0]
+    if "SideType" in pk.PropertiesList:
+        sides = pk.getEnumerationsOfProperty("SideType")
+        sym = [s for s in sides if "symm" in s.lower()]
+        if len(sym) != 1:
+            fail(f"{pk.Label}: no symmetric option in {sides}")
+            return
+        pk.SideType = sym[0]
+    else:
+        pk.Midplane = True
+
+
+CUTS = [   # label, which plane, draw, tooltip
+    ("Thumb Curve", 2, lambda sk, far: curve(sk),
+     "Curved top for the thumb: full height over the bar, thumb_edge_height at the sides."),
+    ("Thumb End Bevel", 3, end_bevel,
+     "45° bevel, thumb_bevel x thumb_bevel, on the top far edge."),
+    ("Thumb Corners", 1, corners,
+     "45° bevel, thumb_corner x thumb_corner seen from above, on both far corners."),
+]
+
+
+# ================================================================ 1. check
+
+def step1_find():
+    say("\nStep 1: find the caps and the values\n")
+    vs = doc.getObject("Cap_Vars")
+    if vs is None:
+        fail("can't find Cap_Vars")
+    else:
+        for n in NEEDS:
+            if n not in vs.PropertiesList:
+                fail(f"Cap_Vars has no {n} (run remove_cap_lips and add the Step 0 values first)")
+    for cap, names in CAPS.items():
+        for n in names[:4]:
+            if doc.getObject(n) is None:
+                fail(f"{cap} cap: can't find {n}")
+        if any(o.Label.startswith("Thumb ") for o in doc.getObject(names[0]).Group):
+            fail(f"{cap} cap already has thumb cuts: this copy has been through this macro")
+    end_step("found both caps, their origin planes and the Cap_Vars values")
+
+
+# ================================================================ 2. cut
+
+def step2_cut():
+    say("\nStep 2: sketches and pockets\n")
+    global made
+    made = []
+    for cap, (body_name, *planes, far_end) in CAPS.items():
+        body = doc.getObject(body_name)
+        for label, plane_i, draw, tip in CUTS:
+            plane = doc.getObject(planes[plane_i - 1])
+            before = body.Shape.Volume
+            sk = body.newObject("Sketcher::SketchObject", "ThumbSketch")
+            sk.Label = f"{label} Sketch"
+            sk.Label2 = f"{tip} Sizes are Cap_Vars formulas."
+            sk.AttachmentSupport = [(plane, "")]
+            sk.MapMode = "FlatFace"
+            draw(sk, far_end)
+            pk = body.newObject("PartDesign::Pocket", "ThumbCut")
+            pk.Label = label
+            pk.Label2 = tip
+            pk.Profile = sk
+            through_all_both_ways(pk)
+            if problems:
+                end_step("")
+            body.Tip = pk
+            sk.Visibility = False
+            doc.recompute()
+            if sk.solve() != 0:
+                fail(f"{body.Label}: {sk.Label} doesn't solve")
+            elif getattr(sk, "FullyConstrained", True) is False:
+                fail(f"{body.Label}: {sk.Label} isn't fully constrained")
+            elif not pk.isValid():
+                fail(f"{body.Label}: {pk.Label} doesn't build")
+            else:
+                took = before - body.Shape.Volume
+                if abs(took - EXPECTED[label]) > VOL_TOL:
+                    fail(f"{body.Label}: {pk.Label} removed {took:.2f} mm³, expected {EXPECTED[label]:.2f}")
+                else:
+                    say(f"  made  {pk.Label} in {body.Label}: {took:.1f} mm³ off\n")
+            made.append((cap, pk.Label))
+            end_step(f"{pk.Label} in {body.Label}")
+
+
+# ================================================================ 3. check both mount modes
+
+def step3_modes():
+    say("\nStep 3: pegs and inserts\n")
+    pv = doc.getObject("Places_Vars")
+    was = pv.cap_mount
+    for mode in pv.getEnumerationsOfProperty("cap_mount"):
+        pv.cap_mount = mode
+        doc.recompute()
+        for cap, (body_name, *_r) in CAPS.items():
+            body = doc.getObject(body_name)
+            for f in [body] + body.Group:
+                if hasattr(f, "isValid") and not f.isValid():
+                    fail(f"{mode}: {body.Label}: {f.Label} doesn't build")
+            say(f"        {mode}: {body.Label} is {body.Shape.Volume:.1f} mm³\n")
+    pv.cap_mount = was
+    doc.recompute()
+    end_step("both caps build with pegs and with inserts")
+
+
+# ================================================================ run
+
+try:
+    doc.recompute()
+    doc.openTransaction("Thumb cuts: curved top, far-edge bevel, far corners")
+    try:
+        step1_find()
+        step2_cut()
+        step3_modes()
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything this macro did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nAll done. Save the copy, then run check_dfm.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")

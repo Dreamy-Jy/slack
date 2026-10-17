@@ -1,0 +1,249 @@
+# Split the bar's spacer diameter in two, and move the TC-1109 so the longer back
+# spacer clears its plunger.
+#
+# Run it on a COPY of scrollbar.FCStd (the one saved after cap_dfm_fixes), in FreeCAD 1.1.3.
+#
+#   1. Spacers
+#      - Bar_Vars.front_spacer_diameter: the encoder end, back to 5.0
+#        (actuation_diameter + 1.2, as it was before cap_dfm_fixes).
+#      - Bar_Vars.back_spacer_diameter: the cap end, stays 6.4
+#        (actuation_diameter + 2 x spacer_step).
+#      - Every formula that used spacer_diameter now uses one of these, and
+#        spacer_diameter is deleted.
+#   2. Switch
+#      - Bar_Vars.actuator_shift (0.6): the back spacer got 0.6 longer, so the
+#        switch, the bar's actuator end, the switch opening and the plain cap's
+#        channel all move 0.6 toward the caps' far end. The actuator is 2.8 long
+#        again, and both caps grow 0.6 at the far end (body_length), so no wall
+#        gets thinner.
+#   3. Checks, with cap_mount on pegs AND inserts: every feature builds, no sharp
+#      inside corner, the bar clears both caps by spacer_gap, and the switch's
+#      plunger sits under the actuator with at least 0.1 to spare at each end.
+#      If a check fails, the macro undoes everything it did.
+
+import FreeCAD as App
+import Part
+
+doc = App.ActiveDocument
+say = App.Console.PrintMessage
+OLD = "Bar_Vars.spacer_diameter"
+FRONT = ["Sketch025"]   # Forward Spacer Shape001; every other user is the back spacer or a cap
+CAP_BODIES = ["Body007", "Body010"]
+PAIRS = [("Link007", "Link009"), ("Link008", "Link010")]   # (bar, cap) as assembled on each board
+SHIFT = "Bar_Vars.actuator_shift"
+SHIFTED = [   # (object, property, how it uses the shift)
+    ("Pad026", "Length", "+"),        # Actuator001: back to 2.8 long
+    ("Pocket003", "Length", "+"),     # Actuation Pocket: the switch opening follows the switch
+    ("Pocket005", "Length", "+"),     # plain cap's channel follows the bar's end
+    ("Cap_Vars", "body_length", "+"),  # both caps grow at the far end
+    ("Part007", ".Placement.Base.y", "-"),   # B1-SW62 TC-1109 (this board's y runs the other way)
+]
+problems = []
+
+
+def fail(msg):
+    problems.append(msg)
+
+
+def end_step(title):
+    if problems:
+        for p in problems:
+            App.Console.PrintError(f"  FAIL  {p}\n")
+        raise RuntimeError("The macro stopped.")
+    say(f"  ok    {title}\n")
+
+
+def glob(o):
+    """Where o sits in the whole assembly (same as check_dfm)."""
+    if hasattr(o, "getGlobalPlacement"):
+        return o.getGlobalPlacement()
+    parent = o.getParentGeoFeatureGroup()
+    return parent.getGlobalPlacement().multiply(o.Placement) if parent else App.Placement(o.Placement)
+
+
+def in_cap_frame(shape, cap_link):
+    s = shape.copy()
+    s.Placement = glob(doc.getObject(cap_link)).inverse().multiply(s.Placement)
+    return s
+
+
+def assembled(link):
+    s = Part.getShape(link.LinkedObject).copy()
+    s.Placement = glob(link)
+    return s
+
+
+def sharp_corners(shape):
+    """Vertical inside corners between two flat faces (same test as check_dfm)."""
+    out = []
+    for e in shape.Edges:
+        if e.Curve.TypeId != "Part::GeomLine" or e.Length < 1e-3:
+            continue
+        d = e.Vertexes[1].Point - e.Vertexes[0].Point
+        d.normalize()
+        if abs(abs(d.z) - 1) > 1e-3:
+            continue
+        faces = shape.ancestorsOfType(e, Part.Face)
+        if len(faces) != 2 or any(f.Surface.TypeId != "Part::GeomPlane" for f in faces):
+            continue
+        mid = e.valueAt((e.FirstParameter + e.LastParameter) / 2)
+        into = App.Vector()
+        for f in faces:
+            t = d.cross(f.Surface.Axis)
+            t.normalize()
+            into += t if f.isInside(mid + t * 0.01, 1e-6, True) else -t
+        if into.Length < 0.1:
+            continue
+        into.normalize()
+        if not shape.isInside(mid + into * 0.01, 1e-7, False):
+            out.append(mid)
+    return out
+
+
+# ================================================================ 1. spacers
+
+def step1_spacers():
+    say("\nStep 1: front and back spacer diameters\n")
+    bv = doc.getObject("Bar_Vars")
+    for name in ("front_spacer_diameter", "back_spacer_diameter", "actuator_shift"):
+        if name in bv.PropertiesList:
+            fail(f"Bar_Vars already has {name}: this copy has been through this macro")
+    users = []   # (object, path, formula)
+    for o in doc.Objects:
+        for path, f in getattr(o, "ExpressionEngine", []):
+            if OLD in f:
+                users.append((o, path, f))
+    say("        uses of spacer_diameter: " + ", ".join(f"{o.Label}.{p}" for o, p, _f in users) + "\n")
+    if not any(o.Name in FRONT for o, *_r in users):
+        fail("didn't find the front spacer's sketch (Sketch025) among them")
+    end_step("found every use of spacer_diameter")
+
+    group = bv.getGroupOfProperty("spacer_diameter")
+    bv.addProperty("App::PropertyLength", "front_spacer_diameter", group,
+                   "actuation_diameter + 1.2: the spacer at the encoder end.")
+    bv.setExpression("front_spacer_diameter", "actuation_diameter + 1.2 mm")
+    bv.addProperty("App::PropertyLength", "back_spacer_diameter", group,
+                   "actuation_diameter + 2 x spacer_step: the spacer at the cap end. It sets each cap's entrance "
+                   "and the width of the cliff that holds it.")
+    bv.setExpression("back_spacer_diameter", "actuation_diameter + 2 * spacer_step")
+    bv.setDocumentationOfProperty("spacer_step",
+        "How far the back spacer stands out from the actuation section, all round. It sets the width of the cap's "
+        "cliff: cnc_cliff_radius (1.2, so a CNC cutter can make its corners) + spacer_reach (0.1).")
+    for o, path, f in users:
+        new = "Bar_Vars.front_spacer_diameter" if o.Name in FRONT else "Bar_Vars.back_spacer_diameter"
+        o.setExpression(path, f.replace(OLD, new))
+    doc.recompute()
+    bv.setExpression("spacer_diameter", None)
+    bv.removeProperty("spacer_diameter")
+    doc.recompute()
+    say(f"        front_spacer_diameter = {bv.front_spacer_diameter.Value:g}, "
+        f"back_spacer_diameter = {bv.back_spacer_diameter.Value:g}\n")
+    if abs(bv.front_spacer_diameter.Value - 5.0) > 1e-6 or abs(bv.back_spacer_diameter.Value - 6.4) > 1e-6:
+        fail("expected 5.0 and 6.4")
+    end_step("spacer_diameter split in two and deleted")
+
+
+# ================================================================ 2. switch
+
+def step2_switch():
+    say("\nStep 2: move the switch and the actuator end 0.6\n")
+    bv = doc.getObject("Bar_Vars")
+    bv.addProperty("App::PropertyLength", "actuator_shift", "Static",
+                   "How far the switch, the bar's actuator end, the switch opening and the plain cap's channel sit "
+                   "toward the caps' far end. 0.6 matches back_spacer_length going from 1.2 to 1.8, so the "
+                   "actuator stays 2.8 long and the plunger stays 0.2 clear of the spacer's bevel.")
+    bv.actuator_shift = 0.6
+    for name, prop, sign in SHIFTED:
+        o = doc.getObject(name)
+        f = dict(o.ExpressionEngine).get(prop)
+        if f is None:
+            fail(f"{o.Label}.{prop} has no formula")
+            continue
+        o.setExpression(prop, f"{f} {sign} {SHIFT}")
+        say(f"        {o.Label}.{prop} = {f} {sign} {SHIFT}\n")
+    cv = doc.getObject("Cap_Vars")
+    tip = cv.getDocumentationOfProperty("body_length")
+    cv.setDocumentationOfProperty("body_length", (tip + " " if tip else "")
+                                  + "+ Bar_Vars.actuator_shift, so the moved switch opening keeps its end wall.")
+    doc.recompute()
+    end_step("switch, actuator end, opening and plain channel moved")
+
+
+# ================================================================ 3. check
+
+def plunger_check():
+    """The plunger (top 0.3 of the switch) must sit under the actuator, 0.1 clear of each end."""
+    ac = doc.getObject("Bar_Vars").actuation_diameter.Value / 2
+    sw = Part.getShape(doc.getObject("Part007")).copy()
+    sw.Placement = glob(doc.getObject("Part001")).multiply(sw.Placement)
+    sw = in_cap_frame(sw, "Link009")
+    top = sw.BoundBox.ZMax
+    b = sw.BoundBox
+    plunger = sw.common(Part.makeBox(b.XLength + 2, b.YLength + 2, 0.3, App.Vector(b.XMin - 1, b.YMin - 1, top - 0.3)))
+    p = plunger.BoundBox
+    bar = in_cap_frame(assembled(doc.getObject("Link007")), "Link009")
+    ys = sorted(e.CenterOfMass.y for e in bar.Edges
+                if e.Curve.TypeId == "Part::GeomCircle" and abs(e.Curve.Radius - ac) < 1e-4)
+    end = ys[-1] if ys else None   # the bar's end is the actuator edge nearest the cap's far end
+    before = [y for y in ys if end is not None and y < end - 0.5]
+    if not before:
+        fail("couldn't find both ends of the bar's actuator")
+        return
+    start = before[-1]   # the spacer's end, just behind it
+    say(f"        plunger {p.YMin:.2f} to {p.YMax:.2f}; actuator {start:.2f} to {end:.2f} (switched cap's frame)\n")
+    for gap, where in ((p.YMin - start, "spacer end"), (end - p.YMax, "bar end")):
+        say(f"        plunger to {where}: {gap:.2f}\n")
+        if gap < 0.1:
+            fail(f"the plunger is only {gap:.2f} from the actuator's {where} (needs 0.1)")
+
+
+def step3_check():
+    say("\nStep 3: check, with pegs and with inserts\n")
+    gap = doc.getObject("Cap_Vars").spacer_gap.Value
+    pv = doc.getObject("Places_Vars")
+    was = pv.cap_mount
+    for mode in pv.getEnumerationsOfProperty("cap_mount"):
+        pv.cap_mount = mode
+        doc.recompute()
+        for name in CAP_BODIES + ["Body005"]:
+            body = doc.getObject(name)
+            for f in [body] + body.Group:
+                if hasattr(f, "isValid") and not f.isValid():
+                    fail(f"{mode}: {body.Label}: {f.Label} doesn't build")
+        for name in CAP_BODIES:
+            s = doc.getObject(name).Shape.copy()
+            s.Placement = App.Placement()
+            left = sharp_corners(s)
+            if left:
+                fail(f"{mode}: {doc.getObject(name).Label} has {len(left)} sharp inside corners, e.g. at "
+                     f"({left[0].x:.2f}, {left[0].y:.2f}, {left[0].z:.2f})")
+        for bar_link, cap_link in PAIRS:
+            cap_obj = doc.getObject(cap_link)
+            d = assembled(doc.getObject(bar_link)).distToShape(assembled(cap_obj))[0]
+            say(f"        {mode}: bar to {cap_obj.Label}: {d:.3f}\n")
+            if d < gap - 1e-3:
+                fail(f"{mode}: the bar is only {d:.3f} from {cap_obj.Label} (needs {gap:g})")
+    pv.cap_mount = was
+    doc.recompute()
+    plunger_check()
+    end_step("everything builds, no sharp corners, the bar clears the caps and the plunger")
+
+
+# ================================================================ run
+
+try:
+    doc.recompute()
+    doc.openTransaction("Split spacer diameters, move the switch")
+    try:
+        step1_spacers()
+        step2_switch()
+        step3_check()
+    except Exception:
+        doc.abortTransaction()
+        doc.recompute()
+        App.Console.PrintError("  Everything this macro did has been undone.\n")
+        raise
+    doc.commitTransaction()
+    say("\nAll done. Save the copy, then run check_dfm.\n")
+except RuntimeError as e:
+    App.Console.PrintError(f"\n{e} Close this copy without saving.\n")
