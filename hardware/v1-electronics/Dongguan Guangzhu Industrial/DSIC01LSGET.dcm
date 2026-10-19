@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DSIC01LSGET
+D SPST 1 2.54mm, Full Slide (Standard) Black SMD DIP Switches RoHS
+K
+F https://datasheet.lcsc.com/szlcsc/Dongguan-Guangzhu-Industrial-DSIC01LSGET_C54948.pdf
+$ENDCMP
+#
+#End Doc Library

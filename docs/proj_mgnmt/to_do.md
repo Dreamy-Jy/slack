@@ -84,5 +84,6 @@ DCC - DC/DC converter output
 
 DCCH - DC/DC converter output
 
-Pre Kids
-- set up a warobe and lifestyle
+---
+
+Update Jumpers to DIP Switches

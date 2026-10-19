@@ -35249,7 +35249,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+		(property "Footprint" "Dongguan Guangzhu Industrial:DSIC01LSGET"
 			(at 101.6 111.76 0)
 			(hide yes)
 			(show_name no)
