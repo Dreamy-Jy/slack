@@ -1,0 +1,286 @@
+# DSIC01LSGET (1-position SMD DIP switch, LCSC C54948): builds the whole coloured model.
+# Run in FreeCAD 1.1 (Macro > Macros... > Execute). It makes a new document; save it wherever you like.
+# Dimensions come from the KE drawing "DSIC01LSGET-A"; values marked (est.) were scaled off the
+# drawing because it gives no number for them.
+#
+# How it's built (all PartDesign, every number lives in the VarSet "DSIC_Vars"):
+#   Housing body: rectangle sketch -> Pad; slot sketch -> Pocket
+#   Lever body:   rectangle sketch -> Pad (slides with lever_on)
+#   Leads body:   side-view sketch of one lead -> Pad; foot sketch -> Pocket (narrows the foot);
+#                 Mirrored -> the other lead
+#   Marks:        "ON" and "1" printed on top (Draft ShapeStrings, extruded 0.02 mm)
+#   All of it sits in one App::Part "DSIC01LSGET", which is what gets exported to STEP.
+#
+# Coordinates match the KiCad footprint, so the STEP needs no offsets in KiCad:
+#   origin = footprint origin, centre of the switch, on the board surface (z = 0)
+#   Y = long axis (lead to lead). KiCad flips Y for 3D models, so pin 1 (footprint y = +4.4)
+#   is the model's -Y end, which carries the "1" mark; the "ON" end is +Y.
+#   Z = up from the board.
+
+import os
+import FreeCAD as App
+import Part
+import Sketcher
+
+STEP_FILE = ""  # e.g. "/Users/you/.../DSIC01LSGET.step"; leave empty to skip the export
+
+doc = App.newDocument("DSIC01LSGET")
+
+# ---------------------------------------------------------------- 1. VarSet
+v = doc.addObject("App::VarSet", "Vars")
+v.Label = "DSIC_Vars"
+
+
+def add(group, name, value, tip, kind="App::PropertyLength"):
+    v.addProperty(kind, name, group, tip)
+    setattr(v, name, value)
+
+
+add("Housing", "body_length", 6.00, "Housing length along the leads (Y). Drawing: 6.00 ±0.30")
+add("Housing", "body_width", 2.54, "Housing width across the leads (X). Drawing: 2.54 ±0.40")
+add("Housing", "body_height", 3.15, "Housing height, bottom to top face. Drawing: 3.15 ±0.30")
+add("Housing", "standoff", 0.40, "Gap between the board and the housing's bottom. Drawing: 0.40")
+add("Housing", "window_length", 3.10, "Length (Y) of the slot the lever slides in (est.)")
+add("Housing", "window_width", 1.30, "Width (X) of the slot the lever slides in (est.)")
+add("Housing", "window_depth", 0.40, "How deep the slot is cut into the top face (est.)")
+
+add("Lever", "lever_length", 0.90, "Lever length along the slide direction (Y). Drawing: 0.90")
+add("Lever", "lever_width", 1.00, "Lever width (X). Drawing: 1.00")
+add("Lever", "lever_height", 0.60, "How far the lever sticks up above the housing's top face. Drawing: 0.60")
+add("Lever", "lever_travel", 0.80, "Total slide distance between OFF and ON (est.)")
+add("Lever", "lever_on", False, "Tick to show the switch ON (lever toward the ON end, +Y)",
+    "App::PropertyBool")
+
+add("Leads", "lead_thickness", 0.25, "Sheet-metal thickness of the leads. Drawing: 0.25")
+add("Leads", "lead_width", 1.54, "Width (X) of the lead where it leaves the housing. Drawing: 1.54")
+add("Leads", "tip_width", 0.60, "Width (X) of the foot that sits on the pad. Drawing: 0.60")
+add("Leads", "lead_span", 9.30, "Tip-to-tip length over both leads (Y). Drawing: 9.30 ±0.50")
+add("Leads", "foot_length", 0.80, "Length (Y) of the flat foot on the board. Drawing: 0.80")
+add("Leads", "lead_drop", 1.80, "From the housing's top face down to the top of the lead where it exits. Drawing: 1.80")
+add("Leads", "stub_length", 0.45, "Flat run (Y) after the lead leaves the housing, before it bends down (est.)")
+add("Leads", "lead_embed", 0.30, "How far the lead reaches into the housing; hidden, only there so the parts overlap")
+
+add("Marks", "mark_size", 0.90, "Height of the printed 'ON' and '1' characters (est.)")
+add("Marks", "mark_thickness", 0.02, "How far the printed marks stand above the top face (just enough to show)")
+
+add("Derived", "housing_top", 0, "Height of the housing's top face above the board")
+add("Derived", "lever_offset", 0, "Where the lever's centre sits along Y; set by lever_on")
+add("Derived", "lead_exit_z", 0, "Height of the lead's top surface where it leaves the housing")
+add("Derived", "mark_y", 0, "Distance (Y) from the centre to the printed marks: halfway between slot end and housing end")
+v.setExpression("housing_top", "standoff + body_height")
+v.setExpression("lever_offset", "lever_on ? lever_travel / 2 : -lever_travel / 2")
+v.setExpression("lead_exit_z", "housing_top - lead_drop")
+v.setExpression("mark_y", "(window_length + body_length) / 4")
+for name in ("housing_top", "lever_offset", "lead_exit_z", "mark_y"):
+    v.setEditorMode(name, 1)  # read-only: these are worked out, don't type into them
+
+# ---------------------------------------------------------------- 2. Helpers
+part = doc.addObject("App::Part", "DSIC01LSGET")
+part.Label2 = "1-position SMD DIP switch, KE/YE DSIC01LSGET (LCSC C54948). Origin = KiCad footprint origin."
+
+
+def new_body(name, description):
+    body = doc.addObject("PartDesign::Body", name)
+    body.Label2 = description
+    part.addObject(body)
+    return body
+
+
+def plane(body, role):
+    """The body's own XY / XZ / YZ plane."""
+    return next(f for f in body.Origin.OriginFeatures if f.Role == role)
+
+
+def new_sketch(body, name, role, z_expr=None, description=""):
+    """Sketch on one of the body's origin planes, optionally lifted to height z_expr."""
+    sk = body.newObject("Sketcher::SketchObject", name)
+    sk.AttachmentSupport = [(plane(body, role), "")]
+    sk.MapMode = "FlatFace"
+    if z_expr:
+        sk.setExpression(".AttachmentOffset.Base.z", z_expr)
+    sk.Label2 = description
+    return sk
+
+
+def value(sk, expr):
+    """The number an expression works out to right now (in mm)."""
+    return float(sk.evalExpression(expr))
+
+
+def dist(sk, kind, geo, pos, expr, name):
+    """Distance from the sketch origin to one point, driven by a VarSet expression."""
+    c = sk.addConstraint(Sketcher.Constraint(kind, -1, 1, geo, pos, value(sk, expr)))
+    sk.renameConstraint(c, name)
+    sk.setExpression(f"Constraints.{name}", expr)
+
+
+def rect(sk, prefix, x0, y0, x1, y1):
+    """Rectangle from corner (x0, y0) to corner (x1, y1); each corner coordinate is an expression."""
+    V = App.Vector
+    first = sk.GeometryCount
+    X0, Y0, X1, Y1 = (value(sk, e) for e in (x0, y0, x1, y1))
+    pts = [(X0, Y0), (X1, Y0), (X1, Y1), (X0, Y1)]  # drawn in place, so the solver never has to move it
+    for i in range(4):
+        a, b = pts[i], pts[(i + 1) % 4]
+        sk.addGeometry(Part.LineSegment(V(*a, 0), V(*b, 0)))
+    for i in range(4):
+        sk.addConstraint(Sketcher.Constraint("Coincident", first + i, 2, first + (i + 1) % 4, 1))
+    sk.addConstraint(Sketcher.Constraint("Horizontal", first))
+    sk.addConstraint(Sketcher.Constraint("Horizontal", first + 2))
+    sk.addConstraint(Sketcher.Constraint("Vertical", first + 1))
+    sk.addConstraint(Sketcher.Constraint("Vertical", first + 3))
+    dist(sk, "DistanceX", first, 1, x0, f"{prefix}_x0")  # bottom-left corner
+    dist(sk, "DistanceY", first, 1, y0, f"{prefix}_y0")
+    dist(sk, "DistanceX", first + 2, 1, x1, f"{prefix}_x1")  # top-right corner
+    dist(sk, "DistanceY", first + 2, 1, y1, f"{prefix}_y1")
+
+
+# ---------------------------------------------------------------- 3. Housing (black)
+housing = new_body("Housing", "Black plastic housing with the slot the lever slides in")
+
+sk = new_sketch(housing, "Sketch_Housing", "XY_Plane", "Vars.standoff",
+                "Housing outline, seen from above, at the housing's bottom face")
+rect(sk, "housing", "-Vars.body_width / 2", "-Vars.body_length / 2",
+     "Vars.body_width / 2", "Vars.body_length / 2")
+pad = housing.newObject("PartDesign::Pad", "Pad_Housing")
+pad.Profile = sk
+pad.setExpression("Length", "Vars.body_height")
+pad.Label2 = "Housing block, body_height tall"
+
+sk = new_sketch(housing, "Sketch_Slot", "XY_Plane", "Vars.housing_top",
+                "Slot outline, on the housing's top face")
+rect(sk, "slot", "-Vars.window_width / 2", "-Vars.window_length / 2",
+     "Vars.window_width / 2", "Vars.window_length / 2")
+pocket = housing.newObject("PartDesign::Pocket", "Pocket_Slot")
+pocket.Profile = sk
+pocket.setExpression("Length", "Vars.window_depth")
+pocket.Label2 = "Slot cut window_depth into the top face"
+
+# ---------------------------------------------------------------- 4. Lever (white)
+lever = new_body("Lever", "White slider; lever_on moves it to the ON end")
+
+sk = new_sketch(lever, "Sketch_Lever", "XY_Plane", "Vars.housing_top - Vars.window_depth",
+                "Lever outline, on the slot's floor")
+rect(sk, "lever", "-Vars.lever_width / 2", "Vars.lever_offset - Vars.lever_length / 2",
+     "Vars.lever_width / 2", "Vars.lever_offset + Vars.lever_length / 2")
+pad = lever.newObject("PartDesign::Pad", "Pad_Lever")
+pad.Profile = sk
+pad.setExpression("Length", "Vars.window_depth + Vars.lever_height")
+pad.Label2 = "From the slot floor to lever_height above the top face"
+
+# ---------------------------------------------------------------- 5. Leads (gold)
+leads = new_body("Leads", "Two gold gull-wing leads; the +Y one is drawn, the -Y one is mirrored")
+
+# Side view of the +Y lead on the YZ plane: sketch x = model Y, sketch y = model Z.
+#   A ---------- B                 A, H: inside the housing (lead_embed deep)
+#   H ------ G    \                B: end of the flat stub, start of the bend
+#             \    \               C, D: top of the foot;  E, F: bottom of the foot (on the board)
+#              F    C ----- D
+#               \___________E
+sk = new_sketch(leads, "Sketch_Lead", "YZ_Plane", None,
+                "Side view of the +Y lead (sketch x = model Y, sketch y = model Z)")
+V = App.Vector
+corners = [(2.7, 1.8), (3.45, 1.8), (3.85, 0.25), (4.65, 0.25),   # A B C D (rough start,
+           (4.65, 0.0), (3.6, 0.0), (3.2, 1.55), (2.7, 1.55)]     #  E F G H  constraints set them)
+for i in range(8):
+    sk.addGeometry(Part.LineSegment(V(*corners[i], 0), V(*corners[(i + 1) % 8], 0)))
+AB, BC, CD, DE, EF, FG, GH, HA = range(8)  # line numbers; point 1 = start, 2 = end
+for i in range(8):
+    sk.addConstraint(Sketcher.Constraint("Coincident", i, 2, (i + 1) % 8, 1))
+for line in (AB, CD, EF, GH):
+    sk.addConstraint(Sketcher.Constraint("Horizontal", line))
+for line in (DE, HA):
+    sk.addConstraint(Sketcher.Constraint("Vertical", line))
+sk.addConstraint(Sketcher.Constraint("PointOnObject", EF, 1, -1))  # E sits on the board (z = 0)
+sk.addConstraint(Sketcher.Constraint("Parallel", FG, BC))         # bend has constant thickness
+dist(sk, "DistanceX", AB, 1, "Vars.body_length / 2 - Vars.lead_embed", "lead_inner_y")   # A
+dist(sk, "DistanceY", AB, 1, "Vars.lead_exit_z", "lead_exit_z")                          # A
+dist(sk, "DistanceX", BC, 1, "Vars.body_length / 2 + Vars.stub_length", "bend_start_y")  # B
+dist(sk, "DistanceX", CD, 1, "Vars.lead_span / 2 - Vars.foot_length", "foot_start_y")    # C
+dist(sk, "DistanceY", CD, 1, "Vars.lead_thickness", "foot_top_z")                        # C
+dist(sk, "DistanceX", DE, 1, "Vars.lead_span / 2", "tip_y")                              # D
+dist(sk, "DistanceX", FG, 1, "Vars.lead_span / 2 - Vars.foot_length - Vars.lead_thickness",
+     "bend_bottom_y")                                                                     # F
+c = sk.addConstraint(Sketcher.Constraint("DistanceY", HA, 1, HA, 2, 0.25))               # H to A
+sk.renameConstraint(c, "stub_thickness")
+sk.setExpression("Constraints.stub_thickness", "Vars.lead_thickness")
+
+pad = leads.newObject("PartDesign::Pad", "Pad_Lead")
+pad.Profile = sk
+pad.SideType = "Symmetric"
+pad.setExpression("Length", "Vars.lead_width")
+pad.Label2 = "Side profile padded lead_width wide, centred on X = 0"
+
+sk = new_sketch(leads, "Sketch_FootTrim", "XY_Plane", None,
+                "Two strips beside the foot, cut away to narrow it to tip_width")
+# Each strip runs from the foot's start to 0.5 mm past the tip, and from the foot's edge
+# to 0.5 mm past the lead's edge, so it always clears the lead completely.
+rect(sk, "trim_right", "Vars.tip_width / 2", "Vars.lead_span / 2 - Vars.foot_length",
+     "Vars.lead_width / 2 + 0.5 mm", "Vars.lead_span / 2 + 0.5 mm")
+rect(sk, "trim_left", "-Vars.lead_width / 2 - 0.5 mm", "Vars.lead_span / 2 - Vars.foot_length",
+     "-Vars.tip_width / 2", "Vars.lead_span / 2 + 0.5 mm")
+pocket = leads.newObject("PartDesign::Pocket", "Pocket_FootTrim")
+pocket.Profile = sk
+pocket.Type = "ThroughAll"
+pocket.SideType = "Symmetric"
+pocket.Label2 = "Cuts both sides of the foot, through everything"
+
+mirror = leads.newObject("PartDesign::Mirrored", "Mirror_Lead")
+mirror.Originals = [leads.getObject("Pad_Lead"), pocket]
+mirror.MirrorPlane = (plane(leads, "XZ_Plane"), [""])
+mirror.Label2 = "Copies the lead to the -Y end"
+leads.Tip = mirror  # make the mirrored result the body's final shape
+
+# ---------------------------------------------------------------- 6. Marks (white print)
+font = os.path.join(App.getResourceDir(), "Mod", "TechDraw", "Resources", "fonts", "osifont-lgpl3fe.ttf")
+marks = []
+try:
+    import Draft
+    for text, sign in (("ON", 1), ("1", -1)):
+        label = "ON" if text == "ON" else "One"
+        ss = Draft.make_shapestring(String=text, FontFile=font, Size=1.0)
+        ss.Label = f"Text_{label}"
+        ss.Justification = "Middle-Center"
+        ss.setExpression("Size", "Vars.mark_size")
+        ss.setExpression(".Placement.Base.y", f"{'' if sign == 1 else '-'}Vars.mark_y")
+        ss.setExpression(".Placement.Base.z", "Vars.housing_top")
+        ext = doc.addObject("Part::Extrusion", f"Mark_{label}")
+        ext.Base = ss
+        ext.DirMode = "Custom"
+        ext.Dir = App.Vector(0, 0, 1)
+        ext.setExpression("LengthFwd", "Vars.mark_thickness")
+        ext.Solid = True
+        ext.Label2 = f"Printed '{text}' on the {'ON (+Y)' if sign == 1 else 'pin 1 (-Y)'} end"
+        part.addObject(ext)
+        marks.append(ext)
+except Exception as err:  # the model is still complete without the print
+    print("Skipped the printed marks:", err)
+
+doc.recompute()
+
+# ---------------------------------------------------------------- 7. Colours (GUI only)
+if App.GuiUp:
+    import FreeCADGui as Gui
+    BLACK, WHITE, GOLD = (0.08, 0.08, 0.08), (0.95, 0.95, 0.93), (0.85, 0.65, 0.20)
+    for obj, colour in ((housing, BLACK), (lever, WHITE), (leads, GOLD)):
+        obj.ViewObject.ShapeColor = colour
+    for m in marks:
+        m.ViewObject.ShapeColor = WHITE
+        m.Base.ViewObject.Visibility = False
+    Gui.activeDocument().activeView().viewIsometric()
+    Gui.SendMsgToActiveView("ViewFit")
+
+# ---------------------------------------------------------------- 8. Checks and STEP export
+for body in (housing, lever, leads):
+    print(f"{body.Name:8s} valid={body.Shape.isValid()}  volume={body.Shape.Volume:.3f} mm^3  "
+          f"bounds={[round(x, 3) for x in (body.Shape.BoundBox.XMin, body.Shape.BoundBox.XMax, body.Shape.BoundBox.YMin, body.Shape.BoundBox.YMax, body.Shape.BoundBox.ZMin, body.Shape.BoundBox.ZMax)]}")
+
+if STEP_FILE:
+    if App.GuiUp:
+        import ImportGui as Import  # the GUI exporter writes the colours into the STEP
+    else:
+        import Import
+    Import.export([housing, lever, leads] + marks, STEP_FILE)  # the solids only, not the text outlines
+    print("STEP written to", STEP_FILE)
+else:
+    print("STEP_FILE is empty, so no STEP was written. Set it at the top and re-run, or use File > Export.")

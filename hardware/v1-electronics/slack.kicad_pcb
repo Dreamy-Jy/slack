@@ -28503,12 +28503,6 @@
 		(path "/af928721-79e0-4dbd-9302-cd57a57ce5a4/490dcb09-1b4f-492d-b36e-3e281bdda59b")
 		(sheetname "/MCU/")
 		(sheetfile "controller.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -28703,6 +28697,17 @@
 			(uuid "2c0fc5a1-adc0-4bac-bf83-e88b7b04de5b")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Dongguan Guangzhu Industrial/DSIC01LSGET.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
@@ -37901,12 +37906,6 @@
 		(path "/af928721-79e0-4dbd-9302-cd57a57ce5a4/e1f67f4d-488a-4973-b205-a9c2bdb86216")
 		(sheetname "/MCU/")
 		(sheetfile "controller.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -38101,6 +38100,17 @@
 			(uuid "924dd689-a68c-4a3a-b6b8-d89f9fa8939b")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Dongguan Guangzhu Industrial/DSIC01LSGET.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Bourns:PEC11S929KS0015"
 		(locked yes)
@@ -66329,12 +66339,6 @@
 		(path "/a24a3d75-e466-4feb-b98a-50e4b7a182a1/0801d76e-fc9e-493a-be50-23101f3dc70a")
 		(sheetname "/Power Train/")
 		(sheetfile "power.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -66529,6 +66533,17 @@
 			(uuid "f52a2df7-a8bf-4af3-8ea2-3b34922b6597")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Dongguan Guangzhu Industrial/DSIC01LSGET.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Resistor_SMD:R_0805_2012Metric"
 		(layer "F.Cu")
@@ -72386,12 +72401,6 @@
 		(path "/af928721-79e0-4dbd-9302-cd57a57ce5a4/dbeaeabd-039d-4dea-9056-a95631d03ebc")
 		(sheetname "/MCU/")
 		(sheetfile "controller.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -72586,6 +72595,17 @@
 			(uuid "fd2ab20b-a920-4031-9991-cf8fbc1a88ac")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Dongguan Guangzhu Industrial/DSIC01LSGET.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "MountingHole_2.2mm_M2_Pad_Via"
 		(layer "F.Cu")
@@ -135181,12 +135201,6 @@
 		(path "/a24a3d75-e466-4feb-b98a-50e4b7a182a1/14368052-f4c4-4066-b16f-7065369a6657")
 		(sheetname "/Power Train/")
 		(sheetfile "power.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -135381,6 +135395,17 @@
 			(uuid "d85cb3a1-b880-407e-87fb-c22750b642c2")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Dongguan Guangzhu Industrial/DSIC01LSGET.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_SMD:C_0805_2012Metric"
 		(layer "F.Cu")
@@ -180159,12 +180184,6 @@
 		(path "/db75d338-3a03-4feb-a76e-be79011cbec0/bbcccd67-ba1b-4006-af48-11a9135dc255")
 		(sheetname "/LED Matricies/")
 		(sheetfile "led_matrix.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -180360,6 +180379,17 @@
 			(uuid "627be9c6-cb28-447f-8f28-91c172dce909")
 		)
 		(embedded_fonts no)
+		(model "${KIPRJMOD}/Dongguan Guangzhu Industrial/DSIC01LSGET.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A"
 		(layer "B.Cu")
@@ -182431,7 +182461,7 @@
 			(drill 0.4)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J1-GND-PadA1)")
+			(net "DGND")
 			(pinfunction "GND_A1")
 			(pintype "passive")
 			(uuid "1767a4e3-02b1-40af-bf58-271f30e49403")
@@ -182508,7 +182538,7 @@
 			(drill 0.4)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J1-GND-PadA1)")
+			(net "DGND")
 			(pinfunction "GND_A12")
 			(pintype "passive")
 			(uuid "05ac1a28-17ed-4676-b480-460839c9cfa2")
@@ -182519,7 +182549,7 @@
 			(drill 0.4)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J1-GND-PadA1)")
+			(net "DGND")
 			(pinfunction "GND_B1")
 			(pintype "passive")
 			(uuid "09a4cb62-ed23-4cec-87e5-245f90090dd5")
@@ -182596,7 +182626,7 @@
 			(drill 0.4)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(J1-GND-PadA1)")
+			(net "DGND")
 			(pinfunction "GND_B12")
 			(pintype "passive")
 			(uuid "1960e013-0f4e-41c5-9b43-166793997755")
@@ -182607,7 +182637,7 @@
 			(drill oval 0.6 1.4)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "unconnected-(J1-SHIELD-PadSH)")
+			(net "DGND")
 			(pinfunction "SHIELD_SH")
 			(pintype "passive")
 			(uuid "7d902c7e-95c8-4c89-9509-de6d6f70e67f")
@@ -182618,7 +182648,7 @@
 			(drill oval 0.6 2.1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "unconnected-(J1-SHIELD-PadSH)")
+			(net "DGND")
 			(pinfunction "SHIELD_SH")
 			(pintype "passive")
 			(uuid "f21293f4-0339-43f8-a131-b00fa93cf67f")
@@ -182629,7 +182659,7 @@
 			(drill oval 0.6 2.1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "unconnected-(J1-SHIELD-PadSH)")
+			(net "DGND")
 			(pinfunction "SHIELD_SH")
 			(pintype "passive")
 			(uuid "e436df9e-a932-4cc1-be0c-49bdebf67480")
@@ -182640,7 +182670,7 @@
 			(drill oval 0.6 1.4)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "unconnected-(J1-SHIELD-PadSH)")
+			(net "DGND")
 			(pinfunction "SHIELD_SH")
 			(pintype "passive")
 			(uuid "a713659c-ea92-45c7-aef3-35480f702e60")
