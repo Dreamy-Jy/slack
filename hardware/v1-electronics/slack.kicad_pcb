@@ -181987,7 +181987,7 @@
 	(footprint "Connector_USB:USB_C_Receptacle_GCT_USB4085"
 		(layer "B.Cu")
 		(uuid "d99a36ff-638b-43a6-bf90-3a8e6dd89dd7")
-		(at 72.883884 88.196945 80)
+		(at 70.2168 87.7268 80)
 		(descr "USB 2.0 Type C Receptacle, https://gct.co/Files/Drawings/USB4085.pdf")
 		(tags "USB Type-C Receptacle Through-hole Right angle")
 		(property "Reference" "J1"
@@ -186181,20 +186181,16 @@
 	(gr_poly
 		(pts
 			(arc
-				(start 248.93 74.2937)
-				(mid 250.3997 73.4905)
-				(end 250.7292 71.7827)
+				(start 241.0678 74.2937)
+				(mid 241.8195 74.1471)
+				(end 242.461 73.7287)
 			)
 			(arc
-				(start 249.8974 67.7977)
-				(mid 250.2698 66.335)
-				(end 251.6382 65.5348)
+				(start 250.2973 66.1209)
+				(mid 250.7819 65.7741)
+				(end 251.3471 65.5855)
 			)
-			(arc
-				(start 267.9807 62.657)
-				(mid 268.2237 62.6392)
-				(end 268.8022 62.5435)
-			)
+			(xy 268.8022 62.5435)
 			(arc
 				(start 279.7043 60.5875)
 				(mid 281.9154 59.6091)
@@ -186241,14 +186237,14 @@
 				(end 375.151 66.6058)
 			)
 			(arc
-				(start 390.9207 156.0679)
-				(mid 390.4797 157.5455)
-				(end 389.0378 158.2791)
+				(start 390.8646 155.7494)
+				(mid 390.5332 157.2438)
+				(end 389.2422 158.0663)
 			)
 			(arc
-				(start 351.924 162.2776)
-				(mid 351.1607 162.5836)
-				(end 350.5425 163.2283)
+				(start 350.0361 164.9794)
+				(mid 349.3078 165.2628)
+				(end 348.7437 165.8038)
 			)
 			(arc
 				(start 348.2778 166.4708)
@@ -186361,14 +186357,14 @@
 				(end 94.619 166.4708)
 			)
 			(arc
-				(start 92.3543 163.2283)
-				(mid 91.7361 162.5836)
-				(end 90.9728 162.2776)
+				(start 94.1531 165.8038)
+				(mid 93.589 165.2628)
+				(end 92.8607 164.9794)
 			)
 			(arc
-				(start 53.859 158.2791)
-				(mid 52.4171 157.5455)
-				(end 51.9761 156.0679)
+				(start 53.6546 158.0663)
+				(mid 52.3636 157.2438)
+				(end 52.0322 155.7494)
 			)
 			(arc
 				(start 67.7458 66.6058)
@@ -186415,20 +186411,16 @@
 				(mid 160.9814 59.6091)
 				(end 163.1925 60.5875)
 			)
+			(xy 174.0946 62.5435)
 			(arc
-				(start 174.0946 62.5435)
-				(mid 174.6731 62.6392)
-				(end 174.9161 62.657)
+				(start 191.5497 65.5855)
+				(mid 192.1149 65.7741)
+				(end 192.5995 66.1209)
 			)
 			(arc
-				(start 191.2586 65.5348)
-				(mid 192.627 66.335)
-				(end 192.9994 67.7977)
-			)
-			(arc
-				(start 192.1676 71.7827)
-				(mid 192.4971 73.4905)
-				(end 193.9668 74.2937)
+				(start 200.4358 73.7287)
+				(mid 201.0773 74.1471)
+				(end 201.829 74.2937)
 			)
 		)
 		(stroke
@@ -186436,19 +186428,8 @@
 			(type solid)
 		)
 		(fill no)
-		(locked yes)
 		(layer "Edge.Cuts")
-		(uuid "30c3c1b1-ee3d-4ec2-b174-4c69b284b3c3")
-	)
-	(gr_line
-		(start 48.045 152.785)
-		(end 93.715 161.075)
-		(stroke
-			(width 1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "4fd28bd1-07d9-4d06-8d82-f62bb0699d8e")
+		(uuid "98e1020b-83d1-49ac-9e88-dec78fcac3cf")
 	)
 	(gr_line
 		(start 53.165 149.015)
@@ -186459,16 +186440,6 @@
 		)
 		(layer "User.3")
 		(uuid "49a42892-65ba-4d96-989e-28ebeb058e5f")
-	)
-	(gr_line
-		(start 201.22 74.49)
-		(end 192.475 66)
-		(stroke
-			(width 1)
-			(type default)
-		)
-		(layer "User.3")
-		(uuid "5f9b2b16-14f2-4594-8380-80946c5953bc")
 	)
 	(gr_text_box "PCB To Do List:\n- [x] generate and recreate ergonomic montary key layout in PCB\n- [x] determine latch layout on PCB\n- [X] map switches to generated layout\n- [-] Verify nipple keycap configuration(1/2 the margins)\n- [ ] verify physical usability\n- [ ] verify color scheme\n- [ ] verify physical BOM (Body, Cover, Defusers, Scroll Bars)"
 		(start 19.07 254)
