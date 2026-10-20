@@ -5058,6 +5058,9 @@
 			(embedded_fonts no)
 		)
 		(symbol "Texas Instruments:TPS61288LRQQR"
+			(pin_numbers
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5086,7 +5089,7 @@
 				)
 			)
 			(property "Footprint" "PTPS61288RQQR"
-				(at 29.21 -94.92 0)
+				(at 25.4 10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -5273,7 +5276,7 @@
 				(pin passive line
 					(at -5.08 -5.08 0)
 					(length 5.08)
-					(name "SW_1"
+					(name "SW"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5361,9 +5364,9 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 -2.54 0)
+					(at -5.08 -5.08 0)
 					(length 5.08)
-					(name "SW_2"
+					(name "SW"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5414,11 +5417,10 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at 35.56 20.32 180)
+				(pin output line
+					(at 10.16 -30.48 90)
 					(length 5.08)
-					(hide yes)
-					(name "PGND_2"
+					(name "PGND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5433,11 +5435,10 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at 35.56 17.78 180)
+				(pin output line
+					(at 30.48 -2.54 180)
 					(length 5.08)
-					(hide yes)
-					(name "VOUT_2"
+					(name "VOUT"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5452,11 +5453,10 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at 35.56 15.24 180)
+				(pin input line
+					(at -5.08 -15.24 0)
 					(length 5.08)
-					(hide yes)
-					(name "VIN_2"
+					(name "VIN"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -5471,11 +5471,10 @@
 						)
 					)
 				)
-				(pin no_connect line
-					(at 35.56 12.7 180)
+				(pin input line
+					(at 30.48 -10.16 180)
 					(length 5.08)
-					(hide yes)
-					(name "FB_2"
+					(name "FB"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6150,7 +6149,7 @@
 	)
 	(rectangle
 		(start 256.54 205.74)
-		(end 342.9 259.08)
+		(end 342.9 266.7)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -6627,12 +6626,6 @@
 		(uuid "15fef979-042f-402f-91f2-89df5b5a30e1")
 	)
 	(junction
-		(at 419.1 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "25e6156e-3b93-4170-8914-176e9e6f6f0e")
-	)
-	(junction
 		(at 45.72 185.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6721,6 +6714,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7dd02d76-484d-47f6-939c-0caf88799021")
+	)
+	(junction
+		(at 419.1 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7ff63ff2-f011-49a5-9807-8e4699471af9")
 	)
 	(junction
 		(at 116.84 195.58)
@@ -8031,6 +8030,16 @@
 	)
 	(wire
 		(pts
+			(xy 419.1 78.74) (xy 419.1 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d273ffc6-51dd-4595-aa52-8e70c9697a3d")
+	)
+	(wire
+		(pts
 			(xy 419.1 129.54) (xy 419.1 116.84)
 		)
 		(stroke
@@ -8252,16 +8261,6 @@
 	)
 	(wire
 		(pts
-			(xy 419.1 78.74) (xy 419.1 81.28)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f6f7bd08-22ea-4655-8764-d736120c7cbb")
-	)
-	(wire
-		(pts
 			(xy 271.78 238.76) (xy 271.78 241.3)
 		)
 		(stroke
@@ -8309,16 +8308,6 @@
 			(justify right)
 		)
 		(uuid "0e11a325-9f74-4bf3-ba17-6ca046ea448e")
-	)
-	(label "SW_TPS"
-		(at 403.86 88.9 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1a2b1bb5-3a37-41b6-886b-554ce4f73ffb")
 	)
 	(label "SW_MP"
 		(at 284.48 96.52 0)
@@ -18283,7 +18272,7 @@
 				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://www.ti.com/lit/ds/symlink/tps61288.pdf?ts=1786304194251"
+		(property "Datasheet" "https://www.ti.com/lit/ml/mpqf579/mpqf579.pdf?ts=1697461742540&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTPS61288%252Fpart-details%252FTPS61288LRQQR"
 			(at 438.15 281.28 0)
 			(hide yes)
 			(show_name no)

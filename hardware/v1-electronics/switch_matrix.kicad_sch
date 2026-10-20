@@ -9295,7 +9295,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 190.5 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9631,7 +9631,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 157.48 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10359,7 +10359,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 73.66 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11084,7 +11084,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 78.74 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11342,7 +11342,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 594.36 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12322,7 +12322,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 510.54 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12658,7 +12658,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 510.54 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12916,7 +12916,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 510.54 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13410,7 +13410,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 599.44 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13668,7 +13668,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 538.48 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13926,7 +13926,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 594.36 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14746,7 +14746,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 538.48 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16042,7 +16042,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 454.66 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17011,7 +17011,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 510.54 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18763,7 +18763,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 134.62 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19336,7 +19336,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 129.54 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22047,7 +22047,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 218.44 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22869,7 +22869,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 157.48 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23837,7 +23837,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 482.6 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24331,7 +24331,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 205.74 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25623,7 +25623,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 101.6 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26604,7 +26604,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 454.66 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27173,7 +27173,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 571.5 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28628,7 +28628,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 162.56 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28886,7 +28886,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 566.42 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29222,7 +29222,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 566.42 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -30813,7 +30813,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 538.48 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31308,7 +31308,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 101.6 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32701,7 +32701,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 129.54 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32959,7 +32959,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 566.42 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33373,7 +33373,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 566.42 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34653,7 +34653,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 45.72 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35145,7 +35145,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 157.48 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35403,7 +35403,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 185.42 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35817,7 +35817,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 594.36 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36153,7 +36153,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 45.72 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37695,7 +37695,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 594.36 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -39650,7 +39650,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 622.3 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40145,7 +40145,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 538.48 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40403,7 +40403,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 185.42 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40661,7 +40661,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 213.36 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41719,7 +41719,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 129.54 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41977,7 +41977,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 101.6 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -42551,7 +42551,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 129.54 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -42809,7 +42809,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 482.6 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -43459,7 +43459,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 157.48 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -44189,7 +44189,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 205.74 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -44681,7 +44681,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 106.68 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -45255,7 +45255,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 482.6 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -46296,7 +46296,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 627.38 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47259,7 +47259,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 487.68 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -49123,7 +49123,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 515.62 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -49616,7 +49616,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 454.66 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50032,7 +50032,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 45.72 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50526,7 +50526,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 622.3 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51288,7 +51288,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 462.28 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51936,7 +51936,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 101.6 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52856,7 +52856,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 45.72 149.8599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -53193,7 +53193,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 457.2 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -53875,7 +53875,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 73.66 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -54995,7 +54995,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 454.66 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -55490,7 +55490,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 510.54 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -56086,7 +56086,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 157.48 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -56344,7 +56344,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 622.3 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -58919,7 +58919,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 73.66 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -60202,7 +60202,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 73.66 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -61999,7 +61999,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 594.36 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -62883,7 +62883,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 185.42 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -63769,7 +63769,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 482.6 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64027,7 +64027,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 101.6 253.9999 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64522,7 +64522,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 543.56 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -64780,7 +64780,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 482.6 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -65588,7 +65588,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 538.48 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -66320,7 +66320,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 50.8 309.8799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -66916,7 +66916,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 566.42 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -68441,7 +68441,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 73.66 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -68935,7 +68935,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 185.42 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -69193,7 +69193,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 622.3 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -69688,7 +69688,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 185.42 48.2599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -69946,7 +69946,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 205.74 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -70204,7 +70204,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 205.74 99.0599 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -70462,7 +70462,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "D"
+		(property "Value" "BAS16TS"
 			(at 129.54 200.6599 90)
 			(show_name no)
 			(do_not_autoplace no)

@@ -8,7 +8,7 @@
 	(property "Reference" "REF**"
 		(at 0 -10.5 180)
 		(layer "F.SilkS")
-		(uuid "9ba1dc21-30f3-4dc2-b5d2-5b946060ec87")
+		(uuid "f818f7ef-5727-49b8-b84d-c53fd4690d09")
 		(effects
 			(font
 				(size 1 1)
@@ -19,7 +19,7 @@
 	(property "Value" "grounded_scrollcap"
 		(at 0 1.4 180)
 		(layer "F.Fab")
-		(uuid "49e393b9-a51b-4602-9cb6-135adac19ac6")
+		(uuid "6a3655e1-2da3-4877-a150-24d209063aa9")
 		(effects
 			(font
 				(size 1 1)
@@ -31,7 +31,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "27a0642f-0a25-42c3-a77f-771fd785ff90")
+		(uuid "41dc52e1-62db-4a2b-a70c-c6b137f43244")
 		(effects
 			(font
 				(size 1 1)
@@ -43,7 +43,7 @@
 		(at 0 0 180)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "d316871b-04b4-4d6a-9041-e7a41349000d")
+		(uuid "002d2fcc-bf71-49d0-a815-4f5348c7401b")
 		(effects
 			(font
 				(size 1 1)
@@ -68,7 +68,7 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "7d98392d-f45b-4712-97a6-c3285838ce3b")
+		(uuid "d70a5bd2-52b9-4a30-b92e-a385fec49342")
 	)
 	(fp_poly
 		(pts
@@ -88,7 +88,29 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "41a3290d-f6c5-4560-ac1b-82815da128ab")
+		(uuid "bb19abd9-4cf0-43ab-9128-dc31567738ad")
+	)
+	(fp_circle
+		(center -5.75 -5.8)
+		(end -3.8 -5.8)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "B.CrtYd")
+		(uuid "221b9581-e9a2-4db2-b615-0a2cb5c46d00")
+	)
+	(fp_circle
+		(center 5.75 -5.8)
+		(end 7.7 -5.8)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "B.CrtYd")
+		(uuid "9accbb71-653e-4754-92ff-50d7f383d1f6")
 	)
 	(fp_poly
 		(pts
@@ -106,7 +128,7 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "39d4d386-54f6-4e6a-83ed-594720707acf")
+		(uuid "4c14d1dd-835b-4f8b-b383-7dbdeda70809")
 	)
 	(fp_poly
 		(pts
@@ -126,7 +148,7 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "8cc24a7e-4a4e-474a-96dd-0af970c97add")
+		(uuid "25da8bca-646c-4783-8502-c6ca694da74c")
 	)
 	(fp_poly
 		(pts
@@ -143,7 +165,7 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "8772014a-446a-4185-ae2b-c24405fe3cf8")
+		(uuid "2ceb0030-3a76-45a8-abbf-2aa4da06dc88")
 	)
 	(fp_poly
 		(pts
@@ -163,23 +185,23 @@
 		)
 		(fill no)
 		(layer "F.Fab")
-		(uuid "82091c9e-00d4-40ea-b838-a7d8cd40e2ef")
+		(uuid "ebfbe91e-653f-4f0e-a212-7f85bfd7de72")
 	)
 	(pad "1" thru_hole circle
 		(at -5.75 -5.8)
-		(size 2.6 2.6)
+		(size 3.9 3.9)
 		(drill 3.1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "b6e90326-3279-47f9-9c76-1644647f9427")
+		(uuid "7c4ea93d-e342-4343-98f3-a0778d1b5c9c")
 	)
 	(pad "1" thru_hole circle
 		(at 5.75 -5.8)
-		(size 2.6 2.6)
+		(size 3.9 3.9)
 		(drill 3.1)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "69e70832-f23c-44c6-9202-26fe080edbc1")
+		(uuid "a1ea3478-ddfd-4c1a-8c7d-efcaadb99220")
 	)
 	(embedded_fonts no)
 	(model "/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-mechanics/scrollbars/pegged_grounded_scrollcap.step"

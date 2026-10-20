@@ -7005,7 +7005,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "13kΩ"
+		(property "Value" "22kΩ"
 			(at 30.48 110.4899 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7038,7 +7038,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: 0603WAF1302T5E"
+		(property "Description" "part selected: 0603WAF2202T5E"
 			(at 27.94 109.22 0)
 			(hide yes)
 			(show_name no)
