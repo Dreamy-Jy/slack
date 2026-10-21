@@ -26,3 +26,5 @@ thumbnails/
 *.FCBak
 *.push.json
 manufacturability/
+
+__marimo__/

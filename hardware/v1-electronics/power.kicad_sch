@@ -3795,6 +3795,10 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
+			(jumper_pin_groups
+				("2" "3")
+				("1" "4")
+			)
 			(property "Reference" "FL"
 				(at 3.048 10.414 0)
 				(show_name no)
@@ -4214,9 +4218,13 @@
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
+			(duplicate_pin_numbers_are_jumpers yes)
+			(jumper_pin_groups
+				("1" "6")
+				("3" "4")
+			)
 			(property "Reference" "D"
-				(at 29.21 7.62 0)
+				(at 25.4 7.62 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -4227,7 +4235,7 @@
 				)
 			)
 			(property "Value" "USBLC6-2SC6"
-				(at 29.21 5.08 0)
+				(at 25.4 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -4358,8 +4366,8 @@
 			)
 			(symbol "USBLC6-2SC6_0_1"
 				(rectangle
-					(start 7.62 2.54)
-					(end 27.94 -7.62)
+					(start 10.16 2.54)
+					(end 25.4 -7.62)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -4569,8 +4577,8 @@
 				)
 				(polyline
 					(pts
-						(xy 27.94 0) (xy 25.4 0) (xy 25.4 -1.016) (xy 25.4 -1.27) (xy 20.32 -1.27) (xy 20.32 0) (xy 15.24 0)
-						(xy 15.24 -1.27) (xy 10.16 -1.27) (xy 10.16 0) (xy 7.62 0)
+						(xy 25.4 0) (xy 24.13 0) (xy 24.13 -1.27) (xy 24.13 -1.27) (xy 21.59 -1.27) (xy 21.59 0) (xy 13.97 0)
+						(xy 13.97 -1.27) (xy 11.43 -1.27) (xy 11.43 0) (xy 10.16 0)
 					)
 					(stroke
 						(width 0)
@@ -4582,8 +4590,8 @@
 				)
 				(polyline
 					(pts
-						(xy 27.94 -5.08) (xy 25.4 -5.08) (xy 25.4 -3.81) (xy 22.098 -3.81) (xy 20.32 -3.81) (xy 20.32 -5.08)
-						(xy 15.24 -5.08) (xy 15.24 -3.81) (xy 10.16 -3.81) (xy 10.16 -5.08) (xy 7.62 -5.08)
+						(xy 25.4 -5.08) (xy 24.13 -5.08) (xy 24.13 -3.81) (xy 22.098 -3.81) (xy 21.59 -3.81) (xy 21.59 -5.08)
+						(xy 13.97 -5.08) (xy 13.97 -3.81) (xy 11.43 -3.81) (xy 11.43 -5.08) (xy 10.16 -5.08)
 					)
 					(stroke
 						(width 0)
@@ -4596,7 +4604,7 @@
 			)
 			(symbol "USBLC6-2SC6_1_1"
 				(pin passive line
-					(at 5.08 0 0)
+					(at 7.62 0 0)
 					(length 2.54)
 					(name "I/O1"
 						(effects
@@ -4632,7 +4640,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -5.08 0)
+					(at 7.62 -5.08 0)
 					(length 2.54)
 					(name "I/O2"
 						(effects
@@ -4650,7 +4658,7 @@
 					)
 				)
 				(pin passive line
-					(at 30.48 -5.08 180)
+					(at 27.94 -5.08 180)
 					(length 2.54)
 					(name "I/O2"
 						(effects
@@ -4686,7 +4694,7 @@
 					)
 				)
 				(pin passive line
-					(at 30.48 0 180)
+					(at 27.94 0 180)
 					(length 2.54)
 					(name "I/O1"
 						(effects
@@ -7180,7 +7188,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 111.76) (xy 66.04 111.76)
+			(xy 55.88 111.76) (xy 68.58 111.76)
 		)
 		(stroke
 			(width 0.5)
@@ -7477,17 +7485,6 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 111.76) (xy 91.44 111.76)
-		)
-		(stroke
-			(width 0.5)
-			(type default)
-			(color 0 0 255 1)
-		)
-		(uuid "63488f3e-d5e1-4a4a-8c75-6d05823c5f2e")
-	)
-	(wire
-		(pts
 			(xy 297.18 96.52) (xy 297.18 101.6)
 		)
 		(stroke
@@ -7505,17 +7502,6 @@
 			(type default)
 		)
 		(uuid "65c1758f-7e91-4213-bf2b-b087a3b308b9")
-	)
-	(wire
-		(pts
-			(xy 104.14 106.68) (xy 91.44 106.68)
-		)
-		(stroke
-			(width 0.5)
-			(type default)
-			(color 0 0 255 1)
-		)
-		(uuid "68a15f20-f993-43ed-bd9b-4eb62d875d37")
 	)
 	(wire
 		(pts
@@ -8152,6 +8138,17 @@
 	)
 	(wire
 		(pts
+			(xy 88.9 111.76) (xy 109.22 111.76)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+			(color 0 0 255 1)
+		)
+		(uuid "d95de3e2-10af-4462-b423-64f193ae9cb9")
+	)
+	(wire
+		(pts
 			(xy 149.86 175.26) (xy 149.86 177.8)
 		)
 		(stroke
@@ -8202,7 +8199,7 @@
 	)
 	(wire
 		(pts
-			(xy 55.88 106.68) (xy 66.04 106.68)
+			(xy 55.88 106.68) (xy 68.58 106.68)
 		)
 		(stroke
 			(width 0.5)
@@ -8260,6 +8257,17 @@
 			(type default)
 		)
 		(uuid "e8a6815b-da5f-4234-9b1f-bb1594d77347")
+	)
+	(wire
+		(pts
+			(xy 88.9 106.68) (xy 104.14 106.68)
+		)
+		(stroke
+			(width 0.5)
+			(type default)
+			(color 0 0 255 1)
+		)
+		(uuid "e9f445d1-4997-4317-856d-1482c6ec3a70")
 	)
 	(wire
 		(pts
@@ -17396,12 +17404,6 @@
 				)
 			)
 		)
-		(pin "1"
-			(uuid "4358e5c1-6ea7-4694-9891-90e863b52ef1")
-		)
-		(pin "6"
-			(uuid "e218849a-e124-4038-b55e-5d35e513f9d0")
-		)
 		(pin "2"
 			(uuid "fa6c0626-198d-4af9-b8f0-f150fc9f64a1")
 		)
@@ -17413,6 +17415,12 @@
 		)
 		(pin "5"
 			(uuid "a863a057-a960-4e20-8422-9047d82e297c")
+		)
+		(pin "6"
+			(uuid "4b1819a7-5a9d-4541-9d5b-46f8a4436de3")
+		)
+		(pin "1"
+			(uuid "a123fad1-5996-4250-b03e-35fbb358e330")
 		)
 		(instances
 			(project "slack"

@@ -11,7 +11,11 @@
 		(in_bom yes)
 		(on_board yes)
 		(in_pos_files yes)
-		(duplicate_pin_numbers_are_jumpers no)
+		(duplicate_pin_numbers_are_jumpers yes)
+		(jumper_pin_groups
+			("1" "6")
+			("3" "4")
+		)
 		(property "Reference" "D"
 			(at 25.4 7.62 0)
 			(show_name no)
