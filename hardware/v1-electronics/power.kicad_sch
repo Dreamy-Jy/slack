@@ -6136,8 +6136,8 @@
 		(uuid "7b98cf69-4725-4769-a8bf-aaa64ebe65c7")
 	)
 	(rectangle
-		(start 226.06 205.74)
-		(end 254 246.38)
+		(start 218.44 205.74)
+		(end 254 261.62)
 		(stroke
 			(width 0.2)
 			(type default)
@@ -6160,7 +6160,7 @@
 		(uuid "e76fdc99-bc95-48a9-a3ce-7cad72f999a5")
 	)
 	(rectangle
-		(start 226.06 170.18)
+		(start 218.44 170.18)
 		(end 287.02 203.2)
 		(stroke
 			(width 0.2)
@@ -6217,9 +6217,9 @@
 		)
 		(uuid "091a056f-7e2b-4afc-a974-a742bdb086ff")
 	)
-	(text "This cap needs to\nbe rated for +4A, \nX7R or X5R of \ncurrent based \non the page 40\nof the datasheet.\n\nI caculated a\nmax current ripple\nof about 1.3A"
+	(text "This cap needs to be rated \nfor +4A, X7R or X5R of \ncurrent based on the page 40\nof the datasheet.\n\nI caculated a max current\nripple of about 1.3A"
 		(exclude_from_sim no)
-		(at 228.6 226.06 0)
+		(at 220.98 238.76 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6471,7 +6471,7 @@
 	)
 	(text "PMID Decoupler"
 		(exclude_from_sim no)
-		(at 238.76 208.28 0)
+		(at 236.22 208.28 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -6608,7 +6608,7 @@
 		(uuid "0b0386a7-d414-4cc1-955b-c3713a567dd9")
 	)
 	(junction
-		(at 241.3 190.5)
+		(at 236.22 190.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0d73991a-bafb-4e6b-a6a1-e775ac3131cf")
@@ -6624,6 +6624,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "15fef979-042f-402f-91f2-89df5b5a30e1")
+	)
+	(junction
+		(at 236.22 215.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2f94032d-374b-4cd4-987e-cbf4e4838e8d")
 	)
 	(junction
 		(at 45.72 185.42)
@@ -6684,6 +6690,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "597b07f6-fc2a-4e95-90aa-ab89a0f4a981")
+	)
+	(junction
+		(at 236.22 223.52)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "621ea24e-bc27-4400-9da8-da70e8e172e4")
 	)
 	(junction
 		(at 452.12 88.9)
@@ -6873,7 +6885,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 187.96) (xy 241.3 190.5)
+			(xy 236.22 187.96) (xy 236.22 190.5)
 		)
 		(stroke
 			(width 0)
@@ -7005,7 +7017,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 200.66) (xy 241.3 200.66)
+			(xy 231.14 200.66) (xy 236.22 200.66)
 		)
 		(stroke
 			(width 0)
@@ -7155,6 +7167,16 @@
 			(type default)
 		)
 		(uuid "382e673e-5365-4821-8314-41155083bbc3")
+	)
+	(wire
+		(pts
+			(xy 231.14 215.9) (xy 236.22 215.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a5ee39f-31e3-493d-b461-87d912557b11")
 	)
 	(wire
 		(pts
@@ -7404,7 +7426,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 190.5) (xy 241.3 193.04)
+			(xy 236.22 190.5) (xy 236.22 193.04)
 		)
 		(stroke
 			(width 0)
@@ -7421,6 +7443,16 @@
 			(type default)
 		)
 		(uuid "5dd48ed2-ced3-468d-99dd-4e7ceb8f7adf")
+	)
+	(wire
+		(pts
+			(xy 231.14 223.52) (xy 231.14 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60238cf8-1cf2-4e08-8b54-d1cd780557fe")
 	)
 	(wire
 		(pts
@@ -7548,6 +7580,16 @@
 	)
 	(wire
 		(pts
+			(xy 241.3 223.52) (xy 241.3 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c5acd97-4f05-46f6-a477-31e420717f4d")
+	)
+	(wire
+		(pts
 			(xy 266.7 238.76) (xy 271.78 238.76)
 		)
 		(stroke
@@ -7668,6 +7710,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 223.52) (xy 241.3 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c637029-c68a-489f-b99b-6795b53c4b8c")
+	)
+	(wire
+		(pts
 			(xy 332.74 137.16) (xy 332.74 147.32)
 		)
 		(stroke
@@ -7728,7 +7780,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 200.66) (xy 241.3 198.12)
+			(xy 236.22 200.66) (xy 236.22 198.12)
 		)
 		(stroke
 			(width 0)
@@ -7827,6 +7879,16 @@
 			(type default)
 		)
 		(uuid "a74a3369-a640-4dbf-9ada-b08b74639f0a")
+	)
+	(wire
+		(pts
+			(xy 236.22 226.06) (xy 236.22 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab47a98f-a4a3-4cb7-a3d0-515492f0860c")
 	)
 	(wire
 		(pts
@@ -7960,7 +8022,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 182.88) (xy 241.3 180.34)
+			(xy 236.22 182.88) (xy 236.22 180.34)
 		)
 		(stroke
 			(width 0)
@@ -8010,7 +8072,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 190.5) (xy 241.3 190.5)
+			(xy 231.14 190.5) (xy 236.22 190.5)
 		)
 		(stroke
 			(width 0)
@@ -8037,6 +8099,16 @@
 			(type default)
 		)
 		(uuid "d273ffc6-51dd-4595-aa52-8e70c9697a3d")
+	)
+	(wire
+		(pts
+			(xy 236.22 215.9) (xy 241.3 215.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d46d7c21-b612-40fb-90b3-f9b3af847093")
 	)
 	(wire
 		(pts
@@ -8191,6 +8263,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 223.52) (xy 231.14 223.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eae541c8-1ad4-48d8-9677-e7755ed52cab")
+	)
+	(wire
+		(pts
 			(xy 78.74 187.96) (xy 76.2 185.42)
 		)
 		(stroke
@@ -8271,6 +8353,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 213.36) (xy 236.22 215.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb2dc8c6-f3d1-4245-a805-0f030970ac63")
+	)
+	(wire
+		(pts
 			(xy 414.02 125.73) (xy 426.72 125.73)
 		)
 		(stroke
@@ -8290,7 +8382,7 @@
 		(uuid "fd18aba5-3880-47eb-b4e8-312607adabd1")
 	)
 	(label "SW_MP"
-		(at 236.22 190.5 180)
+		(at 231.14 190.5 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8400,7 +8492,7 @@
 		(uuid "477e69c9-6e5f-4b86-963e-7c8190458601")
 	)
 	(label "BST_MP"
-		(at 236.22 200.66 180)
+		(at 231.14 200.66 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8600,7 +8692,7 @@
 		(uuid "b5c32a21-769b-4bc6-a4e6-a546cec5f8f5")
 	)
 	(label "PMID"
-		(at 238.76 213.36 0)
+		(at 236.22 213.36 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8695,7 +8787,7 @@
 	)
 	(symbol
 		(lib_id "Device:L_Small")
-		(at 241.3 185.42 0)
+		(at 236.22 185.42 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8706,7 +8798,7 @@
 		(fields_autoplaced yes)
 		(uuid "01a71e28-bbfb-401c-bd51-5cd492bde3b7")
 		(property "Reference" "L1"
-			(at 242.57 184.1499 0)
+			(at 237.49 184.1499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8717,7 +8809,7 @@
 			)
 		)
 		(property "Value" "1μH"
-			(at 242.57 186.6899 0)
+			(at 237.49 186.6899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8728,7 +8820,7 @@
 			)
 		)
 		(property "Footprint" "Inductor_SMD:L_Changjiang_FTC404030S"
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8739,7 +8831,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8750,7 +8842,7 @@
 			)
 		)
 		(property "Description" "part selected: APS0430M1R0F"
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8761,7 +8853,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8772,7 +8864,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8783,7 +8875,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8794,7 +8886,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8805,7 +8897,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8816,7 +8908,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8827,7 +8919,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8838,7 +8930,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8849,7 +8941,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8860,7 +8952,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8871,7 +8963,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8882,7 +8974,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8893,7 +8985,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8904,7 +8996,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 241.3 185.42 0)
+			(at 236.22 185.42 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10120,7 +10212,7 @@
 	)
 	(symbol
 		(lib_id "power:+5F")
-		(at 241.3 180.34 0)
+		(at 236.22 180.34 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10130,7 +10222,7 @@
 		(dnp no)
 		(uuid "11be4e26-f722-46f8-853b-e747ba2c85ad")
 		(property "Reference" "#PWR0107"
-			(at 241.3 184.15 0)
+			(at 236.22 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10141,7 +10233,7 @@
 			)
 		)
 		(property "Value" "V_OUT_MP"
-			(at 241.3 175.26 0)
+			(at 236.22 175.26 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10151,7 +10243,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 241.3 180.34 0)
+			(at 236.22 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10162,7 +10254,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 180.34 0)
+			(at 236.22 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10173,7 +10265,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5F\""
-			(at 241.3 180.34 0)
+			(at 236.22 180.34 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10197,7 +10289,7 @@
 	)
 	(symbol
 		(lib_id "power:Earth")
-		(at 238.76 218.44 0)
+		(at 236.22 226.06 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10208,7 +10300,7 @@
 		(fields_autoplaced yes)
 		(uuid "1345118a-3d5f-4e3f-a0c6-01c7e0b2ed06")
 		(property "Reference" "#PWR0115"
-			(at 238.76 224.79 0)
+			(at 236.22 232.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10219,7 +10311,7 @@
 			)
 		)
 		(property "Value" "PGND"
-			(at 238.76 223.52 0)
+			(at 236.22 231.14 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10229,7 +10321,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 218.44 0)
+			(at 236.22 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10240,7 +10332,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 218.44 0)
+			(at 236.22 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10251,7 +10343,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"Earth\""
-			(at 238.76 218.44 0)
+			(at 236.22 226.06 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11548,7 +11640,7 @@
 				)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "1kΩ"
 			(at 307.34 190.5 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11558,7 +11650,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_01005_0402Metric"
 			(at 307.34 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -11580,7 +11672,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected:  0805W8F1002T5E"
+		(property "Description" "part selected:  0402WGF1001TCE"
 			(at 307.34 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -12343,7 +12435,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 421.64 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -12365,7 +12457,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: CL21C222JBFNNNE"
+		(property "Description" "part selected: 0603B222K500NT"
 			(at 421.64 182.88 0)
 			(hide yes)
 			(show_name no)
@@ -12547,7 +12639,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 241.3 195.58 0)
+		(at 236.22 195.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12558,7 +12650,7 @@
 		(fields_autoplaced yes)
 		(uuid "383b22c0-82c8-4a54-b518-7b124dbf008d")
 		(property "Reference" "C47"
-			(at 243.84 194.3162 0)
+			(at 238.76 194.3162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12569,7 +12661,7 @@
 			)
 		)
 		(property "Value" "22nF"
-			(at 243.84 196.8562 0)
+			(at 238.76 196.8562 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12579,8 +12671,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
-			(at 241.3 195.58 0)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12591,7 +12683,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12601,8 +12693,8 @@
 				)
 			)
 		)
-		(property "Description" "part selection: CL31A226KAHNNNE"
-			(at 241.3 195.58 0)
+		(property "Description" "part selection: 0402B223K500NT"
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12613,7 +12705,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12624,7 +12716,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12635,7 +12727,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12646,7 +12738,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12657,7 +12749,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12668,7 +12760,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12679,7 +12771,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12690,7 +12782,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12701,7 +12793,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12712,7 +12804,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12723,7 +12815,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12734,7 +12826,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12745,7 +12837,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12756,7 +12848,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 241.3 195.58 0)
+			(at 236.22 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13203,7 +13295,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 454.66 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -13225,7 +13317,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: 0805W8F2202T5E"
+		(property "Description" "part selected:0402WGF2202TCE"
 			(at 454.66 180.34 0)
 			(hide yes)
 			(show_name no)
@@ -15239,7 +15331,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 454.66 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -15261,7 +15353,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: 0805W8F3001T5E"
+		(property "Description" "part selected: 0603WAF3001T5E"
 			(at 454.66 190.5 0)
 			(hide yes)
 			(show_name no)
@@ -16764,7 +16856,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 238.76 215.9 0)
+		(at 231.14 218.44 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -16775,7 +16867,7 @@
 		(dnp no)
 		(uuid "a113067c-9c45-44bf-bbfb-ce8f44c2599e")
 		(property "Reference" "C49"
-			(at 236.22 214.6362 0)
+			(at 228.6 217.1762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16786,7 +16878,7 @@
 			)
 		)
 		(property "Value" "10μF"
-			(at 236.22 217.1762 0)
+			(at 228.6 219.7162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16797,7 +16889,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16808,7 +16900,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16819,7 +16911,7 @@
 			)
 		)
 		(property "Description" "part selected: CL21A106KAYNNNE"
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16830,7 +16922,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16841,7 +16933,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16852,7 +16944,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16863,7 +16955,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16874,7 +16966,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16885,7 +16977,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16896,7 +16988,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16907,7 +16999,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16918,7 +17010,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16929,7 +17021,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16940,7 +17032,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16951,7 +17043,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16962,7 +17054,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16973,7 +17065,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 238.76 215.9 0)
+			(at 231.14 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19440,6 +19532,241 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 241.3 218.44 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c30cd08b-11c5-4d3e-add5-f83005140c9e")
+		(property "Reference" "C55"
+			(at 243.84 217.1762 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10μF"
+			(at 243.84 219.7162 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "part selected: CL21A106KAYNNNE"
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 241.3 218.44 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "14f846bd-a13d-49ad-a1cb-04ca12ab3a33")
+		)
+		(pin "2"
+			(uuid "16f2f0af-2f74-48ba-8e6a-746582a1a078")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
+					(reference "C55")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D_Zener_Small_Filled")
 		(at 116.84 210.82 270)
 		(unit 1)
@@ -21669,7 +21996,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 421.64 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -21691,7 +22018,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected:  0805W8F1502T5E"
+		(property "Description" "part selected:  0402WGF1502TCE"
 			(at 421.64 193.04 0)
 			(hide yes)
 			(show_name no)
@@ -21893,7 +22220,7 @@
 				)
 			)
 		)
-		(property "Value" "10kΩ"
+		(property "Value" "1kΩ"
 			(at 307.34 182.88 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21903,7 +22230,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "Resistor_SMD:R_01005_0402Metric"
 			(at 307.34 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -21925,7 +22252,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected:  0805W8F1002T5E"
+		(property "Description" "part selected:  0402WGF1001TCE"
 			(at 307.34 185.42 0)
 			(hide yes)
 			(show_name no)
@@ -22139,7 +22466,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 414.02 121.92 0)
 			(hide yes)
 			(show_name no)
@@ -22161,7 +22488,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: CL21A225KBQNNNE"
+		(property "Description" "part selected: CL10A225KO8NNNC"
 			(at 414.02 121.92 0)
 			(hide yes)
 			(show_name no)

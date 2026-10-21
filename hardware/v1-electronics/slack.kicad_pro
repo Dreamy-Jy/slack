@@ -686,7 +686,7 @@
           "show": true
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Value",
           "name": "Value",
           "show": true
@@ -734,7 +734,7 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Description",
           "name": "Description",
           "show": true
@@ -950,7 +950,7 @@
         "uuid": "504df67f-9f45-483f-90c8-f14c049b6b02"
       }
     ],
-    "used_designators": "#PWR62,#PWR76,#PWR111,#PWR132-157,#PWR201-205,C54,D87-89,D201-202,JP2-6,LED501-512,Q1,R44,R48,R54,R60-65,R201-202,SW7",
+    "used_designators": "#PWR62,#PWR76,#PWR111,#PWR132-157,#PWR201-205,C54-55,D87-89,D201-202,JP2-6,LED501-512,Q1,R44,R48,R54,R60-65,R201-202,SW7",
     "variants": [
       {
         "description": "this design uses 2x IS31FL3733 LED Matrix drivers",
