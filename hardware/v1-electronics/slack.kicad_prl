@@ -22,7 +22,7 @@
       "graphics": true,
       "gridItems": true,
       "keepouts": true,
-      "lockedItems": false,
+      "lockedItems": true,
       "otherItems": true,
       "pads": true,
       "text": false,

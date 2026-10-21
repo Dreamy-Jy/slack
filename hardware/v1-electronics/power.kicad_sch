@@ -9028,9 +9028,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "0801d76e-fc9e-493a-be50-23101f3dc70a")
 		(property "Reference" "JP5"
@@ -9054,7 +9054,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Dongguan Guangzhu Industrial:DSIC01LSGET"
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
 			(at 81.28 187.96 0)
 			(hide yes)
 			(show_name no)
@@ -10372,9 +10372,9 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
+		(in_pos_files no)
 		(dnp no)
 		(uuid "14368052-f4c4-4066-b16f-7065369a6657")
 		(property "Reference" "JP6"
@@ -10398,7 +10398,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Dongguan Guangzhu Industrial:DSIC01LSGET"
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
 			(at 99.06 198.12 0)
 			(hide yes)
 			(show_name no)
