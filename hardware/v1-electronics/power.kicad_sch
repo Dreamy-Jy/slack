@@ -376,78 +376,6 @@
 						)
 					)
 				)
-				(pin power_out line
-					(at 10.16 -5.08 180)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 -5.08 180)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 -5.08 180)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 10.16 -5.08 180)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
 			(embedded_fonts no)
 		)
@@ -5418,78 +5346,6 @@
 						)
 					)
 					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 10.16 -30.48 90)
-					(length 5.08)
-					(name "PGND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 30.48 -2.54 180)
-					(length 5.08)
-					(name "VOUT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -5.08 -15.24 0)
-					(length 5.08)
-					(name "VIN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 30.48 -10.16 180)
-					(length 5.08)
-					(name "FB"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -15997,18 +15853,6 @@
 				)
 			)
 		)
-		(pin "7"
-			(uuid "3fb5c18b-3b6f-4ccf-b5a9-9adfac354ce3")
-		)
-		(pin "9"
-			(uuid "95fc8d02-4167-42d0-8165-8b40ccd4bbea")
-		)
-		(pin "8"
-			(uuid "08b5a80a-d7dd-4adb-9ef9-f7daac8bfe0b")
-		)
-		(pin "6"
-			(uuid "a4295be5-7497-4cae-a347-d7c2d92de774")
-		)
 		(pin "4"
 			(uuid "1078d2d2-fe3b-4dc9-b36f-d77325e81fff")
 		)
@@ -18657,20 +18501,8 @@
 		(pin "10"
 			(uuid "4b5e9792-b8e2-434d-9c1d-a52d349a8426")
 		)
-		(pin "13"
-			(uuid "801631db-9438-48d9-8339-770c63095cc1")
-		)
 		(pin "11"
 			(uuid "aa333952-9512-45bc-93bf-3075d94b163b")
-		)
-		(pin "14"
-			(uuid "35fbd096-6fd5-4114-a5ba-5d1143493c7a")
-		)
-		(pin "15"
-			(uuid "c679a3f1-74dc-4559-8c9f-235327020cdb")
-		)
-		(pin "12"
-			(uuid "ba30ad7d-b56f-4f76-9983-b3b9d6689fd9")
 		)
 		(pin "2"
 			(uuid "8d4c5f6e-2389-40c0-9ec0-187198b2cc7b")
