@@ -1,0 +1,129 @@
+(version 1)
+
+# slack.kicad_pcb — custom DRC rules, 4-layer 1.6 mm, 1 oz outer / 0.5 oz inner
+# Compatible with PCBWay "normal process" (their KiCad 7 rule pack, 4-layer options)
+# AND JLCPCB multilayer. Every number is the stricter of the two.
+# Save next to slack.kicad_pro, or paste into Board Setup -> Design Rules -> Custom Rules,
+# then press the syntax-check button once.
+#
+# Precedence: a matching rule here overrides the net class value; nothing goes below
+# Board Setup -> Constraints. Later rules win over earlier ones when both match.
+
+# ----------------------------------------------------------------- tracks
+# PCBWay 4L normal: 0.127 width / 0.152 spacing outer, 0.102 / 0.127 inner.
+# JLC: 0.09 / 0.09. Stricter = PCBWay.
+(rule "track width and spacing, outer"
+    (layer outer)
+    (condition "A.Type == 'Track'")
+    (constraint track_width (min 0.127mm))
+    (constraint clearance (min 0.152mm)))
+
+(rule "track width and spacing, inner"
+    (layer inner)
+    (condition "A.Type == 'Track'")
+    (constraint track_width (min 0.102mm))
+    (constraint clearance (min 0.127mm)))
+
+# ----------------------------------------------------------------- vias
+# PCBWay 4-layer standard block: hole 0.3, pad 0.45. JLC: 0.15 / 0.25 (0.2 preferred).
+(rule "via hole and diameter"
+    (condition "A.Type == 'Via'")
+    (constraint hole_size (min 0.3mm))
+    (constraint via_diameter (min 0.45mm))
+    (constraint disallow buried_via micro_via))
+
+# JLC: via hole to track 0.2 ; PCBWay: 0.254
+(rule "via hole to track"
+    (condition "A.Type == 'Via' && B.Type == 'Track'")
+    (constraint hole_clearance (min 0.254mm)))
+
+(rule "via to via, same net"
+    (condition "A.Type == 'Via' && B.Type == 'Via' && A.Net == B.Net")
+    (constraint hole_to_hole (min 0.254mm)))
+
+# ----------------------------------------------------------------- holes
+(rule "mechanical drill range"
+    (constraint hole_size (min 0.15mm) (max 6.3mm)))
+
+(rule "PTH hole size"
+    (condition "A.Type != 'Via' && A.isPlated()")
+    (constraint hole_size (min 0.2mm) (max 6.35mm)))
+
+(rule "PTH pad hole and annular ring"
+    (condition "A.Type == 'Pad' && A.isPlated()")
+    (constraint hole_size (min 0.5mm))
+    (constraint annular_width (min 0.25mm)))
+
+(rule "NPTH hole size"
+    (condition "A.Type == 'Pad' && !A.isPlated()")
+    (constraint hole_size (min 0.5mm)))
+
+(rule "plated slot width"
+    (condition "(A.Hole_Size_X != A.Hole_Size_Y) && A.isPlated()")
+    (constraint hole_size (min 0.5mm)))
+
+(rule "non-plated slot width"
+    (condition "(A.Hole_Size_X != A.Hole_Size_Y) && !A.isPlated()")
+    (constraint hole_size (min 0.8mm)))
+
+(rule "hole to hole, different nets"
+    (condition "A.Net != B.Net")
+    (constraint hole_to_hole (min 0.5mm)))
+
+# ----------------------------------------------------------------- pads
+# PCBWay pack: SMD pad to pad 0.127. JLC: 0.15. Stricter = JLC.
+(rule "SMD pad to pad"
+    (condition "A.Type == 'Pad' && B.Type == 'Pad'")
+    (constraint clearance (min 0.15mm)))
+
+# PTH pad hole to track 0.33 (PCBWay) ; PTH pad copper to track 0.2
+(rule "PTH hole to track"
+    (condition "A.isPlated() && A.Type != 'Via' && B.Type == 'Track'")
+    (constraint hole_clearance (min 0.33mm)))
+
+(rule "PTH pad to track"
+    (condition "A.isPlated() && A.Type != 'Via' && B.Type == 'Track'")
+    (constraint clearance (min 0.2mm)))
+
+# Inner layers: PTH hole to any copper (JLC 0.3, PCBWay isolation ring 0.178)
+(rule "PTH hole to copper, inner"
+    (layer inner)
+    (condition "A.Pad_Type == 'Through-hole'")
+    (constraint hole_clearance (min 0.3mm)))
+
+(rule "NPTH to track"
+    (condition "A.Pad_Type == 'NPTH, mechanical' && B.Type == 'Track'")
+    (constraint hole_clearance (min 0.254mm)))
+
+(rule "NPTH to other copper"
+    (condition "A.Pad_Type == 'NPTH, mechanical' && B.Type != 'Track'")
+    (constraint hole_clearance (min 0.2mm)))
+
+# ----------------------------------------------------------------- board edge (plated edge)
+# PCBWay: track to routed edge 0.3. JLC: 0.2.
+# Plated edge: DGND copper may touch the outline; tell the fab in the order notes
+# that the edge is plated and the GND copper should extend 0.5 mm past the outline
+# (KiCad clips zones at the outline). Leave 3-5 mm unplated gaps, incl. at the antenna.
+(rule "copper to board edge"
+    (condition "A.Net != 'DGND'")
+    (constraint edge_clearance (min 0.3mm)))
+
+(rule "ground to board edge, plated edge"
+    (condition "A.Net == 'DGND'")
+    (constraint edge_clearance (min 0mm)))
+
+# ----------------------------------------------------------------- power classes
+(rule "power clearance"
+    (condition "A.hasNetclass('Power_HI') || A.hasNetclass('Power_SW')")
+    (constraint clearance (min 0.2mm)))
+
+# ----------------------------------------------------------------- silkscreen
+(rule "silk text size"
+    (layer "?.Silkscreen")
+    (constraint text_thickness (min 0.15mm))
+    (constraint text_height (min 0.8mm)))
+
+(rule "silk to pad"
+    (layer outer)
+    (condition "A.Type == 'Pad' && (B.Type == 'Text' || B.Type == 'Graphic')")
+    (constraint silk_clearance (min 0.15mm)))

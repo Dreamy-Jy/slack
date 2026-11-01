@@ -25,7 +25,7 @@
       "lockedItems": false,
       "otherItems": true,
       "pads": true,
-      "text": false,
+      "text": true,
       "tracks": true,
       "vias": true,
       "zones": true
@@ -54,7 +54,7 @@
       "board_outline_area",
       "ly_points"
     ],
-    "visible_layers": "00000000_00000000_00000002_2200888d",
+    "visible_layers": "00000000_00000000_00000002_220088cd",
     "zone_display_mode": 0
   },
   "git": {
@@ -108,7 +108,7 @@
       103,
       103,
       103,
-      0
+      51
     ],
     "custom_group_rules": [],
     "expanded_rows": [],
