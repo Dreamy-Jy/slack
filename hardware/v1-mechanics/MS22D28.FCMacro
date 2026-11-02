@@ -1,0 +1,306 @@
+"""MS-22D28-G020 slide switch (G-Switch) - FreeCAD 1.1 macro.
+
+Builds a parametric model in a NEW document. One VarSet "SwitchParams" drives every
+shape by expression, all solids live in one App::Part, colours are set when the GUI is up.
+
+Axes = KiCad 3D convention: origin at the footprint centre on the PCB top, +z up,
++y toward pin row 1-3 (pin 1 at x = -2, y = +3).
+
+Sources: "datasheet" = dimension printed on G-Switch drawing MS-22D28-GXXX rev X1;
+"drawing" = measured off that drawing (+-0.03 mm). Colours are sampled from its photo.
+Not modelled: the interior (slider, contacts); it is hidden except through the lid cut-outs.
+
+Macro > Execute. It always makes its own new document, so nothing you have open is touched.
+The Report view prints ok / FAIL per step; on any failure everything is undone (one transaction).
+Edit a value in SwitchParams (select it, Data tab) and the model rebuilds.
+"""
+import FreeCAD as App
+import Part
+
+P = "SwitchParams"      # VarSet name used inside expressions
+EXPORT_STEP = ""        # e.g. "/Users/you/slack/.../MS-22D28-G020.step"; "" = no export (colours need the GUI)
+
+# --- inputs: (name, value, kind, source, tooltip); kind L = length >= 0, D = signed distance, I = integer ---
+INPUTS = [
+    ("body_len",  7.10, "L", "datasheet", "Overall length along x, over the corner-post flares (7.10 +-0.1)"),
+    ("body_wid",  4.00, "L", "datasheet", "Body width along y, pins excluded"),
+    ("pin_span",  6.00, "L", "datasheet", "Pin tip to pin tip across both rows (6.00 +-0.1)"),
+    ("body_h",    2.15, "L", "datasheet", "PCB top to lid top, knob excluded"),
+    ("knob_g",    2.00, "L", "datasheet", "Knob height above the lid: the G code in the part number (G020 = 2.0)"),
+    ("knob_w",    1.45, "L", "datasheet", "Knob size, x and y"),
+    ("travel",    1.50, "L", "datasheet", "Knob travel between the two detents (1.50 +-0.1)"),
+    ("position",  1,    "I", "choice",    "Detent the knob is drawn in: 1 = +x side (as on the drawing), 2 = -x side"),
+    ("pin_pitch", 2.00, "L", "datasheet", "Pin pitch along x"),
+    ("pin_w",     0.35, "L", "datasheet", "Pin width along x"),
+    ("peg_d",     0.70, "L", "datasheet", "Locating peg diameter (footprint hole is 0.90)"),
+    ("peg_len",   0.50, "L", "datasheet", "Locating peg length below the base"),
+    ("peg_pitch", 4.50, "L", "datasheet", "Distance between the two pegs along x"),
+    ("base_len",  6.52, "L", "drawing",   "Black base length between its end faces, below the post flares"),
+    ("lid_t",     0.15, "L", "drawing",   "Lid sheet thickness; also the end flaps"),
+    ("pin_t",     0.30, "L", "drawing",   "Pin thickness; pin bottom is flush with the base bottom"),
+    ("post_x_in", 2.77, "L", "drawing",   "Corner post inner face, distance from centre along x"),
+    ("post_y_in", 0.95, "L", "drawing",   "Corner post inner face, distance from centre along y"),
+    ("flare_tx",  2.97, "L", "drawing",   "x where a post's slanted face meets the top (z = body_h)"),
+    ("flare_z",   1.25, "L", "drawing",   "z where the slanted face meets the post's outer face (x = body_len / 2)"),
+    ("flare_zb",  1.065, "L", "drawing",  "z of the underside of the post flare"),
+    ("lid_end",   3.47, "L", "drawing",   "Lid end flap, outer face distance from centre along x"),
+    ("flap_half", 0.91, "L", "drawing",   "Lid end flap, half width along y"),
+    ("flap_bot",  0.45, "L", "drawing",   "z of the lid end flap's lower edge"),
+    ("win_len",   3.24, "L", "drawing",   "Lid window length along x"),
+    ("win_wid",   1.64, "L", "drawing",   "Lid window width along y"),
+    ("cut_len",   4.20, "L", "drawing",   "Lid cut-out on each long edge, length along x (shows the black base top)"),
+    ("cut_dep",   0.45, "L", "drawing",   "Lid cut-out depth from the long edge, along y"),
+    ("peg_round", 0.24, "L", "drawing",   "Rounding at the peg tip; modelled as a chamfer this size"),
+]
+
+# --- derived: (name, expression, kind, tooltip) ---
+DERIVED = [
+    ("half_len",  f"{P}.body_len / 2",              "L", "Half the overall length"),
+    ("half_wid",  f"{P}.body_wid / 2",              "L", "Half the body width"),
+    ("base_half", f"{P}.base_len / 2",              "L", "Half the base length"),
+    ("base_top",  f"{P}.body_h - {P}.lid_t",        "L", "Top of the black base = underside of the lid"),
+    ("knob_top",  f"{P}.body_h + {P}.knob_g",       "L", "Total height above the PCB (4.15 for G020)"),
+    ("knob_x",    f"({P}.travel / 2) * (3 - 2 * {P}.position)", "D", "Knob centre x for the chosen detent: +travel/2 or -travel/2"),
+    ("pin_reach", f"{P}.pin_span / 2",              "L", "Pin tip distance from centre along y"),
+    ("peg_x",     f"{P}.peg_pitch / 2",             "L", "Peg offset from centre along x"),
+    ("cut_in",    f"{P}.half_wid - {P}.cut_dep",    "L", "y of the inner edge of the lid cut-outs"),
+    ("flap_in",   f"{P}.lid_end - {P}.lid_t",       "L", "Inner face of the lid end flap, distance from centre"),
+]
+
+COLOURS = {                      # RGB 0..1, sampled from the datasheet photo
+    "black": (0.11, 0.11, 0.11),   # moulded plastic: base, posts, pegs, knob
+    "steel": (0.58, 0.57, 0.55),   # lid
+    "tin":   (0.74, 0.74, 0.72),   # pins
+}
+
+KIND = {"L": "App::PropertyLength", "D": "App::PropertyDistance", "I": "App::PropertyInteger"}
+
+
+def v(name):
+    return f"{P}.{name}"
+
+
+# ---------------------------------------------------------------- helpers
+class Builder:
+    def __init__(self, doc, part):
+        self.doc, self.part = doc, part
+
+    def new(self, kind, name, desc):
+        o = self.doc.addObject(kind, name)
+        o.Label, o.Label2 = name, desc
+        self.part.addObject(o)
+        return o
+
+    def box(self, name, desc, x, y, z):
+        """Part::Box from (min, max) expressions per axis."""
+        b = self.new("Part::Box", name, desc)
+        for axis, (lo, hi), size in (("x", x, "Length"), ("y", y, "Width"), ("z", z, "Height")):
+            b.setExpression(size, f"({hi}) - ({lo})")
+            b.setExpression(f"Placement.Base.{axis}", lo)
+        return b
+
+    def post_wedge(self, name, desc, sx, sy):
+        """Upper half of a corner post: slanted outer face from z = flare_z up to body_h.
+        The wedge's own Y axis is turned to global z by a fixed 90 deg about x (local z = global -y)."""
+        w = self.new("Part::Wedge", name, desc)
+        w.Placement = App.Placement(App.Vector(0, 0, 0), App.Rotation(App.Vector(1, 0, 0), 90))
+        xin, xout, xtop = (v("post_x_in"), v("half_len"), v("flare_tx"))
+        if sx > 0:
+            xs = dict(Xmin=xin, Xmax=xout, X2min=xin, X2max=xtop)
+        else:
+            xs = dict(Xmin=f"-{xout}", Xmax=f"-{xin}", X2min=f"-{xtop}", X2max=f"-{xin}")
+        if sy > 0:
+            zs = dict(Zmin=f"-{v('half_wid')}", Zmax=f"-{v('post_y_in')}")
+        else:
+            zs = dict(Zmin=v("post_y_in"), Zmax=v("half_wid"))
+        zs.update(Z2min=zs["Zmin"], Z2max=zs["Zmax"])
+        for prop, expr in {**xs, **zs, "Ymin": v("flare_z"), "Ymax": v("body_h")}.items():
+            w.setExpression(prop, expr)
+        return w
+
+    def fuse(self, name, desc, shapes):
+        f = self.new("Part::MultiFuse", name, desc)
+        f.Shapes = shapes
+        return f
+
+    def cut(self, name, desc, base, tool):
+        c = self.new("Part::Cut", name, desc)
+        c.Base, c.Tool = base, tool
+        return c
+
+
+# ---------------------------------------------------------------- steps
+def make_varset(doc):
+    vs = doc.addObject("App::VarSet", P)
+    for name, value, kind, source, tip in INPUTS:
+        vs.addProperty(KIND[kind], name, f"Inputs ({source})", f"[{source}] {tip}")
+        setattr(vs, name, value)
+    for name, expr, kind, tip in DERIVED:
+        vs.addProperty(KIND[kind], name, "Derived", f"{tip}  = {expr}")
+        vs.setExpression(name, expr)
+    doc.recompute()
+    return vs
+
+
+def build_base(b):
+    """Black moulded base: block, four corner posts with the slanted flare, two locating pegs."""
+    hl, hw = v("half_len"), v("half_wid")
+    parts = [b.box("BaseBlock", "Black block between the end faces, up to the underside of the lid",
+                   (f"-{v('base_half')}", v("base_half")), (f"-{hw}", hw), ("0 mm", v("base_top")))]
+    for sx, tx in ((1, "p"), (-1, "m")):
+        for sy, ty in ((1, "p"), (-1, "m")):
+            tag = f"_x{tx}_y{ty}"          # p = plus side, m = minus side
+            x = (v("post_x_in"), hl) if sx > 0 else (f"-{hl}", f"-{v('post_x_in')}")
+            y = (v("post_y_in"), hw) if sy > 0 else (f"-{hw}", f"-{v('post_y_in')}")
+            parts.append(b.box(f"PostLow{tag}", f"Corner post {tag}, vertical part under the slanted face (p = +, m = -)",
+                               x, y, (v("flare_zb"), v("flare_z"))))
+            parts.append(b.post_wedge(f"PostTop{tag}", f"Corner post {tag}, slanted face up to the lid top", sx, sy))
+    for tag, sgn in (("_xp", ""), ("_xm", "-")):
+        cyl = b.new("Part::Cylinder", f"PegShaft{tag}", f"Locating peg {tag}, straight part")
+        cyl.setExpression("Radius", f"{v('peg_d')} / 2")
+        cyl.setExpression("Height", f"{v('peg_len')} - {v('peg_round')}")
+        cyl.setExpression("Placement.Base.x", f"{sgn}{v('peg_x')}")
+        cyl.setExpression("Placement.Base.z", f"-({v('peg_len')} - {v('peg_round')})")
+        cone = b.new("Part::Cone", f"PegTip{tag}", f"Locating peg {tag}, rounded tip as a chamfer")
+        cone.setExpression("Radius1", f"{v('peg_d')} / 2 - {v('peg_round')}")
+        cone.setExpression("Radius2", f"{v('peg_d')} / 2")
+        cone.setExpression("Height", v("peg_round"))
+        cone.setExpression("Placement.Base.x", f"{sgn}{v('peg_x')}")
+        cone.setExpression("Placement.Base.z", f"-{v('peg_len')}")
+        parts += [cyl, cone]
+    return b.fuse("Base", "Black moulded base with corner posts and pegs", parts), parts
+
+
+def build_lid(b):
+    """Steel lid: plate with notched corners, end flaps, knob window, two cut-outs on the long edges."""
+    hw, win, cut = v("half_wid"), f"{v('win_len')} / 2", f"{v('cut_len')} / 2"
+    top = (v("base_top"), v("body_h"))
+    parts = [b.box("LidPlate", "Lid plate between the corner posts",
+                   (f"-{v('post_x_in')}", v("post_x_in")), (f"-{hw}", hw), top)]
+    for tag, sx in (("_xp", 1), ("_xm", -1)):
+        x_tab = (v("post_x_in"), v("lid_end")) if sx > 0 else (f"-{v('lid_end')}", f"-{v('post_x_in')}")
+        x_flap = (v("flap_in"), v("lid_end")) if sx > 0 else (f"-{v('lid_end')}", f"-{v('flap_in')}")
+        y = (f"-{v('flap_half')}", v("flap_half"))
+        parts.append(b.box(f"LidTab{tag}", f"Lid end tab {tag}, between the corner posts", x_tab, y, top))
+        parts.append(b.box(f"LidFlap{tag}", f"Lid end flap {tag}, bent down over the base end", x_flap, y,
+                           (v("flap_bot"), v("base_top"))))
+    blank = b.fuse("LidBlank", "Lid before the window and cut-outs", parts)
+    z = (f"{v('base_top')} - {v('lid_t')}", f"{v('body_h')} + {v('lid_t')}")
+    tools = [b.box("LidWindowTool", "Knob window", (f"-({win})", win),
+                   (f"-{v('win_wid')} / 2", f"{v('win_wid')} / 2"), z),
+             b.box("LidCutTool_yp", "Cut-out on the +y long edge", (f"-({cut})", cut),
+                   (v("cut_in"), f"{hw} + {v('lid_t')}"), z),
+             b.box("LidCutTool_ym", "Cut-out on the -y long edge", (f"-({cut})", cut),
+                   (f"-({hw} + {v('lid_t')})", f"-{v('cut_in')}"), z)]
+    cutters = b.fuse("LidCutters", "Window and cut-outs", tools)
+    return b.cut("Lid", "Steel lid with knob window and long-edge cut-outs", blank, cutters), parts + tools + [blank, cutters]
+
+
+def build_knob(b):
+    k = f"{v('knob_w')} / 2"
+    return b.box("Knob", "Black knob; SwitchParams.position picks the detent",
+                 (f"{v('knob_x')} - {k}", f"{v('knob_x')} + {k}"), (f"-({k})", k), (v("base_top"), v("knob_top")))
+
+
+def build_pins(b):
+    """Six tin pins. 1-3 on +y (x = -pitch, 0, +pitch), 4-6 on -y."""
+    pins = []
+    for n in range(1, 7):
+        cx = ("-" + v("pin_pitch"), "0 mm", v("pin_pitch"))[(n - 1) % 3]
+        y = (v("half_wid"), v("pin_reach")) if n <= 3 else (f"-{v('pin_reach')}", f"-{v('half_wid')}")
+        pins.append(b.box(f"Pin{n}", f"Tin pin {n}, outside the body",
+                          (f"{cx} - {v('pin_w')} / 2", f"{cx} + {v('pin_w')} / 2"), y, ("0 mm", v("pin_t"))))
+    return pins
+
+
+def check_recompute(doc):
+    doc.recompute()
+    bad = [f"{o.Name}: {o.getStatusString()}" for o in doc.Objects if not o.isValid()]
+    if bad:
+        raise RuntimeError("; ".join(bad))
+
+
+def check_shapes(vs, finals):
+    """Valid single solids, bounding box from the VarSet, no two solids overlapping."""
+    for o in finals:
+        s = o.Shape
+        if not (s.isValid() and len(s.Solids) == 1 and s.Volume > 0):
+            raise RuntimeError(f"{o.Name} is not one valid solid")
+    bb = Part.Compound([o.Shape for o in finals]).BoundBox
+    want = dict(XMax=vs.half_len.Value, YMax=vs.pin_reach.Value, ZMin=-vs.peg_len.Value, ZMax=vs.knob_top.Value)
+    want.update(XMin=-want["XMax"], YMin=-want["YMax"])
+    for k, w in want.items():
+        if abs(getattr(bb, k) - w) > 0.01:
+            raise RuntimeError(f"bounding box {k} = {getattr(bb, k):.3f}, expected {w:.3f}")
+    for i, a in enumerate(finals):
+        for c in finals[i + 1:]:
+            vol = a.Shape.common(c.Shape).Volume
+            if vol > 1e-6:
+                raise RuntimeError(f"{a.Name} and {c.Name} overlap by {vol:.6f} mm3")
+    return f"{len(finals)} solids, box x {bb.XMin:.2f}..{bb.XMax:.2f} y {bb.YMin:.2f}..{bb.YMax:.2f} z {bb.ZMin:.2f}..{bb.ZMax:.2f}"
+
+
+def paint(groups, hidden):
+    """Colour every object of a chain, not only its result. FreeCAD's boolean view providers rebuild
+    the result's face colours from their inputs after each recompute, and an input left at the default
+    grey would turn those faces grey the first time a SwitchParams value is edited."""
+    if not App.GuiUp:
+        return "no GUI: colours skipped"
+    for colour, objs in groups.items():
+        for o in objs:
+            o.ViewObject.ShapeColor = COLOURS[colour]
+    for o in hidden:
+        o.ViewObject.Visibility = False
+    return "colours set"
+
+
+def export_step(part):
+    if not EXPORT_STEP:
+        return "skipped (EXPORT_STEP is empty)"
+    if App.GuiUp:
+        import ImportGui
+        ImportGui.export([part], EXPORT_STEP)
+        return f"coloured STEP written to {EXPORT_STEP}"
+    import Import
+    Import.export([part], EXPORT_STEP)
+    return f"STEP written to {EXPORT_STEP} WITHOUT colours (run with the GUI for colours)"
+
+
+def main():
+    doc = App.newDocument("MS-22D28-G020")
+    doc.openTransaction("Build MS-22D28-G020")
+    state = {}
+
+    def step(label, fn):
+        try:
+            msg = fn()
+        except Exception as e:
+            print(f"FAIL {label}: {e}")
+            doc.abortTransaction()
+            raise
+        print(f"ok   {label}" + (f" - {msg}" if msg else ""))
+
+    try:
+        step("VarSet", lambda: state.update(vs=make_varset(doc)))
+        part = doc.addObject("App::Part", "MS_22D28_G020")
+        part.Label, part.Label2 = "MS-22D28-G020", "G-Switch MS-22D28-G020 slide switch, DPDT, 2.0 mm knob"
+        b = Builder(doc, part)
+        step("Base", lambda: state.update(zip(("base", "base_parts"), build_base(b))))
+        step("Lid", lambda: state.update(zip(("lid", "lid_parts"), build_lid(b))))
+        step("Knob", lambda: state.update(knob=build_knob(b)))
+        step("Pins", lambda: state.update(pins=build_pins(b)))
+        step("Recompute", lambda: check_recompute(doc))
+        finals = [state["base"], state["lid"], state["knob"]] + state["pins"]
+        step("Checks", lambda: check_shapes(state["vs"], finals))
+        hidden = [o for o in part.Group if o not in finals]
+        step("Colours", lambda: paint({"black": [state["base"]] + state["base_parts"] + [state["knob"]],
+                                       "steel": [state["lid"]] + state["lid_parts"],
+                                       "tin": state["pins"]}, hidden))
+        step("STEP", lambda: export_step(part))
+        doc.commitTransaction()
+        print("done: MS-22D28-G020 model built")
+    except Exception:
+        print("model NOT built: everything was undone")
+
+
+main()
