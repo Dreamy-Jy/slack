@@ -1,0 +1,177 @@
+(footprint "BTSA-L-S-8"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "ROCPU BTSA-L-S-8 latching push switch, SMD vertical, 5.8x5.8mm body, 7.5mm tall, DPDT (LCSC C5289958). Pads from datasheet P.C. MOUNTING: 3x1mm, 2mm pitch, 10mm outer span.")
+	(tags "push switch latching self-lock SMD 5.8x5.8 DPDT")
+	(property "Reference" "SW**"
+		(at 0 -5.6 0)
+		(layer "F.SilkS")
+		(uuid "9e2f9856-b894-4b02-a2b7-9c5dc54e80db")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "BTSA-L-S-8"
+		(at 0 5.6 0)
+		(layer "F.Fab")
+		(uuid "e53105a2-b17c-4f6a-a784-38a413f3a3ef")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "00da5a4b-8295-46c7-b835-e9b16d53acd9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9562298b-5daa-4f11-abda-e6b8ef50b2be")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -3 -3)
+		(end -3 3)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "4d9408cb-815b-439f-b4ff-1aa3bd0c0523")
+	)
+	(fp_line
+		(start 3 -3)
+		(end 3 3)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9459670d-31a6-43d9-9bf4-ee6c4f3efce0")
+	)
+	(fp_circle
+		(center -3.6 -4.7)
+		(end -3.5 -4.7)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "1436ec11-ee71-4581-8fd2-638ec8956524")
+	)
+	(fp_rect
+		(start -3.3 -5.3)
+		(end 3.3 5.3)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "642629f3-3668-4f77-b6ce-d657676a47bc")
+	)
+	(fp_rect
+		(start -2.9 -2.9)
+		(end 2.9 2.9)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ac3c202a-6a3e-45c3-886e-f7a69e501577")
+	)
+	(fp_rect
+		(start -1.8 -1.5)
+		(end 1.8 1.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e0e5faeb-ede7-478b-80af-2746d927eef7")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "b70fc58c-9596-48fa-9cac-11434da9ac68")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -2 -3.5)
+		(size 1 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f45b7c38-9da5-44d2-b0fd-a60269aee411")
+	)
+	(pad "2" smd rect
+		(at 0 -3.5)
+		(size 1 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "18d792af-b41c-4ea5-a174-7d26b746174e")
+	)
+	(pad "3" smd rect
+		(at 2 -3.5)
+		(size 1 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "b1168b41-8225-4e9d-a296-10cbc03e7c7a")
+	)
+	(pad "4" smd rect
+		(at -2 3.5)
+		(size 1 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "4768ecf2-9ed1-4d74-a63e-566b114bd701")
+	)
+	(pad "5" smd rect
+		(at 0 3.5)
+		(size 1 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f7d0b1a3-670e-4e98-bc7a-2134023fad8e")
+	)
+	(pad "6" smd rect
+		(at 2 3.5)
+		(size 1 3)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e3bf0080-4ea3-4f7c-b613-e4b42e18fdf0")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/ROCPU Switches/BTSA-L-S-8.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
