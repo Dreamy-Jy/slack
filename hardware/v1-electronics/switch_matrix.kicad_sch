@@ -7,7 +7,7 @@
 	(title_block
 		(title "Slack")
 		(date "2026-07-25")
-		(rev "A.0.7")
+		(rev "A.0.10")
 	)
 	(lib_symbols
 		(symbol "ALPS Electric:EC10E1220505"
@@ -11599,7 +11599,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 134.62 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11609,7 +11609,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 127 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -14183,7 +14183,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 543.56 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14193,7 +14193,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 535.94 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -15792,7 +15792,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 106.68 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15802,7 +15802,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 99.06 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -21405,7 +21405,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 515.62 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21415,7 +21415,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 508 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -25296,7 +25296,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 50.8 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25306,7 +25306,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 43.18 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -26354,7 +26354,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 627.38 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26364,7 +26364,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 619.76 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -27664,7 +27664,7 @@
 				)
 			)
 		)
-		(property "Value" "SPEF110100"
+		(property "Value" "BTSA-L-S-8"
 			(at 208.28 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27674,7 +27674,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
 			(at 214.63 389.56 0)
 			(hide yes)
 			(show_name no)
@@ -36647,7 +36647,7 @@
 				)
 			)
 		)
-		(property "Value" "SPEF110100"
+		(property "Value" "BTSA-L-S-8"
 			(at 180.34 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36657,7 +36657,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
 			(at 186.69 389.56 0)
 			(hide yes)
 			(show_name no)
@@ -38897,7 +38897,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 571.5 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38907,7 +38907,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 563.88 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -41232,7 +41232,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 78.74 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41242,7 +41242,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 71.12 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -55747,7 +55747,7 @@
 				)
 			)
 		)
-		(property "Value" "SPEF110100"
+		(property "Value" "BTSA-L-S-8"
 			(at 477.52 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -55757,7 +55757,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
 			(at 483.87 389.56 0)
 			(hide yes)
 			(show_name no)
@@ -61434,7 +61434,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 599.44 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -61444,7 +61444,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 591.82 292.1 0)
 			(hide yes)
 			(show_name no)
@@ -66577,7 +66577,7 @@
 				)
 			)
 		)
-		(property "Value" "SPEF110100"
+		(property "Value" "BTSA-L-S-8"
 			(at 452.12 289.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -66587,7 +66587,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SPEF110100"
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
 			(at 458.47 389.56 0)
 			(hide yes)
 			(show_name no)
@@ -67880,7 +67880,7 @@
 				)
 			)
 		)
-		(property "Value" "SSSS820201"
+		(property "Value" "SS-3235S-L3"
 			(at 162.56 287.02 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -67890,7 +67890,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ALPS Electric:SSSS820201"
+		(property "Footprint" "XKB Connection:SS3235SL3"
 			(at 154.94 292.1 0)
 			(hide yes)
 			(show_name no)

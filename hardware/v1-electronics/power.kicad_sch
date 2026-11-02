@@ -7,7 +7,7 @@
 	(title_block
 		(title "Slack")
 		(date "2026-07-25")
-		(rev "A.0.7")
+		(rev "A.0.10")
 	)
 	(lib_symbols
 		(symbol "Alpha & Omega Semiconductor:AON7423"
@@ -4151,8 +4151,8 @@
 				("1" "6")
 				("3" "4")
 			)
-			(property "Reference" "D"
-				(at 25.4 7.62 0)
+			(property "Reference" "D0"
+				(at 25.4 -10.16 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -4163,7 +4163,7 @@
 				)
 			)
 			(property "Value" "USBLC6-2SC6"
-				(at 25.4 5.08 0)
+				(at 25.4 -12.7 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -4173,7 +4173,7 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "SOT95P280X145-6N"
+			(property "Footprint" "STMicroelectronics:SOT95P280X145-6N"
 				(at 29.21 -94.92 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -4198,7 +4198,7 @@
 				)
 			)
 			(property "Description" "TVS Diode Array Uni-Directional USBLC6-2SC6 17V, SOT-23 6-Pin"
-				(at -3.81 -23.876 0)
+				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -4290,6 +4290,160 @@
 						(size 1.27 1.27)
 					)
 					(justify left top)
+				)
+			)
+			(property "Availability" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "CREATOR" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Check_prices" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MANUFACTURER" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MF" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MP" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "PARTREV" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Package" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Price" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SNAPEDA_PACKAGE_ID" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "STANDARD" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "SnapEDA_Link" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "VERIFIER" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
 				)
 			)
 			(symbol "USBLC6-2SC6_0_1"
@@ -15921,7 +16075,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Female USB-C USB2.0"
+		(property "Value" "USB4105-GF-A-120"
 			(at 25.4 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15932,7 +16086,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4085"
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 			(at 39.37 111.76 0)
 			(hide yes)
 			(show_name no)
@@ -15954,7 +16108,7 @@
 				)
 			)
 		)
-		(property "Description" "part selected: USB4085-GF-A"
+		(property "Description" "part selected: USB4105-GF-A-120"
 			(at 35.56 83.82 0)
 			(hide yes)
 			(show_name no)
@@ -21619,7 +21773,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal"
+		(property "Footprint" "Amass:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal_Tight"
 			(at 325.12 226.06 0)
 			(hide yes)
 			(show_name no)
