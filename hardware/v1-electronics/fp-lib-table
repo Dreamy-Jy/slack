@@ -18,4 +18,7 @@
 	(lib (name "Harwin") (type "KiCad") (uri "${KIPRJMOD}/Harwin") (options "") (descr ""))
 	(lib (name "Mechanical") (type "KiCad") (uri "${KIPRJMOD}/Mechanical") (options "") (descr ""))
 	(lib (name "Dongguan Guangzhu Industrial") (type "KiCad") (uri "${KIPRJMOD}/Dongguan Guangzhu Industrial") (options "") (descr ""))
+	(lib (name "G-Switch. Electronic") (type "KiCad") (uri "${KIPRJMOD}/G-Switch. Electronic") (options "") (descr ""))
+	(lib (name "ROCPU Switches") (type "KiCad") (uri "${KIPRJMOD}/ROCPU Switches") (options "") (descr ""))
+	(lib (name "Amass") (type "KiCad") (uri "${KIPRJMOD}/Amass") (options "") (descr ""))
 )
