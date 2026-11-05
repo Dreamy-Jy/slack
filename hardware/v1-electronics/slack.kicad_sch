@@ -388,7 +388,7 @@
 				(justify left)
 			)
 		)
-		(pin "RotaryEncoder_AChannel[1..10]" output
+		(pin "RotaryEncoder_AChannel[1..6]" output
 			(at 203.2 55.88 180)
 			(uuid "43d6769e-fe30-4e9e-8ab0-d98424c1e8d5")
 			(effects
@@ -399,7 +399,7 @@
 				(justify left)
 			)
 		)
-		(pin "RotaryEncoder_BChannel[1..10]" output
+		(pin "RotaryEncoder_BChannel[1..6]" output
 			(at 203.2 60.96 180)
 			(uuid "ad0ff9a0-ef69-453c-ac4f-ca7536fc8061")
 			(effects
@@ -584,7 +584,7 @@
 				(justify right)
 			)
 		)
-		(pin "RotaryEncoder_AChannel[1..10]" input
+		(pin "RotaryEncoder_AChannel[1..6]" input
 			(at 177.8 55.88 0)
 			(uuid "6705a8d7-4fd2-4e67-8309-d58120b91d4f")
 			(effects
@@ -595,7 +595,7 @@
 				(justify right)
 			)
 		)
-		(pin "RotaryEncoder_BChannel[1..10]" input
+		(pin "RotaryEncoder_BChannel[1..6]" input
 			(at 177.8 60.96 0)
 			(uuid "ce5ac648-c284-4bab-99cf-39e0978a1723")
 			(effects

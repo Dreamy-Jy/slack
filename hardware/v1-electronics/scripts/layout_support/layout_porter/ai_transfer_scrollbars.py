@@ -3,8 +3,8 @@
 # Plain Python, nothing to install, no KiCad needed. Run it with KiCad closed: `pixi run scrollbar`.
 # The Slack board must be in KiCad 10.0's format. The example board can be 10.0 or 10.99.
 #
-# Left scroll bar (RE9): middle click, the example's Lever class 2 (B2-...).
-# Right scroll bar (RE10): end click, the example's Lever class 3 (B1-...).
+# Left scroll bar (RE5): middle click, the example's Lever class 2 (B2-...).
+# Right scroll bar (RE6): end click, the example's Lever class 3 (B1-...).
 #
 # 1. Finds the 8 scroll-bar parts on the Slack board: the switches, LEDs and diodes by reference,
 #    the two caps by footprint (they're only on the board, not in the schematic). Each must have
@@ -27,17 +27,17 @@ EXAMPLE = ("/Users/jordanethomas/Documents/Projects/keyboards/slack/hardware/v1-
 KICAD_10 = "(version 20260206)"   # near the top of every board saved by KiCad 10.0
 
 SIDES = {   # Slack encoder: (example encoder, {example part: (Slack reference, the footprint it must have)})
-    "RE9": ("B2-RE9", {   # left: middle click
+    "RE5": ("B2-RE9", {   # left: middle click
         "B2-MP": ("", "Mechanical:grounded_scrollcap"),   # no reference: found by its footprint
-        "B2-SW62": ("SW62", "ALPS Electric:SKQGAKE010"),
-        "B2-LED62": ("LED62", "Liteon:LTSTFC12WEGBD5A"),
-        "B2-D62": ("D62", "Diode_SMD:D_SOD-523"),
+        "B2-SW62": ("SW58", "ALPS Electric:SKQGAKE010"),
+        "B2-LED62": ("LED58", "Liteon:LTSTFC12WEGBD5A"),
+        "B2-D62": ("D58", "Diode_SMD:D_SOD-523"),
     }),
-    "RE10": ("B1-RE9", {   # right: end click
+    "RE6": ("B1-RE9", {   # right: end click
         "B1-MP": ("", "Mechanical:switched_grounded_scrollcap"),
-        "B1-SW62": ("SW63", "XKB Connection:TC-1109-C-E"),
-        "B1-LED62": ("LED63", "Liteon:LTSTFC12WEGBD5A"),
-        "B1-D62": ("D63", "Diode_SMD:D_SOD-523"),
+        "B1-SW62": ("SW59", "XKB Connection:TC-1109-C-E"),
+        "B1-LED62": ("LED59", "Liteon:LTSTFC12WEGBD5A"),
+        "B1-D62": ("D59", "Diode_SMD:D_SOD-523"),
     }),
 }
 

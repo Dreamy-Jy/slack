@@ -86,4 +86,13 @@ DCCH - DC/DC converter output
 
 ---
 
-Update Jumpers to DIP Switches
+- [x] Update Jumpers to DIP Switches
+- [ ] refactor schematic to better represent the physical layout of the board.
+
+---
+
+## Future Feature Request
+
+Chip to monitor On/Off state of features
+Chip to monitor interrupts
+Battery management chips

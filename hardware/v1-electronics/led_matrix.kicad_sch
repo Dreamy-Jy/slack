@@ -662,7 +662,7 @@
 		(uuid "311dfc5f-c062-4abe-8e95-5b5088e0e39d")
 	)
 	(rectangle
-		(start 910.59 15.24)
+		(start 855.98 15.24)
 		(end 1024.89 304.8)
 		(stroke
 			(width 1)
@@ -687,18 +687,6 @@
 		(uuid "6d849f40-2570-4f3a-87eb-28e829d8879d")
 	)
 	(rectangle
-		(start 857.504 271.78)
-		(end 910.59 304.8)
-		(stroke
-			(width 1)
-			(type dash_dot_dot)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "8a76c100-0f29-49b7-bc07-f3b81bef1d00")
-	)
-	(rectangle
 		(start 20.32 106.68)
 		(end 43.18 116.84)
 		(stroke
@@ -710,18 +698,6 @@
 			(type none)
 		)
 		(uuid "987d65d1-bdc1-41e5-866b-681ce5c5bfd9")
-	)
-	(rectangle
-		(start 856.996 120.142)
-		(end 910.59 152.4)
-		(stroke
-			(width 1)
-			(type dash_dot_dot)
-		)
-		(fill
-			(type none)
-		)
-		(uuid "bc6797e8-66d2-4a91-b682-50bd9c85dc9f")
 	)
 	(rectangle
 		(start 20.32 88.9)
@@ -12580,7 +12556,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0c5b38ae-b5a6-4b5f-bdcd-7a6a1fdb159a")
-		(property "Reference" "LED66"
+		(property "Reference" "LED64"
 			(at 720.09 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12893,7 +12869,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED66")
+					(reference "LED64")
 					(unit 1)
 				)
 			)
@@ -13240,7 +13216,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1168790c-cbd5-4ed6-8fb6-1fdbba79a625")
-		(property "Reference" "LED53"
+		(property "Reference" "LED51"
 			(at 608.33 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13553,7 +13529,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED53")
+					(reference "LED51")
 					(unit 1)
 				)
 			)
@@ -13570,7 +13546,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "12792f85-acb8-48ac-aaf0-a33351fbf9ed")
-		(property "Reference" "LED78"
+		(property "Reference" "LED76"
 			(at 831.85 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13883,7 +13859,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED78")
+					(reference "LED76")
 					(unit 1)
 				)
 			)
@@ -13900,7 +13876,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "14ea7669-1873-4b67-9687-b85e4cea478b")
-		(property "Reference" "LED75"
+		(property "Reference" "LED80"
 			(at 887.73 95.8849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14213,7 +14189,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED75")
+					(reference "LED80")
 					(unit 1)
 				)
 			)
@@ -14230,7 +14206,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "151d6038-b0bd-44cb-8b54-2b838bfb0e72")
-		(property "Reference" "LED58"
+		(property "Reference" "LED56"
 			(at 664.21 128.9049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14543,7 +14519,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED58")
+					(reference "LED56")
 					(unit 1)
 				)
 			)
@@ -14560,7 +14536,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "15d8cb5f-acaa-4b2f-8162-c514108b7ee9")
-		(property "Reference" "LED36"
+		(property "Reference" "LED35"
 			(at 384.81 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14873,7 +14849,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED36")
+					(reference "LED35")
 					(unit 1)
 				)
 			)
@@ -14890,7 +14866,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "19e1e2e6-112f-47d2-85f5-0c3fc1d1cdb5")
-		(property "Reference" "LED39"
+		(property "Reference" "LED38"
 			(at 440.69 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15203,7 +15179,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED39")
+					(reference "LED38")
 					(unit 1)
 				)
 			)
@@ -15550,7 +15526,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1e8546e2-8197-4288-8c4d-07937623fbd6")
-		(property "Reference" "LED72"
+		(property "Reference" "LED70"
 			(at 831.85 95.8849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15863,7 +15839,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED72")
+					(reference "LED70")
 					(unit 1)
 				)
 			)
@@ -15880,7 +15856,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1edcc267-4877-4bb6-b7c9-b7d1c9536da7")
-		(property "Reference" "LED74"
+		(property "Reference" "LED79"
 			(at 887.73 62.8649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16193,7 +16169,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED74")
+					(reference "LED79")
 					(unit 1)
 				)
 			)
@@ -16540,7 +16516,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "22311a51-2097-4e0a-85a2-bbe7d1be3cef")
-		(property "Reference" "LED45"
+		(property "Reference" "LED44"
 			(at 552.45 128.9049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16853,7 +16829,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED45")
+					(reference "LED44")
 					(unit 1)
 				)
 			)
@@ -17860,7 +17836,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "31f3a09f-e224-4240-a363-ae825b09f199")
-		(property "Reference" "LED57"
+		(property "Reference" "LED55"
 			(at 664.21 95.8849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18173,7 +18149,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED57")
+					(reference "LED55")
 					(unit 1)
 				)
 			)
@@ -18520,7 +18496,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "36580491-c00b-40d4-9dcc-11363cdfa1c7")
-		(property "Reference" "LED77"
+		(property "Reference" "LED75"
 			(at 775.97 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18833,7 +18809,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED77")
+					(reference "LED75")
 					(unit 1)
 				)
 			)
@@ -18850,7 +18826,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3c029c9f-866a-43f0-b3be-c53b9ddeda32")
-		(property "Reference" "LED61"
+		(property "Reference" "LED65"
 			(at 720.09 128.9049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19163,7 +19139,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED61")
+					(reference "LED65")
 					(unit 1)
 				)
 			)
@@ -19840,7 +19816,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3e3c9154-f876-41e1-8787-0cdb381767f0")
-		(property "Reference" "LED68"
+		(property "Reference" "LED73"
 			(at 775.97 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20153,7 +20129,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED68")
+					(reference "LED73")
 					(unit 1)
 				)
 			)
@@ -20830,7 +20806,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "44b3a2c5-b317-498f-933a-bf718d1cdeb3")
-		(property "Reference" "LED48"
+		(property "Reference" "LED53"
 			(at 608.33 128.9049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21143,7 +21119,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED48")
+					(reference "LED53")
 					(unit 1)
 				)
 			)
@@ -21820,7 +21796,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4e07465f-32e4-41a3-b720-7ea1db4c8cc5")
-		(property "Reference" "LED40"
+		(property "Reference" "LED39"
 			(at 496.57 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22133,7 +22109,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED40")
+					(reference "LED39")
 					(unit 1)
 				)
 			)
@@ -22150,7 +22126,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4ed4731c-057c-4dcb-9ae0-e1d720b1a8f8")
-		(property "Reference" "LED70"
+		(property "Reference" "LED68"
 			(at 778.51 128.9049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22463,7 +22439,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED70")
+					(reference "LED68")
 					(unit 1)
 				)
 			)
@@ -22480,7 +22456,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4edc94d7-ffa7-4f68-b28c-296e6219140e")
-		(property "Reference" "LED43"
+		(property "Reference" "LED42"
 			(at 552.45 62.8649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22793,7 +22769,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED43")
+					(reference "LED42")
 					(unit 1)
 				)
 			)
@@ -23800,7 +23776,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "594bfba6-0d08-4f4a-ab65-8a0cb79d4305")
-		(property "Reference" "LED71"
+		(property "Reference" "LED69"
 			(at 831.85 62.8649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24113,7 +24089,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED71")
+					(reference "LED69")
 					(unit 1)
 				)
 			)
@@ -24130,7 +24106,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5e15eed3-35a5-431a-b0f6-559d0c6e1fd9")
-		(property "Reference" "LED38"
+		(property "Reference" "LED37"
 			(at 440.69 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24443,7 +24419,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED38")
+					(reference "LED37")
 					(unit 1)
 				)
 			)
@@ -24790,7 +24766,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "64813c55-e1c3-4e6b-9bc9-096a213199fa")
-		(property "Reference" "LED65"
+		(property "Reference" "LED63"
 			(at 720.09 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25103,7 +25079,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED65")
+					(reference "LED63")
 					(unit 1)
 				)
 			)
@@ -25120,7 +25096,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "66641ff2-6807-4be2-9a34-f786feaa382a")
-		(property "Reference" "LED55"
+		(property "Reference" "LED59"
 			(at 608.33 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25433,7 +25409,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED55")
+					(reference "LED59")
 					(unit 1)
 				)
 			)
@@ -25450,7 +25426,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6950113c-f081-412d-9393-876dcb6b1d02")
-		(property "Reference" "LED63"
+		(property "Reference" "LED61"
 			(at 664.21 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25763,7 +25739,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED63")
+					(reference "LED61")
 					(unit 1)
 				)
 			)
@@ -26110,7 +26086,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6a6ff0cf-4e88-41ba-9a86-90d9ff43fe1b")
-		(property "Reference" "LED49"
+		(property "Reference" "LED54"
 			(at 664.21 62.8649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26423,7 +26399,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED49")
+					(reference "LED54")
 					(unit 1)
 				)
 			)
@@ -26440,7 +26416,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6ac81ecf-76ae-422b-84c6-e653a49069e9")
-		(property "Reference" "LED64"
+		(property "Reference" "LED62"
 			(at 664.21 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -26753,7 +26729,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED64")
+					(reference "LED62")
 					(unit 1)
 				)
 			)
@@ -26770,7 +26746,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6d032733-3235-4347-9074-d4dff49a0b63")
-		(property "Reference" "LED41"
+		(property "Reference" "LED40"
 			(at 496.57 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27083,7 +27059,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED41")
+					(reference "LED40")
 					(unit 1)
 				)
 			)
@@ -27760,7 +27736,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "785be455-aa2e-4887-b110-84dfa49157a4")
-		(property "Reference" "LED79"
+		(property "Reference" "LED77"
 			(at 831.85 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28073,7 +28049,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED79")
+					(reference "LED77")
 					(unit 1)
 				)
 			)
@@ -28090,7 +28066,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7abf9d8e-8a02-4b54-a1d2-4642ed02604e")
-		(property "Reference" "LED50"
+		(property "Reference" "LED48"
 			(at 552.45 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -28403,7 +28379,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED50")
+					(reference "LED48")
 					(unit 1)
 				)
 			)
@@ -31390,7 +31366,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9bf274f8-0174-41cf-b553-b24ce01a27f0")
-		(property "Reference" "LED67"
+		(property "Reference" "LED72"
 			(at 720.09 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31703,7 +31679,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED67")
+					(reference "LED72")
 					(unit 1)
 				)
 			)
@@ -31720,7 +31696,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9c37155d-f501-4706-ba7f-aa4fb123188b")
-		(property "Reference" "LED56"
+		(property "Reference" "LED60"
 			(at 664.21 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32033,7 +32009,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED56")
+					(reference "LED60")
 					(unit 1)
 				)
 			)
@@ -32050,7 +32026,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9ded9eb8-6b4b-47b2-b955-6e77a34033bd")
-		(property "Reference" "LED44"
+		(property "Reference" "LED43"
 			(at 552.45 95.8849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32363,7 +32339,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED44")
+					(reference "LED43")
 					(unit 1)
 				)
 			)
@@ -32380,7 +32356,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a25520b3-8874-4b95-acb2-b44ffcf6fe06")
-		(property "Reference" "LED73"
+		(property "Reference" "LED71"
 			(at 831.85 128.9049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32693,7 +32669,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED73")
+					(reference "LED71")
 					(unit 1)
 				)
 			)
@@ -32710,7 +32686,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a4600edc-d28b-4e52-84f7-94e41c6dfb45")
-		(property "Reference" "LED59"
+		(property "Reference" "LED57"
 			(at 720.09 62.8649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33023,7 +32999,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED59")
+					(reference "LED57")
 					(unit 1)
 				)
 			)
@@ -33370,7 +33346,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a91bc052-0a67-4574-b605-6d73ad6a881c")
-		(property "Reference" "LED51"
+		(property "Reference" "LED49"
 			(at 552.45 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33683,7 +33659,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED51")
+					(reference "LED49")
 					(unit 1)
 				)
 			)
@@ -34030,7 +34006,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b4bc4ee4-b557-4982-bae8-4690a9eda406")
-		(property "Reference" "LED80"
+		(property "Reference" "LED78"
 			(at 831.85 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34343,7 +34319,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED80")
+					(reference "LED78")
 					(unit 1)
 				)
 			)
@@ -34360,7 +34336,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b60ba54b-f6a6-42b8-88ab-66299a9eaa18")
-		(property "Reference" "LED60"
+		(property "Reference" "LED58"
 			(at 720.09 95.8849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34673,7 +34649,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED60")
+					(reference "LED58")
 					(unit 1)
 				)
 			)
@@ -35350,7 +35326,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c0934bf2-22bb-41f5-b171-c721bfb195c0")
-		(property "Reference" "LED76"
+		(property "Reference" "LED74"
 			(at 775.97 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35663,7 +35639,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED76")
+					(reference "LED74")
 					(unit 1)
 				)
 			)
@@ -35680,7 +35656,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c3444ebb-88f3-4958-aa98-2e22b09f8ddd")
-		(property "Reference" "LED46"
+		(property "Reference" "LED45"
 			(at 608.33 62.8649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35993,7 +35969,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED46")
+					(reference "LED45")
 					(unit 1)
 				)
 			)
@@ -36010,7 +35986,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c9a1da74-f617-4685-9ac7-8a630632e6cb")
-		(property "Reference" "LED54"
+		(property "Reference" "LED52"
 			(at 608.33 248.2849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36323,7 +36299,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED54")
+					(reference "LED52")
 					(unit 1)
 				)
 			)
@@ -36340,7 +36316,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cb4a43e2-f27b-41fb-ba59-3b26ff7690b4")
-		(property "Reference" "LED52"
+		(property "Reference" "LED50"
 			(at 552.45 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36653,7 +36629,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED52")
+					(reference "LED50")
 					(unit 1)
 				)
 			)
@@ -36670,7 +36646,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cd0638dd-c919-4153-abb8-27ce574d0469")
-		(property "Reference" "LED35"
+		(property "Reference" "LED41"
 			(at 496.57 128.9049 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36983,7 +36959,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED35")
+					(reference "LED41")
 					(unit 1)
 				)
 			)
@@ -38320,7 +38296,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d8dbfa7b-34f4-44f8-a150-60b94499ddae")
-		(property "Reference" "LED62"
+		(property "Reference" "LED66"
 			(at 775.97 62.8649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38633,7 +38609,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED62")
+					(reference "LED66")
 					(unit 1)
 				)
 			)
@@ -39640,7 +39616,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e880324c-4315-4fac-b09a-7b004aee1e86")
-		(property "Reference" "LED47"
+		(property "Reference" "LED46"
 			(at 608.33 95.8849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -39953,7 +39929,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED47")
+					(reference "LED46")
 					(unit 1)
 				)
 			)
@@ -40300,7 +40276,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ef149c36-0a2c-4aa7-8410-5c7966e37bc3")
-		(property "Reference" "LED69"
+		(property "Reference" "LED67"
 			(at 775.97 95.8849 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -40613,7 +40589,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED69")
+					(reference "LED67")
 					(unit 1)
 				)
 			)
@@ -40960,7 +40936,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f3171e59-b381-4944-a29c-2735b71f1954")
-		(property "Reference" "LED37"
+		(property "Reference" "LED36"
 			(at 440.69 215.2649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41273,7 +41249,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED37")
+					(reference "LED36")
 					(unit 1)
 				)
 			)
@@ -42940,7 +42916,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "fb426ec9-245e-4a9b-a44e-4f45b264bf40")
-		(property "Reference" "LED42"
+		(property "Reference" "LED47"
 			(at 496.57 278.7649 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -43253,7 +43229,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/db75d338-3a03-4feb-a76e-be79011cbec0"
-					(reference "LED42")
+					(reference "LED47")
 					(unit 1)
 				)
 			)
