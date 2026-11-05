@@ -19,6 +19,9 @@ docs/datasheets/
 # KiCad restore backups
 _restore_backup_*/
 
+# KiCad DRC files
+*.rpt
+
 .ipynb_checkpoints
 target/
 __pycache__/
