@@ -11,4 +11,7 @@
 	(lib (name "ALPS Electric") (type "KiCad") (uri "${KIPRJMOD}/ALPS Electric") (options "") (descr ""))
 	(lib (name "Bourns") (type "KiCad") (uri "${KIPRJMOD}/Bourns") (options "") (descr ""))
 	(lib (name "Cherry") (type "KiCad") (uri "${KIPRJMOD}/Cherry") (options "") (descr ""))
+	(lib (name "G-Switch Electronic") (type "KiCad") (uri "${KIPRJMOD}/G-Switch. Electronic") (options "") (descr ""))
+	(lib (name "XKB Connection") (type "KiCad") (uri "${KIPRJMOD}/XKB Connection") (options "") (descr ""))
+	(lib (name "ROCPU Switches") (type "KiCad") (uri "${KIPRJMOD}/ROCPU Switches") (options "") (descr ""))
 )

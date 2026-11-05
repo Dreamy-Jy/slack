@@ -412,709 +412,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "ALPS Electric:SPEF110100"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "SW"
-				(at 24.13 7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "SPEF110100"
-				(at 24.13 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "ALPS Electric:SPEF110100"
-				(at 24.13 -94.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
-				(at 24.13 -194.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
-				(at 2.54 12.7 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Height" "14.6"
-				(at 24.13 -394.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Manufacturer_Name" "ALPS Electric"
-				(at 24.13 -494.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Manufacturer_Part_Number" "SPEF110100"
-				(at 24.13 -594.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Mouser Part Number" "688-SPEF110100"
-				(at 24.13 -694.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
-				(at 24.13 -794.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Arrow Part Number" "SPEF110100"
-				(at 24.13 -894.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
-				(at 24.13 -994.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(symbol "SPEF110100_0_1"
-				(rectangle
-					(start 15.24 2.54)
-					(end 20.32 -6.35)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 15.24 -2.54) (xy 16.51 -2.54) (xy 15.748 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 16.51 1.27)
-					(end 19.05 -3.81)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 20.32 0) (xy 19.05 0) (xy 19.812 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 20.32 -5.08) (xy 19.05 -5.08) (xy 19.812 -4.826)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SPEF110100_1_1"
-				(pin input line
-					(at 22.86 0 180)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 22.86 -5.08 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 12.7 -2.54 0)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "C1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 12.7 -2.54 0)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "C2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 17.78 -10.16 90)
-					(length 3.81)
-					(name "MH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MH1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 17.78 -10.16 90)
-					(length 3.81)
-					(name "MH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MH2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 17.78 -10.16 90)
-					(length 3.81)
-					(name "MH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MH3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 17.78 -10.16 90)
-					(length 3.81)
-					(name "MH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MH4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "ALPS Electric:SSSS820201"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "SW"
-				(at -2.54 7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SSSS820201"
-				(at -2.54 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "ALPS Electric:SSSS820201"
-				(at 0 15.24 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-				(at 0 12.7 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SSSS820201_0_1"
-				(rectangle
-					(start -7.62 0)
-					(end 5.08 -5.08)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.08 0) (xy -5.08 -1.016) (xy -5.334 -0.508)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.08 -5.08) (xy -5.08 -4.064) (xy -5.334 -4.572)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.556 -2.794) (xy -3.556 -3.81) (xy -1.524 -3.81) (xy -1.524 -3.302) (xy 0 -3.302) (xy 1.524 -3.302)
-						(xy 1.524 -3.81) (xy 3.556 -3.81) (xy 3.556 -2.794) (xy -3.556 -2.794)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 -1.524) (xy -0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.508) (xy -2.54 -0.508) (xy -2.54 -1.016) (xy -2.794 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -4.572) (xy -2.54 -4.572) (xy -2.54 -4.064) (xy -2.794 -4.318)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -5.08) (xy 0 -3.556) (xy -0.254 -4.064)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 2.54 -1.016) (xy 2.286 -0.508)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -5.08) (xy 2.54 -4.064) (xy 2.286 -4.572)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.556 -2.286) (xy 3.556 -1.27) (xy 1.524 -1.27) (xy 1.524 -1.778) (xy 0 -1.778) (xy -1.524 -1.778)
-						(xy -1.524 -1.27) (xy -3.556 -1.27) (xy -3.556 -2.286) (xy 3.556 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 4.318 -2.54) (xy -6.858 -2.54) (xy -6.096 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SSSS820201_1_1"
-				(pin output line
-					(at -5.08 2.54 270)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 2.54 270)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 2.54 2.54 270)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at -5.08 -7.62 90)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 0 -7.62 90)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin output line
-					(at 2.54 -7.62 90)
-					(length 2.54)
-					(name "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -7.62 90)
-					(length 2.54)
-					(name "H"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Bourns:PEC11S-929K-S0015"
 			(pin_numbers
 				(hide yes)
@@ -2400,6 +1697,243 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "ROCPU Switches:BTSA-L-S-8"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at -10.16 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BTSA-L-S-8"
+				(at -5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BTSA-L-S-8_0_1"
+				(rectangle
+					(start 2.54 0)
+					(end 7.62 -8.89)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -5.08) (xy 3.81 -5.08) (xy 3.048 -4.826)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 3.81 -1.27)
+					(end 6.35 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -2.54) (xy 6.35 -2.54) (xy 7.112 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 6.35 -7.62) (xy 7.112 -7.366)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BTSA-L-S-8_1_1"
+				(pin input line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -5.08 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -7.62 180)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 0 -5.08 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 10.16 -7.62 180)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Switch:SW_Push"
 			(pin_numbers
 				(hide yes)
@@ -2554,6 +2088,420 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "XKB Connection:SS-3235S-L3"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(jumper_pin_groups
+				("1" "4")
+				("2" "5")
+				("3" "6")
+			)
+			(property "Reference" "SW"
+				(at 22.86 7.62 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Value" "SS-3235S-L3"
+				(at 22.86 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "XKB Connection:SS3235SL3"
+				(at 26.67 -94.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+				(at 26.67 -194.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+				(at 0 10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Height" "7.65"
+				(at 26.67 -394.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Name" "XKB Connectivity"
+				(at 26.67 -494.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Manufacturer_Part_Number" "SS-3235S-L3"
+				(at 26.67 -594.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Part Number" ""
+				(at 26.67 -694.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Mouser Price/Stock" ""
+				(at 26.67 -794.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Part Number" ""
+				(at 26.67 -894.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Arrow Price/Stock" ""
+				(at 26.67 -994.92 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(symbol "SS-3235S-L3_0_1"
+				(rectangle
+					(start 10.16 0)
+					(end 22.86 -5.08)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 0) (xy 12.7 -1.016) (xy 12.446 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 12.7 -5.08) (xy 12.7 -4.064) (xy 12.446 -4.572)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 14.224 -2.794) (xy 14.224 -3.81) (xy 16.256 -3.81) (xy 16.256 -3.302) (xy 17.78 -3.302) (xy 19.304 -3.302)
+						(xy 19.304 -3.81) (xy 21.336 -3.81) (xy 21.336 -2.794) (xy 14.224 -2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 17.78 0) (xy 17.78 -1.524) (xy 17.526 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 17.78 -0.508) (xy 15.24 -0.508) (xy 15.24 -1.016) (xy 14.986 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 17.78 -4.572) (xy 15.24 -4.572) (xy 15.24 -4.064) (xy 14.986 -4.318)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 17.78 -5.08) (xy 17.78 -3.556) (xy 17.526 -4.064)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.32 0) (xy 20.32 -1.016) (xy 20.066 -0.508)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 20.32 -5.08) (xy 20.32 -4.064) (xy 20.066 -4.572)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 21.336 -2.286) (xy 21.336 -1.27) (xy 19.304 -1.27) (xy 19.304 -1.778) (xy 17.78 -1.778) (xy 16.256 -1.778)
+						(xy 16.256 -1.27) (xy 14.224 -1.27) (xy 14.224 -2.286) (xy 21.336 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 22.098 -2.54) (xy 10.922 -2.54) (xy 11.684 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "SS-3235S-L3_1_1"
+				(pin output line
+					(at 12.7 2.54 270)
+					(length 2.54)
+					(name "NO_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 2.54 270)
+					(length 2.54)
+					(name "COM_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 20.32 2.54 270)
+					(length 2.54)
+					(name "NC_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 -7.62 90)
+					(length 2.54)
+					(name "NO_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 17.78 -7.62 90)
+					(length 2.54)
+					(name "COM_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 20.32 -7.62 90)
+					(length 2.54)
+					(name "NC_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2821,7 +2769,7 @@
 	)
 	(text "Latch Row"
 		(exclude_from_sim no)
-		(at 652.78 284.48 0)
+		(at 660.4 284.48 0)
 		(effects
 			(font
 				(size 5 5)
@@ -2954,12 +2902,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1e77f896-d67d-4633-b653-30bfc5738914")
-	)
-	(junction
-		(at 48.26 312.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "202a561f-fcd8-4d35-bc71-ebf7ca8f5e54")
 	)
 	(junction
 		(at 497.84 243.84)
@@ -3112,12 +3054,6 @@
 		(uuid "463f66cf-1c8a-4e0d-8751-15f2b551bd84")
 	)
 	(junction
-		(at 200.66 246.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4c917293-69ce-478d-bf15-c0c80f938670")
-	)
-	(junction
 		(at 406.4 43.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3170,6 +3106,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "56ede88a-3a96-4941-b1bb-68942fbab0e6")
+	)
+	(junction
+		(at 200.66 246.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5735eeec-f616-455b-8108-66ff6dac5d5d")
 	)
 	(junction
 		(at 497.84 38.1)
@@ -3999,16 +3941,6 @@
 	)
 	(wire
 		(pts
-			(xy 477.52 317.5) (xy 477.52 304.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0243fcff-70c1-4c48-86a3-109f308a3595")
-	)
-	(wire
-		(pts
 			(xy 33.02 38.1) (xy 38.1 38.1)
 		)
 		(stroke
@@ -4016,16 +3948,6 @@
 			(type default)
 		)
 		(uuid "03ad91be-6426-43c9-9d0f-45adab1fea31")
-	)
-	(wire
-		(pts
-			(xy 571.5 299.72) (xy 571.5 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "044747e5-52aa-4f3d-9945-1b284ba47504")
 	)
 	(wire
 		(pts
@@ -4086,16 +4008,6 @@
 			(type default)
 		)
 		(uuid "07da935a-9acd-4104-ace2-7e24c55c6268")
-	)
-	(wire
-		(pts
-			(xy 213.36 299.72) (xy 215.9 299.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "083637a0-79d4-4f3c-bc1e-1f45302a29ed")
 	)
 	(wire
 		(pts
@@ -4209,16 +4121,6 @@
 	)
 	(wire
 		(pts
-			(xy 515.62 299.72) (xy 515.62 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "113b6895-5e39-4a2e-862d-b7b185ec7d0b")
-	)
-	(wire
-		(pts
 			(xy 360.68 88.9) (xy 381 88.9)
 		)
 		(stroke
@@ -4246,16 +4148,6 @@
 			(type default)
 		)
 		(uuid "11c83d44-a94e-41b7-8d2e-b7845a867f92")
-	)
-	(wire
-		(pts
-			(xy 627.38 299.72) (xy 627.38 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "123dda4e-2601-43c7-b1d2-b9ffff19bd54")
 	)
 	(wire
 		(pts
@@ -4399,6 +4291,16 @@
 	)
 	(wire
 		(pts
+			(xy 213.36 299.72) (xy 215.9 299.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d3592d7-c756-4e3c-95af-7edbfedd2354")
+	)
+	(wire
+		(pts
 			(xy 535.94 203.2) (xy 563.88 203.2)
 		)
 		(stroke
@@ -4426,16 +4328,6 @@
 			(type default)
 		)
 		(uuid "212fbdad-6c48-4073-8b1e-aadbd5c47c84")
-	)
-	(wire
-		(pts
-			(xy 543.56 299.72) (xy 543.56 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "216beecb-08d8-49c5-95ec-023b954c9f50")
 	)
 	(wire
 		(pts
@@ -4529,16 +4421,6 @@
 	)
 	(wire
 		(pts
-			(xy 599.44 299.72) (xy 599.44 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "258df698-6264-4d88-9ae4-7d018fa0bca3")
-	)
-	(wire
-		(pts
 			(xy 160.02 299.72) (xy 160.02 304.8)
 		)
 		(stroke
@@ -4566,16 +4448,6 @@
 			(type default)
 		)
 		(uuid "28d2fc07-c944-4e22-9f66-e17ad2be724f")
-	)
-	(wire
-		(pts
-			(xy 200.66 297.18) (xy 203.2 297.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "29007aa3-b5bd-4a0b-98ab-320dcc20b98b")
 	)
 	(wire
 		(pts
@@ -4736,16 +4608,6 @@
 			(type default)
 		)
 		(uuid "34012419-be99-4600-aa3a-ac118d5a65c5")
-	)
-	(wire
-		(pts
-			(xy 50.8 299.72) (xy 50.8 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35acb10b-8ee4-414e-bb44-8734e9468d50")
 	)
 	(wire
 		(pts
@@ -4936,16 +4798,6 @@
 			(type default)
 		)
 		(uuid "40ac1e99-152a-4805-ad8e-2e68401ab8f5")
-	)
-	(wire
-		(pts
-			(xy 208.28 317.5) (xy 208.28 304.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "40b3970e-e1cd-4f62-a792-fd8009f828f6")
 	)
 	(wire
 		(pts
@@ -5409,16 +5261,6 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 312.42) (xy 48.26 312.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5f599fbb-61af-4c86-8ca7-a4f1669a2d60")
-	)
-	(wire
-		(pts
 			(xy 231.14 33.02) (xy 231.14 38.1)
 		)
 		(stroke
@@ -5789,16 +5631,6 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 299.72) (xy 78.74 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "77558446-2125-4555-abb6-849033e0f6d3")
-	)
-	(wire
-		(pts
 			(xy 469.9 190.5) (xy 474.98 190.5)
 		)
 		(stroke
@@ -6139,16 +5971,6 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 299.72) (xy 106.68 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "939bd3fb-fc58-4b60-95a4-333f8b2db472")
-	)
-	(wire
-		(pts
 			(xy 210.82 43.18) (xy 203.2 43.18)
 		)
 		(stroke
@@ -6469,6 +6291,16 @@
 	)
 	(wire
 		(pts
+			(xy 200.66 297.18) (xy 200.66 246.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af248fde-190f-42e5-8c58-cd2080ee1c05")
+	)
+	(wire
+		(pts
 			(xy 99.06 50.8) (xy 127 50.8)
 		)
 		(stroke
@@ -6589,16 +6421,6 @@
 	)
 	(wire
 		(pts
-			(xy 452.12 317.5) (xy 452.12 304.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b6da6799-ae1c-497f-9fc8-0c8fdf7f980d")
-	)
-	(wire
-		(pts
 			(xy 525.78 38.1) (xy 530.86 38.1)
 		)
 		(stroke
@@ -6649,16 +6471,6 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 317.5) (xy 180.34 304.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b8eb41de-d844-48e9-a83c-d92393d0a627")
-	)
-	(wire
-		(pts
 			(xy 172.72 88.9) (xy 172.72 139.7)
 		)
 		(stroke
@@ -6699,16 +6511,6 @@
 	)
 	(wire
 		(pts
-			(xy 200.66 246.38) (xy 200.66 297.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bd971653-9616-4308-84f4-c3153454ad9d")
-	)
-	(wire
-		(pts
 			(xy 469.9 243.84) (xy 474.98 243.84)
 		)
 		(stroke
@@ -6746,16 +6548,6 @@
 			(type default)
 		)
 		(uuid "be345b8a-d1ea-487f-8fc0-2eaf6bcbab48")
-	)
-	(wire
-		(pts
-			(xy 134.62 299.72) (xy 134.62 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "be899904-ac44-44e0-9566-0be40fde81f7")
 	)
 	(wire
 		(pts
@@ -6926,6 +6718,16 @@
 			(type default)
 		)
 		(uuid "cdf0f707-ccc2-4708-b304-1a2d840c50e6")
+	)
+	(wire
+		(pts
+			(xy 203.2 297.18) (xy 200.66 297.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce598f6f-a2c5-4418-9ab1-b10cc0765acd")
 	)
 	(wire
 		(pts
@@ -7589,16 +7391,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 299.72) (xy 162.56 317.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8afbf90-65bd-44e0-a080-275bc51f57aa")
-	)
-	(wire
-		(pts
 			(xy 406.4 81.28) (xy 406.4 93.98)
 		)
 		(stroke
@@ -7766,16 +7558,6 @@
 			(justify right bottom)
 		)
 		(uuid "3f7a3a65-361d-497b-b5dd-ce9efdd61b2b")
-	)
-	(label "Row6"
-		(at 27.94 312.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "43250326-19d9-4c8c-9630-fa9b691b7c14")
 	)
 	(label "RotaryEncoder_AChannel2"
 		(at 360.68 38.1 180)
@@ -8541,84 +8323,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D70")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 515.62 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "00e1aaa1-f15c-4aa6-a7f0-f35ef222a0b4")
-		(property "Reference" "#PWR0136"
-			(at 515.62 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 515.62 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 515.62 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 515.62 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 515.62 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "38e59cdf-aaea-4201-b061-cfb784f95a42")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0136")
 					(unit 1)
 				)
 			)
@@ -9612,84 +9316,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 106.68 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0671981c-0633-4858-b038-6dec8a160147")
-		(property "Reference" "#PWR0143"
-			(at 106.68 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 106.68 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 106.68 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 106.68 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "0aa189ba-9fd4-4693-ae1e-35ac26600427")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0143")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 228.6 109.22 0)
 		(unit 1)
 		(body_style 1)
@@ -9760,84 +9386,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 627.38 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "08e3b24c-acf5-468f-aa37-da725a12dc24")
-		(property "Reference" "#PWR0140"
-			(at 627.38 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 627.38 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 627.38 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 627.38 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 627.38 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6b2827d7-cd26-4925-b649-daa889c25ae9")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
@@ -10360,8 +9908,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 127 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 144.78 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -10372,7 +9920,7 @@
 		(dnp no)
 		(uuid "0a435bf5-3475-474e-be9a-cc52c19ad8ab")
 		(property "Reference" "SW68"
-			(at 134.62 284.48 0)
+			(at 134.62 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10382,17 +9930,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 134.62 287.02 0)
+			(at 144.78 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 127 292.1 0)
+			(at 118.11 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10400,10 +9949,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 127 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 118.11 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10411,10 +9961,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 127 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 144.78 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10425,7 +9976,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10436,7 +9987,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10447,7 +9998,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10458,7 +10009,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10469,7 +10020,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10480,7 +10031,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10491,7 +10042,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10502,7 +10053,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10513,7 +10064,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10524,7 +10075,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10535,7 +10086,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10546,7 +10097,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10557,7 +10108,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10568,7 +10119,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 127 292.1 0)
+			(at 144.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10576,6 +10127,90 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Height" "7.65"
+			(at 118.11 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 118.11 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 118.11 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 118.11 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 118.11 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 118.11 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 118.11 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 			)
 		)
 		(pin "6"
@@ -10595,9 +10230,6 @@
 		)
 		(pin "5"
 			(uuid "37bf18dc-105e-490a-b3b6-f3836ed57226")
-		)
-		(pin "7"
-			(uuid "210b4276-f7de-43de-a693-12077bd98648")
 		)
 		(instances
 			(project "slack"
@@ -12944,8 +12576,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 535.94 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 553.72 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -12956,7 +12588,7 @@
 		(dnp no)
 		(uuid "0ff97592-26a6-4e37-915d-add1b2f758ec")
 		(property "Reference" "SW75"
-			(at 543.56 284.48 0)
+			(at 543.56 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12966,17 +12598,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 543.56 287.02 0)
+			(at 553.72 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 535.94 292.1 0)
+			(at 527.05 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12984,10 +12617,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 535.94 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 527.05 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12995,10 +12629,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 535.94 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 553.72 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13009,7 +12644,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13020,7 +12655,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13031,7 +12666,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13042,7 +12677,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13053,7 +12688,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13064,7 +12699,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13075,7 +12710,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13086,7 +12721,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13097,7 +12732,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13108,7 +12743,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13119,7 +12754,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13130,7 +12765,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13141,7 +12776,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13152,7 +12787,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 535.94 292.1 0)
+			(at 553.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13160,6 +12795,90 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Height" "7.65"
+			(at 527.05 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 527.05 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 527.05 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 527.05 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 527.05 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 527.05 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 527.05 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 			)
 		)
 		(pin "1"
@@ -13170,9 +12889,6 @@
 		)
 		(pin "5"
 			(uuid "69aafcfd-cd39-402b-b15a-40ce271f6533")
-		)
-		(pin "7"
-			(uuid "27daf1fc-67ad-4970-936d-0ca3a6df617c")
 		)
 		(pin "3"
 			(uuid "54839f23-a9c8-4fb4-bbe9-bed6204ce264")
@@ -13423,6 +13139,336 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "R9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ROCPU Switches:BTSA-L-S-8")
+		(at 447.04 292.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "115b618d-1c67-43d9-9cc9-24d82a5cf392")
+		(property "Reference" "SW72"
+			(at 452.12 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTSA-L-S-8"
+			(at 452.12 289.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
+			(at 447.04 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 447.04 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "14.6"
+			(at 471.17 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "ALPS Electric"
+			(at 471.17 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SPEF110100"
+			(at 471.17 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "688-SPEF110100"
+			(at 471.17 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+			(at 471.17 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "SPEF110100"
+			(at 471.17 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+			(at 471.17 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "1d4331dd-7782-4e16-8651-98aae0408c3c")
+		)
+		(pin "2"
+			(uuid "0582590e-9fbf-425b-87a3-22b0d06cf841")
+		)
+		(pin "3"
+			(uuid "331c7768-23bd-430c-ad6d-7fde7a1efe70")
+		)
+		(pin "4"
+			(uuid "bc376d19-53ce-4d81-adea-71897c9e3e5c")
+		)
+		(pin "6"
+			(uuid "4b8dff3d-4e60-4a20-9743-b691461a99cc")
+		)
+		(pin "5"
+			(uuid "44f2a799-5bb8-4c10-8d82-340f64992768")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW72")
 					(unit 1)
 				)
 			)
@@ -14240,8 +14286,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 99.06 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 116.84 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -14252,7 +14298,7 @@
 		(dnp no)
 		(uuid "1a7a3698-dcea-44bc-865c-70717a30b60f")
 		(property "Reference" "SW67"
-			(at 106.68 284.48 0)
+			(at 106.68 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14262,17 +14308,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 106.68 287.02 0)
+			(at 116.84 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 99.06 292.1 0)
+			(at 90.17 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14280,10 +14327,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 99.06 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 90.17 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14291,10 +14339,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 99.06 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 116.84 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14305,7 +14354,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14316,7 +14365,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14327,7 +14376,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14338,7 +14387,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14349,7 +14398,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14360,7 +14409,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14371,7 +14420,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14382,7 +14431,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14393,7 +14442,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14404,7 +14453,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14415,7 +14464,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14426,7 +14475,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14437,7 +14486,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14448,7 +14497,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 99.06 292.1 0)
+			(at 116.84 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14456,6 +14505,90 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Height" "7.65"
+			(at 90.17 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 90.17 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 90.17 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 90.17 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 90.17 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 90.17 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 90.17 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 			)
 		)
 		(pin "4"
@@ -14475,9 +14608,6 @@
 		)
 		(pin "6"
 			(uuid "5420f169-a227-4dbe-9508-2df00658feab")
-		)
-		(pin "7"
-			(uuid "eaaddb8c-207c-4f33-9fd8-fd73467f9bd9")
 		)
 		(instances
 			(project "slack"
@@ -19225,8 +19355,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 508 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 525.78 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -19237,7 +19367,7 @@
 		(dnp no)
 		(uuid "2ccf1a0e-532d-490e-8e3c-1e176994962b")
 		(property "Reference" "SW74"
-			(at 515.62 284.48 0)
+			(at 515.62 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19247,17 +19377,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 515.62 287.02 0)
+			(at 525.78 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 508 292.1 0)
+			(at 499.11 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19265,10 +19396,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 508 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 499.11 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19276,10 +19408,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 508 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 525.78 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19290,7 +19423,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19301,7 +19434,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19312,7 +19445,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19323,7 +19456,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19334,7 +19467,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19345,7 +19478,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19356,7 +19489,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19367,7 +19500,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19378,7 +19511,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19389,7 +19522,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19400,7 +19533,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19411,7 +19544,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19422,7 +19555,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19433,7 +19566,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 508 292.1 0)
+			(at 525.78 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19443,14 +19576,95 @@
 				)
 			)
 		)
+		(property "Height" "7.65"
+			(at 499.11 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 499.11 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 499.11 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 499.11 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 499.11 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 499.11 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 499.11 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "5"
 			(uuid "b1898334-51a8-4e8c-8eb8-a465b3f79eaa")
 		)
 		(pin "2"
 			(uuid "2f2b0bbb-3c42-46cf-a2a8-030082e6dacb")
-		)
-		(pin "7"
-			(uuid "9f25edf6-1cac-4157-a1dd-b3480667ef72")
 		)
 		(pin "1"
 			(uuid "f7fa7b56-1c15-4bd7-87df-f913c038f1cd")
@@ -19468,84 +19682,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW74")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 543.56 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2e9aa693-1d2c-4d05-9b93-57f6e998bb6b")
-		(property "Reference" "#PWR0137"
-			(at 543.56 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 543.56 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 543.56 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 543.56 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 543.56 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "e6fd5576-bba1-4963-9d39-e6d2e97dc0cd")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -21839,8 +21975,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 43.18 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 60.96 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -21851,7 +21987,7 @@
 		(dnp no)
 		(uuid "3c66774f-6b88-4dc4-873b-06ff8ff6ea34")
 		(property "Reference" "SW65"
-			(at 50.8 284.48 0)
+			(at 50.8 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21861,17 +21997,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 50.8 287.02 0)
+			(at 60.96 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 43.18 292.1 0)
+			(at 34.29 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21879,10 +22016,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 43.18 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 34.29 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21890,10 +22028,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 43.18 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 60.96 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21904,7 +22043,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21915,7 +22054,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21926,7 +22065,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21937,7 +22076,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21948,7 +22087,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21959,7 +22098,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21970,7 +22109,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21981,7 +22120,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21992,7 +22131,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22003,7 +22142,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22014,7 +22153,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22025,7 +22164,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22036,7 +22175,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22047,7 +22186,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 43.18 292.1 0)
+			(at 60.96 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22057,14 +22196,95 @@
 				)
 			)
 		)
+		(property "Height" "7.65"
+			(at 34.29 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 34.29 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 34.29 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 34.29 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 34.29 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 34.29 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 34.29 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "4"
 			(uuid "7db37472-0afd-4100-a9f9-329a01a73017")
 		)
 		(pin "6"
 			(uuid "083089ce-21ca-44c9-9fcc-de3dee835b38")
-		)
-		(pin "7"
-			(uuid "b645ae97-2ce4-4fec-aa37-c86291bf327e")
 		)
 		(pin "5"
 			(uuid "cfeab42f-b60c-4371-a2da-aa7e3c83eff4")
@@ -22897,8 +23117,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 619.76 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 637.54 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -22909,7 +23129,7 @@
 		(dnp no)
 		(uuid "3cd13fd1-ad73-4b8f-8e73-9997214a614c")
 		(property "Reference" "SW78"
-			(at 627.38 284.48 0)
+			(at 627.38 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22919,17 +23139,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 627.38 287.02 0)
+			(at 637.54 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 619.76 292.1 0)
+			(at 610.87 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22937,10 +23158,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 619.76 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 610.87 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22948,10 +23170,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 619.76 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 637.54 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22962,7 +23185,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22973,7 +23196,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22984,7 +23207,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22995,7 +23218,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23006,7 +23229,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23017,7 +23240,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23028,7 +23251,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23039,7 +23262,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23050,7 +23273,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23061,7 +23284,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23072,7 +23295,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23083,7 +23306,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23094,7 +23317,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23105,7 +23328,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 619.76 292.1 0)
+			(at 637.54 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23113,6 +23336,90 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Height" "7.65"
+			(at 610.87 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 610.87 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 610.87 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 610.87 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 610.87 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 610.87 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 610.87 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 			)
 		)
 		(pin "6"
@@ -23132,9 +23439,6 @@
 		)
 		(pin "5"
 			(uuid "9fa443f7-7fff-4dcf-b81b-acec1834dea4")
-		)
-		(pin "7"
-			(uuid "3215e097-ca4b-4466-9f0b-6e9a6fc6dcc9")
 		)
 		(instances
 			(project "slack"
@@ -24130,8 +24434,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SPEF110100")
-		(at 190.5 294.64 0)
+		(lib_id "ROCPU Switches:BTSA-L-S-8")
+		(at 203.2 292.1 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24162,7 +24466,7 @@
 			)
 		)
 		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
-			(at 214.63 389.56 0)
+			(at 203.2 287.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24170,11 +24474,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
 		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
-			(at 214.63 489.56 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24182,11 +24485,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
 		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
-			(at 193.04 281.94 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24197,7 +24499,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24208,7 +24510,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24219,7 +24521,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24230,7 +24532,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24241,7 +24543,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24252,7 +24554,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24263,7 +24565,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24274,7 +24576,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24285,7 +24587,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24296,7 +24598,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24307,7 +24609,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24318,7 +24620,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24329,7 +24631,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24340,7 +24642,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 190.5 294.64 0)
+			(at 203.2 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24351,7 +24653,7 @@
 			)
 		)
 		(property "Height" "14.6"
-			(at 214.63 689.56 0)
+			(at 227.33 687.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24363,7 +24665,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "ALPS Electric"
-			(at 214.63 789.56 0)
+			(at 227.33 787.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24375,7 +24677,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "SPEF110100"
-			(at 214.63 889.56 0)
+			(at 227.33 887.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24387,7 +24689,7 @@
 			)
 		)
 		(property "Mouser Part Number" "688-SPEF110100"
-			(at 214.63 989.56 0)
+			(at 227.33 987.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24399,7 +24701,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
-			(at 214.63 1089.56 0)
+			(at 227.33 1087.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24411,7 +24713,7 @@
 			)
 		)
 		(property "Arrow Part Number" "SPEF110100"
-			(at 214.63 1189.56 0)
+			(at 227.33 1187.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24423,7 +24725,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
-			(at 214.63 1289.56 0)
+			(at 227.33 1287.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24440,23 +24742,17 @@
 		(pin "2"
 			(uuid "aaa2a852-e622-4fc8-adeb-360fe3c61b70")
 		)
-		(pin "MH2"
+		(pin "4"
 			(uuid "ebd6073f-23ae-411d-9ee1-407a056e26d9")
 		)
-		(pin "MH3"
+		(pin "3"
 			(uuid "7cbada66-764d-4541-ac9f-19c597842b0d")
 		)
-		(pin "MH1"
+		(pin "6"
 			(uuid "b94f8f95-5283-48d1-a86d-4474fbd4e969")
 		)
-		(pin "C1"
+		(pin "5"
 			(uuid "2359cac9-5674-4636-8ab8-821cfff04198")
-		)
-		(pin "C2"
-			(uuid "693050cd-fbb6-43f8-ac41-46a7730f24ad")
-		)
-		(pin "MH4"
-			(uuid "b9e76a42-7dd8-46ac-9854-381cb8bb1c77")
 		)
 		(instances
 			(project "slack"
@@ -25371,84 +25667,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D38")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 452.12 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4914083a-6731-4e5d-9268-02e373e5c54c")
-		(property "Reference" "#PWR0111"
-			(at 452.12 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 452.12 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 452.12 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 452.12 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 452.12 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8ae3fa05-230f-41aa-b56e-487e21c17995")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -31314,344 +31532,6 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SPEF110100")
-		(at 162.56 294.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "65af3367-e9ed-472d-98c3-3a872ab15621")
-		(property "Reference" "SW70"
-			(at 180.34 287.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BTSA-L-S-8"
-			(at 180.34 289.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
-			(at 186.69 389.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
-			(at 186.69 489.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
-			(at 165.1 281.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 162.56 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "14.6"
-			(at 186.69 689.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "ALPS Electric"
-			(at 186.69 789.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "SPEF110100"
-			(at 186.69 889.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" "688-SPEF110100"
-			(at 186.69 989.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
-			(at 186.69 1089.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" "SPEF110100"
-			(at 186.69 1189.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
-			(at 186.69 1289.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "1"
-			(uuid "d59296a3-6ba8-43fe-a1f1-5d1e75c67aa7")
-		)
-		(pin "2"
-			(uuid "f7459d72-538b-4243-aabe-95048997d60d")
-		)
-		(pin "MH4"
-			(uuid "42f43a1e-45c0-4195-83fc-e6faad6d978c")
-		)
-		(pin "C1"
-			(uuid "9573256f-7dbf-49b4-b562-4619df1a27fb")
-		)
-		(pin "MH1"
-			(uuid "f89e9ecf-d555-4845-97d4-cff748bf17ee")
-		)
-		(pin "MH3"
-			(uuid "32797aa2-4faf-4ed3-9b05-f018cba14488")
-		)
-		(pin "C2"
-			(uuid "19294989-b794-4218-90a0-251375c05096")
-		)
-		(pin "MH2"
-			(uuid "333ffed7-b64f-477e-aeac-7d59e695730b")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW70")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Cherry:MX6C-K3NB")
 		(at 561.34 86.36 0)
 		(unit 1)
@@ -33327,8 +33207,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 563.88 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 581.66 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -33339,7 +33219,7 @@
 		(dnp no)
 		(uuid "6dd47490-6ee7-4b4e-a8de-6033cec2e533")
 		(property "Reference" "SW76"
-			(at 571.5 284.48 0)
+			(at 571.5 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -33349,17 +33229,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 571.5 287.02 0)
+			(at 581.66 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 563.88 292.1 0)
+			(at 554.99 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33367,10 +33248,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 563.88 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 554.99 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33378,10 +33260,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 563.88 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 581.66 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33392,7 +33275,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33403,7 +33286,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33414,7 +33297,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33425,7 +33308,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33436,7 +33319,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33447,7 +33330,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33458,7 +33341,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33469,7 +33352,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33480,7 +33363,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33491,7 +33374,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33502,7 +33385,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33513,7 +33396,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33524,7 +33407,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33535,7 +33418,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 563.88 292.1 0)
+			(at 581.66 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33545,14 +33428,95 @@
 				)
 			)
 		)
+		(property "Height" "7.65"
+			(at 554.99 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 554.99 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 554.99 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 554.99 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 554.99 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 554.99 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 554.99 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "5"
 			(uuid "36e3f467-37cf-495e-9c1e-46774ccd00e8")
 		)
 		(pin "4"
 			(uuid "487fdfd7-aff0-47e9-9877-efecb2495364")
-		)
-		(pin "7"
-			(uuid "493f7f57-8c23-488b-8833-28a32deb324f")
 		)
 		(pin "6"
 			(uuid "45a9e324-0533-4615-a973-326bff2a1cd2")
@@ -35315,8 +35279,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 71.12 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 88.9 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -35327,7 +35291,7 @@
 		(dnp no)
 		(uuid "78df161f-7327-4617-955a-075d12fde32a")
 		(property "Reference" "SW66"
-			(at 78.74 284.48 0)
+			(at 78.74 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -35337,17 +35301,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 78.74 287.02 0)
+			(at 88.9 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 71.12 292.1 0)
+			(at 62.23 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35355,10 +35320,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 71.12 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 62.23 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35366,10 +35332,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 71.12 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 88.9 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35380,7 +35347,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35391,7 +35358,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35402,7 +35369,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35413,7 +35380,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35424,7 +35391,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35435,7 +35402,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35446,7 +35413,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35457,7 +35424,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35468,7 +35435,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35479,7 +35446,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35490,7 +35457,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35501,7 +35468,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35512,7 +35479,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35523,7 +35490,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 71.12 292.1 0)
+			(at 88.9 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35531,6 +35498,90 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Height" "7.65"
+			(at 62.23 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 62.23 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 62.23 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 62.23 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 62.23 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 62.23 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 62.23 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 			)
 		)
 		(pin "1"
@@ -35547,9 +35598,6 @@
 		)
 		(pin "5"
 			(uuid "dabdc6a7-bec0-45f8-9bec-c76b1054c93f")
-		)
-		(pin "7"
-			(uuid "a84d9fe5-f1e8-49a6-aff7-336e4afa72fa")
 		)
 		(pin "4"
 			(uuid "2ae1aa81-46f9-4bf0-b96c-7cef5ff7bc3f")
@@ -38965,84 +39013,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 134.62 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8c30ecf6-2903-4cca-8b47-fdefdead5c7d")
-		(property "Reference" "#PWR0144"
-			(at 134.62 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 134.62 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 134.62 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 134.62 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 134.62 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "913f208e-6c5e-432a-baa5-9c016158f189")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0144")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:VDD")
 		(at 421.64 76.2 0)
 		(mirror y)
@@ -39436,6 +39406,336 @@
 		)
 	)
 	(symbol
+		(lib_id "ROCPU Switches:BTSA-L-S-8")
+		(at 472.44 292.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8dd102ba-e422-4eff-8c16-9aa8b0909ced")
+		(property "Reference" "SW73"
+			(at 477.52 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTSA-L-S-8"
+			(at 477.52 289.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
+			(at 472.44 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 472.44 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "14.6"
+			(at 496.57 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "ALPS Electric"
+			(at 496.57 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SPEF110100"
+			(at 496.57 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "688-SPEF110100"
+			(at 496.57 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+			(at 496.57 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "SPEF110100"
+			(at 496.57 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+			(at 496.57 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "2507bc39-445f-4023-8128-684c2d562d32")
+		)
+		(pin "2"
+			(uuid "7bb9a218-f507-4dfa-8d4b-4aaf7e4677af")
+		)
+		(pin "4"
+			(uuid "27b68d4e-a82c-4e2b-b66e-7020d98b90bf")
+		)
+		(pin "6"
+			(uuid "6e5a9839-625f-4c3d-8dd9-cb0532689055")
+		)
+		(pin "5"
+			(uuid "2fb48757-3602-4855-9002-aa668e3125de")
+		)
+		(pin "3"
+			(uuid "fdbec243-af20-4a55-a987-036798ce41a0")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW73")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:D")
 		(at 624.84 308.61 90)
 		(unit 1)
@@ -39688,84 +39988,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D78")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 599.44 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9012d6d9-40be-4afc-939b-44884e38b15d")
-		(property "Reference" "#PWR0139"
-			(at 599.44 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 599.44 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 599.44 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 599.44 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 599.44 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f21f11b7-a40e-49d4-801d-59673e87bb90")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -42436,6 +42658,336 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "R12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "ROCPU Switches:BTSA-L-S-8")
+		(at 175.26 292.1 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e61f166-d901-495c-9038-f030c4b31d4c")
+		(property "Reference" "SW70"
+			(at 180.34 287.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTSA-L-S-8"
+			(at 180.34 289.56 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
+			(at 175.26 287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 175.26 292.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "14.6"
+			(at 199.39 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "ALPS Electric"
+			(at 199.39 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SPEF110100"
+			(at 199.39 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" "688-SPEF110100"
+			(at 199.39 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
+			(at 199.39 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" "SPEF110100"
+			(at 199.39 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
+			(at 199.39 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "1"
+			(uuid "e40c1f63-d686-45d9-8775-96d4400eac6f")
+		)
+		(pin "2"
+			(uuid "d4101212-632e-4024-bdaa-cf39ef2700b6")
+		)
+		(pin "3"
+			(uuid "06044c36-fb96-4ab0-b742-1b22f321edff")
+		)
+		(pin "4"
+			(uuid "612bb69a-5798-466b-bdcb-73a582408043")
+		)
+		(pin "5"
+			(uuid "7eb444ae-eb4f-4b9c-ad41-965dca83bcff")
+		)
+		(pin "6"
+			(uuid "370da9df-0c02-4742-b513-f12145542163")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW70")
 					(unit 1)
 				)
 			)
@@ -46590,84 +47142,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 208.28 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b19eac81-dbab-419c-9e9e-26b7a639b65d")
-		(property "Reference" "#PWR0135"
-			(at 208.28 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 208.28 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 208.28 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 208.28 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 208.28 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "c323bb6f-0265-473e-bafb-e254e6e69d22")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0135")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Cherry:MX6C-K3NB")
 		(at 68.58 86.36 0)
 		(unit 1)
@@ -47157,344 +47631,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "D24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "ALPS Electric:SPEF110100")
-		(at 459.74 294.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b448e090-2e38-45f4-a71a-d18bb017cdb5")
-		(property "Reference" "SW73"
-			(at 477.52 287.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BTSA-L-S-8"
-			(at 477.52 289.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
-			(at 483.87 389.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
-			(at 483.87 489.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
-			(at 462.28 281.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 459.74 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "14.6"
-			(at 483.87 689.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "ALPS Electric"
-			(at 483.87 789.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "SPEF110100"
-			(at 483.87 889.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" "688-SPEF110100"
-			(at 483.87 989.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
-			(at 483.87 1089.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" "SPEF110100"
-			(at 483.87 1189.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
-			(at 483.87 1289.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "1"
-			(uuid "9f175098-6460-4dd3-9034-3824a79a6d89")
-		)
-		(pin "2"
-			(uuid "16c890ae-24f0-4b03-93ba-20348024071a")
-		)
-		(pin "C1"
-			(uuid "d113b58e-d168-49da-a1aa-d566deddf127")
-		)
-		(pin "MH1"
-			(uuid "b2e8b7db-b1d8-414c-a6e9-840c871392d6")
-		)
-		(pin "MH4"
-			(uuid "e33d9aa2-7bba-41de-8e42-193eb0feab1a")
-		)
-		(pin "MH3"
-			(uuid "117e62d1-45c7-4f11-bf1a-43c63de24b22")
-		)
-		(pin "C2"
-			(uuid "5cc3b75a-1ef0-44f1-8812-049816294b51")
-		)
-		(pin "MH2"
-			(uuid "ec7a7a1c-f1e6-4d3c-9cb9-29269912cc61")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW73")
 					(unit 1)
 				)
 			)
@@ -51291,162 +51427,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 50.8 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cf1e91f9-6371-490e-8c0a-0e142d7e1531")
-		(property "Reference" "#PWR0141"
-			(at 50.8 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 50.8 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 50.8 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 50.8 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 50.8 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ef7cd116-7fce-4578-a677-406ac9fdb14c")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0141")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 477.52 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "cffcea27-6c70-49d6-8e2c-cd28bd195028")
-		(property "Reference" "#PWR0133"
-			(at 477.52 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 477.52 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 477.52 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 477.52 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 477.52 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6708a02f-4cef-4dd9-829a-c2cd8a03f8a4")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0133")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 393.7 88.9 270)
 		(mirror x)
@@ -51682,8 +51662,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 591.82 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 609.6 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -51694,7 +51674,7 @@
 		(dnp no)
 		(uuid "d447dd94-a083-429d-96b4-9d4f025cd5db")
 		(property "Reference" "SW77"
-			(at 599.44 284.48 0)
+			(at 599.44 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -51704,17 +51684,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 599.44 287.02 0)
+			(at 609.6 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 591.82 292.1 0)
+			(at 582.93 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51722,10 +51703,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 591.82 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 582.93 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51733,10 +51715,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 591.82 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 609.6 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51747,7 +51730,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51758,7 +51741,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51769,7 +51752,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51780,7 +51763,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51791,7 +51774,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51802,7 +51785,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51813,7 +51796,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51824,7 +51807,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51835,7 +51818,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51846,7 +51829,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51857,7 +51840,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51868,7 +51851,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51879,7 +51862,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51890,7 +51873,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 591.82 292.1 0)
+			(at 609.6 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51898,6 +51881,90 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "Height" "7.65"
+			(at 582.93 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 582.93 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 582.93 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 582.93 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 582.93 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 582.93 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 582.93 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
 			)
 		)
 		(pin "6"
@@ -51908,9 +51975,6 @@
 		)
 		(pin "1"
 			(uuid "f505e899-691e-4226-97ac-1dc3b5ed69cd")
-		)
-		(pin "7"
-			(uuid "bd798b49-e280-4117-980d-fa4a57d62c8d")
 		)
 		(pin "3"
 			(uuid "a64ab5f2-41f5-43ff-93fb-af666706ffe0")
@@ -51925,84 +51989,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW77")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 162.56 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d53766b2-e5ab-4615-962a-7cf67bb1b05e")
-		(property "Reference" "#PWR0145"
-			(at 162.56 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 162.56 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 162.56 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 162.56 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 162.56 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "dc3d6eef-446a-4492-a6ee-1b72a2409358")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
@@ -53777,162 +53763,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 78.74 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "dfa81b61-6392-4720-9cd4-88280575fee4")
-		(property "Reference" "#PWR0142"
-			(at 78.74 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 78.74 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 78.74 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "80e0f8b1-d6ae-49fa-8439-f18d69f163ab")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0142")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 571.5 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e064135a-f330-46af-9808-ea21c1378965")
-		(property "Reference" "#PWR0138"
-			(at 571.5 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 571.5 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 571.5 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 571.5 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 571.5 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "ce446d6c-12d9-4c28-b2a9-5e040e8d643c")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0138")
 					(unit 1)
 				)
 			)
@@ -56513,344 +56343,6 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SPEF110100")
-		(at 434.34 294.64 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ea8d28cb-39d0-4962-8761-d742988602fc")
-		(property "Reference" "SW72"
-			(at 452.12 287.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BTSA-L-S-8"
-			(at 452.12 289.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
-			(at 458.47 389.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SPEF110100/"
-			(at 458.47 489.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "Switch Push Button N.O./N.C. SPDT Square Plunger 1A 14.5VDC Latching PC Pins Bracket Mount/Through Hole Bulk"
-			(at 436.88 281.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 434.34 294.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "14.6"
-			(at 458.47 689.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "ALPS Electric"
-			(at 458.47 789.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "SPEF110100"
-			(at 458.47 889.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" "688-SPEF110100"
-			(at 458.47 989.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Alps-Alpine/SPEF110100?qs=6EGMNY9ZYDRa%252BMhse2Itbg%3D%3D"
-			(at 458.47 1089.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" "SPEF110100"
-			(at 458.47 1189.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" "https://www.arrow.com/en/products/spef110100/alpsalpine.html?utm_currency=USD&region=asia"
-			(at 458.47 1289.56 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "1"
-			(uuid "ee20a703-b3a1-45d5-82d2-e84da97191c8")
-		)
-		(pin "2"
-			(uuid "0c93f407-740c-4414-81c2-ea001cf4e89e")
-		)
-		(pin "C1"
-			(uuid "1b6c3b12-8c9d-42ad-af2a-1b9ea4a2654a")
-		)
-		(pin "C2"
-			(uuid "e4ff2f1a-db9f-4648-aa26-dbc0eecac4ab")
-		)
-		(pin "MH1"
-			(uuid "277ef13c-3fcb-4dd7-ac12-61e42a22da27")
-		)
-		(pin "MH2"
-			(uuid "0559b117-1bb7-453f-ac12-63e9db47ff62")
-		)
-		(pin "MH3"
-			(uuid "60fd57a7-1a8e-4e02-8976-dd41412980f7")
-		)
-		(pin "MH4"
-			(uuid "5f8cd0f6-87ce-4f49-86e3-99071809c0e6")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW72")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D")
 		(at 563.88 97.79 90)
 		(unit 1)
@@ -57347,84 +56839,6 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 180.34 317.5 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ef421a38-e3c7-460a-ab52-cfcda1e4d687")
-		(property "Reference" "#PWR0134"
-			(at 180.34 323.85 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DGND"
-			(at 180.34 322.58 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 180.34 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 180.34 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 180.34 317.5 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6af39161-cb1a-411d-874a-363eccbc872c")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "#PWR0134")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
 		(at 228.6 58.42 0)
 		(unit 1)
 		(body_style 1)
@@ -57738,8 +57152,8 @@
 		)
 	)
 	(symbol
-		(lib_id "ALPS Electric:SSSS820201")
-		(at 154.94 292.1 0)
+		(lib_id "XKB Connection:SS-3235S-L3")
+		(at 172.72 292.1 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -57750,7 +57164,7 @@
 		(dnp no)
 		(uuid "f099b5ab-92dd-425b-bc00-d7f4154e17ab")
 		(property "Reference" "SW69"
-			(at 162.56 284.48 0)
+			(at 162.56 281.94 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -57760,17 +57174,18 @@
 			)
 		)
 		(property "Value" "SS-3235S-L3"
-			(at 162.56 287.02 0)
+			(at 172.72 284.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
 		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 154.94 292.1 0)
+			(at 146.05 387.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57778,10 +57193,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Datasheet" "https://tech.alpsalpine.com/e/products/detail/SSSS820201/"
-			(at 154.94 292.1 0)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 146.05 487.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57789,10 +57205,11 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left top)
 			)
 		)
-		(property "Description" "part selected: amazon latching switches"
-			(at 154.94 292.1 0)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 172.72 297.18 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57803,7 +57220,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57814,7 +57231,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57825,7 +57242,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57836,7 +57253,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57847,7 +57264,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57858,7 +57275,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57869,7 +57286,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57880,7 +57297,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57891,7 +57308,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57902,7 +57319,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57913,7 +57330,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57924,7 +57341,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57935,7 +57352,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57946,7 +57363,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 154.94 292.1 0)
+			(at 172.72 292.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57956,14 +57373,95 @@
 				)
 			)
 		)
+		(property "Height" "7.65"
+			(at 146.05 687.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 146.05 787.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 146.05 887.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 146.05 987.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 146.05 1087.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 146.05 1187.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 146.05 1287.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
 		(pin "6"
 			(uuid "9c9381e0-7307-4949-ac9d-921fc2067f85")
 		)
 		(pin "4"
 			(uuid "98278fff-2eb6-401a-8b31-61826c11315a")
-		)
-		(pin "7"
-			(uuid "96c8228c-0f68-42ab-a2ee-661f89eacbae")
 		)
 		(pin "5"
 			(uuid "f7a10ef3-73fd-4a7e-9799-4335141719c4")
