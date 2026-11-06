@@ -9385,7 +9385,7 @@
 		(in_pos_files no)
 		(dnp no)
 		(uuid "09b678f1-5c68-409d-931a-4224b857e5d5")
-		(property "Reference" "SW7"
+		(property "Reference" "SW83"
 			(at 337.82 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9615,7 +9615,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "SW7")
+					(reference "SW83")
 					(unit 1)
 				)
 			)

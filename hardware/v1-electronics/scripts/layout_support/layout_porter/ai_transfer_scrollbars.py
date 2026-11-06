@@ -29,15 +29,15 @@ KICAD_10 = "(version 20260206)"   # near the top of every board saved by KiCad 1
 SIDES = {   # Slack encoder: (example encoder, {example part: (Slack reference, the footprint it must have)})
     "RE5": ("B2-RE9", {   # left: middle click
         "B2-MP": ("", "Mechanical:grounded_scrollcap"),   # no reference: found by its footprint
-        "B2-SW62": ("SW58", "ALPS Electric:SKQGAKE010"),
-        "B2-LED62": ("LED58", "Liteon:LTSTFC12WEGBD5A"),
-        "B2-D62": ("D58", "Diode_SMD:D_SOD-523"),
+        "B2-SW62": ("SW69", "ALPS Electric:SKQGAKE010"),
+        "B2-LED62": ("LED69", "Liteon:LTSTFC12WEGBD5A"),
+        "B2-D62": ("D69", "Diode_SMD:D_SOD-523"),
     }),
     "RE6": ("B1-RE9", {   # right: end click
         "B1-MP": ("", "Mechanical:switched_grounded_scrollcap"),
-        "B1-SW62": ("SW59", "XKB Connection:TC-1109-C-E"),
-        "B1-LED62": ("LED59", "Liteon:LTSTFC12WEGBD5A"),
-        "B1-D62": ("D59", "Diode_SMD:D_SOD-523"),
+        "B1-SW62": ("SW76", "XKB Connection:TC-1109-C-E"),
+        "B1-LED62": ("LED76", "Liteon:LTSTFC12WEGBD5A"),
+        "B1-D62": ("D76", "Diode_SMD:D_SOD-523"),
     }),
 }
 

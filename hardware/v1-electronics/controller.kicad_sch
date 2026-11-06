@@ -6204,7 +6204,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "800934f6-b870-469f-8357-05250203dba4")
-		(property "Reference" "SW8"
+		(property "Reference" "SW84"
 			(at 26.67 128.2699 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6422,7 +6422,7 @@
 		(instances
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/af928721-79e0-4dbd-9302-cd57a57ce5a4"
-					(reference "SW8")
+					(reference "SW84")
 					(unit 1)
 				)
 			)
