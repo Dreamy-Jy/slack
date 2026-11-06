@@ -6644,12 +6644,6 @@
 		(uuid "15fef979-042f-402f-91f2-89df5b5a30e1")
 	)
 	(junction
-		(at 236.22 215.9)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2f94032d-374b-4cd4-987e-cbf4e4838e8d")
-	)
-	(junction
 		(at 45.72 185.42)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6708,12 +6702,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "597b07f6-fc2a-4e95-90aa-ab89a0f4a981")
-	)
-	(junction
-		(at 236.22 223.52)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "621ea24e-bc27-4400-9da8-da70e8e172e4")
 	)
 	(junction
 		(at 452.12 88.9)
@@ -7188,16 +7176,6 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 215.9) (xy 236.22 215.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3a5ee39f-31e3-493d-b461-87d912557b11")
-	)
-	(wire
-		(pts
 			(xy 55.88 111.76) (xy 63.5 111.76)
 		)
 		(stroke
@@ -7464,16 +7442,6 @@
 	)
 	(wire
 		(pts
-			(xy 231.14 223.52) (xy 231.14 220.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "60238cf8-1cf2-4e08-8b54-d1cd780557fe")
-	)
-	(wire
-		(pts
 			(xy 109.22 104.14) (xy 109.22 111.76)
 		)
 		(stroke
@@ -7573,16 +7541,6 @@
 			(color 0 0 255 1)
 		)
 		(uuid "6c42f5f8-9b90-4d89-9865-9fbc6e780ba0")
-	)
-	(wire
-		(pts
-			(xy 241.3 223.52) (xy 241.3 220.98)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c5acd97-4f05-46f6-a477-31e420717f4d")
 	)
 	(wire
 		(pts
@@ -7714,16 +7672,6 @@
 			(type default)
 		)
 		(uuid "7b465d0e-978f-4ce2-b272-720267cc2728")
-	)
-	(wire
-		(pts
-			(xy 236.22 223.52) (xy 241.3 223.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7c637029-c68a-489f-b99b-6795b53c4b8c")
 	)
 	(wire
 		(pts
@@ -7889,7 +7837,7 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 226.06) (xy 236.22 223.52)
+			(xy 236.22 220.98) (xy 236.22 226.06)
 		)
 		(stroke
 			(width 0)
@@ -8120,16 +8068,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 215.9) (xy 241.3 215.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d46d7c21-b612-40fb-90b3-f9b3af847093")
-	)
-	(wire
-		(pts
 			(xy 419.1 129.54) (xy 419.1 116.84)
 		)
 		(stroke
@@ -8300,16 +8238,6 @@
 			(color 0 0 255 1)
 		)
 		(uuid "e9f445d1-4997-4317-856d-1482c6ec3a70")
-	)
-	(wire
-		(pts
-			(xy 236.22 223.52) (xy 231.14 223.52)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eae541c8-1ad4-48d8-9677-e7755ed52cab")
 	)
 	(wire
 		(pts
@@ -14265,13 +14193,14 @@
 			)
 		)
 		(property "Value" "VRNTC"
-			(at 271.78 220.98 0)
+			(at 274.32 224.7899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
 		(property "Footprint" ""
@@ -16884,7 +16813,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 231.14 218.44 0)
+		(at 236.22 218.44 0)
 		(mirror y)
 		(unit 1)
 		(body_style 1)
@@ -16895,7 +16824,7 @@
 		(dnp no)
 		(uuid "a113067c-9c45-44bf-bbfb-ce8f44c2599e")
 		(property "Reference" "C49"
-			(at 228.6 217.1762 0)
+			(at 233.68 217.1762 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16905,8 +16834,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10μF"
-			(at 228.6 219.7162 0)
+		(property "Value" "22μF"
+			(at 233.68 219.7162 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16917,7 +16846,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16928,7 +16857,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16938,8 +16867,8 @@
 				)
 			)
 		)
-		(property "Description" "part selected: CL21A106KAYNNNE"
-			(at 231.14 218.44 0)
+		(property "Description" "part selected: CL21A226MAQNNNE"
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16950,7 +16879,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16961,7 +16890,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16972,7 +16901,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16983,7 +16912,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16994,7 +16923,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17005,7 +16934,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17016,7 +16945,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17027,7 +16956,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17038,7 +16967,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17049,7 +16978,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17060,7 +16989,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17071,7 +17000,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17082,7 +17011,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17093,7 +17022,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 231.14 218.44 0)
+			(at 236.22 218.44 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19542,241 +19471,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
 					(reference "#PWR0106")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 241.3 218.44 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c30cd08b-11c5-4d3e-add5-f83005140c9e")
-		(property "Reference" "C55"
-			(at 243.84 217.1762 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10μF"
-			(at 243.84 219.7162 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "part selected: CL21A106KAYNNNE"
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 241.3 218.44 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "14f846bd-a13d-49ad-a1cb-04ca12ab3a33")
-		)
-		(pin "2"
-			(uuid "16f2f0af-2f74-48ba-8e6a-746582a1a078")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/a24a3d75-e466-4feb-b98a-50e4b7a182a1"
-					(reference "C55")
 					(unit 1)
 				)
 			)

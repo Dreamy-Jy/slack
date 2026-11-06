@@ -96,3 +96,19 @@ DCCH - DC/DC converter output
 Chip to monitor On/Off state of features
 Chip to monitor interrupts
 Battery management chips
+
+Give me trace widths, track gaps, via sizes,and micro via sizes for signals on external layers that carry signals of currents: 5A, 4A, 3A, 2A, 1A, .5A. Where teh temperature rise can be no greater than 10°C. Give it to me ina graph where the first row is current rating.
+
+𝚫T =< 10°C
+
+
+Get Heuristics Based Trace Widths.
+How to make smooth multi width traces. (stay on grid.)
+What about via size?
+
+anime: penguin highway
+
+Apply to roles and open source grants ()
+Get determine and document proper trace widths
+
+Currents on each line - functional diagrams from documentation
