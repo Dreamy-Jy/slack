@@ -3010,24 +3010,12 @@
 		(uuid "18622a21-3730-4769-ab56-5713e5076ae0")
 	)
 	(no_connect
-		(at 218.44 93.98)
-		(uuid "4b96686e-7096-4d2b-8441-9097574c0bae")
-	)
-	(no_connect
 		(at 218.44 104.14)
 		(uuid "50ec87f5-b5de-49d4-bc4f-ed6a5d6d8aa2")
 	)
 	(no_connect
 		(at 218.44 99.06)
 		(uuid "5351a7ce-05ed-45d3-bbf9-bd7635f05331")
-	)
-	(no_connect
-		(at 218.44 91.44)
-		(uuid "7ce6c574-5f3a-4546-a20c-065a59289920")
-	)
-	(no_connect
-		(at 218.44 81.28)
-		(uuid "94ef5a58-1114-49b5-a3ca-7ad823a9f82d")
 	)
 	(no_connect
 		(at 218.44 101.6)
@@ -3959,6 +3947,17 @@
 		)
 		(uuid "290784a7-3e64-4e81-a1d5-8d7e7bfb7718")
 	)
+	(hierarchical_label "~{ChargingChipInterrupt}"
+		(shape input)
+		(at 218.44 91.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "55487523-31ad-4617-9d05-fba71127d1b0")
+	)
 	(hierarchical_label "LEDMatrix2Shutdown"
 		(shape output)
 		(at 218.44 116.84 0)
@@ -3991,6 +3990,17 @@
 			(justify right)
 		)
 		(uuid "6d06364c-4720-4a86-923c-2e0a8a55cf40")
+	)
+	(hierarchical_label "~{LEDMatrix2Interrupt}"
+		(shape input)
+		(at 218.44 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8c7e6acb-77de-486a-8602-0ae09081ff51")
 	)
 	(hierarchical_label "~{ChargingChipInterrupt}"
 		(shape input)
@@ -4057,6 +4067,17 @@
 			(justify left)
 		)
 		(uuid "e6eb71b4-4ab1-4e69-84b2-8220bf4da0ee")
+	)
+	(hierarchical_label "~{LEDMatrix1Interrupt}"
+		(shape input)
+		(at 218.44 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f3267bfd-cf8f-4ebc-b1d0-c1ca9da6cd9c")
 	)
 	(symbol
 		(lib_id "Device:R_Small")
