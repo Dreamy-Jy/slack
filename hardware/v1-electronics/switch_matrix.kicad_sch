@@ -2768,56 +2768,30 @@
 		)
 	)
 	(rectangle
-		(start 27.94 33.02)
-		(end 86.36 68.58)
+		(start 464.82 83.82)
+		(end 632.46 322.58)
 		(stroke
 			(width 1)
 			(type dash_dot_dot)
-			(color 194 0 0 1)
+			(color 0 194 0 1)
 		)
 		(fill
 			(type none)
 		)
-		(uuid "2362fc45-7b28-49ea-aec9-b3497c1b70d0")
+		(uuid "bf54d5b6-8742-45f6-8330-98870dde8991")
 	)
 	(rectangle
-		(start 579.12 33.02)
-		(end 637.54 68.58)
+		(start 20.32 81.28)
+		(end 195.58 320.04)
 		(stroke
 			(width 1)
 			(type dash_dot_dot)
-			(color 194 0 0 1)
+			(color 0 194 0 1)
 		)
 		(fill
 			(type none)
 		)
-		(uuid "b6fa3724-ea65-45d8-8f98-b895c2206c49")
-	)
-	(text "Consider Delete"
-		(exclude_from_sim no)
-		(at 40.64 30.48 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-				(color 194 0 0 1)
-			)
-		)
-		(uuid "0b8b1733-41fb-466c-ac2d-88603896153a")
-	)
-	(text "Consider Delete"
-		(exclude_from_sim no)
-		(at 591.82 30.48 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-				(color 194 0 0 1)
-			)
-		)
-		(uuid "617e6986-8acd-47c8-a172-f1454fd1f12a")
+		(uuid "ca974d6e-1d34-428e-bae2-dcf708bcad15")
 	)
 	(text "Latch Row"
 		(exclude_from_sim no)
@@ -2954,12 +2928,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2c0ab090-3110-45ed-8a12-06ae905bc973")
-	)
-	(junction
-		(at 48.26 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2c6115c5-ceed-4dfb-9a39-e7840d1d5397")
 	)
 	(junction
 		(at 535.94 317.5)
@@ -3124,12 +3092,6 @@
 		(uuid "56d3178b-9a23-41c5-ad5f-748e14cae8eb")
 	)
 	(junction
-		(at 144.78 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5949a1a7-aaac-45e2-8180-67f1b7908b8f")
-	)
-	(junction
 		(at 421.64 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3284,6 +3246,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "87ceb3d8-389f-492a-9da5-9ccb89cd8e9a")
+	)
+	(junction
+		(at 497.84 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "88e28eb1-ed71-430e-bd17-c0178d12fced")
 	)
 	(junction
 		(at 381 99.06)
@@ -3496,12 +3464,6 @@
 		(uuid "bb2b1f31-db5d-4d8b-b5c2-db555ea9cea2")
 	)
 	(junction
-		(at 497.84 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bd28df67-3be6-43ec-a321-1fe6c64e6022")
-	)
-	(junction
 		(at 144.78 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3530,6 +3492,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bf9c191f-a704-41f8-aa9e-439eba987955")
+	)
+	(junction
+		(at 144.78 50.8)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bff4d492-de37-4136-afb5-c936c9de7d7c")
 	)
 	(junction
 		(at 365.76 154.94)
@@ -3634,12 +3602,6 @@
 		(uuid "dc92cd5e-8a55-4844-833d-ace69aada360")
 	)
 	(junction
-		(at 609.6 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dcac3884-5514-4d7f-adcb-7d3e399b27f5")
-	)
-	(junction
 		(at 43.18 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3656,12 +3618,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dd7ee324-c383-48f0-bb90-ba40848633be")
-	)
-	(junction
-		(at 33.02 38.1)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "de6fc654-cf13-4256-b814-922480845ea1")
 	)
 	(junction
 		(at 553.72 251.46)
@@ -3802,20 +3758,8 @@
 		(uuid "fb025063-9531-4827-9df9-5db71fdd5090")
 	)
 	(no_connect
-		(at 40.64 43.18)
-		(uuid "032685ef-8ef5-489d-8291-3e9b909c0fd3")
-	)
-	(no_connect
-		(at 617.22 53.34)
-		(uuid "12336acc-f549-4e01-a664-e028775d82aa")
-	)
-	(no_connect
 		(at 71.12 53.34)
 		(uuid "1275ae58-481f-4a53-915c-024c39c9338b")
-	)
-	(no_connect
-		(at 505.46 53.34)
-		(uuid "13098383-3fcf-4af5-a518-ae98f3702d59")
 	)
 	(no_connect
 		(at 68.58 53.34)
@@ -3850,16 +3794,12 @@
 		(uuid "3c0e4834-9c2b-420b-93b4-9236da7caf82")
 	)
 	(no_connect
-		(at 513.08 43.18)
+		(at 510.54 48.26)
 		(uuid "4b842925-dbde-4838-bd99-847955f23dbd")
 	)
 	(no_connect
 		(at 132.08 43.18)
 		(uuid "53092262-4fef-45e3-9699-ce7a887c9dda")
-	)
-	(no_connect
-		(at 508 53.34)
-		(uuid "5453770b-45f3-417c-9d72-9f14bc27943a")
 	)
 	(no_connect
 		(at 568.96 43.18)
@@ -3886,10 +3826,6 @@
 		(uuid "7adeabab-7a7e-4caf-8586-54310b5e23ab")
 	)
 	(no_connect
-		(at 154.94 53.34)
-		(uuid "85a27ace-61f8-4e88-8518-c6bf7b846bf5")
-	)
-	(no_connect
 		(at 482.6 48.26)
 		(uuid "996e6d69-3792-41d2-b7b8-dcc00b8406ba")
 	)
@@ -3898,16 +3834,8 @@
 		(uuid "9a5d0504-93ca-40c5-992f-2b05cf7a0f4a")
 	)
 	(no_connect
-		(at 40.64 53.34)
-		(uuid "9e724d1a-7f36-4e57-aa6e-dfd7c737a564")
-	)
-	(no_connect
 		(at 96.52 53.34)
 		(uuid "9ef69826-6dba-466d-aa66-56468a4c48fe")
-	)
-	(no_connect
-		(at 617.22 43.18)
-		(uuid "a5e25abc-9041-422d-bdf2-7e6c24e00dd6")
 	)
 	(no_connect
 		(at 596.9 43.18)
@@ -3918,28 +3846,12 @@
 		(uuid "b69b008e-cc90-4e37-bb2f-d1edf676162c")
 	)
 	(no_connect
-		(at 624.84 43.18)
-		(uuid "b83b705b-e582-4214-9076-f9a3194895d3")
-	)
-	(no_connect
-		(at 160.02 43.18)
-		(uuid "b845f6be-6c25-46b1-9bc8-4e33f1b66ab3")
-	)
-	(no_connect
 		(at 541.02 43.18)
 		(uuid "b95b518e-11b8-4ff2-9ac7-721320abf445")
 	)
 	(no_connect
 		(at 533.4 53.34)
 		(uuid "c186f042-8b68-42c1-8e39-a9c51a3bba1a")
-	)
-	(no_connect
-		(at 48.26 43.18)
-		(uuid "c3758dad-6d7c-45a2-a2a1-d6883663c0a7")
-	)
-	(no_connect
-		(at 43.18 53.34)
-		(uuid "c4d37433-0ba7-491c-85af-ca9a125d5329")
 	)
 	(no_connect
 		(at 104.14 43.18)
@@ -3950,32 +3862,20 @@
 		(uuid "c8dee344-85aa-46d1-bfa0-581d47673937")
 	)
 	(no_connect
-		(at 124.46 53.34)
-		(uuid "cc191ea0-9b20-4faa-ad66-85f893fc365d")
+		(at 157.48 48.26)
+		(uuid "cb3d2e3a-21a8-45ac-b754-a22ce909baf3")
 	)
 	(no_connect
-		(at 619.76 53.34)
-		(uuid "e5ad0c5a-9cbf-4c9c-a4ea-7e63a502fc1e")
+		(at 124.46 53.34)
+		(uuid "cc191ea0-9b20-4faa-ad66-85f893fc365d")
 	)
 	(no_connect
 		(at 213.36 48.26)
 		(uuid "ef91fce4-0716-429c-9718-14dedfe3ac76")
 	)
 	(no_connect
-		(at 152.4 53.34)
-		(uuid "f063e77b-dad1-4fe1-ad50-6c3a0f57b387")
-	)
-	(no_connect
-		(at 505.46 43.18)
-		(uuid "f1cddcd4-f8f8-4ccb-ae63-d83ddf8f2a33")
-	)
-	(no_connect
 		(at 533.4 43.18)
 		(uuid "f2687c92-6778-400b-9ed4-2ab615902143")
-	)
-	(no_connect
-		(at 152.4 43.18)
-		(uuid "faec05ae-ae5b-4899-ba5c-9626de37c529")
 	)
 	(wire
 		(pts
@@ -4289,6 +4189,16 @@
 	)
 	(wire
 		(pts
+			(xy 144.78 50.8) (xy 144.78 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17204fe8-7e70-46b3-b00d-fa4d455697eb")
+	)
+	(wire
+		(pts
 			(xy 248.92 142.24) (xy 248.92 154.94)
 		)
 		(stroke
@@ -4359,16 +4269,6 @@
 	)
 	(wire
 		(pts
-			(xy 609.6 27.94) (xy 609.6 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1c09d1ad-27c0-4883-9a17-26e494987571")
-	)
-	(wire
-		(pts
 			(xy 525.78 149.86) (xy 525.78 200.66)
 		)
 		(stroke
@@ -4396,16 +4296,6 @@
 			(type default)
 		)
 		(uuid "1de66037-a2e4-4b1c-9a83-938893a223cc")
-	)
-	(wire
-		(pts
-			(xy 144.78 38.1) (xy 154.94 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f7d431f-f2b8-4324-b4c7-629664e8605f")
 	)
 	(wire
 		(pts
@@ -4626,6 +4516,16 @@
 			(type default)
 		)
 		(uuid "2e9d37c2-c5aa-4d63-8726-57e815ff34e0")
+	)
+	(wire
+		(pts
+			(xy 497.84 50.8) (xy 497.84 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f86ca89-be28-411c-b431-aa0a45ef5c34")
 	)
 	(wire
 		(pts
@@ -5069,16 +4969,6 @@
 	)
 	(wire
 		(pts
-			(xy 624.84 53.34) (xy 624.84 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f018de1-b5c4-4e57-b646-a015f57834e5")
-	)
-	(wire
-		(pts
 			(xy 289.56 104.14) (xy 294.64 104.14)
 		)
 		(stroke
@@ -5096,6 +4986,16 @@
 			(type default)
 		)
 		(uuid "50d3803f-fc41-4d28-9c7a-97b120a15c21")
+	)
+	(wire
+		(pts
+			(xy 144.78 50.8) (xy 147.32 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52605d18-23a2-4d85-a1f9-f3b3fb27f25a")
 	)
 	(wire
 		(pts
@@ -5269,23 +5169,13 @@
 	)
 	(wire
 		(pts
-			(xy 497.84 27.94) (xy 497.84 38.1)
+			(xy 497.84 27.94) (xy 497.84 50.8)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5b266030-3887-4605-a040-a2e949528379")
-	)
-	(wire
-		(pts
-			(xy 497.84 38.1) (xy 497.84 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c31baf3-b17d-49f7-98be-ce90bf43bd5e")
 	)
 	(wire
 		(pts
@@ -5296,16 +5186,6 @@
 			(type default)
 		)
 		(uuid "5db3e1b0-2ebd-45bb-8181-4cbd075cbfa1")
-	)
-	(wire
-		(pts
-			(xy 27.94 66.04) (xy 48.26 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5e2d204f-3d3a-48d4-816e-334241c21a7b")
 	)
 	(wire
 		(pts
@@ -5469,7 +5349,7 @@
 	)
 	(wire
 		(pts
-			(xy 48.26 66.04) (xy 76.2 66.04)
+			(xy 27.94 66.04) (xy 76.2 66.04)
 		)
 		(stroke
 			(width 0)
@@ -5589,16 +5469,6 @@
 	)
 	(wire
 		(pts
-			(xy 609.6 38.1) (xy 619.76 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74d84690-752c-49f3-9ca7-82f92e3ded5d")
-	)
-	(wire
-		(pts
 			(xy 581.66 251.46) (xy 586.74 251.46)
 		)
 		(stroke
@@ -5659,16 +5529,6 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 38.1) (xy 154.94 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7e7b528e-5407-4eda-a346-f1334a6bf47e")
-	)
-	(wire
-		(pts
 			(xy 424.18 152.4) (xy 424.18 165.1)
 		)
 		(stroke
@@ -5686,16 +5546,6 @@
 			(type default)
 		)
 		(uuid "7f052d7e-78d9-4686-82d9-75f1ac56bfef")
-	)
-	(wire
-		(pts
-			(xy 43.18 38.1) (xy 43.18 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "80204cca-0e52-45e4-a230-e612ace30c00")
 	)
 	(wire
 		(pts
@@ -5766,16 +5616,6 @@
 			(type default)
 		)
 		(uuid "84c05833-1ca2-4c39-bc18-21b9fdd5f8cb")
-	)
-	(wire
-		(pts
-			(xy 508 38.1) (xy 508 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "850c00d2-f543-4720-b832-3b72920d0c21")
 	)
 	(wire
 		(pts
@@ -5909,16 +5749,6 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 38.1) (xy 43.18 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fb4d4f4-5858-433a-967f-c00c2888f6d9")
-	)
-	(wire
-		(pts
 			(xy 581.66 200.66) (xy 581.66 251.46)
 		)
 		(stroke
@@ -5936,16 +5766,6 @@
 			(type default)
 		)
 		(uuid "92f8aeeb-1c09-4a8c-9427-200e91bf2087")
-	)
-	(wire
-		(pts
-			(xy 48.26 53.34) (xy 48.26 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "93c6d6ad-929c-4986-a70a-acac494614ab")
 	)
 	(wire
 		(pts
@@ -6029,7 +5849,7 @@
 	)
 	(wire
 		(pts
-			(xy 144.78 38.1) (xy 144.78 99.06)
+			(xy 144.78 27.94) (xy 144.78 50.8)
 		)
 		(stroke
 			(width 0)
@@ -6159,7 +5979,7 @@
 	)
 	(wire
 		(pts
-			(xy 609.6 38.1) (xy 609.6 99.06)
+			(xy 609.6 27.94) (xy 609.6 99.06)
 		)
 		(stroke
 			(width 0)
@@ -6196,6 +6016,16 @@
 			(type default)
 		)
 		(uuid "a5cc2399-2906-4c63-9f5b-431563b22893")
+	)
+	(wire
+		(pts
+			(xy 497.84 50.8) (xy 500.38 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5f11c43-bcc1-407c-a524-d0502b5f7c48")
 	)
 	(wire
 		(pts
@@ -6309,7 +6139,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 38.1) (xy 33.02 99.06)
+			(xy 33.02 27.94) (xy 33.02 99.06)
 		)
 		(stroke
 			(width 0)
@@ -6546,6 +6376,16 @@
 			(type default)
 		)
 		(uuid "be345b8a-d1ea-487f-8fc0-2eaf6bcbab48")
+	)
+	(wire
+		(pts
+			(xy 510.54 53.34) (xy 513.08 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be51636e-f697-492b-84de-f52f77aef622")
 	)
 	(wire
 		(pts
@@ -6786,16 +6626,6 @@
 			(type default)
 		)
 		(uuid "d3dfa40c-5e63-4974-ac87-dbe39a961628")
-	)
-	(wire
-		(pts
-			(xy 33.02 27.94) (xy 33.02 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d41a22e0-06e3-4a69-8fac-c828c1434691")
 	)
 	(wire
 		(pts
@@ -7059,16 +6889,6 @@
 	)
 	(wire
 		(pts
-			(xy 619.76 38.1) (xy 619.76 43.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e3a1a4d6-0435-44ba-aed0-07309400a925")
-	)
-	(wire
-		(pts
 			(xy 553.72 200.66) (xy 553.72 251.46)
 		)
 		(stroke
@@ -7119,6 +6939,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 53.34) (xy 160.02 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7fcecfb-d90f-4619-b43f-05649c9d9393")
+	)
+	(wire
+		(pts
 			(xy 226.06 154.94) (xy 248.92 154.94)
 		)
 		(stroke
@@ -7156,16 +6986,6 @@
 			(type default)
 		)
 		(uuid "e9683089-e6eb-452e-aa90-139ddfbc5eec")
-	)
-	(wire
-		(pts
-			(xy 497.84 38.1) (xy 508 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e99655c6-5506-4ad5-9525-075b76a61bc0")
 	)
 	(wire
 		(pts
@@ -7476,16 +7296,6 @@
 			(type default)
 		)
 		(uuid "fb29c2a3-1cc8-4edf-90d9-95312812f20f")
-	)
-	(wire
-		(pts
-			(xy 144.78 27.94) (xy 144.78 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb70ce70-6672-4b8f-ad53-65352ee7c305")
 	)
 	(wire
 		(pts
@@ -7869,7 +7679,7 @@
 	)
 	(hierarchical_label "RotaryEncoder_BChannel[1..6]"
 		(shape output)
-		(at 635 35.56 0)
+		(at 645.16 35.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7880,7 +7690,7 @@
 	)
 	(hierarchical_label "RotaryEncoder_AChannel[1..6]"
 		(shape output)
-		(at 635 33.02 0)
+		(at 645.16 33.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7891,7 +7701,7 @@
 	)
 	(hierarchical_label "Row[1..6]"
 		(shape output)
-		(at 635 30.48 0)
+		(at 645.16 30.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7902,7 +7712,7 @@
 	)
 	(hierarchical_label "Column[1..14]"
 		(shape input)
-		(at 635 27.94 0)
+		(at 645.16 27.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7933,7 +7743,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 152.4 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8763,7 +8573,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 124.46 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10340,7 +10150,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 589.28 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10576,7 +10386,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 152.4 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13911,7 +13721,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 96.52 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14148,7 +13958,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 477.52 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14976,7 +14786,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 40.64 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15213,7 +15023,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 124.46 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15450,7 +15260,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 561.34 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15945,7 +15755,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 180.34 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16182,7 +15992,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 533.4 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16888,7 +16698,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 180.34 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17383,7 +17193,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 589.28 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18744,7 +18554,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 533.4 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19217,7 +19027,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 617.22 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19433,9 +19243,8 @@
 		)
 	)
 	(symbol
-		(lib_id "XKB Connection:SS-3235S-L3")
-		(at 525.78 45.72 0)
-		(mirror y)
+		(lib_id "ROCPU Switches:BTSA-L-S-8")
+		(at 500.38 45.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19445,7 +19254,7 @@
 		(dnp no)
 		(uuid "2ccf1a0e-532d-490e-8e3c-1e176994962b")
 		(property "Reference" "SW10"
-			(at 515.62 35.56 0)
+			(at 505.46 40.64 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19454,19 +19263,18 @@
 				)
 			)
 		)
-		(property "Value" "SS-3235S-L3"
-			(at 525.78 38.1 0)
+		(property "Value" "BTSA-L-S-8"
+			(at 505.46 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
-		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 499.11 140.64 0)
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
+			(at 500.38 40.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19474,11 +19282,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
 		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
-			(at 499.11 240.64 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19486,11 +19293,10 @@
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left top)
 			)
 		)
 		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
-			(at 525.78 50.8 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19501,7 +19307,7 @@
 			)
 		)
 		(property "Availability" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19512,7 +19318,7 @@
 			)
 		)
 		(property "CREATOR" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19523,7 +19329,7 @@
 			)
 		)
 		(property "Check_prices" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19534,7 +19340,7 @@
 			)
 		)
 		(property "MANUFACTURER" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19545,7 +19351,7 @@
 			)
 		)
 		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19556,7 +19362,7 @@
 			)
 		)
 		(property "MF" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19567,7 +19373,7 @@
 			)
 		)
 		(property "MP" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19578,7 +19384,7 @@
 			)
 		)
 		(property "PARTREV" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19589,7 +19395,7 @@
 			)
 		)
 		(property "Package" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19600,7 +19406,7 @@
 			)
 		)
 		(property "Price" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19611,7 +19417,7 @@
 			)
 		)
 		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19622,7 +19428,7 @@
 			)
 		)
 		(property "STANDARD" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19633,7 +19439,7 @@
 			)
 		)
 		(property "SnapEDA_Link" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19644,7 +19450,7 @@
 			)
 		)
 		(property "VERIFIER" ""
-			(at 525.78 45.72 0)
+			(at 500.38 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19655,7 +19461,7 @@
 			)
 		)
 		(property "Height" "7.65"
-			(at 499.11 440.64 0)
+			(at 527.05 440.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19667,7 +19473,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "XKB Connectivity"
-			(at 499.11 540.64 0)
+			(at 527.05 540.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19679,7 +19485,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "SS-3235S-L3"
-			(at 499.11 640.64 0)
+			(at 527.05 640.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19691,7 +19497,7 @@
 			)
 		)
 		(property "Mouser Part Number" ""
-			(at 499.11 740.64 0)
+			(at 527.05 740.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19703,7 +19509,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" ""
-			(at 499.11 840.64 0)
+			(at 527.05 840.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19715,7 +19521,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 499.11 940.64 0)
+			(at 527.05 940.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19727,7 +19533,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 499.11 1040.64 0)
+			(at 527.05 1040.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19787,7 +19593,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 96.52 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20869,7 +20675,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 505.46 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21106,7 +20912,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 533.4 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21837,7 +21643,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 477.52 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22047,339 +21853,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "XKB Connection:SS-3235S-L3")
-		(at 60.96 45.72 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3c66774f-6b88-4dc4-873b-06ff8ff6ea34")
-		(property "Reference" "SW1"
-			(at 50.8 35.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SS-3235S-L3"
-			(at 60.96 38.1 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 34.29 140.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
-			(at 34.29 240.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
-			(at 60.96 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 60.96 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "7.65"
-			(at 34.29 440.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "XKB Connectivity"
-			(at 34.29 540.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "SS-3235S-L3"
-			(at 34.29 640.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 34.29 740.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 34.29 840.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 34.29 940.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 34.29 1040.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "4"
-			(uuid "7db37472-0afd-4100-a9f9-329a01a73017")
-		)
-		(pin "6"
-			(uuid "083089ce-21ca-44c9-9fcc-de3dee835b38")
-		)
-		(pin "5"
-			(uuid "cfeab42f-b60c-4371-a2da-aa7e3c83eff4")
-		)
-		(pin "1"
-			(uuid "c085eea5-16e7-4e61-8b45-97360801052c")
-		)
-		(pin "2"
-			(uuid "184489ac-a613-4566-b91d-09c1a68ab681")
-		)
-		(pin "3"
-			(uuid "4a2f0b0f-deff-4f75-9d42-2740af23b085")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW1")
 					(unit 1)
 				)
 			)
@@ -22742,7 +22215,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 96.52 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22979,7 +22452,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 96.52 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23189,339 +22662,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW57")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "XKB Connection:SS-3235S-L3")
-		(at 637.54 45.72 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "3cd13fd1-ad73-4b8f-8e73-9997214a614c")
-		(property "Reference" "SW14"
-			(at 627.38 35.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SS-3235S-L3"
-			(at 637.54 38.1 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 610.87 140.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
-			(at 610.87 240.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
-			(at 637.54 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 637.54 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "7.65"
-			(at 610.87 440.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "XKB Connectivity"
-			(at 610.87 540.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "SS-3235S-L3"
-			(at 610.87 640.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 610.87 740.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 610.87 840.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 610.87 940.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 610.87 1040.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "6"
-			(uuid "f334cc28-76a3-487c-9b81-b6f22c6898e9")
-		)
-		(pin "4"
-			(uuid "fce2773e-afa1-4287-b1eb-cea0ddc477ca")
-		)
-		(pin "1"
-			(uuid "d6c60fc3-a1c7-4ae5-948a-87edde0100a5")
-		)
-		(pin "2"
-			(uuid "ff8be9b2-0389-4e68-bb08-c1dfc6c8a0ff")
-		)
-		(pin "3"
-			(uuid "e3833109-ef30-4263-8e66-e1dcddfcbe31")
-		)
-		(pin "5"
-			(uuid "9fa443f7-7fff-4dcf-b81b-acec1834dea4")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW14")
 					(unit 1)
 				)
 			)
@@ -26837,7 +25977,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 180.34 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27332,7 +26472,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 40.64 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -27916,7 +27056,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 477.52 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -29320,7 +28460,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 68.58 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31394,7 +30534,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 40.64 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -31631,7 +30771,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 561.34 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32361,7 +31501,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 124.46 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -32598,7 +31738,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 180.34 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -33069,7 +32209,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 68.58 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -34053,7 +33193,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 40.64 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -35711,7 +34851,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 617.22 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -36464,7 +35604,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 533.4 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -37787,7 +36927,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 152.4 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -38540,7 +37680,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 40.64 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -39191,7 +38331,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 561.34 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -39814,264 +38954,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:D")
-		(at 624.84 62.23 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8fe7af53-afbf-4c88-82e1-4a7b82785828")
-		(property "Reference" "D14"
-			(at 627.38 60.9599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "BAS16TS"
-			(at 627.38 63.4999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 624.84 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 624.84 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "part selected: BAS16TS_R1_00001"
-			(at 624.84 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 624.84 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 624.84 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 624.84 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "cd2143f7-92b8-4674-b366-4218fdff66eb")
-		)
-		(pin "1"
-			(uuid "6e0fc3f3-e74e-46cb-87f2-59c713c8beda")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 518.16 350.52 270)
 		(mirror x)
@@ -40405,7 +39287,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 68.58 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41136,7 +40018,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 477.52 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -41373,7 +40255,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 124.46 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -44751,7 +43633,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 617.22 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -47241,7 +46123,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 68.58 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48308,6 +47190,335 @@
 		)
 	)
 	(symbol
+		(lib_id "ROCPU Switches:BTSA-L-S-8")
+		(at 147.32 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b7a186ef-891d-4a5f-a459-d98108417ecd")
+		(property "Reference" "SW5"
+			(at 152.4 40.64 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BTSA-L-S-8"
+			(at 152.4 43.18 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ROCPU Switches:BTSA-L-S-8"
+			(at 147.32 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Availability" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "CREATOR" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Check_prices" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MANUFACTURER" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MF" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MP" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "PARTREV" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Package" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Price" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SNAPEDA_PACKAGE_ID" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "STANDARD" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "SnapEDA_Link" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 147.32 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Height" "7.65"
+			(at 173.99 440.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Name" "XKB Connectivity"
+			(at 173.99 540.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Manufacturer_Part_Number" "SS-3235S-L3"
+			(at 173.99 640.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 173.99 740.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 173.99 840.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Part Number" ""
+			(at 173.99 940.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Arrow Price/Stock" ""
+			(at 173.99 1040.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "6"
+			(uuid "1b237c3f-0f77-4ad0-9d55-24d34c1ebda1")
+		)
+		(pin "4"
+			(uuid "d0163f36-2279-47b7-bd0e-073d887eb124")
+		)
+		(pin "5"
+			(uuid "71d55386-f18b-495f-a401-12b77b204309")
+		)
+		(pin "3"
+			(uuid "d0b2f5ab-06ac-4069-a404-9cc3c8af6589")
+		)
+		(pin "2"
+			(uuid "17ec0a64-e926-4e3e-bcb4-b4eddc95df8b")
+		)
+		(pin "1"
+			(uuid "47939b29-b16f-407d-826b-1cd0b2999e2d")
+		)
+		(instances
+			(project "slack"
+				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
+					(reference "SW5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Cherry:MX6C-K3NB")
 		(at 589.28 198.12 0)
 		(unit 1)
@@ -48329,7 +47540,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 589.28 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48566,7 +47777,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 561.34 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -48803,7 +48014,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 617.22 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -49275,7 +48486,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 68.58 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50241,7 +49452,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 589.28 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50557,7 +49768,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 505.46 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -50794,7 +50005,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 124.46 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -51289,7 +50500,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 477.52 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -52094,7 +51305,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 505.46 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -53631,7 +52842,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 152.4 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -54384,7 +53595,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 180.34 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -55137,7 +54348,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 617.22 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -55710,7 +54921,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 589.28 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -56164,264 +55375,6 @@
 	)
 	(symbol
 		(lib_id "Device:D")
-		(at 48.26 62.23 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e98da33d-dd0b-40c5-8e01-d2abb613a74b")
-		(property "Reference" "D1"
-			(at 50.8 60.9599 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "BAS16TS"
-			(at 50.8 63.4999 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Diode_SMD:D_SOD-523"
-			(at 48.26 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 48.26 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "part selected: BAS16TS_R1_00001"
-			(at 48.26 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Device" "D"
-			(at 48.26 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Sim.Pins" "1=K 2=A"
-			(at 48.26 62.23 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 48.26 62.23 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "df2f22c7-1847-4f07-82ee-079ec4742fb4")
-		)
-		(pin "1"
-			(uuid "3b7646f2-a4b8-48c3-be2f-5d5f62b24745")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:D")
 		(at 563.88 158.75 90)
 		(unit 1)
 		(body_style 1)
@@ -56700,7 +55653,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 505.46 297.18 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57014,7 +55967,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 152.4 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -57224,339 +56177,6 @@
 			(project "slack"
 				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
 					(reference "SW33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "XKB Connection:SS-3235S-L3")
-		(at 172.72 45.72 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f099b5ab-92dd-425b-bc00-d7f4154e17ab")
-		(property "Reference" "SW5"
-			(at 162.56 35.56 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SS-3235S-L3"
-			(at 172.72 38.1 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Footprint" "XKB Connection:SS3235SL3"
-			(at 146.05 140.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "http://www.helloxkb.com/public/images/pdf/SS-3235S-X.pdf"
-			(at 146.05 240.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "Toggle switch, vertical two gear,6 pin patch mini horizontal,9x2.6x3.5 handle 4mm"
-			(at 172.72 50.8 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Availability" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "CREATOR" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Check_prices" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MANUFACTURER" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MAXIMUM_PACKAGE_HEIGHT" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MF" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "MP" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "PARTREV" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Package" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Price" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SNAPEDA_PACKAGE_ID" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "STANDARD" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "SnapEDA_Link" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "VERIFIER" ""
-			(at 172.72 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "7.65"
-			(at 146.05 440.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "XKB Connectivity"
-			(at 146.05 540.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "SS-3235S-L3"
-			(at 146.05 640.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" ""
-			(at 146.05 740.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" ""
-			(at 146.05 840.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 146.05 940.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 146.05 1040.64 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "6"
-			(uuid "9c9381e0-7307-4949-ac9d-921fc2067f85")
-		)
-		(pin "4"
-			(uuid "98278fff-2eb6-401a-8b31-61826c11315a")
-		)
-		(pin "5"
-			(uuid "f7a10ef3-73fd-4a7e-9799-4335141719c4")
-		)
-		(pin "3"
-			(uuid "03910672-f69b-4667-a461-8dcae3eecdcc")
-		)
-		(pin "2"
-			(uuid "8e13d4ca-4bad-4c9d-aed9-396773b145c9")
-		)
-		(pin "1"
-			(uuid "8e045b19-2d42-4a74-ae9a-a6d6f4e282c3")
-		)
-		(instances
-			(project "slack"
-				(path "/504df67f-9f45-483f-90c8-f14c049b6b02/06611ce3-ad03-4ae2-812b-c9d75e348e6b"
-					(reference "SW5")
 					(unit 1)
 				)
 			)
@@ -58671,7 +57291,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 533.4 243.84 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -59682,7 +58302,7 @@
 				)
 			)
 		)
-		(property "Value" "MSwitch"
+		(property "Value" "MX6C-K3NB"
 			(at 505.46 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
