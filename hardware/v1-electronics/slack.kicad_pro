@@ -393,7 +393,18 @@
       "sch_revision": "A.0.10",
       "sections": ""
     },
-    "layer_pairs": [],
+    "layer_pairs": [
+      {
+        "bottomLayer": 6,
+        "enabled": true,
+        "topLayer": 4
+      },
+      {
+        "bottomLayer": 2,
+        "enabled": true,
+        "topLayer": 0
+      }
+    ],
     "layer_presets": [],
     "viewports": []
   },
