@@ -112,3 +112,5 @@ Apply to roles and open source grants ()
 Get determine and document proper trace widths
 
 Currents on each line - functional diagrams from documentation
+
+Edit the board layout
